@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rabbit Punctuation Maze</title>
+  <title>Rabbit Punctuation Runner</title>
   <style>
     body {
       margin: 0;
@@ -120,7 +120,7 @@
 
     #passageText {
       font-size: 28px;
-      line-height: 2.15;
+      line-height: 1.75;
       font-weight: bold;
       color: #222;
     }
@@ -128,8 +128,8 @@
     .wordNode, .gateNode {
       display: inline-block;
       position: relative;
-      margin: 0 4px 8px 0;
-      padding: 2px 4px;
+      margin: 0 1px 4px 0;
+      padding: 1px 1px;
       border-radius: 7px;
       vertical-align: baseline;
     }
@@ -140,16 +140,16 @@
     }
 
     .gateNode {
-      width: 34px;
-      height: 34px;
-      margin: 0 8px 8px 2px;
+      width: 30px;
+      height: 30px;
+      margin: 0 3px 4px 0;
       background: #e53935;
       border: 3px solid #222;
       border-radius: 50%;
       text-align: center;
       color: white;
-      font-size: 22px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 26px;
       box-sizing: border-box;
     }
 
@@ -275,27 +275,28 @@
     #rabbit.customSprite > div { display: none; }
 
     .reward {
-      position: absolute;
-      font-size: 38px;
-      animation: pop 0.5s ease-out forwards;
-      z-index: 30;
+      display: inline-block;
+      font-size: 28px;
+      margin-left: 4px;
+      vertical-align: middle;
+      animation: pop 0.35s ease-out forwards;
       pointer-events: none;
     }
 
     .reward img {
-      width: 42px;
-      height: 42px;
+      width: 30px;
+      height: 30px;
       object-fit: contain;
     }
 
     @keyframes pop {
-      from { transform: translateY(0) scale(0.7); opacity: 0; }
-      to { transform: translateY(-42px) scale(1.2); opacity: 1; }
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1.1); opacity: 1; }
     }
 
     #questionBox {
       position: absolute;
-      bottom: 28px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 40;
@@ -303,8 +304,8 @@
       background: white;
       border: 4px solid #222;
       border-radius: 14px;
-      padding: 18px;
-      width: min(640px, 92vw);
+      padding: 14px;
+      width: min(280px, 86vw);
       text-align: center;
       box-shadow: 0 8px 0 rgba(0,0,0,0.2);
       box-sizing: border-box;
@@ -319,8 +320,8 @@
     }
 
     .answerButtons button {
-      padding: 10px 16px;
-      font-size: 18px;
+      padding: 12px 22px;
+      font-size: 28px;
       border: 3px solid #222;
       border-radius: 12px;
       background: #fff176;
@@ -329,28 +330,7 @@
     }
 
     #mobileControls {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 96px;
-      z-index: 35;
       display: none;
-      justify-content: space-between;
-      padding: 0 18px;
-      box-sizing: border-box;
-      pointer-events: none;
-    }
-
-    #mobileControls button {
-      width: 78px;
-      height: 62px;
-      border-radius: 18px;
-      border: 4px solid #222;
-      background: rgba(255,255,255,0.9);
-      font-size: 34px;
-      font-weight: bold;
-      pointer-events: auto;
-      box-shadow: 0 6px 0 rgba(0,0,0,0.22);
     }
 
     #contextLine {
@@ -472,12 +452,12 @@
 
       #passageText {
         font-size: 21px;
-        line-height: 2.05;
+        line-height: 1.7;
       }
 
       .wordNode, .gateNode {
-        margin: 0 2px 6px 0;
-        padding: 1px 2px;
+        margin: 0 1px 3px 0;
+        padding: 1px 1px;
       }
 
       .gateNode {
@@ -512,7 +492,7 @@
       .leg.back { left: 39px; }
 
       #questionBox {
-        bottom: 178px;
+        bottom: 20px;
         padding: 12px;
         border-width: 3px;
       }
@@ -536,7 +516,7 @@
       }
 
       #mobileControls {
-        display: flex;
+        display: none;
       }
 
       #gameOver, #levelComplete {
@@ -548,8 +528,8 @@
 <body>
   <div id="setup">
     <div id="setupPanel">
-      <h1>Rabbit Punctuation Maze</h1>
-      <p>Move the rabbit through the passage. Stop at each gate and choose the correct punctuation.</p>
+      <h1>Rabbit Punctuation Runner</h1>
+      <p>Watch the rabbit run through the passage. Choose the correct punctuation at each gate.</p>
 
       <div class="choiceRow">
         <label><input type="radio" name="passageMode" value="default" checked onchange="toggleCustomPassage()"> Use default passage</label>
@@ -564,7 +544,7 @@
       <input id="speedInput" type="number" min="1" max="5" value="3" style="width:90px; font-size:22px; padding:8px; border:3px solid #222; border-radius:10px; margin-top:6px;" />
       <br>
       <button onclick="startGameFromFile()">Start Game Mode</button>
-      <p><strong>Controls:</strong> use ← and → to move. At a gate, type <strong>comma</strong>, <strong>,</strong>, <strong>full stop</strong>, <strong>fullstop</strong>, or <strong>.</strong></p>
+      <p><strong>Controls:</strong> the rabbit runs automatically. At a gate, choose <strong>,</strong> or <strong>.</strong></p>
       <p><strong>Note:</strong> the game removes capital letters from the displayed passage so students cannot use capitalization as a clue.</p>
     </div>
   </div>
@@ -572,7 +552,7 @@
   <div id="game">
     <div id="hud">HP: <span id="hp">3</span> | Gold: <span id="gold">0</span> | Gates left: <span id="left">0</span></div>
     <div id="instructions">
-      Use <strong>←</strong> and <strong>→</strong> to move the rabbit through the passage.<br>
+      The rabbit runs automatically through the passage.<br>
       When the rabbit reaches a gate, answer the punctuation question.<br>
       Correct = gold. Wrong = poison and HP loss.
     </div>
@@ -593,20 +573,13 @@
     </div>
 
     <div id="questionBox">
-      <div id="contextLine"></div>
-      <div style="font-size: 20px; margin-bottom: 10px;">What punctuation belongs here?</div>
-      <input id="answerInput" autocomplete="off" placeholder="type answer" />
+      <input id="answerInput" autocomplete="off" placeholder="type answer" style="display:none;" />
       <div class="answerButtons">
         <button onclick="answerFromButton('comma')">,</button>
         <button onclick="answerFromButton('fullstop')">.</button>
       </div>
-      <div id="inputHelp">Accepted: comma / , / full stop / fullstop / .</div>
     </div>
 
-    <div id="mobileControls">
-      <button id="leftBtn" aria-label="Move left">←</button>
-      <button id="rightBtn" aria-label="Move right">→</button>
-    </div>
 
     <div id="gameOver">
       <div>GAME OVER</div>
@@ -625,8 +598,8 @@
     let hp = 3;
     let gold = 0;
     let speed = 3;
-    const speedMap = { 1: 520, 2: 360, 3: 240, 4: 160, 5: 90 };
-    let moveCooldown = false;
+    const speedMap = { 1: 900, 2: 700, 3: 520, 4: 360, 5: 230 };
+    let autoRunTimer = null;
     let totalGates = 0;
     let answeredGates = 0;
     let levelFinished = false;
@@ -635,6 +608,7 @@
     let nodes = [];
     let playerIndex = 0;
     let activeGate = null;
+    let isRunning = false;
 
     const customSprites = { rabbit: false, gold: false, poison: false };
 
@@ -644,7 +618,7 @@
     const leftEl = document.getElementById("left");
     const questionBox = document.getElementById("questionBox");
     const answerInput = document.getElementById("answerInput");
-    const contextLine = document.getElementById("contextLine");
+    const contextLine = null;
     const message = document.getElementById("message");
     const gameOver = document.getElementById("gameOver");
     const levelComplete = document.getElementById("levelComplete");
@@ -790,7 +764,10 @@
 
       renderFullPassage();
       setCurrentNode(0);
-      setTimeout(() => positionRabbitAtCurrentNode(), 80);
+      setTimeout(() => {
+        positionRabbitAtCurrentNode();
+        startAutoRun();
+      }, 80);
     }
 
     function renderFullPassage() {
@@ -825,6 +802,7 @@
 
       const token = tokens[playerIndex];
       if (token.type === "punctuation" && !token.solved) {
+        stopAutoRun();
         triggerGate(token, node);
       }
     }
@@ -832,10 +810,12 @@
     function keepNodeVisible(node) {
       const nodeTop = node.offsetTop;
       const nodeBottom = nodeTop + node.offsetHeight;
-      if (nodeTop < passageWindow.scrollTop + 30) {
-        passageWindow.scrollTop = Math.max(0, nodeTop - 40);
-      } else if (nodeBottom > passageWindow.scrollTop + passageWindow.clientHeight - 80) {
-        passageWindow.scrollTop = nodeBottom - passageWindow.clientHeight + 90;
+      const safeBottom = passageWindow.clientHeight - 150;
+
+      if (nodeTop < passageWindow.scrollTop + 24) {
+        passageWindow.scrollTop = Math.max(0, nodeTop - 36);
+      } else if (nodeBottom > passageWindow.scrollTop + safeBottom) {
+        passageWindow.scrollTop = nodeBottom - safeBottom + 20;
       }
     }
 
@@ -855,14 +835,9 @@
     function triggerGate(token, node) {
       activeGate = { token, node };
       rabbit.classList.add("paused");
-      contextLine.textContent = token.context;
       questionBox.style.display = "block";
       answerInput.value = "";
-      if (!isTouchDevice()) {
-        setTimeout(() => answerInput.focus(), 50);
-      } else {
-        answerInput.blur();
-      }
+      answerInput.blur();
     }
 
     function normaliseAnswer(raw) {
@@ -885,34 +860,47 @@
           answerInput.value = ",";
           submitTypedAnswer();
         }
+
         if (event.key === ".") {
           event.preventDefault();
           answerInput.value = ".";
           submitTypedAnswer();
         }
-        return;
-      }
 
-      if (moveCooldown) return;
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        moveRabbit(1);
-      }
-
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        moveRabbit(-1);
+        if (event.key === "Enter") {
+          event.preventDefault();
+          answerFromButton("comma");
+        }
       }
     });
 
-    function moveRabbit(direction) {
+    function moveRabbit(direction = 1) {
       const nextIndex = playerIndex + direction;
-      if (nextIndex < 0 || nextIndex >= nodes.length) return;
-      moveCooldown = true;
+      if (nextIndex < 0 || nextIndex >= nodes.length) {
+        stopAutoRun();
+        return;
+      }
       rabbit.classList.remove("paused");
       setCurrentNode(nextIndex);
-      setTimeout(() => moveCooldown = false, speed);
+    }
+
+    function startAutoRun() {
+      stopAutoRun();
+      isRunning = true;
+      rabbit.classList.remove("paused");
+      autoRunTimer = setInterval(() => {
+        if (!activeGate && !levelFinished && hp > 0) {
+          moveRabbit(1);
+        }
+      }, speed);
+    }
+
+    function stopAutoRun() {
+      isRunning = false;
+      if (autoRunTimer) {
+        clearInterval(autoRunTimer);
+        autoRunTimer = null;
+      }
     }
 
     function submitTypedAnswer() {
@@ -937,11 +925,8 @@
       node.classList.remove("current");
       node.dataset.symbol = token.symbol;
 
-      const reward = document.createElement("div");
+      const reward = document.createElement("span");
       reward.className = "reward";
-      const nodeRect = node.getBoundingClientRect();
-      reward.style.left = nodeRect.left + "px";
-      reward.style.top = (nodeRect.top - 45) + "px";
 
       if (choice === token.value) {
         gold += 1;
@@ -955,8 +940,7 @@
         showMessage("Poison! Correct answer: " + (token.value === "comma" ? "comma" : "full stop"));
       }
 
-      document.body.appendChild(reward);
-      setTimeout(() => reward.remove(), 900);
+      node.insertAdjacentElement("afterend", reward);
 
       answeredGates++;
       leftEl.textContent = Math.max(0, totalGates - answeredGates);
@@ -974,7 +958,7 @@
       }
 
       rabbit.classList.remove("paused");
-      setCurrentNode(playerIndex);
+      startAutoRun();
     }
 
     function showMessage(text) {
@@ -984,22 +968,13 @@
     }
 
     function finishLevel() {
+      stopAutoRun();
       levelFinished = true;
       rabbit.classList.add("paused");
       nodes.forEach(n => n.classList.remove("current"));
       scoreLine.textContent = `Gold collected: ${gold} / ${totalGates}. HP left: ${hp}.`;
       levelComplete.style.display = "flex";
     }
-
-    document.getElementById("leftBtn").addEventListener("click", () => {
-      if (!gameStarted || activeGate || levelFinished || hp <= 0 || moveCooldown) return;
-      moveRabbit(-1);
-    });
-
-    document.getElementById("rightBtn").addEventListener("click", () => {
-      if (!gameStarted || activeGate || levelFinished || hp <= 0 || moveCooldown) return;
-      moveRabbit(1);
-    });
 
     window.addEventListener("resize", () => {
       if (gameStarted && !levelFinished) positionRabbitAtCurrentNode();
