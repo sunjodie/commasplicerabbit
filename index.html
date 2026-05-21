@@ -296,7 +296,7 @@
 
     #questionBox {
       position: absolute;
-      bottom: 24px;
+      bottom: 110px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 40;
@@ -492,7 +492,7 @@
       .leg.back { left: 39px; }
 
       #questionBox {
-        bottom: 20px;
+        bottom: 120px;
         padding: 12px;
         border-width: 3px;
       }
@@ -932,12 +932,12 @@
         gold += 1;
         goldEl.textContent = gold;
         setRewardSprite(reward, "gold");
-        showMessage("Correct! Gold revealed.");
+        showMessage("Correct!");
       } else {
         hp -= 1;
         hpEl.textContent = hp;
         setRewardSprite(reward, "poison");
-        showMessage("Poison! Correct answer: " + (token.value === "comma" ? "comma" : "full stop"));
+        showMessage("Oh no!");
       }
 
       node.insertAdjacentElement("afterend", reward);
