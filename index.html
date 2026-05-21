@@ -125,7 +125,7 @@
       color: #222;
     }
 
-    .wordNode, .gateNode {
+    .wordNode, .gateNode, .textNode {
       display: inline-block;
       position: relative;
       margin: 0 1px 4px 0;
@@ -134,7 +134,7 @@
       vertical-align: baseline;
     }
 
-    .wordNode.current {
+    .wordNode.current, .textNode.current {
       background: #fff59d;
       box-shadow: 0 0 0 3px rgba(0,0,0,0.10);
     }
@@ -455,7 +455,7 @@
         line-height: 1.7;
       }
 
-      .wordNode, .gateNode {
+      .wordNode, .gateNode, .textNode {
         margin: 0 1px 3px 0;
         padding: 1px 1px;
       }
@@ -545,7 +545,7 @@
       <br>
       <button onclick="startGameFromFile()">Start Game Mode</button>
       <p><strong>Controls:</strong> the rabbit runs automatically. At a gate, choose <strong>,</strong> or <strong>.</strong></p>
-      <p><strong>Note:</strong> the game removes capital letters from the displayed passage so students cannot use capitalization as a clue.</p>
+      <p><strong>Note:</strong> the game lowercases ordinary words but keeps configured names and proper nouns capitalised.</p>
     </div>
   </div>
 
@@ -655,26 +655,102 @@
       }
     }
 
+    // Add names and proper nouns here if they appear at the start of a sentence.
+    // Words in this list will stay capitalised even though the rest of the passage is lowercased.
+    const PROPER_NOUNS = [
+      "singapore",
+      "bobby",
+      "jayden",
+      "yule",
+      "clarice",
+      "kaizer"
+    ];
+
+    function capitaliseWord(word) {
+      if (!word) return word;
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+
+    function formatWordForDisplay(rawWord, isSentenceStart) {
+      const lower = rawWord.toLowerCase();
+
+      if (lower === "i") return "I";
+
+      if (PROPER_NOUNS.includes(lower)) {
+        return capitaliseWord(lower);
+      }
+
+      // Preserve originally-capitalised words inside a sentence.
+      // This catches most names/proper nouns without giving away normal sentence starts.
+      if (!isSentenceStart && /^[A-Z]/.test(rawWord)) {
+        return rawWord;
+      }
+
+      return lower;
+    }
+
     function parseTeacherPassage(text) {
-      text = text.toLowerCase();
       const parsedTokens = [];
       let currentWord = "";
+      let atSentenceStart = true;
 
-      for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        if (/\w|’|'|-/.test(char)) {
-          currentWord += char;
-        } else {
-          if (currentWord.length > 0) {
-            parsedTokens.push({ type: "word", value: currentWord });
-            currentWord = "";
-          }
-          if (char === ",") parsedTokens.push({ type: "punctuation", value: "comma", symbol: "," });
-          if (char === ".") parsedTokens.push({ type: "punctuation", value: "fullstop", symbol: "." });
+      function pushWord() {
+        if (currentWord.length > 0) {
+          parsedTokens.push({
+            type: "word",
+            raw: currentWord,
+            value: formatWordForDisplay(currentWord, atSentenceStart)
+          });
+          currentWord = "";
+          atSentenceStart = false;
         }
       }
 
-      if (currentWord.length > 0) parsedTokens.push({ type: "word", value: currentWord });
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+
+        if (/\w|’|'|-/.test(char)) {
+          currentWord += char;
+          continue;
+        }
+
+        pushWord();
+
+        if (char === ",") {
+          parsedTokens.push({ type: "punctuation", value: "comma", symbol: "," });
+          atSentenceStart = false;
+          continue;
+        }
+
+        if (char === ".") {
+          const prev = text[i - 1];
+          const next = text[i + 1];
+
+          // Keep ellipses visible as ordinary text instead of turning every dot into a gate.
+          if (prev === "." || next === ".") {
+            parsedTokens.push({ type: "text", value: "." });
+            atSentenceStart = false;
+          } else {
+            parsedTokens.push({ type: "punctuation", value: "fullstop", symbol: "." });
+            atSentenceStart = true;
+          }
+          continue;
+        }
+
+        // Keep all other punctuation visible: ellipses, semicolons, colons,
+        // question marks, exclamation marks, brackets, quotation marks, etc.
+        if (char.trim() !== "") {
+          parsedTokens.push({ type: "text", value: char });
+
+          if (/[!?]/.test(char)) {
+            atSentenceStart = true;
+          } else if (/[;:]/.test(char)) {
+            atSentenceStart = false;
+          }
+        }
+      }
+
+      pushWord();
 
       for (let i = 0; i < parsedTokens.length; i++) {
         if (parsedTokens[i].type === "punctuation") {
@@ -770,6 +846,19 @@
       }, 80);
     }
 
+    function shouldAddSpace(currentToken, nextToken) {
+      if (!nextToken) return false;
+
+      const noSpaceBefore = /^[.,;:!?…)]}”’%]/;
+      const noSpaceAfter = /^[(\[{“‘$]/;
+
+      if (nextToken.type === "punctuation") return false;
+      if (nextToken.type === "text" && noSpaceBefore.test(nextToken.value)) return false;
+      if (currentToken.type === "text" && noSpaceAfter.test(currentToken.value)) return false;
+
+      return true;
+    }
+
     function renderFullPassage() {
       tokens.forEach((token, index) => {
         const node = document.createElement("span");
@@ -778,15 +867,18 @@
         if (token.type === "word") {
           node.className = "wordNode";
           node.textContent = token.value;
-        } else {
+        } else if (token.type === "punctuation") {
           node.className = "gateNode";
           node.dataset.symbol = token.symbol;
+        } else {
+          node.className = "textNode";
+          node.textContent = token.value;
         }
 
         passageText.appendChild(node);
         nodes.push(node);
 
-        if (token.type === "word") {
+        if (shouldAddSpace(token, tokens[index + 1])) {
           passageText.appendChild(document.createTextNode(" "));
         }
       });
