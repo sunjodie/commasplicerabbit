@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabbit Punctuation Maze</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #87ceeb;
+      overflow: hidden;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    #setup {
+      position: absolute;
+      inset: 0;
+      background: #f8fafc;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    #setupPanel {
+      width: min(900px, 92vw);
+      background: white;
+      border: 4px solid #222;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 0 rgba(0,0,0,0.15);
+    }
+
+    #setup textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 17px;
+      line-height: 1.5;
+      padding: 12px;
+      border: 3px solid #222;
+      border-radius: 12px;
+      box-sizing: border-box;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .choiceRow {
+      margin-top: 14px;
+      font-size: 18px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .choiceRow label { cursor: pointer; }
+
+    #setup button, #gameOver button, #levelComplete button {
+      margin-top: 16px;
+      padding: 12px 22px;
+      font-size: 20px;
+      border-radius: 12px;
+      border: 3px solid #222;
+      cursor: pointer;
+      background: #fff176;
+      font-weight: bold;
+    }
+
+    #game {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(#87ceeb 0%, #b9f6ff 68%, #65b741 68%, #3d8b37 100%);
+      overflow: hidden;
+    }
+
+    #hud {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      background: rgba(255,255,255,0.88);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    #instructions {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(255,255,255,0.88);
+      padding: 10px 14px;
+      border-radius: 10px;
+      max-width: 440px;
+      font-size: 14px;
+    }
+
+    #passageWindow {
+      position: absolute;
+      top: 105px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1100px, 90vw);
+      height: 430px;
+      background: rgba(255,255,255,0.88);
+      border: 4px solid rgba(0,0,0,0.28);
+      border-radius: 24px;
+      overflow: auto;
+      z-index: 2;
+      box-shadow: 0 8px 0 rgba(0,0,0,0.12);
+      padding: 34px;
+      box-sizing: border-box;
+    }
+
+    #passageText {
+      font-size: 28px;
+      line-height: 2.15;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .wordNode, .gateNode {
+      display: inline-block;
+      position: relative;
+      margin: 0 4px 8px 0;
+      padding: 2px 4px;
+      border-radius: 7px;
+      vertical-align: baseline;
+    }
+
+    .wordNode.current {
+      background: #fff59d;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.10);
+    }
+
+    .gateNode {
+      width: 34px;
+      height: 34px;
+      margin: 0 8px 8px 2px;
+      background: #e53935;
+      border: 3px solid #222;
+      border-radius: 50%;
+      text-align: center;
+      color: white;
+      font-size: 22px;
+      line-height: 30px;
+      box-sizing: border-box;
+    }
+
+    .gateNode::after { content: "?"; }
+
+    .gateNode.current {
+      transform: scale(1.18);
+      box-shadow: 0 0 0 5px rgba(255,235,59,0.9);
+    }
+
+    .gateNode.solved {
+      width: auto;
+      height: auto;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      color: #111;
+      font-size: 32px;
+      line-height: 1;
+      margin: 0 4px 8px -2px;
+      vertical-align: baseline;
+    }
+
+    .gateNode.solved::after { content: attr(data-symbol); }
+
+    #rabbit {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 76px;
+      height: 52px;
+      z-index: 20;
+      pointer-events: none;
+      animation: rabbitRun 0.32s infinite alternate ease-in-out;
+      transition: left 0.18s ease-out, top 0.18s ease-out;
+    }
+
+    .rabbitBody {
+      position: absolute;
+      left: 8px;
+      top: 18px;
+      width: 48px;
+      height: 30px;
+      background: white;
+      border: 3px solid #222;
+      border-radius: 50% 45% 45% 50%;
+    }
+
+    .rabbitHead {
+      position: absolute;
+      left: 48px;
+      top: 12px;
+      width: 30px;
+      height: 28px;
+      background: white;
+      border: 3px solid #222;
+      border-radius: 50%;
+    }
+
+    .ear {
+      position: absolute;
+      width: 10px;
+      height: 34px;
+      background: white;
+      border: 3px solid #222;
+      border-radius: 50%;
+      top: -15px;
+    }
+
+    .ear.one { left: 3px; transform: rotate(-12deg); }
+    .ear.two { left: 16px; transform: rotate(18deg); }
+
+    .eye {
+      position: absolute;
+      left: 19px;
+      top: 10px;
+      width: 5px;
+      height: 5px;
+      background: #222;
+      border-radius: 50%;
+    }
+
+    .tail {
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border: 3px solid #222;
+      border-radius: 50%;
+    }
+
+    .leg {
+      position: absolute;
+      width: 18px;
+      height: 9px;
+      background: white;
+      border: 3px solid #222;
+      border-radius: 50%;
+      top: 43px;
+    }
+
+    .leg.front { left: 18px; }
+    .leg.back { left: 50px; }
+
+    @keyframes rabbitRun {
+      from { transform: translateX(0) translateY(0); }
+      to { transform: translateX(6px) translateY(-6px); }
+    }
+
+    #rabbit.paused { animation-play-state: paused; }
+
+    #rabbit.customSprite {
+      background-image: url("rabbit.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 86px;
+      height: 70px;
+    }
+
+    #rabbit.customSprite > div { display: none; }
+
+    .reward {
+      position: absolute;
+      font-size: 38px;
+      animation: pop 0.5s ease-out forwards;
+      z-index: 30;
+      pointer-events: none;
+    }
+
+    .reward img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    @keyframes pop {
+      from { transform: translateY(0) scale(0.7); opacity: 0; }
+      to { transform: translateY(-42px) scale(1.2); opacity: 1; }
+    }
+
+    #questionBox {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 40;
+      display: none;
+      background: white;
+      border: 4px solid #222;
+      border-radius: 14px;
+      padding: 18px;
+      width: min(640px, 92vw);
+      text-align: center;
+      box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+
+    .answerButtons {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .answerButtons button {
+      padding: 10px 16px;
+      font-size: 18px;
+      border: 3px solid #222;
+      border-radius: 12px;
+      background: #fff176;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #mobileControls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 96px;
+      z-index: 35;
+      display: none;
+      justify-content: space-between;
+      padding: 0 18px;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    #mobileControls button {
+      width: 78px;
+      height: 62px;
+      border-radius: 18px;
+      border: 4px solid #222;
+      background: rgba(255,255,255,0.9);
+      font-size: 34px;
+      font-weight: bold;
+      pointer-events: auto;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.22);
+    }
+
+    #contextLine {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    #answerInput {
+      width: min(260px, 78vw);
+      font-size: 26px;
+      padding: 10px 14px;
+      border: 3px solid #222;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    #inputHelp {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    #message {
+      position: absolute;
+      top: 62px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      font-size: 30px;
+      font-weight: bold;
+      color: #222;
+      background: rgba(255,255,255,0.9);
+      padding: 12px 22px;
+      border-radius: 14px;
+      display: none;
+      text-align: center;
+    }
+
+    #gameOver, #levelComplete {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 100;
+      font-size: 42px;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @media (max-width: 768px) {
+      #setup {
+        align-items: flex-start;
+        overflow: auto;
+        padding: 12px;
+      }
+
+      #setupPanel {
+        width: 100%;
+        padding: 16px;
+        border-width: 3px;
+        box-shadow: 0 7px 0 rgba(0,0,0,0.15);
+      }
+
+      #setupPanel h1 {
+        font-size: 26px;
+        margin: 4px 0 8px;
+      }
+
+      .choiceRow {
+        font-size: 16px;
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #setup textarea {
+        height: 120px;
+        font-size: 16px;
+      }
+
+      #setup button, #gameOver button, #levelComplete button {
+        width: 100%;
+        font-size: 18px;
+      }
+
+      #hud {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      #instructions {
+        display: none;
+      }
+
+      #message {
+        top: 52px;
+        width: 88vw;
+        font-size: 20px;
+        padding: 8px 12px;
+      }
+
+      #passageWindow {
+        top: 90px;
+        width: 94vw;
+        height: calc(100vh - 250px);
+        min-height: 280px;
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      #passageText {
+        font-size: 21px;
+        line-height: 2.05;
+      }
+
+      .wordNode, .gateNode {
+        margin: 0 2px 6px 0;
+        padding: 1px 2px;
+      }
+
+      .gateNode {
+        width: 29px;
+        height: 29px;
+        font-size: 19px;
+        line-height: 25px;
+        border-width: 2px;
+      }
+
+      .gateNode.solved {
+        font-size: 26px;
+      }
+
+      #rabbit {
+        width: 58px;
+        height: 42px;
+      }
+
+      #rabbit.customSprite {
+        width: 62px;
+        height: 50px;
+      }
+
+      .rabbitBody { width: 37px; height: 23px; left: 7px; top: 15px; border-width: 2px; }
+      .rabbitHead { width: 23px; height: 22px; left: 38px; top: 10px; border-width: 2px; }
+      .ear { width: 8px; height: 26px; border-width: 2px; top: -12px; }
+      .eye { left: 14px; top: 8px; width: 4px; height: 4px; }
+      .tail { width: 12px; height: 12px; top: 21px; border-width: 2px; }
+      .leg { width: 14px; height: 7px; top: 35px; border-width: 2px; }
+      .leg.front { left: 15px; }
+      .leg.back { left: 39px; }
+
+      #questionBox {
+        bottom: 178px;
+        padding: 12px;
+        border-width: 3px;
+      }
+
+      #contextLine {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      #answerInput {
+        display: none;
+      }
+
+      #inputHelp {
+        display: none;
+      }
+
+      .answerButtons button {
+        font-size: 17px;
+        padding: 10px 12px;
+      }
+
+      #mobileControls {
+        display: flex;
+      }
+
+      #gameOver, #levelComplete {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="setup">
+    <div id="setupPanel">
+      <h1>Rabbit Punctuation Maze</h1>
+      <p>Move the rabbit through the passage. Stop at each gate and choose the correct punctuation.</p>
+
+      <div class="choiceRow">
+        <label><input type="radio" name="passageMode" value="default" checked onchange="toggleCustomPassage()"> Use default passage</label>
+        <label><input type="radio" name="passageMode" value="custom" onchange="toggleCustomPassage()"> Enter my own passage</label>
+      </div>
+
+      <textarea id="customPassageInput" placeholder="Type or paste your correctly punctuated passage here..."></textarea>
+      
+      <label for="speedInput" style="display:block; margin-top:14px; font-size:18px; font-weight:bold;">
+        Rabbit movement speed: enter 1–5 <span style="font-weight:normal;">(1 = slow, 5 = fastest)</span>
+      </label>
+      <input id="speedInput" type="number" min="1" max="5" value="3" style="width:90px; font-size:22px; padding:8px; border:3px solid #222; border-radius:10px; margin-top:6px;" />
+      <br>
+      <button onclick="startGameFromFile()">Start Game Mode</button>
+      <p><strong>Controls:</strong> use ← and → to move. At a gate, type <strong>comma</strong>, <strong>,</strong>, <strong>full stop</strong>, <strong>fullstop</strong>, or <strong>.</strong></p>
+      <p><strong>Note:</strong> the game removes capital letters from the displayed passage so students cannot use capitalization as a clue.</p>
+    </div>
+  </div>
+
+  <div id="game">
+    <div id="hud">HP: <span id="hp">3</span> | Gold: <span id="gold">0</span> | Gates left: <span id="left">0</span></div>
+    <div id="instructions">
+      Use <strong>←</strong> and <strong>→</strong> to move the rabbit through the passage.<br>
+      When the rabbit reaches a gate, answer the punctuation question.<br>
+      Correct = gold. Wrong = poison and HP loss.
+    </div>
+    <div id="message"></div>
+
+    <div id="passageWindow">
+      <div id="passageText"></div>
+    </div>
+
+    <div id="rabbit">
+      <div class="ear one"></div>
+      <div class="ear two"></div>
+      <div class="rabbitBody"></div>
+      <div class="rabbitHead"><div class="eye"></div></div>
+      <div class="tail"></div>
+      <div class="leg front"></div>
+      <div class="leg back"></div>
+    </div>
+
+    <div id="questionBox">
+      <div id="contextLine"></div>
+      <div style="font-size: 20px; margin-bottom: 10px;">What punctuation belongs here?</div>
+      <input id="answerInput" autocomplete="off" placeholder="type answer" />
+      <div class="answerButtons">
+        <button onclick="answerFromButton('comma')">,</button>
+        <button onclick="answerFromButton('fullstop')">.</button>
+      </div>
+      <div id="inputHelp">Accepted: comma / , / full stop / fullstop / .</div>
+    </div>
+
+    <div id="mobileControls">
+      <button id="leftBtn" aria-label="Move left">←</button>
+      <button id="rightBtn" aria-label="Move right">→</button>
+    </div>
+
+    <div id="gameOver">
+      <div>GAME OVER</div>
+      <div style="font-size: 22px; margin-top: 12px;">The punctuation poison got the rabbit.</div>
+      <button onclick="location.reload()">Restart</button>
+    </div>
+
+    <div id="levelComplete">
+      <div>LEVEL COMPLETE</div>
+      <div id="scoreLine" style="font-size: 24px; margin-top: 12px;"></div>
+      <button onclick="location.reload()">New Passage</button>
+    </div>
+  </div>
+
+  <script>
+    let hp = 3;
+    let gold = 0;
+    let speed = 3;
+    const speedMap = { 1: 520, 2: 360, 3: 240, 4: 160, 5: 90 };
+    let moveCooldown = false;
+    let totalGates = 0;
+    let answeredGates = 0;
+    let levelFinished = false;
+    let gameStarted = false;
+    let tokens = [];
+    let nodes = [];
+    let playerIndex = 0;
+    let activeGate = null;
+
+    const customSprites = { rabbit: false, gold: false, poison: false };
+
+    const rabbit = document.getElementById("rabbit");
+    const hpEl = document.getElementById("hp");
+    const goldEl = document.getElementById("gold");
+    const leftEl = document.getElementById("left");
+    const questionBox = document.getElementById("questionBox");
+    const answerInput = document.getElementById("answerInput");
+    const contextLine = document.getElementById("contextLine");
+    const message = document.getElementById("message");
+    const gameOver = document.getElementById("gameOver");
+    const levelComplete = document.getElementById("levelComplete");
+    const scoreLine = document.getElementById("scoreLine");
+    const passageWindow = document.getElementById("passageWindow");
+    const passageText = document.getElementById("passageText");
+
+    function testImage(src) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = src + "?v=" + Date.now();
+      });
+    }
+
+    async function loadCustomSprites() {
+      customSprites.rabbit = await testImage("rabbit.png");
+      customSprites.gold = await testImage("gold.png");
+      customSprites.poison = await testImage("poison.png");
+      if (customSprites.rabbit) rabbit.classList.add("customSprite");
+    }
+
+    function setRewardSprite(reward, type) {
+      const file = type === "gold" ? "gold.png" : "poison.png";
+      const fallback = type === "gold" ? "🪙" : "☠️";
+      if (customSprites[type]) {
+        const img = document.createElement("img");
+        img.src = file;
+        img.alt = type;
+        reward.appendChild(img);
+      } else {
+        reward.textContent = fallback;
+      }
+    }
+
+    function parseTeacherPassage(text) {
+      text = text.toLowerCase();
+      const parsedTokens = [];
+      let currentWord = "";
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        if (/\w|’|'|-/.test(char)) {
+          currentWord += char;
+        } else {
+          if (currentWord.length > 0) {
+            parsedTokens.push({ type: "word", value: currentWord });
+            currentWord = "";
+          }
+          if (char === ",") parsedTokens.push({ type: "punctuation", value: "comma", symbol: "," });
+          if (char === ".") parsedTokens.push({ type: "punctuation", value: "fullstop", symbol: "." });
+        }
+      }
+
+      if (currentWord.length > 0) parsedTokens.push({ type: "word", value: currentWord });
+
+      for (let i = 0; i < parsedTokens.length; i++) {
+        if (parsedTokens[i].type === "punctuation") {
+          parsedTokens[i].context = buildContext(parsedTokens, i);
+          parsedTokens[i].solved = false;
+        }
+      }
+
+      return parsedTokens;
+    }
+
+    function buildContext(allTokens, punctuationIndex) {
+      const before = [];
+      const after = [];
+      for (let i = punctuationIndex - 5; i < punctuationIndex; i++) {
+        if (allTokens[i] && allTokens[i].type === "word") before.push(allTokens[i].value);
+      }
+      for (let i = punctuationIndex + 1; i < punctuationIndex + 7; i++) {
+        if (allTokens[i] && allTokens[i].type === "word") after.push(allTokens[i].value);
+      }
+      return before.join(" ") + " ___ " + after.join(" ");
+    }
+
+    function toggleCustomPassage() {
+      const mode = document.querySelector('input[name="passageMode"]:checked').value;
+      document.getElementById("customPassageInput").style.display = mode === "custom" ? "block" : "none";
+    }
+
+    async function startGameFromFile() {
+      await loadCustomSprites();
+      const speedChoice = Number(document.getElementById("speedInput").value);
+      if (!Number.isInteger(speedChoice) || speedChoice < 1 || speedChoice > 5) {
+        alert("Please enter a rabbit speed from 1 to 5.");
+        return;
+      }
+      speed = speedMap[speedChoice];
+
+      const mode = document.querySelector('input[name="passageMode"]:checked').value;
+      let text = "";
+
+      if (mode === "custom") {
+        text = document.getElementById("customPassageInput").value.trim();
+        if (!text) {
+          alert("Please enter a passage, or choose the default passage.");
+          return;
+        }
+      } else {
+        try {
+          const response = await fetch("passage.txt", { cache: "no-store" });
+          if (!response.ok) throw new Error("Could not load passage.txt");
+          text = (await response.text()).trim();
+        } catch (error) {
+          alert("Could not load the default passage. Try entering your own passage instead.");
+          return;
+        }
+        if (!text) {
+          alert("The default passage is empty. Try entering your own passage instead.");
+          return;
+        }
+      }
+
+      tokens = parseTeacherPassage(text);
+      totalGates = tokens.filter(t => t.type === "punctuation").length;
+      if (totalGates === 0) {
+        alert("Your passage must include at least one comma or full stop.");
+        return;
+      }
+
+      document.getElementById("setup").style.display = "none";
+      initialiseLevel();
+      gameStarted = true;
+    }
+
+    function initialiseLevel() {
+      hp = 3;
+      gold = 0;
+      answeredGates = 0;
+      levelFinished = false;
+      activeGate = null;
+      playerIndex = 0;
+      nodes = [];
+      passageText.innerHTML = "";
+      passageWindow.scrollTop = 0;
+      hpEl.textContent = hp;
+      goldEl.textContent = gold;
+      leftEl.textContent = totalGates;
+
+      renderFullPassage();
+      setCurrentNode(0);
+      setTimeout(() => positionRabbitAtCurrentNode(), 80);
+    }
+
+    function renderFullPassage() {
+      tokens.forEach((token, index) => {
+        const node = document.createElement("span");
+        node.dataset.index = index;
+
+        if (token.type === "word") {
+          node.className = "wordNode";
+          node.textContent = token.value;
+        } else {
+          node.className = "gateNode";
+          node.dataset.symbol = token.symbol;
+        }
+
+        passageText.appendChild(node);
+        nodes.push(node);
+
+        if (token.type === "word") {
+          passageText.appendChild(document.createTextNode(" "));
+        }
+      });
+    }
+
+    function setCurrentNode(index) {
+      nodes.forEach(n => n.classList.remove("current"));
+      playerIndex = Math.max(0, Math.min(index, nodes.length - 1));
+      const node = nodes[playerIndex];
+      node.classList.add("current");
+      keepNodeVisible(node);
+      positionRabbitAtCurrentNode();
+
+      const token = tokens[playerIndex];
+      if (token.type === "punctuation" && !token.solved) {
+        triggerGate(token, node);
+      }
+    }
+
+    function keepNodeVisible(node) {
+      const nodeTop = node.offsetTop;
+      const nodeBottom = nodeTop + node.offsetHeight;
+      if (nodeTop < passageWindow.scrollTop + 30) {
+        passageWindow.scrollTop = Math.max(0, nodeTop - 40);
+      } else if (nodeBottom > passageWindow.scrollTop + passageWindow.clientHeight - 80) {
+        passageWindow.scrollTop = nodeBottom - passageWindow.clientHeight + 90;
+      }
+    }
+
+    function positionRabbitAtCurrentNode() {
+      const node = nodes[playerIndex];
+      if (!node) return;
+      const nodeRect = node.getBoundingClientRect();
+      const gameRect = document.getElementById("game").getBoundingClientRect();
+      rabbit.style.left = (nodeRect.left - gameRect.left - 18) + "px";
+      rabbit.style.top = (nodeRect.top - gameRect.top - 58) + "px";
+    }
+
+    function isTouchDevice() {
+      return window.matchMedia("(pointer: coarse)").matches;
+    }
+
+    function triggerGate(token, node) {
+      activeGate = { token, node };
+      rabbit.classList.add("paused");
+      contextLine.textContent = token.context;
+      questionBox.style.display = "block";
+      answerInput.value = "";
+      if (!isTouchDevice()) {
+        setTimeout(() => answerInput.focus(), 50);
+      } else {
+        answerInput.blur();
+      }
+    }
+
+    function normaliseAnswer(raw) {
+      const value = raw.trim().toLowerCase();
+      if (value === "," || value === "comma") return "comma";
+      if (value === "." || value === "full stop" || value === "fullstop" || value === "period") return "fullstop";
+      return value;
+    }
+
+    answerInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") submitTypedAnswer();
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (!gameStarted || levelFinished || hp <= 0) return;
+
+      if (activeGate) {
+        if (event.key === ",") {
+          event.preventDefault();
+          answerInput.value = ",";
+          submitTypedAnswer();
+        }
+        if (event.key === ".") {
+          event.preventDefault();
+          answerInput.value = ".";
+          submitTypedAnswer();
+        }
+        return;
+      }
+
+      if (moveCooldown) return;
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        moveRabbit(1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        moveRabbit(-1);
+      }
+    });
+
+    function moveRabbit(direction) {
+      const nextIndex = playerIndex + direction;
+      if (nextIndex < 0 || nextIndex >= nodes.length) return;
+      moveCooldown = true;
+      rabbit.classList.remove("paused");
+      setCurrentNode(nextIndex);
+      setTimeout(() => moveCooldown = false, speed);
+    }
+
+    function submitTypedAnswer() {
+      if (!activeGate) return;
+      const choice = normaliseAnswer(answerInput.value);
+      answer(choice);
+    }
+
+    function answerFromButton(choice) {
+      if (!activeGate) return;
+      answerInput.value = choice === "comma" ? "comma" : "full stop";
+      answer(choice);
+    }
+
+    function answer(choice) {
+      if (!activeGate) return;
+      questionBox.style.display = "none";
+
+      const { token, node } = activeGate;
+      token.solved = true;
+      node.classList.add("solved");
+      node.classList.remove("current");
+      node.dataset.symbol = token.symbol;
+
+      const reward = document.createElement("div");
+      reward.className = "reward";
+      const nodeRect = node.getBoundingClientRect();
+      reward.style.left = nodeRect.left + "px";
+      reward.style.top = (nodeRect.top - 45) + "px";
+
+      if (choice === token.value) {
+        gold += 1;
+        goldEl.textContent = gold;
+        setRewardSprite(reward, "gold");
+        showMessage("Correct! Gold revealed.");
+      } else {
+        hp -= 1;
+        hpEl.textContent = hp;
+        setRewardSprite(reward, "poison");
+        showMessage("Poison! Correct answer: " + (token.value === "comma" ? "comma" : "full stop"));
+      }
+
+      document.body.appendChild(reward);
+      setTimeout(() => reward.remove(), 900);
+
+      answeredGates++;
+      leftEl.textContent = Math.max(0, totalGates - answeredGates);
+      activeGate = null;
+
+      if (hp <= 0) {
+        rabbit.classList.add("paused");
+        gameOver.style.display = "flex";
+        return;
+      }
+
+      if (answeredGates >= totalGates) {
+        finishLevel();
+        return;
+      }
+
+      rabbit.classList.remove("paused");
+      setCurrentNode(playerIndex);
+    }
+
+    function showMessage(text) {
+      message.textContent = text;
+      message.style.display = "block";
+      setTimeout(() => message.style.display = "none", 1150);
+    }
+
+    function finishLevel() {
+      levelFinished = true;
+      rabbit.classList.add("paused");
+      nodes.forEach(n => n.classList.remove("current"));
+      scoreLine.textContent = `Gold collected: ${gold} / ${totalGates}. HP left: ${hp}.`;
+      levelComplete.style.display = "flex";
+    }
+
+    document.getElementById("leftBtn").addEventListener("click", () => {
+      if (!gameStarted || activeGate || levelFinished || hp <= 0 || moveCooldown) return;
+      moveRabbit(-1);
+    });
+
+    document.getElementById("rightBtn").addEventListener("click", () => {
+      if (!gameStarted || activeGate || levelFinished || hp <= 0 || moveCooldown) return;
+      moveRabbit(1);
+    });
+
+    window.addEventListener("resize", () => {
+      if (gameStarted && !levelFinished) positionRabbitAtCurrentNode();
+    });
+
+    passageWindow.addEventListener("scroll", () => {
+      if (gameStarted && !levelFinished) positionRabbitAtCurrentNode();
+    });
+  </script>
+</body>
+</html>
