@@ -1,6 +1,6 @@
 # Woodland Crossings
 
-A self-guided comma-splice adventure for upper-primary and secondary learners. Help Pip repair sentence crossings and restore a woodland village. The original Rabbit Punctuation Runner in the repository root is unchanged.
+A self-guided comma-splice adventure for upper-primary and secondary learners. Help Pip repair sentence crossings and restore a woodland village. On this branch, the root index.html opens Woodland Crossings. The original game is preserved as rabbit-runner.html; main is unchanged.
 
 ## Play locally
 
@@ -14,7 +14,7 @@ Open http://localhost:8000. JavaScript modules require HTTP serving; do not doub
 
 ## Hosting
 
-Deploy this folder as the static output directory on GitHub Pages, Cloudflare Pages, or another static host. If this repository already serves its root with GitHub Pages, the folder becomes `/commasplicerabbit/woodland-crossings/` once this branch is merged and Pages has deployed. A GitHub source link is not a playable hosting URL. This pull request does not change hosting settings or deploy the original game.
+For Cloudflare, deploy the woodland-crossings branch. The repository root now opens the new game, so serving the root works. You can also deploy woodland-crossings as the static output directory. If this repository already serves its root with GitHub Pages, the folder becomes `/commasplicerabbit/woodland-crossings/` once this branch is merged and Pages has deployed. A GitHub source link is not a playable hosting URL. This pull request changes the new branch’s root entry to open Woodland Crossings; it does not change Cloudflare settings. A deployment built from main will still show the old game.
 
 ## Learning and play
 

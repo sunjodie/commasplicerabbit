@@ -39,3 +39,7 @@ GitHub repository creation is unavailable through the connected tool, so deliver
 - 14 meaningful automated tests pass. Syntax checks pass.
 - No browser/rendering or real-student test has been performed. See README for hosting and verification limits.
 - Intended GitHub delivery: branch woodland-crossings, pull request into main. No merge or hosting configuration change.
+
+# Checkpoint 03 — deployment entry point
+
+The woodland-crossings branch now serves the new game from its root index.html, using the game folder as its asset base. The original runner is preserved at rabbit-runner.html. Main remains unchanged. Cloudflare must build the woodland-crossings branch to pick up this change.
