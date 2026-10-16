@@ -21,8 +21,8 @@ For Cloudflare, deploy the woodland-crossings branch. The repository root now op
 - Six expeditions: complete clauses; dependent openings; longer clauses; however/therefore; several joins; passage editing without a faulty join being highlighted in advance.
 - 30 story questions and 18 authored transfer questions. An adventure contains 42 crossings, including 12 interleaved memory crossings. Examples are reused after the finite transfer pool is exhausted.
 - A brief demonstration introduces each expedition. Both correct and incorrect comma uses appear early in the adventure.
-- The student chooses a join, fits a sentence tool, then tests the crossing. A bridge section appears when a repair is fitted, and Pip crosses on success.
-- Full stops add capitals automatically. Valid available alternatives are accepted. Offered conjunctions are scoped to the selected join so students are not penalised for an unlisted grammatical combination.
+- Sentence sections sit on wooden platforms over an illustrated stream. The student drags a building piece into a join, or taps the piece to fit it at the selected join. The full sentence updates immediately, including capitalisation. Testing sends Pip hopping across on success; retries never make Pip fall. Later passages remain continuous text on a parchment map. Supplies and restored buildings are shown visually.
+- Full stops add capitals automatically. Valid available alternatives are accepted. Each stage uses a stable tray of pieces. Trays do not filter against the answer key; comma + and is accepted wherever it joins two independent clauses. Later because repairs must preserve the story’s meaning.
 - Reading each side silently helps students identify dependence. The guide explicitly distinguishes structure from pauses or breathing.
 - Hints and retries preserve story progress and rewards. Supported answers do not count towards an independent stamp.
 - Independent stamps require two different examples with at least two intervening crossings. This is a game criterion, not a validated diagnosis of mastery.
@@ -39,7 +39,8 @@ Controls are native buttons with keyboard focus, labels and state; layouts adapt
 
 - `content.js`: question bank, explanations, expeditions, sentence tools.
 - `engine.js`: progression, scoring, save shape and review scheduling.
-- `app.js`: UI and browser-local save/resume.
+- `app.js`: UI, drag/tap fitting and browser-local save/resume.
+- `visuals.js`: original SVG character, environments and village building illustrations.
 - `style.css`: responsive styling and handcrafted woodland scene.
 - `tests/engine.test.mjs`: content integrity and learning/progress checks.
 
@@ -52,7 +53,7 @@ node --check app.js
 
 ## Verification and limits
 
-14 automated tests pass, covering all supported answer variants, dependent-clause fragments, full-stop capitalisation, every expedition and review insertion, save/resume state, assisted/independent separation, 1/3/7-day reviews, and persistent bonus successes. A gamification subagent reviewed the implementation; its feedback was applied to alternative answers, bridge construction, review progress and bonus retries.
+17 automated tests pass, covering all supported answer variants, dependent-clause fragments, full-stop capitalisation, every expedition and review insertion, save/resume state, assisted/independent separation, 1/3/7-day reviews, and persistent bonus successes. A gamification subagent reviewed both passes; feedback was applied to answer alternatives, stable tool trays, keyboard focus, bridge construction, review progress and bonus retries. A minimal DOM adapter executes the actual UI handlers for the demo, tap/drag repairs, retries, expedition rewards, village and passage editing. This is not a real browser test. Original character/building SVGs were rasterised and visually inspected.
 
 Browser rendering, touch interaction and real-student playtesting remain unverified in this environment. The finite authored answer bank does not grade arbitrary free text. Completion demonstrates performance within these structured tasks, not a guarantee that a student will avoid every comma splice in their own writing.
 

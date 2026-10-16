@@ -9,7 +9,18 @@ export const CHAPTERS=[
  {name:'Homeward',skill:'paragraph',icon:'🏡',reward:'The village gathering place',blurb:'Edit the whole passage without a marked gap.',lesson:'Read the whole passage first. Choose a comma to inspect or repair. Some passages are already correct. When you think every join works, test the route.',demo:null,explain:'The goal is to notice errors yourself, while protecting commas that already work.'}
 ];
 let serial=0;
-function q(stage,parts,valid,why,options,skill){valid=valid.map((v,i)=>(/^(but|so) /i.test(parts[i+1])&&v.includes('comma'))?[...new Set([...v,'stop'])]:v);const available=options||[...new Set(['comma','stop',...valid.flat()])];return {id:`q${++serial}`,stage,skill:skill||CHAPTERS[stage].skill,parts,valid,why,options:available,kind:stage===5?'paragraph':'sentence'};}
+function q(stage,parts,valid,why,options,skill){
+ // A stable tray prevents the available pieces from revealing the answer.
+ const available=stage<2?['comma','stop','and']:stage===2?['comma','stop','semi','and']:stage===3?['comma','stop','semi']:['comma','stop','semi','and','because'];
+ valid=valid.map((variants,i)=>{
+  const v=new Set(variants);
+  const alreadyJoined=/^(but|so) /i.test(parts[i+1]);
+  if(v.has('comma')&&alreadyJoined)v.add('stop'); // sentence-initial But/So is valid
+  if(v.has('stop')&&!alreadyJoined){v.add('and');v.add('semi');}
+  return [...v].filter(t=>available.includes(t));
+ });
+ return {id:`q${++serial}`,stage,skill:skill||CHAPTERS[stage].skill,parts,valid,why,options:available,kind:stage===5?'paragraph':'sentence'};
+}
 const short=['comma','stop','and','but','so'];
 const complex=['comma','stop','semi','and','but','so','because'];
 export const BANK=[

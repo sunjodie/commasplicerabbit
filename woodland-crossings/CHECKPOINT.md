@@ -43,3 +43,12 @@ GitHub repository creation is unavailable through the connected tool, so deliver
 # Checkpoint 03 — deployment entry point
 
 The woodland-crossings branch now serves the new game from its root index.html, using the game folder as its asset base. The original runner is preserved at rabbit-runner.html. Main remains unchanged. Cloudflare must build the woodland-crossings branch to pick up this change.
+
+# Checkpoint 04 — visual adventure
+
+- Replaced the CSS rabbit silhouette with original vector Pip artwork: rounded proportions, pink cheeks, scarf, expressive eyes, blinking and a happy crossing hop.
+- Replaced the workbook-style play card/sidebar with an illustrated crossing world, wooden sentence platforms, draggable/tappable construction pieces, full-sentence readback and a compact supply trail.
+- Complex sentences and passages remain continuous, readable text on an in-world map.
+- Village rewards now use individual building illustrations, with a visual restoration scene and chosen decorations.
+- Stable tool trays avoid exposing answer metadata; supports keyboard/tap alternatives to dragging.
+- 17 automated tests pass, including execution of actual UI event handlers through a minimal DOM adapter. Character/building SVG artwork visually inspected. Real browser rendering, touch and student playtesting still pending.
