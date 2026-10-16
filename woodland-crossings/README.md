@@ -54,7 +54,7 @@ node --check app.js
 
 ## Verification and limits
 
-24 automated tests pass, covering all supported answer variants, dependent-clause fragments, full-stop capitalisation, every expedition and review insertion, save/resume state, assisted/independent separation, 1/3/7-day reviews, and persistent bonus successes. A gamification subagent reviewed both passes; feedback was applied to answer alternatives, stable tool trays, keyboard focus, bridge construction, review progress and bonus retries. A minimal DOM adapter executes the actual UI handlers for the demo, tap/drag repairs, retries, expedition rewards, village and passage editing. This is not a real browser test. Original character/building SVGs were rasterised and visually inspected.
+31 automated tests pass, covering all supported answer variants, dependent-clause fragments, full-stop capitalisation, every expedition and review insertion, save/resume state, assisted/independent separation, 1/3/7-day reviews, and persistent bonus successes. A gamification subagent reviewed both passes; feedback was applied to answer alternatives, stable tool trays, keyboard focus, bridge construction, review progress and bonus retries. A minimal DOM adapter executes the actual UI handlers for the demo, tap/drag repairs, retries, expedition rewards, village and passage editing. This is not a real browser test. Original character/building SVGs were rasterised and visually inspected.
 
 Full browser rendering, touch interaction and real-student playtesting remain unverified in this environment. The finite authored answer bank does not grade arbitrary free text. Completion demonstrates performance within these structured tasks, not a guarantee that a student will avoid every comma splice in their own writing.
 
@@ -62,3 +62,15 @@ Full browser rendering, touch interaction and real-student playtesting remain un
 
 - Cepeda et al. (2006), Distributed practice in verbal recall tasks: https://doi.org/10.1037/0033-2909.132.3.354 . Supports distributed practice generally; the game's exact 1/3/7 schedule is a practical choice, not an experimentally validated optimum for this content.
 - Purdue OWL, Run On Sentences: https://owl.purdue.edu/owl/general_writing/punctuation/independent_and_dependent_clauses/runonsentences.html . Independent-clause joins and repair patterns.
+
+## Halloween mystery visual checkpoint
+
+The interface now follows **The Lantern That Shouldn’t Be Lit**, using original moonlit-mill scenery, indigo/violet surroundings, amber lights, pumpkins, fog and a small witch hat for Pip. The reading surface stays light and opaque. Artwork provenance and the image-generation prompt are recorded in assets/ARTWORK.md.
+
+Six optional woodland discoveries are clickable and keyboard accessible. They persist separately from grammar progress, never award or remove grammar credit, and remain discoverable by revisiting reached locations from **Woodland secrets** without repeating questions.
+
+Case notes unlock after each completed chapter. The final reward opens an illustrated, replayable rescue ending explaining the lantern, portable bell and altered map. Secrets, stamps and independent answers do not gate the ending. Existing completed saves receive the ending on their next visit unless a review/bonus session is in progress.
+
+This is a graphics and narrative-interface pass. **The proposed single-answer/FANBOYS/expanded-semicolon/structure-adaptive mystery question bank is still awaiting implementation.** The existing question data and learning scheduler are unchanged by this checkpoint.
+
+31 automated checks pass, including optional discovery persistence, collection deduplication, evidence unlocks, ending availability, saved-review continuity and scene revisits. The generated backdrop and rescue SVG artwork were visually inspected; real-browser layout, touch and screen-reader testing remain pending.
