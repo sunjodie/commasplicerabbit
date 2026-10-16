@@ -1,86 +1,52 @@
 # Woodland Crossings
 
-A self-guided comma-splice adventure for upper-primary and secondary learners. Help Pip repair sentence crossings and restore a woodland village. On this branch, the root index.html opens Woodland Crossings. The original game is preserved as rabbit-runner.html; main is unchanged.
+A self-guided comma-splice mystery for upper-primary and secondary learners: **The Lantern That Shouldn’t Be Lit**. Pip and Mara investigate a light in an abandoned mill, a missing warning bell and an altered map. The clues resolve into a rescue.
 
-## Play locally
+On `woodland-crossings`, the repository root opens the new game. The original runner is preserved as `rabbit-runner.html`; `main` is unchanged. Deploy this branch on Cloudflare. No build step, account, teacher setup, API key, external font or runtime service is required. Serve locally over HTTP rather than opening the HTML file directly.
 
-Use any static web server. For example, from this folder:
+## Learning progression
 
-```sh
-python3 -m http.server 8000
-```
+There are 30 new story tasks in six chapters of five, plus 30 authored recovery variants and three optional challenges. `QUESTIONS.md` lists every story question, editing brief and target answer.
 
-Open http://localhost:8000. JavaScript modules require HTTP serving; do not double-click index.html. There is no build step, account, API key, external font, analytics or runtime dependency. The teacher does not need to upload passages or mark answers.
+1. Recognise complete clauses, dependent openings and list commas; distinguish a new scene from paired observations.
+2. Join discoveries with and, contrast with but, show results with so and offer alternatives with or.
+3. Complete FANBOYS with for, nor and yet; handle inversion after nor, embedded clauses and long subjects.
+4. Practise semicolons before transitions, with increasingly complex dependent openings and relative descriptions; split at a scene change.
+5. Edit connected witness notes while protecting correct commas and following the timeline.
+6. Edit two-paragraph accounts and a final report combining several repairs.
 
-## Hosting
+FANBOYS means **for, and, nor, but, or, yet, so**. Semicolons are targets in 12 story questions, across all six chapters. Full-stop tasks explicitly require a new sentence at a time or scene change. Conjunction tasks specify the intended relationship and, where alternatives would remain ambiguous, the word to use.
 
-For Cloudflare, deploy the woodland-crossings branch. The repository root now opens the new game, so serving the root works. You can also deploy woodland-crossings as the static output directory. If this repository already serves its root with GitHub Pages, the folder becomes `/commasplicerabbit/woodland-crossings/` once this branch is merged and Pages has deployed. A GitHub source link is not a playable hosting URL. This pull request changes the new branch’s root entry to open Woodland Crossings; it does not change Cloudflare settings. A deployment built from main will still show the old game.
+## One target without false grammar penalties
 
-## Learning and play
+Each join has one target under a visible editing brief. The engine separately records grammatical alternatives. A grammatical repair that does not meet the brief gets a neutral reminder, without a mistake or assistance penalty. A genuine error highlights the first grammatically faulty join, not an earlier valid alternative. Hints give explanations and preserve progress.
 
-- Six expeditions: complete clauses; dependent openings; longer clauses; however/therefore; several joins; passage editing without a faulty join being highlighted in advance.
-- 30 story questions and 18 authored transfer questions. An adventure contains 42 crossings, including 12 interleaved memory crossings. Examples are reused after the finite transfer pool is exhausted.
-- The opening mixes longer independent clauses, correct dependent openings and a multiple-join sentence. This prevents always choosing full stops from succeeding. A brief demonstration introduces each expedition. Both correct and incorrect comma uses appear early in the adventure.
-- The whole sentence is displayed continuously on a compact map above the stream. No join is preselected and the tool tray stays closed until a student chooses a comma. Students scout the route, repair only what needs changing, or declare the route already safe. Dragging and tapping both fit pieces; the sentence updates immediately, including capitalisation. Testing sends Pip hopping across on success; retries never make Pip fall. Later passages remain continuous text on a parchment map. Supplies and restored buildings are shown visually.
-- Full stops add capitals automatically. Valid available alternatives are accepted. Each stage uses a stable tray of pieces. Trays do not filter against the answer key; comma + and is accepted wherever it joins two independent clauses. Later because repairs must preserve the story’s meaning.
-- Reading each side silently helps students identify dependence. The guide explicitly distinguishes structure from pauses or breathing.
-- Independent story solves earn permanent beacon sparks. Three sparks construct and light the expedition’s lantern beacon. Independent memory checks can recover missing sparks for the matching expedition; using hints never creates a permanent reward lockout. Optional lantern contracts earn two sparks by keeping a repair in one sentence; valid full-stop repairs receive a neutral goal reminder without an error or assistance penalty. Contract availability depends on visible sentence shape, never the answer key.
-- Hints and retries preserve story progress and rewards. Supported answers do not count towards an independent stamp.
-- Independent stamps require two different examples with at least two intervening crossings. This is a game criterion, not a validated diagnosis of mastery.
-- Browser-local return reviews become due after about 1 day, then 3 and 7 days after successful review. Supported return reviews come back after 1 day. Device time determines due dates. No background notifications are scheduled.
-- Optional challenge successes persist across attempts: students only retry the skills that needed support.
+Students read continuous text, choose commas to inspect and drag/tap native button tools. Full stops capitalise the next word. Correct comma uses appear alongside splices from the first chapter. Later questions preserve actual paragraph breaks. Students are encouraged to read silently, but taught that a pause alone does not justify a comma.
 
-## Progress, privacy and accessibility
+## Selective repetition and spacing
 
-Progress saves automatically in this browser's localStorage. It does not sync across devices. Clearing browser/site data removes it. Storage failure displays a notice. A reload restores unfinished question choices and assistance status; a crossing is credited only after Continue is selected. Sound is optional and initially off.
+An independently solved structure does not automatically repeat. A structure that needed a hint or a grammar-error retry enters a recovery queue. A different authored example returns after at least three intervening questions. The same supported structure can also become due on a later visit after roughly one day. Successful recall schedules the next checks after three and seven days; after three independent recovery successes it retires. Supported recall resets its interval. These intervals are practical design choices, not a validated optimum for this game.
 
-Controls are native buttons with keyboard focus, labels and state; layouts adapt to narrow screens, and animations respect reduced-motion preferences. There is no timer, death, punitive streak, or lost building.
+Concepts recur in increasingly complex constructions and passages. The structure tags identify the authored exercise patterns for recovery; they are not an automatic linguistic parser. Exact recovery text may recur on later checks of a previously supported structure. Device time sets dates; there are no background notifications.
 
-## Development
+An independent route has 30 story crossings. Additional recovery crossings depend on where support was needed, with at most one between successive story questions so repeated support cannot trap a student in a recovery loop. Recovery crossings never skip story content. All six rewards and the mystery ending remain available with hints.
 
-- `content.js`: question bank, explanations, expeditions, sentence tools.
-- `engine.js`: progression, scoring, save shape and review scheduling.
-- `app.js`: UI, drag/tap fitting and browser-local save/resume.
-- `visuals.js`: original SVG character, environments and village building illustrations.
-- `style.css`: responsive styling and handcrafted woodland scene.
-- `tests/engine.test.mjs`: content integrity and learning/progress checks.
+## Challenge, rewards and saves
 
-Run checks with Node 20 or later:
+Independent solves earn permanent beacon sparks; three light an expedition’s beacon. Recovery can earn missing sparks for its own chapter. Hints do not remove buildings, supplies or earlier sparks. The former optional one-sentence contract is hidden because it could contradict a question’s required sentence count. The optional trail has three fresh challenge structures; independent successes persist, so only unfinished challenges return.
 
-```sh
-npm test
-node --check app.js
-```
+Six optional graphic discoveries persist separately from grammar credit. Revisit reached locations through Woodland secrets to find missed discoveries without repeating questions. The ending is illustrated and replayable, with no score or discovery gate.
 
-## Verification and limits
+Progress saves in this browser’s localStorage, without cross-device sync. Old-bank saves preserve story position, rewards, secrets and beacons; obsolete active questions and blanket review schedules are cleared. New-bank unfinished choices and assistance resume exactly. Clearing site data removes the save. Storage failures show a notice. Sound starts off; motion respects reduced-motion preferences.
 
-31 automated tests pass, covering all supported answer variants, dependent-clause fragments, full-stop capitalisation, every expedition and review insertion, save/resume state, assisted/independent separation, 1/3/7-day reviews, and persistent bonus successes. A gamification subagent reviewed both passes; feedback was applied to answer alternatives, stable tool trays, keyboard focus, bridge construction, review progress and bonus retries. A minimal DOM adapter executes the actual UI handlers for the demo, tap/drag repairs, retries, expedition rewards, village and passage editing. This is not a real browser test. Original character/building SVGs were rasterised and visually inspected.
+## Files and checks
 
-Full browser rendering, touch interaction and real-student playtesting remain unverified in this environment. The finite authored answer bank does not grade arbitrary free text. Completion demonstrates performance within these structured tasks, not a guarantee that a student will avoid every comma splice in their own writing.
+- `content.js`: authored story, recovery and bonus questions; single targets, grammatical alternatives, briefs and lessons.
+- `engine.js`: progression, selective recovery, spacing and save migration.
+- `app.js`: lessons, editing controls, neutral feedback and rewards.
+- `visuals.js`, `halloween.js`, `assets/`: original painted artwork, optional discoveries and narrative interface. Generation prompts are in `assets/ARTWORK.md`.
+- `tests/`: engine/content checks and real app-handler execution with a minimal DOM adapter.
 
-## Research informing the design
+Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 25 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
 
-- Cepeda et al. (2006), Distributed practice in verbal recall tasks: https://doi.org/10.1037/0033-2909.132.3.354 . Supports distributed practice generally; the game's exact 1/3/7 schedule is a practical choice, not an experimentally validated optimum for this content.
-- Purdue OWL, Run On Sentences: https://owl.purdue.edu/owl/general_writing/punctuation/independent_and_dependent_clauses/runonsentences.html . Independent-clause joins and repair patterns.
-
-## Halloween mystery visual checkpoint
-
-The interface now follows **The Lantern That Shouldn’t Be Lit**, using original moonlit-mill scenery, indigo/violet surroundings, amber lights, pumpkins, fog and a small witch hat for Pip. The reading surface stays light and opaque. Artwork provenance and the image-generation prompt are recorded in assets/ARTWORK.md.
-
-Six optional woodland discoveries are clickable and keyboard accessible. They persist separately from grammar progress, never award or remove grammar credit, and remain discoverable by revisiting reached locations from **Woodland secrets** without repeating questions.
-
-Case notes unlock after each completed chapter. The final reward opens an illustrated, replayable rescue ending explaining the lantern, portable bell and altered map. Secrets, stamps and independent answers do not gate the ending. Existing completed saves receive the ending on their next visit unless a review/bonus session is in progress.
-
-This is a graphics and narrative-interface pass. **The proposed single-answer/FANBOYS/expanded-semicolon/structure-adaptive mystery question bank is still awaiting implementation.** The existing question data and learning scheduler are unchanged by this checkpoint.
-
-31 automated checks pass, including optional discovery persistence, collection deduplication, evidence unlocks, ending availability, saved-review continuity and scene revisits. The generated backdrop and rescue SVG artwork were visually inspected; real-browser layout, touch and screen-reader testing remain pending.
-
-## Autumn storybook artwork update
-
-Pip now wears an original plum cape, rust scarf and satchel in a softly painted style. New moss-and-amber mill scenery and a full rescue painting give the mystery a warmer Halloween atmosphere. Pip is larger in the compact play scene, with his speech bubble alongside him. All three generated WebP assets live under assets/; full prompts and provenance are in assets/ARTWORK.md. The six discoveries retain their existing SVG illustrations.
-
-31 automated checks pass. Artwork inspected; real-browser rendering and student playtesting remain pending. The question bank and scheduler are unchanged.
-
-## Painted village landmarks
-
-All six expedition rewards and the bonus fountain now use original painted autumn landmarks from assets/village-storybook.webp, shared across village cards, the trail map and reward screens. Cards use moss greens and warm amber accents. Saved rewards and unlock rules are unchanged. Full generation prompt in assets/ARTWORK.md. 31 automated checks pass; browser layout/touch QA remains pending.
+This finite bank does not grade arbitrary free text. Completing the structured game is not a guarantee of error-free independent writing.

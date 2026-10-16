@@ -1,4 +1,4 @@
-// Narrative/visual layer only. The proposed question-bank rewrite is separate.
+// Mystery case notes, discoveries and original vector tokens.
 export const CASE_TITLE='The Lantern That Shouldn’t Be Lit';
 export const CASES=[
  {title:'The unexpected light',intro:'The mill has been locked for years. Tonight, a lantern is glowing in its upper window. Pip and Mara set out to investigate.',clue:'A moving light upstairs, but no sound from the waterwheel.',icon:'lantern'},

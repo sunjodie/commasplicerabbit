@@ -96,3 +96,14 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Fixed neighbouring atlas cells appearing inside wide map thumbnails: each landmark now uses a square CSS background tile instead of an SVG image viewport. Background painting stays within the container.
 - Map thumbnails use square proportions and a consistent maximum width; map palette now matches the moss-green village.
 - 31 automated checks and JavaScript/whitespace checks pass. Browser layout QA remains pending.
+
+# Checkpoint 10 — mystery question bank and selective recovery
+
+- Implemented 30 story questions across six chapters, 30 paired recovery variants and three fresh optional challenges. All revolve around the lantern, bell, map and rescue mystery. QUESTIONS.md records the complete story bank with briefs, originals, targets and explanations.
+- Every join has one target under an explicit editing brief. Grammatical alternatives receive neutral brief feedback without a mistake/assistance penalty. Mixed submissions highlight the first genuine grammar error before any valid non-target edit.
+- Added all seven FANBOYS, including inversion after nor. Twelve story tasks target semicolons in progressively varied constructions. Full stops mark required scene/time changes; conjunctions express specified relationships.
+- Progresses from sentences to witness notes and two-paragraph case accounts, ending with a six-join report combining dependent openings, relative information, semicolons, a result conjunction and a new-sentence time shift. Paragraph breaks remain visible.
+- Independent success does not schedule routine repetition. Only supported structures return, using a paired example after three intervening questions or a later-day revisit. Successful recovery expands to three/seven days, then retires. At most one inline recovery sits between story questions so support cannot block the ending.
+- Old saves keep story progress, village rewards, discoveries and beacons. Old active question IDs and blanket review dates migrate safely. The optional one-sentence contract is hidden to avoid conflicts with the new briefs.
+- Gamification reviewer checked targets, narrative continuity and progression; corrected mismatched recovery wording, repeated transition templates, the null-demo lesson path and mixed-error attribution.
+- 25 automated checks pass, including full independent and fully supported routes, selective repetition/retirement, FANBOYS/semicolon coverage, save migration and actual UI handler regressions. Syntax and whitespace checks pass. Browser rendering/touch/contrast and real-student testing remain pending.

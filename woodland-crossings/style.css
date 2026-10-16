@@ -78,3 +78,7 @@ header{background:#262e23ed;border-color:#566044}
 .path-map .map-stop small{color:#c1c4a5}
 
 .building-art.painted-landmark{background-image:url('assets/village-storybook.webp');background-size:300% 300%;background-repeat:no-repeat;aspect-ratio:1;height:auto}
+
+.editing-brief{font-size:13px;line-height:1.55;margin:0 0 12px;padding:9px 12px;border-left:3px solid #a37947;background:#e8d7b4;color:#4b4135;letter-spacing:0}
+.passage-chart .sentence{white-space:pre-line;font-size:clamp(16px,1.7vw,20px);line-height:1.85}
+.piece-tray{gap:8px}.sentence-piece{min-width:72px}.sentence-piece>span{font-size:12px}
