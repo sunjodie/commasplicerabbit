@@ -74,3 +74,12 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Preserved existing saves and active review/bonus continuation.
 - 31 automated checks pass. Generated scenery and rescue SVG visually inspected. Real-browser/touch/contrast QA remains pending.
 - Scope: graphics/narrative interface only. The proposed question-bank rewrite remains paused; content.js and engine.js are unchanged.
+
+# Checkpoint 07 — original autumn storybook artwork
+
+- Replaced flat Pip with a softly painted original rabbit in plum cape, rust scarf and satchel, carrying a lantern. Preserved transparent alpha and existing crossing animation.
+- Added moss-and-amber autumn mill scenery and a painted rescue ending showing the caretaker, travellers, bell, map and lantern. Generated artwork uses the reference for broad mood only; no stock imagery bundled. Full prompts in assets/ARTWORK.md.
+- Enlarged Pip on short desktop screens, moved his speech bubble beside him, and removed the repeated heading above the scouting prompt. Retained existing question controls and saves.
+- Gamification reviewer inspected layout rules and markup; applied character visibility and dock-density suggestions.
+- All 31 automated checks pass; syntax and whitespace checks pass. Images visually inspected. Browser/touch/contrast QA and student playtesting remain pending.
+- Focused graphics pass only. Question-bank rewrite remains paused; content.js and engine.js unchanged.

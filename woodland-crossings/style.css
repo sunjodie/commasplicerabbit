@@ -24,3 +24,35 @@ header{max-width:1060px;padding:13px 28px}main{max-width:1040px;padding:18px 24p
 @media(max-width:800px){header{gap:12px;align-items:flex-start}.brand{flex-shrink:0}nav{flex-wrap:wrap;justify-content:flex-end;gap:0}.quiet{padding:7px 8px}.hero h1{font-size:40px}.evidence-grid{grid-template-columns:repeat(2,1fr)}.ending-art{height:260px}.ending-pip{width:90px;height:110px;left:6%}.ending-rescue{width:80%;right:1%}.mystery-ending h1{font-size:43px}}@media(max-width:480px){header{padding:12px 14px}.quiet{font-size:10px;padding:6px 7px}.hero h1{font-size:35px}.world-easter{width:44px;height:44px;bottom:26px;left:3%}.egg-1,.egg-3,.egg-5{left:auto;right:3%}.egg-2{bottom:70px}.secret-grid{grid-template-columns:repeat(2,1fr)}.evidence-grid{gap:10px}.evidence-card{padding:12px}.evidence-card h3{font-size:18px}.evidence-card p{font-size:11px}.evidence-board h2{font-size:24px}.evidence-board .section-top{flex-direction:column;gap:10px}.ending-art{height:220px}.ending-pip{width:70px;height:85px;left:4%;bottom:14px}.ending-rescue{width:85%;bottom:15px;right:0}.rescue-timeline{gap:9px}.rescue-event{padding:8px;min-height:100px}.rescue-event svg{width:55px;height:55px}.rescue-event>span{font-size:10px}.rescue-explanation{padding:16px;font-size:13px}.ending-lead{font-size:15px}.ending-quote{font-size:18px}.mystery-ending h1{font-size:36px}.mystery-ending .button-row{flex-direction:column;align-items:stretch}.case-opening{gap:10px}.case-opening svg{width:48px;height:48px;flex-basis:48px}.case-opening p{font-size:12px}.chapter-clue svg{width:48px;height:48px;flex-basis:48px}.chapter-clue p{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.moon-mist{animation:none;opacity:.5}.world-easter{transition:none}.world-easter:hover,.world-easter:focus-visible{transform:none}}
 .journal-scene>.scene{height:260px;border-radius:17px;border:1px solid #8e7351;background-position:center 65%}.journal-scene .world-easter{opacity:.72}.journal-scene .rabbit{width:86px;height:105px}.secret-item .text-button{font-size:10px;margin-top:5px;color:#765568}.secret-item small{font-size:9px;color:#8c7b6c}.secret-item.undiscovered:has(button){opacity:.9}@media(max-width:480px){.journal-scene>.scene{height:240px}}
+
+/* Storybook artwork checkpoint: keep the character readable in compact scenes. */
+.painted-scene,.scouting-board .world-stage>.painted-scene{background-image:linear-gradient(#18271d08,#20271c12),url('assets/mill-storybook.webp');background-color:#354033;background-position:center 64%}
+.hero .painted-scene{background-position:center 58%}
+.pip-art{object-fit:contain;user-select:none;pointer-events:none}
+.scene .rabbit{width:110px;height:165px;bottom:12px;left:18%}
+.hero .scene .rabbit{width:138px;height:207px;bottom:12px;left:16%}
+.scouting-board .world-stage{padding-bottom:150px}
+.scouting-board .world-stage .rabbit{width:90px;height:135px;bottom:10px;left:18%}
+.scouting-board .pip-speech{left:40%;bottom:48px;max-width:210px;font-size:12px}
+.builder-dock:has(.scout-prompt) .dock-heading{display:none}
+.builder-dock:has(.scout-prompt) .piece-tray{min-height:0;padding:0}
+.scout-prompt{font-size:13px}
+.journal-scene .rabbit{width:112px;height:168px}
+.ending-art.storybook-ending{height:auto;aspect-ratio:3/2;background:#394331;border-color:#9c8154}
+.rescue-painting{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:480px){
+ .scouting-board .world-stage .rabbit{left:18px;width:86px;height:129px}
+ .scouting-board .pip-speech{left:120px;right:12px;bottom:51px;font-size:11px;max-width:none}
+ .hero .scene .rabbit{width:120px;height:180px}
+ .ending-art.storybook-ending{aspect-ratio:3/2;height:auto}
+}
+
+:root{--muted:#b7b59b;--paper:#242c24;--line:#525943;--white:#30382b}
+body{background:radial-gradient(ellipse at 50% 0,#414830 0,transparent 65%),#22291f}
+header{background:#262e23ed;border-color:#566044}
+.trail-destination,.village-landscape{background-color:#30382a;border-color:#626646}
+.trail-destination p,.ending-lead{color:#c7c5ab}
+.evidence-card.sealed,.village-landscape .building.unbuilt{background:#30392b;border-color:#606849;color:#b9bea0}
+.rescue-event{background:#35402f;border-color:#70704d}
+.rescue-event.active{background:#4c5037;border-color:#d2a364}
+.ending-stats span{border-color:#65704d;color:#bfc3a6}

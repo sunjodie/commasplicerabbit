@@ -74,3 +74,9 @@ Case notes unlock after each completed chapter. The final reward opens an illust
 This is a graphics and narrative-interface pass. **The proposed single-answer/FANBOYS/expanded-semicolon/structure-adaptive mystery question bank is still awaiting implementation.** The existing question data and learning scheduler are unchanged by this checkpoint.
 
 31 automated checks pass, including optional discovery persistence, collection deduplication, evidence unlocks, ending availability, saved-review continuity and scene revisits. The generated backdrop and rescue SVG artwork were visually inspected; real-browser layout, touch and screen-reader testing remain pending.
+
+## Autumn storybook artwork update
+
+Pip now wears an original plum cape, rust scarf and satchel in a softly painted style. New moss-and-amber mill scenery and a full rescue painting give the mystery a warmer Halloween atmosphere. Pip is larger in the compact play scene, with his speech bubble alongside him. All three generated WebP assets live under assets/; full prompts and provenance are in assets/ARTWORK.md. The six discoveries retain their existing SVG illustrations.
+
+31 automated checks pass. Artwork inspected; real-browser rendering and student playtesting remain pending. The question bank and scheduler are unchanged.
