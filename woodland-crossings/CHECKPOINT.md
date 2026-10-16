@@ -52,3 +52,15 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Village rewards now use individual building illustrations, with a visual restoration scene and chosen decorations.
 - Stable tool trays avoid exposing answer metadata; supports keyboard/tap alternatives to dragging.
 - 17 automated tests pass, including execution of actual UI event handlers through a minimal DOM adapter. Character/building SVG artwork visually inspected. Real browser rendering, touch and student playtesting still pending.
+
+# Checkpoint 05 — compact scouting and challenge
+
+- Reduced desktop header, world, typography, tray and destination dimensions; removed duplicated sentence readback.
+- Every route starts as continuous text with no preselected join or open tool tray. The student must decide which commas to inspect and can submit a route without changing it.
+- Rewrote the opening/second-stage tasks and early transfer tasks with natural, longer clauses, correct dependent openings and several joins. Correct/incorrect routes are interleaved immediately.
+- Only the first faulty join is exposed after an unsuccessful submission.
+- Added permanent beacon sparks for independent story solves and optional single-sentence contracts. A valid grammatical full-stop repair under a contract receives a neutral goal reminder, not a mistake penalty.
+- Contract eligibility is based on visible sentence shape so its availability does not leak answers.
+- 24 automated checks pass, including actual UI handler execution for scouting, contract feedback and beacon persistence. Real browser layout/touch QA and real-student engagement testing remain pending.
+
+- Independent return reviews and bonus-route recall can recover missing sparks for the skill’s matching expedition beacon. Memory/bonus trails do not display story-only two-spark contracts.
