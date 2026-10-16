@@ -56,3 +56,17 @@ header{background:#262e23ed;border-color:#566044}
 .rescue-event{background:#35402f;border-color:#70704d}
 .rescue-event.active{background:#4c5037;border-color:#d2a364}
 .ending-stats span{border-color:#65704d;color:#bfc3a6}
+
+/* Painted village landmarks share the autumn storybook character palette. */
+.painted-landmark{overflow:hidden;filter:drop-shadow(0 5px 5px #111b1640)}
+.landmark-unbuilt{opacity:.3;filter:grayscale(.75)}
+.village-landscape{background:radial-gradient(ellipse at 20% 35%,#4b5334 0,transparent 42%),radial-gradient(ellipse at 85% 70%,#4c4934 0,transparent 44%),#303c2a;border-color:#73794e;gap:22px;padding:25px}
+.village-landscape:before{border-color:#a98b57;opacity:.3;border-width:9px}
+.village-landscape .building{background:linear-gradient(145deg,#3e4934f5,#303d2df5);border-color:#8c8257;box-shadow:0 4px 0 #1d2b20;color:#f0d6a6;padding:14px 12px;border-radius:22px}
+.village-landscape .building:nth-child(even){transform:none}
+.village-landscape .building .building-art{width:180px;height:180px;max-width:100%;filter:drop-shadow(0 4px 5px #111c1740)}
+.village-landscape .building.unbuilt{background:#2b3829;border-color:#66744c;opacity:1}
+.village-landscape .building p{color:#d5c59e;font-size:12px;line-height:1.6}
+.village-landscape .building.unbuilt p{color:#b6b99a}
+.reward-reveal{background:radial-gradient(ellipse,#ddce9d,#b4bd8a 65%)}
+@media(max-width:600px){.village-landscape{padding:16px 12px;gap:13px}.village-landscape .building{padding:10px 8px}.village-landscape .building .building-art{width:140px;height:140px}.village-landscape .building h3{font-size:17px}}

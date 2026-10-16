@@ -83,3 +83,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Gamification reviewer inspected layout rules and markup; applied character visibility and dock-density suggestions.
 - All 31 automated checks pass; syntax and whitespace checks pass. Images visually inspected. Browser/touch/contrast QA and student playtesting remain pending.
 - Focused graphics pass only. Question-bank rewrite remains paused; content.js and engine.js unchanged.
+
+# Checkpoint 08 — painted village landmarks
+
+- Replaced all six flat village landmark icons and the bonus fountain emoji with seven original painted landmarks in a shared transparent atlas. The same artwork appears on the trail map, reward reveal and destination previews.
+- Updated village cards and ground to moss greens, amber details and warm wood; increased illustration space and aligned cards evenly. Unbuilt places remain visibly muted, with existing labels and unlock rules.
+- Preserved saved rewards, beacon status, decorations and grammar progression.
+- All 31 automated checks pass; JavaScript syntax and whitespace checks pass. Atlas visually inspected; real-browser rendering/touch QA remains pending.

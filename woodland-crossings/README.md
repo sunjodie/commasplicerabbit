@@ -80,3 +80,7 @@ This is a graphics and narrative-interface pass. **The proposed single-answer/FA
 Pip now wears an original plum cape, rust scarf and satchel in a softly painted style. New moss-and-amber mill scenery and a full rescue painting give the mystery a warmer Halloween atmosphere. Pip is larger in the compact play scene, with his speech bubble alongside him. All three generated WebP assets live under assets/; full prompts and provenance are in assets/ARTWORK.md. The six discoveries retain their existing SVG illustrations.
 
 31 automated checks pass. Artwork inspected; real-browser rendering and student playtesting remain pending. The question bank and scheduler are unchanged.
+
+## Painted village landmarks
+
+All six expedition rewards and the bonus fountain now use original painted autumn landmarks from assets/village-storybook.webp, shared across village cards, the trail map and reward screens. Cards use moss greens and warm amber accents. Saved rewards and unlock rules are unchanged. Full generation prompt in assets/ARTWORK.md. 31 automated checks pass; browser layout/touch QA remains pending.
