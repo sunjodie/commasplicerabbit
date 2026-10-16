@@ -90,3 +90,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Updated village cards and ground to moss greens, amber details and warm wood; increased illustration space and aligned cards evenly. Unbuilt places remain visibly muted, with existing labels and unlock rules.
 - Preserved saved rewards, beacon status, decorations and grammar progression.
 - All 31 automated checks pass; JavaScript syntax and whitespace checks pass. Atlas visually inspected; real-browser rendering/touch QA remains pending.
+
+# Checkpoint 09 — landmark atlas clipping fix
+
+- Fixed neighbouring atlas cells appearing inside wide map thumbnails: each landmark now uses a square CSS background tile instead of an SVG image viewport. Background painting stays within the container.
+- Map thumbnails use square proportions and a consistent maximum width; map palette now matches the moss-green village.
+- 31 automated checks and JavaScript/whitespace checks pass. Browser layout QA remains pending.

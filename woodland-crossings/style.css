@@ -70,3 +70,11 @@ header{background:#262e23ed;border-color:#566044}
 .village-landscape .building.unbuilt p{color:#b6b99a}
 .reward-reveal{background:radial-gradient(ellipse,#ddce9d,#b4bd8a 65%)}
 @media(max-width:600px){.village-landscape{padding:16px 12px;gap:13px}.village-landscape .building{padding:10px 8px}.village-landscape .building .building-art{width:140px;height:140px}.village-landscape .building h3{font-size:17px}}
+
+/* Square background tiles cannot expose neighbouring atlas cells. */
+.path-map .map-stop .painted-landmark{width:100%;max-width:110px;height:auto;aspect-ratio:1;margin:0 auto;display:block}
+.path-map{background:linear-gradient(135deg,#35402f,#293628);border-color:#69714f}
+.path-map .map-stop.active{background:#4c5035}
+.path-map .map-stop small{color:#c1c4a5}
+
+.building-art.painted-landmark{background-image:url('assets/village-storybook.webp');background-size:300% 300%;background-repeat:no-repeat;aspect-ratio:1;height:auto}
