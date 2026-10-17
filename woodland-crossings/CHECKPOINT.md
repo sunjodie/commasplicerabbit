@@ -163,3 +163,8 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Moved shared editing rules into a clearly labelled on-demand modal. Reading rules does not mark a task as supported. Added an explicit tap-to-edit instruction and tightened mobile card/action spacing.
 - Moved View artwork into Pip’s dialogue row as a labelled 44px expand control. Stacked art/question/answers and full artwork framing remain.
 - 45 automated checks pass; JS syntax and whitespace checks pass. Tests cover exact rendered report wording and paragraph boundaries, rules-modal state safety and artwork-control placement. Actual mobile browser/touch QA remains pending.
+
+# Checkpoint 19 — smaller mobile reading type
+
+- Reduced sentence and passage text at widths up to 760px from 18px / 1.8 line-height to 16px / 1.6 to reduce scrolling. Instructions remain 12–13px; action controls and punctuation touch areas retain 44px targets.
+- 45 automated checks pass and whitespace checks pass. Deployed-device rendering remains to be checked.
