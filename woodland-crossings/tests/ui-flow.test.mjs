@@ -39,3 +39,9 @@ test('a real grammar error is highlighted ahead of a grammatical non-target repa
  const ui=setup();const {fresh}=await import('../engine.js');const s=fresh(),q=STORY[29];s.story=29;s.activeId=q.id;s.activeChoices=q.valid.map(v=>v[0]);s.activeChoices[3]='and';s.activeChoices[4]='comma';ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?mixed-brief-error');ui.click('play');ui.click('check');
  assert.equal(ui.app.querySelector('[data-join="4"]').attrs['aria-pressed'],'true');assert.equal(ui.app.querySelector('[data-join="3"]').attrs['aria-pressed'],'false');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,1);
 });
+
+test('each chapter loads its own local location in play and saved scene revisits',async()=>{
+ const {fresh}=await import('../engine.js');const {SCENES}=await import('../scenery.js');assert.equal(new Set(SCENES.map(x=>x.asset)).size,6);
+ for(let stage=0;stage<6;stage++){const ui=setup(),s=fresh();s.story=stage*5;s.introduced=[0,1,2,3,4,5];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-scenery-'+stage);ui.click('play');assert.ok(ui.app.innerHTML.includes(`assets/${SCENES[stage].asset}`));assert.ok(ui.app.innerHTML.includes(SCENES[stage].indoors?'indoor-scene':'outdoor-scene'));}
+ const ui=setup(),s=fresh();s.story=30;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?scenery-revisit');ui.click('endingSecrets');ui.fixed.modalBody.querySelector('[data-revisit="3"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/assets\/map-room.webp/);
+});

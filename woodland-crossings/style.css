@@ -82,3 +82,9 @@ header{background:#262e23ed;border-color:#566044}
 .editing-brief{font-size:13px;line-height:1.55;margin:0 0 12px;padding:9px 12px;border-left:3px solid #a37947;background:#e8d7b4;color:#4b4135;letter-spacing:0}
 .passage-chart .sentence{white-space:pre-line;font-size:clamp(16px,1.7vw,20px);line-height:1.85}
 .piece-tray{gap:8px}.sentence-piece{min-width:72px}.sentence-piece>span{font-size:12px}
+
+/* Each investigation chapter supplies its own painted location. */
+.scene.painted-scene,.hero .scene.painted-scene,.scouting-board .world-stage>.scene.painted-scene,.journal-scene>.scene.painted-scene{background-image:linear-gradient(#18271d08,#20271c12),var(--scene-art,url('assets/mill-storybook.webp'));background-position:var(--scene-focus,50% 64%);background-size:cover}
+.indoor-scene .moon-mist{display:none}
+.indoor-scene .forest-sparkles{opacity:.35}
+.scene-5 .moon-mist{opacity:.3;animation:none}

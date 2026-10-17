@@ -107,3 +107,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Old saves keep story progress, village rewards, discoveries and beacons. Old active question IDs and blanket review dates migrate safely. The optional one-sentence contract is hidden to avoid conflicts with the new briefs.
 - Gamification reviewer checked targets, narrative continuity and progression; corrected mismatched recovery wording, repeated transition templates, the null-demo lesson path and mixed-error attribution.
 - 25 automated checks pass, including full independent and fully supported routes, selective repetition/retirement, FANBOYS/semicolon coverage, save migration and actual UI handler regressions. Syntax and whitespace checks pass. Browser rendering/touch/contrast and real-student testing remain pending.
+
+# Checkpoint 11 — locations change with the mystery
+
+- The six chapters now use six distinct painted locations: the original lantern-lit mill, foggy footprint trail, empty bell workshop, map room, village crossroads and hillside at dawn.
+- Added five original scenery assets, optimized to local 1200 × 800 WebP files. Full built-in generation prompts in assets/ARTWORK.md.
+- A chapter scenery manifest drives play, home and reached-scene revisits. Each location has its own focal position; indoor scenes suppress outdoor fog, and the final hillside has lighter mist.
+- Existing questions, save state, discoveries and rewards are unchanged.
+- 26 automated checks pass, including all six chapter asset selections and saved-location revisits. Art visually inspected; real-browser cropping/layout/touch QA remains pending.

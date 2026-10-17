@@ -1,5 +1,6 @@
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js';
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
+import {SCENES} from './scenery.js';
 import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS} from './content.js';
 import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js';
 const KEY='woodland-crossings-v1';let storageOK=true,state;
@@ -12,8 +13,8 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{stora
 function say(text){document.querySelector('#announce').textContent=text;}
 function chime(){if(!sound)return;try{const ac=new(window.AudioContext||window.webkitAudioContext)();[523,659,784].forEach((hz,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.frequency.value=hz;g.gain.setValueAtTime(.035,ac.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+i*.1+.22);o.start(ac.currentTime+i*.1);o.stop(ac.currentTime+i*.1+.23);});setTimeout(()=>ac.close(),800);}catch{}}
 function scene(crossed=false,fitted=false,stage=chapter(state)){
- const egg=EGGS[stage%6],found=discoveryList(state.easterEggs).includes(egg.id);
- return `<div class="scene scene-${stage} painted-scene ${crossed||fitted?'fitted':''}">${landscape(stage)}<div class="moon-mist" aria-hidden="true"></div><div class="forest-sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="rabbit ${crossed?'crossed':''}" aria-hidden="true">${rabbitArt(crossed)}</div>${crossed?'<div class="found-supply" aria-hidden="true">✦</div>':''}<button class="world-easter egg-${stage} ${found?'found':''}" data-egg="${egg.id}" aria-label="${found?egg.name+' — found':'Inspect the small woodland shape'}" title="${found?egg.name:'Something small is hiding here…'}">${tokenArt(egg.icon)}</button></div>`;
+ const setting=SCENES[stage]||SCENES[0],egg=EGGS[stage%6],found=discoveryList(state.easterEggs).includes(egg.id);
+ return `<div class="scene scene-${stage} painted-scene ${setting.indoors?'indoor-scene':'outdoor-scene'} ${crossed||fitted?'fitted':''}" style="--scene-art:url('assets/${setting.asset}');--scene-focus:${setting.focus}" data-location="${e(setting.name)}">${landscape(stage)}<div class="moon-mist" aria-hidden="true"></div><div class="forest-sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="rabbit ${crossed?'crossed':''}" aria-hidden="true">${rabbitArt(crossed)}</div>${crossed?'<div class="found-supply" aria-hidden="true">✦</div>':''}<button class="world-easter egg-${stage} ${found?'found':''}" data-egg="${egg.id}" aria-label="${found?egg.name+' — found':'Inspect the small woodland shape'}" title="${found?egg.name:'Something small is hiding here…'}">${tokenArt(egg.icon)}</button></div>`;
 }
 function bindEasterEggs(root=app){root.querySelectorAll('[data-egg]').forEach(b=>b.onclick=()=>{
  const egg=EGGS.find(x=>x.id===b.dataset.egg);if(!egg)return;

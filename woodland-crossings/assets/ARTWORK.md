@@ -1,5 +1,32 @@
 # Lantern mill artwork
 
+## Chapter location extension
+
+Five original location backgrounds generated with the built-in image-generation tool, each resized to 1200 × 800 and encoded as WebP (quality 78). `scenery.js` maps them to chapters 2–6; chapter 1 retains `mill-storybook.webp`. No reference images are bundled.
+
+Shared prompt: Use case: illustration-story. Asset type: landscape environment background for a cozy Halloween comma-splice mystery browser game. Original softly painted gouache children's storybook art, velvety moss greens, muted autumn ochre, plum shadows, warm amber lantern pools, tactile wood and foliage. Horizontal 3:2 composition. IMPORTANT: key location details must stay in the middle and lower-middle horizontal band so the image works as a shallow wide game background. Upper middle subdued for an opaque reading panel; clear ground across foreground for separate rabbit sprite and interactive tiny hidden objects. No characters, letters, numbers, UI, logos, watermark, or giant foreground props. Charming and mysterious, never frightening.
+
+### footprint-trail.webp
+
+Foggy streambank trail at night, viewed low across winding wet mud. Several clear deep bootprints lead from lower left towards a simple wooden gate at right, beside two circular impressions where a heavy bell was set down. Reeds, ferns and autumn leaves, faint moonlight through bare branches, a small hanging lantern on the gate. Crooked mill barely visible far away, not dominant. Cool sage fog, silver water, amber accents. Distinct setting: outdoors beside reeds; no central bridge or large mill building.
+
+### bell-workshop.webp
+
+Inside an old timber mill workshop at night. Wide low room with rough floorboards and heavy rafters. Empty freestanding wooden mounting for a portable warning bell at right, missing bell evident by vacant mounting and carrying strap hook. Tiny scrap of green cloth on a nail. Workbench, coils of rope, wooden tools, an amber oil lamp, leaves blown under the door. Outside through a side window blue moonlit forest. Warm amber interior contrasts with cool blue window. No bell present, no readable labels. Clear floor foreground.
+
+### map-room.webp
+
+Inside a cozy old mill records room, intimate plum-brown and amber candlelight. A rustic desk on the RIGHT with an unfolded parchment route map, one thick curved line detouring around a tiny drawn bridge; absolutely no written words. An open ledger with abstract short strokes but no readable script. Shelves of rolled blank maps, autumn leaves at window, brass candle lamp. Clear floor and worn rug foreground LEFT for rabbit sprite. View across the room, not top-down desk close-up. Distinct quiet indoor archival atmosphere.
+
+### witness-crossroads.webp
+
+A foggy woodland village crossroads at late night, three divergent cobbled paths between small cozy timber buildings. A bakery shutter at left, a modest clock tower in background with round clock face but NO numerals, a narrow path towards river at right. Hanging amber lanterns and small smiling Halloween pumpkins, autumn bunting and leaves, warm windows. Misty indigo blue sky and silver fog distinguish this late-night witness chapter. No characters. Clear foreground path for separate sprite.
+
+### hillside-dawn.webp
+
+A high woodland hillside path just before sunrise. View along mossy track curving down towards the SHELTERED PORCH behind an old watermill at far right; porch lantern glows warmly, no people visible. Far below on LEFT a flooded upstream stream crossing with two visibly missing wooden planks. Rust-gold autumn trees frame a pale peach dawn sky, fog thinning in valley, a few small lanterns along safe higher path. Hopeful mystery resolution, gentle amber and soft rose lighting, broad open foreground for rabbit sprite. Clearly different from flat riverbank view.
+
+
 `lantern-mill.webp` is original scenery created with the built-in image-generation tool for this game. The user supplied three mood references; those reference images are not bundled in this repository. The generated scene was resized to 1200 × 800 and encoded as WebP (202,540 bytes). Original source generation remains in the task workspace.
 
 ## Generation prompt
