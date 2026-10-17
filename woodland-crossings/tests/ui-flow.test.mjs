@@ -57,7 +57,7 @@ test('restart is reachable from the ending and from save status during a questio
 });
 
 test('an already-correct note accepts only the unchanged commas under its visible rules',async()=>{
- const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','semi','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/already correctly punctuated|Add only|editing-goals/);assert.match(ui.app.innerHTML,/Keep correct commas/);ui.click('check');assert.match(ui.app.innerHTML,/not the requested edit/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('comma');ui.click('check');assert.ok(document.querySelector('#next'));
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','semi','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/already correctly punctuated|Add only|editing-goals/);ui.click('editingRules');assert.match(document.querySelector('#modalBody').innerHTML,/Keep correct commas/);ui.click('closeModal');ui.click('check');assert.match(ui.app.innerHTML,/not the requested edit/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('comma');ui.click('check');assert.ok(document.querySelector('#next'));
 });
 
 test('artwork has a separate panel and an unobstructed view without altering the question',async()=>{
@@ -82,4 +82,15 @@ test('meaning-based briefs keep exact-word hints behind an explicit request',asy
 
 test('grammatical non-target feedback does not reveal the requested conjunction',async()=>{
  const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['semi'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?neutral-hints');ui.click('play');ui.click('check');assert.match(ui.app.innerHTML,/Grammatical, but not the requested edit/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Comma \+ but|Add only/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
+});
+
+test('compact mobile controls expose rules on demand without altering edits or support',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=3;s.activeId='m4';s.activeChoices=['comma','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?compact-mobile');ui.click('play');
+ assert.match(ui.app.innerHTML,/class="join-anchor">rope<button/);assert.match(ui.app.innerHTML,/class="join-anchor">tarpaulin<button/);assert.doesNotMatch(ui.app.innerHTML,/class="editing-rules"/);assert.match(ui.app.innerHTML,/Tap a comma to edit/);
+ const speech=ui.app.innerHTML.slice(ui.app.innerHTML.indexOf('class="pip-speech"'),ui.app.innerHTML.indexOf('class="case-workspace"'));assert.match(speech,/id="viewArtwork"/);assert.match(speech,/aria-label="View artwork"/);
+ const before=JSON.parse(ui.db.get('woodland-crossings-v1'));ui.click('editingRules');assert.match(ui.fixed.modalBody.innerHTML,/Keep correct commas/);ui.click('closeModal');const after=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(after.activeChoices,before.activeChoices);assert.equal(after.activeHelp,false);ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('inline joins preserve report wording, paragraph breaks and full-stop capitalisation',async()=>{
+ const ui=setup();const {fresh,renderSentence}=await import('../engine.js');const q=STORY[29],s=fresh();s.story=29;s.activeId=q.id;s.activeChoices=q.valid.map(v=>v[0]);ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?inline-report');ui.click('play');const sentence=ui.app.innerHTML.split('aria-label="Route to scout">')[1].split('</div>')[0];const text=sentence.replace(/<[^>]*>/g,'').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');assert.equal(text,renderSentence(q,s.activeChoices));assert.match(text,/\n\n/);assert.match(text,/\. By dawn/);ui.click('check');assert.ok(document.querySelector('#next'));
 });

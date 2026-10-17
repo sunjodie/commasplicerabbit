@@ -76,3 +76,5 @@ The play screen stacks artwork, question and answer tools on all screens. The vi
 The supplied Mureka track, 秋夜オルゴール, is bundled locally. Sound enables quiet looping BGM and success chimes; playback pauses when the tab is hidden. It does not autoplay on page load. Provenance and encoding details are in assets/MUSIC.md. Browser playback/layout/touch verification remains pending.
 
 Desktop artwork now grows to 900px wide. Pip is a consistently proportioned guide beside his dialogue, outside the changing scene. Student briefs describe meaning rather than naming conjunctions; exact-word guidance requires Ask Pip for a hint. Chapter-wide trays avoid competing BUT/YET choices while retaining all FANBOYS practice. QUESTIONS.md separates student briefs from on-request help.
+
+Mobile reading uses compact inline punctuation with larger invisible tap areas, so commas remain beside their words. Editing rules open on demand without counting as a hint; View artwork is a labelled expand button beside Pip’s dialogue. The mobile screenshot review and Figma samples are recorded in UI_REVIEW.md.

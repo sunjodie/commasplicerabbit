@@ -139,3 +139,27 @@ dialog:has(#confirmRestart)>#closeModal{display:none}
 .pip-guide{display:block;flex:0 0 54px;width:54px;height:81px}
 .pip-guide .pip-art{display:block;width:100%;height:100%;object-fit:contain}
 @media(max-width:760px){.adventure-board.art-first .world-stage{max-width:540px}.pip-guide{flex-basis:44px;width:44px;height:66px}.adventure-board.art-first .world-stage .pip-speech{min-height:70px}}
+
+/* Compact reading flow: punctuation belongs to its preceding word. */
+.join-anchor{white-space:nowrap}
+.art-first .case-workspace .sentence{line-height:1.8}
+.art-first.scouting-board .reading-chart .join{position:relative;display:inline;vertical-align:baseline;min-width:0;min-height:0;margin:0;padding:0 1px;border:0;border-bottom:2px dotted #927552;border-radius:2px;background:transparent;font:inherit;line-height:inherit;box-shadow:none;letter-spacing:inherit;touch-action:manipulation}
+.art-first.scouting-board .reading-chart .join:after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max(100%,44px);height:44px}
+.art-first.scouting-board .reading-chart .join.selected{border:0;border-bottom:2px solid #735167;background:#e2ceb2;outline:2px solid #9b7a55;outline-offset:2px}
+.art-first.scouting-board .reading-chart .join.bad{border-bottom-color:#a24445;background:#f0c9ab}
+.adventure-board.art-first .world-stage .pip-speech{margin-top:8px;gap:8px}
+.pip-message{flex:1;min-width:0}
+.adventure-board.art-first .artwork-link{flex:0 0 44px;display:grid;place-items:center;width:44px;min-height:44px;margin:0;padding:0;color:#755369;font-size:23px;text-decoration:none;border:1px solid #c6aa7f;border-radius:9px}
+.editing-rules-toggle{display:block;min-height:44px;margin:-5px 0 6px;padding:8px 0;color:#755369;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){
+ .adventure-board.art-first{gap:10px;padding:10px}
+ .adventure-board.art-first .world-stage .pip-speech{padding:2px 8px;min-height:66px}
+ .adventure-board.art-first .case-workspace>.reading-chart{padding:12px 14px}
+ .art-first .editing-brief{padding:0;border:0;background:transparent;font-size:13px;line-height:1.5;margin:0}
+ .art-first .editing-rules-toggle{margin:0 0 4px}
+ .art-first .case-workspace .sentence{font-size:18px;line-height:1.8}
+ .adventure-board.art-first>.builder-dock{padding:10px 14px}
+ .art-first .scout-prompt{font-size:12px;line-height:1.5;padding:0}
+ .art-first .builder-dock .actions{margin-top:8px;padding-top:8px;gap:6px}
+ .art-first .builder-dock .actions button{min-height:44px}
+}

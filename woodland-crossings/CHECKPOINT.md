@@ -155,3 +155,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 - Replaced the bundled BGM with the recording from the user’s new Mureka share Aewi4tAvoYviB9sT3od2oN. Same title, different audio. Updated credit/provenance and used a new filename to avoid stale browser caches.
 - Quiet opt-in playback, looping and hidden-tab pause behavior are unchanged. MP3 decode verified; 43 automated checks pass. Browser audio playback remains to be verified after deployment.
+
+# Checkpoint 18 — mobile screenshot review
+
+- Reviewed the supplied Android screenshot and built editable reading/action samples in the existing Figma audit: https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqmj?node-id=15-2 . Checked 320px and 390px inventory-note layouts plus a narrow long-passage stress sample. Product fonts verified; final Figma screenshot has no clipped text or controls. The samples omit artwork and browser chrome and are not a browser capture.
+- Reworked sentence markup so each editable punctuation mark stays attached to the preceding word. Removed wide visible button padding while retaining an expanded 44px touch area, selected/error styling, keyboard controls and accessible labels. Paragraphs, word order and full-stop capitalisation are preserved.
+- Moved shared editing rules into a clearly labelled on-demand modal. Reading rules does not mark a task as supported. Added an explicit tap-to-edit instruction and tightened mobile card/action spacing.
+- Moved View artwork into Pip’s dialogue row as a labelled 44px expand control. Stacked art/question/answers and full artwork framing remain.
+- 45 automated checks pass; JS syntax and whitespace checks pass. Tests cover exact rendered report wording and paragraph boundaries, rules-modal state safety and artwork-control placement. Actual mobile browser/touch QA remains pending.

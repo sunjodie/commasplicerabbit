@@ -24,3 +24,9 @@ The game now separates artwork and question content into a vertical artwork → 
 Desktop illustration maximum increased from 540px to 900px. Full 3:2 framing and stacked reading order remain. Pip is outside the artwork in a 54×81px guide slot (44×66px on mobile), preserving the original 320×480 image proportions. Scene close-ups no longer contain an out-of-scale overlay.
 
 Default briefs describe relationships; explicit conjunction chips are removed. Exact-word hints are opt-in, and repeated failed attempts do not auto-reveal answers. Independent source review checked the goals against stable chapter trays. 43 automated checks pass. This pass has no new Figma/browser capture; responsive rendering remains to be checked in the deployed game.
+
+## Android screenshot review — 17 October
+
+The supplied screenshot showed visually detached comma controls, repeated instructions consuming several lines, and a separate artwork link row. These have been addressed in code. Punctuation is attached to its preceding word with a non-wrapping anchor and an expanded 44px hit area. Mobile sentence type remains 18px with 1.8 line-height. Editing rules remain available in a modal, and the default dock explicitly explains tapping a comma. The artwork expander shares the dialogue row and has a 44px target and accessible name.
+
+Figma reading/action samples: https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqmj?node-id=15-2 . Reviewed the final screenshot of 320px and 390px note layouts and a 248px passage stress sample. DM Sans and Fraunces verified. No text or controls clip in these samples. They exclude artwork/browser chrome and do not model browser hit testing. 45 handler/engine/media checks pass; actual responsive browser rendering and finger hit accuracy still require deployed-device verification.
