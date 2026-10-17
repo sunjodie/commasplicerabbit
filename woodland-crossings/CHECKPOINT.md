@@ -174,3 +174,8 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Finished STORY.md: a complete six-chapter story of approximately 3,100 words, preserving the approved opening and developing the midnight-bell legend into a fair-play rescue mystery. Pip and Mara have distinct strengths, consequential mistakes and essential rescue roles.
 - Character-development subagent produced the draft and companion STORY_NOTES.md. Final editorial review clarified the unusual winter light, witness dialogue, bell signalling and the safe rescue route. The notes record chronology, clue payoffs, character direction and a flexible scene outline.
 - User requested task 1 only, then a pause. No question bank, art, gameplay or UI changes were made in this pass. The story is not yet integrated into the deployed game.
+
+# Checkpoint 21 — dialogue revision
+
+- Revised dialogue throughout STORY.md with explicit speech tags and more natural phrasing. Replaced clipped, cryptic exchanges with character-specific speech, clarified the disagreement after the bank gives way, and made the reunion and final conversation less mannered.
+- Preserved the six-chapter plot, physical clues and rescue sequence. No questions, artwork, game code or UI changes. Reviewed speaker attribution and punctuation; whitespace checks pass.

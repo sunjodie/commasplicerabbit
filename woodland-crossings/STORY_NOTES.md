@@ -87,3 +87,7 @@ These thirty natural stopping points are an adaptation aid only. They should not
 28. Bram acknowledges his misjudgement, supper restores warmth.
 29. Apprentice repairs Mara's lantern.
 30. Morning pumpkin coda and two rabbits walking home.
+
+## Dialogue revision
+
+The current draft uses explicit speech tags throughout so the reader can follow each speaker. Short, cryptic exchanges were revised into ordinary spoken phrasing, with actions retained where they reveal hesitation or emotion. The bridge disagreement, reunion and closing conversation have fuller responses. Plot and clue logic are unchanged.

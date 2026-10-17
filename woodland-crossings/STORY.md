@@ -8,9 +8,9 @@ Pip reached up to straighten it.
 
 “Leave it,” Mara said. “You'll pull the whole string down.”
 
-“I'm helping.”
+“I'm only trying to straighten it,” Pip said.
 
-“You said that about the cake stall.”
+“You were trying to help at the cake stall too,” Mara reminded her.
 
 There was still icing on Pip's cape cuff. She folded it out of sight and followed Mara past the stalls, where the last villagers were stacking cups and shaking crumbs from their tablecloths. Warm air drifted from the bakery, carrying the smell of apples and the comfortable suggestion that somebody would soon be eating something indoors.
 
@@ -18,15 +18,15 @@ Mara held her paper lantern beneath her coat. She had spent most of the afternoo
 
 They were passing the fountain when Pip stopped.
 
-“That window.”
+“Mara, look at the upstairs window,” Pip said.
 
 Across the stream, above the black wheel of the old mill, a light moved behind the shutters. The wheel had stopped for winter a week earlier, and the upper room had been dark ever since.
 
-Mara followed her gaze. “Bram must still be working.”
+“Bram must still be working,” Mara said, following her gaze.
 
-“His cottage was dark when we came past.”
+“But his cottage was dark when we came past,” Pip said.
 
-“That would explain why.”
+“Perhaps he hasn't gone home yet,” Mara replied.
 
 Pip was about to answer when a head and a broad pair of shoulders crossed the window. She recognised the high collar of Bram's green coat. He bent out of sight, and something scraped heavily across the floor.
 
@@ -34,7 +34,7 @@ The sound reached them between two gusts of rain.
 
 “What's he doing up there?” Pip asked.
 
-Mara looked towards the bakery. “We could ask him in the morning.”
+“We could ask him in the morning,” Mara suggested, looking towards the bakery.
 
 At the last fair, Bram had told them about the mill bell. They had been sitting beside his stove with hot cups between their paws, which was a very pleasant place to hear a dreadful story.
 
@@ -48,7 +48,7 @@ Mara had refused to take the mill path for a week. Pip had taken it twice, in da
 
 “It was a story,” Mara said now.
 
-“I know.”
+“I know it was,” Pip said, though she was still watching the window.
 
 The light disappeared. In the darkness that followed, the stream sounded much louder than it had earlier.
 
@@ -56,7 +56,7 @@ Pip started towards the mill lane.
 
 “His cottage is the other way,” Mara said.
 
-“He might need a hand.”
+“He might need a hand,” Pip said over her shoulder.
 
 Mara hesitated beneath the dripping pumpkins, then tucked her lantern more securely inside her coat and went after her.
 
@@ -84,7 +84,7 @@ Mara turned up the lamp. Its light reached a wooden crate, a bundle of reeds and
 
 “He went out in a hurry,” Pip said.
 
-“Or came in.”
+“He might have been coming in,” Mara pointed out. “We don't know yet.”
 
 Pip looked at the cloth again. She had begun imagining Bram pulled backwards through the doorway, his coat tearing on the latch. She did not say this to Mara.
 
@@ -96,17 +96,15 @@ The window looked across the stream. Pip put her face near the glass, cupping he
 
 Pip waited until the branch moved again.
 
-“No.”
+“No, it's only a branch,” she said.
 
 They went down without touching anything else. On Bram's desk, a map lay open beneath a jar of pencils. A thick line crossed out the footbridge. Another line wound up the valley, past a place called Alder Arch, and returned along the opposite hillside. The ink had not dried where Bram had pressed hardest.
 
-Mara took the map to the lamp.
-
-“That's new.”
+“He's drawn something on here,” Mara said, taking the map to the lamp.
 
 Pip leaned over her shoulder. The scratched-out bridge looked almost like a closed eye.
 
-“Why wouldn't he leave a message?”
+“Wouldn't he have left us a message?” Pip asked.
 
 There was an unfinished message beside the map. Bram had written, *Please don't use the* and stopped there. The pen lay across the page, its nib resting in a small dark pool.
 
@@ -114,9 +112,7 @@ Mara slipped the map into her coat. Pip left the scrap of green cloth on the des
 
 Bootprints led from the porch towards the stream. Beside them were shallow circles, each about the width of a dinner plate. The first was clear enough to show a little nick in its rim.
 
-Pip crouched over it.
-
-“The bell.”
+“Look at the edge,” Pip said, crouching beside the circle. “It's the same shape as the bottom of the bell.”
 
 “He must have put it down,” Mara said.
 
@@ -126,11 +122,11 @@ They checked the open tool shed. Bram's spare boots stood neatly beside the wall
 
 The ringing came again.
 
-Mara turned towards it. “That was higher up.”
+“That sounded higher up,” Mara said, turning towards the trees.
 
-“Sound travels strangely in the rain.”
+“Bram says sound travels strangely in the rain,” Pip replied.
 
-It was something Bram had once told Pip. She wished she had not remembered who had said it.
+She wished she had not mentioned his name. Mara was looking towards the sound again.
 
 ## 3. The Wrong Path
 
@@ -138,11 +134,9 @@ The path to the bridge passed between the stream and a steep bank of hazel roots
 
 Pip could still make out the bootprints. She followed them with the lamp close to the ground, reluctant to lose the one clear thing Bram had left behind.
 
-Mara unfolded the map beneath an overhanging branch.
+“Pip, he's crossed this path out,” Mara said, unfolding the map beneath an overhanging branch.
 
-“He crossed this path out.”
-
-“Perhaps he didn't want anyone following him.”
+“Perhaps he didn't want anyone following him,” Pip said.
 
 Mara looked at her.
 
@@ -164,21 +158,17 @@ For a while, neither of them spoke. Mara kept hold of Pip's cape as they backed 
 
 At the hazel bank she let go.
 
-“I was talking to you.”
-
-“I know.”
-
-“You just went.”
+“I was trying to tell you,” Mara said. Her voice was still unsteady. “You didn't even wait.”
 
 Pip looked down at the lamp. Mud had splashed its glass. She wiped it with the clean part of her cuff, leaving the icing to mix with the rain.
 
-“I'm sorry.”
+“I'm sorry,” Pip said. “I thought I could see where he'd gone.”
 
 Mara took a breath, then another. She unfolded the map again, more carefully this time.
 
-“If that line means the bridge is dangerous, he knew before he left.”
+“He must have known there was something wrong with the bridge,” Mara said. “Why else would he cross it out?”
 
-Pip thought of the unfinished message. “Something stopped him writing.”
+“He hadn't finished the message either,” Pip said, remembering the pen on Bram's desk. “He must have left in a hurry.”
 
 They listened. The woods were full of little sounds that seemed about to become words. When the bell rang, Pip could not decide whether it came from the far bank or somewhere behind them.
 
@@ -194,9 +184,7 @@ This time Pip waited for her before turning towards the village.
 
 There were still lights in the square. The baker had propped her door open while two neighbours carried trestle tables inside. Pip was so relieved to see them that her account came out in the wrong order, beginning with the piece of coat and ending with the part where Mara had pulled her away from the bank.
 
-The baker put down her end of a table.
-
-“Stay here.”
+“Stay here, both of you,” the baker said, setting down her end of the table. “I'll get someone.”
 
 Within a few minutes, a search party was gathering beneath the bakery awning. Someone went to check Bram's cottage. Someone else brought ropes. Pip and Mara spread the map across a flour sack while the baker filled two cups with warm apple juice.
 
@@ -204,13 +192,13 @@ Within a few minutes, a search party was gathering beneath the bakery awning. So
 
 The ferryman, who had come to borrow the bakery's handcart for his equipment, shook his head.
 
-“It was on the hillside. Above the bend.”
+“I heard it up on the hillside,” he said. “Above the bend.”
 
 Pip looked from one to the other. In her mind the bell began moving without anybody carrying it, passing through the trees as easily as the light had passed behind the shutters.
 
 “Are you certain?” Mara asked the ferryman.
 
-“Certain enough. I'd just tied up the punt for the night. No one will be taking that out in this water.”
+“Yes,” the ferryman said. “I'd just tied up the punt for the night when I heard it. And no one's taking a boat out again until that water goes down.”
 
 The baker was certain too. She had been closing her upstairs shutters when she heard it, and had looked at the clock because she knew what people would say in the morning.
 
@@ -218,35 +206,35 @@ The baker was certain too. She had been closing her upstairs shutters when she h
 
 Mara smoothed a corner of the map. Pip waited for her to ask another question, then realised she was looking at the flour sack without seeing it.
 
-“What?” Pip said.
+“What are you thinking?” Pip asked.
 
 “You were shutting the bakery,” Mara told the baker. Then she turned to the ferryman. “But you hadn't tied up your boat yet.”
 
-The ferryman nodded. “I helped with the last crates first.”
+“That's right,” the ferryman replied. “I stayed to help with the last crates before I went down to the landing.”
 
-“So you didn't hear it at the same time.”
+“Then it could have been in both places,” Mara said. “You heard it later.”
 
 She put one finger beside the footbridge and moved another up the far bank. Pip followed it to a small hatched patch marked *Quarry Shelter*.
 
-“He was walking,” Pip said.
+“You think he carried it up there?” Pip asked.
 
-“Away from the water,” Mara added.
+“He might have done,” Mara said. “If he was getting away from the water.”
 
-The ferryman bent over the map. “The old shelter's above the flood line.”
+“The old shelter's above the flood line,” the ferryman said, bending over the map.
 
 “Can we get there?” the baker asked.
 
-“Round by Alder Arch. It's a proper stone bridge, high over the gorge. I crossed it this afternoon.” He ran his finger along Bram's new line. “But a beech came down across the approach last week. We'll need the saw.”
+“We can go round by Alder Arch,” the ferryman said. “It's well above the water. I crossed it this afternoon.” He traced Bram's new line with his finger. “We'll need a saw, though. There's a beech down across the approach.”
 
 The neighbour returning from Bram's cottage had found nobody there. On the kitchen table stood three clean bowls beside a covered pot.
 
-The baker touched her forehead. “Of course. The mender and her apprentice. Bram said he was keeping them supper after the fair.”
+“He was expecting the mender and her apprentice,” the baker said, touching her forehead. “He told me he'd kept them supper. I'd forgotten.”
 
 Pip looked at the map again. A little drawing of a roof marked the quarry shelter. She had mistaken it for an ink blot.
 
 “We should look there,” she said.
 
-The ferryman folded the map. “We'll go together.”
+“We'll go together,” the ferryman said, folding the map.
 
 ## 5. An Answer in the Dark
 
@@ -266,7 +254,7 @@ She could hear the water far below, dragging branches between the stones. She wa
 
 Then three clear strokes came from the slope.
 
-Pip raised the lamp above her head. “We can see you!”
+“We can see you!” Pip called, raising the lamp above her head.
 
 A voice reached them in pieces. She caught *three of us* and, after a pause, *can't walk*.
 
@@ -282,7 +270,7 @@ Mara unwrapped her paper lantern. Its candle had survived beneath her coat, and 
 
 Pip wanted to go with her. She looked at the dark spaces between the trees along the path, but Mara had already turned to the ferryman.
 
-“The next fork's on the map. I'll hold it while you work.”
+“I can hold the map for you,” Mara told him. “There's another fork after the bridge.”
 
 “All right,” Pip said.
 
@@ -304,13 +292,13 @@ Her apprentice walked beside her carrying a dripping work case. Bram came last w
 
 Pip stood up so quickly that the scarf fell off.
 
-“We found your sleeve.”
+“Bram, we found a piece of your coat,” Pip said.
 
-Bram looked down at himself. “So that's where it went.”
+“My coat?” Bram asked, looking down at his torn cuff.
 
-“You left it in the door.”
+“It was caught in the door,” Pip told him. “I thought something had happened to you.”
 
-“I caught it going out.” He sat heavily on the rock beside her. “Hadn't time to go back for it.”
+“I caught it on the latch,” Bram said, sitting heavily on the rock beside her. “I didn't stop to pull it out. I'm sorry, Pip. You must have had a fright.”
 
 At the bakery, over bowls of the supper somebody had fetched from his cottage, the rest came out in small pieces. Bram had gone to check the rising stream before collecting his guests. From the upper window he had seen their light beyond the bridge and heard them calling during a lull in the rain.
 
@@ -326,22 +314,22 @@ They had climbed to the quarry shelter, but she could not manage the steep way t
 
 Mara was trying to straighten her lantern. One of its windows had collapsed, and the paper was scorched where she had held it too close to the candle.
 
-The apprentice set down her work case. “May I?”
+“I've got some paper in here,” the apprentice said, setting down her work case. “Would you like me to mend that?”
 
 She took out a small pair of scissors and a little roll of amber paper. While the others finished their supper, she fitted a new window into the torn frame.
 
 By the time they stepped outside, the sky above the roofs was beginning to pale. Across the square, the unfortunate pumpkin still hung above the fountain.
 
-Bram stopped beneath it.
+“I don't suppose you'll want another of my stories next year,” Bram said as he stopped beneath it.
 
-“I suppose you'll be wanting another story next year.”
+“You could tell this one,” Pip suggested, glancing at Mara. “About what happened when you rang the bell.”
 
-Pip glanced at Mara. “You could tell us what happens when somebody rings the bell after midnight.”
+“I might leave out the part where I tore my coat,” Bram said.
 
-“Ah,” Bram said.
+“You have to tell that bit,” Mara said. “We thought someone had taken you.”
 
-“You have to put a coat on,” Mara told him. “And fetch some help.”
+“All right,” Bram said. “I'll tell it properly.”
 
-He considered that, then reached up and carefully straightened the pumpkin's nose.
+He reached up and carefully straightened the pumpkin's nose.
 
 Pip and Mara took the longer way home through the square. Between them, the repaired lantern shone gold in the morning rain.
