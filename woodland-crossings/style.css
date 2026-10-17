@@ -106,3 +106,19 @@ header{background:#262e23ed;border-color:#566044}
 
 .restart-heading{font-size:clamp(24px,3vw,30px);line-height:1.25}
 dialog:has(#confirmRestart)>#closeModal{display:none}
+
+/* Art and case notes have separate columns; text never covers the scenery. */
+.adventure-board.art-first{display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:18px;padding:18px;background:#303b2b;align-items:start}
+.adventure-board.art-first .world-stage{position:sticky;top:12px;min-height:0;padding:0;align-self:start}
+.adventure-board.art-first .world-stage>.scene.painted-scene{position:relative;inset:auto;display:block;width:100%;height:auto;min-height:0;aspect-ratio:3/2;border:1px solid #96815c;border-radius:14px;background-position:center;background-size:cover}
+.adventure-board.art-first .world-stage .rabbit{width:76px;height:114px;bottom:8px;left:15%}
+.adventure-board.art-first .world-stage .rabbit.crossed{left:72%}
+.adventure-board.art-first .world-stage .pip-speech{position:static;inset:auto;max-width:none;margin:9px 0 0;padding:9px 12px;font-size:12px;box-shadow:none}
+.adventure-board.art-first .world-stage .pip-speech:after{display:none}
+.artwork-link{display:block;padding:9px 3px;min-height:44px;color:#ead3a7;background:transparent;border:0;text-decoration:underline;text-underline-offset:3px;font-size:12px}
+.art-first .case-workspace{min-width:0}
+.adventure-board.art-first .case-workspace>.reading-chart{position:static;top:auto;width:100%;max-width:none;margin:0;padding:16px 20px;transform:none;border-radius:12px;box-shadow:0 3px 0 #17221844}
+.art-first .case-workspace .sentence{font-size:20px;line-height:1.85}
+.adventure-board.art-first>.builder-dock{grid-column:1/-1;border-radius:12px;padding:14px 18px}
+.artwork-preview{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;border-radius:12px;margin-top:16px}
+@media(max-width:760px){.adventure-board.art-first{grid-template-columns:minmax(0,1fr);padding:12px;gap:12px}.adventure-board.art-first .world-stage{position:static;width:100%;max-width:560px;margin:0 auto}.adventure-board.art-first .world-stage .rabbit{width:68px;height:102px}.adventure-board.art-first .case-workspace>.reading-chart{padding:14px 16px}.art-first .case-workspace .sentence{font-size:18px}.adventure-board.art-first .world-stage .pip-speech{font-size:12px}.artwork-link{padding-bottom:0}}

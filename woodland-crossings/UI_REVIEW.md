@@ -14,3 +14,7 @@ The review uses source-based control/layout samples, not a capture of the deploy
 ## Limits
 
 The audit did not render the browser CSS, drag interactions, scenery cropping, full navigation or screen-reader flow. The editable samples validate typography/wrapping at selected widths. Thirty automated checks cover app-handler and engine behavior, including cancellation and destructive confirmation. Live-browser and student testing remain pending.
+
+## Subsequent art-panel update
+
+The game now separates artwork and question content into independent desktop columns, stacked on phones. Scenes use 3:2 proportions and a View artwork dialog. This subsequent structural change was verified by automated handler/state checks, not captured in the Figma sample board above. Live-browser layout verification remains pending.

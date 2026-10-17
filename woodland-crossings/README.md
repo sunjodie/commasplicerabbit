@@ -47,7 +47,7 @@ Progress saves in this browser’s localStorage, without cross-device sync. Old-
 - `visuals.js`, `halloween.js`, `assets/`: original painted artwork, optional discoveries and narrative interface. Generation prompts are in `assets/ARTWORK.md`.
 - `tests/`: engine/content checks and real app-handler execution with a minimal DOM adapter.
 
-Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 30 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
+Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 31 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
 
 This finite bank does not grade arbitrary free text. Completing the structured game is not a guarantee of error-free independent writing.
 
@@ -62,3 +62,7 @@ Restart game is available on home and in Save status; the ending offers Play aga
 Every question shows the required sentence count for the whole finished text and the permitted added joining words. The shared editing rules require keeping correct commas unchanged. Within the supplied tools and these rules, one full edit meets the task; other grammatical alternatives do not earn completion or a grammar-error penalty. QUESTIONS.md records these constraints with every story task.
 
 Figma layout samples and findings: https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqmj . UI_REVIEW.md describes the scope and resulting code changes; this review does not replace live-browser testing.
+
+## Unobstructed artwork
+
+Play uses separate scenery and case-note panels: side by side on desktop and stacked on phones. Scene panels preserve the full 3:2 image proportions; the question does not overlay the art. View artwork opens the current chapter painting by itself without changing the student’s task, choices or assistance status. Browser layout checks remain pending.
