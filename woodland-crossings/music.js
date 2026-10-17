@@ -1,4 +1,4 @@
-export const MUSIC={src:'assets/autumn-night.mp3',title:'秋夜オルゴール',source:'https://www.mureka.ai/song-detail/kJP7fmHFnHX8t2PMfn3wp?is_from_share=1'};
+export const MUSIC={src:'assets/autumn-night-v2.mp3',title:'秋夜オルゴール',source:'https://www.mureka.ai/song-detail/Aewi4tAvoYviB9sT3od2oN?is_from_share=1'};
 // Lazy creation avoids downloading or playing audio before a sound-button gesture.
 export function createMusicController({AudioClass=globalThis.Audio,onError=()=>{}}={}){
  let audio=null,enabled=false,visible=true,revision=0;
