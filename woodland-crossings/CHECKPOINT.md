@@ -193,3 +193,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Read-only character/design review checked progression and encouragement. Fixed the discovered bonus award/save gap: final success awards the fountain in the same engine transaction, and old all-pass saves recover it.
 - 55 automated checks pass, including construction stages, recovery/legacy saves, bonus persistence, separated hit targets and real UI-handler wiring. JS syntax and whitespace checks pass. Generated art and offline partial/finished mask composites inspected. These are not browser captures; browser masking/layout/touch verification remains pending.
 - This pass changes the village only. The revised story remains a draft document; its question/art/visual-novel adaptation is still deferred.
+
+# Checkpoint 24 — approved baselines before returning to the story
+
+- Story baseline: STORY.md and STORY_NOTES.md at 7086f7c, approved after the speech-tag and descriptive-prose revisions. Six chapters, approximately 5,100 words.
+- Village baseline: 614456d, approved by the user after viewing the implemented connected village and its gradual construction. Existing saves and rewards are preserved; 55 automated checks passed.
+- Both baselines are saved on woodland-crossings. The next work returns to the story. Its question adaptation, story artwork and visual-novel implementation have not resumed.
