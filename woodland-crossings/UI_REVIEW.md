@@ -18,3 +18,9 @@ The audit did not render the browser CSS, drag interactions, scenery cropping, f
 ## Subsequent art-panel update
 
 The game now separates artwork and question content into a vertical artwork → question → answer layout on every screen. Scenes use 3:2 proportions and a View artwork dialog. This subsequent structural change was verified by automated handler/state checks, not captured in the Figma sample board above. Live-browser layout verification remains pending.
+
+## Larger artwork and quieter guidance
+
+Desktop illustration maximum increased from 540px to 900px. Full 3:2 framing and stacked reading order remain. Pip is outside the artwork in a 54×81px guide slot (44×66px on mobile), preserving the original 320×480 image proportions. Scene close-ups no longer contain an out-of-scale overlay.
+
+Default briefs describe relationships; explicit conjunction chips are removed. Exact-word hints are opt-in, and repeated failed attempts do not auto-reveal answers. Independent source review checked the goals against stable chapter trays. 43 automated checks pass. This pass has no new Figma/browser capture; responsive rendering remains to be checked in the deployed game.

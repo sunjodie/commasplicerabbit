@@ -142,3 +142,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Retrieved the playback MP3 referenced by the user’s public Mureka share page for 秋夜オルゴール, credited to Jodie Sun. Bundled an optimized local MP3; provenance is in assets/MUSIC.md.
 - Sound enables a single quiet looping player plus existing chimes. No initial autoplay/download. Hidden tabs pause music; returning resumes only if sound remains enabled. Playback failures are caught and can be retried.
 - 40 automated checks pass, covering scene uniqueness/advance/persistence, vertical play order, bundled media, Sound behavior and all prior grammar/progress flows. Syntax and whitespace checks pass. Art visually inspected and MP3 duration/encoding verified; browser layout/audio/touch and student testing remain pending.
+
+# Checkpoint 16 — larger artwork and quieter guidance
+
+- Expanded desktop play artwork from a 540px to a 900px maximum, keeping the full 3:2 illustration above the question. Mobile retains its compact fit.
+- Removed the fixed rabbit overlay from question scenes. Pip now sits beside his dialogue at his original 2:3 proportions, independent of background perspective.
+- Added semantic student briefs throughout the story, recovery and bonus bank. Exact conjunction names and answer-revealing chips are hidden until a hint is requested; failed attempts no longer automatically disclose the repair. Successful edits still receive explanations.
+- Kept chapter-wide tool trays with only one contrast synonym per chapter and FOR as the coordinating reason word. All seven FANBOYS remain targets. Question 29 now preserves an existing YET, with a narrow migration for saved edits. Grammatical alternatives remain neutral.
+- Independent gameplay review found no competing target within the trays; its wording corrections are incorporated. 43 automated checks pass, including hint disclosure, neutral feedback, guide placement and saved-edit migration. Actual browser layout/touch/audio QA remains pending.

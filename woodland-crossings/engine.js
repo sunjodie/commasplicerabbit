@@ -11,6 +11,8 @@ export function hydrate(raw){
   Object.assign(s,{bankVersion:2,step:raw.story%5,activeId:null,activeChoices:null,activeHelp:false,activeTries:0,activeContract:false,reviewRun:null,bonus:null,recovery:{},passedStructures:[],introduced:[]});
   s.skills=Object.fromEntries(Object.entries(s.skills||{}).map(([k,v])=>[k,{...v,due:null}]));
  }
+ // Preserve older in-progress edits after the contrast word moved into the text.
+ if(['m29','r29'].includes(s.activeId)&&s.activeChoices?.[1]==='yet')s.activeChoices[1]='comma';
  return s;
 }
 export function chapter(s){return Math.min(5,Math.floor(s.story/5));}

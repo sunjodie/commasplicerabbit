@@ -132,3 +132,10 @@ dialog:has(#confirmRestart)>#closeModal{display:none}
 /* Each question selects a full-frame view from its chapter storyboard. */
 .adventure-board.art-first .world-stage>.scene.painted-scene{background-size:var(--scene-scale,100% 100%);background-position:var(--scene-focus,center)}
 .artwork-preview{background-repeat:no-repeat;width:100%;height:auto;aspect-ratio:3/2}
+
+/* Give the changing illustrations room; Pip stays at a consistent guide scale. */
+.adventure-board.art-first .world-stage{max-width:900px}
+.adventure-board.art-first .world-stage .pip-speech{display:flex;align-items:center;gap:12px;padding:3px 12px;min-height:84px}
+.pip-guide{display:block;flex:0 0 54px;width:54px;height:81px}
+.pip-guide .pip-art{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:760px){.adventure-board.art-first .world-stage{max-width:540px}.pip-guide{flex-basis:44px;width:44px;height:66px}.adventure-board.art-first .world-stage .pip-speech{min-height:70px}}

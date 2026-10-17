@@ -1,16 +1,18 @@
 # Mystery question bank
 
-30 story questions. Each has one complete target under its editing brief, visible whole-text goals and these shared rules. Grammatical alternatives receive neutral brief feedback.
+30 story questions. Students see meaning-based briefs. Exact-word guidance and explanations appear only after requesting a hint or solving. Other grammatical repairs receive neutral feedback when they miss the writing goal.
 
-**Shared rules:** Use the pieces provided. Keep correct commas and other wording. Add only the named joining words at the relationship described; split only where the brief asks.
+**Shared rules:** Use the pieces provided. Keep correct commas and every original word. Add joining words only where the writing goal requires them; change nothing else.
 
-Paired recovery questions are in content.js and appear only after support was needed.
+Chapter trays are stable. BUT and YET are offered in different chapters to avoid competing contrast answers; FOR is the available coordinating reason word. All seven FANBOYS remain targets. Paired recovery questions are in content.js.
 
 ## 1. Chapter 1 · scene-time-shift
 
-**Brief:** Start a new sentence when the account moves from the past to the present evening. Keep every word.
+**Student brief:** Start a fresh sentence when the account moves from the past to this evening. Keep every word.
 
-**Whole-text goal:** 2 sentence(s); no added joining words.
+**On-request help:** Start a new sentence when the account moves from the past to the present evening. Keep every word.
+
+**Teacher goal:** 2 sentence(s); no added joining words.
 
 **Original**
 
@@ -24,9 +26,11 @@ The mill had stood empty since last winter. Tonight, a lantern glowed in its upp
 
 ## 2. Chapter 1 · concession-opening
 
-**Brief:** Keep this as one sentence. Change punctuation only if the structure requires it.
+**Student brief:** Keep one sentence. Edit only what its structure requires.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep this as one sentence. Change punctuation only if the structure requires it.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -40,9 +44,11 @@ Although every door was locked, the light above the waterwheel kept moving.
 
 ## 3. Chapter 1 · paired-observations
 
-**Brief:** Keep these paired observations in ONE sentence. Change punctuation only; add no words.
+**Student brief:** Keep the two observations together in one sentence, using punctuation alone.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep these paired observations in ONE sentence. Change punctuation only; add no words.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -56,9 +62,11 @@ The upper window glowed; the great waterwheel stood motionless.
 
 ## 4. Chapter 1 · noun-list
 
-**Brief:** Use ordinary commas between the inventory items. Keep this as one sentence.
+**Student brief:** Keep the inventory as a single sentence with an ordinary list.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Use ordinary commas between the inventory items. Keep this as one sentence.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -72,9 +80,11 @@ Beside the locked door lay a coil of rope, a folded tarpaulin, a cracked bucket.
 
 ## 5. Chapter 1 · time-opening-paired-main
 
-**Brief:** Keep one sentence and every word. Link the two observations without adding a conjunction.
+**Student brief:** Keep the whole account in one sentence, using punctuation alone.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep one sentence and every word. Link the two observations without adding a conjunction.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -88,9 +98,11 @@ When Pip reached the stream, the wheel was still; a shadow crossed the lit windo
 
 ## 6. Chapter 2 · additive-independent
 
-**Brief:** Use AND to combine the two discoveries into one sentence.
+**Student brief:** Combine the discoveries into one sentence. Use a coordinating joining word to present them as additional findings.
 
-**Whole-text goal:** 1 sentence(s); add only and.
+**On-request help:** Use AND to combine the two discoveries into one sentence.
+
+**Teacher goal:** 1 sentence(s); and.
 
 **Original**
 
@@ -104,9 +116,11 @@ Pip found a deep print beside the gate, and Mara noticed a round dent farther al
 
 ## 7. Chapter 2 · contrast-independent
 
-**Brief:** Use BUT to contrast what the print suggested with what Pip could see.
+**Student brief:** Keep one sentence. Use a coordinating joining word to make the contrast between the evidence and the empty path explicit.
 
-**Whole-text goal:** 1 sentence(s); add only but.
+**On-request help:** Use BUT to contrast what the print suggested with what Pip could see.
+
+**Teacher goal:** 1 sentence(s); but.
 
 **Original**
 
@@ -116,13 +130,15 @@ The print looked fresh, nobody was visible on the path ahead.
 
 The print looked fresh, but nobody was visible on the path ahead.
 
-**Why:** Comma + but expresses the contrast between the clear mark and the missing person. Yet could be grammatical too; this brief specifies but.
+**Why:** Comma + but expresses the contrast between the clear mark and the missing person. The available contrast word makes that relationship explicit.
 
 ## 8. Chapter 2 · cause-result
 
-**Brief:** Use SO to make the second clause the result of the first.
+**Student brief:** Keep one sentence. Use a coordinating joining word to make the second action a result of the first discovery.
 
-**Whole-text goal:** 1 sentence(s); add only so.
+**On-request help:** Use SO to make the second clause the result of the first.
+
+**Teacher goal:** 1 sentence(s); so.
 
 **Original**
 
@@ -136,9 +152,11 @@ The trail of round dents continued beyond the gate, so Pip followed the marks to
 
 ## 9. Chapter 2 · alternative-consequences
 
-**Brief:** Use OR to join the two possible courses of action.
+**Student brief:** Keep one sentence. Use a coordinating joining word to present two alternative courses of action.
 
-**Whole-text goal:** 1 sentence(s); add only or.
+**On-request help:** Use OR to join the two possible courses of action.
+
+**Teacher goal:** 1 sentence(s); or.
 
 **Original**
 
@@ -152,9 +170,11 @@ They could follow the prints now, or they could wait until the fog lifted.
 
 ## 10. Chapter 2 · participial-subject
 
-**Brief:** Keep both observations in one sentence. Change punctuation only; keep all words.
+**Student brief:** Keep both observations in one sentence, using punctuation alone.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep both observations in one sentence. Change punctuation only; keep all words.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -168,9 +188,11 @@ The person carrying something heavy had stopped beside the reeds; the object had
 
 ## 11. Chapter 3 · explanatory-for
 
-**Brief:** Use FOR to introduce the explanation. Keep this as one sentence.
+**Student brief:** Keep one sentence. Use a coordinating joining word to introduce the evidence supporting the suspicion.
 
-**Whole-text goal:** 1 sentence(s); add only for.
+**On-request help:** Use FOR to introduce the explanation. Keep this as one sentence.
+
+**Teacher goal:** 1 sentence(s); for.
 
 **Original**
 
@@ -180,13 +202,15 @@ Mara suspected that the bell had been carried away, its circular base matched th
 
 Mara suspected that the bell had been carried away, for its circular base matched the marks by the stream.
 
-**Why:** Comma + for introduces the reason for the suspicion. Because is another grammatical way to express a reason; this brief asks for for.
+**Why:** Comma + for introduces the reason for the suspicion. For is the available coordinating word for introducing supporting evidence.
 
 ## 12. Chapter 3 · negative-inversion
 
-**Brief:** Use NOR to add the second negative. Its verb-before-subject order is already prepared.
+**Student brief:** Keep one sentence. Add the second negative statement without changing its word order.
 
-**Whole-text goal:** 1 sentence(s); add only nor.
+**On-request help:** Use NOR to add the second negative. Its verb-before-subject order is already prepared.
+
+**Teacher goal:** 1 sentence(s); nor.
 
 **Original**
 
@@ -200,9 +224,11 @@ The bell had not fallen into the stream, nor had anyone left it in the tool shed
 
 ## 13. Chapter 3 · unexpected-yet
 
-**Brief:** Use YET to stress an unexpected contrast.
+**Student brief:** Keep one sentence. Use a coordinating joining word to emphasise the unexpected contrast.
 
-**Whole-text goal:** 1 sentence(s); add only yet.
+**On-request help:** Use YET to stress an unexpected contrast.
+
+**Teacher goal:** 1 sentence(s); yet.
 
 **Original**
 
@@ -212,13 +238,15 @@ The mounting showed no sign of damage, the heavy warning bell was gone.
 
 The mounting showed no sign of damage, yet the heavy warning bell was gone.
 
-**Why:** Comma + yet contrasts an undamaged mounting with the missing bell. But would also be grammatical; yet is the requested word.
+**Why:** Comma + yet contrasts an undamaged mounting with the missing bell. The available contrast word emphasises the unexpected finding.
 
 ## 14. Chapter 3 · embedded-that-clauses
 
-**Brief:** Keep one sentence and every word. Link the findings with punctuation alone.
+**Student brief:** Keep the findings in one sentence, using punctuation alone.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep one sentence and every word. Link the findings with punctuation alone.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -232,9 +260,11 @@ Pip knew that the bell could be lifted from its frame; Mara remembered that the 
 
 ## 15. Chapter 3 · relative-subject-main
 
-**Brief:** Keep the description inside the first clause. Link the two complete observations in one sentence with punctuation alone.
+**Student brief:** Keep one sentence and every word. Link the observations with punctuation alone.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep the description inside the first clause. Link the two complete observations in one sentence with punctuation alone.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -248,9 +278,11 @@ The scrap of cloth, which was caught on a nail, matched a patch on the caretaker
 
 ## 16. Chapter 4 · however-transition
 
-**Brief:** Keep one sentence and all words. Repair the join before HOWEVER using punctuation only.
+**Student brief:** Keep one sentence and all its words. Edit punctuation where needed.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep one sentence and all words. Repair the join before HOWEVER using punctuation only.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -264,9 +296,11 @@ The map had been altered; however, the original route was still visible beneath 
 
 ## 17. Chapter 4 · therefore-transition
 
-**Brief:** Keep the BECAUSE opening attached and preserve one sentence. Repair the remaining join with punctuation only.
+**Student brief:** Keep the whole account in one sentence. Change punctuation only.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep the BECAUSE opening attached and preserve one sentence. Repair the remaining join with punctuation only.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -280,9 +314,11 @@ Because the fresh line avoided the upstream bridge, Pip suspected danger there; 
 
 ## 18. Chapter 4 · nevertheless-transition
 
-**Brief:** Keep the WHICH description enclosed inside the first clause. Preserve one sentence and all words; repair the remaining join with punctuation only.
+**Student brief:** Keep one sentence and every word. Change punctuation only.
 
-**Whole-text goal:** 1 sentence(s); no added joining words.
+**On-request help:** Keep the WHICH description enclosed inside the first clause. Preserve one sentence and all words; repair the remaining join with punctuation only.
+
+**Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
@@ -296,9 +332,11 @@ The old map, which had been left beside an open window, was damp at the edges; n
 
 ## 19. Chapter 4 · condition-contrast
 
-**Brief:** Keep the conditional opening attached. Use BUT for the contrast between the routes.
+**Student brief:** Keep one sentence. Use a coordinating joining word to make the contrast between the routes explicit.
 
-**Whole-text goal:** 1 sentence(s); add only but.
+**On-request help:** Keep the conditional opening attached. Use BUT for the contrast between the routes.
+
+**Teacher goal:** 1 sentence(s); but.
 
 **Original**
 
@@ -312,9 +350,11 @@ If the old map was accurate, the lower path led straight to the bridge, but the 
 
 ## 20. Chapter 4 · record-scene-change
 
-**Brief:** Begin a new sentence when the account leaves the written record and returns to the investigation outside. Keep all words.
+**Student brief:** Start a fresh sentence when the account moves from the written record to the investigation outside.
 
-**Whole-text goal:** 2 sentence(s); no added joining words.
+**On-request help:** Begin a new sentence when the account leaves the written record and returns to the investigation outside. Keep all words.
+
+**Teacher goal:** 2 sentence(s); no added joining words.
 
 **Original**
 
@@ -328,9 +368,11 @@ The delivery record said that travellers were expected before dawn. Outside the 
 
 ## 21. Chapter 5 · witness-relative-and-result
 
-**Brief:** Keep the witness description in its sentence. Use SO to connect the blocked view with its consequence. Leave correct commas alone.
+**Student brief:** Preserve the existing sentence boundaries. Use a coordinating joining word to make the blocked view lead explicitly to its consequence.
 
-**Whole-text goal:** 2 sentence(s); add only so.
+**On-request help:** Keep the witness description in its sentence. Use SO to connect the blocked view with its consequence. Leave correct commas alone.
+
+**Teacher goal:** 2 sentence(s); so.
 
 **Original**
 
@@ -344,9 +386,11 @@ The baker, who was closing her shutters, heard the bell near the mill. Fog cover
 
 ## 22. Chapter 5 · witness-time-shift
 
-**Brief:** Keep the WHEN opening attached. Begin a new sentence at the later time, rather than adding AND.
+**Student brief:** Start a fresh sentence at the later time. Keep all words.
 
-**Whole-text goal:** 2 sentence(s); no added joining words.
+**On-request help:** Keep the WHEN opening attached. Begin a new sentence at the later time, rather than adding AND.
+
+**Teacher goal:** 2 sentence(s); no added joining words.
 
 **Original**
 
@@ -360,9 +404,11 @@ When the baker checked her clock, it was almost midnight. Ten minutes later, a f
 
 ## 23. Chapter 5 · witness-two-transitions
 
-**Brief:** Keep two sentences, preserve all words, and link each pair of complete clauses with punctuation alone.
+**Student brief:** Keep two sentences and every word. Connect the ideas with punctuation alone.
 
-**Whole-text goal:** 2 sentence(s); no added joining words.
+**On-request help:** Keep two sentences, preserve all words, and link each pair of complete clauses with punctuation alone.
+
+**Teacher goal:** 2 sentence(s); no added joining words.
 
 **Original**
 
@@ -376,9 +422,11 @@ The accounts appeared to disagree; however, they described different moments. Th
 
 ## 24. Chapter 5 · correct-mixed-note
 
-**Brief:** This note is already correctly punctuated. Preserve its words, sentence boundaries and joining words.
+**Student brief:** Edit only what needs changing. Preserve the wording, joining words and existing sentence boundaries.
 
-**Whole-text goal:** 3 sentence(s); no added joining words.
+**On-request help:** This note is already correctly punctuated. Preserve its words, sentence boundaries and joining words.
+
+**Teacher goal:** 3 sentence(s); no added joining words.
 
 **Original**
 
@@ -392,9 +440,11 @@ Although the fog muffled the sound, both witnesses recognised the bell. Their ti
 
 ## 25. Chapter 5 · negative-witness-note
 
-**Brief:** Use NOR for the second negative. Keep the BECAUSE opening attached; connect its two observations with punctuation alone in one sentence.
+**Student brief:** Keep two sentences. Add the second negative without changing its word order; connect the later observations with punctuation alone.
 
-**Whole-text goal:** 2 sentence(s); add only nor.
+**On-request help:** Use NOR for the second negative. Keep the BECAUSE opening attached; connect its two observations with punctuation alone in one sentence.
+
+**Teacher goal:** 2 sentence(s); nor.
 
 **Original**
 
@@ -408,9 +458,11 @@ The ferryman did not claim to have seen the caretaker, nor did he claim to know 
 
 ## 26. Chapter 6 · passage-scene-and-reason
 
-**Brief:** Keep the opening attached. Begin a new sentence at the change from setting out to hearing voices. Use FOR to introduce the evidence for the final judgement.
+**Student brief:** Start a fresh sentence when the account moves to the next location. Use a coordinating joining word to introduce the evidence for the final judgement. Keep the remaining boundaries.
 
-**Whole-text goal:** 4 sentence(s); add only for.
+**On-request help:** Keep the opening attached. Begin a new sentence at the change from setting out to hearing voices. Use FOR to introduce the evidence for the final judgement.
+
+**Teacher goal:** 4 sentence(s); for.
 
 **Original**
 
@@ -428,9 +480,11 @@ The higher track curved back towards the sheltered porch behind the mill.
 
 ## 27. Chapter 6 · passage-observation-and-result
 
-**Brief:** Keep the WHO description and the WHILE opening attached. Use SO for the result of the broken bridge. Keep all other sentence boundaries.
+**Student brief:** Preserve the existing sentence boundaries. Use a coordinating joining word to make the damaged crossing lead explicitly to the safer route.
 
-**Whole-text goal:** 3 sentence(s); add only so.
+**On-request help:** Keep the WHO description and the WHILE opening attached. Use SO for the result of the broken bridge. Keep all other sentence boundaries.
+
+**Teacher goal:** 3 sentence(s); so.
 
 **Original**
 
@@ -448,9 +502,11 @@ While the storm passed, they waited beneath the mill’s old porch.
 
 ## 28. Chapter 6 · passage-warning-and-contrast
 
-**Brief:** Keep the two paragraphs and existing sentence boundaries. Use BUT for the first contrast. Make the join before THEREFORE grammatical without adding words or a sentence.
+**Student brief:** Preserve the paragraphs and sentence boundaries. Use a coordinating joining word to make the first contrast explicit; repair the remaining join with punctuation alone.
 
-**Whole-text goal:** 3 sentence(s); add only but.
+**On-request help:** Keep the two paragraphs and existing sentence boundaries. Use BUT for the first contrast. Make the join before THEREFORE grammatical without adding words or a sentence.
+
+**Teacher goal:** 3 sentence(s); but.
 
 **Original**
 
@@ -468,13 +524,15 @@ The light marked the danger; therefore, the caretaker had left it burning while 
 
 ## 29. Chapter 6 · passage-reassurance-and-choice
 
-**Brief:** Keep the ALTHOUGH opening. Use YET to contrast the threatening clues with their reassuring explanation, and OR to offer the travellers a choice.
+**Student brief:** Preserve the paragraphs, wording and sentence boundaries. Use a coordinating joining word to present the travellers’ final options as alternatives.
 
-**Whole-text goal:** 3 sentence(s); add only yet, or.
+**On-request help:** Keep the ALTHOUGH opening and the existing YET. Use OR to offer the travellers a choice.
+
+**Teacher goal:** 3 sentence(s); or.
 
 **Original**
 
-Although the coat was torn, the caretaker was unhurt. The missing bell and altered map had looked threatening, both had helped the travellers reach safety.
+Although the coat was torn, the caretaker was unhurt. The missing bell and altered map had looked threatening, yet both had helped the travellers reach safety.
 
 They could wait for the rain to stop, they could return with Pip by the hillside route.
 
@@ -484,13 +542,15 @@ Although the coat was torn, the caretaker was unhurt. The missing bell and alter
 
 They could wait for the rain to stop, or they could return with Pip by the hillside route.
 
-**Why:** Although introduces a dependent opening. Yet highlights the unexpected contrast. Or offers two complete alternatives; and would make them cumulative instead.
+**Why:** Although introduces a dependent opening. The existing yet already joins the contrasting clauses; keep its comma. Or offers two complete alternatives; and would make them cumulative instead.
 
 ## 30. Chapter 6 · final-case-report
 
-**Brief:** Edit the whole report. Keep dependent openings and extra-information commas. Keep the paired physical clues in one sentence using punctuation only. Use SO for the rescue’s result. Begin a new sentence at “By dawn”. Add no other words.
+**Student brief:** Keep the descriptions attached to their main clauses. Link the paired observations with punctuation alone; make the warning lead explicitly to its result with a coordinating joining word. Start a fresh sentence at the final change of scene.
 
-**Whole-text goal:** 5 sentence(s); add only so.
+**On-request help:** Edit the whole report. Keep dependent openings and extra-information commas. Keep the paired physical clues in one sentence using punctuation only. Use SO for the rescue’s result. Begin a new sentence at “By dawn”. Add no other words.
+
+**Teacher goal:** 5 sentence(s); so.
 
 **Original**
 

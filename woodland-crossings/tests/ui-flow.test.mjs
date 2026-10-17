@@ -57,7 +57,7 @@ test('restart is reachable from the ending and from save status during a questio
 });
 
 test('an already-correct note accepts only the unchanged commas under its visible rules',async()=>{
- const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','semi','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.match(ui.app.innerHTML,/3 sentences in the finished text/);assert.match(ui.app.innerHTML,/Keep correct commas/);ui.click('check');assert.match(ui.app.innerHTML,/not the requested edit/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('comma');ui.click('check');assert.ok(document.querySelector('#next'));
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','semi','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/already correctly punctuated|Add only|editing-goals/);assert.match(ui.app.innerHTML,/Keep correct commas/);ui.click('check');assert.match(ui.app.innerHTML,/not the requested edit/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('comma');ui.click('check');assert.ok(document.querySelector('#next'));
 });
 
 test('artwork has a separate panel and an unobstructed view without altering the question',async()=>{
@@ -71,4 +71,15 @@ test('play keeps artwork, question and answers in order without the village prev
 
 test('advancing changes the scene while editing, hints and reload preserve the current view',async()=>{
  const ui=setup();await import('../app.js?question-scenes');ui.click('play');ui.click('startTrail');const first=JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key;ui.app.querySelector('[data-join="0"]').onclick();ui.tool('stop');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key,first);ui.click('check');ui.click('next');const second=JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key;assert.notEqual(first,second);assert.match(ui.app.innerHTML,/assets\/mill-views.webp/);ui.click('viewArtwork');assert.match(ui.fixed.modalBody.innerHTML,/background-size:200% 200%/);ui.fixed.closeModal.onclick();ui.click('hint');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key,second);await import('../app.js?question-scenes-reload');ui.click('play');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key,second);
+});
+
+test('meaning-based briefs keep exact-word hints behind an explicit request',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?quiet-hints');ui.click('play');
+ assert.match(ui.app.innerHTML,/contrast between the evidence/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Add only|editing-goals/);
+ const scene=ui.app.innerHTML.slice(ui.app.innerHTML.indexOf('class="scene '),ui.app.innerHTML.indexOf('class="pip-speech"'));assert.doesNotMatch(scene,/class="rabbit /);assert.match(ui.app.innerHTML,/class="pip-guide"/);
+ ui.click('check');ui.click('check');assert.doesNotMatch(ui.app.innerHTML,/Try “|Comma \+ but|Use BUT/);ui.click('hint');assert.match(ui.app.innerHTML,/Editing help:|Use BUT/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,true);
+});
+
+test('grammatical non-target feedback does not reveal the requested conjunction',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['semi'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?neutral-hints');ui.click('play');ui.click('check');assert.match(ui.app.innerHTML,/Grammatical, but not the requested edit/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Comma \+ but|Add only/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
 });

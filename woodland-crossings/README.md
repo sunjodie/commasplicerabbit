@@ -74,3 +74,5 @@ Thirty story questions have thirty distinct compositions: six chapter establishi
 The play screen stacks artwork, question and answer tools on all screens. The village preview is removed from play; Your village remains in navigation. Beacon progress is a compact indicator beside question progress.
 
 The supplied Mureka track, 秋夜オルゴール, is bundled locally. Sound enables quiet looping BGM and success chimes; playback pauses when the tab is hidden. It does not autoplay on page load. Provenance and encoding details are in assets/MUSIC.md. Browser playback/layout/touch verification remains pending.
+
+Desktop artwork now grows to 900px wide. Pip is a consistently proportioned guide beside his dialogue, outside the changing scene. Student briefs describe meaning rather than naming conjunctions; exact-word guidance requires Ask Pip for a hint. Chapter-wide trays avoid competing BUT/YET choices while retaining all FANBOYS practice. QUESTIONS.md separates student briefs from on-request help.
