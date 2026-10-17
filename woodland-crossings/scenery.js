@@ -7,3 +7,31 @@ export const SCENES=[
  {asset:'witness-crossroads.webp',name:'The village crossroads',focus:'48% 65%',indoors:false},
  {asset:'hillside-dawn.webp',name:'The hillside at dawn',focus:'65% 62%',indoors:false}
 ];
+
+const atlases=['mill-views.webp','tracks-views.webp','bell-views.webp','map-views.webp','witness-views.webp','rescue-views.webp'];
+const titles=[
+ ['The locked mill door','The still waterwheel','Supplies beneath the porch','The shadow at the window'],
+ ['A fresh heel print','Round marks by the reeds','The fork in the trail','Where the heavy load rested'],
+ ['The empty tool shed','The undamaged bell mounting','The carrying-strap hook','A scrap of patched cloth'],
+ ['The bridge on the map','Rain on the old map','The higher route','The record by the doorway'],
+ ['The bakery clock','The ferryman’s landing','Comparing witness notes','The quiet river bend'],
+ ['Blankets beneath the porch','The warning light','The safe hillside route','The rescue clues at dawn']
+];
+export const QUESTION_SCENES=SCENES.flatMap((base,stage)=>[
+ {...base,key:`${stage}-0`,stage,view:0,scale:'100% 100%'},
+ ...titles[stage].map((name,i)=>({asset:atlases[stage],name,key:`${stage}-${i+1}`,stage,view:i+1,indoors:base.indoors,focus:`${i%2*100}% ${Math.floor(i/2)*100}%`,scale:'200% 200%'}))
+]);
+export function questionScene(q,key=null){
+ const views=QUESTION_SCENES.filter(x=>x.stage===q.stage);
+ const saved=views.find(x=>x.key===key);if(saved)return saved;
+ const n=Number(q.id.replace(/\D/g,''))||1;
+ const index=q.remedial?n%5:q.id.startsWith('b')?(n+1)%5:(n-1)%5;
+ return views[index];
+}
+export function selectQuestionScene(s,q){
+ const old=s.activeScenery;
+ if(old?.question===q.id&&old.seq===s.seq&&QUESTION_SCENES.some(x=>x.key===old.key&&x.stage===q.stage))return questionScene(q,old.key);
+ let next=questionScene(q);
+ if(next.key===s.lastSceneKey)next=QUESTION_SCENES.find(x=>x.stage===q.stage&&x.view===(next.view+1)%5);
+ s.activeScenery={question:q.id,seq:s.seq,key:next.key};s.lastSceneKey=next.key;return next;
+}

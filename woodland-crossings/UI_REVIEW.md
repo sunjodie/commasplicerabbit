@@ -17,4 +17,4 @@ The audit did not render the browser CSS, drag interactions, scenery cropping, f
 
 ## Subsequent art-panel update
 
-The game now separates artwork and question content into independent desktop columns, stacked on phones. Scenes use 3:2 proportions and a View artwork dialog. This subsequent structural change was verified by automated handler/state checks, not captured in the Figma sample board above. Live-browser layout verification remains pending.
+The game now separates artwork and question content into a vertical artwork → question → answer layout on every screen. Scenes use 3:2 proportions and a View artwork dialog. This subsequent structural change was verified by automated handler/state checks, not captured in the Figma sample board above. Live-browser layout verification remains pending.

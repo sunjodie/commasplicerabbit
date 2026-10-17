@@ -130,3 +130,15 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Scene panels use the artwork’s full 3:2 proportions, with character speech below the image. The question and tool controls remain separately readable.
 - Added View artwork: opens the current chapter illustration without question or character overlays and preserves the active task/edits. Viewing art does not count as a hint.
 - 31 automated checks pass, including the separate art container and artwork-view state preservation. Syntax and whitespace checks pass. Browser rendering, responsive layout and touch testing remain pending.
+
+# Checkpoint 14 — stacked play and changing scenes
+
+- Stacked artwork, question and answer tools on every screen. Removed the village preview from play while retaining navigation and compact beacon progress.
+- Created six original four-panel painted storyboards, adding 24 compositions to the six existing establishing views. Every story question has a distinct view within its chapter’s setting. Source prompts and encoding details are recorded in assets/ARTWORK.md.
+- Scene identity persists through edits, hints and reloads. Advancing changes it, including recovery and bonus routes, and returns scroll to the new artwork. View artwork shows the selected panel alone.
+
+# Checkpoint 15 — supplied background music
+
+- Retrieved the playback MP3 referenced by the user’s public Mureka share page for 秋夜オルゴール, credited to Jodie Sun. Bundled an optimized local MP3; provenance is in assets/MUSIC.md.
+- Sound enables a single quiet looping player plus existing chimes. No initial autoplay/download. Hidden tabs pause music; returning resumes only if sound remains enabled. Playback failures are caught and can be retried.
+- 40 automated checks pass, covering scene uniqueness/advance/persistence, vertical play order, bundled media, Sound behavior and all prior grammar/progress flows. Syntax and whitespace checks pass. Art visually inspected and MP3 duration/encoding verified; browser layout/audio/touch and student testing remain pending.

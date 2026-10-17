@@ -1,5 +1,36 @@
 # Lantern mill artwork
 
+## Question-by-question scenery
+
+Six original chapter storyboards generated with the built-in image-generation tool. Each 1536 × 1024 image contains four 768 × 512 edge-to-edge panels in a 2 × 2 grid and is encoded as WebP at quality 82. CSS background tiles display one complete 3:2 panel; no image editing or stock imagery is used. Combined with the six original chapter views, the story has 30 distinct compositions. Scene selections persist across question edits and reloads; advancing avoids the immediately preceding scene, including recovery tasks.
+
+Shared prompt: Use case: illustration-story. Asset type: ONE chapter storyboard atlas for a cozy Halloween woodland mystery game. Whole canvas landscape 3:2. Four DISTINCT environment illustrations in a precise TWO-COLUMN TWO-ROW grid, each panel itself 3:2. EXACT boundaries at horizontal and vertical midpoint. All panels fill their quarter edge to edge, NO gutters, NO frames, NO border lines, NO captions, NO labels, NO text. Each quadrant must be a separate composition, not one continuous scene across the grid. Painted gouache storybook style, tactile wood and moss, soft autumn foliage, warm amber lantern glow and muted plum/sage shadows. Match a cream rabbit detective game, but NO characters or animals in these environment panels. Clear foreground floor/path in each view for a separately overlaid mascot. Absolutely no writing, readable script, numbers, UI, logo or watermark.
+
+### mill-views.webp
+
+Night at the abandoned timber watermill. TOP LEFT: outside the tightly closed ground-floor door, iron latch and fallen autumn leaves, one lit upper window high behind it. TOP RIGHT: close low view of the motionless wooden waterwheel and its dark reflection, warm upper-window light beyond. BOTTOM LEFT: sheltered porch inventory, coil of rope, folded tarpaulin and cracked bucket on timber boards lit by a lantern. BOTTOM RIGHT: looking up from the stream at the upstairs lit window through branches, a soft ambiguous moving curtain shadow, moonlit fog. Four clearly different viewpoints.
+
+### tracks-views.webp
+
+Foggy streambank investigation at night. TOP LEFT: close low muddy path with a sharp fresh boot heel print, empty misty clearing beyond. TOP RIGHT: trail of several circular heavy-base impressions curving towards dense river reeds, moonlight glinting on wet earth. BOTTOM LEFT: fork in the woodland trail, one path following water and another leading uphill, lantern on an unlettered wooden post, mist ahead. BOTTOM RIGHT: close riverbank resting place showing one smooth circular rim beside deeply pressed footprints, broken reed stems and a small pool. Four distinct compositions, cool fog and warm lantern glints.
+
+### bell-views.webp
+
+Inside and around the old mill after its portable warning bell disappeared. TOP LEFT: small empty tool shed seen through an open door, shelves and straw on the floor, no bell. TOP RIGHT: detailed intact wooden bell mounting with empty metal hooks and no damage, warm lantern beside it, no bell present. BOTTOM LEFT: carrying-strap hook and rope coil on timber wall, conspicuously empty hook silhouetted against lamplight, clear floor below. BOTTOM RIGHT: a small scrap of patched moss-green cloth caught on a nail beside the empty bell frame, close view of wood grain and loose thread. No whole coat or character. Four separate compositions.
+
+### map-views.webp
+
+Records-room and map investigation in an autumn watermill. TOP LEFT: unfolded parchment map on a desk, simple painted river and footbridge with fresh curved route detouring uphill, no words. TOP RIGHT: damp torn corner of an old illustrated map beside an open rain-speckled window, amber lamp. BOTTOM LEFT: a very different side view across a large map, faded low river crossing contrasted with fresh higher hillside line, rolled papers and wax seal, no labels. BOTTOM RIGHT: view from porch doorway with open delivery ledger on a crate and rainy gate outside, ledger pages blank or only abstract non-readable tiny marks. Each composition distinct, warm indoor light and blue rainy exterior.
+
+### witness-views.webp
+
+Late-night woodland witness investigation. TOP LEFT: village clock tower and bakery shutters, round clock face without numerals, moonlight and amber windows. TOP RIGHT: ferryman's empty timber landing farther upstream, moored little rowboat, silver fog over dark water and distant hanging lantern. BOTTOM LEFT: witness-notes desk by a village window with three blank note cards, tiny unlettered map and a sand timer, bakery rooftops outside. BOTTOM RIGHT: river bend at night from a different elevated bank, reeds lying still after the wind drops, mist thinning, a tiny warning lantern far along the path. No characters or visible bell carrier. Four different places and compositions.
+
+### rescue-views.webp
+
+The mystery resolves at the sheltered porch behind the watermill as dawn breaks. TOP LEFT: porch shelter with folded blankets and two cups beside a bench, warm lantern and dawn glow, no people. TOP RIGHT: view of the high upstairs warning lantern from outside the mill, ruined upstream footbridge visible across the valley, amber light against purple fading night. BOTTOM LEFT: safe hillside route arriving at the back of the mill, clear fork with a low flooded path avoided, soft sunrise and autumn trees. BOTTOM RIGHT: peaceful final porch still life, portable brass warning bell on a crate beside an unlettered route map, patched green cloth and lantern, golden dawn beyond. Four distinct compositions. No characters.
+
+
 ## Chapter location extension
 
 Five original location backgrounds generated with the built-in image-generation tool, each resized to 1200 × 800 and encoded as WebP (quality 78). `scenery.js` maps them to chapters 2–6; chapter 1 retains `mill-storybook.webp`. No reference images are bundled.

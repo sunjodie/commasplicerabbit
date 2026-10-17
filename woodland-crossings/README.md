@@ -47,13 +47,13 @@ Progress saves in this browser’s localStorage, without cross-device sync. Old-
 - `visuals.js`, `halloween.js`, `assets/`: original painted artwork, optional discoveries and narrative interface. Generation prompts are in `assets/ARTWORK.md`.
 - `tests/`: engine/content checks and real app-handler execution with a minimal DOM adapter.
 
-Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 31 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
+Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 40 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
 
 This finite bank does not grade arbitrary free text. Completing the structured game is not a guarantee of error-free independent writing.
 
 ## Changing locations
 
-Each chapter has its own painted environment: the lantern-lit mill, foggy streambank, bell workshop, records room, village crossroads and hillside at dawn. scenery.js maps chapter to local artwork and focal position. Play, home and reached-location revisits use this same map. Indoor rooms suppress outdoor fog. Five new artwork files are under assets/; prompts and provenance are in assets/ARTWORK.md.
+Each chapter has its own painted environment, now expanded into five question views: the lantern-lit mill, foggy streambank, bell workshop, records room, village crossroads and hillside at dawn. scenery.js maps chapter to local artwork and focal position. Play, home and reached-location revisits use this same map. Indoor rooms suppress outdoor fog. Five new artwork files are under assets/; prompts and provenance are in assets/ARTWORK.md.
 
 ## Restart and explicit answer goals
 
@@ -65,4 +65,12 @@ Figma layout samples and findings: https://www.figma.com/design/euhY5VCNNIoJIHzO
 
 ## Unobstructed artwork
 
-Play uses separate scenery and case-note panels: side by side on desktop and stacked on phones. Scene panels preserve the full 3:2 image proportions; the question does not overlay the art. View artwork opens the current chapter painting by itself without changing the student’s task, choices or assistance status. Browser layout checks remain pending.
+Play uses separate scenery and case-note panels: stacked as artwork, question and answer tools on every screen. Scene panels preserve the full 3:2 image proportions; the question does not overlay the art. View artwork opens the current chapter painting by itself without changing the student’s task, choices or assistance status. Browser layout checks remain pending.
+
+## Scene progression and music
+
+Thirty story questions have thirty distinct compositions: six chapter establishing views and 24 new clue-specific storyboard panels. scenery.js selects/persists the current view and avoids repeating the immediately previous view when advancing, including recovery/bonus questions. Editing, hints and reloads do not shuffle an open question’s scenery. Each new question scrolls to its new artwork. View artwork shows only the current view.
+
+The play screen stacks artwork, question and answer tools on all screens. The village preview is removed from play; Your village remains in navigation. Beacon progress is a compact indicator beside question progress.
+
+The supplied Mureka track, 秋夜オルゴール, is bundled locally. Sound enables quiet looping BGM and success chimes; playback pauses when the tab is hidden. It does not autoplay on page load. Provenance and encoding details are in assets/MUSIC.md. Browser playback/layout/touch verification remains pending.
