@@ -1,6 +1,6 @@
 # Woodland Crossings
 
-A self-guided comma-splice mystery for upper-primary and secondary learners: **The Lantern That Shouldn’t Be Lit**. Pip and Mara investigate a light in an abandoned mill, a missing warning bell and an altered map. The clues resolve into a rescue.
+A self-guided comma-splice mystery for upper-primary and secondary learners: **The Lantern That Shouldn’t Be Lit**. Pip and Mara investigate a light in the old mill, a missing warning bell and an altered map. The clues resolve into a rescue.
 
 On `woodland-crossings`, the repository root opens the new game. The original runner is preserved as `rabbit-runner.html`; `main` is unchanged. Deploy this branch on Cloudflare. No build step, account, teacher setup, API key, external font or runtime service is required. Serve locally over HTTP rather than opening the HTML file directly.
 
@@ -80,3 +80,11 @@ Desktop artwork now grows to 900px wide. Pip is a consistently proportioned guid
 Mobile reading uses compact inline punctuation with larger invisible tap areas, so commas remain beside their words. Editing rules open on demand without counting as a hint; View artwork is a labelled expand button beside Pip’s dialogue. The mobile screenshot review and Figma samples are recorded in UI_REVIEW.md.
 
 The village is now one connected painted panorama. Each story delivery builds its current landmark: foundations, framework, roof/walls, lights, then a chosen finishing touch. Site positions stay fixed and future landmarks remain empty. The village uses five registered paintings with seven independent masks; Zoom in enables native scrolling around the scene. Click a marker for delivery status and decoration details. See your build opens a read-only preview during a question. Finished rewards survive hints, recovery and returning saves. The bonus fountain grows from independent optional challenges and is awarded atomically. Artwork prompts and provenance are in assets/village/ARTWORK.md.
+
+## Chapter 1 story adaptation
+
+The approved Chapter 1 now plays as five illustrated reading scenes, followed by five separate notebook edits. Reading uses short pages at paragraph boundaries and remembers the current page. It awards no deliveries and counts no hints. Existing question progress, recovery schedules and village rewards remain intact. The storybook replays reached scenes without altering edits or revealing later scenes.
+
+Only Chapter 1 has been adapted. Chapters 2–6 still use the earlier question bank and presentation while the new story is implemented in reviewable chunks. Approved prose remains in STORY.md; chapter-one.js preserves its first chapter verbatim. Chapter 1 artwork and prompts are documented in assets/chapter-one/ARTWORK.md.
+
+Validation: 61 automated checks pass, including exact narration, reading/resume, replay and village progression. UI checks execute real handlers through a DOM adapter. Browser layout and touch verification remain pending.

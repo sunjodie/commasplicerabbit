@@ -8,93 +8,93 @@ Chapter trays are stable. BUT and YET are offered in different chapters to avoid
 
 ## 1. Chapter 1 · scene-time-shift
 
-**Student brief:** Start a fresh sentence when the account moves from the past to this evening. Keep every word.
+**Student brief:** Start a new sentence when the view moves from the square to the mill. Keep every word.
 
-**On-request help:** Start a new sentence when the account moves from the past to the present evening. Keep every word.
+**On-request help:** Start a new sentence when the view moves from the square to the mill. Keep every word.
 
 **Teacher goal:** 2 sentence(s); no added joining words.
 
 **Original**
 
-The mill had stood empty since last winter, tonight, a lantern glowed in its upper window.
+The villagers were packing away the fair, across the stream, a light appeared in the mill.
 
 **Target**
 
-The mill had stood empty since last winter. Tonight, a lantern glowed in its upper window.
+The villagers were packing away the fair. Across the stream, a light appeared in the mill.
 
-**Why:** The two clauses are complete. A new sentence marks the change in time; a semicolon would be grammatical but would not meet this brief.
+**Why:** Both clauses are complete. A full stop marks the move from the square to the mill; a semicolon is grammatical but does not meet this writing goal.
 
 ## 2. Chapter 1 · concession-opening
 
-**Student brief:** Keep one sentence. Edit only what its structure requires.
+**Student brief:** Keep one sentence. Edit only what the structure requires.
 
-**On-request help:** Keep this as one sentence. Change punctuation only if the structure requires it.
+**On-request help:** Keep one sentence. Edit only what the structure requires.
 
 **Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
-Although every door was locked, the light above the waterwheel kept moving.
+Although the wheel had stopped for winter, the upper room was lit.
 
 **Target**
 
-Although every door was locked, the light above the waterwheel kept moving.
+Although the wheel had stopped for winter, the upper room was lit.
 
-**Why:** Although introduces a dependent opening. Keep its comma; the main clause supplies the ending.
+**Why:** Although introduces a dependent opening. Its comma attaches it to the main clause.
 
 ## 3. Chapter 1 · paired-observations
 
-**Student brief:** Keep the two observations together in one sentence, using punctuation alone.
+**Student brief:** Keep these paired observations in one sentence. Use punctuation alone and keep every word.
 
-**On-request help:** Keep these paired observations in ONE sentence. Change punctuation only; add no words.
+**On-request help:** Keep these paired observations in one sentence. Use punctuation alone and keep every word.
 
 **Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
-The upper window glowed, the great waterwheel stood motionless.
+Mara called it a story, Pip kept watching the dark window.
 
 **Target**
 
-The upper window glowed; the great waterwheel stood motionless.
+Mara called it a story; Pip kept watching the dark window.
 
-**Why:** Both observations are complete clauses. A semicolon links these observations without adding words.
+**Why:** Both observations are complete clauses. A semicolon keeps them together without adding a word.
 
 ## 4. Chapter 1 · noun-list
 
-**Student brief:** Keep the inventory as a single sentence with an ordinary list.
+**Student brief:** Keep one sentence with an ordinary list of the details Pip noticed. Edit only where needed.
 
-**On-request help:** Use ordinary commas between the inventory items. Keep this as one sentence.
+**On-request help:** Keep one sentence with an ordinary list of the details Pip noticed. Edit only where needed.
 
 **Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
-Beside the locked door lay a coil of rope, a folded tarpaulin, a cracked bucket.
+Pip noticed the green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
 **Target**
 
-Beside the locked door lay a coil of rope, a folded tarpaulin, a cracked bucket.
+Pip noticed the green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
-**Why:** This comma separates items in a list, not complete clauses. A cracked bucket is a noun phrase, not a new sentence.
+**Why:** This comma separates the first two details in a list, not two complete clauses. The last detail belongs to the same list. Keep the existing comma before and.
 
 ## 5. Chapter 1 · time-opening-paired-main
 
-**Student brief:** Keep the whole account in one sentence, using punctuation alone.
+**Student brief:** Keep the whole note in one sentence, with every word. Connect the observations using punctuation alone.
 
-**On-request help:** Keep one sentence and every word. Link the two observations without adding a conjunction.
+**On-request help:** Keep the whole note in one sentence, with every word. Connect the observations using punctuation alone.
 
 **Teacher goal:** 1 sentence(s); no added joining words.
 
 **Original**
 
-When Pip reached the stream, the wheel was still, a shadow crossed the lit window.
+When the clock finished striking, nobody answered from the mill, the missing bell rang beyond the stream.
 
 **Target**
 
-When Pip reached the stream, the wheel was still; a shadow crossed the lit window.
+When the clock finished striking, nobody answered from the mill; the missing bell rang beyond the stream.
 
-**Why:** When makes the opening dependent; keep it with its main clause. The two observations after the dependent opening are complete clauses. A semicolon links them.
+**Why:** When introduces a dependent opening, so keep it attached to what follows. Nobody answered from the mill and the bell rang beyond the stream are complete clauses. A semicolon connects them in one sentence.
 
 ## 6. Chapter 2 · additive-independent
 

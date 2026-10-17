@@ -21,7 +21,7 @@ test('trays are stable by stage and targets are grammatical under their explicit
  for(let stage=0;stage<6;stage++){const tasks=STORY.filter(q=>q.stage===stage);for(const q of tasks)assert.deepEqual(q.options,tasks[0].options);}
  for(const q of BANK)assert.deepEqual(grammarErrors(q,q.valid.map(v=>v[0])),[]);
  const q=STORY[0];assert.deepEqual(grammarErrors(q,['semi']),[]);assert.deepEqual(errors(q,['semi']),[0]);assert.deepEqual(grammarErrors(q,['comma']),[0]);
- assert.equal(renderSentence(q,['stop']),'The mill had stood empty since last winter. Tonight, a lantern glowed in its upper window.');
+ assert.equal(renderSentence(q,['stop']),'The villagers were packing away the fair. Across the stream, a light appeared in the mill.');
  assert.match(renderSentence(STORY[11],['nor']),/, nor had anyone/);
 });
 test('30 independent story solves finish six chapters with no automatic repeats',()=>{

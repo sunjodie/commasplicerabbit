@@ -1,6 +1,6 @@
 // One location per chapter; all artwork is bundled locally.
 export const SCENES=[
- {asset:'mill-storybook.webp',name:'The lantern-lit mill',focus:'50% 64%',indoors:false},
+ {asset:'chapter-one/fair.webp',name:'The lantern fair',focus:'50% 50%',indoors:false},
  {asset:'footprint-trail.webp',name:'The foggy streambank',focus:'65% 72%',indoors:false},
  {asset:'bell-workshop.webp',name:'The empty bell workshop',focus:'70% 64%',indoors:true},
  {asset:'map-room.webp',name:'The mill records room',focus:'68% 66%',indoors:true},
@@ -8,9 +8,9 @@ export const SCENES=[
  {asset:'hillside-dawn.webp',name:'The hillside at dawn',focus:'65% 62%',indoors:false}
 ];
 
-const atlases=['mill-views.webp','tracks-views.webp','bell-views.webp','map-views.webp','witness-views.webp','rescue-views.webp'];
+const atlases=['chapter-one/storyboard.webp','tracks-views.webp','bell-views.webp','map-views.webp','witness-views.webp','rescue-views.webp'];
 const titles=[
- ['The locked mill door','The still waterwheel','Supplies beneath the porch','The shadow at the window'],
+ ['The upstairs light','Bram’s fireside story','The torn green cuff','The empty bell hook'],
  ['A fresh heel print','Round marks by the reeds','The fork in the trail','Where the heavy load rested'],
  ['The empty tool shed','The undamaged bell mounting','The carrying-strap hook','A scrap of patched cloth'],
  ['The bridge on the map','Rain on the old map','The higher route','The record by the doorway'],
@@ -19,7 +19,7 @@ const titles=[
 ];
 export const QUESTION_SCENES=SCENES.flatMap((base,stage)=>[
  {...base,key:`${stage}-0`,stage,view:0,scale:'100% 100%'},
- ...titles[stage].map((name,i)=>({asset:atlases[stage],name,key:`${stage}-${i+1}`,stage,view:i+1,indoors:base.indoors,focus:`${i%2*100}% ${Math.floor(i/2)*100}%`,scale:'200% 200%'}))
+ ...titles[stage].map((name,i)=>({asset:atlases[stage],name,key:`${stage}-${i+1}`,stage,view:i+1,indoors:stage===0?[false,true,false,true][i]:base.indoors,focus:`${i%2*100}% ${Math.floor(i/2)*100}%`,scale:'200% 200%'}))
 ]);
 export function questionScene(q,key=null){
  const views=QUESTION_SCENES.filter(x=>x.stage===q.stage);

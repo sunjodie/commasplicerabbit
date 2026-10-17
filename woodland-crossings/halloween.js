@@ -1,7 +1,7 @@
 // Mystery case notes, discoveries and original vector tokens.
 export const CASE_TITLE='The Lantern That Shouldn’t Be Lit';
 export const CASES=[
- {title:'The unexpected light',intro:'The mill has been locked for years. Tonight, a lantern is glowing in its upper window. Pip and Mara set out to investigate.',clue:'A moving light upstairs, but no sound from the waterwheel.',icon:'lantern'},
+ {title:'After the fair',intro:'Pip and Mara are leaving the lantern fair when a light appears in the old mill. Read what happens, then help Pip keep her notebook clear.',clue:'A torn cuff, an empty bell hook and a ringing bell beyond the stream at midnight.',icon:'lantern'},
  {title:'Footprints in the fog',intro:'Deep footprints lead away from the mill. Something heavy has left a round mark in the mud beside them.',clue:'A round impression beside the footprints: someone put a heavy object down.',icon:'tracks'},
  {title:'The missing bell',intro:'The mill’s portable warning bell is gone. The mounting is empty, and a scrap of patched cloth is caught beside it.',clue:'The cloth matches a patch on the caretaker’s coat.',icon:'bell'},
  {title:'The altered map',intro:'Someone has drawn a new route on the village map. It avoids the upstream bridge. A delivery record says travellers were expected overnight.',clue:'The changed route avoids the bridge and follows the higher ground.',icon:'map'},

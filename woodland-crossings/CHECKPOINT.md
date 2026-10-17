@@ -199,3 +199,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Story baseline: STORY.md and STORY_NOTES.md at 7086f7c, approved after the speech-tag and descriptive-prose revisions. Six chapters, approximately 5,100 words.
 - Village baseline: 614456d, approved by the user after viewing the implemented connected village and its gradual construction. Existing saves and rewards are preserved; 55 automated checks passed.
 - Both baselines are saved on woodland-crossings. The next work returns to the story. Its question adaptation, story artwork and visual-novel implementation have not resumed.
+
+# Checkpoint 25 — Chapter 1 illustrated story chunk
+
+- Adapted only “After the Fair” into five illustrated scenes with paragraph-based reading pages, then five separate notebook tasks. Approved Chapter 1 prose is unchanged. The initial fair, upstairs light, Bram’s remembered story, torn cuff and empty hook each have a dedicated composition.
+- Added persisted reading positions and read-scene markers. Storybook replay is limited to reached scenes and leaves edits, support status, supplies and rewards intact. Recovery questions bypass narration. Existing saves resume their current question without resetting the village.
+- Rewrote the five opening questions and paired recoveries to match the new narrative. Each retains one target under its brief; two tasks practise semicolons. Later chapters retain the earlier bank pending separate adaptation.
+- 61 automated checks pass, including exact prose preservation, page/reload/village resume, spoiler limits, read-only replay, question wiring and existing village construction. JS syntax and whitespace checks pass. Generated illustrations were visually inspected. Browser layout/rendering and mobile touch QA remain pending.
+- Paused after Chapter 1 for review. No Chapter 2 implementation in this chunk.

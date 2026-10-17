@@ -40,3 +40,9 @@ At the user’s request, mobile sentence/passage text now uses 16px with 1.6 lin
 Replaced the separate reward tiles with a single contiguous painted clearing and independent construction layers. The panorama appears before the case notes; case notes and learning details open on demand. Seven subtle landmark markers have 44px targets with nonoverlapping bounds at a 264px scene width. A persistent zoom/fit control enables native two-axis scrolling without page-wide horizontal overflow. The full scene stays at a 3:2 aspect ratio. Finishing-touch previews update the chapter reward scene. During play, See your build opens a preview without changing edits or hint status.
 
 Five generated paintings and static partial/finished source-composition proofs were visually inspected. The proofs are not browser captures. Browser CSS masking, desktop/mobile layout and actual touch panning remain pending. Automated checks cover progress, recovery/save compatibility, bonus award persistence, target separation, controls and existing gameplay.
+
+## Chapter 1 reader review
+
+Desktop uses an illustration beside a compact reading panel; mobile stacks the illustration above the prose. Pages break at whole paragraphs (at most 85 words in this chapter), with 16px mobile prose, 44px controls and page counts. Dialogue retains the approved speech tags. Notebook work remains a separate screen and keeps the prior artwork/question/answers order. New scene paintings already contain the characters, so no duplicate rabbit sprite is overlaid.
+
+Reading progress survives reloads and village visits. The storybook can replay reached scenes without changing edits or consuming hints. Tests use a DOM adapter and validate handlers/state only; actual desktop/mobile rendering, viewport height, keyboard focus and touch behavior still require browser verification.
