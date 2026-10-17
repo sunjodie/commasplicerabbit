@@ -185,3 +185,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Reworked STORY.md throughout into fuller, more fluid narrative prose, with varied sentence lengths and concrete sensory description. Developed the fair and bakery warmth, the mill's unsettling familiarity, the flood's force and the rescue's physical effort.
 - Preserved speech tags, character decisions and the six-chapter mystery. The descriptive draft is approximately 5,100 words. Reviewed plot continuity, dialogue punctuation and paragraph flow; whitespace checks pass.
 - Remains story-only work. Question adaptation, art generation and game implementation are paused.
+
+# Checkpoint 23 — one village, built bit by bit
+
+- Implemented the user-approved village concept as one connected scene. Added four registered construction-stage edits to the finished painting and seven landmark masks. Each site's construction derives from existing story deliveries, with future sites empty and earned rewards preserved. The optional fountain derives from successful bonus challenges.
+- Added landmark inspections, fit/zoom scrolling, current-build status, on-demand notes/learning panels, a construction preview during questions, and whole-village reward previews with visible finishing-touch choices.
+- Read-only character/design review checked progression and encouragement. Fixed the discovered bonus award/save gap: final success awards the fountain in the same engine transaction, and old all-pass saves recover it.
+- 55 automated checks pass, including construction stages, recovery/legacy saves, bonus persistence, separated hit targets and real UI-handler wiring. JS syntax and whitespace checks pass. Generated art and offline partial/finished mask composites inspected. These are not browser captures; browser masking/layout/touch verification remains pending.
+- This pass changes the village only. The revised story remains a draft document; its question/art/visual-novel adaptation is still deferred.

@@ -34,3 +34,9 @@ Figma reading/action samples: https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqm
 ## Follow-up — smaller mobile reading type
 
 At the user’s request, mobile sentence/passage text now uses 16px with 1.6 line-height. Instruction sizes and 44px action/touch targets are retained. The earlier Figma samples show the previous 18px sizing; this focused CSS follow-up has not been recaptured. 45 automated checks pass; deployed-device rendering remains pending.
+
+## Connected progressive village
+
+Replaced the separate reward tiles with a single contiguous painted clearing and independent construction layers. The panorama appears before the case notes; case notes and learning details open on demand. Seven subtle landmark markers have 44px targets with nonoverlapping bounds at a 264px scene width. A persistent zoom/fit control enables native two-axis scrolling without page-wide horizontal overflow. The full scene stays at a 3:2 aspect ratio. Finishing-touch previews update the chapter reward scene. During play, See your build opens a preview without changing edits or hint status.
+
+Five generated paintings and static partial/finished source-composition proofs were visually inspected. The proofs are not browser captures. Browser CSS masking, desktop/mobile layout and actual touch panning remain pending. Automated checks cover progress, recovery/save compatibility, bonus award persistence, target separation, controls and existing gameplay.

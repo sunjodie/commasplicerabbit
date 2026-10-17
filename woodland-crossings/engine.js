@@ -13,6 +13,8 @@ export function hydrate(raw){
  }
  // Preserve older in-progress edits after the contrast word moved into the text.
  if(['m29','r29'].includes(s.activeId)&&s.activeChoices?.[1]==='yet')s.activeChoices[1]='comma';
+ // Recover the fountain if all bonus passes were saved before its old UI award.
+ if(['mixed','connectors','paragraph'].every(k=>s.bonusPasses?.includes(k)))s.bonusDecor=true;
  return s;
 }
 export function chapter(s){return Math.min(5,Math.floor(s.story/5));}
@@ -55,7 +57,7 @@ export function record(s,q,assisted,now=Date.now()){
  }
  syncDates(s);s.seen=[...new Set([...s.seen,q.id])];s.seq++;s.activeId=null;s.activeChoices=null;s.activeHelp=false;s.activeTries=0;s.activeContract=false;
  if(wasReview){s.reviewRun.index++;if(s.reviewRun.index>=s.reviewRun.skills.length)s.reviewRun=null;return {review:true};}
- if(wasBonus){if(!assisted)s.bonusPasses=[...new Set([...(s.bonusPasses||[]),q.skill])];s.bonus.index++;if(s.bonus.index>=s.bonus.skills.length){const earned=['mixed','connectors','paragraph'].every(k=>s.bonusPasses?.includes(k));s.bonus=null;return {bonusFinished:true,earned};}return {bonus:true};}
+ if(wasBonus){if(!assisted)s.bonusPasses=[...new Set([...(s.bonusPasses||[]),q.skill])];s.bonus.index++;if(s.bonus.index>=s.bonus.skills.length){const earned=['mixed','connectors','paragraph'].every(k=>s.bonusPasses?.includes(k));s.bonus=null;if(earned)s.bonusDecor=true;return {bonusFinished:true,earned};}return {bonus:true};}
  if(recoveryTask){s.lastRecoveryAtStory=s.story;return {review:true};}
  s.story++;s.step=s.story%5;
  if(s.story%5===0){if(s.story===STORY.length)s.completedAt=now;return {chapterDone:true,chapter:s.story/5-1};}
