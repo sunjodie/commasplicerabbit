@@ -88,3 +88,21 @@ header{background:#262e23ed;border-color:#566044}
 .indoor-scene .moon-mist{display:none}
 .indoor-scene .forest-sparkles{opacity:.35}
 .scene-5 .moon-mist{opacity:.3;animation:none}
+
+/* UI review: clearer goals, predictable tool columns, and a safe restart dialog. */
+.editing-brief{font-size:14px;line-height:1.55;margin-bottom:9px}
+.editing-goals{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.editing-goals span{display:inline-block;border:1px solid #aa8d62;border-radius:6px;padding:4px 8px;background:#dfd1ad;color:#4b4135;font-size:12px;font-weight:600;line-height:1.5}
+.editing-rules{margin:0 0 13px;font-size:12px;line-height:1.5;color:#67563e}
+.piece-tray:not(:has(.scout-prompt)){display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.piece-tray .sentence-piece{width:100%;max-width:none;min-width:0;min-height:80px;padding:6px 8px 9px}
+.piece-tray .sentence-piece>span{font-size:12px;line-height:1.4}
+.restart-link{min-height:44px;padding:10px 12px;border:0;background:transparent;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.restart-confirm{border-color:#9c6851;color:#743b31}
+@media(max-width:480px){.piece-tray:not(:has(.scout-prompt)){grid-template-columns:repeat(3,minmax(0,1fr))}.restart-actions{flex-direction:column;align-items:stretch}.restart-actions button{width:100%;min-height:48px}dialog{padding:20px}.editing-brief{font-size:14px}.editing-goals span{font-size:12px}}
+
+.piece-tray .sentence-piece>b{white-space:nowrap;font-size:22px;line-height:1.25}
+.piece-tray .sentence-piece[data-tool="because"]>b{font-size:16px}
+
+.restart-heading{font-size:clamp(24px,3vw,30px);line-height:1.25}
+dialog:has(#confirmRestart)>#closeModal{display:none}

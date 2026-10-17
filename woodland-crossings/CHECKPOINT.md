@@ -115,3 +115,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - A chapter scenery manifest drives play, home and reached-scene revisits. Each location has its own focal position; indoor scenes suppress outdoor fog, and the final hillside has lighter mist.
 - Existing questions, save state, discoveries and rewards are unchanged.
 - 26 automated checks pass, including all six chapter asset selections and saved-location revisits. Art visually inspected; real-browser cropping/layout/touch QA remains pending.
+
+# Checkpoint 12 — restart, Figma UI review and disambiguation
+
+- Added Restart game on home and in Save status, plus Play again on the ending. Confirmation explicitly lists cleared progress. Cancel leaves the current question/run untouched; confirmation uses fresh state and returns to chapter one of the latest bank.
+- All questions now display whole-text sentence counts and permitted added conjunctions. Shared visible rules require supplied pieces, unchanged correct commas/wording, named joining words at the stated relationship, and splits only where requested. Grammatical alternatives remain uncredited and receive neutral no-penalty feedback.
+- Audited all 63 tasks with the gamification reviewer. The correct-note semicolon-before-but ambiguity is resolved by the keep-correct-commas rule; clarified the paired recovery brief at the setting-out/hearing-voices boundary.
+- Created an editable Figma UI audit with source-based desktop and phone-width control samples. Found/fixed long because-label wrapping, standardized responsive tool columns and readable labels, and checked the restart panel. These samples are not a live browser capture. See UI_REVIEW.md and https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqmj .
+- 30 automated checks pass, including restart cancellation/reset/entry points, visible whole-text goals, unique accepted targets and neutral feedback on an otherwise grammatical alternative. Syntax and whitespace checks pass. Live-browser layout/touch/contrast and real-student tests remain pending.

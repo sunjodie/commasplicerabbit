@@ -66,3 +66,9 @@ test('persistent support never traps a student in recovery or withholds the endi
  const s=fresh(),done=[];let count=0;while(s.story<30&&count<65){const q=nextQuestion(s);assert.ok(q);const r=solve(s,q,true,0);if(r.chapterDone)done.push(r.chapter);count++;}
  assert.equal(s.story,30);assert.ok(count<=59);assert.deepEqual(done,[0,1,2,3,4,5]);assert.equal(nextQuestion(s),null);assert.ok(Object.keys(s.recovery).length>0);
 });
+
+test('explicit whole-text goals disambiguate the offered answers, including already-correct notes',()=>{
+ assert.equal(STORY[0].goal.sentences,2);assert.equal(STORY[3].goal.sentences,1);assert.equal(STORY[23].goal.sentences,3);assert.equal(STORY[29].goal.sentences,5);assert.deepEqual(STORY[29].goal.conjunctions,['so']);
+ const correct=STORY[23];assert.deepEqual(grammarErrors(correct,['comma','semi','comma']),[]);assert.deepEqual(errors(correct,['comma','semi','comma']),[1]);assert.deepEqual(errors(correct,['comma','comma','comma']),[]);
+ for(const q of BANK){assert.ok(q.goal.sentences>=1);const target=q.valid.map(v=>v[0]);assert.equal((renderSentence(q,target).match(/[.!?](?=\s|$)/g)||[]).length,q.goal.sentences);for(let i=0;i<target.length;i++)for(const t of q.options)if(t!==target[i]){const alternative=[...target];alternative[i]=t;assert.ok(errors(q,alternative).length,`${q.id}: second accepted edit at ${i}`);}}
+});

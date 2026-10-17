@@ -47,10 +47,18 @@ Progress saves in this browser’s localStorage, without cross-device sync. Old-
 - `visuals.js`, `halloween.js`, `assets/`: original painted artwork, optional discoveries and narrative interface. Generation prompts are in `assets/ARTWORK.md`.
 - `tests/`: engine/content checks and real app-handler execution with a minimal DOM adapter.
 
-Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 26 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
+Run `npm test` in this folder. JavaScript syntax and whitespace checks are also run. 30 automated checks pass. They cover the uninterrupted story route, selective recovery, spacing/retirement, FANBOYS, target availability, grammatical alternatives, save migration, optional challenges and UI flows. The DOM adapter does not render CSS. Browser layout, touch, screen-reader and real-student testing remain pending.
 
 This finite bank does not grade arbitrary free text. Completing the structured game is not a guarantee of error-free independent writing.
 
 ## Changing locations
 
 Each chapter has its own painted environment: the lantern-lit mill, foggy streambank, bell workshop, records room, village crossroads and hillside at dawn. scenery.js maps chapter to local artwork and focal position. Play, home and reached-location revisits use this same map. Indoor rooms suppress outdoor fog. Five new artwork files are under assets/; prompts and provenance are in assets/ARTWORK.md.
+
+## Restart and explicit answer goals
+
+Restart game is available on home and in Save status; the ending offers Play again. The confirmation clears this browser’s investigation, village, beacons, secrets and reviews only after Yes, restart game. Cancel preserves the current state.
+
+Every question shows the required sentence count for the whole finished text and the permitted added joining words. The shared editing rules require keeping correct commas unchanged. Within the supplied tools and these rules, one full edit meets the task; other grammatical alternatives do not earn completion or a grammar-error penalty. QUESTIONS.md records these constraints with every story task.
+
+Figma layout samples and findings: https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqmj . UI_REVIEW.md describes the scope and resulting code changes; this review does not replace live-browser testing.
