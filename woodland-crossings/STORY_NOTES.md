@@ -91,3 +91,7 @@ These thirty natural stopping points are an adaptation aid only. They should not
 ## Dialogue revision
 
 The current draft uses explicit speech tags throughout so the reader can follow each speaker. Short, cryptic exchanges were revised into ordinary spoken phrasing, with actions retained where they reveal hesitation or emotion. The bridge disagreement, reunion and closing conversation have fuller responses. Plot and clue logic are unchanged.
+
+## Descriptive prose revision
+
+The current draft is approximately 5,100 words. Narration now develops in fuller paragraphs with varied sentence lengths. Descriptions establish the wet lantern fair, the mill's domestic objects and dusty upper room, the flooded bank, the bakery's warmth and the work of the night rescue. Details are filtered through what the characters see, hear, smell and touch, and often supply evidence or change the mood. Dialogue keeps clear speech tags. Brief narrative sentences are reserved chiefly for suspense and changes in attention. The six-chapter plot and rescue geography remain intact.
