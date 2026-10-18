@@ -88,3 +88,5 @@ The approved Chapter 1 now plays as five illustrated reading scenes, followed by
 Only Chapter 1 has been adapted. Chapters 2–6 still use the earlier question bank and presentation while the new story is implemented in reviewable chunks. Approved prose remains in STORY.md; chapter-one.js preserves its first chapter verbatim. Chapter 1 artwork and prompts are documented in assets/chapter-one/ARTWORK.md.
 
 Validation: 61 automated checks pass, including exact narration, reading/resume, replay and village progression. UI checks execute real handlers through a DOM adapter. Browser layout and touch verification remain pending.
+
+The editing screen uses a compact supply row and one notebook panel below the artwork. Editable joins are visible punctuation tabs. Chapter 1 solutions reveal scene-specific narrative captions, with an optional bell cue at the final note; explanations expand on demand. The full suite now has 62 passing checks.

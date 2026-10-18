@@ -207,3 +207,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Rewrote the five opening questions and paired recoveries to match the new narrative. Each retains one target under its brief; two tasks practise semicolons. Later chapters retain the earlier bank pending separate adaptation.
 - 61 automated checks pass, including exact prose preservation, page/reload/village resume, spoiler limits, read-only replay, question wiring and existing village construction. JS syntax and whitespace checks pass. Generated illustrations were visually inspected. Browser layout/rendering and mobile touch QA remain pending.
 - Paused after Chapter 1 for review. No Chapter 2 implementation in this chunk.
+
+# Checkpoint 26 — compact notebook and Chapter 1 story payoffs
+
+- Removed the redundant rabbit speech strip, moved artwork enlargement onto the illustration, combined the sentence and editing controls in one notebook surface, and replaced the large star tracker with a compact supplies/build row.
+- Made punctuation joins visibly distinct paper tabs while retaining generous invisible touch areas, keyboard focus and existing editing behavior. Preserved the readable mobile sentence size. Shortened the final Chapter 1 brief without changing its target.
+- Successful Chapter 1 notes reveal a short scene-specific story beat over the painting and beside the continuation control. The final note has a bell pulse and quiet synthesized bell cue when sound is enabled. Success explanations are available in an expandable “Why this edit works” section. Recovery and memory trails do not replay story payoffs. No character-turn animation is claimed; these remain painted scenes.
+- 62 automated checks pass, including all five story payoffs, single-delivery behavior, supported practice, saved choices, story resume, rewards and village progression. Syntax and whitespace checks pass. Desktop/mobile rendering and touch verification still require an actual browser; the test adapter does not render CSS.
+- Scope remains Chapter 1 presentation and shared editing layout. Chapter 2 story adaptation is still paused.

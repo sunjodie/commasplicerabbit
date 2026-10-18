@@ -46,3 +46,9 @@ Five generated paintings and static partial/finished source-composition proofs w
 Desktop uses an illustration beside a compact reading panel; mobile stacks the illustration above the prose. Pages break at whole paragraphs (at most 85 words in this chapter), with 16px mobile prose, 44px controls and page counts. Dialogue retains the approved speech tags. Notebook work remains a separate screen and keeps the prior artwork/question/answers order. New scene paintings already contain the characters, so no duplicate rabbit sprite is overlaid.
 
 Reading progress survives reloads and village visits. The storybook can replay reached scenes without changing edits or consuming hints. Tests use a DOM adapter and validate handlers/state only; actual desktop/mobile rendering, viewport height, keyboard focus and touch behavior still require browser verification.
+
+## Compact notebook revision
+
+The editing view now has one illustration and one notebook panel. The separate rabbit speech strip is removed, artwork enlargement sits at the top-right of the painting, and the supply indicator is a compact text row with a build link. The notebook contains the brief, sentence, tool tray, feedback, hint and check/continue control. Punctuation tabs have a contrasting paper fill and visible underline in addition to the existing 44px hit area. Sentence text remains 16px on mobile.
+
+After a Chapter 1 solution, a brief narrative caption appears over the illustration and in the notebook feedback so it remains available near the continue control. The bell caption has a gentle pulse (disabled for reduced-motion preferences) and a sound-opt-in bell cue. Grammar explanations expand on demand. Character art remains static. Automated handler/state checks pass; physical-device rendering, overlap and touch QA remain pending.
