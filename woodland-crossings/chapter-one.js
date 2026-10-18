@@ -1,4 +1,4 @@
-// Approved narration, unchanged, from STORY.md Chapter 1. Other chapters are not adapted here.
+// Chapter 1 narration from STORY.md, including the timber clue for the revised mystery.
 export const CHAPTER_ONE=[
  {
   "id": "m1",
@@ -27,6 +27,7 @@ export const CHAPTER_ONE=[
    "“But his cottage was dark when we came past,” Pip said.",
    "“Perhaps he hasn't gone home yet,” Mara replied, drawing her sleeve free.",
    "Pip was about to answer when a broad head and shoulders passed between the light and the glass. She thought she recognised the high collar of Bram's green coat, but before she could be sure the figure bent down and disappeared below the windowsill. Something scraped across the floor with a long, uneven groan that carried between two gusts of rain.",
+   "A narrow trail of pale shavings lay beneath the mill's side window. Rain had flattened the outer edge into the mud, but the wood tucked against the wall was still dry. Pip could smell it when the wind turned, a fresh, sharp smell that did not belong to the wet leaves.",
    "“What's he doing up there?” Pip asked.",
    "“We could ask him in the morning,” Mara suggested, looking back towards the bakery."
   ],

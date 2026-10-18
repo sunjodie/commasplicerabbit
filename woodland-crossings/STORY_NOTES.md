@@ -1,6 +1,12 @@
 # Story development notes
 
-Companion to `STORY.md`. This is a narrative draft, not a question bank or game implementation. The six chapters follow the investigation rather than a prescribed punctuation syllabus. No artwork or game files have been changed.
+Companion to `STORY.md`. Current implementation: Chapter 1 now contains the timber clue, three supporting challenges and a choice of investigative lead. See `CHAPTER_ONE_CASEWORK.md` for the current canon and task flow. Chapters 2–6 in STORY.md and the older chronology/clue explanations below remain the earlier rescue draft, awaiting chunk-by-chunk revision. They must not override the deliberate wrongdoing approved below.
+
+## Current mystery canon — supersedes the earlier innocent-Bram resolution
+
+Bram secretly removes and sells timber under his care to pay a debt, including material supporting the old crossing. He recognises the danger and diverts travellers to conceal his work. His affection towards Pip is real, but he exploits it to avoid scrutiny. Pip and Mara later prove a lie by connecting separated details, discover the removal was deliberate, and expose his attempt to blame the storm after rescuing him. His rescue effort does not erase his responsibility; he loses his caretaker position. Physical layout, timings and witness access must be established before students can make the later deductions. The Chapter 1 light, scraping, shavings, cuff and bell plant evidence without revealing these answers.
+
+The earlier character bible and beat outline below are retained as development history. Bram’s innocence, the chest/rope explanation for the scraping, and the purely helpful map alteration are superseded.
 
 ## Character bible
 
