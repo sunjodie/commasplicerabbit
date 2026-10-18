@@ -56,3 +56,7 @@ After a Chapter 1 solution, a brief narrative caption appears over the illustrat
 ## Chapter 1 supporting challenges
 
 Short casework screens reuse the current scene art, with evidence and interaction in a separate paper panel. Mobile stacks the art above the task. Grammar editing uses individually tappable words and a 16px replacement input with a visible label; the corrected sentence appears after success. Choice buttons have pressed states, minimum 48px heights and textual feedback. Detective lead choice changes the opening observation but both paths provide all essential evidence. Input, route and partial selections persist across reload/village visits. Wrong answers preserve supplies and leave a clue option available. No success relies on colour, sound or a hidden object. Handler/state QA passes; actual screen-reader, keyboard and mobile layout testing remains pending.
+
+## 18 October — stable desktop reading position (local)
+
+Story reader, supporting casework and notebook now share an equal-column desktop grid with matching gutter, padding and 3:2 paintings. Illustration stays left and content stays right; mobile remains stacked. This is a source-level layout update. Browser rendering, tablet legibility and touch checks remain pending. Existing behavior suite: 71 passing checks; it does not validate rendered layout.
