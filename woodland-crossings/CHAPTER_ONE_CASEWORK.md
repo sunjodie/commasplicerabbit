@@ -14,7 +14,7 @@ Chapter 1 remains an atmospheric opening. It now plants pale wood shavings under
 | --- | --- | --- |
 | After the fair | Uninterrupted reading | Separate the square and mill observations with a full stop. |
 | The upstairs light | Correct one agreement error in Pip’s wood-smell observation. | Retain the comma after an although-opening. |
-| Bram’s remembered story | Interpret “drawn back into the trees” in context. | Connect two independent observations with a semicolon. |
+| Bram’s remembered story | Infer the meaning of “incongruous” from the wood scent and its setting. | Use comma + but to express the contrast between Mara’s dismissal and Pip’s unease. |
 | The torn cuff | Choose a lead, then justify a limited conclusion using a pair of details. | Preserve ordinary list commas. |
 | The midnight bell | Uninterrupted cliffhanger | Preserve the dependent opening and repair the splice with a semicolon. |
 
@@ -24,21 +24,21 @@ The three supporting tasks are brief variations. Sentence-boundary work remains 
 
 **Prompt:** There is one grammatical error. Tap the incorrect word and replace it with one word, preserving meaning and tense.
 
-> The smell of newly cut boards were stronger beside the mill wall.
+> The scent of freshly sawn boards were particularly sharp beside the mill wall.
 
-**Answer:** were → was. “Smell” is the singular subject; “of newly cut boards” is an intervening modifier. “Is” changes the tense. Selecting “boards” and entering “was” does not solve the task. The completed note displays the corrected verb.
+**Answer:** were → was. “Scent” is the singular subject; “of freshly sawn boards” is an intervening modifier. “Is” changes the tense. Selecting “boards” and entering “was” does not solve the task. The completed note displays the corrected verb.
 
 **Help on request:** identify the subject rather than agreeing the verb with the nearest noun. A wrong attempt prompts another look; no grammar-mastery record is altered.
 
-## 2. Vocabulary — When the light goes out
+## 2. Vocabulary — Something out of place
 
-Students reread the sentence containing “the mill seemed to have drawn back into the trees”, plus the immediately preceding sentence.
+Students read a short contextual account of the idle mill, its damp stone and decaying leaves, and the sharp smell of freshly cut wood.
 
-**Question:** What does the phrase suggest about how the mill appears to Pip?
+**Question:** Which meaning of “incongruous” best fits this description?
 
-**Target:** It seems more remote and less welcoming once the light has gone out.
+**Target:** Out of place among the surrounding signs of damp and decay.
 
-**Distractors:** deliberate concealment by someone inside (an unsupported motive); literal movement caused by wind; relief because the figure is no longer visible (inconsistent with the atmosphere). The intended answer explains the figurative effect and stays within what the description supports.
+**Distractors:** concealed by other smells; impossible to trace to a source; unpleasant because the wood is decaying. These distinguish a mismatch with the surroundings from intensity, traceability and unpleasantness. The fresh wood/decay contrast supplies the meaning even if the word is unfamiliar. Help directs students to that contrast rather than immediately giving a synonym.
 
 ## 3. Detective work — The familiar stitches
 
@@ -59,3 +59,7 @@ Students reread the sentence containing “the mill seemed to have drawn back in
 Reading pages, investigative lead, selections, typed correction, hints and completion survive reload. Supporting tasks resume before their own main note and never appear on sentence recovery, memory trails or bonus runs. Completed supporting tasks do not recur. Existing saves and village rewards remain intact; no restart is required. Wrong answers can be retried with contextual feedback and optional clues.
 
 69 automated checks pass, including a complete first expedition, both detective leads, partial-answer rejection, typed correction and reload, separate help status, unchanged core progress, exact narration and village construction. These checks execute handlers using a DOM adapter; browser rendering, keyboard flow and touch/viewport QA remain pending.
+
+## Difficulty adjustment
+
+Chapter 1 now has one semicolon target, one explicit contrast with comma + but, one full-stop repair and two comma-preservation notes. The four-tool tray stays stable throughout the chapter. Vocabulary is moderately richer: “incongruous”, “dismissed”, “reassurance”, “apprehensive” (in recall), “frayed” and “freshly sawn”. Context and requested hints keep the wording accessible; no rare-word density is introduced into the narration. Existing completed tasks and village rewards are retained. Chapters 2–6 are unchanged in this pass.

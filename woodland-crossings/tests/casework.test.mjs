@@ -5,7 +5,7 @@ import {fresh,hydrate} from '../engine.js';
 import {STORY,TRANSFER} from '../content.js';
 
 test('three supporting stops leave all five sentence-editing tasks in place',()=>{
- assert.deepEqual(STORY.slice(0,5).map(q=>q.id),['m1','m2','m3','m4','m5']);assert.equal(CASEWORK.length,3);assert.deepEqual(CASEWORK.map(t=>t.kind).sort(),['deduction','grammar','vocabulary']);
+ assert.deepEqual(STORY.slice(0,5).map(q=>q.id),['m1','m2','m3','m4','m5']);assert.equal(STORY.slice(0,5).filter(q=>q.valid.some(v=>v[0]==='semi')).length,1);assert.equal(STORY[2].valid[0][0],'but');assert.equal(CASEWORK.length,3);assert.deepEqual(CASEWORK.map(t=>t.kind).sort(),['deduction','grammar','vocabulary']);
  for(const task of CASEWORK){assert.ok(STORY.some(q=>q.id===task.question));if(task.kind==='grammar')assert.equal(task.text.split(' ')[task.word],'were');else{assert.equal(task.options.filter(o=>o.id===task.answer).length,1);assert.equal(new Set(task.options.map(o=>o.id)).size,task.options.length);}if(task.evidence)assert.equal(task.evidence.filter(o=>o.id===task.evidenceAnswer).length,1);}
 });
 test('correct detective work requires both a supported claim and the matching evidence',()=>{

@@ -223,3 +223,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Added saved auxiliary progress, targeted retry feedback and on-request help. These neither award supplies nor alter comma-splice mastery/recovery. Correct side tasks do not repeat; recovery/review/bonus runs bypass them. Existing edits, reading positions and village saves persist.
 - 69 automated checks pass, covering both leads, wrong/partial answers, typed correction and reload, guide/help isolation, full first-chapter delivery flow and existing progression. Syntax and whitespace checks pass. Browser rendering/mobile touch verification remains pending because no supported browser QA surface is available.
 - Chapter 1 only. Paused before revising Chapter 2.
+
+# Checkpoint 28 — lighter semicolon load and richer vocabulary
+
+- Chapter 1 now has one semicolon target instead of two. The third main note uses comma + but to express a contrast between Mara’s dismissal of the legend and Pip’s continued unease. Its paired recovery also practises contrast; the four-tool tray stays consistent across the chapter. Later chapters have not been changed in this pass.
+- Raised vocabulary moderately through natural task wording: dismissed, reassurance, frayed and freshly sawn, plus apprehensive in the recall example. The short vocabulary task now asks students to infer “incongruous” from the contrast between fresh timber and damp, decaying surroundings. All four options concern plausible aspects of the scent; requested help points to the context.
+- Updated teacher bank and casework notes. Existing completion records, choices and village rewards are retained; an older semicolon edit on the contrast note receives neutral brief feedback rather than a grammar penalty.
+- 69 automated checks pass, including the one-semicolon limit, unique targets, full first-expedition progression and separate casework save/help state. Syntax and whitespace checks pass. Browser/mobile rendering QA remains pending.

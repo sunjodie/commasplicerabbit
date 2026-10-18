@@ -44,21 +44,21 @@ Although the wheel had stopped for winter, the upper room was lit.
 
 ## 3. Chapter 1 · paired-observations
 
-**Student brief:** Keep these paired observations in one sentence. Use punctuation alone and keep every word.
+**Student brief:** Keep one sentence. Use a coordinating joining word to make the contrast between Mara’s dismissal and Pip’s unease explicit.
 
-**On-request help:** Keep these paired observations in one sentence. Use punctuation alone and keep every word.
+**On-request help:** Keep one sentence. Use a coordinating joining word to make the contrast between Mara’s dismissal and Pip’s unease explicit.
 
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Teacher goal:** 1 sentence(s); add but.
 
 **Original**
 
-Mara called it a story, Pip kept watching the dark window.
+Mara dismissed the legend as a fireside invention, Pip found little reassurance in the darkened window.
 
 **Target**
 
-Mara called it a story; Pip kept watching the dark window.
+Mara dismissed the legend as a fireside invention, but Pip found little reassurance in the darkened window.
 
-**Why:** Both observations are complete clauses. A semicolon keeps them together without adding a word.
+**Why:** Both clauses are complete. Comma + but makes the contrast explicit: Mara dismisses the legend, while Pip remains uneasy. A semicolon would link the clauses without expressing the requested contrast.
 
 ## 4. Chapter 1 · noun-list
 
@@ -70,11 +70,11 @@ Mara called it a story; Pip kept watching the dark window.
 
 **Original**
 
-Pip noticed the green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
+Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
 **Target**
 
-Pip noticed the green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
+Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
 **Why:** This comma separates the first two details in a list, not two complete clauses. The last detail belongs to the same list. Keep the existing comma before and.
 
@@ -102,7 +102,7 @@ When the clock finished striking, nobody answered from the mill; the missing bel
 
 **On-request help:** Use AND to combine the two discoveries into one sentence.
 
-**Teacher goal:** 1 sentence(s); and.
+**Teacher goal:** 1 sentence(s); add and.
 
 **Original**
 
@@ -120,7 +120,7 @@ Pip found a deep print beside the gate, and Mara noticed a round dent farther al
 
 **On-request help:** Use BUT to contrast what the print suggested with what Pip could see.
 
-**Teacher goal:** 1 sentence(s); but.
+**Teacher goal:** 1 sentence(s); add but.
 
 **Original**
 
@@ -138,7 +138,7 @@ The print looked fresh, but nobody was visible on the path ahead.
 
 **On-request help:** Use SO to make the second clause the result of the first.
 
-**Teacher goal:** 1 sentence(s); so.
+**Teacher goal:** 1 sentence(s); add so.
 
 **Original**
 
@@ -156,7 +156,7 @@ The trail of round dents continued beyond the gate, so Pip followed the marks to
 
 **On-request help:** Use OR to join the two possible courses of action.
 
-**Teacher goal:** 1 sentence(s); or.
+**Teacher goal:** 1 sentence(s); add or.
 
 **Original**
 
@@ -192,7 +192,7 @@ The person carrying something heavy had stopped beside the reeds; the object had
 
 **On-request help:** Use FOR to introduce the explanation. Keep this as one sentence.
 
-**Teacher goal:** 1 sentence(s); for.
+**Teacher goal:** 1 sentence(s); add for.
 
 **Original**
 
@@ -210,7 +210,7 @@ Mara suspected that the bell had been carried away, for its circular base matche
 
 **On-request help:** Use NOR to add the second negative. Its verb-before-subject order is already prepared.
 
-**Teacher goal:** 1 sentence(s); nor.
+**Teacher goal:** 1 sentence(s); add nor.
 
 **Original**
 
@@ -228,7 +228,7 @@ The bell had not fallen into the stream, nor had anyone left it in the tool shed
 
 **On-request help:** Use YET to stress an unexpected contrast.
 
-**Teacher goal:** 1 sentence(s); yet.
+**Teacher goal:** 1 sentence(s); add yet.
 
 **Original**
 
@@ -336,7 +336,7 @@ The old map, which had been left beside an open window, was damp at the edges; n
 
 **On-request help:** Keep the conditional opening attached. Use BUT for the contrast between the routes.
 
-**Teacher goal:** 1 sentence(s); but.
+**Teacher goal:** 1 sentence(s); add but.
 
 **Original**
 
@@ -372,7 +372,7 @@ The delivery record said that travellers were expected before dawn. Outside the 
 
 **On-request help:** Keep the witness description in its sentence. Use SO to connect the blocked view with its consequence. Leave correct commas alone.
 
-**Teacher goal:** 2 sentence(s); so.
+**Teacher goal:** 2 sentence(s); add so.
 
 **Original**
 
@@ -444,7 +444,7 @@ Although the fog muffled the sound, both witnesses recognised the bell. Their ti
 
 **On-request help:** Use NOR for the second negative. Keep the BECAUSE opening attached; connect its two observations with punctuation alone in one sentence.
 
-**Teacher goal:** 2 sentence(s); nor.
+**Teacher goal:** 2 sentence(s); add nor.
 
 **Original**
 
@@ -462,7 +462,7 @@ The ferryman did not claim to have seen the caretaker, nor did he claim to know 
 
 **On-request help:** Keep the opening attached. Begin a new sentence at the change from setting out to hearing voices. Use FOR to introduce the evidence for the final judgement.
 
-**Teacher goal:** 4 sentence(s); for.
+**Teacher goal:** 4 sentence(s); add for.
 
 **Original**
 
@@ -484,7 +484,7 @@ The higher track curved back towards the sheltered porch behind the mill.
 
 **On-request help:** Keep the WHO description and the WHILE opening attached. Use SO for the result of the broken bridge. Keep all other sentence boundaries.
 
-**Teacher goal:** 3 sentence(s); so.
+**Teacher goal:** 3 sentence(s); add so.
 
 **Original**
 
@@ -506,7 +506,7 @@ While the storm passed, they waited beneath the mill’s old porch.
 
 **On-request help:** Keep the two paragraphs and existing sentence boundaries. Use BUT for the first contrast. Make the join before THEREFORE grammatical without adding words or a sentence.
 
-**Teacher goal:** 3 sentence(s); but.
+**Teacher goal:** 3 sentence(s); add but.
 
 **Original**
 
@@ -528,7 +528,7 @@ The light marked the danger; therefore, the caretaker had left it burning while 
 
 **On-request help:** Keep the ALTHOUGH opening and the existing YET. Use OR to offer the travellers a choice.
 
-**Teacher goal:** 3 sentence(s); or.
+**Teacher goal:** 3 sentence(s); add or.
 
 **Original**
 
@@ -550,7 +550,7 @@ They could wait for the rain to stop, or they could return with Pip by the hills
 
 **On-request help:** Edit the whole report. Keep dependent openings and extra-information commas. Keep the paired physical clues in one sentence using punctuation only. Use SO for the rescue’s result. Begin a new sentence at “By dawn”. Add no other words.
 
-**Teacher goal:** 5 sentence(s); so.
+**Teacher goal:** 5 sentence(s); add so.
 
 **Original**
 
