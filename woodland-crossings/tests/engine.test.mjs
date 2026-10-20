@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import {BANK,STORY,TRANSFER,BONUS,TOOLS,CHAPTERS} from '../content.js';
 import {fresh,hydrate,nextQuestion,record,errors,grammarErrors,renderSentence,mastered,skillState,dueSkills,startReview,startBonus,contractAvailable,DAY} from '../engine.js';
 const solve=(s,q,assisted=false,now=0)=>{s.activeChoices=q.valid.map(v=>v[0]);return record(s,q,assisted,now);};
-test('authored bank has one target per join, complete briefs, available tools and paired recovery examples',()=>{
+test('authored bank has an approved answer set per join, complete briefs, available tools and paired recovery examples',()=>{
  assert.equal(STORY.length,30);assert.equal(TRANSFER.length,30);assert.equal(BONUS.length,3);assert.equal(new Set(BANK.map(q=>q.id)).size,BANK.length);
- for(const q of BANK){assert.ok(q.brief);assert.equal(q.parts.length,q.valid.length+1,q.id);assert.equal(q.why.length,q.valid.length,q.id);assert.equal(q.grammar.length,q.valid.length,q.id);for(let i=0;i<q.valid.length;i++){assert.equal(q.valid[i].length,1,q.id);const t=q.valid[i][0];assert.ok(TOOLS[t]);assert.ok(q.options.includes(t),`${q.id} lacks ${t}`);assert.ok(q.grammar[i].includes(t),`${q.id} rejects grammatical target`);}assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);}
+ for(const q of BANK){assert.ok(q.brief);assert.equal(q.parts.length,q.valid.length+1,q.id);assert.equal(q.why.length,q.valid.length,q.id);assert.equal(q.grammar.length,q.valid.length,q.id);for(let i=0;i<q.valid.length;i++){assert.equal(q.valid[i].length,['m7','r7'].includes(q.id)?2:1,q.id);const t=q.valid[i][0];assert.ok(TOOLS[t]);assert.ok(q.options.includes(t),`${q.id} lacks ${t}`);assert.ok(q.grammar[i].includes(t),`${q.id} rejects grammatical target`);}assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);}
  for(let stage=0;stage<6;stage++)assert.equal(STORY.filter(q=>q.stage===stage).length,5);
  assert.equal(new Set(STORY.map(q=>q.structure)).size,30);
  for(const q of STORY){const r=TRANSFER.find(r=>r.structure===q.structure);assert.ok(r);assert.notDeepEqual(r.parts,q.parts);assert.deepEqual(r.valid,q.valid);}
@@ -70,10 +70,10 @@ test('persistent support never traps a student in recovery or withholds the endi
 test('explicit whole-text goals disambiguate the offered answers, including already-correct notes',()=>{
  assert.equal(STORY[0].goal.sentences,2);assert.equal(STORY[3].goal.sentences,1);assert.equal(STORY[23].goal.sentences,3);assert.equal(STORY[29].goal.sentences,5);assert.deepEqual(STORY[29].goal.conjunctions,['so']);
  const correct=STORY[23];assert.deepEqual(grammarErrors(correct,['comma','semi','comma']),[]);assert.deepEqual(errors(correct,['comma','semi','comma']),[1]);assert.deepEqual(errors(correct,['comma','comma','comma']),[]);
- for(const q of BANK){assert.ok(q.goal.sentences>=1);const target=q.valid.map(v=>v[0]);assert.equal((renderSentence(q,target).match(/[.!?](?=\s|$)/g)||[]).length,q.goal.sentences);for(let i=0;i<target.length;i++)for(const t of q.options)if(t!==target[i]){const alternative=[...target];alternative[i]=t;assert.ok(errors(q,alternative).length,`${q.id}: second accepted edit at ${i}`);}}
+ for(const q of BANK){assert.ok(q.goal.sentences>=1);const target=q.valid.map(v=>v[0]);assert.equal((renderSentence(q,target).match(/[.!?](?=\s|$)/g)||[]).length,q.goal.sentences);for(let i=0;i<target.length;i++)for(const t of q.options)if(!q.valid[i].includes(t)){const alternative=[...target];alternative[i]=t;assert.ok(errors(q,alternative).length,`${q.id}: second accepted edit at ${i}`);}}
 });
 
-test('every task has a semantic brief and contrast synonyms do not compete in trays',()=>{
- for(const q of BANK){assert.ok(q.studentBrief,q.id);assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
+test('semantic briefs and contrast trays follow the approved chapter rules',()=>{
+ for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage!==1)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
  for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^yet /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
 });

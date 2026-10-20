@@ -5,7 +5,7 @@ import {FRAME_ART,readingFrameArt,textFrameArt,questionFrameArt,caseworkFrameArt
 import {CHAPTER_ONE,readingPages} from '../chapter-one.js';
 import {textPages} from '../chapter-ui.js';
 test('every chapter one reading frame and assessment stop has its own art',()=>{
- assert.equal(FRAME_ART.length,52);assert.equal(new Set(FRAME_ART.map(f=>f.asset+':'+f.cell)).size,52);
+ const original=FRAME_ART.filter(f=>/^m[1-5]$/.test(f.scene));assert.equal(original.length,52);assert.equal(new Set(original.map(f=>f.asset+':'+f.cell)).size,52);
  for(const s of CHAPTER_ONE){assert.ok(questionFrameArt(s.id));for(const [page,paragraphs]of readingPages(s).entries())for(const [part]of textPages(paragraphs,38).entries())assert.equal(readingFrameArt(s.id,page,part).id,`${s.id}-${page}-${part}`);}
  for(const id of ['wood-note','dark-window','yellow-stitches'])assert.ok(caseworkFrameArt(id));
 });

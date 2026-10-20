@@ -128,93 +128,113 @@ Keep the comma after the dependent opening. The second comma splices two complet
 
 ## 6. Chapter 2 · additive-independent
 
-**Student brief:** Combine the discoveries into one sentence. Use a coordinating joining word to present them as additional findings.
-
-**On-request help:** Use AND to combine the two discoveries into one sentence.
-
-**Teacher goal:** 1 sentence(s); add and.
+**Student brief:** Join the sentences using a coordinating conjunction that presents the discoveries as additional findings.
 
 **Original**
 
-Pip found a deep print beside the gate, Mara noticed a round dent farther along the bank.
+Pip found a circular mark beside the porch. Mara found a second one beneath the reeds.
 
 **Target**
 
-Pip found a deep print beside the gate, and Mara noticed a round dent farther along the bank.
+Pip found a circular mark beside the porch, and Mara found a second one beneath the reeds.
 
-**Why:** Both discoveries are complete clauses. Comma + and adds the second one.
+**Why:** Both discoveries are complete clauses. A comma followed by “and” adds the second discovery.
+
+**Retry original**
+
+Pip noticed a circular mark beneath the eaves. Mara found another beneath the reeds.
+
+**Retry target**
+
+Pip noticed a circular mark beneath the eaves, and Mara found another beneath the reeds.
 
 ## 7. Chapter 2 · contrast-independent
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to make the contrast between the evidence and the empty path explicit.
-
-**On-request help:** Use BUT to contrast what the print suggested with what Pip could see.
-
-**Teacher goal:** 1 sentence(s); add but.
+**Student brief:** Join the sentences using a coordinating conjunction that makes the contrast explicit.
 
 **Original**
 
-The print looked fresh, nobody was visible on the path ahead.
+The rain had softened the bootprints. The sheltered circular marks were still clear.
 
 **Target**
 
-The print looked fresh, but nobody was visible on the path ahead.
+The rain had softened the bootprints, but the sheltered circular marks were still clear.
 
-**Why:** Comma + but expresses the contrast between the clear mark and the missing person. The available contrast word makes that relationship explicit.
+**Why:** “But” and “yet” both express contrast. “Yet” places greater emphasis on the unexpected difference. Use a comma before either conjunction.
+
+**Retry original**
+
+Rain fell across the path. The circular mark beneath the eaves remained sheltered.
+
+**Retry target**
+
+Rain fell across the path, but the circular mark beneath the eaves remained sheltered.
 
 ## 8. Chapter 2 · cause-result
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to make the second action a result of the first discovery.
-
-**On-request help:** Use SO to make the second clause the result of the first.
-
-**Teacher goal:** 1 sentence(s); add so.
+**Student brief:** Join the sentences using a coordinating conjunction that makes the second action a result of the first discovery.
 
 **Original**
 
-The trail of round dents continued beyond the gate, Pip followed the marks towards the reeds.
+The marks led towards the stream. Mara raised the lamp to search for the next one.
 
 **Target**
 
-The trail of round dents continued beyond the gate, so Pip followed the marks towards the reeds.
+The marks led towards the stream, so Mara raised the lamp to search for the next one.
 
-**Why:** The first discovery leads to the second action. Comma + so makes the result explicit.
+**Why:** “So” shows that the discovery prompts the action. Place a comma before it.
+
+**Retry original**
+
+Pip could not see where the bootprints led next. She held the lamp closer to the ground.
+
+**Retry target**
+
+Pip could not see where the bootprints led next, so she held the lamp closer to the ground.
 
 ## 9. Chapter 2 · alternative-consequences
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to present two alternative courses of action.
-
-**On-request help:** Use OR to join the two possible courses of action.
-
-**Teacher goal:** 1 sentence(s); add or.
+**Student brief:** Join the sentences using a coordinating conjunction that presents the actions as alternatives.
 
 **Original**
 
-They could follow the prints now, they could wait until the fog lifted.
+They could follow the marks to the reeds. They could wait inside the mill for Bram.
 
 **Target**
 
-They could follow the prints now, or they could wait until the fog lifted.
+They could follow the marks to the reeds, or they could wait inside the mill for Bram.
 
-**Why:** Comma + or connects two complete clauses offering alternatives.
+**Why:** “Or” offers a choice between two courses of action. Place a comma before it.
+
+**Retry original**
+
+Pip could bring the lamp closer to the mark. Mara could examine it in the existing light.
+
+**Retry target**
+
+Pip could bring the lamp closer to the mark, or Mara could examine it in the existing light.
 
 ## 10. Chapter 2 · participial-subject
 
-**Student brief:** Keep both observations in one sentence, using punctuation alone.
-
-**On-request help:** Keep both observations in one sentence. Change punctuation only; keep all words.
-
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Student brief:** Join the sentences using a semicolon. Do not add a conjunction.
 
 **Original**
 
-The person carrying something heavy had stopped beside the reeds, the object had left a smooth rim in the mud.
+Whoever carried the heavy object had stopped beside the reeds. Two deep bootprints stood beside the circular mark.
 
 **Target**
 
-The person carrying something heavy had stopped beside the reeds; the object had left a smooth rim in the mud.
+Whoever carried the heavy object had stopped beside the reeds; two deep bootprints stood beside the circular mark.
 
-**Why:** The phrase describing the person’s load belongs inside the subject. Each observation is still a complete clause.
+**Why:** Both clauses are complete. A semicolon links the related observations. “Whoever carried the heavy object” is the whole subject of the first clause.
+
+**Retry original**
+
+The person carrying the heavy object had paused beneath the reeds. A circular mark lay beside two deep bootprints.
+
+**Retry target**
+
+The person carrying the heavy object had paused beneath the reeds; a circular mark lay beside two deep bootprints.
 
 ## 11. Chapter 3 · explanatory-for
 

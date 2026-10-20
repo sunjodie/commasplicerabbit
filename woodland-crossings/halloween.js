@@ -2,7 +2,7 @@
 export const CASE_TITLE='The Midnight Mill';
 export const CASES=[
  {title:'After the fair',intro:'Pip and Mara are leaving the lantern fair when a light appears in the old mill. Read what happens, then help Pip keep her notebook clear.',clue:'A familiar torn cuff, an empty bell hook and a knock beyond the porch.',icon:'lantern'},
- {title:'Footprints in the fog',intro:'Deep footprints lead away from the mill. Something heavy has left a round mark in the mud beside them.',clue:'A round impression beside the footprints: someone put a heavy object down.',icon:'tracks'},
+ {title:'What Had Left the Mill',intro:'A bell sounds beyond the stream. Inside the mill, Pip and Mara find muddy prints and an unfinished note.',clue:'Sheltered circular marks suggest that someone put an object down. Whether it was the bell remains uncertain.',icon:'tracks'},
  {title:'The missing bell',intro:'The mill’s portable warning bell is gone. The mounting is empty, and a scrap of patched cloth is caught beside it.',clue:'The cloth matches a patch on the caretaker’s coat.',icon:'bell'},
  {title:'The altered map',intro:'Someone has drawn a new route on the village map. It avoids the upstream bridge. A delivery record says travellers were expected overnight.',clue:'The changed route avoids the bridge and follows the higher ground.',icon:'map'},
  {title:'Two accounts, one night',intro:'One witness heard the bell near the mill. Another heard it upstream. Pip checks when each sound was heard.',clue:'The accounts describe different times. The bell moved during the night.',icon:'clock'},

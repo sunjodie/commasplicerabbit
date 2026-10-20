@@ -21,6 +21,12 @@ export const QUESTION_SCENES=SCENES.flatMap((base,stage)=>[
  {...base,key:`${stage}-0`,stage,view:0,scale:'100% 100%'},
  ...titles[stage].map((name,i)=>({asset:stage===0?['window-v3','fireside-v3','lane-v3','doorway-v3'].map(n=>'chapter-one/'+n+'.webp')[i]:atlases[stage],name,key:`${stage}-${i+1}`,stage,view:i+1,indoors:stage===0?[false,true,false,true][i]:base.indoors,focus:stage===0?'50% 50%':`${i%2*100}% ${Math.floor(i/2)*100}%`,scale:stage===0?'100% 100%':'200% 200%'}))
 ]);
+// New Chapter 2 paintings replace the older fog/gate compositions.
+for(const view of QUESTION_SCENES.filter(x=>x.stage===1)){
+ const cell=view.view===4?3:2;
+ Object.assign(view,{asset:'chapter-two/scenes-v1.webp',name:['The rain-wet streambank','Sheltered marks','The lamplit bank','Beside the reeds','The tool shed'][view.view],focus:`${cell%2*100}% ${Math.floor(cell/2)*100}%`,scale:'200% 200%'});
+}
+SCENES[1]={...SCENES[1],asset:'chapter-two/scenes-v1.webp',name:'The rain-wet streambank',focus:'0% 100%',scale:'200% 200%'};
 export function questionScene(q,key=null){
  const views=QUESTION_SCENES.filter(x=>x.stage===q.stage);
  const saved=views.find(x=>x.key===key);if(saved)return saved;

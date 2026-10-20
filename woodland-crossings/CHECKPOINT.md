@@ -334,3 +334,15 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Reviewed all 52 Chapter 1 frames after the reported duplicated ears. Corrected Pip's ear silhouettes and discarded edits that changed the baker or made a distant silhouette less clear.
 - Preserved approved story, questions, page mapping and clue concealment. Added an asset cache revision so returning browsers request the corrected paintings.
 - Prompt, provenance and visual review decisions are recorded under assets/chapter-one/frames.
+
+
+# Checkpoint 44 — Chapter 2: What Had Left the Mill
+
+- Based on f68c228, in a fresh worktree rather than the stale reference HEAD. Chapter 1’s approved text and corrected frame assets are preserved.
+- Implemented the approved revised 32-paragraph manuscript, rain-based title and clues, dry map ink, wet-cloth placement, tentative bell-mark hypothesis, and italic unfinished note. The five reading scenes precede notebook editing to avoid question spoilers.
+- Reused the visual-novel layout, chapter-aware header, translucent panels, fonts, keyboard/page navigation, warm music, sound effects and frog collection. Five joining deliveries and five matched recall variants retain the six-chapter village schedule. Chapter 2 joins start with full stops. “But” and “yet” are both accepted for contrast.
+- Added four paginated notebook checks after the fifth note and before the fern-garden reward: “yet”, “for”, comma-splice recognition and evidence/result direction. Saves resume incomplete checks without duplicating deliveries. Long choice lists use two options per page.
+- Four new scene paintings cover mill interior, loft, rainy streambank and shed; they are reused across related reading turns, rather than 52 unique frame paintings. The image source and full prompt are recorded in assets/chapter-two. Reviewed for rain, evidence concealment and two-ear silhouettes. Both root and subdirectory entry points load the current layout.
+- 108 automated unit/handler checks pass, including a full Chapter 2 playthrough, alternate contrast acceptance, retries, legacy save migration, storybook replay, notebook reload and reward collection. Atlas cover geometry checked at desktop/tablet dimensions. No rendered-browser checks were run for this update because the supported browser-control skill is unavailable. Safari, physical-device and listening checks remain pending.
+
+Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-release (repository root); game source in woodland-crossings/.

@@ -76,7 +76,7 @@ test('advancing changes the scene while editing, hints and reload preserve the c
 
 test('meaning-based briefs keep exact-word hints behind an explicit request',async()=>{
  const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?quiet-hints');ui.click('play');
- assert.match(ui.app.innerHTML,/contrast between the evidence/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Add only|editing-goals/);
+ assert.match(ui.app.innerHTML,/makes the contrast explicit/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Add only|editing-goals/);
  const scene=ui.app.innerHTML.slice(ui.app.innerHTML.indexOf('class="scene '),ui.app.innerHTML.indexOf('class="case-workspace"'));assert.doesNotMatch(scene,/class="rabbit /);assert.doesNotMatch(ui.app.innerHTML,/class="pip-guide"|class="pip-speech"/);
  ui.click('check');ui.click('check');assert.doesNotMatch(ui.app.innerHTML,/Try “|Comma \+ but|Use BUT/);ui.click('hint');assert.match(ui.app.innerHTML,/What the note needs:|Use BUT/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,true);
 });
@@ -167,4 +167,41 @@ test('frogs collect once, replay their tidbits and leave language progress intac
  const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();
  let s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);assert.equal(s.story,0);assert.equal(s.seq,0);assert.deepEqual(s.decorations,[]);assert.match(ui.fixed.modalBody.innerHTML,/dismantled/);
  frog.onclick();s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);
+});
+
+
+test('Chapter 2 full story, all nine questions and fern-garden delivery work through real handlers',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=5;s.step=0;s.seq=5;s.introduced=[0,1];s.decorations=[{chapter:0,name:'Wildflowers'}];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-two-full');ui.click('play');
+ let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.chapterTwo.read.length,5);assert.deepEqual(saved.activeChoices,['stop']);assert.match(ui.app.innerHTML,/circular mark beside the/);
+ for(const q of STORY.slice(5,10)){
+  saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.activeId,q.id);
+  ui.app.querySelector('[data-join="0"]').onclick();ui.tool(q.id==='m7'?'yet':q.valid[0][0]);ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');
+ }
+ saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,10);assert.equal(saved.seq,10);assert.equal(saved.pendingReward,1);
+ for(const task of CASEWORK.filter(t=>t.phase==='after'))assert.equal(saved.casework[task.id].completed,true);
+ assert.ok(document.querySelector('#collect'));ui.click('collect');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.decorations.length,2);assert.equal(saved.decorations[1].chapter,1);
+});
+
+test('Chapter 2 retry keeps two-sentence source and distinguishes a splice from a grammatical non-target',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=7;s.activeId='r6';s.activeChoices=['stop'];s.lastRecoveryAtStory=7;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-retry');ui.click('play');assert.match(ui.app.innerHTML,/mark beneath the/);assert.equal(document.querySelector('#storyNext'),null);
+ ui.click('check');assert.match(ui.app.innerHTML,/check what Pip needs/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
+ ui.app.querySelector('[data-join="0"]').onclick();ui.tool('comma');ui.click('check');assert.match(ui.app.innerHTML,/One join needs another look/);
+ ui.tool('and');ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('Chapter 2 resumes an unfinished notebook check after reload and awards supplies exactly once',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=9;s.step=4;s.seq=9;s.activeId='m10';s.activeChoices=['semi'];s.chapterTwo={read:['m6','m7','m8','m9','m10']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-pending');ui.click('play');ui.click('check');ui.click('next');assert.match(ui.app.innerHTML,/An unexpected movement/);
+ ui.app.querySelector('[data-case-choice="yet"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);
+ await import('../app.js?chapter-two-reload');ui.click('play');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,9);
+ for(const task of CASEWORK.filter(t=>t.phase==='after').slice(1)){
+  const wrong=task.options.find(o=>o.id!==task.answer);ui.app.querySelector('[data-case-choice="'+wrong.id+'"]').onclick();ui.click('caseworkCheck');assert.equal(document.querySelector('#collect'),null);
+  ui.app.querySelector('[data-case-choice="'+task.answer+'"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,10);assert.equal(saved.seq,10);assert.equal(saved.pendingReward,1);
+ await import('../app.js?chapter-two-reward-reload');assert.ok(document.querySelector('#collect'));assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).seq,10);
+});
+
+test('Chapter 2 storybook replay uses chapter numbering and preserves supplies and question choices',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=5;s.introduced=[0,1];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-book');ui.click('play');const before=ui.db.get('woodland-crossings-v1');ui.click('readStory');ui.fixed.modalBody.querySelector('[data-book-scene="m8"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Chapter 2 · Scene 3 of 5/);assert.equal(ui.db.get('woodland-crossings-v1'),before);
 });

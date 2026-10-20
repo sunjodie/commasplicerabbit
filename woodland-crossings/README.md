@@ -1,6 +1,6 @@
 # The Midnight Mill
 
-**20 October 2026:** Chapter 1 uses the approved manuscript and eight question groups, five spoiler-free illustrations and scene-specific music. Its ending stops at the unexplained knock. Chapters 2–6 retain their earlier game content pending separate approval.
+**20 October 2026 — Chapter 2:** “What Had Left the Mill” now uses the approved revised prose, Chapter 1’s visual-novel reader, five joining notes and five recall variants, plus four notebook checks. The investigation is read before its editing notes so the exercises cannot disclose unread clues. The contrast task accepts both “but” and “yet”. Four new rain paintings, storybook replay and independent reading/check progress are included. Chapter 1’s approved text and 52 corrected frame paintings are preserved; Chapters 3–6 await their separate revision. 108 automated unit/handler checks pass. This update has not had rendered-browser, Safari or physical-device verification.
 
 
 A self-guided comma-splice mystery for upper-primary and secondary learners: **The Lantern That Shouldn’t Be Lit**. Pip and Mara investigate a light in the old mill, a missing warning bell and an altered map. The clues resolve into a rescue.
@@ -40,7 +40,7 @@ Independent solves earn permanent beacon sparks; three light an expedition’s b
 
 Six optional graphic discoveries persist separately from grammar credit. Revisit reached locations through Woodland secrets to find missed discoveries without repeating questions. The ending is illustrated and replayable, with no score or discovery gate.
 
-Progress saves in this browser’s localStorage, without cross-device sync. Old-bank saves preserve story position, rewards, secrets and beacons; obsolete active questions and blanket review schedules are cleared. New-bank unfinished choices and assistance resume exactly. Clearing site data removes the save. Storage failures show a notice. Sound starts off; motion respects reduced-motion preferences.
+Progress saves in this browser’s localStorage, without cross-device sync. Old-bank saves preserve story position, rewards, secrets and beacons; obsolete active questions and blanket review schedules are cleared. New-bank unfinished choices and assistance resume exactly. Clearing site data removes the save. Storage failures show a notice. Sound starts on and respects a saved mute choice; motion respects reduced-motion preferences.
 
 ## Files and checks
 

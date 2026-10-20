@@ -1,7 +1,7 @@
 import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js';
 export const DAY=86400000;
 export const INTERVALS=[DAY,3*DAY,7*DAY];
-export function fresh(){return {version:1,bankVersion:2,story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
+export function fresh(){return {version:1,bankVersion:2,chapterTwoRevision:1,story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
 export function hydrate(raw){
  if(!raw||raw.version!==1||!Number.isInteger(raw.story)||raw.story<0||raw.story>STORY.length)return fresh();
  const s={...fresh(),...raw};
@@ -10,6 +10,10 @@ export function hydrate(raw){
   // and blanket review dates from the previous bank.
   Object.assign(s,{bankVersion:2,step:raw.story%5,activeId:null,activeChoices:null,activeHelp:false,activeTries:0,activeContract:false,reviewRun:null,bonus:null,recovery:{},passedStructures:[],introduced:[]});
   s.skills=Object.fromEntries(Object.entries(s.skills||{}).map(([k,v])=>[k,{...v,due:null}]));
+ }
+ if(raw.chapterTwoRevision!==1){
+  if(/^([mr])(6|7|8|9|10)$/.test(s.activeId||'')){s.activeChoices=['stop'];s.activeHelp=false;s.activeTries=0;s.activeContract=false;}
+  s.chapterTwoRevision=1;
  }
  // Preserve older in-progress edits after the contrast word moved into the text.
  if(['m29','r29'].includes(s.activeId)&&s.activeChoices?.[1]==='yet')s.activeChoices[1]='comma';
@@ -38,7 +42,7 @@ export function nextQuestion(s){
   q=need?TRANSFER.find(q=>q.structure===need.structure):STORY[s.story];
  }
  if(!q){s.reviewRun=null;s.bonus=null;return nextQuestion(s);}
- s.activeId=q.id;s.activeContract=false;s.activeHelp=false;s.activeTries=0;s.activeChoices=q.valid.map(()=> 'comma');return q;
+ s.activeId=q.id;s.activeContract=false;s.activeHelp=false;s.activeTries=0;s.activeChoices=q.initialChoices?.slice()||q.valid.map(()=> 'comma');return q;
 }
 export function renderSentence(q,choices=q.valid.map(()=> 'comma')){return q.parts.reduce((out,p,i)=>{let text=p;if(i&&choices[i-1]==='stop')text=p.charAt(0).toUpperCase()+p.slice(1);return out+(i?TOOLS[choices[i-1]].join:'')+text;},'');}
 export function errors(q,choices){return q.valid.map((valid,i)=>valid.includes(choices[i])?-1:i).filter(i=>i>=0);}

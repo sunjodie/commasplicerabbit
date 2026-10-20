@@ -72,53 +72,69 @@ Something knocked against the wall beyond the porch. Pip waited with the torn cl
 
 ## 2. What Had Left the Mill
 
-Pip tightened her grip on the cloth until cold water squeezed between her fingers. She knew that bell well enough to recognise the slight rattle that followed each stroke. At the fair, Bram rang it to start races, and everybody ran before he had finished explaining the rules. From the far side of the stream, with the empty hook in front of her, it sounded wrong.
+Pip tightened her grip on the torn strip of green cloth until cold water squeezed between her paws. She knew that bell well enough to recognise the slight rattle that followed each stroke. There was a small chip in its lip; she had caught a claw on it once while helping Bram polish the brass. The sound came from beyond the stream, and with the empty hook in front of her it sounded wrong.
 
-Mara turned up the lamp and lifted it from the stair. A little smoke curled from the wick before the flame steadied, bringing the lower room into view. There was the wooden crate Bram sat on to change his boots, with a bundle of reeds tucked behind it and the dented watering can he had been promising to mend since spring. Everything was familiar except the mud. Deep prints crossed the boards, and at the foot of the stairs one heel had slipped far enough to leave a brown smear against the first riser.
+Mara turned up the lamp and lifted it from the stair. A little smoke curled from the wick before the flame steadied, bringing the mill’s lower room into view. There was the wooden crate Bram sat on to change his boots, with a bundle of reeds tucked behind it and the dented watering can he had been promising to mend since spring. Everything was familiar except the mud. Deep prints crossed the boards, and at the foot of the stairs one heel had slipped far enough to leave a brown smear against the first riser.
 
 “He went out in a hurry,” Pip said.
 
-“He might have been coming in,” Mara pointed out. “We don't know yet.”
+“He might have been coming in,” Mara pointed out. “We don’t know yet.”
 
-Pip looked at the strip of cloth and imagined Bram being pulled backwards through the doorway, trying to catch hold of something while his sleeve tore. The picture came so readily that she almost told Mara, but she could think of nothing to say when Mara asked how she knew.
+Pip looked at the cloth and imagined Bram being pulled backwards through the doorway, trying to catch hold of something while his sleeve tore. The picture came so readily that she almost told Mara, but she had only the picture, not a reason.
 
-They climbed to the upper room, where the air smelled of old grain and the sweet, dusty straw packed between the rafters. Rain tapped against the window above an open storage chest. Its lid rested against the wall, and two clean tracks ran across the dusty boards from the place where it usually stood. Inside, among folded sacks and a few coils of twine, a pale circle showed where Bram kept his long rope.
+They climbed to the upper room, where the air smelled of old grain and the sweet, dusty straw packed between the rafters. Rain tapped against the window above an open storage chest. Its lid rested against the wall, and two clean tracks ran across the dusty boards from the place where the chest usually stood. Inside, among folded sacks and a few coils of twine, a pale circle showed where Bram kept his long rope.
 
 Pip went to the window while Mara held the lamp behind her. At first she could see only the flame and her own wide eyes, but when she cupped her paws around her face the far bank emerged between the reflections. Something pale shifted among the branches, disappeared, then moved again in the same place.
 
 “Can you see him?” Mara asked.
 
-“No, it's only a branch,” Pip said at last, drawing away from the cold glass.
+“No, it’s only a branch,” Pip said at last, drawing away from the cold glass.
 
-Downstairs, they found Bram's map spread across his desk beneath a jar of pencils. Its corners had curled with age, and the stream wandered through the middle in a thin blue line, much tidier than the water they could hear outside. Somebody had crossed out the footbridge in thick black ink and drawn a new route up the valley, past Alder Arch and back along the opposite hillside. The fresh line shone where the lamp caught it.
+Downstairs, they found Bram’s map spread across his desk beneath a jar of pencils. Its corners had curled with age, and the stream wandered through the middle in a thin blue line, much tidier than the water they could hear outside. Somebody had crossed out the low footbridge in thick black ink and drawn a new route up the valley, past a crossing labelled *Alder Arch* and back along the opposite hillside.
 
-“He's drawn something on here,” Mara said, carrying the map closer to the light.
+“Someone’s drawn something on here,” Mara said, carrying the map closer to the light.
 
-Pip leaned over her shoulder. Bram had pressed so hard over the little bridge that the pen had nearly worn through the paper.
+Pip leaned over her shoulder. Whoever had crossed out the bridge had pressed so hard that the pen had nearly worn through the paper.
 
-“Wouldn't he have left us a message?” she asked.
+“Wouldn’t he have left us a note?” she asked.
 
-Beside the map lay a sheet headed *Please don't use the*. The words stopped in the middle of the line, with room for the rest beneath them. Bram's pen lay across the page, its nib resting in a dark blot that had spread into the paper fibres.
+Beside the map lay a sheet headed *Please don’t use the*. The words stopped in the middle of the line, with the rest of the line left blank. Bram’s pen lay across the page, its nib resting in a dark blot that had spread into the paper fibres.
 
-Mara folded the map along its old creases and slipped it inside her coat. Before they left, Pip laid the green cloth beside the unfinished message, smoothing it flat so Bram would see it if he came back.
+“Please don’t use the,” Pip read aloud.
 
-Outside, the lamp picked out a trail of bootprints leading from the porch towards the stream. Rain had softened their edges, but beside the first few they found shallow circles about the width of a dinner plate. Pip crouched beside the clearest one, where a little notch interrupted the rim.
+“The what?” Mara asked.
 
-“Look at the edge,” she said, holding the lamp low. “It's the same shape as the bottom of the bell.”
+Pip looked from the unfinished words to the crossed-out bridge.
 
-“He must have put it down,” Mara said, looking ahead for another mark.
+“He hasn’t said.”
 
-They found one beneath the reeds, with a pair of deeper prints beside it. Water had begun to gather in the heels, reflecting two small flames when Pip passed the lamp over them. Whoever carried the bell had stood there long enough to sink into the bank.
+Mara checked that the map’s ink was dry, folded it along its old creases and slipped it inside her coat. Pip repeated the unfinished words to herself. Before they left, she laid the wet cloth along the edge of the desk, clear of the papers, so Bram would see it if he came back.
 
-A rustling farther along made Pip straighten so quickly that her knees hurt, but the light showed only reed heads brushing against one another. She walked on with Mara and tried not to keep looking behind them.
+Outside, the lamp picked out a trail of bootprints leading from the porch towards the stream. Rain had softened their edges. Beside the porch, however, a circular mark lay deep in the mud beneath the shelter of the eaves. It was about the width Pip remembered the bell’s rim being.
 
-The tool shed stood open beside the path. Its roof dripped onto a row of empty flowerpots, and when Mara lifted the lamp they saw Bram's spare boots waiting neatly beneath his workbench. Pip looked behind the sacks before she could stop herself.
+She crouched beside it. A little notch interrupted its edge.
+
+“Could that be from the bell?” she asked, holding the lamp low. “There’s a chip in the lip.”
+
+Mara bent to look.
+
+“It could be,” she said. “Let’s see if there’s another.”
+
+They found a second circular mark beneath the reeds, where the overhanging leaves had kept off some of the rain. A pair of deeper bootprints stood beside it. Water had begun to gather in the heels, reflecting two small flames when Pip passed the lamp over them.
+
+“Someone must have put something down here,” Mara said.
+
+Pip looked towards the trees beyond the stream. She tried to picture Bram carrying the bell, but from where she stood she could not see where the prints led next.
+
+A rustling further along made Pip straighten so quickly that her knees hurt, but the light showed only reed heads brushing against one another. She walked on with Mara and tried not to keep looking behind them.
+
+The tool shed stood open beside the path. Its roof dripped onto a row of empty flowerpots, and when Mara lifted the lamp they saw Bram’s spare boots waiting neatly beneath his workbench. Pip looked behind a pile of sacks before she could stop herself.
 
 “That sounded higher up,” Mara said when the bell rang again, turning towards the trees above the far bank.
 
 “Bram says sound travels strangely in the rain,” Pip replied.
 
-She wished she had not mentioned him. Mara was still listening, with one ear turned towards the woods, and neither of them seemed able to leave the next sound unheard.
+She wished she had not said his name. Mara was still listening, with one ear turned towards the woods, and neither of them could stop listening for the next stroke.
 
 ## 3. The Wrong Path
 

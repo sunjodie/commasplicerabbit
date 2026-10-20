@@ -103,3 +103,8 @@ The user’s screenshots exposed two inheritance conflicts: the legacy `.builder
 ## Pip ear anatomy repair
 
 Reviewed all 52 frame compositions after the reported third ear in the upstairs-light notebook scene. Eleven sheets received anatomy edits; originals 02 and 09 were retained after their revisions introduced unrelated changes. Accepted outputs were visually checked for duplicated lobes and stray ear-like crown shapes. The reported notebook composition was also inspected in the desktop crop. All 104 desktop/tablet frame loading checks pass.
+
+
+## Chapter 2 — 20 October 2026
+
+The same visual-novel surfaces now cover Chapter 2 story, joining tasks, notebook checks and feedback, with chapter-aware headers. Four new scene paintings are reused across related turns. Full manuscript pagination retains all words at 38/42/48-word budgets. Added notebook choice pagination (two options per page) to bound long answer lists. Automated tests cover handler progression and cover-crop mathematics; rendered-browser fit, Safari and physical tablet interaction have not been revalidated in this update.
