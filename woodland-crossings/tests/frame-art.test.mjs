@@ -19,3 +19,22 @@ test('atlas cells cover landscape and portrait without showing neighbouring fram
 test('all illustration sheets exist as complete WebP assets',()=>{
  for(const asset of new Set(FRAME_ART.map(f=>f.asset))){const b=readFileSync(new URL('../assets/'+asset,import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');assert.ok(b.length>100000,asset);}
 });
+
+test('Chapter 3 story, main notes and retries all have a crop frame',()=>{
+ for(let n=11;n<=15;n++){
+  const main=questionFrameArt('m'+n),retry=questionFrameArt('r'+n);
+  assert.ok(main);assert.equal(main,retry);
+  assert.ok(readingFrameArt('m'+n));
+ }
+ assert.equal(questionFrameArt('m11').columns,1);assert.equal(questionFrameArt('m11').rows,1);
+ for(let n=12;n<=15;n++)assert.equal(questionFrameArt('m'+n).cell,n-12);
+});
+test('Chapter 3 crops isolate one painting in desktop, portrait and tablet landscape panels',()=>{
+ for(const [width,height] of [[1366,714],[768,970],[1024,546],[600,546]])for(let n=11;n<=15;n++){
+  const f=questionFrameArt('m'+n),cols=f.columns||2,rows=f.rows||2;
+  const g=frameGeometry(width,height,f.cell,.7,cols,rows);
+  const left=g.x+(f.cell%cols)*g.width/cols,top=g.y+Math.floor(f.cell/cols)*g.height/rows;
+  assert.ok(left<=0&&top<=0);assert.ok(left+g.width/cols>=width&&top+g.height/rows>=height);
+  assert.equal((g.width/cols)/(g.height/rows),1.5);
+ }
+});

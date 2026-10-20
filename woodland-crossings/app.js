@@ -1,8 +1,8 @@
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,explorationFrameArt,paintFrame} from './frame-art.js?v=20261020-crop5';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,explorationFrameArt,paintFrame} from './frame-art.js?v=20261021-chapter3-layout1';
 import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js';
 import './page-keys.js';
 import {createPageSound,isPageTurn} from './page-sound.js';
-import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261020-chapter3-edit1';
+import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261021-chapter3-layout1';
 import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js';
 import {CHAPTER_THREE_REFLECTION} from './chapter-three.js';
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261020-chapter3-edit1';
@@ -153,7 +153,7 @@ function draw(){
  const test=document.querySelector('#check');if(test)test.onclick=check;
  const next=document.querySelector('#next');if(next)next.onclick=advance;
  bindEasterEggs();document.querySelector('#viewArtwork').onclick=()=>{const setting=questionScene(q,state.activeScenery?.key);showModal(`<span class="eyebrow">Chapter ${q.stage+1} · Look around</span><h2>${e(setting.name)}</h2><div class="artwork-preview" role="img" aria-label="${e(setting.name)}" style="background-image:url('assets/${setting.asset}');background-size:${setting.scale};background-position:${setting.focus}"></div><p class="small-note">Take your time. Your question and edits are waiting.</p>`);paintFrame(document.querySelector('#modalBody .artwork-preview'),questionFrameArt(q.id));};const contract=document.querySelector('#contract');if(contract)contract.onclick=()=>{state.activeContract=!state.activeContract;feedback=null;save();draw();document.querySelector('#contract')?.focus();};
- if(q.stage<=1)paintFrame(app.querySelector('.world-stage .painted-scene'),questionFrameArt(q.id));
+ if(q.stage<=2)paintFrame(app.querySelector('.world-stage .painted-scene'),questionFrameArt(q.id));
  if(q.stage<=2)presentChapterView({kind:'question',chapter:q.stage+1,title:'Pip’s notebook',onDismiss:()=>{feedback=null;draw();}});else clearChapterView();
 }
 function fitPiece(t){if(solved||selected<0)return;state.activeChoices[selected]=t;feedback=null;save();draw();say(`${TOOLS[t].label} fitted. ${renderSentence(BANK.find(q=>q.id===state.activeId),state.activeChoices,state.activeWordOrder)}`);app.querySelector(`[data-tool="${t}"]`)?.focus();}

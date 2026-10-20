@@ -79,7 +79,7 @@ function questionPanel(){
 }
 export function presentChapterView({kind,title,key='',message='',completed=false,onDismiss=null,onReadingPart=null,chapter=1}){
  if(!document.body||!wide())return;clearChapterView();active={kind,title,onDismiss,onReadingPart};document.body.classList.add('vn-active');headerControls();
- const app=document.querySelector('#app');app.dataset.vnKind=kind;document.querySelector('header')?.insertBefore(element('span','vn-top-title','Chapter '+chapter+' · '+title),document.querySelector('header nav'));
+ const app=document.querySelector('#app');app.dataset.vnKind=kind;app.dataset.vnChapter=String(chapter);document.querySelector('header')?.insertBefore(element('span','vn-top-title','Chapter '+chapter+' · '+title),document.querySelector('header nav'));
  if(kind==='story')storyPanel();else if(kind==='casework')caseworkPanel(key,message,completed);else questionPanel();
 }
 // Auxiliary dialogs also turn pages rather than grow a scrolling box.

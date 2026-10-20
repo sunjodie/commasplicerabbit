@@ -175,3 +175,18 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
 .builder-dock .feedback :is(.small-note,.muted){color:#655044;text-shadow:none}
 @media(min-width:600px){.vn-active .case-workspace .builder-dock .feedback :is(.small-note,.muted){color:#f2e2c9}}
 @media(min-width:600px){.vn-active .adventure-board.art-first .case-workspace.vn-show-feedback{background:rgba(22,37,31,.88);border-color:#8eab92}}
+
+/* Chapter 3 keeps the same scene panel, with room for the clause rewrite. */
+#clauseRewrite{max-width:none;width:100%;box-sizing:border-box}
+@media(min-width:600px){
+ .vn-active #app[data-vn-chapter="3"] .case-workspace .piece-tray{gap:8px}
+ .vn-active #app[data-vn-chapter="3"] .piece-tray .sentence-piece{flex:1 1 94px;min-width:94px;max-width:none;gap:8px;padding:8px;min-height:44px}
+ .vn-active #app[data-vn-chapter="3"] .piece-tray .sentence-piece span{font-size:12px}
+ .vn-active #app[data-vn-chapter="3"] .case-workspace .actions{flex-wrap:wrap}
+ .vn-active #app[data-vn-chapter="3"] .case-workspace:has(#clauseRewrite) .sentence{font-size:clamp(18px,1.7vw,24px);line-height:1.4}
+ .vn-active #app[data-vn-chapter="3"] .correction-label{font-size:12px;margin:6px 0 4px}
+ .vn-active #app[data-vn-chapter="3"] #clauseRewrite{font-size:16px;margin-bottom:6px}
+ .vn-keyboard #app[data-vn-chapter="3"] .case-workspace:has(#clauseRewrite){padding:10px 18px;bottom:8px}
+ .vn-keyboard #app[data-vn-chapter="3"] .case-workspace:has(#clauseRewrite) :is(.notebook-source,.editing-brief,.piece-tray){display:none}
+ .vn-keyboard #app[data-vn-chapter="3"] .case-workspace:has(#clauseRewrite) .sentence{font-size:15px;line-height:1.35;margin:0 0 4px}
+}

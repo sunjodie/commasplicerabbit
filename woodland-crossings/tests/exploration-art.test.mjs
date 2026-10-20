@@ -6,7 +6,8 @@ import {frogPosition} from '../frogs.js';
 test('exploration uses the reached Chapter 1 painting or the isolated Chapter 2 streambank cell',()=>{
  for(let view=0;view<5;view++){const f=explorationFrameArt(0,view);assert.equal(f.scene,'m'+(view+1));assert.ok(f.frog);}
  const f=explorationFrameArt(1);assert.equal(f.cell,2);assert.equal(f.frog.id,'reed-frog');assert.equal(f.asset,'chapter-two/scenes-v4.webp');
- for(let stage=2;stage<6;stage++)assert.equal(explorationFrameArt(stage),null);
+ assert.equal(explorationFrameArt(2).asset,'bell-workshop.webp');
+ for(let stage=3;stage<6;stage++)assert.equal(explorationFrameArt(stage),null);
 });
 
 test('atlas crop is applied before image loading and isolates the streambank in wide and narrow dialogs',()=>{
