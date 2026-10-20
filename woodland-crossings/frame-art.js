@@ -7,10 +7,10 @@ export const FRAME_ART=[{"id":"m1-0-0","scene":"m1","kind":"story","cell":0,"ass
 // Chapter 2 shares its scene paintings across reading and notebook turns.
 const chapterTwoCells=[0,1,1,2,3];
 for(const [i,scene] of CHAPTER_TWO.entries()){
- FRAME_ART.push({id:scene.id+'-story',scene:scene.id,kind:'story',cell:chapterTwoCells[i],asset:'chapter-two/scenes-v3.webp',text:scene.paragraphs[0]});
- FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:i===4?3:2,asset:'chapter-two/scenes-v3.webp',text:'Notebook at the rain-wet streambank',...(i===0?{frog:{id:'reed-frog',x:16,y:60,perches:[{x:50,y:54}]}}:{})});
+ FRAME_ART.push({id:scene.id+'-story',scene:scene.id,kind:'story',cell:chapterTwoCells[i],asset:'chapter-two/scenes-v4.webp',text:scene.paragraphs[0]});
+ FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:i===4?3:2,asset:'chapter-two/scenes-v4.webp',text:'Notebook at the rain-wet streambank',...(i===0?{frog:{id:'reed-frog',x:16,y:60,perches:[{x:50,y:54}]}}:{})});
 }
-for(const task of CHAPTER_TWO_CASEWORK)FRAME_ART.push({id:task.id,scene:'m10',kind:'casework',cell:3,asset:'chapter-two/scenes-v3.webp',text:task.context});
+for(const task of CHAPTER_TWO_CASEWORK)FRAME_ART.push({id:task.id,scene:'m10',kind:'casework',cell:3,asset:'chapter-two/scenes-v4.webp',text:task.context});
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===id+'-question');}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}

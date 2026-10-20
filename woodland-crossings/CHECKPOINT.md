@@ -369,3 +369,10 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 - The first generated pass shortened the ears too far; a second focused edit restored two long upright rabbit ears before publication. Pip, the lamps, rainy scenery, four-cell boundaries and clue concealment are retained. Final source and both prompts are recorded in assets/chapter-two/mara-review.json and adjacent prompt files.
 - Runtime now uses scenes-v3.webp; earlier assets remain for provenance. Refreshed application and art-module URLs. Story, questions, answers and progression are unchanged.
 - All 109 automated checks pass. Final four-cell atlas compared visually with Chapter 1 references. Rendered-browser, Safari and physical-device checks remain pending.
+
+
+# Checkpoint 48 — Use the supplied Chapter 2 artwork
+
+- Replaced the active Chapter 2 atlas with the image the user supplied as image(20261020-153209).png. No further generative edits. Converted to lossless WebP and verified identical decoded RGB pixels.
+- Runtime uses scenes-v4.webp in the reader, notebooks, storybook replay and scene revisits. Original four-cell geometry and scene order retained. Source provenance is in assets/chapter-two/user-approved-source.json.
+- Refreshed entry-point and art-module cache URLs. All 109 automated checks pass; story, questions, answers and progress are unchanged.

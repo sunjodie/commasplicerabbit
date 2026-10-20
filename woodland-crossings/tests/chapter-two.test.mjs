@@ -84,12 +84,12 @@ test('all Chapter 2 views have local rain artwork and safe desktop/tablet atlas 
   const g=frameGeometry(width,height,cell),left=g.x+cell%2*g.width/2,top=g.y+Math.floor(cell/2)*g.height/2;
   assert.ok(left<=0&&top<=0&&left+g.width/2>=width&&top+g.height/2>=height);
  }
- const b=readFileSync(new URL('../assets/chapter-two/scenes-v3.webp',import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');
+ const b=readFileSync(new URL('../assets/chapter-two/scenes-v4.webp',import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');
 });
 
 
 test('root and game entry points load the same visual-novel styles and versioned application',()=>{
  const root=readFileSync(new URL('../../index.html',import.meta.url),'utf8'),game=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(root,/<base href="\.\/woodland-crossings\/">/);
- for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261020-chapter2-options"/);assert.match(html,/src="app.js\?v=20261020-chapter2-mara3"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
+ for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261020-chapter2-options"/);assert.match(html,/src="app.js\?v=20261020-chapter2-approved4"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
 });

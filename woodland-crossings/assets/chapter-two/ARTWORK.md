@@ -16,6 +16,11 @@ Replaced the naturalistic rabbit proportions with the established rounded faces 
 
 ## Mara-focused consistency correction — scenes-v3.webp
 
-Current game asset: `scenes-v3.webp`. Edited with the built-in image generator against Chapter 1’s standing pair beside the bakery (`sheet-05.webp`, bottom right), its facial close-up, and `sheet-12.webp`. The first pass shortened Mara’s body, rounded her cheeks and muzzle, enlarged her head and eyes, and removed the bright checked neckwear. A second surgical pass restored long upright ears after the first pass shortened them too far.
+Previous game asset: `scenes-v3.webp` (superseded by the user-selected image below). Edited with the built-in image generator against Chapter 1’s standing pair beside the bakery (`sheet-05.webp`, bottom right), its facial close-up, and `sheet-12.webp`. The first pass shortened Mara’s body, rounded her cheeks and muzzle, enlarged her head and eyes, and removed the bright checked neckwear. A second surgical pass restored long upright ears after the first pass shortened them too far.
 
 Source: `exec-037b68e2-a23f-45b0-bfcc-bac0f654e830.png`. Both exact prompts and the intermediate-review decision are retained in `mara-correction-prompt.txt`, `mara-ear-prompt.txt` and `mara-review.json`. Viewed all four final cells alongside the reference. Pip’s appearance, established lantern designs and ownership, scenery, clue concealment and atlas boundaries remain intact. Prior v1/v2 assets are retained for provenance.
+
+
+## User-selected replacement — scenes-v4.webp
+
+Current game asset: `scenes-v4.webp`. Source: the user-supplied `image(20261020-153209).png`, explicitly selected with “use this instead”. No generative editing or visual alteration was applied. Saved as lossless WebP, preserving all decoded RGB pixels; verified pixel-for-pixel against the supplied PNG. It uses the same 1536×1024 four-cell atlas geometry and scene order. Source identity and SHA-256 are recorded in `user-approved-source.json`. Earlier variants remain for provenance.
