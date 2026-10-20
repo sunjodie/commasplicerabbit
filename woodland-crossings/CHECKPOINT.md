@@ -316,3 +316,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Chapter 1 now uses warm music throughout, including the fireside memory, questions and notebook stops. The creepy cue belongs only to Chapter 3’s lesson/questions. Storybook replay does not interrupt the current track. The incomplete cue still fades to silence instead of looping.
 - Frogs now use varied left/right and upper/lower source-art perches, with a second authored perch when a tablet crop removes the first. Collection identities, art, tidbits and quiet click croaks are unchanged.
 - 91 unit/handler tests pass, covering chapter music mapping, varied placement and crop-safe fallback points. Native Chapter 1 browser regression passes 242 states. Actual desktop scene screenshot reviewed. Physical tablet/Safari and listening checks remain pending.
+
+# Checkpoint 41 — hint and reward contrast repair
+
+- Prevented the old cream supply-dock feedback styles from overriding the visual-novel palette. Hints and success feedback now use pale ink on the intended dark green surface.
+- Gave parchment reward clues, reward tiles and mobile hint examples their own dark ink rather than inherited scene text. The reward clue strip is readable on its pale fill.
+- Added real-browser palette assertions for feedback and reward clues. 91 unit/handler checks, 242 Chapter 1 browser states and 148 seven-size layout states pass. Hint/reward screenshots inspected.

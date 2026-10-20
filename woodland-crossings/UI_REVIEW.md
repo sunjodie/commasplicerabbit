@@ -91,3 +91,7 @@ Ten original vector frogs use different accessories and subdued greens with no p
 ## Painted frogs and source-art anchors — 20 October 2026
 
 Flat icons looked separate from the paintings. They have been replaced by textured, muted painted sprites with natural proportions and smaller visible sizes. The invisible target remains 44px. Hover does not brighten, add a badge or change the cursor. Keyboard focus still has a clear outline. Frog positions now follow the original painting through cover crops; a ResizeObserver keeps the feet attached to their surfaces. The original scene assets remain unchanged. The fair screenshot was reviewed at desktop size; the frog sits discreetly at the fountain edge. Fieldbook collection and tidbits remain intact. Details and final prompt: assets/frogs/ARTWORK.md.
+
+## Hint and reward contrast repair
+
+The user’s screenshots exposed two inheritance conflicts: the legacy `.builder-dock .feedback.clue` cream fill survived the desktop help treatment, and `.vn-menu p` supplied pale text to parchment reward clues. Explicit surface palettes now override those selectors. Hints/success use light ink on dark green; reward clue strips and compact mobile hint examples use dark brown ink on parchment. Rendered regression asserts actual computed colours, in addition to checking overflow and text bounds.

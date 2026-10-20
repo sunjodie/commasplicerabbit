@@ -161,3 +161,17 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
 .frog-portrait{width:88px;height:88px;margin:0 auto 8px}.frog-portrait .frog-sprite{width:88px;height:88px}
 .secret-item .text-button{display:block;margin:8px auto;min-height:36px}.secret-item>.frog-sprite{width:65px;height:65px;margin:auto}.secret-item>svg{height:65px;max-width:90px;margin:auto;display:block}
 .woodland-frog[hidden]{display:none!important}
+/* Override the older cream supply-dock feedback, including its .clue variant. */
+@media(min-width:600px){
+ .vn-active .case-workspace .builder-dock .feedback,
+ .vn-active .case-workspace .builder-dock .feedback.clue{background:transparent;border:0;box-shadow:none;color:#fff7e9}
+ .vn-active .case-workspace .builder-dock .feedback p{color:#fff7e9}
+ .vn-active .case-workspace .builder-dock .feedback strong{color:#e0e8d2}
+}
+/* Parchment cards own their ink colour instead of inheriting scene text. */
+.chapter-clue,.chapter-clue p,.reward-tile,.reward-tile p{color:#49382f;text-shadow:none}
+.vn-active.vn-menu .chapter-clue,.vn-active.vn-menu .chapter-clue p{color:#49382f;text-shadow:none}
+.builder-dock .feedback .standalone>div{background:#e9d8b6;color:#49382f;text-shadow:none}
+.builder-dock .feedback :is(.small-note,.muted){color:#655044;text-shadow:none}
+@media(min-width:600px){.vn-active .case-workspace .builder-dock .feedback :is(.small-note,.muted){color:#f2e2c9}}
+@media(min-width:600px){.vn-active .adventure-board.art-first .case-workspace.vn-show-feedback{background:rgba(22,37,31,.88);border-color:#8eab92}}
