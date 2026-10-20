@@ -1,100 +1,130 @@
 # Mystery question bank
 
-30 story questions. Students see meaning-based briefs. Exact-word guidance and explanations appear only after requesting a hint or solving. Other grammatical repairs receive neutral feedback when they miss the writing goal.
+Chapter 1 follows the approved manuscript. Offered repairs vary by task. A grammatical alternative that misses the stated writing goal receives neutral feedback. Later chapters retain their existing question bank.
 
-**Shared rules:** Use the pieces provided. Keep correct commas and every original word. Add joining words only where the writing goal requires them; change nothing else.
+## Approved Chapter 1 replacement (20 October 2026)
 
-Chapter trays are stable. BUT and YET are offered in different chapters to avoid competing contrast answers; FOR is the available coordinating reason word. All seven FANBOYS remain targets. Paired recovery questions are in content.js.
+### Q1. Beyond the gardens
 
-## 1. Chapter 1 · scene-time-shift
+The villagers were dismantling the last stalls, beyond the gardens, a light appeared in the mill’s upper window.
 
-**Student brief:** Start a new sentence when the view moves from the square to the mill. Keep every word.
+Present the activity in the square and the discovery at the mill as two separate sentences. Keep every word. Edit the comma after “stalls”.
 
-**On-request help:** Start a new sentence when the view moves from the square to the mill. Keep every word.
+Keep comma
+Full stop
+Semicolon
 
-**Teacher goal:** 2 sentence(s); no added joining words.
+Answer: The villagers were dismantling the last stalls. Beyond the gardens, a light appeared in the mill’s upper window.
 
-**Original**
+Both sides are complete clauses. A full stop gives the two sentences required by the brief. A semicolon would be grammatical but would not meet that goal.
 
-The villagers were packing away the fair, across the stream, a light appeared in the mill.
+### Q2. The fresh timber
 
-**Target**
+The scent of freshly sawn boards were particularly sharp beside the mill wall.
 
-The villagers were packing away the fair. Across the stream, a light appeared in the mill.
+Find and replace one grammatically incorrect word. Preserve meaning and past tense.
 
-**Why:** Both clauses are complete. A full stop marks the move from the square to the mill; a semicolon is grammatical but does not meet this writing goal.
 
-## 2. Chapter 1 · concession-opening
 
-**Student brief:** Keep one sentence. Edit only what the structure requires.
+Answer: were → was
 
-**On-request help:** Keep one sentence. Edit only what the structure requires.
+The singular subject is “scent”. The intervening phrase “of freshly sawn boards” does not make it plural.
 
-**Teacher goal:** 1 sentence(s); no added joining words.
+### Q3. The upstairs light
 
-**Original**
+Although the mill’s waterwheel had been idle for a week, a light still burned in the upper room.
 
-Although the wheel had stopped for winter, the upper room was lit.
+Keep one sentence. Change punctuation only where necessary.
 
-**Target**
+Keep comma
+Full stop
+Semicolon
 
-Although the wheel had stopped for winter, the upper room was lit.
+Answer: Keep the comma.
 
-**Why:** Although introduces a dependent opening. Its comma attaches it to the main clause.
+The although-clause is dependent. Its comma attaches it to the complete main clause. Neither a full stop nor a semicolon can make the opening stand alone.
 
-## 3. Chapter 1 · paired-observations
+### Q4. Something out of place
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to make the contrast between Mara’s dismissal and Pip’s unease explicit.
+The mill had been silent since its wheel stopped for winter. Beneath the window, however, lay pale wood shavings. Their sharp, fresh scent seemed incongruous among the wet leaves and damp wood.
 
-**On-request help:** Keep one sentence. Use a coordinating joining word to make the contrast between Mara’s dismissal and Pip’s unease explicit.
+Which meaning of “incongruous” best fits this context?
 
-**Teacher goal:** 1 sentence(s); add but.
+A. Stronger than the other smells around it.
+B. Unexpected in those particular surroundings.
+C. Impossible to explain from the visible evidence.
+D. Easily confused with the smells surrounding it.
 
-**Original**
+Answer: B
+
+“Incongruous” expresses a mismatch with the setting. A confuses incongruity with intensity. C overstates the mystery because the visible shavings suggest a source. D overlooks how the sharp scent of fresh shavings stands out among the wet surroundings.
+
+### Q5. Reassurance
 
 Mara dismissed the legend as a fireside invention, Pip found little reassurance in the darkened window.
 
-**Target**
+Keep one sentence. Add a coordinating conjunction that explicitly contrasts Mara’s dismissal with Pip’s continuing unease.
 
-Mara dismissed the legend as a fireside invention, but Pip found little reassurance in the darkened window.
+Keep comma
+Full stop
+Semicolon
+Comma + and
+Comma + but
+Comma + so
 
-**Why:** Both clauses are complete. Comma + but makes the contrast explicit: Mara dismisses the legend, while Pip remains uneasy. A semicolon would link the clauses without expressing the requested contrast.
+Answer: Mara dismissed the legend as a fireside invention, but Pip found little reassurance in the darkened window.
 
-## 4. Chapter 1 · noun-list
+Comma + but expresses contrast. And only adds information; so would incorrectly express a result. A semicolon is grammatical but does not supply the requested conjunction.
 
-**Student brief:** Keep one sentence with an ordinary list of the details Pip noticed. Edit only where needed.
+### Q6. The familiar stitches
 
-**On-request help:** Keep one sentence with an ordinary list of the details Pip noticed. Edit only where needed.
+A strip of green cloth hung beneath the latch. Along its edge ran crooked yellow stitches. Pip remembered making that uneven repair on the cuff of Bram’s green coat during the summer. Earlier, she had glimpsed a broad figure upstairs wearing what looked like a green coat, but it had moved before she could be certain.
 
-**Teacher goal:** 1 sentence(s); no added joining words.
+Part 1: Which conclusion is most securely supported?
+Part 2: Which pair of details provides the strongest support?
 
-**Original**
+A. Bram’s coat caught on the latch as he hurried out of the mill.
+B. A piece of cloth from Bram’s coat remained caught beneath the latch.
+C. Bram returned to the mill that evening wearing his damaged coat.
+D. Bram left the cloth on the latch so that Pip would recognise it.
+A. The cloth’s green colour and the figure’s apparently green coat.
+B. The cloth’s position beneath the latch and the light burning upstairs.
+C. The distinctive stitching and Pip’s memory of making the repair.
+D. The figure’s broad shoulders and its disappearance below the window.
+
+Answer: Part 1: B. A piece from Bram’s coat remained at the latch.
+Part 2: C. The stitching matches Pip’s first-hand memory.
+
+The cloth can be identified without establishing when it caught, the direction Bram travelled or his intention. Part 1’s other choices add those unsupported details. For Part 2, colour alone is weak evidence: Mara is also wearing a green coat. The distinctive stitching and Pip’s memory of making it link the cloth specifically to Bram’s coat.
+
+### Q7. What Pip noticed
 
 Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
-**Target**
+Preserve one sentence containing an ordinary list. Keep punctuation that already works. Inspect both list commas.
 
-Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
+Keep comma
+Full stop
+Semicolon
 
-**Why:** This comma separates the first two details in a list, not two complete clauses. The last detail belongs to the same list. Keep the existing comma before and.
+Answer: Keep both commas.
 
-## 5. Chapter 1 · time-opening-paired-main
+These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.
 
-**Student brief:** Keep the whole note in one sentence, with every word. Connect the observations using punctuation alone.
+### Q8. The empty mill
 
-**On-request help:** Keep the whole note in one sentence, with every word. Connect the observations using punctuation alone.
+By the time Mara lit her lantern, Pip had called once into the mill, nobody had answered.
 
-**Teacher goal:** 1 sentence(s); no added joining words.
+Keep this as one sentence without adding or removing words. Use only the repairs listed. Change punctuation only where necessary.
 
-**Original**
+Keep comma
+Full stop
+Semicolon
 
-When the clock finished striking, nobody answered from the mill, the missing bell rang beyond the stream.
+Answer: By the time Mara lit her lantern, Pip had called once into the mill; nobody had answered.
 
-**Target**
+Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task.
 
-When the clock finished striking, nobody answered from the mill; the missing bell rang beyond the stream.
-
-**Why:** When introduces a dependent opening, so keep it attached to what follows. Nobody answered from the mill and the bell rang beyond the stream are complete clauses. A semicolon connects them in one sentence.
 
 ## 6. Chapter 2 · additive-independent
 
@@ -565,3 +595,5 @@ Although the upper room had been locked for years, its lantern was burning for a
 The light and ringing warned the travellers, so they avoided the damaged bridge. The altered map showed the safer path. By dawn, everyone was waiting under the mill’s porch.
 
 **Why:** Although introduces the opening; its comma stays. This comma opens extra information about the bell. This comma closes that information before “had left”. The bell’s mark and the coat’s trace are described in complete, closely related clauses. Use a semicolon. So connects the warning and the successful result. By dawn changes the time and begins the closing scene. Use a full stop.
+
+

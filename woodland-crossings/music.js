@@ -1,6 +1,6 @@
 export const MUSIC={src:'assets/autumn-night-v2.mp3',title:'秋夜オルゴール',source:'https://www.mureka.ai/song-detail/Aewi4tAvoYviB9sT3od2oN?is_from_share=1'};
 export const TENSION_MUSIC={src:'assets/midnight-tension-cue.mp3',title:'秋夜オルゴール · tension cue',source:'https://www.mureka.ai/song-detail/8twvGFHBmzE98GQsPdY3xJ?is_from_share=1'};
-// Lazy players: the unfinished tension recording plays once, then calm music resumes.
+// The unfinished tension recording plays once, then leaves the suspense in silence.
 export function createMusicController({AudioClass=globalThis.Audio,onError=()=>{}}={}){
  const players=new Map();
  let enabled=false,visible=true,revision=0,tense=false,cueFinished=false;
@@ -16,7 +16,7 @@ export function createMusicController({AudioClass=globalThis.Audio,onError=()=>{
  }
  async function sync(){
   const request=++revision;
-  if(!enabled||!visible){players.forEach(a=>a.pause());return false;}
+  if(!enabled||!visible||(tense&&cueFinished)){players.forEach(a=>a.pause());return false;}
   let audio;
   try{
    audio=player(tense&&!cueFinished);

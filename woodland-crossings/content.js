@@ -21,11 +21,97 @@ function task(stage,structure,brief,answer,why,parts,echo,grammar){
  const base={stage,skill:CHAPTERS[stage].skill,structure,brief,valid,grammar:grammatical,why,options,kind:stage>=4?'paragraph':'sentence'};
  tasks.push([{...base,id:`m${tasks.length+1}`,parts},{...base,id:`r${tasks.length+1}`,parts:echo,remedial:true}]);
 }
-task(0,'scene-time-shift','Start a new sentence when the view moves from the square to the mill. Keep every word.', ['stop'],['Both clauses are complete. A full stop marks the move from the square to the mill; a semicolon is grammatical but does not meet this writing goal.'],['The villagers were packing away the fair','across the stream, a light appeared in the mill.'],['The fairground lanterns were still glowing','down by the mill, the upstairs light went out.']);
-task(0,'concession-opening','Keep one sentence. Edit only what the structure requires.', ['comma'],['Although introduces a dependent opening. Its comma attaches it to the main clause.'],['Although the wheel had stopped for winter','the upper room was lit.'],['Although the bakery was still warm and bright','the lane beside the mill was dark.']);
-task(0,'paired-observations','Keep one sentence. Use a coordinating joining word to make the contrast between Mara’s dismissal and Pip’s unease explicit.', ['but'],['Both clauses are complete. Comma + but makes the contrast explicit: Mara dismisses the legend, while Pip remains uneasy. A semicolon would link the clauses without expressing the requested contrast.'],['Mara dismissed the legend as a fireside invention','Pip found little reassurance in the darkened window.'],['Pip insisted that she was not apprehensive','she kept glancing over her shoulder.']);
-task(0,'noun-list','Keep one sentence with an ordinary list of the details Pip noticed. Edit only where needed.', ['comma','comma'],['This comma separates the first two details in a list, not two complete clauses.','The last detail belongs to the same list. Keep the existing comma before and.'],['Pip noticed the frayed green cloth','the crooked yellow stitches','and the loose threads caught beneath the latch.'],['Beside the bakery stood empty crates','folded tables','and a basket of paper lanterns.'],[['comma','semi'],['comma','semi']]);
-task(0,'time-opening-paired-main','Keep the whole note in one sentence, with every word. Connect the observations using punctuation alone.', ['comma','semi'],['When introduces a dependent opening, so keep it attached to what follows.','Nobody answered from the mill and the bell rang beyond the stream are complete clauses. A semicolon connects them in one sentence.'],['When the clock finished striking','nobody answered from the mill','the missing bell rang beyond the stream.'],['As the last stroke faded','Pip listened at the doorway','a bell answered from the far bank.']);
+task(0,"scene-time-shift","Present the activity in the square and the discovery at the mill as two separate sentences. Keep every word. Edit the comma after “stalls”.",[
+  "stop"
+],[
+  "Both sides are complete clauses. A full stop gives the two sentences required by the brief. A semicolon would be grammatical but would not meet that goal."
+],[
+  "The villagers were dismantling the last stalls",
+  "beyond the gardens, a light appeared in the mill’s upper window."
+],[
+  "The fairground lanterns were still glowing",
+  "down by the mill, the upstairs light went out."
+]);
+tasks.at(-1).forEach(t=>t.options=[
+  "comma",
+  "stop",
+  "semi"
+]);
+task(0,"concession-opening","Keep one sentence. Change punctuation only where necessary.",[
+  "comma"
+],[
+  "The although-clause is dependent. Its comma attaches it to the complete main clause. Neither a full stop nor a semicolon can make the opening stand alone."
+],[
+  "Although the mill’s waterwheel had been idle for a week",
+  "a light still burned in the upper room."
+],[
+  "Although the bakery was still warm and bright",
+  "the lane beside the mill was dark."
+]);
+tasks.at(-1).forEach(t=>t.options=[
+  "comma",
+  "stop",
+  "semi"
+]);
+task(0,"paired-observations","Keep one sentence. Add a coordinating conjunction that explicitly contrasts Mara’s dismissal with Pip’s continuing unease.",[
+  "but"
+],[
+  "Comma + but expresses contrast. And only adds information; so would incorrectly express a result. A semicolon is grammatical but does not supply the requested conjunction."
+],[
+  "Mara dismissed the legend as a fireside invention",
+  "Pip found little reassurance in the darkened window."
+],[
+  "Pip insisted that she was not apprehensive",
+  "she kept glancing over her shoulder."
+]);
+tasks.at(-1).forEach(t=>t.options=[
+  "comma",
+  "stop",
+  "semi",
+  "and",
+  "but",
+  "so"
+]);
+task(0,"noun-list","Preserve one sentence containing an ordinary list. Keep punctuation that already works. Inspect both list commas.",[
+  "comma",
+  "comma"
+],[
+  "These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.",
+  "These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works."
+],[
+  "Pip noticed the frayed green cloth",
+  "the crooked yellow stitches",
+  "and the loose threads caught beneath the latch."
+],[
+  "Beside the bakery stood empty crates",
+  "folded tables",
+  "and a basket of paper lanterns."
+]);
+tasks.at(-1).forEach(t=>t.options=[
+  "comma",
+  "stop",
+  "semi"
+]);
+task(0,"time-opening-paired-main","Keep this as one sentence without adding or removing words. Use only the repairs listed. Change punctuation only where necessary.",[
+  "comma",
+  "semi"
+],[
+  "The opening beginning “By the time” is dependent, so its comma stays.",
+  "Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task."
+],[
+  "By the time Mara lit her lantern",
+  "Pip had called once into the mill",
+  "nobody had answered."
+],[
+  "As Mara raised her lantern",
+  "Pip waited beside the doorway",
+  "no footsteps came down the stairs."
+]);
+tasks.at(-1).forEach(t=>t.options=[
+  "comma",
+  "stop",
+  "semi"
+]);
 
 task(1,'additive-independent','Use AND to combine the two discoveries into one sentence.', ['and'],['Both discoveries are complete clauses. Comma + and adds the second one.'],['Pip found a deep print beside the gate','Mara noticed a round dent farther along the bank.'],['Pip spotted a heel mark in the mud','Mara found a circular impression beside it.']);
 task(1,'contrast-independent','Use BUT to contrast what the print suggested with what Pip could see.', ['but'],['Comma + but expresses the contrast between the clear mark and the missing person. The available contrast word makes that relationship explicit.'],['The print looked fresh','nobody was visible on the path ahead.'],['The mud still held a sharp heel mark','the clearing beyond it was empty.']);
@@ -56,6 +142,8 @@ task(5,'passage-observation-and-result','Keep the WHO description and the WHILE 
 task(5,'passage-warning-and-contrast','Keep the two paragraphs and existing sentence boundaries. Use BUT for the first contrast. Make the join before THEREFORE grammatical without adding words or a sentence.', ['but','semi'],['But contrasts the lack of a view with the visible warning light.','Therefore needs a semicolon before it when the clauses stay in one sentence.'],['The travellers could not see the damaged bridge','they could see the lantern in the mill’s upper window.\n\nThe light marked the danger','therefore, the caretaker had left it burning while he carried the bell upstream. The bell warned anyone who had missed the light.'],['The travellers could not make out the broken planks','they could make out the light above the waterwheel.\n\nThe lantern was a warning','therefore, the caretaker kept it lit as he took the bell along the bank. Its ringing stopped the next group before the bend.']);
 task(5,'passage-reassurance-and-choice','Keep the ALTHOUGH opening and the existing YET. Use OR to offer the travellers a choice.', ['comma','comma','or'],['Although introduces a dependent opening.','The existing yet already joins the contrasting clauses; keep its comma.','Or offers two complete alternatives; and would make them cumulative instead.'],['Although the coat was torn','the caretaker was unhurt. The missing bell and altered map had looked threatening','yet both had helped the travellers reach safety.\n\nThey could wait for the rain to stop','they could return with Pip by the hillside route.'],['Although his sleeve was ripped','the caretaker was safe. The strange light and deep tracks had seemed alarming','yet both were signs of the same rescue.\n\nThe travellers could rest under the porch','they could leave with Mara when the fog cleared.']);
 task(5,'final-case-report','Edit the whole report. Keep dependent openings and extra-information commas. Keep the paired physical clues in one sentence using punctuation only. Use SO for the rescue’s result. Begin a new sentence at “By dawn”. Add no other words.', ['comma','comma','comma','semi','so','stop'],['Although introduces the opening; its comma stays.','This comma opens extra information about the bell.','This comma closes that information before “had left”.','The bell’s mark and the coat’s trace are described in complete, closely related clauses. Use a semicolon.','So connects the warning and the successful result.','By dawn changes the time and begins the closing scene. Use a full stop.'],['Although the upper room had been locked for years','its lantern was burning for a reason. The portable bell','which the caretaker had carried upstream','had left a round rim in the mud','his patched coat had shed a thread beside the frame.\n\nThe light and ringing warned the travellers','they avoided the damaged bridge. The altered map showed the safer path','by dawn, everyone was waiting under the mill’s porch.'],['Although the mill had seemed deserted','someone was using its light to help. The heavy bell','which had been lifted from its frame','had pressed a ring into the bank','the torn sleeve had caught on a nail.\n\nThe caretaker marked the higher route','the travellers stayed clear of the broken crossing. The warning had reached them in time','by dawn, they were safe beneath the wooden roof.']);
+// Semicolons can separate list items, but are not the requested ordinary-list edit.
+tasks[3].forEach(t=>t.grammar=[['comma','semi'],['comma','semi']]);
 export const STORY=tasks.map(x=>x[0]);
 export const TRANSFER=tasks.map(x=>x[1]);
 export const BONUS=[

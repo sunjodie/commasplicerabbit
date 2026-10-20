@@ -20,4 +20,15 @@ Replaced with the user’s second recording on 17 October 2026. The title is unc
 - Source duration: 60.03 seconds. The user identifies this recording as incomplete.
 - Bundled file: midnight-tension-cue.mp3; 60 seconds, MP3 96 kbit/s, 44.1 kHz. Added a two-second opening fade and six-second ending fade. No continuation has been composed, and no seamless loop is claimed. Listening verification is pending.
 
-Used once during the Chapter 1 midnight-bell scene and its notebook task. It does not restart between pages or retries. At its end, the usual music resumes; leaving for the village, reward or home also restores the usual music. Other revised chapters are not implemented yet, so their tension cues are not mapped. Both tracks remain controlled by the student's opt-in Sound switch and pause in hidden tabs. Source links appear under Save status.
+## Chapter 1 mood map (20 October 2026)
+
+| Scene | Music |
+| --- | --- |
+| Fair closing | Original warm music, looping |
+| Upstairs light | Short tension cue, once |
+| Fireside memory | Original warm music |
+| Mill lane and porch | Tension cue, once across both scenes |
+| Empty mill | Continue the cue; no restart between pages/tasks |
+| Home, village, rewards | Original warm music |
+
+The incomplete tension recording keeps its existing two-second opening and six-second closing fades. After it finishes, tense scenes stay silent instead of returning to warm music. There is no fabricated continuation or loop. Re-entering suspense after the fireside memory begins a new cue. Both tracks remain opt-in, pause in hidden tabs and share the Sound control. Storybook replay follows the scene’s mood; closing it restores the active scene. The Chapter 1 ending has no bell sound because the approved story ends before the bell rings.

@@ -1,20 +1,27 @@
-# Chapter 1 artwork
+# Chapter 1 artwork · 20 October 2026
 
-Generated for this project with image generation, October 2026. Original storybook compositions based on the approved Chapter 1, without copying an existing book or character design. WebP derivatives preserve the generated 1536 × 1024 dimensions.
+Five separate 1536 × 1024 paintings generated with the built-in image-generation tool, then encoded as WebP for the game. Full images replace the old clue-closeup atlas in Chapter 1. Original assets remain archived but are not used for this chapter.
 
-- `fair.webp`: Pip and Mara leaving the lantern fair. Full-frame 3:2 composition.
-- `storyboard.webp`: four registered 768 × 512 compositions in a 2 × 2 atlas: upstairs light, remembered fireside story, torn cuff, empty bell hook. Scene rendering selects one quadrant; the atlas is not shown as a collage.
+No image reveals stitching, cloth ownership, footprints, shavings, bell whereabouts, bridge damage or the upstairs figure’s identity. Every necessary clue is provided in text. The cottage in the lane image is unlit.
 
-## Shared art direction
+## Prompt set
 
-Original painterly storybook woodland mystery; cosy and slightly creepy. Luminous gouache, tactile fur, wet autumn foliage, plum-blue night and warm amber light. Pip is a small cream rabbit with a bent ear, plum cape, rust scarf, brown satchel and brass lamp. Mara is a taller grey-brown rabbit with upright ears, moss coat and handmade paper lantern. Bram is a kindly broad badger with a green coat and yellow-stitched cuff. No text, interface, gore, monsters or glowing red eyes.
+### fair-v3.webp
 
-## Fair prompt
+Landscape 3:2 storybook woodland rabbit mystery: rain-dappled village fountain with toy boats and sagging paper pumpkins; warm bakery, neighbours packing tables; two small rabbit girls, honey-brown plum cape/rust scarf and grey-brown moss-green coat, no lit handheld lantern. Rich wet textures, amber candlelight and blue autumn shadows. No text, UI, clue closeups, footprints, cloth, stitching, shavings, identifiable suspect or prominently lit mill window.
 
-Rain at the end of an autumn lantern fair, wet cobblestones, paper pumpkins and ribbons, small painted boats in the fountain. Pip straightens a sagging paper pumpkin, icing on her cuff. Mara protects her handmade lantern. Rabbit villagers pack away stalls beside the warm bakery. Across the stream, the still black mill has one upstairs window just lit. Produce an immersive 1536 × 1024 story illustration.
+### window-v3.webp
 
-A targeted edit replaced the initial foreground badger with a friendly tawny rabbit baker wearing an ivory flour-dusted apron over a brown dress, folding the same tablecloth. Preserve the composition and lighting. There must be no badger at the fair because Bram is inside the mill at this point in the story.
+Single landscape 3:2 full-bleed storybook painting, richly textured cinematic woodland rabbit visual novel. Amber candlelight, midnight blue autumn rain, whimsical but slightly creepy. No text, borders, collage, ghosts, footprints, cloth scraps, shavings, clues, documents, bells, visible stitching, identifiable suspect. Distant old timber watermill beyond dark cottage gardens and alders, seen from village lane in rain. Black still waterwheel, faint warm upstairs window screened by branches with absolutely no figure or silhouette. Two rabbit girls small from behind, honey-brown plum cape rust scarf and grey-brown moss-green coat. No lit handheld lantern. Quiet curiosity, no bridge.
 
-## Four-scene atlas prompt
+### fireside-v3.webp
 
-Four exact 768 × 512 panels in a 2 × 2 arrangement, without gutters or text, using consistent character designs and painterly lighting. Top left: Pip and Mara seen from behind outside the dark mill, a broad figure in the lit upper window. Top right: a remembered evening inside Bram’s cottage, the badger telling the bell legend beside a stove, warm cups in the rabbits’ paws. Bottom left: close view of torn green cloth with crooked yellow stitches caught under the iron door latch, Pip’s paw lifting it and Mara’s lantern illuminating the detail. Bottom right: the empty iron hook above the cold fireplace, muddy tracks, an oil lamp at the stairs, Pip and Mara listening in the doorway. No bell or Bram in the final panel.
+Single landscape 3:2 full-bleed storybook painting, richly textured cinematic woodland rabbit visual novel. Amber candlelight, midnight blue autumn rain, whimsical but slightly creepy. No text, borders, collage, ghosts, footprints, cloth scraps, shavings, clues, documents, bells, visible stitching, identifiable suspect. Remembered evening: empty cosy cottage sitting area beside enclosed cast iron wood stove glowing through its door, worn green armchair, three cups on low table, drying socks and orange peel. Rainblue window. NO characters, coats, sewing. Intimate nostalgic warmth and enveloping shadows.
+
+### doorway-v3.webp
+
+Single landscape 3:2 full-bleed storybook painting, richly textured cinematic woodland rabbit visual novel. Amber candlelight, midnight blue autumn rain, whimsical but slightly creepy. No text, borders, collage, ghosts, footprints, cloth scraps, shavings, clues, documents, bells, visible stitching, identifiable suspect. Mill entrance viewed obliquely from outside in rain. Door ajar, oil lamplight falling in narrow patch onto rain-dark stone. Interior mostly hidden by near door leaf, only foot of timber stairs visible. No characters, hook, tools or clue details. Violet shadows, autumn leaves, unsettling silence.
+
+### lane-v3.webp
+
+Landscape 3:2 rich storybook painting: rain-soaked lane, rosemary garden fence, unlit steep-roofed cottage with all windows dark; two rabbit girls seen from behind in plum cape and moss-green coat, no visible lantern. Lane curves into alder trees. Moonlight, copper leaves, slight apprehension. No mill, stream, bridge, clues, footprints, scraps, shavings, bell or text.

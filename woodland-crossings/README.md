@@ -1,5 +1,8 @@
 # Woodland Crossings
 
+**20 October 2026:** Chapter 1 uses the approved manuscript and eight question groups, five spoiler-free illustrations and scene-specific music. Its ending stops at the unexplained knock. Chapters 2–6 retain their earlier game content pending separate approval.
+
+
 A self-guided comma-splice mystery for upper-primary and secondary learners: **The Lantern That Shouldn’t Be Lit**. Pip and Mara investigate a light in the old mill, a missing warning bell and an altered map. The clues resolve into a rescue.
 
 On `woodland-crossings`, the repository root opens the new game. The original runner is preserved as `rabbit-runner.html`; `main` is unchanged. Deploy this branch on Cloudflare. No build step, account, teacher setup, API key, external font or runtime service is required. Serve locally over HTTP rather than opening the HTML file directly.

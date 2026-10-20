@@ -237,3 +237,12 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Retrieved the supplied 60-second Mureka recording and bundled a cue with a two-second fade-in and six-second fade-out. It plays once during the Chapter 1 midnight-bell scene and its notebook, then returns to the original music. Pages/retries do not restart it. Home, village and rewards restore calm music. Both players require opt-in and pause in hidden tabs. No musical continuation or seamless loop is claimed. Later revised chapters remain unimplemented.
 - 71 automated checks pass, including cue completion, opt-in, visibility, no restart on the same tense scene, leaving/resetting the cue, and muted completion. JavaScript syntax and whitespace checks pass. Rendered desktop/mobile QA and listening checks remain pending; no supported browser QA surface is available in this environment.
 - Open-ended comprehension marking remains a design proposal, not an implemented grader. No manuscript/question changes or GitHub push in this checkpoint.
+
+
+# Checkpoint 30 — approved Chapter 1, scene paintings and mood music
+
+- Integrated all approved paragraphs and eight question groups. Five main boundary tasks retain village deliveries; three supporting tasks follow the porch evidence. The final scene stops at the knock, with no premature bell event or bell sound.
+- Added five full-frame illustrations without clue closeups or identifiable suspects. Kept the desktop columns and mobile stack.
+- Warm music at the fair and fireside memory; tension cue at the window and mill. The incomplete cue fades into silence during suspense. Pages/retries do not restart it. Sound is opt-in and hidden tabs pause it.
+- Existing saves, village construction and later chapters are retained. Included the exact approved Chapter 1 source for future editorial comparisons.
+- 73 automated checks pass: approved narration, unique targets, claim-plus-evidence marking, progression, saved progress, recall and music lifecycle. JavaScript syntax and asset checks pass. Final paintings visually inspected. Rendered browser and listening QA remain unavailable in this environment (no browser executable).

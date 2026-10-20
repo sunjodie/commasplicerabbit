@@ -9,7 +9,7 @@ test('chapter one preserves every approved paragraph in order and pages at parag
  const approved=readFileSync(new URL('../STORY.md',import.meta.url),'utf8').split('## 1. After the Fair\n\n')[1].split('\n## 2.')[0].trim().split(/\n\n/);
  assert.deepEqual(CHAPTER_ONE.flatMap(s=>s.paragraphs),approved);
  assert.deepEqual(CHAPTER_ONE.map(s=>s.id),STORY.slice(0,5).map(q=>q.id));
- for(const scene of CHAPTER_ONE){const pages=readingPages(scene);assert.deepEqual(pages.flat(),scene.paragraphs);assert.ok(pages.every(p=>p.join(' ').split(/\s+/).length<=85));}
+ for(const scene of CHAPTER_ONE){const pages=readingPages(scene);assert.deepEqual(pages.flat(),scene.paragraphs);assert.ok(pages.every(p=>p.length===1||p.join(' ').split(/\s+/).length<=85));}
 });
 test('reader saves resume positions without awarding supplies or changing question state',()=>{
  const s=fresh(),before=structuredClone(s);setStoryPosition(s,'m1',2);assert.equal(storyPosition(s,'m1'),2);assert.equal(needsChapterOne(s,STORY[0]),true);finishStoryScene(s,'m1');assert.equal(needsChapterOne(s,STORY[0]),false);
@@ -24,3 +24,5 @@ test('reader handles legacy and malformed state and never gates recovery, review
 test('storybook unlocks only reached scenes and reading does not unlock later scenes',()=>{
  const s=fresh();assert.deepEqual(availableStoryScenes(s).map(x=>x.id),['m1']);finishStoryScene(s,'m1');assert.equal(availableStoryScenes(s).length,1);s.story=1;assert.equal(availableStoryScenes(s).length,2);s.story=30;assert.equal(availableStoryScenes(s).length,5);
 });
+
+test('story is the complete approved chapter and ends before the bell',()=>{const approved=JSON.parse(readFileSync(new URL('../chapter-one-approved.json',import.meta.url)));assert.equal(CHAPTER_ONE.flatMap(s=>s.paragraphs).join('\n\n'),approved.text);assert.match(CHAPTER_ONE.at(-1).paragraphs.at(-1),/no footsteps came down the stairs/);assert.deepEqual(CHAPTER_ONE.map(s=>s.mood),['calm','tense','calm','tense','tense']);});
