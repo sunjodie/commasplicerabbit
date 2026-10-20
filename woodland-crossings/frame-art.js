@@ -1,5 +1,6 @@
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs} from './frogs.js';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261021-frogs25';
+import {QUESTION_SCENES} from './scenery.js?v=20261020-crop5';
 import {CHAPTER_ONE} from './chapter-one.js';
 import {CHAPTER_TWO} from './chapter-two.js';
 import {CHAPTER_THREE} from './chapter-three.js';
@@ -19,8 +20,18 @@ for(const [i,scene] of CHAPTER_THREE.entries()){
  FRAME_ART.push({id:scene.id+'-story',scene:scene.id,kind:'story',...art,text:scene.paragraphs[0]});
  FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',...art,text:'Chapter 3 notebook'});
 }
+// Each later chapter has five scene visits; keep frogs attached to those visits.
+for(let stage=3;stage<6;stage++)for(let view=0;view<5;view++){
+ const setting=QUESTION_SCENES.find(x=>x.stage===stage&&x.view===view),scene='m'+(stage*5+view+1);
+ FRAME_ART.push({id:scene+'-question',scene,kind:'question',asset:setting.asset,cell:view?view-1:0,...(!view?{columns:1,rows:1}:{}),text:'Notebook scene'});
+}
+for(const frame of FRAME_ART){
+ const n=Number(frame.scene.slice(1));if(n<6||!Number.isInteger(n)||frame.frog)continue;
+ const stage=Math.floor((n-1)/5),view=(n-1)%5,f=frogForScene(stage,view);
+ if(f)frame.frog={id:f.id,x:f.x,y:f.y,perches:f.perches};
+}
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
-export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r1[1-5]$/.test(id)?id.replace('r','m'):id)+'-question');}
+export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r(?:[6-9]|[12]\d|30)$/.test(id)?id.replace('r','m'):id)+'-question');}
 export function explorationFrameArt(stage,view=0){return questionFrameArt('m'+(stage*5+view+1))||null;}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}

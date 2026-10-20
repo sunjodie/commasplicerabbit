@@ -252,3 +252,18 @@ test('Chapter 3 retry requires its own inverted subject and stays outside the st
  ui.app.querySelector('[data-join="0"]').onclick();ui.tool('nor');const input=document.querySelector('#clauseRewrite');input.value='could she trust the bank';input.oninput();ui.click('check');assert.ok(document.querySelector('#next'));
  ui.click('next');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,13);
 });
+
+test('all 25 frogs can be revisited and collected without changing lesson progress',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js'),{FROGS}=await import('../frogs.js');const s=fresh();s.story=30;s.endingSeen=true;s.seq=30;ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?all-frog-searches');
+ for(const f of FROGS){
+  document.querySelector('#journalBtn').onclick();const root=ui.fixed.modalBody,search=root.querySelector('[data-frog-search="'+f.id+'"]');assert.ok(search,f.id);search.onclick();
+  const painting=root.querySelector('.painted-scene');assert.equal(JSON.parse(painting.dataset.frogPerch).id,f.id);
+  const frog=root.querySelector('[data-frog="'+f.id+'"]');assert.ok(frog,f.id);frog.onclick();
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.frogFinds.length,25);assert.equal(saved.story,30);assert.equal(saved.seq,30);assert.deepEqual(saved.decorations,[]);
+});
+test('later chapter notebook frogs match the cropped frame when a saved alternate view is selected',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=16;s.introduced=[0,1,2,3];s.activeScenery={question:'m17',seq:0,key:'3-3'};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?frog-saved-view');ui.click('play');assert.ok(ui.app.querySelector('[data-frog="ink-frog"]'));assert.equal(ui.app.querySelector('[data-frog="bramble-frog"]'),null);
+});
