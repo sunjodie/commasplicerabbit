@@ -1,4 +1,4 @@
-# Woodland Crossings
+# The Midnight Mill
 
 **20 October 2026:** Chapter 1 uses the approved manuscript and eight question groups, five spoiler-free illustrations and scene-specific music. Its ending stops at the unexplained knock. Chapters 2–6 retain their earlier game content pending separate approval.
 

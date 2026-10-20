@@ -290,3 +290,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Added ten original SVG frog characters with distinct accessories and short story-related grammar/vocabulary tidbits: five matched to Chapter 1 paintings and one per later chapter. Their small, muted scene artwork has 44–48px click/touch targets, no pulse and visible keyboard focus.
 - Frogs collect once into a separate fieldbook within Woodland secrets. Found tidbits can be reread; reached scenes can be revisited for missed visitors. Names/tidbits stay hidden until collection. Future-scene searches are locked. This does not change grammar mastery, supplies, approved prose, question answers or the ending-only completion secret.
 - 87 unit/handler tests pass. Chromium checks pass 242 complete Chapter 1 states across desktop/tablet sizes, including real frog clicks, default audio and saved mute preference; 90 dialog states across seven sizes pass without overflow. Actual scene screenshot inspected. Physical Safari/tablet audio remains unverified.
+
+
+# Checkpoint 37 — The Midnight Mill
+
+- Renamed the game to The Midnight Mill across the browser title, header, home heading and shared case-title constant. Existing save keys, branch paths, story text and discoveries remain intact.
+- 87 unit/handler checks pass.
