@@ -69,3 +69,10 @@ Story reader, supporting casework and notebook now share an equal-column desktop
 - Shared menus, rewards and dialogs turn pages. Progress moved into the header. The correction field responds to tablet visual-viewport changes without losing the typed answer to a redraw.
 - Browser checked at 1440×900, 1366×768, 1024×768, 768×1024, 820×1180, 600×800 and 1024×600: no page overflow or off-screen controls in the exercised Chapter 1 states. Complete native-click playthroughs also passed at 1366×768, 768×1024 and 1024×600, including wrong-answer feedback, recovery, detective work and the village reward. Guide, secret collection, progress and storybook dialog checks passed. Desktop and portrait screenshots visually reviewed.
 - 76 unit/handler checks pass. Browser tests cover Chromium; physical iPad/Safari and its software keyboard remain unverified. Phone layout remains stacked.
+
+
+## Keyboard, type and panel refinement — 20 October 2026
+
+Story, parchment notes, dark questions and green Pip feedback now have distinct visual treatments. A shared Georgia/Arial pair replaces inconsistent type roles. Teaching copy is shorter and more conversational; approved narrative and assessment wording are retained. Left/right page navigation respects dialogs, editable fields and unanswered questions.
+
+Chromium regression: 239 Chapter 1 playthrough state checks across three sizes and 148 layout checks across seven desktop/tablet sizes pass without overflow, off-screen controls or runtime errors. Actual desktop question, parchment-note and portrait story screenshots were visually reviewed. Automated tests cover typing with arrow keys, no accidental submission, supporting-task pagination and answer recovery. Physical tablet/Safari checks remain pending.

@@ -27,22 +27,22 @@ export const CASEWORK=[
       {
         "id": "concealed",
         "text": "Stronger than the other smells around it.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "distant",
         "text": "Unexpected in those particular surroundings.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "movement",
         "text": "Impossible to explain from the visible evidence.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "relief",
         "text": "Easily confused with the smells surrounding it.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       }
     ],
     "answer": "distant",
@@ -74,22 +74,22 @@ export const CASEWORK=[
       {
         "id": "recent",
         "text": "Bram’s coat caught on the latch as he hurried out of the mill.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "coat",
         "text": "A piece of cloth from Bram’s coat remained caught beneath the latch.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "inside",
         "text": "Bram returned to the mill that evening wearing his damaged coat.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "attack",
         "text": "Bram left the cloth on the latch so that Pip would recognise it.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       }
     ],
     "answer": "coat",
@@ -97,22 +97,22 @@ export const CASEWORK=[
       {
         "id": "green-mud",
         "text": "The cloth’s green colour and the figure’s apparently green coat.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "latch-bell",
         "text": "The cloth’s position beneath the latch and the light burning upstairs.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "stitches-memory",
         "text": "The distinctive stitching and Pip’s memory of making the repair.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
         "id": "figure",
         "text": "The figure’s broad shoulders and its disappearance below the window.",
-        "feedback": "Check what the passage establishes. This choice adds or changes a detail the evidence does not support."
+        "feedback": "Go back to the clues. Does the passage actually tell you that?"
       }
     ],
     "evidenceAnswer": "stitches-memory",

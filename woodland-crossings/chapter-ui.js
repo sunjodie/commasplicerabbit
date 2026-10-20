@@ -13,24 +13,26 @@ export function textPages(paragraphs,limit=55){
  if(page.length)pages.push(page);return pages.length?pages:[[]];
 }
 const wide=()=>typeof window.matchMedia==='function'&&window.matchMedia('(min-width:600px)').matches;
-let active=null;
+let active=null,readingBack=false;
 export function clearChapterView(){if(document.body){document.body.classList.remove('vn-active','vn-menu');document.querySelector('.vn-top-title')?.remove();}active=null;}
 function headerControls(){const save=document.querySelector('#saveBtn'),nav=document.querySelector('header nav');if(save&&nav&&!nav.contains(save)){save.textContent='Progress';save.classList.add('quiet');nav.append(save);}}
 function element(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;}
 function control(label,action,cls='secondary'){const b=element('button',cls,label);b.type='button';b.onclick=action;return b;}
+function continuation(label,action){const b=control(label,action);b.dataset.pageContinue='true';return b;}
+function helpHeading(){const h=element('div','vn-help-heading'),img=element('img');img.src='assets/pip-storybook.webp';img.alt='Pip';img.width=36;img.height=44;h.append(img,element('span','','A word from Pip'));return h;}
 function pageControls(container,pages,{initial=0,changed=()=>{},label='Part'}={}){
  let current=Math.max(0,Math.min(initial,pages.length-1));const nav=element('div','vn-pages'),back=control('← Back',()=>show(current-1)),count=element('span','vn-count'),next=control('Next →',()=>show(current+1));nav.append(back,count,next);container.append(nav);
- function show(n){current=Math.max(0,Math.min(n,pages.length-1));pages.forEach((p,i)=>{p.hidden=i!==current;p.inert=i!==current;});back.disabled=current===0;next.disabled=current===pages.length-1;count.textContent=`${label} ${current+1} / ${pages.length}`;changed(current);}
+ function show(n){current=Math.max(0,Math.min(n,pages.length-1));pages.forEach((p,i)=>{p.hidden=i!==current;p.inert=i!==current;});container.dataset.pageType=pages[current].dataset.pageType||'reading';container.dataset.panelLabel=container.dataset.pageType==='note'?'Pip’s notes':container.dataset.pageType==='help'?'A word from Pip':'Your turn';back.disabled=current===0;next.disabled=current===pages.length-1;count.textContent=`${label} ${current+1} / ${pages.length}`;changed(current);}
  show(current);return {show,get current(){return current;},nav};
 }
 function budget(){return window.innerWidth<900?42:window.innerHeight<720?38:48;}
 function storyPanel(){
  const prose=document.querySelector('.story-page .story-prose');if(!prose)return;
- const paragraphs=[...prose.children].map(p=>p.textContent),pages=textPages(paragraphs,budget());let part=0;
+ const paragraphs=[...prose.children].map(p=>p.textContent),pages=textPages(paragraphs,budget());let part=readingBack?pages.length-1:0;readingBack=false;
  const previous=document.querySelector('#storyPrevious'),next=document.querySelector('#storyNext'),count=document.querySelector('.story-page-count');
  const prevAction=previous.onclick,nextAction=next.onclick,originalCount=count.textContent,nextLabel=next.textContent,wasDisabled=previous.disabled;
  function render(){prose.replaceChildren(...pages[part].map(t=>element('p',t.startsWith('“')?'spoken-line':'narration',t)));previous.disabled=part===0&&wasDisabled;next.textContent=part===pages.length-1?nextLabel:'Continue →';count.textContent=originalCount+(pages.length>1?` · Reading ${part+1}/${pages.length}`:'');}
- previous.onclick=()=>{if(part){part--;render();}else prevAction();};next.onclick=()=>{if(part<pages.length-1){part++;render();}else nextAction();};render();
+ previous.onclick=()=>{if(part){part--;render();}else{readingBack=true;prevAction();}};next.onclick=()=>{if(part<pages.length-1){part++;render();}else nextAction();};render();
  const panel=document.querySelector('.story-page'),label=element('span','eyebrow',active.title);panel.prepend(label);
  const hide=control('Hide text',()=>{const hidden=panel.hidden;panel.hidden=!hidden;hide.textContent=hidden?'Hide text':'Show text';},'vn-hide');document.querySelector('.story-reader').append(hide);
 }
@@ -39,7 +41,7 @@ const positions=new Map();
 function caseworkPanel(key,message,completed){
  const panel=document.querySelector('.casework-page');if(!panel)return;
  const original=[...panel.children],steps=[],prose=original.filter(n=>n.matches('blockquote,.lead-observation'));
- for(const chunk of textPages(prose.map(n=>n.textContent),budget())){if(chunk.length){const page=element('div','vn-step');chunk.forEach(t=>page.append(element('p','vn-context',t)));steps.push(page);}}
+ for(const chunk of textPages(prose.map(n=>n.textContent),budget())){if(chunk.length){const page=element('div','vn-step');page.dataset.pageType='note';chunk.forEach(t=>page.append(element('p','vn-context',t)));steps.push(page);}}
  const prompt=panel.querySelector('.casework-prompt'),groups=[...panel.querySelectorAll(':scope > .casework-options')],edit=panel.querySelector('.casework-edit'),actions=panel.querySelector('.casework-actions'),continueButton=panel.querySelector('#caseworkContinue'),feedback=panel.querySelector('.casework-feedback'),explanation=panel.querySelector('details');
  if(!prompt){const page=element('div','vn-step');original.forEach(n=>page.append(n));steps.push(page);}
  else if(completed){
@@ -47,16 +49,16 @@ function caseworkPanel(key,message,completed){
   if(explanation)for(const chunk of textPages([...explanation.querySelectorAll('p')].map(n=>n.textContent),budget())){const page=element('div','vn-step');page.append(element('span','eyebrow','The reasoning'));chunk.forEach(t=>page.append(element('p','',t)));steps.push(page);}
   steps.at(-1).append(continueButton);
  }else{
-  const answer=element('div','vn-step');if(prompt)answer.append(prompt);
+  const answer=element('div','vn-step');answer.dataset.pageType='question';if(prompt)answer.append(prompt);
   if(edit){answer.append(edit);for(const n of original.filter(n=>n.matches('label,input')))answer.append(n);}
   else if(groups[0])answer.append(groups[0]);steps.push(answer);
-  if(groups[1]){const ev=element('div','vn-step');ev.append(element('p','casework-prompt','Part 2: Which pair of details provides the strongest support?'),groups[1]);steps.push(ev);}
+  if(groups[1]){const ev=element('div','vn-step');ev.dataset.pageType='question';ev.append(element('p','casework-prompt','Part 2: Which pair of details provides the strongest support?'),groups[1]);steps.push(ev);}
   // Only the final answer step submits; earlier choices and evidence remain revisitable.
   if(actions)steps.at(-1).append(actions);
-  if(message){const notice=element('div','vn-step');notice.append(element('p','casework-feedback',message),control('Return to the question →',()=>pager.show(steps.length-2)));steps.push(notice);}
+  if(message){const notice=element('div','vn-step');notice.dataset.pageType='help';notice.append(element('p','casework-feedback',message),continuation('Return to the question →',()=>pager.show(steps.length-2)));steps.push(notice);}
  }
  panel.replaceChildren(element('span','eyebrow',active.title),...steps);
- let initial=positions.get(key)||0;if(message)initial=steps.length-1;if(completed)initial=0;
+ let initial=positions.get(key)||0;if(message)initial=steps.length-1;if(completed){initial=0;steps.forEach(p=>p.dataset.pageType='help');}
  const pager=pageControls(panel,steps,{initial,changed:i=>positions.set(key,i)});
  if(steps.length===1)pager.nav.hidden=true;
 }
@@ -70,9 +72,9 @@ function questionPanel(){
  const standalone=feedback.querySelector('.standalone');if(standalone)paragraphs.unshift([...standalone.children].map(n=>n.textContent).join(' / '));
  const pages=textPages(paragraphs,budget()),cards=pages.map(chunk=>{const p=element('div','vn-step');p.append(element('strong','',title));chunk.forEach(t=>p.append(element('p','',t)));return p;});
  if(why.length)for(const chunk of textPages(why,budget())){const p=element('div','vn-step');p.append(element('strong','','Why this edit works'));chunk.forEach(t=>p.append(element('p','',t)));cards.push(p);}
- feedback.replaceChildren(...cards);workspace.classList.add('vn-show-feedback');
+ feedback.replaceChildren(helpHeading(),...cards);workspace.classList.add('vn-show-feedback');
  const pager=pageControls(feedback,cards);if(cards.length===1)pager.nav.hidden=true;
- if(!document.querySelector('#next'))feedback.append(control('Return to the question →',()=>{if(active?.onDismiss)active.onDismiss();else{workspace.classList.remove('vn-show-feedback');feedback.hidden=true;}}));
+ if(!document.querySelector('#next'))feedback.append(continuation('Return to the question →',()=>{if(active?.onDismiss)active.onDismiss();else{workspace.classList.remove('vn-show-feedback');feedback.hidden=true;}}));
 }
 export function presentChapterView({kind,title,key='',message='',completed=false,onDismiss=null}){
  if(!document.body||!wide())return;clearChapterView();active={kind,title,onDismiss};document.body.classList.add('vn-active');headerControls();

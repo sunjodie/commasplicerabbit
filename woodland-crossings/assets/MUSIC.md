@@ -8,7 +8,7 @@
 
 Retrieved the playback MP3 referenced in the public share page's initial state. Encoded locally with ffmpeg/libmp3lame at 96 kbit/s, 44.1 kHz; duration 166.64 seconds, 1,999,979 bytes. No musical edits were made. Playback uses the bundled file, so the game does not fetch Mureka pages or use an external API.
 
-Music starts only after Sound is enabled, loops at 18% volume and shares the Sound control with existing success chimes. Hidden tabs pause playback; return resumes only if the student left sound enabled. Failed playback resets the control and allows a manual retry. The track is credited in Save status.
+Music starts only after Sound is enabled and the calm track loops at a target volume of 18%. The Sound control no longer plays a confirmation chime. Hidden tabs pause playback; return resumes only if the student left sound enabled. Failed playback resets the control and allows a manual retry. The track is credited in Save status.
 
 Replaced with the user’s second recording on 17 October 2026. The title is unchanged, but the source audio differs. A new bundled filename avoids stale audio caches.
 
@@ -26,9 +26,14 @@ Replaced with the user’s second recording on 17 October 2026. The title is unc
 | --- | --- |
 | Fair closing | Original warm music, looping |
 | Upstairs light | Short tension cue, once |
-| Fireside memory | Original warm music |
+| Fireside memory | Current track softened to 7.5%, without switching |
 | Mill lane and porch | Tension cue, once across both scenes |
 | Empty mill | Continue the cue; no restart between pages/tasks |
 | Home, village, rewards | Original warm music |
 
-The incomplete tension recording keeps its existing two-second opening and six-second closing fades. After it finishes, tense scenes stay silent instead of returning to warm music. There is no fabricated continuation or loop. Re-entering suspense after the fireside memory begins a new cue. Both tracks remain opt-in, pause in hidden tabs and share the Sound control. Storybook replay follows the scene’s mood; closing it restores the active scene. The Chapter 1 ending has no bell sound because the approved story ends before the bell rings.
+The incomplete tension recording keeps its existing two-second opening and six-second closing fades. After it finishes, tense scenes stay silent instead of returning to warm music. There is no fabricated continuation or loop. Re-entering suspense resumes the cue at its existing position. Once exhausted, it does not restart until a fresh game. Both tracks remain opt-in, pause in hidden tabs and share the Sound control. Storybook replay follows the scene’s mood; closing it restores the active scene. The Chapter 1 ending has no bell sound because the approved story ends before the bell rings.
+
+
+## Transition refinement (20 October 2026)
+
+Track changes use a 2.4-second cosine-eased crossfade; the outgoing player keeps playing until inaudible. The fireside memory lowers whichever track is already playing instead of switching tracks twice. Track cursors survive revisits. The incomplete tense cue is not looped or restarted after completion; suspense then remains silent. Muting or hiding the tab pauses both players immediately. Returning to the tab fades the active track in. A fresh game resets playback positions and cue availability. Deterministic tests cover intermediate volumes, rapid mood changes, late playback promises, mute/visibility and cue completion. Actual listening verification remains pending.

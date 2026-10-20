@@ -260,3 +260,11 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Implemented the approved art-filled desktop/tablet scene with bottom reading/notebook panels and Hide text. Paged long content, detective steps, feedback, menus and dialogs; moved Progress into the header.
 - Preserved the approved story words, all question targets, scene music, reward progression, saved answers and the ending-only completion secret. Later chapter question screens remain on their existing layout.
 - 76 automated unit/handler checks pass. Chromium viewport checks pass at seven desktop/tablet sizes, with complete first-chapter playthroughs at three sizes. No scrolling or off-screen controls in exercised states. Reviewed actual desktop/tablet screenshots. Safari and physical tablet keyboard checks remain pending.
+
+
+# Checkpoint 33 — page keys, gentler music and panel identities
+
+- Left/right arrow keys follow visible reading and notebook pages, including backward paragraph navigation. Right continues after checked answers but never selects or submits one. Text inputs, modifiers, held keys and modal boundaries retain their normal behavior.
+- Added 2.4-second music crossfades. The fireside memory softens the current track rather than changing it twice; revisits resume each track’s position. The incomplete tension cue plays once per game and then stays silent in suspense. Mute and hidden tabs pause immediately. Removed the sound-toggle chime.
+- Story panels remain translucent; supporting notes use ruled parchment, questions dark aubergine and teaching feedback a green inset with Pip. Unified serif reading type and sans-serif interface type. Softened hints and feedback without changing approved story paragraphs, tasks, options or accepted answers. No new artwork.
+- 82 unit/handler tests pass. Native-browser Chapter 1 playthroughs pass 239 state checks across three desktop/tablet sizes; seven-size layout checks pass 148 states. Screenshot review covers story, notes and questions. Music envelopes are tested with a deterministic clock; actual listening and physical Safari/iPad checks remain pending.

@@ -40,7 +40,7 @@ export const CHAPTER_ONE=[
     "id": "m3",
     "title": "Bram’s story",
     "location": "A remembered evening",
-    "mood": "calm",
+    "mood": "memory",
     "paragraphs": [
       "Pip knew why Mara wanted to go home. At the last fair, Bram had settled them beside his stove with hot cups between their paws and asked whether they knew the story of the mill bell. The cottage had smelled of drying socks and orange peel, and it had been easy to lean forward while he lowered his voice.",
       "If the mill bell rang after midnight, he had told them, someone would be missing before morning. The mill bell was the little brass bell he kept above the mill fireplace, with a leather strap so that he could carry it to the bank when the water rose.",

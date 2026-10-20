@@ -95,3 +95,29 @@
 @media(min-width:600px){dialog:has(.story-prose) .artwork-preview{height:min(20dvh,140px)}dialog .village-viewport{width:min(100%,calc((100dvh - 320px)*1.5));margin:auto;overflow:hidden}dialog .evidence-grid,dialog .secret-grid{grid-template-columns:repeat(3,minmax(0,1fr))}dialog .secret-item svg{max-height:70px}dialog .evidence-card{padding:12px}}
 @media(min-width:600px) and (max-height:650px){dialog:has(.story-prose) .artwork-preview{height:80px}dialog .story-prose{font-size:16px}}
 @media(min-width:600px){body.vn-active{height:var(--game-height,100dvh)}body.vn-active>main{bottom:auto;height:calc(var(--game-height,100dvh) - 54px)}.vn-keyboard .casework-edit{display:none}.vn-keyboard .casework-page .casework-prompt{font-size:13px;margin:4px 0}.vn-keyboard .casework-page{padding:10px 18px;bottom:8px}.vn-keyboard .casework-page>.eyebrow{margin-bottom:4px}.vn-keyboard .casework-actions,.vn-keyboard .vn-pages{margin-top:6px}}
+/* One type system throughout the game, independent of installed display fonts. */
+:root{--font-story:Georgia,'Times New Roman',serif;--font-ui:Arial,Helvetica,sans-serif}
+body,button,input,select,textarea{font-family:var(--font-ui)}
+h1,h2,h3,.brand,.vn-top-title,.story-prose,.sentence,.casework-context,.casework-edit,.vn-context,.example,.sentence-piece b{font-family:var(--font-story)!important}
+.eyebrow,.story-page>.eyebrow,.casework-page>.eyebrow,.notebook-source,.vn-count,.story-page-count,.vn-help-heading{font-family:var(--font-ui)!important}
+.vn-help-heading{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:12px;letter-spacing:.7px;color:#e1bc8c}
+.vn-help-heading img{object-fit:contain;flex:none;width:30px;height:36px}
+@media(min-width:600px){
+ .vn-active .story-page{background:#201c27cd;border-color:#a99583}
+ .vn-active .story-page>.eyebrow{color:#ddd1c4;letter-spacing:1px}
+ .vn-active .adventure-board.art-first .case-workspace,.vn-active .casework-page{background:#271b2cf7;border-color:#c5a16c}
+ .vn-active .casework-page:before{content:attr(data-panel-label);display:block;font:600 10px var(--font-ui);letter-spacing:1.5px;text-transform:uppercase;color:#dcbd83;margin-bottom:7px}
+ .vn-active .casework-page>.eyebrow{font-size:12px;letter-spacing:.5px;margin-bottom:10px}
+ .vn-active .casework-page[data-page-type='note']{color:#473b38;border-color:#c2a575;background:repeating-linear-gradient(0deg,transparent,transparent 29px,#a28c6812 29px,#a28c6812 30px),#f2e6cd;box-shadow:0 5px 24px #0005}
+ .vn-active .casework-page[data-page-type='note']:before{color:#815d43}
+ .vn-active .casework-page[data-page-type='note']>.eyebrow{color:#725846}
+ .vn-active .casework-page[data-page-type='note'] .vn-context{color:#443a38;font-style:normal}
+ .vn-active .casework-page[data-page-type='note'] .vn-count{color:#745840}
+ .vn-active .casework-page[data-page-type='note'] .secondary{background:#eadbbd;color:#574334;border-color:#9f805d}
+ .vn-active .casework-page[data-page-type='help'],.vn-active .case-workspace.vn-show-feedback{background:#25332ff7;border-color:#8eab92}
+ .vn-active .casework-page[data-page-type='help']:before{background:url('assets/pip-storybook.webp') left center/22px 30px no-repeat;padding-left:30px;min-height:30px;display:flex;align-items:center;color:#cbdabe}
+ .vn-active .feedback strong{font-family:var(--font-ui);font-size:18px;line-height:1.4;color:#e0e8d2}
+ .vn-active .vn-help-heading{color:#cbdabe}
+ .vn-active .notebook-source{color:#dcb57d;text-transform:uppercase;font-size:10px;letter-spacing:1.2px}
+ .vn-active .editing-brief{font-family:var(--font-ui);font-size:14px;color:#e9d9c2}
+}
