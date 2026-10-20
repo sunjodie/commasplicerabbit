@@ -268,3 +268,12 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Added 2.4-second music crossfades. The fireside memory softens the current track rather than changing it twice; revisits resume each track’s position. The incomplete tension cue plays once per game and then stays silent in suspense. Mute and hidden tabs pause immediately. Removed the sound-toggle chime.
 - Story panels remain translucent; supporting notes use ruled parchment, questions dark aubergine and teaching feedback a green inset with Pip. Unified serif reading type and sans-serif interface type. Softened hints and feedback without changing approved story paragraphs, tasks, options or accepted answers. No new artwork.
 - 82 unit/handler tests pass. Native-browser Chapter 1 playthroughs pass 239 state checks across three desktop/tablet sizes; seven-size layout checks pass 148 states. Screenshot review covers story, notes and questions. Music envelopes are tested with a deterministic clock; actual listening and physical Safari/iPad checks remain pending.
+
+
+# Checkpoint 34 — readable surfaces and contained answer tools
+
+- Field Guide and shared dialogs use an explicit cream-paper/dark-ink palette, including examples, counters, muted text and links. Scene reading and question panels are translucent without background blur; bright text and a subtle shadow preserve legibility while art remains visible.
+- Replaced Arial with locally bundled Nunito Sans (Latin regular, semibold and bold; SIL OFL included), retaining Georgia for prose and examples. Initial pagination waits for the bundled interface font’s final metrics. Added an original SVG bunny favicon.
+- Quoted named conjunctions and transitions in lesson/help copy. Approved story and assessment sentences, answer targets and save formats remain unchanged.
+- Removed inherited negative margins from punctuation-tool symbols; tool symbols and labels are centred inside their buttons. Browser regression now checks child text bounds as well as viewport bounds.
+- 82 automated tests pass; Chromium checks pass 239 playthrough states, 148 layout states at seven desktop/tablet sizes and 78 dialog states. Guide and question screenshots visually reviewed. Physical tablet/Safari verification remains pending.

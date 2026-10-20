@@ -109,3 +109,6 @@ Validation: `npm test` runs the core checks. Optional real-browser regression: i
 
 
 Chapter 1 navigation and presentation refinement: left/right arrows turn visible pages and continue after checked answers. They never choose or submit answers and do not interfere with typing. Story panels are translucent, notes use parchment, questions use a dark panel and teaching feedback uses Pip’s green inset. Georgia carries reading text and Arial carries interface controls throughout the game. Music crossfades over 2.4 seconds, the fireside memory lowers the current track, and revisits resume playback rather than restarting it. The incomplete tension cue remains silent after finishing until a fresh game. No new artwork or approved question/story wording was introduced. Current unit/handler suite: 82 passing tests.
+
+
+Readability update: Nunito Sans now replaces Arial for interface text, with embedded local font data in fonts.css and the SIL Open Font License in assets/FONT-LICENSE.txt. Georgia remains the reading face. The game has an SVG bunny favicon. Scene panels use translucent dark fills; Field Guide/dialogs use dark ink on cream. Punctuation-tool text is centred without legacy tile offsets, and browser regression checks that each tool label stays inside its button. Named language examples such as “but” are quoted in teaching copy.

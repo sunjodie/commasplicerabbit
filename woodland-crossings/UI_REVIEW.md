@@ -76,3 +76,10 @@ Story reader, supporting casework and notebook now share an equal-column desktop
 Story, parchment notes, dark questions and green Pip feedback now have distinct visual treatments. A shared Georgia/Arial pair replaces inconsistent type roles. Teaching copy is shorter and more conversational; approved narrative and assessment wording are retained. Left/right page navigation respects dialogs, editable fields and unanswered questions.
 
 Chromium regression: 239 Chapter 1 playthrough state checks across three sizes and 148 layout checks across seven desktop/tablet sizes pass without overflow, off-screen controls or runtime errors. Actual desktop question, parchment-note and portrait story screenshots were visually reviewed. Automated tests cover typing with arrow keys, no accidental submission, supporting-task pagination and answer recovery. Physical tablet/Safari checks remain pending.
+
+
+## Contrast, translucency and tool labels — 20 October 2026
+
+The supplied visual-novel reference informed translucent scene panels with crisp bright text, subtle text shadow and no background blur. Story panels use a 76% dark fill; questions use 82% and help 83%. Notebook parchment stays near-opaque for dark ink. These retain distinct identities while revealing art beneath. Even over white artwork, the main near-white scene text exceeds 7:1 contrast against the composited story surface. Shared dialogs have explicit dark ink on cream rather than inheriting scene colours. Guide headings, body, examples and page counters were inspected in Chromium screenshots.
+
+Nunito Sans is bundled locally for interface controls, paired with Georgia for prose. A bunny SVG favicon replaces the missing browser icon. Tool symbols no longer inherit the earlier supply-tile negative margin. Regression checks require each symbol and label to remain within its button: seven desktop/tablet sizes pass all 148 layout states, alongside 239 playthrough checks and 78 dialog checks. Physical Safari/tablet verification remains pending.
