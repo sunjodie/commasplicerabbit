@@ -60,3 +60,12 @@ Short casework screens reuse the current scene art, with evidence and interactio
 ## 18 October — stable desktop reading position (local)
 
 Story reader, supporting casework and notebook now share an equal-column desktop grid with matching gutter, padding and 3:2 paintings. Illustration stays left and content stays right; mobile remains stacked. This is a source-level layout update. Browser rendering, tablet legibility and touch checks remain pending. Existing behavior suite: 71 passing checks; it does not validate rendered layout.
+
+
+## Approved visual novel implementation — 20 October 2026
+
+- Replaced Chapter 1 desktop/tablet columns with full-viewport paintings, translucent reading panels and opaque question panels. Tablet portrait uses a crop that keeps both rabbits visible. Reading text can be hidden.
+- Kept readable type and 44px controls. Context, conclusions and supporting evidence occupy separate revisitable steps; hints and feedback replace the current panel rather than expanding it. Hidden steps are inert for keyboard navigation.
+- Shared menus, rewards and dialogs turn pages. Progress moved into the header. The correction field responds to tablet visual-viewport changes without losing the typed answer to a redraw.
+- Browser checked at 1440×900, 1366×768, 1024×768, 768×1024, 820×1180, 600×800 and 1024×600: no page overflow or off-screen controls in the exercised Chapter 1 states. Complete native-click playthroughs also passed at 1366×768, 768×1024 and 1024×600, including wrong-answer feedback, recovery, detective work and the village reward. Guide, secret collection, progress and storybook dialog checks passed. Desktop and portrait screenshots visually reviewed.
+- 76 unit/handler checks pass. Browser tests cover Chromium; physical iPad/Safari and its software keyboard remain unverified. Phone layout remains stacked.

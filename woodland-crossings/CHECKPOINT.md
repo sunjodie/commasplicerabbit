@@ -253,3 +253,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - The name exists only in an ending-specific module, loaded on demand when the completed player opens the envelope. It is absent from earlier narration, questions, clues, labels and asset filenames. The reveal can be reopened from the completed ending.
 - Hints, retries and optional secrets do not block completion. No screenshot, account or submission form is required.
 - 74 automated checks pass, including absence before the ending, deliberate envelope opening and retrieval on replay. The approved visual-novel layout remains a mockup awaiting implementation.
+
+
+# Checkpoint 32 — Chapter 1 visual novel viewport
+
+- Implemented the approved art-filled desktop/tablet scene with bottom reading/notebook panels and Hide text. Paged long content, detective steps, feedback, menus and dialogs; moved Progress into the header.
+- Preserved the approved story words, all question targets, scene music, reward progression, saved answers and the ending-only completion secret. Later chapter question screens remain on their existing layout.
+- 76 automated unit/handler checks pass. Chromium viewport checks pass at seven desktop/tablet sizes, with complete first-chapter playthroughs at three sizes. No scrolling or off-screen controls in exercised states. Reviewed actual desktop/tablet screenshots. Safari and physical tablet keyboard checks remain pending.

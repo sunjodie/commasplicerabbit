@@ -97,3 +97,12 @@ The editing screen uses a compact supply row and one notebook panel below the ar
 Chapter 1 now weaves three short supporting stops between its five main notes: a word-level agreement edit, vocabulary in context and a claim/evidence deduction with two investigative leads. All five supply deliveries still come from sentence-editing work. Auxiliary answers and hints save separately and never change comma-splice mastery or erase rewards. The revised mystery plants fresh timber shavings; later chapters still await adaptation to Bram’s deliberate wrongdoing. See CHAPTER_ONE_CASEWORK.md. The automated suite now has 69 passing checks; browser/mobile rendering QA remains pending.
 
 Chapter 1 difficulty tuning: one semicolon target, one comma + but contrast, one full-stop repair and two comma-preservation notes. Vocabulary now includes a context-supported “incongruous” question and slightly richer notebook wording, while the five main sentence tasks and three supporting stops stay in place.
+
+
+## Chapter 1 visual novel layout (20 October 2026)
+
+Desktop and tablet (600px and wider) use a fixed viewport: large scene artwork with a translucent story panel and a darker notebook panel. Long reading passages, detective context, conclusions, evidence and feedback turn pages instead of expanding. Hide text exposes the painting. Phones retain the existing stacked layout. Menus, rewards and auxiliary dialogs also paginate. Progress is accessible from the header.
+
+Questions, accepted answers, story words, saved progress and rewards are unchanged. The revised manuscripts for Chapters 2–6 still await separate integration; their question screens retain the previous layout.
+
+Validation: `npm test` runs the core checks. Optional real-browser regression: install Playwright in your development environment, then run `BROWSER_EXECUTABLE_PATH=/path/to/chromium node tests/viewport-check.cjs`. It serves only this local folder and reports overflow, off-screen controls, runtime errors and complete Chapter 1 progression (including recovery and rewards). Without an executable override it uses Playwright’s installed Chromium. It writes reports to the temporary directory; set `QA_DIR` to choose another destination.

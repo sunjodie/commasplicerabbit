@@ -1,0 +1,97 @@
+/* Approved desktop/tablet visual-novel frame. Phones retain the existing stack. */
+@media(min-width:600px){
+ body.vn-active{height:100dvh;overflow:hidden;background:#18151b;color:#f5e7ce}
+ body.vn-active>header{position:fixed;inset:0 0 auto;max-width:none;height:54px;padding:0 24px;z-index:20;background:#211922eb;border-bottom:1px solid #ae8d57;gap:16px;align-items:center}
+ .vn-active .brand{color:#ead6af;font-family:Georgia,serif;letter-spacing:2px;font-size:11px;line-height:1.1;flex-shrink:0}.vn-active .brand b{font-size:11px}.vn-active .brand-icon{display:none}
+ .vn-active nav{gap:2px;flex-wrap:nowrap}.vn-active nav .quiet{font-size:12px;padding:9px 10px;min-height:44px;color:#f1dec1;white-space:nowrap}
+ body.vn-active>main{position:fixed;inset:54px 0 0;max-width:none;margin:0;padding:0;overflow:hidden}
+ body.vn-active>footer{display:none}
+ .vn-active .story-heading,.vn-active .game-heading{display:none}
+ .vn-active .story-reader,.vn-active .casework-reader,.vn-active .adventure-board.art-first{position:absolute;inset:0;display:block;margin:0;padding:0;border:0;border-radius:0;background:#201a22;box-shadow:none}
+ .vn-active .story-illustration,.vn-active .casework-art,.vn-active .adventure-board.art-first .world-stage{position:absolute;inset:0;grid-column:auto;grid-row:auto;width:100%;max-width:none;height:100%;margin:0;padding:0}
+ .vn-active .story-illustration>.scene.painted-scene,.vn-active .casework-art>.scene.painted-scene,.vn-active .adventure-board.art-first .world-stage>.scene.painted-scene{position:absolute;inset:0;aspect-ratio:auto;width:100%;height:100%;border:0;border-radius:0;background-size:cover;background-position:50% 40%}
+ .vn-active .story-page,.vn-active .casework-page,.vn-active .adventure-board.art-first .case-workspace{position:absolute;grid-column:auto;grid-row:auto;left:clamp(18px,2.5vw,44px);right:clamp(18px,2.5vw,44px);bottom:20px;margin:0;width:auto;max-width:none;min-width:0;padding:18px 28px;border:1px solid #c6a363;border-radius:22px;background:#211b25f5;box-shadow:0 4px 20px #0007;color:#f4e6ce;z-index:4}
+ .vn-active .story-page{background:#211b25d9;backdrop-filter:blur(8px)}
+ .vn-active .story-page>.eyebrow,.vn-active .casework-page>.eyebrow{display:block;color:#e5c389;font:12px Georgia,serif;letter-spacing:2px;margin-bottom:12px}
+ .vn-active .story-prose{color:#f4e7d1;font:clamp(18px,1.7vw,24px)/1.48 Georgia,serif}
+ .vn-active .story-prose p{margin:0 0 9px}.vn-active .story-prose .spoken-line{border:0;padding:0}
+ .vn-active .story-controls{margin-top:12px;gap:14px}.vn-active .story-page-count{position:absolute;bottom:28px;left:40%;right:40%;margin:0;text-align:center;font-size:11px;color:#d4bb96;pointer-events:none}
+ .vn-active .primary{min-height:44px;padding:10px 24px;background:linear-gradient(#634155,#44293d);border:1px solid #dfbc7a;color:#fff0d5;box-shadow:none;border-radius:24px;font-weight:500}
+ .vn-active .secondary{min-height:44px;padding:8px 18px;background:#2b222c;color:#efdcba;border:1px solid #aa8c5c;border-radius:16px}
+ .vn-active button:focus-visible{outline:3px solid #fff0ba;outline-offset:3px}
+ .vn-active .text-button,.vn-active .hint-button,.vn-active .small-note{color:#dcc6a6}
+ .vn-active .vn-hide{position:absolute;right:34px;top:12px;z-index:7;border:1px solid #c5a46c;border-radius:20px;background:#241d29c9;color:#efdfbf;padding:8px 18px;min-height:44px}
+ .vn-active #storyArtwork,.vn-active .story-payoff,.vn-active .artwork-link{display:none}
+ .vn-active .reading-chart{padding:0;margin:0;background:none;border:0;box-shadow:none;border-radius:0;color:#f4e6ce;min-height:0}
+ .vn-active .chart-pin,.vn-active .editing-rules-toggle,.vn-active .dock-heading,.vn-active .sentence-piece svg,.vn-active .feedback-pip{display:none}
+ .vn-active .notebook-source{margin:0 0 4px;color:#e3c186;font-size:11px;letter-spacing:1px}
+ .vn-active .notebook-source>.text-button{color:#d7c0a1;min-height:30px;padding:0;font-size:11px}
+ .vn-active .editing-brief{padding:0;border:0;background:none;text-align:center;font-size:14px;line-height:1.4;margin:4px 0 10px;color:#f2e1c6}
+ .vn-active .editing-brief b{display:none}
+ .vn-active .case-workspace .sentence{font:clamp(19px,2.1vw,30px)/1.45 Georgia,serif;color:#f5e4c5;text-align:center;margin:5px 0 12px;white-space:normal}
+ .vn-active .join{background:none;color:#f3ddb4;border:1px solid transparent;border-bottom:1px dotted #e6c790;min-width:25px;min-height:44px;padding:0 4px;font:inherit;line-height:1.1}.vn-active .join.selected{border:1px solid #e6bd75;border-radius:30px;background:#8d684433}
+ .vn-active .builder-dock{margin:0;padding:0;border:0;background:none;box-shadow:none;border-radius:0;color:#eedfc8}
+ .vn-active .piece-tray{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0;margin:0;min-height:44px}
+ .vn-active .sentence-piece{flex:1;min-width:105px;max-width:360px;min-height:44px;padding:7px 12px;display:flex;align-items:center;justify-content:center;gap:15px;background:#2d232c;color:#f6e7cf;border:1px solid #c7a36b;border-radius:14px;box-shadow:none}
+ .vn-active .sentence-piece b{position:static;font:24px Georgia,serif}.vn-active .sentence-piece span{font-size:13px}.vn-active .sentence-piece.chosen{background:#6d4a56;border-color:#f9df9c}
+ .vn-active .scout-prompt{color:#d0baa0;font-size:13px;line-height:1.4;padding:10px}
+ .vn-active .actions{margin-top:12px;padding-top:10px;border-top:1px solid #9f805455;gap:12px;display:flex;justify-content:space-between;align-items:center}.vn-active .hint-button{background:none;border:0;padding:8px 0;min-height:44px;font-size:12px;box-shadow:none}.vn-active .actions .small-note{font-size:11px;margin:0}
+ .vn-active .vn-pages{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.vn-active .vn-count{color:#d7bc8f;font-size:11px}.vn-active [hidden]{display:none!important}
+ .vn-active .casework-page{max-width:1100px;margin:auto;line-height:1.45}
+ .vn-active .vn-context{font:clamp(18px,1.6vw,22px)/1.5 Georgia,serif;color:#f2e2c8;margin:10px 0}
+ .vn-active .casework-page p,.vn-active .casework-prompt{font-size:15px;line-height:1.45;margin:10px 0;color:#f1e0c5}
+ .vn-active .casework-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ .vn-active .casework-option{margin:0;min-height:52px;padding:10px 14px;font-size:14px;line-height:1.4;background:#30262f;color:#f7e7cf;border:1px solid #ac8c5b;border-radius:12px;text-align:left}
+ .vn-active .casework-option.chosen{background:#674451;border-color:#f3d090}
+ .vn-active .casework-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+ .vn-active .casework-edit{font:21px/1.8 Georgia,serif;margin:10px 0;color:#f5e4c5}.vn-active .editable-word{color:#f5e4c5;min-height:44px}.vn-active .editable-word.chosen{background:#79515f}
+ .vn-active .correction-label{color:#e5d2b4}.vn-active .case-correction{background:#362a35;color:#fff0d8;border:1px solid #c2a06b}
+ .vn-active .casework-feedback{background:none;border:0;padding:0;color:#f1dfbc}
+ .vn-active .vn-show-feedback>.reading-chart,.vn-active .vn-show-feedback .piece-tray,.vn-active .vn-show-feedback .route-contract{display:none}
+ .vn-active .feedback{display:block;margin:0;padding:0;background:none;border:0;color:#f5e7cf;box-shadow:none}.vn-active .feedback p{font-size:16px;line-height:1.5;margin:10px 0}.vn-active .feedback strong{font:22px Georgia,serif;color:#f0d6a7}
+ .vn-active .world-easter{bottom:auto;top:45%;width:40px;height:40px;opacity:.45}
+}
+@media(min-width:600px) and (max-width:900px){
+ .vn-active .brand{display:none}.vn-active>header{justify-content:center;padding:0 10px}.vn-active nav .quiet{font-size:11px;padding:8px}
+ .vn-active .story-page,.vn-active .casework-page,.vn-active .adventure-board.art-first .case-workspace{left:16px;right:16px;bottom:16px;padding:16px 20px;border-radius:18px}
+ .vn-active .story-page-count{bottom:29px;font-size:10px;left:34%;right:34%}
+ .vn-active .case-workspace .sentence{font-size:21px}.vn-active .casework-option{font-size:14px}.vn-active .sentence-piece{min-width:130px}
+}
+@media(min-width:600px) and (max-height:650px){
+ .vn-active .story-page,.vn-active .casework-page,.vn-active .adventure-board.art-first .case-workspace{bottom:10px;padding:12px 22px}
+ .vn-active .story-prose{font-size:18px}.vn-active .case-workspace .sentence{font-size:21px;margin:2px 0 8px}
+ .vn-active .notebook-source,.vn-active .editing-brief{font-size:12px;margin:2px 0}.vn-active .actions{margin-top:8px;padding-top:6px}
+ .vn-active .casework-option{font-size:13px;padding:8px 12px;min-height:48px}.vn-active .vn-pages{margin-top:8px}
+}
+@media(min-width:600px){
+ dialog{max-height:calc(100dvh - 32px);overflow:visible}dialog #modalBody{overflow:visible}dialog .artwork-preview{height:min(30dvh,210px);min-height:0}dialog .vn-pages{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}dialog [hidden]{display:none!important}dialog .story-prose{font-size:17px;line-height:1.45}dialog p{line-height:1.5}
+}
+@media(min-width:600px) and (orientation:portrait){
+ .vn-active .story-illustration>.scene.painted-scene,.vn-active .casework-art>.scene.painted-scene,.vn-active .adventure-board.art-first .world-stage>.scene.painted-scene{background-size:100% auto;background-position:center top;background-repeat:no-repeat;background-color:#211a23}
+}
+@media(min-width:600px){
+ .vn-menu>main{background:linear-gradient(#19162099,#191620e8),url('assets/chapter-one/fair-v3.webp') center/cover}
+ .vn-menu-frame{position:absolute;inset:18px max(20px,calc((100vw - 1100px)/2));padding:22px 28px 80px;background:#211b25ed;border:1px solid #b99763;border-radius:20px;color:#f3e4ca}
+ .vn-menu-content{height:100%;min-height:0}.vn-menu-page{min-height:0}.vn-menu-frame>.vn-pages{position:absolute;bottom:16px;left:28px;right:28px}
+ .vn-menu h1{font-size:38px;line-height:1.15;margin:10px 0 16px;letter-spacing:-1px}.vn-menu h2{font-size:28px}.vn-menu p{font-size:15px;line-height:1.5;color:#f0dfc3}
+ .vn-menu .button-row{margin:14px 0;gap:10px}.vn-menu .small-note{font-size:12px}.vn-menu .case-opening{padding:12px;margin:10px 0;background:#3b2d34;border:0}.vn-menu .case-opening p{font-size:15px}.vn-menu .example{font-size:20px;padding:16px;background:#372a36;color:#f5e3c5}
+ .vn-menu .path-map{grid-template-columns:repeat(6,1fr);margin:10px 0}.vn-menu .map-stop{padding:12px 10px}.vn-menu .map-stop svg{max-height:65px}.vn-menu .map-stop strong{font-size:16px}
+ .vn-menu .village-world,.vn-menu .village-reward-art{margin:12px 0}.vn-menu .village-viewport{width:min(100%,calc((100dvh - 350px)*1.5));margin:auto;max-height:none;overflow:hidden}.vn-menu .village-viewport[data-zoom='2']>.village-canvas{width:100%}
+ .vn-menu #villageZoom{display:none}.vn-menu .village-caption{display:none}.vn-menu .decoration{min-height:44px;padding:8px 12px}.vn-menu .chapter-clue{padding:10px;margin:8px 0}.vn-menu .chapter-clue svg{width:40px;height:40px;flex-basis:40px}.vn-menu .chapter-clue p{font-size:14px}
+ .vn-menu .ending-art{height:min(28dvh,240px);margin:10px 0}.vn-menu .rescue-event{min-height:80px;padding:8px}.vn-menu .rescue-event svg{width:40px;height:40px}.vn-menu .rescue-explanation{padding:14px;font-size:14px}
+}
+@media(min-width:600px) and (max-width:900px){.vn-menu .path-map{grid-template-columns:repeat(3,1fr)}.vn-menu-frame{inset:16px;padding:18px 20px 76px}.vn-menu h1{font-size:30px}}
+@media(min-width:600px){
+ .vn-active .adventure-board.art-first .case-workspace .reading-chart{padding:0;margin:0;background:none;border:0;box-shadow:none;min-height:0}
+ .vn-active .art-first.scouting-board .reading-chart .join{background:none;color:#f3ddb4;border:1px solid transparent;border-bottom:1px dotted #e6c790;box-shadow:none;border-radius:2px}
+ .vn-active .art-first.scouting-board .reading-chart .join.selected{border:1px solid #e6bd75;border-radius:30px;background:#8d684433}
+ .vn-active .adventure-board.art-first .artwork-link{display:none!important}
+ .vn-top-title{font:14px Georgia,serif;color:#e6d1ad;text-align:center;flex:1}
+}
+@media(min-width:600px) and (orientation:portrait){
+ .vn-active .story-illustration>.scene.painted-scene,.vn-active .casework-art>.scene.painted-scene,.vn-active .adventure-board.art-first .world-stage>.scene.painted-scene{background-size:cover;background-position:70% center}
+}
+@media(max-width:900px){.vn-top-title{display:none}}
+@media(min-width:600px){dialog:has(.story-prose) .artwork-preview{height:min(20dvh,140px)}dialog .village-viewport{width:min(100%,calc((100dvh - 320px)*1.5));margin:auto;overflow:hidden}dialog .evidence-grid,dialog .secret-grid{grid-template-columns:repeat(3,minmax(0,1fr))}dialog .secret-item svg{max-height:70px}dialog .evidence-card{padding:12px}}
+@media(min-width:600px) and (max-height:650px){dialog:has(.story-prose) .artwork-preview{height:80px}dialog .story-prose{font-size:16px}}
+@media(min-width:600px){body.vn-active{height:var(--game-height,100dvh)}body.vn-active>main{bottom:auto;height:calc(var(--game-height,100dvh) - 54px)}.vn-keyboard .casework-edit{display:none}.vn-keyboard .casework-page .casework-prompt{font-size:13px;margin:4px 0}.vn-keyboard .casework-page{padding:10px 18px;bottom:8px}.vn-keyboard .casework-page>.eyebrow{margin-bottom:4px}.vn-keyboard .casework-actions,.vn-keyboard .vn-pages{margin-top:6px}}
