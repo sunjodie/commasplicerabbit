@@ -108,3 +108,8 @@ Reviewed all 52 frame compositions after the reported third ear in the upstairs-
 ## Chapter 2 — 20 October 2026
 
 The same visual-novel surfaces now cover Chapter 2 story, joining tasks, notebook checks and feedback, with chapter-aware headers. Four new scene paintings are reused across related turns. Full manuscript pagination retains all words at 38/42/48-word budgets. Added notebook choice pagination (two options per page) to bound long answer lists. Automated tests cover handler progression and cover-crop mathematics; rendered-browser fit, Safari and physical tablet interaction have not been revalidated in this update.
+
+
+## Notebook answer grouping fix
+
+The two-plus-one split of three-option questions made the final answer page appear to offer only one choice. Removed answer-list pagination. Each question now keeps its complete option set and Check action together; only context and feedback turn pages. DOM regression covers all four notebook checks at four desktop/tablet dimension inputs. Rendered fit remains unverified.

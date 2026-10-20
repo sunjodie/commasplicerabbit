@@ -346,3 +346,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - 108 automated unit/handler checks pass, including a full Chapter 2 playthrough, alternate contrast acceptance, retries, legacy save migration, storybook replay, notebook reload and reward collection. Atlas cover geometry checked at desktop/tablet dimensions. No rendered-browser checks were run for this update because the supported browser-control skill is unavailable. Safari, physical-device and listening checks remain pending.
 
 Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-release (repository root); game source in woodland-crossings/.
+
+
+# Checkpoint 45 — Keep notebook answers together
+
+- Fixed the reported single-choice appearance in “Evidence for a suspicion” and “An unexpected movement”. Three answer buttons had been split into a two-choice page and a lone-choice page. All options and the Check button now remain on one question page; context, hints and explanations still paginate. Applied to all four Chapter 2 notebook checks.
+- Added a real-pagination DOM regression covering every answer set at four desktop/tablet dimension inputs. This verifies DOM visibility and grouping, not rendered physical fit. All 109 automated checks pass. Browser/Safari and physical-device verification remain pending.
+- Revised entry-point and chapter-UI module URLs so returning browsers request the corrected code.

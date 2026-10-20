@@ -2,7 +2,7 @@ import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,paintFrame} fro
 import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js';
 import './page-keys.js';
 import {createPageSound,isPageTurn} from './page-sound.js';
-import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js';
+import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261020-options';
 import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js';
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js';
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
@@ -95,7 +95,7 @@ function showCasework(q,task,message=''){activeCasework=task;
   save();showCasework(q,task,text);document.querySelector(caseworkState(state,task.id).completed?'#caseworkContinue':'#caseworkCheck')?.focus();say(text);
  };
  const next=document.querySelector('#caseworkContinue');if(next)next.onclick=()=>{if(caseworkState(state,task.id).completed){if(task.phase==='after')advance();else openNotebook(q);}};
- presentChapterView({kind:'casework',chapter:q.stage+1,title:task.title,key:task.id,message,completed:work.completed,choicePageSize:task.kind==='reasoning'?2:Infinity});paintFrame(app.querySelector('.casework-art .painted-scene'),caseworkFrameArt(task.id));
+ presentChapterView({kind:'casework',chapter:q.stage+1,title:task.title,key:task.id,message,completed:work.completed});paintFrame(app.querySelector('.casework-art .painted-scene'),caseworkFrameArt(task.id));
  bindEasterEggs();
 }
 

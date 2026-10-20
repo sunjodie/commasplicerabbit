@@ -38,7 +38,7 @@ function storyPanel(){
 }
 // A wizard remembers its current part when answer selections redraw the page.
 const positions=new Map();
-function caseworkPanel(key,message,completed,choicePageSize=Infinity){
+function caseworkPanel(key,message,completed){
  const panel=document.querySelector('.casework-page');if(!panel)return;
  const original=[...panel.children],steps=[],prose=original.filter(n=>n.matches('blockquote,.lead-observation'));
  for(const chunk of textPages(prose.map(n=>n.textContent),budget())){if(chunk.length){const page=element('div','vn-step');page.dataset.pageType='note';chunk.forEach(t=>page.append(element('p','vn-context',t)));steps.push(page);}}
@@ -51,13 +51,8 @@ function caseworkPanel(key,message,completed,choicePageSize=Infinity){
  }else{
   const answer=element('div','vn-step');answer.dataset.pageType='question';if(prompt)answer.append(prompt);
   if(edit){answer.append(edit);for(const n of original.filter(n=>n.matches('label,input')))answer.append(n);}
-  else if(groups[0]){
-   const options=[...groups[0].children];
-   if(options.length>choicePageSize){
-    for(let i=0;i<options.length;i+=choicePageSize){const page=i===0?answer:element('div','vn-step');page.dataset.pageType='question';if(i&&prompt)page.append(prompt.cloneNode(true));const group=groups[0].cloneNode(false);options.slice(i,i+choicePageSize).forEach(option=>group.append(option));page.append(group);steps.push(page);}
-   }else answer.append(groups[0]);
-  }
-  if(!steps.includes(answer))steps.push(answer);
+  // Answer choices must stay together for comparison. Only context and feedback paginate.
+  else if(groups[0])answer.append(groups[0]);steps.push(answer);
   if(groups[1]){const ev=element('div','vn-step');ev.dataset.pageType='question';ev.append(element('p','casework-prompt','Part 2: Which pair of details provides the strongest support?'),groups[1]);steps.push(ev);}
   // Only the final answer step submits; earlier choices and evidence remain revisitable.
   if(actions)steps.at(-1).append(actions);
@@ -82,10 +77,10 @@ function questionPanel(){
  const pager=pageControls(feedback,cards);if(cards.length===1)pager.nav.hidden=true;
  if(!document.querySelector('#next'))feedback.append(continuation('Return to the question →',()=>{if(active?.onDismiss)active.onDismiss();else{workspace.classList.remove('vn-show-feedback');feedback.hidden=true;}}));
 }
-export function presentChapterView({kind,title,key='',message='',completed=false,onDismiss=null,onReadingPart=null,chapter=1,choicePageSize=Infinity}){
+export function presentChapterView({kind,title,key='',message='',completed=false,onDismiss=null,onReadingPart=null,chapter=1}){
  if(!document.body||!wide())return;clearChapterView();active={kind,title,onDismiss,onReadingPart};document.body.classList.add('vn-active');headerControls();
  const app=document.querySelector('#app');app.dataset.vnKind=kind;document.querySelector('header')?.insertBefore(element('span','vn-top-title','Chapter '+chapter+' · '+title),document.querySelector('header nav'));
- if(kind==='story')storyPanel();else if(kind==='casework')caseworkPanel(key,message,completed,choicePageSize);else questionPanel();
+ if(kind==='story')storyPanel();else if(kind==='casework')caseworkPanel(key,message,completed);else questionPanel();
 }
 // Auxiliary dialogs also turn pages rather than grow a scrolling box.
 export function paginateModal(){
