@@ -41,3 +41,7 @@ Track changes use a 2.4-second cosine-eased crossfade; the outgoing player keeps
 ## Page-turn effect (20 October 2026)
 
 User-supplied `oxidvideos-page-flip-1-178322.mp3`, bundled unchanged as `page-flip.mp3` (2.61 seconds). Used at 22% player volume for story/storybook page controls, shared page arrows and notebook return controls. Mouse, touch and keyboard-generated clicks share one trigger. Answer selection, answer checking and ordinary navigation do not trigger it. The existing Sound opt-in and hidden-tab pause apply. One reused player prevents overlapping rustles; turns within 140ms are suppressed. Playback failure is silent and does not affect progression or music.
+
+## Default sound (20 October 2026)
+
+New visitors see Sound on. Playback starts with their first pointer/key interaction, within the browser’s audio permission gesture. Turning Sound off pauses music/effects and remembers that choice locally across visits. Sound can be enabled again with the same control. Hidden-tab pauses remain in force.

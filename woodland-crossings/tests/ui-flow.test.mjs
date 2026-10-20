@@ -160,3 +160,11 @@ test('the completion secret appears only after opening the final envelope and ca
  ui.click('closeModal');ui.click('endingVillage');assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));
  ui.click('endingReplay');await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,new RegExp(name));
 });
+
+test('frogs collect once, replay their tidbits and leave language progress intact',async()=>{
+ const ui=setup();await import('../app.js?frog-collection');
+ assert.equal(ui.fixed.soundBtn.textContent,'Sound on');
+ const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();
+ let s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);assert.equal(s.story,0);assert.equal(s.seq,0);assert.deepEqual(s.decorations,[]);assert.match(ui.fixed.modalBody.innerHTML,/dismantled/);
+ frog.onclick();s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);
+});

@@ -283,3 +283,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Bundled the supplied page-flip recording unchanged. Added a quiet paper rustle to story/storybook page turns and shared paginated notebook/menu/dialog controls, including arrow-key clicks. Answer tools/checks do not trigger it.
 - Respects Sound opt-in and hidden tabs, pauses immediately when muted, reuses one player and suppresses rapid repeats. Failed effect playback never blocks navigation or changes background music.
 - 84 unit/handler checks pass, covering opt-in, visibility, throttling, valid controls and playback rejection. Browser Chapter 1 navigation regression remains part of the standard viewport check.
+
+# Checkpoint 36 — default audio and collectible language frogs
+
+- Sound starts enabled for a new visitor; the first pointer/key interaction unlocks browser audio. A chosen mute setting persists across reloads. The opt-in control remains available and hidden tabs still pause playback.
+- Added ten original SVG frog characters with distinct accessories and short story-related grammar/vocabulary tidbits: five matched to Chapter 1 paintings and one per later chapter. Their small, muted scene artwork has 44–48px click/touch targets, no pulse and visible keyboard focus.
+- Frogs collect once into a separate fieldbook within Woodland secrets. Found tidbits can be reread; reached scenes can be revisited for missed visitors. Names/tidbits stay hidden until collection. Future-scene searches are locked. This does not change grammar mastery, supplies, approved prose, question answers or the ending-only completion secret.
+- 87 unit/handler tests pass. Chromium checks pass 242 complete Chapter 1 states across desktop/tablet sizes, including real frog clicks, default audio and saved mute preference; 90 dialog states across seven sizes pass without overflow. Actual scene screenshot inspected. Physical Safari/tablet audio remains unverified.

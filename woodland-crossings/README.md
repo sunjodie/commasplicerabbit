@@ -112,3 +112,5 @@ Chapter 1 navigation and presentation refinement: left/right arrows turn visible
 
 
 Readability update: Nunito Sans now replaces Arial for interface text, with embedded local font data in fonts.css and the SIL Open Font License in assets/FONT-LICENSE.txt. Georgia remains the reading face. The game has an SVG bunny favicon. Scene panels use translucent dark fills; Field Guide/dialogs use dark ink on cream. Punctuation-tool text is centred without legacy tile offsets, and browser regression checks that each tool label stays inside its button. Named language examples such as “but” are quoted in teaching copy.
+
+Sound is enabled by default and begins after the first interaction to respect browser autoplay rules; a chosen mute setting persists. Ten small collectible frogs now offer optional story-related language tidbits. Five accompany Chapter 1’s paintings and one appears in each later chapter. Woodland secrets contains their fieldbook, replayable tidbits and searches of reached scenes. Frog collection saves independently from grammar scores and supplies.
