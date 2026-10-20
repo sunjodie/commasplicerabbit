@@ -37,3 +37,7 @@ The incomplete tension recording keeps its existing two-second opening and six-s
 ## Transition refinement (20 October 2026)
 
 Track changes use a 2.4-second cosine-eased crossfade; the outgoing player keeps playing until inaudible. The fireside memory lowers whichever track is already playing instead of switching tracks twice. Track cursors survive revisits. The incomplete tense cue is not looped or restarted after completion; suspense then remains silent. Muting or hiding the tab pauses both players immediately. Returning to the tab fades the active track in. A fresh game resets playback positions and cue availability. Deterministic tests cover intermediate volumes, rapid mood changes, late playback promises, mute/visibility and cue completion. Actual listening verification remains pending.
+
+## Page-turn effect (20 October 2026)
+
+User-supplied `oxidvideos-page-flip-1-178322.mp3`, bundled unchanged as `page-flip.mp3` (2.61 seconds). Used at 22% player volume for story/storybook page controls, shared page arrows and notebook return controls. Mouse, touch and keyboard-generated clicks share one trigger. Answer selection, answer checking and ordinary navigation do not trigger it. The existing Sound opt-in and hidden-tab pause apply. One reused player prevents overlapping rustles; turns within 140ms are suppressed. Playback failure is silent and does not affect progression or music.

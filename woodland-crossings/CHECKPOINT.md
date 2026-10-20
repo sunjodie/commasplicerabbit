@@ -277,3 +277,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Quoted named conjunctions and transitions in lesson/help copy. Approved story and assessment sentences, answer targets and save formats remain unchanged.
 - Removed inherited negative margins from punctuation-tool symbols; tool symbols and labels are centred inside their buttons. Browser regression now checks child text bounds as well as viewport bounds.
 - 82 automated tests pass; Chromium checks pass 239 playthrough states, 148 layout states at seven desktop/tablet sizes and 78 dialog states. Guide and question screenshots visually reviewed. Physical tablet/Safari verification remains pending.
+
+# Checkpoint 35 — supplied paper page-turn sound
+
+- Bundled the supplied page-flip recording unchanged. Added a quiet paper rustle to story/storybook page turns and shared paginated notebook/menu/dialog controls, including arrow-key clicks. Answer tools/checks do not trigger it.
+- Respects Sound opt-in and hidden tabs, pauses immediately when muted, reuses one player and suppresses rapid repeats. Failed effect playback never blocks navigation or changes background music.
+- 84 unit/handler checks pass, covering opt-in, visibility, throttling, valid controls and playback rejection. Browser Chapter 1 navigation regression remains part of the standard viewport check.
