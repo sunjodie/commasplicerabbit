@@ -376,3 +376,10 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 - Replaced the active Chapter 2 atlas with the image the user supplied as image(20261020-153209).png. No further generative edits. Converted to lossless WebP and verified identical decoded RGB pixels.
 - Runtime uses scenes-v4.webp in the reader, notebooks, storybook replay and scene revisits. Original four-cell geometry and scene order retained. Source provenance is in assets/chapter-two/user-approved-source.json.
 - Refreshed entry-point and art-module cache URLs. All 109 automated checks pass; story, questions, answers and progress are unchanged.
+
+
+# Checkpoint 49 — Isolate artwork in exploration dialogs
+
+- Fixed the screenshot-reported atlas leak in Look around. Frog-search and chapter-revisit dialogs had bypassed the frame painter and rendered the four-cell atlas using the legacy cover background. They now select the correct individual Chapter 1/2 painting and use the same pixel crop as story/notebook views.
+- Crop geometry is applied immediately, before image loading, so a cached/fallback atlas cannot flash multiple cells. Frame-aware frog anchors apply in exploration too; the reed frog has bank/foliage perches within the isolated streambank painting.
+- All 112 automated checks pass. New checks exercise real revisit/frog-search handlers, initial crop application without Image loaded, source-cell containment at dialog/tablet dimensions and visible frog anchor coordinates. These are DOM/math checks; browser/Safari/device checks remain pending. Supplied artwork pixels and assessment/progress data are unchanged.

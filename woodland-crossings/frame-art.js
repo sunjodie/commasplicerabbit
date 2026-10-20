@@ -8,11 +8,12 @@ export const FRAME_ART=[{"id":"m1-0-0","scene":"m1","kind":"story","cell":0,"ass
 const chapterTwoCells=[0,1,1,2,3];
 for(const [i,scene] of CHAPTER_TWO.entries()){
  FRAME_ART.push({id:scene.id+'-story',scene:scene.id,kind:'story',cell:chapterTwoCells[i],asset:'chapter-two/scenes-v4.webp',text:scene.paragraphs[0]});
- FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:i===4?3:2,asset:'chapter-two/scenes-v4.webp',text:'Notebook at the rain-wet streambank',...(i===0?{frog:{id:'reed-frog',x:16,y:60,perches:[{x:50,y:54}]}}:{})});
+ FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:i===4?3:2,asset:'chapter-two/scenes-v4.webp',text:'Notebook at the rain-wet streambank',...(i===0?{frog:{id:'reed-frog',x:55,y:72,perches:[{x:9,y:68}]}}:{})});
 }
 for(const task of CHAPTER_TWO_CASEWORK)FRAME_ART.push({id:task.id,scene:'m10',kind:'casework',cell:3,asset:'chapter-two/scenes-v4.webp',text:task.context});
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===id+'-question');}
+export function explorationFrameArt(stage,view=0){return questionFrameArt('m'+(stage*5+view+1))||null;}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
 export function frameGeometry(width,height,cell,focus=.7){const scale=Math.max(width/3,height/2),w=scale*3,h=scale*2;return {width:w*2,height:h*2,x:(width-w)*focus-(cell%2)*w,y:(height-h)*.5-Math.floor(cell/2)*h};}
@@ -21,6 +22,8 @@ function geometry(el,frame){const box=el.getBoundingClientRect();const g=frameGe
 export function paintFrame(el,frame){
  if(!el||!frame||typeof window==='undefined'||!el.style||!el.getBoundingClientRect)return;
  el.dataset.frameArt=frame.id;el.dataset.frogPerch=frame.frog?JSON.stringify(frame.frog):'none';
+ // Crop immediately: the CSS fallback may already display this atlas while Image loads.
+ geometry(el,frame);
  const show=()=>{if(!el.isConnected||el.dataset.frameArt!==frame.id)return;el.style.backgroundImage=`url('assets/${frame.asset}')`;geometry(el,frame);placeFrogs(el);};
  if(typeof Image==='undefined')return;
  let img=images.get(frame.asset);if(!img){img=new Image();images.set(frame.asset,img);img.src='assets/'+frame.asset;}

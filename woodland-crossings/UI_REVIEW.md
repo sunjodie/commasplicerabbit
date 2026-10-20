@@ -113,3 +113,8 @@ The same visual-novel surfaces now cover Chapter 2 story, joining tasks, noteboo
 ## Notebook answer grouping fix
 
 The two-plus-one split of three-option questions made the final answer page appear to offer only one choice. Removed answer-list pagination. Each question now keeps its complete option set and Check action together; only context and feedback turn pages. DOM regression covers all four notebook checks at four desktop/tablet dimension inputs. Rendered fit remains unverified.
+
+
+## Look around atlas cropping
+
+The supplied screenshot showed the exploration dialog displaying the whole Chapter 2 sheet. The legacy cover background had bypassed frame painting. Both chapter revisits and frog searches now use frame selection and pixel crop geometry, applied before image loading. Regression checks cover the actual handlers and cell boundaries for wide/narrow dialog shapes, plus reed-frog anchor visibility. No browser rendering claim is made for these checks.
