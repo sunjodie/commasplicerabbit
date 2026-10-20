@@ -146,3 +146,17 @@ test('detective leads change the observation, persist on reload, and require a v
 test('context vocabulary rejects an unsupported motive without revealing later plot or awarding supplies',async()=>{
  const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js'),s=fresh();s.story=3;s.activeId='m4';s.activeChoices=['comma','comma'];s.casework={'wood-note':{completed:true},'yellow-stitches':{completed:true}};s.chapterOne={read:['m4'],positions:{}};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?context-vocabulary');ui.click('play');ui.app.querySelector('[data-case-choice="concealed"]').onclick();ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/evidence does not support/);assert.doesNotMatch(ui.app.innerHTML,/selling|debt|supporting timber/);ui.app.querySelector('[data-case-choice="distant"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,3);assert.equal(saved.seq,0);assert.equal(saved.activeHelp,false);assert.match(ui.app.innerHTML,/Pip noticed the frayed green/);
 });
+
+test('the completion secret appears only after opening the final envelope and can be retrieved again',async()=>{
+ const {endingSecret}=await import('../ending-secret.js');
+ const name=endingSecret().match(/<h2>(.*?)<\/h2>/)[1];
+ const ui=setup();await import('../app.js?sealed-start');
+ assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));assert.equal(ui.app.querySelector('#endingEnvelope'),null);
+ ui.click('how');assert.doesNotMatch(ui.fixed.modalBody.innerHTML,new RegExp(name));ui.click('closeModal');
+ const {fresh}=await import('../engine.js');const s=fresh();s.story=30;s.completedAt=1;
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?sealed-finish');
+ assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));
+ await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,new RegExp(name));
+ ui.click('closeModal');ui.click('endingVillage');assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));
+ ui.click('endingReplay');await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,new RegExp(name));
+});

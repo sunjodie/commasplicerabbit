@@ -246,3 +246,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Warm music at the fair and fireside memory; tension cue at the window and mill. The incomplete cue fades into silence during suspense. Pages/retries do not restart it. Sound is opt-in and hidden tabs pause it.
 - Existing saves, village construction and later chapters are retained. Included the exact approved Chapter 1 source for future editorial comparisons.
 - 73 automated checks pass: approved narration, unique targets, claim-plus-evidence marking, progression, saved progress, recall and music lifecycle. JavaScript syntax and asset checks pass. Final paintings visually inspected. Rendered browser and listening QA remain unavailable in this environment (no browser executable).
+
+# Checkpoint 31 — ending-only completion secret
+
+- Added a sealed-envelope reveal after all 30 story questions and the final village reward. The start screen announces that a secret name awaits without showing it.
+- The name exists only in an ending-specific module, loaded on demand when the completed player opens the envelope. It is absent from earlier narration, questions, clues, labels and asset filenames. The reveal can be reopened from the completed ending.
+- Hints, retries and optional secrets do not block completion. No screenshot, account or submission form is required.
+- 74 automated checks pass, including absence before the ending, deliberate envelope opening and retrieval on replay. The approved visual-novel layout remains a mockup awaiting implementation.
