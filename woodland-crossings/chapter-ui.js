@@ -31,7 +31,7 @@ function storyPanel(){
  const paragraphs=[...prose.children].map(p=>p.textContent),pages=textPages(paragraphs,budget());let part=readingBack?pages.length-1:0;readingBack=false;
  const previous=document.querySelector('#storyPrevious'),next=document.querySelector('#storyNext'),count=document.querySelector('.story-page-count');
  const prevAction=previous.onclick,nextAction=next.onclick,originalCount=count.textContent,nextLabel=next.textContent,wasDisabled=previous.disabled;
- function render(){prose.replaceChildren(...pages[part].map(t=>{const p=element('p',t.startsWith('“')?'spoken-line':'narration',t);if(t.includes('sheet headed Please don’t use the')){p.replaceChildren();const [a,b]=t.split('Please don’t use the');p.append(document.createTextNode(a),element('em','','Please don’t use the'),document.createTextNode(b));}return p;}));previous.disabled=part===0&&wasDisabled;next.textContent=part===pages.length-1?nextLabel:'Continue →';active?.onReadingPart?.(part,pages[part]);count.textContent=originalCount+(pages.length>1?` · Reading ${part+1}/${pages.length}`:'');}
+ function render(){prose.replaceChildren(...pages[part].map(t=>{const p=element('p',t.startsWith('“')?'spoken-line':'narration',t);if(t.includes('sheet headed Please don’t use the')){p.replaceChildren();const [a,b]=t.split('Please don’t use the');p.append(document.createTextNode(a),element('em','','Please don’t use the'),document.createTextNode(b));}if(t.includes('hadn’t wanted them to follow'))p.innerHTML=p.innerHTML.replace('hadn’t wanted them to follow','hadn’t wanted <em>them</em> to follow');if(t.includes('only Arch clear'))p.innerHTML=p.innerHTML.replace('only Arch clear','only <em>Arch</em> clear');return p;}));previous.disabled=part===0&&wasDisabled;next.textContent=part===pages.length-1?nextLabel:'Continue →';active?.onReadingPart?.(part,pages[part]);count.textContent=originalCount+(pages.length>1?` · Reading ${part+1}/${pages.length}`:'');}
  previous.onclick=()=>{if(part){part--;render();}else{readingBack=true;prevAction();}};next.onclick=()=>{if(part<pages.length-1){part++;render();}else nextAction();};render();
  const panel=document.querySelector('.story-page'),label=element('span','eyebrow',active.title);panel.prepend(label);
  const hide=control('Hide text',()=>{const hidden=panel.hidden;panel.hidden=!hidden;hide.textContent=hidden?'Hide text':'Show text';},'vn-hide');document.querySelector('.story-reader').append(hide);
@@ -117,7 +117,7 @@ export function presentMenuView(kind){
 
 // Tablet keyboards resize the visible viewport without necessarily resizing the page.
 if(typeof window!=='undefined'&&typeof document!=='undefined'){
- const updateViewport=()=>{if(!document.documentElement?.style)return;const height=window.visualViewport?.height||window.innerHeight;document.documentElement.style.setProperty('--game-height',height+'px');document.body?.classList.toggle('vn-keyboard',height<500&&document.activeElement?.id==='caseCorrection');};
+ const updateViewport=()=>{if(!document.documentElement?.style)return;const height=window.visualViewport?.height||window.innerHeight;document.documentElement.style.setProperty('--game-height',height+'px');document.body?.classList.toggle('vn-keyboard',height<500&&['caseCorrection','clauseRewrite'].includes(document.activeElement?.id));};
  window.visualViewport?.addEventListener('resize',updateViewport);
  document.addEventListener?.('focusin',updateViewport);document.addEventListener?.('focusout',updateViewport);updateViewport();
 }

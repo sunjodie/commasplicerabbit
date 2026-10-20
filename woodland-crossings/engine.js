@@ -1,7 +1,7 @@
-import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js';
+import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261020-chapter3-edit1';
 export const DAY=86400000;
 export const INTERVALS=[DAY,3*DAY,7*DAY];
-export function fresh(){return {version:1,bankVersion:2,chapterTwoRevision:1,story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
+export function fresh(){return {version:1,bankVersion:2,chapterTwoRevision:1,chapterThreeRevision:1,activeWordOrder:'',story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
 export function hydrate(raw){
  if(!raw||raw.version!==1||!Number.isInteger(raw.story)||raw.story<0||raw.story>STORY.length)return fresh();
  const s={...fresh(),...raw};
@@ -15,6 +15,12 @@ export function hydrate(raw){
   if(/^([mr])(6|7|8|9|10)$/.test(s.activeId||'')){s.activeChoices=['stop'];s.activeHelp=false;s.activeTries=0;s.activeContract=false;}
   s.chapterTwoRevision=1;
  }
+ if(raw.chapterThreeRevision!==1){
+  if(/^([mr])(11|12|13|14|15)$/.test(s.activeId||'')){s.activeId=null;s.activeChoices=null;s.activeWordOrder='';s.activeHelp=false;s.activeTries=0;s.activeContract=false;}
+  s.pendingNotebook=/^m1[1-5]$/.test(s.pendingNotebook||'')?null:s.pendingNotebook;
+  s.chapterThreeRevision=1;
+ }
+ if(typeof s.activeWordOrder!=='string')s.activeWordOrder='';
  // Preserve older in-progress edits after the contrast word moved into the text.
  if(['m29','r29'].includes(s.activeId)&&s.activeChoices?.[1]==='yet')s.activeChoices[1]='comma';
  // Recover the fountain if all bonus passes were saved before its old UI award.
@@ -42,9 +48,12 @@ export function nextQuestion(s){
   q=need?TRANSFER.find(q=>q.structure===need.structure):STORY[s.story];
  }
  if(!q){s.reviewRun=null;s.bonus=null;return nextQuestion(s);}
- s.activeId=q.id;s.activeContract=false;s.activeHelp=false;s.activeTries=0;s.activeChoices=q.initialChoices?.slice()||q.valid.map(()=> 'comma');return q;
+ s.activeId=q.id;s.activeWordOrder='';s.activeContract=false;s.activeHelp=false;s.activeTries=0;s.activeChoices=q.initialChoices?.slice()||q.valid.map(()=> 'comma');return q;
 }
-export function renderSentence(q,choices=q.valid.map(()=> 'comma')){return q.parts.reduce((out,p,i)=>{let text=p;if(i&&choices[i-1]==='stop')text=p.charAt(0).toUpperCase()+p.slice(1);return out+(i?TOOLS[choices[i-1]].join:'')+text;},'');}
+export function sentenceParts(q,wordOrder=''){const parts=q.parts.slice();if(q.wordOrder&&wordOrder.trim()){let text=wordOrder.trim();text=text.charAt(0).toLowerCase()+text.slice(1);parts[q.wordOrder.part]=/[.!?]$/.test(text)?text:text+'.';}return parts;}
+function normaliseClause(text){return String(text||'').trim().replace(/[.!?]$/,'').replace(/\s+/g,' ').toLowerCase();}
+export function wordOrderCorrect(q,wordOrder){return !q.wordOrder||normaliseClause(wordOrder)===normaliseClause(q.wordOrder.answer);}
+export function renderSentence(q,choices=q.valid.map(()=> 'comma'),wordOrder=''){return sentenceParts(q,wordOrder).reduce((out,p,i)=>{let text=p;if(i&&choices[i-1]==='stop')text=p.charAt(0).toUpperCase()+p.slice(1);return out+(i?TOOLS[choices[i-1]].join:'')+text;},'');}
 export function errors(q,choices){return q.valid.map((valid,i)=>valid.includes(choices[i])?-1:i).filter(i=>i>=0);}
 export function grammarErrors(q,choices){return (q.grammar||q.valid).map((valid,i)=>valid.includes(choices[i])?-1:i).filter(i=>i>=0);}
 function syncDates(s){for(const c of CHAPTERS){const x=skillState(s,c.skill),pending=Object.values(s.recovery).filter(r=>r.skill===c.skill&&r.due!==null);x.due=pending.length?Math.min(...pending.map(r=>r.due)):null;s.skills[c.skill]=x;}}
@@ -59,7 +68,7 @@ export function record(s,q,assisted,now=Date.now()){
   s.passedStructures=[...new Set([...(s.passedStructures||[]),q.structure])];
   const r=s.recovery[q.structure];if(r){r.level++;r.needsSession=false;r.due=r.level>=3?null:now+INTERVALS[r.level];if(r.level>=3)delete s.recovery[q.structure];}
  }
- syncDates(s);s.seen=[...new Set([...s.seen,q.id])];s.seq++;s.activeId=null;s.activeChoices=null;s.activeHelp=false;s.activeTries=0;s.activeContract=false;
+ syncDates(s);s.seen=[...new Set([...s.seen,q.id])];s.seq++;s.activeId=null;s.activeChoices=null;s.activeWordOrder='';s.activeHelp=false;s.activeTries=0;s.activeContract=false;
  if(wasReview){s.reviewRun.index++;if(s.reviewRun.index>=s.reviewRun.skills.length)s.reviewRun=null;return {review:true};}
  if(wasBonus){if(!assisted)s.bonusPasses=[...new Set([...(s.bonusPasses||[]),q.skill])];s.bonus.index++;if(s.bonus.index>=s.bonus.skills.length){const earned=['mixed','connectors','paragraph'].every(k=>s.bonusPasses?.includes(k));s.bonus=null;if(earned)s.bonusDecor=true;return {bonusFinished:true,earned};}return {bonus:true};}
  if(recoveryTask){s.lastRecoveryAtStory=s.story;return {review:true};}

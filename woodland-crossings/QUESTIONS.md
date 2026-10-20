@@ -236,95 +236,141 @@ The person carrying the heavy object had paused beneath the reeds. A circular ma
 
 The person carrying the heavy object had paused beneath the reeds; a circular mark lay beside two deep bootprints.
 
-## 11. Chapter 3 · explanatory-for
+## 11. Chapter 3 · unexpected-yet
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to introduce the evidence supporting the suspicion.
-
-**On-request help:** Use FOR to introduce the explanation. Keep this as one sentence.
-
-**Teacher goal:** 1 sentence(s); add for.
+**Student brief:** Keep one sentence. Use a coordinating conjunction to emphasise the gap between Pip’s certainty and the limited evidence.
 
 **Original**
 
-Mara suspected that the bell had been carried away, its circular base matched the marks by the stream.
+Pip felt sure that Bram had carried the bell this way, she had found only prints.
 
 **Target**
 
-Mara suspected that the bell had been carried away, for its circular base matched the marks by the stream.
+Pip felt sure that Bram had carried the bell this way, yet she had found only prints.
 
-**Why:** Comma + for introduces the reason for the suspicion. For is the available coordinating word for introducing supporting evidence.
+**Why:** Comma + “yet” marks the unexpected contrast: Pip felt sure, although she had found only prints. “So” would wrongly present the limited evidence as a result of her certainty.
 
-## 12. Chapter 3 · negative-inversion
+**Retry original**
 
-**Student brief:** Keep one sentence. Add the second negative statement without changing its word order.
+Pip felt sure that the marks would lead to Bram, she did not know who had left them.
 
-**On-request help:** Use NOR to add the second negative. Its verb-before-subject order is already prepared.
+**Retry target**
 
-**Teacher goal:** 1 sentence(s); add nor.
+Pip felt sure that the marks would lead to Bram, yet she did not know who had left them.
+
+**Retry explanation:** Comma + “yet” contrasts Pip’s certainty with her uncertainty about who left the marks. “So” would wrongly make that uncertainty a result of her certainty.
+
+## 12. Chapter 3 · explanatory-for
+
+**Student brief:** Keep one sentence. Use a coordinating conjunction to make the second clause explain what caused the sound.
 
 **Original**
 
-The bell had not fallen into the stream, had anyone left it in the tool shed.
+The sound came from the bridge, the broken rail kept striking its underside.
 
 **Target**
 
-The bell had not fallen into the stream, nor had anyone left it in the tool shed.
+The sound came from the bridge, for the broken rail kept striking its underside.
 
-**Why:** Nor adds another negative clause. The auxiliary verb comes before its subject.
+**Why:** Comma + “for” introduces the explanation for the knocking. The broken rail caused the sound; the sound did not cause the rail to strike the bridge.
 
-## 13. Chapter 3 · unexpected-yet
+**Retry original**
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to emphasise the unexpected contrast.
+The knocking returned with each surge of water, the current lifted the loose rail against the bridge.
 
-**On-request help:** Use YET to stress an unexpected contrast.
+**Retry target**
 
-**Teacher goal:** 1 sentence(s); add yet.
+The knocking returned with each surge of water, for the current lifted the loose rail against the bridge.
+
+**Retry explanation:** Comma + “for” introduces the cause of the repeated knocking: the current lifted the loose rail against the bridge.
+
+## 13. Chapter 3 · negative-inversion
+
+**Student brief:** Join the sentences with a coordinating conjunction that adds a second negative, changing the word order as needed.
 
 **Original**
 
-The mounting showed no sign of damage, the heavy warning bell was gone.
+The bridge could not be crossed. The bank could not be trusted.
 
 **Target**
 
-The mounting showed no sign of damage, yet the heavy warning bell was gone.
+The bridge could not be crossed, nor could the bank be trusted.
 
-**Why:** Comma + yet contrasts an undamaged mounting with the missing bell. The available contrast word emphasises the unexpected finding.
+**Why:** Comma + “nor” adds the second negative. Rewrite “the bank could not be trusted” as “could the bank be trusted”: move “could” before the subject and remove “not”, because “nor” already supplies the negative.
+
+**Retry original**
+
+Pip could not cross the bridge. She could not trust the bank.
+
+**Retry target**
+
+Pip could not cross the bridge, nor could she trust the bank.
+
+**Retry explanation:** Comma + “nor” adds the second negative. Change “she could not trust the bank” to “could she trust the bank”: put “could” before “she” and remove the repeated “not”.
 
 ## 14. Chapter 3 · embedded-that-clauses
 
-**Student brief:** Keep the findings in one sentence, using punctuation alone.
-
-**On-request help:** Keep one sentence and every word. Link the findings with punctuation alone.
-
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Student brief:** Use a semicolon to join the two complete main clauses. Keep every word.
 
 **Original**
 
-Pip knew that the bell could be lifted from its frame, Mara remembered that the caretaker kept a carrying strap nearby.
+Pip believed that the prints would lead to Bram, Mara feared that the path was dangerous.
 
 **Target**
 
-Pip knew that the bell could be lifted from its frame; Mara remembered that the caretaker kept a carrying strap nearby.
+Pip believed that the prints would lead to Bram; Mara feared that the path was dangerous.
 
-**Why:** Each main clause contains a that-clause. Those embedded clauses do not make the main clauses dependent on each other.
+**Why:** “Pip believed” and “Mara feared” head complete main clauses. The clauses beginning with “that” are subordinate within those main clauses. A semicolon repairs the comma splice.
+
+**Retry original**
+
+Pip thought that Bram had followed the marks, Mara believed that they should return to the village.
+
+**Retry target**
+
+Pip thought that Bram had followed the marks; Mara believed that they should return to the village.
+
+**Retry explanation:** “Pip thought” and “Mara believed” head complete main clauses. Each contains a subordinate that-clause. A semicolon repairs the comma splice between the main clauses.
 
 ## 15. Chapter 3 · relative-subject-main
 
-**Student brief:** Keep one sentence and every word. Link the observations with punctuation alone.
-
-**On-request help:** Keep the description inside the first clause. Link the two complete observations in one sentence with punctuation alone.
-
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Student brief:** Use a semicolon to repair the comma splice. Keep the paired commas around the description and preserve every word.
 
 **Original**
 
-The scrap of cloth, which was caught on a nail, matched a patch on the caretaker’s coat, a green thread still clung to the nail.
+The bank, which was soft with rain, broke away where Pip had stood, a tuft of grass turned over once in the current.
 
 **Target**
 
-The scrap of cloth, which was caught on a nail, matched a patch on the caretaker’s coat; a green thread still clung to the nail.
+The bank, which was soft with rain, broke away where Pip had stood; a tuft of grass turned over once in the current.
 
-**Why:** This comma opens extra information about the cloth. This comma closes the extra information; “matched” completes the main clause. The cloth’s match and the remaining thread are described in complete clauses. Use a semicolon.
+**Why:** Keep this comma: it opens the extra information “which was soft with rain”. Keep this comma: it closes the extra information about the bank. The first main clause is “The bank broke away where Pip had stood”. The second is “a tuft of grass turned over once in the current”. Use a semicolon between these complete clauses.
+
+**Retry original**
+
+The lamp, which had swung sideways, cast its light across the water, Mara pulled Pip away from the crumbling bank.
+
+**Retry target**
+
+The lamp, which had swung sideways, cast its light across the water; Mara pulled Pip away from the crumbling bank.
+
+**Retry explanation:** Keep this comma: it opens the extra information “which had swung sideways”. Keep this comma: it closes the extra information about the lamp. “The lamp cast its light across the water” and “Mara pulled Pip away from the crumbling bank” are complete main clauses. A semicolon links them.
+
+### Optional Chapter 3 inference · Waiting at the fingerpost
+
+Pip hurried ahead at the bridge. At the fingerpost, she waited until Mara was ready before they returned together.
+
+**Question:** What does this change most strongly suggest about Pip?
+
+A. She now feels certain that the higher path is safe.
+B. She is beginning to take Mara’s caution seriously and act together.
+C. She has decided that finding Bram no longer matters.
+
+**Answer:** B. She is beginning to take Mara’s caution seriously and act together.
+
+**Why:** Pip’s behaviour changes from rushing ahead to waiting for Mara. This supports a small shift towards listening and acting together; it does not establish that she feels safe or has given up the search.
+
+This reflection is optional and does not change the five supplies awarded for the chapter.
 
 ## 16. Chapter 4 · however-transition
 

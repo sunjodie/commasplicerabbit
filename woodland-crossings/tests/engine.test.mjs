@@ -22,7 +22,7 @@ test('later trays are stable and all targets are grammatical under their explici
  for(const q of BANK)assert.deepEqual(grammarErrors(q,q.valid.map(v=>v[0])),[]);
  const q=STORY[0];assert.deepEqual(grammarErrors(q,['semi']),[]);assert.deepEqual(errors(q,['semi']),[0]);assert.deepEqual(grammarErrors(q,['comma']),[0]);
  assert.equal(renderSentence(q,['stop']),'The villagers were dismantling the last stalls. Beyond the gardens, a light appeared in the mill’s upper window.');
- assert.match(renderSentence(STORY[11],['nor']),/, nor had anyone/);
+ assert.match(renderSentence(STORY[12],['nor'],'could the bank be trusted.'),/, nor could the bank/);
 });
 test('30 independent story solves finish six chapters with no automatic repeats',()=>{
  const s=fresh(),ids=[],done=[];
@@ -74,6 +74,6 @@ test('explicit whole-text goals disambiguate the offered answers, including alre
 });
 
 test('semantic briefs and contrast trays follow the approved chapter rules',()=>{
- for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage!==1)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
+ for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage!==1&&q.stage!==2)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
  for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^yet /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
 });

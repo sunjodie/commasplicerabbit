@@ -216,3 +216,39 @@ test('frog search and chapter revisit select one atlas painting before binding c
  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,5);
  journal.onclick();root.querySelector('[data-revisit="1"]').onclick();painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-question');
 });
+
+
+test('Chapter 3 reads the revised story and completes all five bridge notes through real handlers',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=10;s.seq=10;s.introduced=[0,1,2];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-three-full');ui.click('play');
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).chapterThree.read.length,5);
+ for(const q of STORY.slice(10,15)){
+  for(let i=0;i<q.valid.length;i++){ui.app.querySelector('[data-join="'+i+'"]').onclick();ui.tool(q.valid[i][0]);}
+  if(q.wordOrder){const input=document.querySelector('#clauseRewrite');input.value=q.wordOrder.answer;input.oninput();}
+  ui.click('check');assert.ok(document.querySelector('#next'));
+  if(q.id==='m15'){
+   const before=ui.db.get('woodland-crossings-v1');ui.click('endingReflection');assert.match(ui.fixed.modalBody.innerHTML,/What does this change/);
+   ui.fixed.modalBody.querySelector('[data-reflection="certain"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/not to enter/);
+   ui.fixed.modalBody.querySelector('[data-reflection="together"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/rushing ahead to waiting/);
+   assert.equal(ui.db.get('woodland-crossings-v1'),before);ui.click('closeModal');
+  }
+  ui.click('next');
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,15);assert.equal(saved.seq,15);assert.ok(document.querySelector('#collect'));
+});
+test('Chapter 3 nor needs an explicit inverted clause and retains the typed answer on reload',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=12;s.activeId='m13';s.activeChoices=['nor'];s.introduced=[0,1,2];s.chapterThree={read:['m11','m12','m13','m14','m15']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-three-inversion');ui.click('play');ui.click('check');assert.equal(document.querySelector('#next'),null);
+ let input=document.querySelector('#clauseRewrite');input.value='the bank could not be trusted';input.oninput();ui.click('check');assert.equal(document.querySelector('#next'),null);
+ input=document.querySelector('#clauseRewrite');input.value='could the bank be trusted';input.oninput();
+ assert.match(document.querySelector('.sentence').innerHTML,/, nor/);assert.match(document.querySelector('.sentence').innerHTML,/could the bank be trusted\./);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeWordOrder,'could the bank be trusted');
+ await import('../app.js?chapter-three-inversion-resume');ui.click('play');assert.equal(document.querySelector('#clauseRewrite').attrs.value,'could the bank be trusted');
+ ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,13);
+});
+test('Chapter 3 retry requires its own inverted subject and stays outside the story reader',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=13;s.activeId='r13';s.activeChoices=['stop'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-three-retry');ui.click('play');assert.equal(document.querySelector('#storyNext'),null);
+ ui.app.querySelector('[data-join="0"]').onclick();ui.tool('nor');const input=document.querySelector('#clauseRewrite');input.value='could she trust the bank';input.oninput();ui.click('check');assert.ok(document.querySelector('#next'));
+ ui.click('next');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,13);
+});

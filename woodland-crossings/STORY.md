@@ -138,19 +138,19 @@ She wished she had not said his name. Mara was still listening, with one ear tur
 
 ## 3. The Wrong Path
 
-Beyond the shed, the path narrowed between the stream and a steep bank threaded with hazel roots. On their way to the fair, Pip had kicked through dry yellow leaves here while Mara complained about the ones that landed in her boots. Now those leaves lay plastered against the roots in sodden heaps, and the lower stepping stones had disappeared beneath brown water.
+Beyond the shed, the path narrowed between the stream and a steep bank threaded with hazel roots. On a walk here before the rain, Pip had kicked through dry yellow leaves while Mara complained about the ones that landed in her boots. Now those leaves lay plastered against the roots in sodden heaps, and the lower stepping stones had disappeared beneath brown water.
 
-Pip kept the lamp close to the ground so she could follow the prints. Each time she found another, a little of her certainty returned. Bram had walked this way, carrying the bell, and if they stayed with the marks they would surely come to wherever he had gone.
+Pip kept the lamp close to the ground so she could follow the prints. Each time she found another, a little of her certainty returned. She was sure Bram had walked this way, carrying the bell, and that if they stayed with the marks they would come to wherever he had gone.
 
-“Pip, he's crossed this path out,” Mara said, sheltering the map beneath an overhanging branch.
+“Pip, he's crossed out the bridge,” Mara said, sheltering the map beneath an overhanging branch.
 
 “Perhaps he didn't want anyone following him,” Pip replied, watching the light creep into the next footprint.
 
-Mara looked up from the map, and Pip heard the words again as Mara must have heard them. She had meant that Bram might be keeping somebody else away, but she could not explain why he would need to do that, or who she thought might be following him.
+Mara looked up from the map, and Pip heard how it sounded: as if Bram hadn’t wanted *them* to follow. She had meant someone else, but she couldn’t say who.
 
 “We should go back,” Mara said. “There are still people in the square. Someone might know where he went.”
 
-Before Pip could answer, wood knocked against wood around the bend. She hurried towards the noise, leaving Mara trying to fold the wet map without tearing it.
+Before Pip could answer, wood knocked against wood around the bend. She hurried towards the noise. “Pip!” Mara called behind her, still trying to fold the wet map without tearing it.
 
 The bridge came into view through a curtain of willow branches. Its near end was still fixed to the bank, and for a moment Pip saw the familiar handrail and felt foolish for being afraid. Then the light reached the middle, where two planks were missing and a broken rail dipped into the water. Each time the current lifted it, it struck the underside of the bridge with a dull, hollow knock.
 
@@ -162,7 +162,7 @@ They backed along the path with Mara still gripping the cape. Only when they rea
 
 “I was trying to tell you,” Mara said, her voice unsteady. “You didn't even wait.”
 
-Pip looked down at the lamp instead of answering. Mud speckled its glass, and her paws shook as she tried to wipe it away with the clean part of her cuff. The icing dissolved into a sticky patch beneath her thumb.
+Pip looked down at the lamp instead of answering. Mud speckled its glass, and her paws shook as she tried to wipe it away with the clean part of her cuff.
 
 “I'm sorry,” she said. “I thought I could see where he'd gone.”
 
@@ -172,13 +172,13 @@ Mara stood close enough for their shoulders to touch while she caught her breath
 
 “He hadn't finished the message either,” Pip replied, remembering the pen lying in its own ink. “He must have left in a hurry.”
 
-They listened for the bell, but for a while all they heard was the river working at the bridge. Water slapped the boards, loose wood knocked against the supports, and rain moved through the leaves above them in sudden waves. When the ringing finally came, Pip turned towards the far bank, then looked over her shoulder because she could no longer be sure where it had begun.
+They listened for the bell, but for a while all they heard was the stream working at the bridge. Water slapped the boards, loose wood knocked against the supports, and rain moved through the leaves above them in sudden waves. When the ringing finally came, Pip turned towards the far bank, then looked over her shoulder because she could no longer be sure where it had begun.
 
-On their way back, Mara found the entrance to the higher path beneath a leaning wooden fingerpost. Moss had grown thickly over the lettering, leaving only *Arch* clear at the end. Behind it, brambles stretched from one side of the track to the other, their hooked stems gleaming where the lamp touched them. Farther in, a heavy branch lay across the path, with smaller limbs caught in the undergrowth beyond it.
+On their way back, Mara found the entrance to the higher path beneath a leaning wooden fingerpost. Moss had grown thickly over the lettering, leaving only *Arch* clear at the end. Behind it, brambles stretched from one side of the track to the other, their hooked stems gleaming where the lamp touched them. Further in, a heavy branch lay across the path, with smaller limbs caught in the undergrowth beyond it.
 
 “We aren't going in there on our own,” Mara said, folding the map away.
 
-Pip raised the lamp for one last look. Nothing moved beyond the thorns, though the woods seemed to go on a great deal farther than they had in daylight. She waited until Mara was ready, and together they turned back towards the village.
+Pip raised the lamp for one last look. Nothing moved beyond the thorns, though the woods seemed to go on a great deal further than they had in daylight. She waited until Mara was ready, and together they followed the near-bank path back past the mill towards the village.
 
 ## 4. A Bell in Two Places
 
