@@ -1,11 +1,11 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {FROGS,frogFinds,frogForScene,frogReached,frogArt} from '../frogs.js';
+import {FROGS,frogFinds,frogForScene,frogReached,frogArt,frogAnchor} from '../frogs.js';
 import {fresh,hydrate} from '../engine.js';
 test('ten distinct frogs have scene-specific tidbits and original accessory art',()=>{
  assert.equal(FROGS.length,10);assert.equal(new Set(FROGS.map(f=>f.id)).size,10);assert.equal(new Set(FROGS.map(f=>frogArt(f))).size,10);
  for(let view=0;view<5;view++)assert.equal(frogForScene(0,view).view,view);
- for(let stage=1;stage<6;stage++)assert.equal(frogForScene(stage,4).stage,stage);
+ for(let stage=1;stage<6;stage++)assert.equal(frogForScene(stage,0).stage,stage);
  assert.deepEqual(frogFinds(['fair-frog','fair-frog','fake']),['fair-frog']);
 });
 test('collection survives reload without changing learning progress; searches respect reached scenes',()=>{
@@ -13,4 +13,12 @@ test('collection survives reload without changing learning progress; searches re
  state.chapterOne={positions:{m2:0},read:['m1']};assert.equal(frogReached(FROGS[1],state),true);assert.equal(frogReached(FROGS[2],state),false);
  state.frogFinds=['window-frog'];const saved=hydrate(JSON.parse(JSON.stringify(state)));assert.deepEqual(saved.frogFinds,['window-frog']);assert.equal(saved.seq,0);assert.equal(saved.story,0);assert.deepEqual(saved.decorations,[]);
  saved.story=30;for(const f of FROGS)assert.equal(frogReached(f,saved),true);
+});
+
+
+test('frog feet follow cover-cropped source art rather than fixed screen percentages',()=>{
+ const f=FROGS[0],point=frogAnchor(f,1366,714,'cover','70% 50%');
+ const scale=1366/1536;assert.ok(Math.abs(point.x-1366*.47)<.01);assert.ok(Math.abs(point.y-((714-1024*scale)*.5+1024*scale*f.y/100))<.01);
+ const portrait=frogAnchor(f,768,970,'cover','70% 50%');assert.ok(portrait.x>22&&portrait.x<746);assert.ok(portrait.y>44&&portrait.y<970);
+ assert.equal(frogAnchor(f,600,400,'100% 100%').x,282);
 });

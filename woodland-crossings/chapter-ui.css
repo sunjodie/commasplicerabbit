@@ -152,12 +152,12 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .vn-active .piece-tray .sentence-piece>b{position:static;margin:0;inset:auto;line-height:1.2;flex:0 0 auto;font-size:22px}
  .vn-active .piece-tray .sentence-piece>span{margin:0;min-width:0;line-height:1.35;white-space:normal}
 }
-/* Small optional visitors, with generous invisible touch targets and no pulsing. */
-.woodland-frog{position:absolute;left:var(--frog-x);top:var(--frog-y);width:48px;height:48px;padding:5px;border:0;background:none;box-shadow:none;z-index:5;opacity:.78;transform:translate(-50%,-50%);cursor:pointer}
-.woodland-frog svg{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 2px #14271f77)}
-.woodland-frog:hover,.woodland-frog:focus-visible{opacity:1;background:#e5d3a51a;border-radius:50%}
-.woodland-frog:focus-visible{outline:2px solid #fff1bf;outline-offset:2px}
-.frog-portrait{width:88px;height:88px;margin:0 auto 8px}.frog-portrait svg{width:100%;height:100%}
-.secret-item .text-button{display:block;margin:8px auto;min-height:36px}.secret-item>svg{height:65px;max-width:90px;margin:auto;display:block}
-.journal-scene .woodland-frog{top:45%;left:var(--frog-x)}
-@media(max-width:599px){.woodland-frog{top:35%;width:44px;height:44px}}
+/* Painted frog atlas: invisible hit areas; feet stay attached to scene surfaces. */
+.frog-sprite{display:block;width:72px;height:72px;background:url('assets/frogs/painted-frogs.webp') var(--frog-col) var(--frog-row)/500% 200% no-repeat}
+.woodland-frog{position:absolute;left:var(--frog-x);top:var(--frog-y);width:44px;height:44px;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;z-index:5;opacity:1;transform:translate(-50%,-100%);cursor:default}
+.woodland-frog .frog-sprite{position:absolute;left:50%;bottom:calc(var(--frog-size,30px)*var(--frog-base,.09)*-1);width:var(--frog-size,30px);height:var(--frog-size,30px);transform:translateX(-50%);filter:brightness(.76) saturate(.66);pointer-events:none}
+.woodland-frog:hover{background:none;opacity:1;transform:translate(-50%,-100%)}
+.woodland-frog:focus-visible{outline:2px solid #e4d4aa;outline-offset:2px;border-radius:8px}
+.frog-portrait{width:88px;height:88px;margin:0 auto 8px}.frog-portrait .frog-sprite{width:88px;height:88px}
+.secret-item .text-button{display:block;margin:8px auto;min-height:36px}.secret-item>.frog-sprite{width:65px;height:65px;margin:auto}.secret-item>svg{height:65px;max-width:90px;margin:auto;display:block}
+.woodland-frog[hidden]{display:none!important}

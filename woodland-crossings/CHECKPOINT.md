@@ -296,3 +296,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 - Renamed the game to The Midnight Mill across the browser title, header, home heading and shared case-title constant. Existing save keys, branch paths, story text and discoveries remain intact.
 - 87 unit/handler checks pass.
+
+# Checkpoint 38 — frogs belong in the paintings
+
+- Replaced flat SVG frogs with a transparent painted atlas: muted mottled skin, natural poses and understated accessories. Reduced scene size, removed hover highlighting and pointer cursor, and retained invisible 44px targets plus keyboard focus.
+- Anchored frog feet to source-art surfaces rather than viewport percentages. Cover-crop positioning updates with scene resizing. Later frogs appear only in their establishing views, and missed frogs remain searchable through the existing fieldbook.
+- Preserved all ten collectible IDs, saved collections and language tidbits. New asset and final generation prompt are documented in assets/frogs/ARTWORK.md.
+- 88 unit/handler tests pass, including source-art anchor geometry. Native Chapter 1 browser regression passes 242 states, and dialog regression passes 90 states. Actual desktop screenshot reviewed for blend and placement. Physical Safari/tablet checks remain pending.

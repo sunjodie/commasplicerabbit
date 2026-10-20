@@ -87,3 +87,7 @@ Nunito Sans is bundled locally for interface controls, paired with Georgia for p
 ## Collectible frog visitors — 20 October 2026
 
 Ten original vector frogs use different accessories and subdued greens with no pulsing or bright collection markers. The visible sprites are roughly 30–38px within 44–48px hit targets; keyboard focus reveals an outline. Their placement changes by scene. The first scene screenshot was inspected to check subtlety and separation from text. Frog reveals and the expanded collection paginate using the shared dialog controls. Native browser tests cover collection, unchanged grammar progress, default Sound on, persistent mute and complete Chapter 1 flow (242 states); seven-size dialog checks pass 90 states. Physical device/Safari checks remain pending.
+
+## Painted frogs and source-art anchors — 20 October 2026
+
+Flat icons looked separate from the paintings. They have been replaced by textured, muted painted sprites with natural proportions and smaller visible sizes. The invisible target remains 44px. Hover does not brighten, add a badge or change the cursor. Keyboard focus still has a clear outline. Frog positions now follow the original painting through cover crops; a ResizeObserver keeps the feet attached to their surfaces. The original scene assets remain unchanged. The fair screenshot was reviewed at desktop size; the frog sits discreetly at the fountain edge. Fieldbook collection and tidbits remain intact. Details and final prompt: assets/frogs/ARTWORK.md.
