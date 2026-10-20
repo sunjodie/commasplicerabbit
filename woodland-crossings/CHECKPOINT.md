@@ -361,3 +361,11 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 - Replaced ornate lanterns with the established simple handmade paper lantern. Corrected oil-lamp ownership: Mara inside and upstairs; Pip at the streambank; Mara at the shed. Checked two-ear silhouettes and concealed evidence in all four paintings.
 - New asset scenes-v2.webp; prior atlas retained. Saved exact prompt, source identity, references and per-cell review in assets/chapter-two. Updated asset references and entry/module cache revisions. Story, questions, answers and progression are unchanged.
 - 109 automated checks pass. New atlas visually inspected; existing cover-crop geometry applies to its unchanged 1536×1024 dimensions. Rendered-browser, Safari and physical-device checks remain pending.
+
+
+# Checkpoint 47 — Mara’s proportions and face
+
+- Re-edited Mara in all four Chapter 2 paintings using Chapter 1’s standing bakery pair as the primary reference. Shortened her elongated body, increased head-to-body ratio, rounded cheeks and muzzle, enlarged expressive eyes, and removed bright cream checked neckwear.
+- The first generated pass shortened the ears too far; a second focused edit restored two long upright rabbit ears before publication. Pip, the lamps, rainy scenery, four-cell boundaries and clue concealment are retained. Final source and both prompts are recorded in assets/chapter-two/mara-review.json and adjacent prompt files.
+- Runtime now uses scenes-v3.webp; earlier assets remain for provenance. Refreshed application and art-module URLs. Story, questions, answers and progression are unchanged.
+- All 109 automated checks pass. Final four-cell atlas compared visually with Chapter 1 references. Rendered-browser, Safari and physical-device checks remain pending.
