@@ -353,3 +353,11 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 - Fixed the reported single-choice appearance in “Evidence for a suspicion” and “An unexpected movement”. Three answer buttons had been split into a two-choice page and a lone-choice page. All options and the Check button now remain on one question page; context, hints and explanations still paginate. Applied to all four Chapter 2 notebook checks.
 - Added a real-pagination DOM regression covering every answer set at four desktop/tablet dimension inputs. This verifies DOM visibility and grouping, not rendered physical fit. All 109 automated checks pass. Browser/Safari and physical-device verification remain pending.
 - Revised entry-point and chapter-UI module URLs so returning browsers request the corrected code.
+
+
+# Checkpoint 46 — Match Chapter 2 characters to Chapter 1
+
+- Edited all four Chapter 2 paintings against actual Chapter 1 image references, preserving scenery and the four-cell atlas. Restored rounded expressive faces, anthropomorphic proportions, Pip’s dress/cape/scarf/satchel and Mara’s moss-green coat with checked collar. Removed Mara’s invented shoulder bag.
+- Replaced ornate lanterns with the established simple handmade paper lantern. Corrected oil-lamp ownership: Mara inside and upstairs; Pip at the streambank; Mara at the shed. Checked two-ear silhouettes and concealed evidence in all four paintings.
+- New asset scenes-v2.webp; prior atlas retained. Saved exact prompt, source identity, references and per-cell review in assets/chapter-two. Updated asset references and entry/module cache revisions. Story, questions, answers and progression are unchanged.
+- 109 automated checks pass. New atlas visually inspected; existing cover-crop geometry applies to its unchanged 1536×1024 dimensions. Rendered-browser, Safari and physical-device checks remain pending.
