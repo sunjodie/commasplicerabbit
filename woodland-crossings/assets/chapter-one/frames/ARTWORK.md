@@ -15,3 +15,7 @@ Revision instructions corrected the following: keep present-time lantern hidden 
 ## Review
 
 All sheets were inspected for mood and evidence spoilers. Unit checks cover mapping, assets and crops. Browser checks cover all 52 frames at desktop and tablet dimensions, plus the complete Chapter 1 progression and readable hint/reward palettes. Physical device and Safari checks remain pending.
+
+## Ear anatomy correction
+
+Re-edited Pip's ear silhouettes with the built-in image generator after duplicated lobes were reported. The exact surgical edit prompt is saved in `ear-correction-prompt.txt`; retained source filenames are recorded in `source-map.json`. `anatomy-review.json` records accepted sheets and discarded revisions. The approved paintings retain exactly two anatomical ears per rabbit; profile views may obscure an ear. Asset URL revisions refresh browser caches.

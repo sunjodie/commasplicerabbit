@@ -99,3 +99,7 @@ The user’s screenshots exposed two inheritance conflicts: the legacy `.builder
 ## Frame illustrations — 20 October 2026
 
 52 distinct frame compositions replace repeated scene art during Chapter 1 reading and assessment. Atlases use explicit pixel geometry to isolate cells during landscape and portrait cover crops. Image loading retains a scene fallback and cannot replace a later frame after navigation. The full chapter flow passes at 1366×768, 768×1024 and 1024×600 without page scrolling; each reading turn changes its frame identity. All 52 paintings load in desktop and tablet crops.
+
+## Pip ear anatomy repair
+
+Reviewed all 52 frame compositions after the reported third ear in the upstairs-light notebook scene. Eleven sheets received anatomy edits; originals 02 and 09 were retained after their revisions introduced unrelated changes. Accepted outputs were visually checked for duplicated lobes and stray ear-like crown shapes. The reported notebook composition was also inspected in the desktop crop. All 104 desktop/tablet frame loading checks pass.

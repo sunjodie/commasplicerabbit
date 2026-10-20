@@ -328,3 +328,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Added 52 narrative and assessment paintings in 13 optimized atlases. Every displayed reading frame changes art with the text, including keyboard navigation and storybook replay.
 - Approved text, questions and progression are unchanged. Revised generated shots to hide evidence and preserve lighting, location and lantern continuity. Authored frog perches on selected frames.
 - 95 unit/handler tests and 242 native Chapter 1 browser states pass. All 52 frame assets are checked at desktop/tablet sizes. Art provenance and prompt set: assets/chapter-one/frames/ARTWORK.md.
+
+# Checkpoint 43 — Pip ear anatomy repair
+
+- Reviewed all 52 Chapter 1 frames after the reported duplicated ears. Corrected Pip's ear silhouettes and discarded edits that changed the baker or made a distant silhouette less clear.
+- Preserved approved story, questions, page mapping and clue concealment. Added an asset cache revision so returning browsers request the corrected paintings.
+- Prompt, provenance and visual review decisions are recorded under assets/chapter-one/frames.
