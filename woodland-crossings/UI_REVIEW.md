@@ -95,3 +95,7 @@ Flat icons looked separate from the paintings. They have been replaced by textur
 ## Hint and reward contrast repair
 
 The user’s screenshots exposed two inheritance conflicts: the legacy `.builder-dock .feedback.clue` cream fill survived the desktop help treatment, and `.vn-menu p` supplied pale text to parchment reward clues. Explicit surface palettes now override those selectors. Hints/success use light ink on dark green; reward clue strips and compact mobile hint examples use dark brown ink on parchment. Rendered regression asserts actual computed colours, in addition to checking overflow and text bounds.
+
+## Frame illustrations — 20 October 2026
+
+52 distinct frame compositions replace repeated scene art during Chapter 1 reading and assessment. Atlases use explicit pixel geometry to isolate cells during landscape and portrait cover crops. Image loading retains a scene fallback and cannot replace a later frame after navigation. The full chapter flow passes at 1366×768, 768×1024 and 1024×600 without page scrolling; each reading turn changes its frame identity. All 52 paintings load in desktop and tablet crops.

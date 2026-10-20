@@ -322,3 +322,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Prevented the old cream supply-dock feedback styles from overriding the visual-novel palette. Hints and success feedback now use pale ink on the intended dark green surface.
 - Gave parchment reward clues, reward tiles and mobile hint examples their own dark ink rather than inherited scene text. The reward clue strip is readable on its pale fill.
 - Added real-browser palette assertions for feedback and reward clues. 91 unit/handler checks, 242 Chapter 1 browser states and 148 seven-size layout states pass. Hint/reward screenshots inspected.
+
+# Checkpoint 42 — Chapter 1 frame illustrations
+
+- Added 52 narrative and assessment paintings in 13 optimized atlases. Every displayed reading frame changes art with the text, including keyboard navigation and storybook replay.
+- Approved text, questions and progression are unchanged. Revised generated shots to hide evidence and preserve lighting, location and lantern continuity. Authored frog perches on selected frames.
+- 95 unit/handler tests and 242 native Chapter 1 browser states pass. All 52 frame assets are checked at desktop/tablet sizes. Art provenance and prompt set: assets/chapter-one/frames/ARTWORK.md.

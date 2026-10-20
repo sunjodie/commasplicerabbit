@@ -31,7 +31,7 @@ function storyPanel(){
  const paragraphs=[...prose.children].map(p=>p.textContent),pages=textPages(paragraphs,budget());let part=readingBack?pages.length-1:0;readingBack=false;
  const previous=document.querySelector('#storyPrevious'),next=document.querySelector('#storyNext'),count=document.querySelector('.story-page-count');
  const prevAction=previous.onclick,nextAction=next.onclick,originalCount=count.textContent,nextLabel=next.textContent,wasDisabled=previous.disabled;
- function render(){prose.replaceChildren(...pages[part].map(t=>element('p',t.startsWith('“')?'spoken-line':'narration',t)));previous.disabled=part===0&&wasDisabled;next.textContent=part===pages.length-1?nextLabel:'Continue →';count.textContent=originalCount+(pages.length>1?` · Reading ${part+1}/${pages.length}`:'');}
+ function render(){prose.replaceChildren(...pages[part].map(t=>element('p',t.startsWith('“')?'spoken-line':'narration',t)));previous.disabled=part===0&&wasDisabled;next.textContent=part===pages.length-1?nextLabel:'Continue →';active?.onReadingPart?.(part,pages[part]);count.textContent=originalCount+(pages.length>1?` · Reading ${part+1}/${pages.length}`:'');}
  previous.onclick=()=>{if(part){part--;render();}else{readingBack=true;prevAction();}};next.onclick=()=>{if(part<pages.length-1){part++;render();}else nextAction();};render();
  const panel=document.querySelector('.story-page'),label=element('span','eyebrow',active.title);panel.prepend(label);
  const hide=control('Hide text',()=>{const hidden=panel.hidden;panel.hidden=!hidden;hide.textContent=hidden?'Hide text':'Show text';},'vn-hide');document.querySelector('.story-reader').append(hide);
@@ -76,8 +76,8 @@ function questionPanel(){
  const pager=pageControls(feedback,cards);if(cards.length===1)pager.nav.hidden=true;
  if(!document.querySelector('#next'))feedback.append(continuation('Return to the question →',()=>{if(active?.onDismiss)active.onDismiss();else{workspace.classList.remove('vn-show-feedback');feedback.hidden=true;}}));
 }
-export function presentChapterView({kind,title,key='',message='',completed=false,onDismiss=null}){
- if(!document.body||!wide())return;clearChapterView();active={kind,title,onDismiss};document.body.classList.add('vn-active');headerControls();
+export function presentChapterView({kind,title,key='',message='',completed=false,onDismiss=null,onReadingPart=null}){
+ if(!document.body||!wide())return;clearChapterView();active={kind,title,onDismiss,onReadingPart};document.body.classList.add('vn-active');headerControls();
  const app=document.querySelector('#app');app.dataset.vnKind=kind;document.querySelector('header')?.insertBefore(element('span','vn-top-title','Chapter 1 · '+title),document.querySelector('header nav'));
  if(kind==='story')storyPanel();else if(kind==='casework')caseworkPanel(key,message,completed);else questionPanel();
 }
