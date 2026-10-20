@@ -24,7 +24,7 @@ export const CHAPTER_ONE=[
     "id": "m2",
     "title": "The upstairs light",
     "location": "Beyond the gardens",
-    "mood": "tense",
+    "mood": "calm",
     "paragraphs": [
       "Alders hid the mill’s lower walls. In summer, water spilled from the wheel in silver threads, and the whole building hummed pleasantly enough to hear from the square. Now the wheel was black and still, its paddles clogged with leaves. It had stopped for winter a week earlier, and nobody had lit the upper room since.",
       "“Bram must still be working,” Mara said, following her gaze.",
@@ -40,7 +40,7 @@ export const CHAPTER_ONE=[
     "id": "m3",
     "title": "Bram’s story",
     "location": "A remembered evening",
-    "mood": "memory",
+    "mood": "calm",
     "paragraphs": [
       "Pip knew why Mara wanted to go home. At the last fair, Bram had settled them beside his stove with hot cups between their paws and asked whether they knew the story of the mill bell. The cottage had smelled of drying socks and orange peel, and it had been easy to lean forward while he lowered his voice.",
       "If the mill bell rang after midnight, he had told them, someone would be missing before morning. The mill bell was the little brass bell he kept above the mill fireplace, with a leather strap so that he could carry it to the bank when the water rose.",
@@ -57,7 +57,7 @@ export const CHAPTER_ONE=[
     "id": "m4",
     "title": "The mill lane",
     "location": "The mill porch",
-    "mood": "tense",
+    "mood": "calm",
     "paragraphs": [
       "“He might need a hand,” Pip said, already picking her way down the mill lane between the puddles.",
       "Mara stayed beneath the dripping pumpkins for a moment before she tucked the lantern farther inside her coat and followed. The lane curled behind Bram’s cottage and continued towards the mill. No light showed beneath the cottage’s steep roof. Along the garden fence, wet rosemary brushed their knees and shed its sharp scent whenever Pip caught a branch. By the time they reached the mill porch, the warmth of the square had given way to the smell of damp wood and the steady dripping of the eaves.",
@@ -72,7 +72,7 @@ export const CHAPTER_ONE=[
     "id": "m5",
     "title": "The empty mill",
     "location": "Inside the doorway",
-    "mood": "tense",
+    "mood": "calm",
     "paragraphs": [
       "Her voice travelled into the mill and received no answer. Mara pushed the door wider, revealing an oil lamp burning at the foot of the stairs and muddy tracks across the floor. She took the lantern from beneath her coat and stepped inside, keeping its paper sides clear of the lamp as she touched her candle’s wick to the oil flame. Light filled the little windows she had cut so carefully, and she held the lantern clear of the door as Pip squeezed past. Above the cold fireplace, the iron hook that held the mill bell was empty, with a pale outline on the wall where its leather strap usually hung.",
       "Something knocked against the wall beyond the porch. Pip waited with the torn cloth caught between her paws, but no footsteps came down the stairs."

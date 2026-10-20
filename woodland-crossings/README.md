@@ -116,3 +116,6 @@ Readability update: Nunito Sans now replaces Arial for interface text, with embe
 Sound is enabled by default and begins after the first interaction to respect browser autoplay rules; a chosen mute setting persists. Ten small collectible frogs now offer optional story-related language tidbits. Five accompany Chapter 1’s paintings and one appears in each later chapter. Woodland secrets contains their fieldbook, replayable tidbits and searches of reached scenes. Frog collection saves independently from grammar scores and supplies.
 
 Frogs now use a locally bundled painted sprite atlas, with subdued texture and source-art positioning rather than floating vector icons. Hidden click targets retain keyboard focus, while hover adds no visual beacon. See assets/frogs/ARTWORK.md for the asset and generation prompt.
+
+
+Music now follows chapters rather than scene changes: warm throughout Chapter 1, with the short creepy cue reserved for Chapter 3. Storybook replay keeps the active track. Frog perches alternate sides and heights; an authored alternate perch keeps each visitor on a scene surface when tablet cropping hides its primary position.

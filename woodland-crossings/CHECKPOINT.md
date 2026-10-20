@@ -309,3 +309,10 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Added the user’s frog recording unchanged, quietly triggered by clicking a painted scene frog. Fieldbook tidbit replay stays silent; there are no ambient calls revealing hiding places.
 - Sound/mute and visibility pause apply, with a reused player and 400ms repeat guard. Frog collection proceeds even if audio fails. Reused the existing one-shot effect controller with configurable source, volume and cooldown; page-flip behavior is unchanged.
 - 89 unit/handler tests pass, including the frog sound preset. Standard native-browser Chapter 1 progression/collection regression also passes.
+
+
+# Checkpoint 40 — chapter music and dispersed frog perches
+
+- Chapter 1 now uses warm music throughout, including the fireside memory, questions and notebook stops. The creepy cue belongs only to Chapter 3’s lesson/questions. Storybook replay does not interrupt the current track. The incomplete cue still fades to silence instead of looping.
+- Frogs now use varied left/right and upper/lower source-art perches, with a second authored perch when a tablet crop removes the first. Collection identities, art, tidbits and quiet click croaks are unchanged.
+- 91 unit/handler tests pass, covering chapter music mapping, varied placement and crop-safe fallback points. Native Chapter 1 browser regression passes 242 states. Actual desktop scene screenshot reviewed. Physical tablet/Safari and listening checks remain pending.

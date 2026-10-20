@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {FROGS,frogFinds,frogForScene,frogReached,frogArt,frogAnchor} from '../frogs.js';
+import {FROGS,frogFinds,frogForScene,frogReached,frogArt,frogAnchor,frogPosition} from '../frogs.js';
 import {fresh,hydrate} from '../engine.js';
 test('ten distinct frogs have scene-specific tidbits and original accessory art',()=>{
  assert.equal(FROGS.length,10);assert.equal(new Set(FROGS.map(f=>f.id)).size,10);assert.equal(new Set(FROGS.map(f=>frogArt(f))).size,10);
@@ -18,7 +18,13 @@ test('collection survives reload without changing learning progress; searches re
 
 test('frog feet follow cover-cropped source art rather than fixed screen percentages',()=>{
  const f=FROGS[0],point=frogAnchor(f,1366,714,'cover','70% 50%');
- const scale=1366/1536;assert.ok(Math.abs(point.x-1366*.47)<.01);assert.ok(Math.abs(point.y-((714-1024*scale)*.5+1024*scale*f.y/100))<.01);
- const portrait=frogAnchor(f,768,970,'cover','70% 50%');assert.ok(portrait.x>22&&portrait.x<746);assert.ok(portrait.y>44&&portrait.y<970);
- assert.equal(frogAnchor(f,600,400,'100% 100%').x,282);
+ const scale=1366/1536;assert.ok(Math.abs(point.x-1366*f.x/100)<.01);assert.ok(Math.abs(point.y-((714-1024*scale)*.5+1024*scale*f.y/100))<.01);
+ const portrait=frogPosition(f,768,970,'cover','70% 50%');assert.ok(portrait.x>22&&portrait.x<746);assert.ok(portrait.y>44&&portrait.y<970);
+ assert.equal(frogAnchor(f,600,400,'100% 100%').x,102);
+});
+
+
+test('frog perches alternate sides and use a painted fallback when a tablet crops the edge',()=>{
+ assert.ok(FROGS.filter(f=>f.x<30).length>=4);assert.ok(FROGS.filter(f=>f.x>80).length>=4);
+ for(const f of FROGS.slice(0,5)){const p=frogPosition(f,768,970,'cover','70% 50%');assert.ok(p.x>=22&&p.x<=746,f.id);assert.ok(p.y>=44&&p.y<=970,f.id);}
 });

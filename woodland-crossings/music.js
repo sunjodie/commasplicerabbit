@@ -42,3 +42,6 @@ export function createMusicController({AudioClass=globalThis.Audio,onError=()=>{
   reset(){stopFade();cueFinished=false;mood='calm';lastKey='calm';players.forEach(a=>{a.pause();a.currentTime=0;a.volume=0;});return sync();}
  };
 }
+
+// Keep a chapter’s musical identity steady across its story, notes and questions.
+export function chapterMusicMood(q){return q?.stage===2?'tense':'calm';}

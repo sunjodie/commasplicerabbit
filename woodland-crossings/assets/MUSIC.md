@@ -20,23 +20,21 @@ Replaced with the user’s second recording on 17 October 2026. The title is unc
 - Source duration: 60.03 seconds. The user identifies this recording as incomplete.
 - Bundled file: midnight-tension-cue.mp3; 60 seconds, MP3 96 kbit/s, 44.1 kHz. Added a two-second opening fade and six-second ending fade. No continuation has been composed, and no seamless loop is claimed. Listening verification is pending.
 
-## Chapter 1 mood map (20 October 2026)
+## Current chapter music map (20 October 2026)
 
-| Scene | Music |
+| Location | Music |
 | --- | --- |
-| Fair closing | Original warm music, looping |
-| Upstairs light | Short tension cue, once |
-| Fireside memory | Current track softened to 7.5%, without switching |
-| Mill lane and porch | Tension cue, once across both scenes |
-| Empty mill | Continue the cue; no restart between pages/tasks |
-| Home, village, rewards | Original warm music |
+| Chapter 1, every reading scene and notebook stop | Original warm track, uninterrupted |
+| Chapter 2 | Original warm track |
+| Chapter 3, lesson and questions | Short creepy cue |
+| Chapters 4–6, home, village and rewards | Original warm track |
+| Chapter 1 storybook replay | Keep the currently playing track |
 
-The incomplete tension recording keeps its existing two-second opening and six-second closing fades. After it finishes, tense scenes stay silent instead of returning to warm music. There is no fabricated continuation or loop. Re-entering suspense resumes the cue at its existing position. Once exhausted, it does not restart until a fresh game. Both tracks remain opt-in, pause in hidden tabs and share the Sound control. Storybook replay follows the scene’s mood; closing it restores the active scene. The Chapter 1 ending has no bell sound because the approved story ends before the bell rings.
-
+The creepy recording is reserved for Chapter 3. Chapter 1 no longer changes tracks or softens music during the fireside memory. Opening hints, frogs or menus does not change tracks; closing a modal restores the active chapter’s selection. The incomplete cue retains its baked-in fades, plays once and then leaves silence during Chapter 3 rather than looping. It resumes its cursor when revisited. Sound/mute and hidden-tab pause still apply. The Chapter 1 ending has no bell effect because the approved text ends before the bell rings.
 
 ## Transition refinement (20 October 2026)
 
-Track changes use a 2.4-second cosine-eased crossfade; the outgoing player keeps playing until inaudible. The fireside memory lowers whichever track is already playing instead of switching tracks twice. Track cursors survive revisits. The incomplete tense cue is not looped or restarted after completion; suspense then remains silent. Muting or hiding the tab pauses both players immediately. Returning to the tab fades the active track in. A fresh game resets playback positions and cue availability. Deterministic tests cover intermediate volumes, rapid mood changes, late playback promises, mute/visibility and cue completion. Actual listening verification remains pending.
+Track changes use a 2.4-second cosine-eased crossfade; the outgoing player keeps playing until inaudible. The controller retains its optional softer memory mode, but the current chapter map does not use it. Track cursors survive revisits. The incomplete tense cue is not looped or restarted after completion; suspense then remains silent. Muting or hiding the tab pauses both players immediately. Returning to the tab fades the active track in. A fresh game resets playback positions and cue availability. Deterministic tests cover intermediate volumes, rapid mood changes, late playback promises, mute/visibility and cue completion. Actual listening verification remains pending.
 
 ## Page-turn effect (20 October 2026)
 

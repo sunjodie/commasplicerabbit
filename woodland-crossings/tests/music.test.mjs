@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {createMusicController,MUSIC} from '../music.js';
+import {createMusicController,MUSIC,chapterMusicMood} from '../music.js';
 function fixture(){
  const instances=[],pending=new Map();let time=0,id=0;
  class FakeAudio{constructor(src){this.src=src;this.plays=0;this.pauses=0;this.paused=true;this.currentTime=0;instances.push(this);}async play(){this.plays++;this.paused=false;}pause(){this.pauses++;this.paused=true;}}
@@ -33,4 +33,10 @@ test('a late play promise cannot silence or leak into a newer mood',async()=>{
 });
 test('playback failure is handled once and sound can be retried',async()=>{
  const f=fixture();let errors=0;f.FakeAudio.prototype.play=async function(){if(!this.plays++)throw Error('blocked');this.paused=false;};const c=createMusicController({AudioClass:f.FakeAudio,...f.clock,onError(){errors++;}});assert.equal(await c.setEnabled(true),false);assert.equal(errors,1);assert.equal(await c.setEnabled(true),true);f.advance(2400);near(f.instances[0].volume,.18);
+});
+
+
+test('chapter one stays calm throughout and the short creepy cue belongs only to chapter three',()=>{
+ for(let stage=0;stage<6;stage++)assert.equal(chapterMusicMood({stage}),stage===2?'tense':'calm');
+ assert.equal(chapterMusicMood(null),'calm');
 });
