@@ -303,3 +303,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Anchored frog feet to source-art surfaces rather than viewport percentages. Cover-crop positioning updates with scene resizing. Later frogs appear only in their establishing views, and missed frogs remain searchable through the existing fieldbook.
 - Preserved all ten collectible IDs, saved collections and language tidbits. New asset and final generation prompt are documented in assets/frogs/ARTWORK.md.
 - 88 unit/handler tests pass, including source-art anchor geometry. Native Chapter 1 browser regression passes 242 states, and dialog regression passes 90 states. Actual desktop screenshot reviewed for blend and placement. Physical Safari/tablet checks remain pending.
+
+# Checkpoint 39 — supplied frog discovery croak
+
+- Added the user’s frog recording unchanged, quietly triggered by clicking a painted scene frog. Fieldbook tidbit replay stays silent; there are no ambient calls revealing hiding places.
+- Sound/mute and visibility pause apply, with a reused player and 400ms repeat guard. Frog collection proceeds even if audio fails. Reused the existing one-shot effect controller with configurable source, volume and cooldown; page-flip behavior is unchanged.
+- 89 unit/handler tests pass, including the frog sound preset. Standard native-browser Chapter 1 progression/collection regression also passes.

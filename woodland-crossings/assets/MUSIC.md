@@ -45,3 +45,7 @@ User-supplied `oxidvideos-page-flip-1-178322.mp3`, bundled unchanged as `page-fl
 ## Default sound (20 October 2026)
 
 New visitors see Sound on. Playback starts with their first pointer/key interaction, within the browser’s audio permission gesture. Turning Sound off pauses music/effects and remembers that choice locally across visits. Sound can be enabled again with the same control. Hidden-tab pauses remain in force.
+
+## Frog discovery effect (20 October 2026)
+
+User-supplied `freesound_community-frog_quak-81741.mp3`, bundled unchanged as `frog-croak.mp3` (1.41 seconds). Plays at 24% player volume only when a frog in a scene is clicked, including a previously found frog. Opening its fieldbook tidbit is silent. No ambient croaks disclose hidden positions. The shared Sound control and hidden-tab pause apply; rapid calls within 400ms are suppressed and a single player prevents overlapping croaks. Playback rejection never blocks collection.

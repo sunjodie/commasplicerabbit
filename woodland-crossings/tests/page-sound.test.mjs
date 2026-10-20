@@ -17,3 +17,10 @@ test('only enabled page controls qualify, and sound failure does not throw',asyn
  class Audio{pause(){}play(){return Promise.reject(new Error('blocked'));}}
  const sound=createPageSound({AudioClass:Audio});sound.setEnabled(true);assert.equal(await sound.turn(),false);
 });
+
+test('frog effect uses the supplied recording quietly and throttles repeated croaks',async()=>{
+ let time=0,player;class Audio{constructor(src){this.src=src;player=this;}pause(){this.paused=true;}async play(){this.paused=false;}}
+ const effect=createPageSound({AudioClass:Audio,now:()=>time,src:'assets/frog-croak.mp3',volume:.24,cooldownMs:400});effect.setEnabled(true);
+ assert.equal(await effect.turn(),true);assert.equal(player.src,'assets/frog-croak.mp3');assert.equal(player.volume,.24);
+ time=200;assert.equal(await effect.turn(),false);time=401;assert.equal(await effect.turn(),true);effect.setEnabled(false);assert.equal(player.paused,true);
+});
