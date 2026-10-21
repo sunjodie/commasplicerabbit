@@ -374,93 +374,161 @@ This reflection is optional and does not change the five supplies awarded for th
 
 ## 16. Chapter 4 · however-transition
 
-**Student brief:** Keep one sentence and all its words. Edit punctuation where needed.
-
-**On-request help:** Keep one sentence and all words. Repair the join before HOWEVER using punctuation only.
-
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Student brief:** Keep every word and use a semicolon to join the complete clauses. Keep the comma after “however”.
 
 **Original**
 
-The map had been altered, however, the original route was still visible beneath the new line.
+The baker heard the bell near the footbridge, however, the ferryman heard it above the bend.
 
 **Target**
 
-The map had been altered; however, the original route was still visible beneath the new line.
+The baker heard the bell near the footbridge; however, the ferryman heard it above the bend.
 
-**Why:** However is not a FANBOYS conjunction. Use a semicolon before it; its following comma stays.
+**Why:** “However” signals contrast but is not a coordinating conjunction. The original comma splices two independent clauses; a semicolon repairs the join. The comma after “however” stays.
+
+**Retry brief:** Keep every word and use a semicolon to join the complete clauses. Keep the comma after “however”.
+
+**Retry original**
+
+The baker had been closing her shutters, however, the ferryman had still been helping with the crates.
+
+**Retry target**
+
+The baker had been closing her shutters; however, the ferryman had still been helping with the crates.
+
+**Retry explanation:** “However” signals contrast but is not a coordinating conjunction. The original comma splices two independent clauses; a semicolon repairs the join. The comma after “however” stays.
 
 ## 17. Chapter 4 · therefore-transition
 
-**Student brief:** Keep the whole account in one sentence. Change punctuation only.
-
-**On-request help:** Keep the BECAUSE opening attached and preserve one sentence. Repair the remaining join with punctuation only.
-
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Student brief:** Keep the “Because” opening attached. Repair the comma splice before “therefore” with a semicolon. Preserve every word.
 
 **Original**
 
-Because the fresh line avoided the upstream bridge, Pip suspected danger there, therefore, she checked the older map.
+Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved, therefore, she traced the path on the map.
 
 **Target**
 
-Because the fresh line avoided the upstream bridge, Pip suspected danger there; therefore, she checked the older map.
+Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved; therefore, she traced the path on the map.
 
-**Why:** Because introduces a dependent opening. Therefore introduces a conclusion, but does not join complete clauses by itself. Use a semicolon before it.
+**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Mara suspected that it had moved” and “she traced the path on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Use a semicolon before it.
+
+**Retry brief:** Keep the “Because” opening attached. Repair the comma splice before “therefore” with a semicolon. Preserve every word.
+
+**Retry original**
+
+Because the neighbour had received no answer, she looked through the kitchen window, therefore, she saw the prepared table.
+
+**Retry target**
+
+Because the neighbour had received no answer, she looked through the kitchen window; therefore, she saw the prepared table.
+
+**Retry explanation:** Keep the comma after the subordinate “Because” opening. “She looked through the kitchen window” and “she saw the prepared table” are independent clauses. A semicolon before “therefore” repairs the splice.
 
 ## 18. Chapter 4 · nevertheless-transition
 
-**Student brief:** Keep one sentence and every word. Change punctuation only.
-
-**On-request help:** Keep the WHICH description enclosed inside the first clause. Preserve one sentence and all words; repair the remaining join with punctuation only.
-
-**Teacher goal:** 1 sentence(s); no added joining words.
+**Student brief:** Keep the description inside its paired commas. Use a semicolon to repair the join before “nevertheless”. Preserve every word.
 
 **Original**
 
-The old map, which had been left beside an open window, was damp at the edges, nevertheless, the hillside turning remained clear.
+The ferryman, who knew the higher crossing, said the route was above the water, nevertheless, a fallen beech blocked the approach.
 
 **Target**
 
-The old map, which had been left beside an open window, was damp at the edges; nevertheless, the hillside turning remained clear.
+The ferryman, who knew the higher crossing, said the route was above the water; nevertheless, a fallen beech blocked the approach.
 
-**Why:** Open the extra information about the map. Close the extra information before the main verb. Nevertheless is a transition. A semicolon links these complete clauses.
+**Why:** Keep the comma opening the extra information about the ferryman. Keep the comma closing “who knew the higher crossing” before the main verb “said”. “The ferryman said the route was above the water” and “a fallen beech blocked the approach” are independent clauses. Use a semicolon before “nevertheless”; keep its following comma.
+
+**Retry brief:** Keep the description inside its paired commas. Use a semicolon to repair the join before “nevertheless”. Preserve every word.
+
+**Retry original**
+
+The cottage, which stood beside the mill, was dark, nevertheless, a table had been prepared inside.
+
+**Retry target**
+
+The cottage, which stood beside the mill, was dark; nevertheless, a table had been prepared inside.
+
+**Retry explanation:** Keep the comma opening the extra information about the cottage. Keep the comma closing “which stood beside the mill” before “was”. “The cottage was dark” and “a table had been prepared inside” are independent clauses. Use a semicolon before “nevertheless”.
 
 ## 19. Chapter 4 · condition-contrast
 
-**Student brief:** Keep one sentence. Use a coordinating joining word to make the contrast between the routes explicit.
-
-**On-request help:** Keep the conditional opening attached. Use BUT for the contrast between the routes.
-
-**Teacher goal:** 1 sentence(s); add but.
+**Student brief:** Keep one sentence. Use a coordinating conjunction to make the contrast between the lower path and the shelter explicit.
 
 **Original**
 
-If the old map was accurate, the lower path led straight to the bridge, the new line climbed towards the hillside.
+The lower path was hidden by water, the old shelter stood above the flood line.
 
 **Target**
 
-If the old map was accurate, the lower path led straight to the bridge, but the new line climbed towards the hillside.
+The lower path was hidden by water, but the old shelter stood above the flood line.
 
-**Why:** If introduces a condition, so keep its comma. The two route descriptions are complete clauses. Comma + but contrasts them.
+**Why:** Both clauses are independent. A comma followed by “but” makes the contrast explicit: the lower path is under water, while the shelter is above the flood line.
+
+**Retry brief:** Keep one sentence. Use a coordinating conjunction to make the contrast between the lower path and the shelter explicit.
+
+**Retry original**
+
+The water covered the lower stepping stones, Alder Arch stood well above the stream.
+
+**Retry target**
+
+The water covered the lower stepping stones, but Alder Arch stood well above the stream.
+
+**Retry explanation:** A comma followed by “but” contrasts the flooded lower stones with the high crossing. Both clauses are independent.
 
 ## 20. Chapter 4 · record-scene-change
 
-**Student brief:** Start a fresh sentence when the account moves from the written record to the investigation outside.
-
-**On-request help:** Begin a new sentence when the account leaves the written record and returns to the investigation outside. Keep all words.
-
-**Teacher goal:** 2 sentence(s); no added joining words.
+**Student brief:** Start a fresh sentence when the viewpoint shifts from the unanswered door to the view through the kitchen window. Keep every word.
 
 **Original**
 
-The delivery record said that travellers were expected before dawn, outside the gate, Pip unfolded the map in the rain.
+Nobody had answered the door, through the kitchen window the neighbour had seen three clean bowls.
 
 **Target**
 
-The delivery record said that travellers were expected before dawn. Outside the gate, Pip unfolded the map in the rain.
+Nobody had answered the door. Through the kitchen window the neighbour had seen three clean bowls.
 
-**Why:** The record and the present action belong to different scenes. A full stop follows this editorial brief; other joins can be grammatical.
+**Why:** “Nobody had answered the door” and “through the kitchen window the neighbour had seen three clean bowls” are independent clauses, so a comma alone cannot join them. A full stop marks the requested shift in viewpoint. “Through the kitchen window” opens the second clause; it belongs with what the neighbour saw.
+
+**Retry brief:** Start a fresh sentence when the viewpoint shifts from the ferryman by the wall to Pip beneath the awning. Keep every word.
+
+**Retry original**
+
+The ferryman left the saw by the wall, beneath the awning Pip spread out the map.
+
+**Retry target**
+
+The ferryman left the saw by the wall. Beneath the awning Pip spread out the map.
+
+**Retry explanation:** Both clauses have their own subject and verb, so a comma alone splices them. A full stop marks the viewpoint change. “Beneath the awning” opens the second clause and stays with Pip’s action.
+
+### Chapter 4 inference · Supper and a shelter
+
+The neighbour saw three clean bowls beside a covered pot, with chairs drawn up at Bram’s table. The baker remembered that Bram had kept supper for the mender and her apprentice. Pip thought the three might now be together at Quarry Shelter.
+
+Part 1: Which judgement best separates the supported conclusion from Pip’s unconfirmed hypothesis?
+
+A. The three places at the table establish that Bram and both guests are together at Quarry Shelter.
+
+B. The covered pot and drawn-up chairs establish that the guests had eaten and left the cottage.
+
+C. The details suggest that Bram had prepared supper for guests; they do not establish where the three are now.
+
+D. The unanswered door establishes that Bram went out alone and had not met either guest.
+
+Part 2: Which pair of details most strongly supports the conclusion about supper?
+
+A. The shelter marked on the map and the bell heard above the bend.
+
+B. The prepared table beside the covered pot and the baker’s recollection of Bram’s supper plans.
+
+C. The unanswered cottage door and the broken footbridge.
+
+D. The torn green cloth at the mill and Bram’s spare boots in the shed.
+
+**Answer:** Part 1: C. Part 2: B.
+
+**Why:** The bowls, chairs and covered pot suggest a meal was prepared for three. The baker’s recollection supports the expectation of the mender and apprentice. None of these details places Bram or his guests at Quarry Shelter. That remains a plausible hypothesis worth checking, not an established fact.
 
 ## 21. Chapter 5 · witness-relative-and-result
 

@@ -37,9 +37,9 @@ The visual world should remain predominantly warm storybook woodland: wool, moss
 - The low bridge loses its middle planks after Bram crosses. The mender has injured her ankle on the far approach. All three retreat uphill on the far bank to the quarry shelter.
 - The girls follow the near-bank trail, discover the collapse and return to the square. They do not cross the broken bridge or enter the water.
 - Witnesses heard the bell at different times as the group moved uphill. This directs the organised search towards the shelter.
-- The safe alternative climbs along the village bank, crosses the gorge at Alder Arch and returns along the far hillside. Alder Arch is a high stone bridge, not a submerged ford or low causeway. The ferryman crossed it earlier that day.
+- The safe alternative climbs along the village bank, crosses the gorge at Alder Arch and returns along the far hillside. Alder Arch is a high stone bridge, not a submerged ford or low causeway. The ferryman knows the crossing; that afternoon he checked only the lower approach as far as the old steps. He does not claim to have crossed the overgrown upper approach.
 - A fallen beech obstructs the approach. Adults with tools clear it. The steep return from the shelter requires several people to support and transport the injured traveller. Bram cannot carry the mender and safeguard the apprentice alone.
-- Pip and the baker remain on firm ground within sight of the shelter. Mara accompanies the adult search party. The return with the stretcher is slow. The gathering, upper-path rescue, careful return and warming supper occupy the remaining night, with the final scene near dawn. Exact clock times beyond midnight are not specified.
+- Pip and the baker remain on firm ground within sight of the shelter. Mara accompanies the adult search party. The return with the stretcher is slow. The gathering, upper-path rescue, careful return and warming supper occupy the remaining night, with the final scene near dawn. Chapter 4 now pins the baker’s bell to a few minutes after midnight and the ferryman’s to after quarter past twelve. His crate work and the baker’s call from the shutters establish the order independently of Mara’s inference.
 
 ## Fair-play clue ledger
 
@@ -101,3 +101,7 @@ The current draft uses explicit speech tags throughout so the reader can follow 
 ## Descriptive prose revision
 
 The current draft is approximately 5,100 words. Narration now develops in fuller paragraphs with varied sentence lengths. Descriptions establish the wet lantern fair, the mill's domestic objects and dusty upper room, the flooded bank, the bakery's warmth and the work of the night rescue. Details are filtered through what the characters see, hear, smell and touch, and often supply evidence or change the mood. Dialogue keeps clear speech tags. Brief narrative sentences are reserved chiefly for suspense and changes in attention. The six-chapter plot and rescue geography remain intact.
+
+## Chapter 4 revision checkpoint
+
+The witness sequence is explicit: the baker heard the bell just after midnight while the ferryman was still helping with crates; he heard it after finishing that work at quarter past twelve and tying up his punt. The later route is a high stone crossing at Alder Arch. Bram could have used the lower footbridge before it broke; neither his crossing nor the group’s current location is treated as proved here. Supper preparations and the baker’s recollection support an expectation of guests, not their presence at Quarry Shelter. Pip folds and passes on the map. The loose handcart and spare search-party ropes are removed from Chapter 4; Chapter 5’s saw pays off the retained tool. The Chapter 2 clarification distinguishes Bram’s workplace from the cottage beside it. Chapter 1 wording remains unchanged. Later chapters still require their planned consistency and canon review. The free clue-matching notebook remains deferred until all chapters are finalised.

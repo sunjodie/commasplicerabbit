@@ -74,6 +74,6 @@ test('explicit whole-text goals disambiguate the offered answers, including alre
 });
 
 test('semantic briefs and contrast trays follow the approved chapter rules',()=>{
- for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage!==1&&q.stage!==2)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
+ for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage!==1&&q.stage!==2&&q.stage!==3)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
  for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^yet /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
 });

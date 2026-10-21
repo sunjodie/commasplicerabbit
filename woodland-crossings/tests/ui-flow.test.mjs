@@ -180,7 +180,7 @@ test('Chapter 2 full story, all nine questions and fern-garden delivery work thr
   ui.app.querySelector('[data-join="0"]').onclick();ui.tool(q.id==='m7'?'yet':q.valid[0][0]);ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');
  }
  saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,10);assert.equal(saved.seq,10);assert.equal(saved.pendingReward,1);
- for(const task of CASEWORK.filter(t=>t.phase==='after'))assert.equal(saved.casework[task.id].completed,true);
+ for(const task of CASEWORK.filter(t=>t.question==='m10'&&t.phase==='after'))assert.equal(saved.casework[task.id].completed,true);
  assert.ok(document.querySelector('#collect'));ui.click('collect');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.decorations.length,2);assert.equal(saved.decorations[1].chapter,1);
 });
 
@@ -195,7 +195,7 @@ test('Chapter 2 resumes an unfinished notebook check after reload and awards sup
  const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=9;s.step=4;s.seq=9;s.activeId='m10';s.activeChoices=['semi'];s.chapterTwo={read:['m6','m7','m8','m9','m10']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-pending');ui.click('play');ui.click('check');ui.click('next');assert.match(ui.app.innerHTML,/An unexpected movement/);
  ui.app.querySelector('[data-case-choice="yet"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);
  await import('../app.js?chapter-two-reload');ui.click('play');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,9);
- for(const task of CASEWORK.filter(t=>t.phase==='after').slice(1)){
+ for(const task of CASEWORK.filter(t=>t.question==='m10'&&t.phase==='after').slice(1)){
   const wrong=task.options.find(o=>o.id!==task.answer);ui.app.querySelector('[data-case-choice="'+wrong.id+'"]').onclick();ui.click('caseworkCheck');assert.equal(document.querySelector('#collect'),null);
   ui.app.querySelector('[data-case-choice="'+task.answer+'"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');
  }
@@ -266,4 +266,19 @@ test('all 25 frogs can be revisited and collected without changing lesson progre
 test('later chapter notebook frogs match the cropped frame when a saved alternate view is selected',async()=>{
  const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=16;s.introduced=[0,1,2,3];s.activeScenery={question:'m17',seq:0,key:'3-3'};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
  await import('../app.js?frog-saved-view');ui.click('play');assert.ok(ui.app.querySelector('[data-frog="ink-frog"]'));assert.equal(ui.app.querySelector('[data-frog="bramble-frog"]'),null);
+});
+
+test('Chapter 4 reads all revised scenes, completes five notes and requires both inference answers before one reward',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=15;s.seq=15;s.introduced=[0,1,2,3];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-four-full');ui.click('play');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).chapterFour.read.length,5);
+ for(const q of STORY.slice(15,20)){for(let i=0;i<q.valid.length;i++){ui.app.querySelector('[data-join="'+i+'"]').onclick();ui.tool(q.valid[i][0]);}ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');}
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,20);assert.equal(saved.seq,20);assert.equal(saved.pendingReward,3);assert.equal(saved.casework['c4-supper-evidence'].completed,true);assert.ok(document.querySelector('#collect'));
+ ui.click('collect');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations.at(-1).chapter,3);
+});
+test('Chapter 4 inference resumes with its own evidence feedback and withholds the fifth delivery until complete',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=19;s.seq=19;s.activeId='m20';s.activeChoices=['stop'];s.introduced=[0,1,2,3];s.chapterFour={read:['m16','m17','m18','m19','m20']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-four-pending');ui.click('play');ui.click('check');ui.click('next');
+ ui.app.querySelector('[data-case-choice="prepared"]').onclick();ui.app.querySelector('[data-case-evidence="map-bell"]').onclick();ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/supper preparations/);assert.doesNotMatch(ui.app.innerHTML,/identify this particular coat/);assert.equal(document.querySelector('#collect'),null);
+ await import('../app.js?chapter-four-reload');ui.click('play');assert.match(ui.app.innerHTML,/Supper and a shelter/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,19);
+ ui.app.querySelector('[data-case-evidence="table-memory"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,20);assert.equal(saved.seq,20);assert.equal(saved.pendingNotebook,null);assert.equal(saved.pendingReward,3);
 });

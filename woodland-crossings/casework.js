@@ -1,4 +1,5 @@
 import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js';
+import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261022-chapter4-1';
 // Supporting questions from the approved Chapter 1.
 export const CASEWORK=[
   {
@@ -123,6 +124,7 @@ export const CASEWORK=[
   }
 ];
 CASEWORK.push(...CHAPTER_TWO_CASEWORK);
+CASEWORK.push(...CHAPTER_FOUR_CASEWORK);
 export function caseworkFor(s,q,phase='before'){if(!q||q.remedial||s.reviewRun||s.bonus)return null;return CASEWORK.find(t=>t.question===q.id&&(t.phase||'before')===phase&&!caseworkState(s,t.id).completed)||null;}
 export function caseworkState(s,id){const raw=s.casework?.[id]||{};return {choice:typeof raw.choice==='string'?raw.choice:'',evidence:typeof raw.evidence==='string'?raw.evidence:'',correction:typeof raw.correction==='string'?raw.correction:'',route:typeof raw.route==='string'?raw.route:'',attempts:Number.isInteger(raw.attempts)&&raw.attempts>=0?raw.attempts:0,hinted:raw.hinted===true,completed:raw.completed===true};}
 export function updateCasework(s,id,patch){if(!CASEWORK.some(t=>t.id===id))return;s.casework={...s.casework,[id]:{...caseworkState(s,id),...patch}};}
