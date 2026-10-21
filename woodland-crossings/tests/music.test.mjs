@@ -9,17 +9,22 @@ function fixture(){
  const c=createMusicController({AudioClass:FakeAudio,...clock});return {instances,FakeAudio,clock,advance,c};
 }
 const near=(value,expected)=>assert.ok(Math.abs(value-expected)<.001,`${value} differs from ${expected}`);
-test('music remains opt-in, fades in quietly, loops calm and reuses players',async()=>{
+test('music remains opt-in, fades in quietly, loops and reuses players',async()=>{
  const f=fixture();await f.c.setVisible(true);assert.equal(f.instances.length,0);await f.c.setEnabled(true);const a=f.instances[0];assert.equal(a.src,MUSIC.src);assert.equal(a.loop,true);assert.equal(a.preload,'none');assert.equal(a.volume,0);f.advance(1200);near(a.volume,.09);f.advance(1200);near(a.volume,.18);await f.c.setEnabled(false);assert.equal(a.paused,true);await f.c.setEnabled(true);assert.equal(f.instances.length,1);assert.equal(a.plays,2);
 });
 test('real mood changes crossfade without stopping the outgoing track abruptly',async()=>{
- const f=fixture();await f.c.setEnabled(true);f.advance(2400);const calm=f.instances[0];await f.c.setTense(true);const cue=f.instances[1];assert.equal(calm.paused,false);assert.equal(cue.volume,0);f.advance(1200);near(calm.volume,.09);near(cue.volume,.09);assert.equal(calm.paused,false);f.advance(1200);assert.equal(calm.paused,true);near(cue.volume,.18);assert.equal(cue.loop,false);
+ const f=fixture();await f.c.setEnabled(true);f.advance(2400);const calm=f.instances[0];await f.c.setTense(true);const cue=f.instances[1];assert.equal(calm.paused,false);assert.equal(cue.volume,0);f.advance(1200);near(calm.volume,.09);near(cue.volume,.09);assert.equal(calm.paused,false);f.advance(1200);assert.equal(calm.paused,true);near(cue.volume,.18);assert.equal(cue.loop,true);
 });
 test('the flashback softens the current passage and later scenes do not rewind the cue',async()=>{
  const f=fixture();await f.c.setTense(true);await f.c.setEnabled(true);f.advance(2400);const cue=f.instances[0];cue.currentTime=24;await f.c.setMood('memory');f.advance(2400);near(cue.volume,.075);assert.equal(f.instances.length,1);assert.equal(cue.plays,1);await f.c.setTense(true);f.advance(2400);near(cue.volume,.18);assert.equal(cue.currentTime,24);assert.equal(cue.plays,1);await f.c.setTense(false);f.advance(2400);await f.c.setTense(true);assert.equal(cue.currentTime,24);assert.equal(cue.plays,2);
 });
-test('an exhausted incomplete cue is not replayed on revisits; a fresh game resets it',async()=>{
- const f=fixture();await f.c.setTense(true);assert.equal(f.instances.length,0);await f.c.setEnabled(true);f.advance(2400);const cue=f.instances[0];cue.onended();await Promise.resolve();f.advance(2400);assert.equal(cue.paused,true);await f.c.setTense(false);f.advance(2400);const calm=f.instances[1];await f.c.setTense(true);f.advance(2400);assert.equal(calm.paused,true);assert.equal(cue.plays,1);await f.c.reset();f.advance(2400);await f.c.setTense(true);assert.equal(cue.plays,2);assert.equal(cue.currentTime,0);
+test('the creepy track loops on revisits and after mute; restarting resets playback',async()=>{
+ const f=fixture();await f.c.setTense(true);await f.c.setEnabled(true);f.advance(2400);const cue=f.instances[0];
+ assert.equal(cue.loop,true);assert.equal(cue.onended,undefined);cue.currentTime=24;
+ await f.c.setEnabled(false);await f.c.setEnabled(true);f.advance(2400);assert.equal(cue.loop,true);assert.equal(cue.currentTime,24);
+ await f.c.setTense(false);f.advance(2400);const calm=f.instances[1];assert.equal(calm.loop,true);
+ await f.c.setTense(true);f.advance(2400);assert.equal(cue.paused,false);assert.equal(calm.paused,true);assert.equal(cue.loop,true);assert.equal(cue.currentTime,24);
+ await f.c.reset();f.advance(2400);assert.equal(cue.currentTime,0);await f.c.setTense(true);f.advance(2400);assert.equal(cue.paused,false);assert.equal(cue.loop,true);
 });
 test('muting and hidden tabs pause both players immediately and cancel fades',async()=>{
  const f=fixture();await f.c.setEnabled(true);f.advance(2400);await f.c.setTense(true);f.advance(800);await f.c.setVisible(false);assert.ok(f.instances.every(a=>a.paused&&a.volume===0));f.advance(5000);assert.ok(f.instances.every(a=>a.volume===0));await f.c.setVisible(true);f.advance(2400);assert.equal(f.instances[1].paused,false);await f.c.setEnabled(false);await f.c.setVisible(false);await f.c.setVisible(true);assert.ok(f.instances.every(a=>a.paused));

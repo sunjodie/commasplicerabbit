@@ -1,14 +1,14 @@
 export const MUSIC={src:'assets/autumn-night-v2.mp3',title:'秋夜オルゴール',source:'https://www.mureka.ai/song-detail/Aewi4tAvoYviB9sT3od2oN?is_from_share=1'};
 export const TENSION_MUSIC={src:'assets/midnight-tension-cue.mp3',title:'秋夜オルゴール · tension cue',source:'https://www.mureka.ai/song-detail/8twvGFHBmzE98GQsPdY3xJ?is_from_share=1'};
-// Crossfades preserve playback positions; the incomplete cue is never looped.
+// Both chapter tracks loop; crossfades preserve their playback positions.
 export function createMusicController({AudioClass=globalThis.Audio,onError=()=>{},now=()=>performance.now(),schedule=fn=>setTimeout(fn,40),cancel=clearTimeout,fadeMs=2400}={}){
- const players=new Map();let enabled=false,visible=true,revision=0,mood='calm',lastKey='calm',cueFinished=false,frame=null;
+ const players=new Map();let enabled=false,visible=true,revision=0,mood='calm',lastKey='calm',frame=null;
  function stopFade(){if(frame!==null){cancel(frame);frame=null;}}
- function desiredKey(){const key=mood==='memory'?lastKey:mood;return key==='tense'&&cueFinished?null:key;}
+ function desiredKey(){return mood==='memory'?lastKey:mood;}
  function player(key){
   if(!players.has(key)){
-   const audio=new AudioClass((key==='tense'?TENSION_MUSIC:MUSIC).src);audio.loop=key==='calm';audio.preload='none';audio.volume=0;
-   if(key==='tense')audio.onended=()=>{cueFinished=true;void sync();};players.set(key,audio);
+   const audio=new AudioClass((key==='tense'?TENSION_MUSIC:MUSIC).src);audio.loop=true;audio.preload='none';audio.volume=0;
+   players.set(key,audio);
   }
   return players.get(key);
  }
@@ -39,7 +39,7 @@ export function createMusicController({AudioClass=globalThis.Audio,onError=()=>{
   setVisible(value){visible=!!value;return sync();},
   setMood(value){value=['calm','tense','memory'].includes(value)?value:'calm';if(value===mood)return Promise.resolve(false);mood=value;return sync();},
   setTense(value){return this.setMood(value?'tense':'calm');},
-  reset(){stopFade();cueFinished=false;mood='calm';lastKey='calm';players.forEach(a=>{a.pause();a.currentTime=0;a.volume=0;});return sync();}
+  reset(){stopFade();mood='calm';lastKey='calm';players.forEach(a=>{a.pause();a.currentTime=0;a.volume=0;});return sync();}
  };
 }
 

@@ -8,7 +8,7 @@ import {CHAPTER_THREE_REFLECTION} from './chapter-three.js';
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261020-chapter3-edit1';
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
 import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261020-crop5';
-import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './music.js';
+import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './music.js?v=20261021-musicloop1';
 import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261020-chapter3-edit1';
 import {villageMarkup,villageProgress,siteProgress,currentBuild,stageLabel,villageSummary} from './village.js';
 import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261020-chapter3-edit1';
