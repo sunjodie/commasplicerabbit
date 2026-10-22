@@ -14,7 +14,7 @@ The user approved a single finished panorama and requested gradual construction 
 
 Source generations were created in /workspace/scratch/1ca0f6b69156/generated_images. Final project files are in /workspace/scratch/1ca0f6b69156/rabbit-reference/woodland-crossings/assets/village. WebP encoding uses Pillow at quality 87, method 6. Originals are retained.
 
-Seven SVG masks select landmark footprints in the common 1536 × 1024 coordinate system. Trail-lamp areas are cut out of the other footprints, so path lighting can arrive separately. The masks are deterministic layout assets, not replacements for the generated paintings. Each landmark is layered independently over the empty clearing. The same scene therefore supports all combinations of earned buildings without generating a separate full image for every game save. Small selected finishing-touch ornaments are native SVG in village.js.
+Seven SVG masks select landmark footprints in the common 1536 × 1024 coordinate system. Trail-lamp areas are cut out of the other footprints, so path lighting can arrive separately. The masks are deterministic layout assets, not replacements for the generated paintings. Each landmark is layered independently over the empty clearing. The same scene therefore supports all combinations of earned buildings without generating a separate full image for every game save. The 18 new landmark-specific finishing touches are transparent painted WebP assets, positioned individually by finishing-touches.js. Legacy saves still render their original native SVG ornaments in village.js until the player chooses a replacement.
 
 ## Prompt set
 
@@ -45,3 +45,29 @@ All sites at nearly-ready roof-and-walls stage. Burrow arch and windows fitted b
 ## Verification
 
 Paintings were visually inspected. Offline static composites of a partial village and the fully built village were inspected for registration, footprint coverage and obvious seams. These proofs render the app's mask geometry against the bundled paintings, not a browser screenshot. No browser rendering or finger hit testing was performed in this environment. Modern browser CSS mask support, responsive zoom and actual touch panning still need deployed-device verification.
+
+
+## Landmark finishing touches · 22 October 2026
+
+Each of the six landmarks offers three distinct additions. These are painted scenery cutouts generated with the built-in image_gen tool, using complete.webp as a style reference (the herb box used the same written style specification). No new scene, character or answer-bearing evidence was introduced.
+
+The 18 images are bundled under finishing-touches/ as transparent WebP files. Delivery encoding preserves alpha, fits within 384 × 384 pixels and uses quality 85. Full source PNG generations remain alongside the local generation outputs. See finishing-touches/PROVENANCE.json for the exact generation source filenames and prompts.
+
+finishing-touches.js specifies each addition’s baseline position and width against the unchanged 1536 × 1024 panorama. Previewing a choice is temporary. Collection saves its stable ID and name. Completed landmarks offer Change finishing touch; this replaces the saved decoration only after Save finishing touch and does not add supplies or change lesson progress. Existing wildflower, mushroom and lantern choices retain their old appearances until explicitly replaced.
+
+### Shared generation specification
+
+Transparent woodland village game scenery cutout, rather than a flat icon. Match the village painting’s luminous painterly gouache, detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light and plum-blue twilight shadows. Gently elevated three-quarter viewpoint. Isolate the complete object with transparent margins. No ground plane, scenery, characters, embedded text, labels, frames or interface elements. The supplied panorama is a style reference only.
+
+### Objects
+
+- Burrow: round herb window box; patchwork porch swing; acorn-shaped wooden mailbox.
+- Garden: shallow stone birdbath; arched flowering wooden trellis; mossy stone frog spout with a little basin.
+- Workshop: copper rabbit weather vane; rack of three painted birdhouses; carved wooden owl on a stump.
+- Trail: five folded-paper star lanterns on twine; small covered resting bench; hollow-log tunnel with warm lights inside.
+- Lookout: brass telescope on a wooden tripod; copper-leaf wind chimes; wicker hanging chair with a plum cushion.
+- Gathering place: long supper table and mismatched crockery; small stage with plum curtains; tiled bread oven with a copper chimney.
+
+### Finishing-touch validation
+
+All 18 reward choices are exercised through the real app handlers for live preview, collection, save and reload. Changing a legacy decoration is checked for preview cancellation, explicit saving and preservation of active lesson progress. Each bundled image is checked for transparency and a distinct file hash. Static composites use the app’s actual per-object positions and dimensions to review integration with the painting. These composites are not browser screenshots; physical-device and Safari checks remain outstanding.

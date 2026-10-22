@@ -37,3 +37,28 @@ test('landmark hit targets stay separated in a narrow fitted village',()=>{
   assert.ok(Math.abs(a[0]-b[0])*width/100>=44||Math.abs(a[1]-b[1])*height/100>=44,`${i} and ${j} touch targets overlap`);
  }
 });
+
+test('each landmark offers three distinct bundled painted additions with safe panorama placement',async()=>{
+ const {FINISHING_TOUCHES,finishingTouches,finishingTouch}=await import('../finishing-touches.js');
+ const {createHash}=await import('node:crypto');const ids=new Set(),images=new Set();
+ assert.equal(FINISHING_TOUCHES.length,6);
+ for(const [chapter,options]of FINISHING_TOUCHES.entries()){
+  assert.equal(options.length,3);
+  for(const d of options){
+   assert.ok(!ids.has(d.id));ids.add(d.id);
+   assert.equal(finishingTouch(chapter,d.id),d);assert.equal(finishingTouch(chapter,{name:d.name}),d);
+   const buf=readFileSync(new URL('../'+d.image,import.meta.url));
+   assert.equal(buf.toString('ascii',0,4),'RIFF');assert.equal(buf.toString('ascii',8,12),'WEBP');
+   assert.ok(buf.includes(Buffer.from('ALPH')),`${d.id} must preserve transparency`);
+   images.add(createHash('sha256').update(buf).digest('hex'));
+   assert.ok(d.x-d.width/2>=0&&d.x+d.width/2<=100,d.id);
+   assert.ok(d.y-d.width*1.5>=0&&d.y<=100,d.id);
+   const s=fresh(),before=structuredClone(s);
+   const html=villageMarkup(s,{previewChapter:chapter,previewDecor:d,interactive:false});
+   assert.ok(html.includes(`data-touch="${d.id}"`));assert.ok(html.includes(d.image));
+   assert.deepEqual(s,before,'preview must not award or save anything');
+  }
+ }
+ assert.equal(ids.size,18);assert.equal(images.size,18);assert.deepEqual(finishingTouches(6),[]);
+ assert.equal(finishingTouch(0,'Mushrooms'),null,'legacy choices keep their original artwork');
+});

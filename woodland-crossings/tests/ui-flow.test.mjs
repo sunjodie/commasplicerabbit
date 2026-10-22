@@ -21,7 +21,7 @@ test('visual play handlers: demo, tap repair, retry, supply collection, village,
  const join=ui.app.querySelector('[data-join="0"]');join.ondrop({preventDefault(){},dataTransfer:{getData(){return 'stop';}}});let save=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(save.activeChoices[0],'stop');assert.equal(save.activeHelp,false);
  // Finish the rest of expedition one using authored solutions.
  while(!document.querySelector('#collect')){save=JSON.parse(ui.db.get('woodland-crossings-v1'));const q=(await import('../content.js')).BANK.find(q=>q.id===save.activeId);for(let i=0;i<q.valid.length;i++){ui.app.querySelector(`[data-join="${i}"]`).onclick();ui.tool(q.valid[i][0]);}ui.click('check');ui.click('next');}
- assert.match(ui.app.innerHTML,/reward-reveal/);ui.click('collect');ui.fixed.villageBtn.onclick();assert.match(ui.app.innerHTML,/village-landscape/);ui.app.querySelector('[data-village-site="0"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Wildflowers/);ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations.length,1);
+ assert.match(ui.app.innerHTML,/reward-reveal/);ui.click('collect');ui.fixed.villageBtn.onclick();assert.match(ui.app.innerHTML,/village-landscape/);ui.app.querySelector('[data-village-site="0"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Herb window box/);ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations.length,1);
  // Reload into a paragraph challenge to exercise joins + continuous sentence UI.
  save=JSON.parse(ui.db.get('woodland-crossings-v1'));save.story=25;save.step=0;save.activeId=STORY[25].id;save.activeChoices=STORY[25].valid.map(()=> 'comma');save.activeHelp=false;save.activeTries=0;ui.db.set('woodland-crossings-v1',JSON.stringify(save));await import('../app.js?paragraph');ui.click('play');assert.match(ui.app.innerHTML,/passage-chart/);assert.doesNotMatch(ui.app.innerHTML,/clause-islands/);const q=STORY[25];for(let i=0;i<q.valid.length;i++){ui.app.querySelector(`[data-join="${i}"]`).onclick();ui.tool(q.valid[i][0]);}ui.click('check');assert.ok(document.querySelector('#next'));
 });
@@ -103,7 +103,7 @@ test('village is one inspectable panorama with zoom and optional case notes',asy
 
 test('construction peek preserves an open repair and reward choices update the scene',async()=>{
  const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.activeId='m1';s.activeChoices=['semi'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?village-peek');ui.click('play');ui.click('buildPeek');assert.match(ui.fixed.modalBody.innerHTML,/village-base/);ui.click('closeModal');assert.deepEqual(JSON.parse(ui.db.get('woodland-crossings-v1')).activeChoices,['semi']);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,false);
- const ui2=setup(),t=fresh();t.story=5;t.pendingReward=0;ui2.db.set('woodland-crossings-v1',JSON.stringify(t));await import('../app.js?village-reward');assert.match(ui2.app.innerHTML,/village-reward-art/);ui2.app.querySelector('[data-decor="1"]').onclick();assert.match(document.querySelector('#rewardVillage').innerHTML,/#bb704e/);ui2.click('collect');const saved=JSON.parse(ui2.db.get('woodland-crossings-v1'));assert.equal(saved.decorations[0].name,'Mushrooms');assert.equal(saved.pendingReward,null);
+ const ui2=setup(),t=fresh();t.story=5;t.pendingReward=0;ui2.db.set('woodland-crossings-v1',JSON.stringify(t));await import('../app.js?village-reward');assert.match(ui2.app.innerHTML,/village-reward-art/);ui2.app.querySelector('[data-decor="1"]').onclick();assert.match(document.querySelector('#rewardVillage').innerHTML,/data-touch="porch-swing"/);ui2.click('collect');const saved=JSON.parse(ui2.db.get('woodland-crossings-v1'));assert.equal(saved.decorations[0].name,'Patchwork porch swing');assert.equal(saved.pendingReward,null);
 });
 
 test('story reader resumes its page through reload and village without counting a hint or delivery',async()=>{
@@ -303,4 +303,41 @@ test('final inference preserves a wrong evidence choice over reload and delays c
  ui.app.querySelector('[data-case-choice="1"]').onclick();ui.app.querySelector('[data-case-evidence="0"]').onclick();ui.click('caseworkCheck');assert.equal(document.querySelector('#collect'),null);
  await import('../app.js?final-inference-resume');ui.click('play');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,29);assert.equal(ui.app.querySelector('[data-case-evidence="0"]').attrs['aria-pressed'],'true');
  ui.app.querySelector('[data-case-evidence="2"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');const done=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(done.story,30);assert.equal(done.seq,30);assert.equal(done.pendingReward,5);
+});
+
+
+test('all landmark finishing touches preview, save and reload without extra supplies',async()=>{
+ const {fresh,hydrate}=await import('../engine.js');
+ const {FINISHING_TOUCHES}=await import('../finishing-touches.js');
+ const {villageMarkup}=await import('../village.js');
+ for(const [chapter,choices] of FINISHING_TOUCHES.entries())for(const [index,d] of choices.entries()){
+  const ui=setup(),s=fresh();s.story=(chapter+1)*5;s.seq=s.story;s.pendingReward=chapter;
+  ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?touch='+d.id);
+  assert.equal(ui.app.querySelectorAll('[data-decor]').length,3);
+  assert.match(ui.app.innerHTML,new RegExp(choices[0].image.replaceAll('.','\\.')));
+  ui.app.querySelector(`[data-decor="${index}"]`).onclick();
+  assert.ok(document.querySelector('#rewardVillage').innerHTML.includes(`data-touch="${d.id}"`));
+  assert.equal(document.querySelector('#finishingDescription').innerHTML,d.description);
+  ui.click('collect');const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));
+  assert.deepEqual(saved.decorations,[{chapter,id:d.id,name:d.name}]);
+  assert.equal(saved.story,s.story);assert.equal(saved.seq,s.seq);assert.equal(saved.pendingReward,null);
+  const resumed=hydrate(saved);assert.ok(villageMarkup(resumed).includes(`data-touch="${d.id}"`));
+ }
+});
+
+test('an earned legacy decoration can be previewed or changed without touching lesson progress',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');
+ const s=fresh();s.story=7;s.seq=9;s.decorations=[{chapter:0,name:'Mushrooms'}];s.activeId='m8';s.activeChoices=['so'];
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?change-old-touch');
+ ui.fixed.villageBtn.onclick();ui.app.querySelector('[data-village-site="0"]').onclick();
+ ui.fixed.modalBody.querySelector('#changeTouch').onclick();
+ ui.fixed.modalBody.querySelector('[data-touch-select="2"]').onclick();
+ assert.match(ui.fixed.modalBody.querySelector('#touchPreview').innerHTML,/data-touch="acorn-mailbox"/);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations[0].name,'Mushrooms');
+ ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations[0].name,'Mushrooms');
+ ui.app.querySelector('[data-village-site="0"]').onclick();ui.fixed.modalBody.querySelector('#changeTouch').onclick();
+ ui.fixed.modalBody.querySelector('[data-touch-select="2"]').onclick();ui.fixed.modalBody.querySelector('#saveTouch').onclick();
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));
+ assert.deepEqual(saved.decorations,[{chapter:0,id:'acorn-mailbox',name:'Acorn mailbox'}]);
+ assert.equal(saved.story,7);assert.equal(saved.seq,9);assert.equal(saved.activeId,'m8');assert.deepEqual(saved.activeChoices,['so']);
 });
