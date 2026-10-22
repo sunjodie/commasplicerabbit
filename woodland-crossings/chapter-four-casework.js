@@ -1,4 +1,4 @@
-// One two-part inference stop; it does not add a sixth supply delivery.
+// A two-part inference stop; no extra supply delivery.
 export const CHAPTER_FOUR_CASEWORK=[
   {
     "id": "c4-supper-evidence",
@@ -7,28 +7,28 @@ export const CHAPTER_FOUR_CASEWORK=[
     "kind": "deduction",
     "title": "Supper and a shelter",
     "label": "Evidence and hypothesis",
-    "context": "The neighbour saw three clean bowls beside a covered pot, with chairs drawn up at Bram’s table. The baker remembered that Bram had kept supper for the mender and her apprentice. Pip thought the three might now be together at Quarry Shelter.",
+    "context": "Through Bram’s kitchen window, the neighbour saw three clean bowls beside a covered pot, with chairs drawn up at the table. The baker remembered Bram mentioning supper for the mender and her apprentice. Pip pointed to Quarry Shelter on the map.",
     "prompt": "Part 1: Which judgement best separates the supported conclusion from Pip’s unconfirmed hypothesis?\nPart 2: Which pair of details most strongly supports the conclusion about supper?",
     "options": [
       {
         "id": "location",
-        "text": "The three places at the table establish that Bram and both guests are together at Quarry Shelter.",
-        "feedback": "The table was at the cottage. What does it tell you about anyone’s present location?"
+        "text": "Bram was expecting the two guests, and the table establishes that all three are now at Quarry Shelter.",
+        "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       },
       {
         "id": "already-eaten",
-        "text": "The covered pot and drawn-up chairs establish that the guests had eaten and left the cottage.",
-        "feedback": "A table ready for a meal does not show that the meal has already happened."
+        "text": "Bram had prepared for the two guests, and the table establishes that they had already arrived at the cottage.",
+        "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       },
       {
         "id": "prepared",
-        "text": "The details suggest that Bram had prepared supper for guests; they do not establish where the three are now.",
-        "feedback": "Check both the supported conclusion and the details that support it."
+        "text": "The details suggest that Bram expected the two guests for supper; their present location remains uncertain.",
+        "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       },
       {
         "id": "alone",
-        "text": "The unanswered door establishes that Bram went out alone and had not met either guest.",
-        "feedback": "No answer at the door does not tell you whom Bram may have met elsewhere."
+        "text": "Bram had prepared for the two guests, and the three places establish that they left the cottage together.",
+        "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       }
     ],
     "answer": "prepared",

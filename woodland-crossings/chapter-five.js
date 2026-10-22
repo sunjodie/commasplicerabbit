@@ -1,4 +1,4 @@
-import {readingPages} from './chapter-one.js';
+import {readingPages} from './chapter-one.js?v=20261022-consistency14-1';
 export const CHAPTER_FIVE=[
   {
     "id": "m21",
@@ -36,7 +36,7 @@ export const CHAPTER_FIVE=[
     "mood": "calm",
     "paragraphs": [
       "The ferryman returned to the fallen limb, where the saw began its steady rasp. From the rock, the shelter looked almost close enough to touch. Between it and Pip's lamp, the gorge fell away into darkness full of water.",
-      "Mara brought out her paper lantern. She had blown out its candle before leaving the mill and tucked it beneath her coat; the corners had crumpled when she pulled Pip away from the bank. Now she eased them apart and lit the wick from the oil lamp. Amber light filled the little windows.",
+      "Mara brought out her paper lantern. She had blown out its candle before the narrow path beyond the shed and tucked it beneath her coat; the corners had crumpled when she pulled Pip away from the bank. Now she eased them apart and lit the wick from the oil lamp. Amber light filled the little windows.",
       "“I can hold the map for you,” she told the ferryman. “There's another fork after Alder Arch.”",
       "He passed it to her. “Stay between us, and tell me when we're near the turning.”",
       "Pip wanted to go too. She had followed the prints and called across the gorge, and she wanted to see who would stand up when the rescuers arrived. Then the shelter light dipped out of sight. She lifted her lamp, and it rose again.",

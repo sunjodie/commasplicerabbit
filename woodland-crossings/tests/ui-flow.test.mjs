@@ -228,7 +228,7 @@ test('Chapter 3 reads the revised story and completes all five bridge notes thro
   ui.click('check');assert.ok(document.querySelector('#next'));
   if(q.id==='m15'){
    const before=ui.db.get('woodland-crossings-v1');ui.click('endingReflection');assert.match(ui.fixed.modalBody.innerHTML,/What does this change/);
-   ui.fixed.modalBody.querySelector('[data-reflection="certain"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/not to enter/);
+   ui.fixed.modalBody.querySelector('[data-reflection="certain"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/stopped trusting every observation/);
    ui.fixed.modalBody.querySelector('[data-reflection="together"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/rushing ahead to waiting/);
    assert.equal(ui.db.get('woodland-crossings-v1'),before);ui.click('closeModal');
   }

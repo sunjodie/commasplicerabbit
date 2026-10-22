@@ -1,5 +1,5 @@
 // Chapter 3: the bridge, the unstable bank and a safer decision.
-import {readingPages} from './chapter-one.js';
+import {readingPages} from './chapter-one.js?v=20261022-consistency14-1';
 export const CHAPTER_THREE=[
   {
     "id": "m11",
@@ -8,9 +8,9 @@ export const CHAPTER_THREE=[
     "location": "The near-bank path",
     "mood": "tense",
     "paragraphs": [
-      "Beyond the shed, the path narrowed between the stream and a steep bank threaded with hazel roots. On a walk here before the rain, Pip had kicked through dry yellow leaves while Mara complained about the ones that landed in her boots. Now those leaves lay plastered against the roots in sodden heaps, and the lower stepping stones had disappeared beneath brown water.",
+      "Beyond the shed, the path narrowed between the stream and a steep bank threaded with hazel roots. Mara blew out her paper lantern and let the wick cool before tucking it beneath her coat. She handed the oil lamp back to Pip so she could unfold the map. On a walk here before the rain, Pip had kicked through dry yellow leaves while Mara complained about the ones that landed in her boots. Now those leaves lay plastered against the roots in sodden heaps, and the lower stepping stones had disappeared beneath brown water.",
       "Pip kept the lamp close to the ground so she could follow the prints. Each time she found another, a little of her certainty returned. She was sure Bram had walked this way, carrying the bell, and that if they stayed with the marks they would come to wherever he had gone.",
-      "“Pip, he's crossed out the bridge,” Mara said, sheltering the map beneath an overhanging branch.",
+      "“Pip, if Bram crossed out the bridge, he may have meant us to avoid it,” Mara said, sheltering the map beneath an overhanging branch.",
       "“Perhaps he didn't want anyone following him,” Pip replied, watching the light creep into the next footprint.",
       "Mara looked up from the map, and Pip heard how it sounded: as if Bram hadn’t wanted them to follow. She had meant someone else, but she couldn’t say who.",
       "“We should go back,” Mara said. “There are still people in the square. Someone might know where he went.”",
@@ -50,8 +50,8 @@ export const CHAPTER_THREE=[
     "location": "Above the broken crossing",
     "mood": "tense",
     "paragraphs": [
-      "“He must have known there was something wrong with it,” Mara said. “Why else would he cross it out?”",
-      "“He hadn't finished the message either,” Pip replied, remembering the pen lying in its own ink. “He must have left in a hurry.”",
+      "“If Bram made that mark, he may have known there was something wrong with the bridge,” Mara said.",
+      "“The message wasn't finished either,” Pip replied, remembering the pen lying in its own ink. “It looks as though whoever wrote it left in a hurry.”",
       "They listened for the bell, but for a while all they heard was the stream working at the bridge. Water slapped the boards, loose wood knocked against the supports, and rain moved through the leaves above them in sudden waves. When the ringing finally came, Pip turned towards the far bank, then looked over her shoulder because she could no longer be sure where it had begun."
     ]
   },
@@ -77,8 +77,8 @@ export const CHAPTER_THREE_REFLECTION={
   "options": [
     {
       "id": "certain",
-      "text": "She now feels certain that the higher path is safe.",
-      "feedback": "They decide not to enter the higher path on their own."
+      "text": "She has decided that none of her own observations can be trusted.",
+      "feedback": "Waiting for Mara does not mean Pip has stopped trusting every observation she makes."
     },
     {
       "id": "together",
@@ -87,11 +87,11 @@ export const CHAPTER_THREE_REFLECTION={
     },
     {
       "id": "abandon",
-      "text": "She has decided that finding Bram no longer matters.",
-      "feedback": "The ending shows a safer decision, without saying she has abandoned Bram."
+      "text": "She waits only because she is frightened, rather than because she is listening to Mara.",
+      "feedback": "Fear may play a part, but “only” dismisses her apology and her decision to wait for Mara."
     }
   ],
-  "why": "Pip’s behaviour changes from rushing ahead to waiting for Mara. This supports a small shift towards listening and acting together; it does not establish that she feels safe or has given up the search."
+  "why": "Pip’s behaviour changes from rushing ahead to waiting for Mara. This supports a small shift towards listening and acting together; it does not show that she distrusts every observation or that fear is her only reason for waiting."
 };
 export function chapterThreeScene(q){return q&&!q.remedial?CHAPTER_THREE.find(x=>x.id===q.id)||null:null;}
 function reader(s){const old=s.chapterThree||{},ids=new Set(CHAPTER_THREE.map(x=>x.id));return {version:1,read:Array.isArray(old.read)?[...new Set(old.read.filter(x=>ids.has(x)))]:[],positions:Object.fromEntries(CHAPTER_THREE.map(scene=>[scene.id,Math.max(0,Math.min(readingPages(scene).length-1,Number.isInteger(old.positions?.[scene.id])?old.positions[scene.id]:0))]))};}

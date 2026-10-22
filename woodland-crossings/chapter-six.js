@@ -1,4 +1,4 @@
-import {readingPages} from './chapter-one.js';
+import {readingPages} from './chapter-one.js?v=20261022-consistency14-1';
 export const CHAPTER_SIX=[
   {
     "id": "m26",

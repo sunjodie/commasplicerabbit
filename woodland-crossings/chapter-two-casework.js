@@ -2,28 +2,28 @@ export const CHAPTER_TWO_CASEWORK=[
   {
     "id": "c2-yet",
     "title": "An unexpected movement",
-    "context": "Pip had recognised the movement of a branch. She still jumped when the reeds rustled.",
+    "context": "Pip could see that only the reeds were moving. She still felt uneasy.",
     "prompt": "Use “yet” to join the sentences and emphasise the unexpected contrast. Choose the correctly punctuated sentence.",
     "answer": "yet",
     "options": [
       {
         "id": "yet",
-        "text": "Pip had recognised the movement of a branch, yet she still jumped when the reeds rustled.",
+        "text": "Pip could see that only the reeds were moving, yet she still felt uneasy.",
         "feedback": "Check the clause structure and the relationship between the ideas. Try again."
       },
       {
         "id": "no-comma",
-        "text": "Pip had recognised the movement of a branch yet she still jumped when the reeds rustled.",
+        "text": "Pip could see that only the reeds were moving yet she still felt uneasy.",
         "feedback": "Check the clause structure and the relationship between the ideas. Try again."
       },
       {
         "id": "splice",
-        "text": "Pip had recognised the movement of a branch, she still jumped when the reeds rustled.",
+        "text": "Pip could see that only the reeds were moving, she still felt uneasy.",
         "feedback": "Check the clause structure and the relationship between the ideas. Try again."
       }
     ],
     "hint": "“Yet” joins two complete clauses. Which punctuation comes before it?",
-    "why": "Recognising one harmless movement has not stopped Pip reacting fearfully to another. A comma comes before “yet”.",
+    "why": "Pip’s recognition of a harmless cause contrasts with her continuing unease. Use a comma before “yet” to join these complete clauses.",
     "question": "m10",
     "phase": "after",
     "kind": "reasoning",
@@ -33,28 +33,28 @@ export const CHAPTER_TWO_CASEWORK=[
   {
     "id": "c2-for",
     "title": "Evidence for a suspicion",
-    "context": "Pip suspected that the bell had left the circular mark. A notch interrupted its edge.",
-    "prompt": "Use “for” to join the sentences, introducing the evidence for Pip’s suspicion. Choose the correctly punctuated sentence.",
+    "context": "Pip remembered the chip in the bell’s lip. She noticed a matching gap in the circular mark.",
+    "prompt": "Which sentence makes the second clause give evidence for Pip’s suspicion?",
     "answer": "for",
     "options": [
       {
         "id": "splice",
-        "text": "Pip suspected that the bell had left the circular mark, a notch interrupted its edge.",
-        "feedback": "Check the clause structure and the relationship between the ideas. Try again."
+        "text": "Pip suspected that the bell had left the circular mark, so a matching gap interrupted the mark’s edge.",
+        "feedback": "This presents the gap as a result of Pip’s suspicion. Which came first?"
       },
       {
         "id": "no-comma",
-        "text": "Pip suspected that the bell had left the circular mark for a notch interrupted its edge.",
-        "feedback": "Check the clause structure and the relationship between the ideas. Try again."
+        "text": "Pip suspected that the bell had left the circular mark, and a matching gap interrupted the mark’s edge.",
+        "feedback": "This adds an observation but does not explicitly present it as evidence for the suspicion."
       },
       {
         "id": "for",
-        "text": "Pip suspected that the bell had left the circular mark, for a notch interrupted its edge.",
-        "feedback": "Check the clause structure and the relationship between the ideas. Try again."
+        "text": "Pip suspected that the bell had left the circular mark, for a matching gap interrupted the mark’s edge.",
+        "feedback": "Consider how the observed gap supports the suspicion."
       }
     ],
-    "hint": "Here, “for” means “because”. Use a comma before it when joining complete clauses.",
-    "why": "The notch supports Pip’s suspicion because she remembers the chip in the bell’s lip. It supports the idea without proving it. A comma comes before the conjunction “for”.",
+    "hint": "Which conjunction introduces a reason for believing the first clause?",
+    "why": "The matching gap supports Pip’s suspicion because she remembers the chip in the bell’s lip. “For” introduces that evidence; “and” merely adds it, and “so” reverses the reasoning. The match supports the idea without proving it.",
     "question": "m10",
     "phase": "after",
     "kind": "reasoning",
@@ -100,7 +100,7 @@ export const CHAPTER_TWO_CASEWORK=[
   {
     "id": "c2-so",
     "title": "Which way does the reasoning run?",
-    "context": "Pip suspected that the bell had left the circular mark, so a notch interrupted its edge.",
+    "context": "Mara thought someone had left the note unfinished, so the words stopped after “Please don’t use the”.",
     "prompt": "Why is “so” wrong here?",
     "answer": "B",
     "options": [
@@ -111,7 +111,7 @@ export const CHAPTER_TWO_CASEWORK=[
       },
       {
         "id": "B",
-        "text": "The notch is evidence for Pip’s suspicion, rather than a result of her suspicion.",
+        "text": "The unfinished words are evidence for Mara’s judgement, rather than a result of it.",
         "feedback": "Check the clause structure and the relationship between the ideas. Try again."
       },
       {
@@ -125,8 +125,8 @@ export const CHAPTER_TWO_CASEWORK=[
         "feedback": "Check the clause structure and the relationship between the ideas. Try again."
       }
     ],
-    "hint": "Did Pip’s suspicion create the notch, or did the notch help her form the suspicion?",
-    "why": "Pip’s suspicion did not create the notch. She noticed the notch and used it as evidence. “For” expresses that relationship: Pip suspected that the bell had left the circular mark, for a notch interrupted its edge.",
+    "hint": "Did Mara’s judgement make the words stop, or did the incomplete line help her form that judgement?",
+    "why": "Mara’s judgement did not cause the writer to stop. The incomplete line supports her judgement. “For” would introduce that evidence: Mara thought someone had left the note unfinished, for the words stopped after “Please don’t use the”.",
     "question": "m10",
     "phase": "after",
     "kind": "reasoning",

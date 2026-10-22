@@ -26,7 +26,7 @@ export const CHAPTER_ONE=[
     "location": "Beyond the gardens",
     "mood": "calm",
     "paragraphs": [
-      "Alders hid the mill’s lower walls. In summer, water spilled from the wheel in silver threads, and the whole building hummed pleasantly enough to hear from the square. Now the wheel was black and still, its paddles clogged with leaves. It had stopped for winter a week earlier, and nobody had lit the upper room since.",
+      "Alders hid the mill’s lower walls. In summer, water spilled from the wheel in silver threads, and the whole building hummed pleasantly enough to hear from the square. Now the wheel was black and still, its paddles clogged with leaves. It had stopped for winter a week earlier, and Pip had seen no light upstairs since.",
       "“Bram must still be working,” Mara said, following her gaze.",
       "“But his cottage was dark when we came past,” Pip said.",
       "“Then he’s still here, isn’t he?” Mara replied, drawing her sleeve free.",

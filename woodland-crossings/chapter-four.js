@@ -1,5 +1,5 @@
 // Chapter 4: sequence, a possible route and the limits of the evidence.
-import {readingPages} from './chapter-one.js';
+import {readingPages} from './chapter-one.js?v=20261022-consistency14-1';
 export const CHAPTER_FOUR=[
   {
     "id": "m16",
@@ -9,7 +9,7 @@ export const CHAPTER_FOUR=[
     "mood": "calm",
     "paragraphs": [
       "The bakery windows were still bright when they reached the square. Steam had clouded the upper panes, and through the open door Pip could see a tray of buns cooling beneath a cloth. Two neighbours were carrying the last tables inside while the baker held the door with her hip, calling instructions over the scrape of the legs on the stones.",
-      "Pip tried to tell her everything at once. She began with the torn strip of green cloth they had left at the mill, then jumped to the missing bell, and she was halfway through describing the muddy floor when Mara interrupted to explain about the bridge. As soon as the baker understood, she let go of the door and guided them under the awning.",
+      "Pip tried to tell her everything at once. She began with the torn strip of green cloth they had left at the mill, then jumped to the missing bell, and she was halfway through describing the muddy floor when Mara interrupted to explain about the bridge. As soon as the baker understood, she stepped away from the door and guided them under the awning.",
       "“Stay here, both of you,” she said. “I'll get someone.”",
       "Within a few minutes, villagers were gathering with lanterns and coats pulled over their fair clothes. One neighbour went to Bram's cottage beside the mill, and the ferryman arrived with a saw. The ordinary clatter of getting ready steadied Pip enough to spread the map across a flour sack without spilling the cup of warm apple juice the baker had set beside her."
     ]
@@ -26,7 +26,7 @@ export const CHAPTER_FOUR=[
       "Pip looked from one to the other. She could picture the path between the bridge and the trees, with the water hiding the lower part of it, but she could no longer picture Bram walking there. In her mind the bell travelled through the dark without him, ringing among branches that would have caught its strap if anybody had been carrying it.",
       "“Are you certain?” Mara asked the ferryman.",
       "“Yes,” he said. “The quarter past twelve had just struck when I finished helping with the crates. I went down to the landing and tied up the punt, and then I heard it. No one's taking a boat out again until that water goes down.”",
-      "The baker was certain too. She had been closing her upstairs shutters when the sound reached her and had glanced at the clock, which still showed only a few minutes past midnight.",
+      "The baker was certain too. She had been closing her upstairs shutters when the sound reached her and had glanced at the clock, which still showed only a few minutes past midnight. Afterwards, she had come back down to help finish packing away the tables.",
       "“I thought he was playing one of his jokes,” she admitted, looking out towards the mill."
     ]
   },
@@ -68,7 +68,7 @@ export const CHAPTER_FOUR=[
     "location": "The bakery awning",
     "mood": "calm",
     "paragraphs": [
-      "“That'll be the beech beside the steps,” he said. “It leaned right over that path. We'll need the saw.”",
+      "“That sounds like a limb from the beech beside the steps,” he said. “It leaned right over that path. We'll need the saw.”",
       "The neighbour returned from Bram's cottage while they were looking at the route. Nobody had answered the door, but through the kitchen window she had seen three clean bowls beside a covered pot, with chairs drawn up ready at the table.",
       "“He was expecting the mender and her apprentice,” the baker said, pressing a floury paw to her forehead. “He told me he'd kept some supper for them. I'd forgotten.”",
       "“They'd have come towards the footbridge, wouldn't they?” Pip asked.",

@@ -21,7 +21,7 @@ test('Chapter 3 reads all five scenes before the notebook, saving reading positi
 });
 test('Chapter 3 targets use the chapter evidence and retain five supply awards',()=>{
  const expected=[
- 'Pip felt sure that Bram had carried the bell this way, yet she had found only prints.',
+ 'Pip felt sure that Bram had carried the bell along the path, yet she could not identify who had left the prints.',
  'The sound came from the bridge, for the broken rail kept striking its underside.',
  'The bridge could not be crossed, nor could the bank be trusted.',
  'Pip believed that the prints would lead to Bram; Mara feared that the path was dangerous.',
