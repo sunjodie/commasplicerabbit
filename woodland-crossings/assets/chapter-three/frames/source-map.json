@@ -1,0 +1,46 @@
+{
+  "generator": "Built-in image_gen",
+  "encoding": {
+    "format": "WebP",
+    "quality": 94,
+    "width": 1536,
+    "height": 1024
+  },
+  "sheets": [
+    {
+      "sheet": 1,
+      "original": "exec-991d9e6f-9a59-4580-95e5-97b6c2883f3c.png",
+      "selected": "exec-991d9e6f-9a59-4580-95e5-97b6c2883f3c.png",
+      "asset": "sheet-01.webp",
+      "review": "Visually reviewed; approved for integration"
+    },
+    {
+      "sheet": 2,
+      "original": "exec-4deb0e78-6b48-498c-894c-b2b69e7c1b6e.png",
+      "selected": "exec-4deb0e78-6b48-498c-894c-b2b69e7c1b6e.png",
+      "asset": "sheet-02.webp",
+      "review": "Visually reviewed; approved for integration"
+    },
+    {
+      "sheet": 3,
+      "original": "exec-02da0936-bb72-4dad-ad7a-d9d081fc8206.png",
+      "selected": "exec-be987e1e-2afa-47c5-a9b7-c46064b449a6.png",
+      "asset": "sheet-03.webp",
+      "review": "Visually reviewed; approved for integration"
+    },
+    {
+      "sheet": 4,
+      "original": "exec-82bde44c-174d-49a9-915c-c2af495a367a.png",
+      "selected": "exec-82bde44c-174d-49a9-915c-c2af495a367a.png",
+      "asset": "sheet-04.webp",
+      "review": "Visually reviewed; approved for integration"
+    },
+    {
+      "sheet": 5,
+      "original": "exec-4b8abd12-b53d-4d1c-b3fe-ccd660aff40f.png",
+      "selected": "exec-c37e4537-3bac-408a-a6ba-04f531c11d9a.png",
+      "asset": "sheet-05.webp",
+      "review": "Visually reviewed; approved for integration"
+    }
+  ]
+}

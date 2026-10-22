@@ -3,7 +3,7 @@ import {CHAPTER_SIX} from './chapter-six.js';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
 import {placeFrogs,frogForScene} from './frogs.js?v=20261022-character-names1';
-import {QUESTION_SCENES} from './scenery.js?v=20261022-character-names1';
+import {QUESTION_SCENES} from './scenery.js?v=20261022-chapter-three-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -18,12 +18,18 @@ for(const [i,scene] of CHAPTER_TWO.entries()){
  FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:i===4?3:2,asset:'chapter-two/scenes-v4.webp',text:'Notebook at the rain-wet streambank',...(i===0?{frog:{id:'reed-frog',x:55,y:72,perches:[{x:9,y:68}]}}:{})});
 }
 for(const task of CHAPTER_TWO_CASEWORK)FRAME_ART.push({id:task.id,scene:'m10',kind:'casework',cell:3,asset:'chapter-two/scenes-v4.webp',text:task.context});
-// Chapter 3 uses the existing paintings, cropped through the same frame path.
-// The workshop is one full painting; the alternate views form a 2-by-2 atlas.
+// Chapter 3: four narrative camera views per scene, anchored to the approved prose.
+const chapterThreeAnchors=[
+ [CHAPTER_THREE[0].paragraphs[0],CHAPTER_THREE[0].paragraphs[1],CHAPTER_THREE[0].paragraphs[2],CHAPTER_THREE[0].paragraphs[6]],
+ [CHAPTER_THREE[1].paragraphs[0],"Then the light reached the middle",CHAPTER_THREE[1].paragraphs[2],"A piece of bank broke away"],
+ [CHAPTER_THREE[2].paragraphs[0],CHAPTER_THREE[2].paragraphs[2],CHAPTER_THREE[2].paragraphs[3],"When she took out the map again"],
+ [CHAPTER_THREE[3].paragraphs[0],CHAPTER_THREE[3].paragraphs[1],CHAPTER_THREE[3].paragraphs[2],"When the ringing finally came"],
+ [CHAPTER_THREE[4].paragraphs[0],"Behind it, brambles stretched",CHAPTER_THREE[4].paragraphs[1],"She waited until Willow was ready"]
+];
 for(const [i,scene] of CHAPTER_THREE.entries()){
- const art=i===0?{asset:'bell-workshop.webp',cell:0,columns:1,rows:1}:{asset:'bell-views.webp',cell:i-1};
- FRAME_ART.push({id:scene.id+'-story',scene:scene.id,kind:'story',...art,text:scene.paragraphs[0]});
- FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',...art,text:'Chapter 3 notebook'});
+ const asset=`chapter-three/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c3art1`;
+ for(const [cell,text] of chapterThreeAnchors[i].entries())FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset,text,...((i===1&&cell===0||i===3&&cell===2)?{focus:.15}:{})});
+ FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:3,asset,text:'Chapter 3 language notes'});
 }
 // Each later chapter has five scene visits; keep frogs attached to those visits.
 for(let stage=3;stage<6;stage++)for(let view=0;view<5;view++){
@@ -47,7 +53,7 @@ export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE,...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
 export function frameGeometry(width,height,cell,focus=.7,columns=2,rows=2){const scale=Math.max(width/3,height/2),w=scale*3,h=scale*2;return {width:w*columns,height:h*rows,x:(width-w)*focus-(cell%columns)*w,y:(height-h)*.5-Math.floor(cell/columns)*h};}
 const images=new Map(),watched=new Set();let observer;
-function geometry(el,frame){const box=el.getBoundingClientRect();const g=frameGeometry(box.width,box.height,frame.cell,.7,frame.columns||2,frame.rows||2);el.style.backgroundSize=`${g.width}px ${g.height}px`;el.style.backgroundPosition=`${g.x}px ${g.y}px`;}
+function geometry(el,frame){const box=el.getBoundingClientRect();const g=frameGeometry(box.width,box.height,frame.cell,frame.focus??.7,frame.columns||2,frame.rows||2);el.style.backgroundSize=`${g.width}px ${g.height}px`;el.style.backgroundPosition=`${g.x}px ${g.y}px`;}
 export function paintFrame(el,frame){
  if(!el||!frame||typeof window==='undefined'||!el.style||!el.getBoundingClientRect)return;
  el.dataset.frameArt=frame.id;el.dataset.frogPerch=frame.frog?JSON.stringify(frame.frog):'none';

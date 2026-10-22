@@ -27,6 +27,13 @@ for(const view of QUESTION_SCENES.filter(x=>x.stage===1)){
  Object.assign(view,{asset:'chapter-two/scenes-v4.webp',name:['The rain-wet streambank','Sheltered marks','The lamplit bank','Beside the reeds','The tool shed'][view.view],focus:`${cell%2*100}% ${Math.floor(cell/2)*100}%`,scale:'200% 200%'});
 }
 SCENES[1]={...SCENES[1],asset:'chapter-two/scenes-v4.webp',name:'The rain-wet streambank',focus:'0% 100%',scale:'200% 200%'};
+// Chapter 3 now follows the stream, broken bridge and return path.
+for(const view of QUESTION_SCENES.filter(x=>x.stage===2))Object.assign(view,{
+ asset:`chapter-three/frames/sheet-${String(view.view+1).padStart(2,'0')}.webp?v=c3art1`,
+ name:['The near-bank path','The lower footbridge','The hazel bank','Above the broken crossing','The fingerpost'][view.view],
+ indoors:false,focus:'100% 100%',scale:'200% 200%'
+});
+SCENES[2]={...QUESTION_SCENES.find(x=>x.stage===2&&x.view===0)};
 // Location captions follow the revised Chapters 5–6 manuscripts.
 const laterLocations=[['The old steps','The signal rock','The signal rock','The signal rock','Quarry Shelter'],['The signal rock','The bakery','The mill yard','The mill and crossing','The village square']];
 for(const view of QUESTION_SCENES.filter(x=>x.stage>=4))view.name=laterLocations[view.stage-4][view.view];

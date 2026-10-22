@@ -26,8 +26,7 @@ test('Chapter 3 story, main notes and retries all have a crop frame',()=>{
   assert.ok(main);assert.equal(main,retry);
   assert.ok(readingFrameArt('m'+n));
  }
- assert.equal(questionFrameArt('m11').columns,1);assert.equal(questionFrameArt('m11').rows,1);
- for(let n=12;n<=15;n++)assert.equal(questionFrameArt('m'+n).cell,n-12);
+ for(let n=11;n<=15;n++)assert.equal(questionFrameArt('m'+n).cell,3);
 });
 test('Chapter 3 crops isolate one painting in desktop, portrait and tablet landscape panels',()=>{
  for(const [width,height] of [[1366,714],[768,970],[1024,546],[600,546]])for(let n=11;n<=15;n++){
@@ -36,5 +35,17 @@ test('Chapter 3 crops isolate one painting in desktop, portrait and tablet lands
   const left=g.x+(f.cell%cols)*g.width/cols,top=g.y+Math.floor(f.cell/cols)*g.height/rows;
   assert.ok(left<=0&&top<=0);assert.ok(left+g.width/cols>=width&&top+g.height/rows>=height);
   assert.equal((g.width/cols)/(g.height/rows),1.5);
+ }
+});
+
+ test('Chapter 3 has twenty distinct narrative frames anchored in approved prose', async()=>{
+ const {CHAPTER_THREE}=await import('../chapter-three.js');
+ for(const scene of CHAPTER_THREE){
+  const frames=FRAME_ART.filter(f=>f.scene===scene.id&&f.kind==='story');
+  assert.equal(frames.length,4);assert.equal(new Set(frames.map(f=>f.asset+':'+f.cell)).size,4);
+  for(const f of frames){if(f.focus!==undefined){const g=frameGeometry(768,970,f.cell,f.focus);const subjectX=g.x+(f.cell%2+.23)*g.width/2;assert.ok(subjectX>0&&subjectX<768,'Keep left-side rabbits in portrait crop');}}
+  const prose=scene.paragraphs.join(' ');let previous=-1;
+  for(const frame of frames){const at=prose.indexOf(frame.text);assert.ok(at>previous,frame.id);previous=at;assert.equal(textFrameArt(scene.id,frame.text),frame);}
+  for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(textFrameArt(scene.id,part.join(' ')).asset.startsWith('chapter-three/frames/'));
  }
 });
