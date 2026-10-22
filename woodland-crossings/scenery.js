@@ -27,6 +27,9 @@ for(const view of QUESTION_SCENES.filter(x=>x.stage===1)){
  Object.assign(view,{asset:'chapter-two/scenes-v4.webp',name:['The rain-wet streambank','Sheltered marks','The lamplit bank','Beside the reeds','The tool shed'][view.view],focus:`${cell%2*100}% ${Math.floor(cell/2)*100}%`,scale:'200% 200%'});
 }
 SCENES[1]={...SCENES[1],asset:'chapter-two/scenes-v4.webp',name:'The rain-wet streambank',focus:'0% 100%',scale:'200% 200%'};
+// Location captions follow the revised Chapters 5–6 manuscripts.
+const laterLocations=[['The old steps','The signal rock','The signal rock','The signal rock','Quarry Shelter'],['The signal rock','The bakery','The mill yard','The mill and crossing','The village square']];
+for(const view of QUESTION_SCENES.filter(x=>x.stage>=4))view.name=laterLocations[view.stage-4][view.view];
 export function questionScene(q,key=null){
  const views=QUESTION_SCENES.filter(x=>x.stage===q.stage);
  const saved=views.find(x=>x.key===key);if(saved)return saved;

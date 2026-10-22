@@ -5,8 +5,8 @@ export const CASES=[
  {title:'What Had Left the Mill',intro:'A bell sounds beyond the stream. Inside the mill, Pip and Mara find muddy prints and an unfinished note.',clue:'Sheltered circular marks suggest that someone put an object down. Whether it was the bell remains uncertain.',icon:'tracks'},
  {title:'The Wrong Path',intro:'Pip follows the marks towards the lower footbridge. Mara has noticed that Bram crossed the bridge out on the map.',clue:'The bridge is broken and the bank is unstable. Pip and Mara return to the village for help.',icon:'bell'},
  {title:'A Bell in Two Places',intro:'Back at the bakery, Pip and Mara compare two accounts of the bell. The witnesses heard it in different places—and at different times.',clue:'The accounts allow time for the bell to move uphill. The shelter is a place to check; the supper preparations do not prove anyone is there.',icon:'map'},
- {title:'Two accounts, one night',intro:'One witness heard the bell near the mill. Another heard it upstream. Pip checks when each sound was heard.',clue:'The accounts describe different times. The bell moved during the night.',icon:'clock'},
- {title:'Beyond the hillside',intro:'Pip and Mara follow the marked hillside route. Through the fog, they hear the warning bell—and voices calling from a shelter.',clue:'The caretaker is with the stranded travellers. The three clues belong to one rescue.',icon:'home'}
+ {title:'An Answer in the Dark',intro:'The villagers clear the higher path. Across the gorge, a light answers Pip’s signal.',clue:'The signals establish contact. At the shelter, Mara hears two conflicting accounts.',icon:'clock'},
+ {title:'Before Morning',intro:'Everyone returns safely, but Mara has a question Bram has not answered.',clue:'Witness testimony and physical evidence expose deliberate timber removal. Rescue does not erase responsibility.',icon:'home'}
 ];
 export const EGGS=[
  {id:'ghost-shroom',name:'The shy mushroom ghost',text:'A mushroom wearing a bedsheet. Very spooky. Very small.',icon:'ghost'},

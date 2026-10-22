@@ -252,88 +252,128 @@ Pip looked down at the little roof on the map. Bram might be up there with two o
 
 ## 5. An Answer in the Dark
 
-Before they left, the baker put a lantern in her window for anyone returning by the village road. Its square of yellow light remained visible between the gardens until the path turned into the trees, where Pip could hear the search party spreading out behind her. Coats brushed against wet leaves, boots struck the hidden stones, and someone at the back kept warning the next person about a low branch.
+Before they left, the baker put a lantern in her window for anyone returning by the village road. A neighbour brought folded canvas and two stout poles from the fair stalls. Pip followed the ferryman between the gardens, with Mara beside her and the other lamps bobbing behind. At the last turn, the warm square in the bakery window disappeared among the trees.
 
-With several lamps, the entrance to the higher path looked different. Beneath the brambles were old stone steps, edged with ferns and worn into shallow hollows by feet that had used them long before Pip was born. The adults cut back the worst of the thorns, passing the stems carefully from hand to hand so nobody caught their face on the hooks. Beyond them, the fallen beech lay across the track with its pale broken wood exposed to the rain.
+Beneath the brambles were old stone steps, edged with ferns and worn into shallow hollows. The adults cut back the thorns and passed the stems carefully from paw to paw. Beyond the steps, a fallen limb of the beech blocked the narrow track. Its trunk leaned into the bushes, with smaller branches caught beneath it.
 
-They had reached a bend overlooking the opposite slope when the bell rang three times. Pip stopped beside a rock and lifted her lamp, searching the trees across the gorge until she found a small light beneath an overhang. It wavered close to the ground, disappeared behind something, then rose again.
+Just before the obstruction, a broad rock overlooked the opposite slope. The ferryman checked the ground before letting Pip and the baker stand beside it. Across the gorge, a bell rang three times. Pip raised the oil lamp she had carried from the mill and found a small light beneath a rocky overhang.
 
-“Bram!” she called, with both paws cupped beside her mouth.
+“Bram!” Pip called, with both paws cupped beside her mouth.
 
-The ringing stopped, and the whole party grew quiet to listen. From far below came the crash of a branch striking the stones, followed by the continuous rush of water. Pip drew breath to call again, afraid her voice had not reached the other side.
+The ringing stopped. Far below, a branch crashed against the stones, and for a moment the rush of water seemed to fill the whole valley. Then three more strokes came through the rain.
 
-Before she could, the bell answered with three clear strokes.
+Pip wanted to call that an answer. But the bell had been ringing before she shouted too.
 
-“We can see you!” she shouted, raising the lamp above her head.
+“We can see your light!” she called. She raised and lowered her lamp twice, waited, then did it once more. Across the gorge, the small light moved twice, paused, and moved again.
 
-A voice came back through the rain, too broken by the gorge for her to recognise. She caught *three of us*, then a longer stretch she could not understand, and finally *can't walk*. Beside her, the ferryman raised one paw to keep the others quiet while he listened.
+“They can see us,” Mara said.
 
-“Stay up there!” he called. “We're coming round!”
+A voice followed, broken by the water and the distance. Pip caught “three of us”, then something she could not understand, and finally “can't walk”. She could not recognise the speaker.
 
-He went to help with the beech, where the saw soon began its steady rasp. Pip remained by the rock, watching the far light while curls of wet sawdust gathered beneath the blade. From here the shelter seemed near enough to reach in a few minutes, but between it and her lamp the valley fell away into a darkness full of water.
+“Stay at the shelter!” the ferryman called. “We're coming round!”
 
-Mara brought out her paper lantern and eased its crushed corners apart. The candle had survived beneath her coat, and when she lit it from Pip's lamp the little windows glowed amber, showing the uneven edges she had been so careful to cut.
+The ferryman returned to the fallen limb, where the saw began its steady rasp. From the rock, the shelter looked almost close enough to touch. Between it and Pip's lamp, the gorge fell away into darkness full of water.
 
-“I can take this with the map,” she said. “You stay where they can see you.”
+Mara brought out her paper lantern. She had blown out its candle before leaving the mill and tucked it beneath her coat; the corners had crumpled when she pulled Pip away from the bank. Now she eased them apart and lit the wick from the oil lamp. Amber light filled the little windows.
 
-Pip wanted to object. She had followed Bram's prints all this way and wanted to be there when they found him, but the light across the gorge was moving again. When she lifted her own lamp, it steadied.
+“I can hold the map for you,” she told the ferryman. “There's another fork after Alder Arch.”
 
-“I can hold the map for you,” Mara told the ferryman. “There's another fork after the bridge.”
+He passed it to her. “Stay between us, and tell me when we're near the turning.”
 
-“All right,” Pip said, making room for her to pass along the path.
+Pip wanted to go too. She had followed the prints and called across the gorge, and she wanted to see who would stand up when the rescuers arrived. Then the shelter light dipped out of sight. She lifted her lamp, and it rose again.
 
-The baker stayed beside Pip while the others worked at the fallen tree. Together they watched the saw open a pale cut in the trunk, widening slowly until the first length could be rolled aside. Whenever the bell sounded, Pip raised and lowered her lamp three times. After a little while, the light beneath the overhang began to answer in the same way.
+“I'll stay here,” she said. “They'll know we haven't gone away.”
 
-The baker wrapped a dry scarf around her shoulders and helped her rest the lamp on the rock between signals. Rain pattered on the scarf and trickled from Pip's whiskers while the lights of the search party grew smaller among the trees. Farther up the valley they appeared in a row above the gorge, crossing the high stone bridge, before the opposite hillside hid them again.
+The baker stayed with Pip while the others rolled the sawn length clear. Wet sawdust clung to the ferryman's boots. Beyond the obstruction, the lamps began to climb, disappearing behind trees and appearing again a little higher.
 
-Pip watched until her eyes watered. She had begun to wonder whether they had missed the fork when a second lantern came into view beside Bram's, lighting a patch of rock and three figures huddled against it. One of the figures lifted an arm, and from down the valley came a faint, cheerful shout.
+Whenever the shelter light moved, Pip answered. Between signals, the baker helped her rest the lamp on the broad rock and wrapped a dry scarf around her shoulders. Pip could feel the warmth gathering beneath her wet cape.
 
-The baker put a hand on Pip's shoulder as she sat down. Her knees had begun shaking now that she no longer had to stand, and she was grateful that the scarf covered them.
+Further up the gorge, the search party appeared in a row across the high stone bridge. Mara's small paper lantern travelled between two larger lamps. Then the opposite hillside hid them.
+
+Pip watched until her eyes watered. At last, new lights gathered beneath the overhang. A voice called that they had found Bram and both travellers. The mender had hurt her ankle. They were bringing her back.
+
+Later, Mara would tell Pip how Bram had risen when the lamps reached the shelter. His coat was muddy, and the mender sat with her ankle wrapped beside the apprentice's work case. A long rope ran between two trees along the slippery slope below them.
+
+Bram said he had fixed it there so the apprentice could help the mender climb to the overhang. It had given them something to hold, but it could not make her able to walk the steep path to Alder Arch.
+
+As the neighbours unfolded their canvas, Bram began talking about the bridge. “The storm took the support away. I hadn't been down to the crossing since yesterday morning. I knew nothing was wrong until I heard them calling tonight.”
+
+The mender looked up. “But you stopped us there this afternoon. You were on the far approach. You told us to take Alder Arch because you were doing work underneath.”
+
+“I meant I hadn't crossed it,” Bram said quickly. He bent to help with the canvas before she could answer.
+
+Mara held the lamp steady while the ferryman secured the stretcher. She did not interrupt. But she kept the two statements separate in her mind: Bram had said he had not been to the crossing; the mender said he had spoken to her there. They could ask again when everyone was warm.
 
 ## 6. Before Morning
 
-The return took much longer than the outward journey. The mender could not put weight on her ankle, so the search party made a stretcher from poles and folded canvas, lifting it carefully over the roots and stopping on the steeper stretches to change carriers. By the time their lamps appeared around the bend, the rain had thinned to a fine mist, and the birds in the sheltered trees were beginning to stir.
+The return took much longer than the outward journey. The neighbours carried the stretcher over the roots, stopping on the steeper stretches to change places. The apprentice walked beside the mender with her work case pressed against her chest. Bram followed with the rope coiled over one shoulder and the bell over the other.
 
-Her apprentice walked beside the stretcher with a work case held tightly against her chest. Water dripped from its brass corners, leaving dark spots on her skirt, but she kept one hand on the mender's blanket whenever the path grew rough. Bram came behind them with the bell slung from his shoulder and mud dried in streaks along the front of his coat. At one cuff, Pip's yellow stitches dangled from the torn edge.
+When the lamps reached the rock, Pip stood so quickly that the baker's scarf slipped to the ground. Bram lowered himself beside her. At his cuff, the crooked yellow stitches dangled from a torn edge.
 
-“Bram, we found a piece of your coat,” Pip said, standing so quickly that the scarf slipped from her shoulders.
+“We found the green cloth on the latch,” Pip told him. “I thought someone had taken you.”
 
-“My coat?” Bram asked, looking down at his cuff as though he had forgotten it was there.
+“I caught my sleeve as I went out,” he said. “I'm sorry you were frightened.” He put down the bell, and Pip saw the chip in its lip. Bram noticed her looking. “I rested it by the porch and under the reeds while I tightened the strap.”
 
-“It was caught in the door,” she told him. “I thought something had happened to you.”
+That fitted the two circular marks. Pip felt relief, but Mara was watching Bram's face. On the walk back to the bakery, she quietly told Pip what he and the mender had said at the shelter.
 
-“I caught it on the latch,” Bram said, lowering himself onto the rock beside her. His breath came slowly after the climb, and for a moment he rested his paws on his knees before going on. “I didn't stop to pull it out. I'm sorry, Pip. You must have had a fright.”
+At the bakery, the mender was settled beside the oven with her ankle supported. Someone fetched the pot from Bram's cottage and heated the supper. Steam smelling of leeks and pepper rose from the bowls, and Pip wrapped her paws around hers.
 
-Back at the bakery, somebody had put the tables together and spread blankets over the chairs nearest the oven. The mender was settled with her ankle supported on a stool, and bowls of the supper fetched from Bram's cottage were passed along the table, giving off steam scented with leeks and pepper. Pip wrapped both paws around hers until the warmth began to reach her fingers.
+The mender explained that Bram had directed them towards Alder Arch that afternoon. They had found the upper approach obstructed and waited in a wayside shed on the far bank, hoping the rain would ease. When it did not, they returned to the lower bridge. Her ankle had turned on the muddy approach before they could cross.
 
-With people coming and going to fetch dry clothes, Bram told them what had happened. He had gone to the mill to check the stream before collecting his guests and had seen their light from the upper window, beyond the bridge. During a lull in the rain he heard them calling, and by the time he came downstairs the water had reached the lower stones.
+Bram said he had heard their calls from the mill, taken the rope and bell, and crossed while the middle planks were still in place. After they gave way, he had helped the travellers uphill. Those parts of his account agreed with theirs.
 
-He began marking the safer route on the map, intending to leave a warning for anyone coming down the mill lane. Then the mender called again. The bridge was still whole, and he thought he could cross quickly and bring them back before the stream rose any farther.
+“The bridge was sound yesterday,” he added. “The storm must have done the rest.”
 
-“That was foolish,” he said, turning his spoon in his bowl. “I should have fetched help.”
+Mara set down her spoon. “You said you knew nothing was wrong until tonight. But you sent them away from the bridge this afternoon.”
 
-To reach the long rope, he had dragged the storage chest away from the upstairs wall. He took the bell as well, hoping he could make his guests hear him above the water, and caught his coat on the door as he hurried out. He was across the bridge when the middle planks gave way, with the mender already unable to walk properly after hurting her ankle on the lower path.
+“That's what I said,” the mender confirmed. “You told us you were working underneath.”
 
-The three of them managed to reach the quarry shelter, but the steep climb from there to Alder Arch was more than she could attempt without support. Bram could not carry her alone, and the apprentice was too cold and exhausted to fetch help safely, so he stayed and rang the bell whenever he thought someone might be near.
+Bram looked at Pip. “You know I wouldn't leave anyone out there.”
 
-“We heard you answering,” he told Pip, looking up from his bowl. “That helped. It was a long time to sit there without knowing.”
+Pip did know that he had stayed with the travellers. She wanted that to answer Mara's question, but it answered a different one.
 
-Pip nodded and took another spoonful, finding that she was much hungrier than she had realised. Across the table, Mara was trying to straighten her lantern, which had been crushed against a branch on the way back. One window had collapsed, and the paper beside it was browned where it had come too close to the candle.
+“You helped them,” Pip said. “But what work were you doing under the bridge?”
 
-“I've got some paper in here,” the apprentice said, drawing her work case onto her lap. “Would you like me to mend that?”
+Bram pushed his bowl away. “Only clearing old wood. There was nothing worth keeping.”
 
-She dried the lid with a cloth before opening it, revealing small rolls of coloured paper packed around a box of tools. While the bowls were cleared, she trimmed a piece of amber paper and fitted it into the damaged frame, turning the lantern towards the oven light to check that the edges sat neatly. Mara watched her hands and held the scissors whenever she needed both paws free.
+Pip remembered the pale shavings against the mill wall. “Then why was there fresh wood beneath your window?”
 
-By the time they went outside, a pale strip of sky showed above the roofs. The stalls stood empty beneath their damp awnings, and the little boats in the fountain had come to rest against one another. Above them, the unfortunate pumpkin still hung with its nose folded sideways.
+“Shavings don't tell us where wood came from,” Mara said. She turned to the ferryman. “Can we look?”
 
-“I don't suppose you'll want another of my stories next year,” Bram said, stopping beneath it.
+By then the sky was beginning to pale. The mender remained with the baker while the ferryman took the rabbits and Bram to the mill. In the upper room, behind the displaced chest, lay three squared lengths of timber. Pale curls covered the boards beneath a small plane. A narrow opening in the side wall looked down on the shavings Pip had seen outside.
 
-“You could tell this one,” Pip suggested, glancing at Mara. “About what happened when you rang the bell.”
+The ferryman turned one length in the lamplight. Beneath a newly shaved strip, a blue triangle remained beside two square bolt holes. “I marked the crossing's braces with these when we repaired it last spring,” he said. “The marks faced underneath. This was a support, not loose scrap.”
 
-“I might leave out the part where I tore my coat,” Bram said, examining the loose yellow threads again.
+Mara asked whether it might have been replaced during a repair. The ferryman shook his head. “No replacements were authorised. We'll check the other end before we decide what happened.”
 
-“You have to tell that bit,” Mara replied. “We thought someone had taken you.”
+The ferryman left the rabbits in the mill yard with the neighbour and went to inspect the village end of the crossing from firm ground. When he returned, he described an empty pair of bolt holes and a short section of brace still fixed beneath the deck. Its end was flat, with parallel saw marks. There were no torn fibres where the rest should have been.
 
-“All right,” he said, reaching up to straighten the pumpkin's nose. “I'll tell it properly.”
+“The water may have brought the planks down,” Mara said. “But it didn't unscrew the bolts and saw through the brace.”
 
-Pip and Mara took the longer way home through the square, walking close enough to share the repaired lantern between them. Through its new amber window, the candle cast a warm patch over their muddy boots, and as they passed the fountain Pip could smell the first batch of morning bread coming from the bakery.
+Pip looked towards the upper window. The scraping they had heard did not prove what Bram had been moving. The shavings alone had not proved it either. But the marked timber in his workroom and the cut support at the bridge belonged in the same account.
+
+Bram sat on the porch step. After a long silence, he said he had been taking timber from the stores and selling it to pay a debt. That afternoon, he had removed braces from the old crossing too. He had thought the remaining timber would hold.
+
+“When it started to shift, I sent people round by the arch,” he said. “I thought I could replace the braces before anyone looked. Then the rain came.”
+
+He admitted carrying the lengths upstairs and shaving off their repair marks. At quarter to twelve, he had been dragging the chest in front of them when he heard the travellers. He took the rope from the chest, carried the lamp downstairs, crossed out the bridge on his map and began the warning note. Their next call made him leave it unfinished.
+
+“Why didn't you fetch help?” Pip asked.
+
+“Because they'd ask what had happened to the bridge,” he said. “I thought I could get them back myself.”
+
+The ferryman took Bram's store keys. Until the village had examined the crossing and the missing timber, Bram would have no access to either. The neighbours closed both approaches to the footbridge. The rescue was over, but there was work left that could not be put right before breakfast.
+
+Back at the bakery, the apprentice opened her work case and offered to mend Mara's lantern. A branch had crushed one window on the return journey. She fitted a piece of amber paper into its frame while Mara held the scissors, and turned it towards the oven to check the edges.
+
+Bram waited beside the door as Pip and Mara put on their coats. “I was glad to see your lamp,” he told Pip.
+
+“I'm glad we found you,” she said. After a moment, she added, “I wish you'd told us the truth.”
+
+He had no quick reply. Pip did not wait for one.
+
+Outside, the unfortunate paper pumpkin still hung over the fountain with its nose folded sideways. Pip stopped beneath it, then looked at Mara. They were both too tired to climb up. They took the longer way home, sharing the light from the repaired lantern as the smell of morning bread drifted across the square.
+
+Later that week, the village appointed a new caretaker. Bram had to account for the timber he had sold and help pay for the repairs. Pip saw him carrying boards to the workshop under the ferryman's supervision. She raised a paw, but she did not run over as she once would have done.
+
+That evening, she opened her notebook beside Mara. Under their first guesses, she wrote what they had actually found. Some guesses had been wrong. Some had led them somewhere useful. This time, she left space between the two.

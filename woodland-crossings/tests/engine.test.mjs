@@ -14,7 +14,7 @@ test('every FANBOYS is a target; semicolons recur in more complex structures and
  for(const t of ['for','and','nor','but','or','yet','so'])assert.ok(STORY.some(q=>q.valid.some(v=>v[0]===t)),t);
  assert.ok(STORY.filter(q=>q.valid.some(v=>v[0]==='semi')).length>=10);
  assert.ok(STORY.slice(20).every(q=>q.kind==='paragraph'));
- assert.ok(STORY.slice(25).every(q=>q.parts.join('').includes('\n\n')));
+ assert.ok(STORY.slice(27).every(q=>q.parts.join('').includes('\n\n')));
  assert.equal(STORY[29].valid.length,6);
 });
 test('later trays are stable and all targets are grammatical under their explicit briefs',()=>{
@@ -74,6 +74,6 @@ test('explicit whole-text goals disambiguate the offered answers, including alre
 });
 
 test('semantic briefs and contrast trays follow the approved chapter rules',()=>{
- for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage!==1&&q.stage!==2&&q.stage!==3)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
- for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^yet /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
+ for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage===0)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
+ for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^but /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
 });

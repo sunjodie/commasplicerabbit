@@ -532,202 +532,355 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 ## 21. Chapter 5 · witness-relative-and-result
 
-**Student brief:** Preserve the existing sentence boundaries. Use a coordinating joining word to make the blocked view lead explicitly to its consequence.
-
-**On-request help:** Keep the witness description in its sentence. Use SO to connect the blocked view with its consequence. Leave correct commas alone.
-
-**Teacher goal:** 2 sentence(s); add so.
+**Student brief:** Keep the existing sentence boundary and paired commas. Add a coordinating conjunction showing the result of the obstruction.
 
 **Original**
 
-The baker, who was closing her shutters, heard the bell near the mill. Fog covered the lane, she could not see who was carrying it.
+The ferryman, who carried the saw, checked the path. A fallen limb blocked the track, the adults cut it into sections.
 
 **Target**
 
-The baker, who was closing her shutters, heard the bell near the mill. Fog covered the lane, so she could not see who was carrying it.
+The ferryman, who carried the saw, checked the path. A fallen limb blocked the track, so the adults cut it into sections.
 
-**Why:** The who-clause adds information about the witness. Close that extra information before the main verb “heard”. Use so to show that the blocked view explains the witness’s inability to see the bell.
+**Why:** Keep the comma opening the extra information. Keep the comma closing the description before the main verb. A comma plus “so” makes the second action a result of the first situation.
+
+**Retry brief:** Keep the existing sentence boundary and paired commas. Add a coordinating conjunction showing the result of the obstruction.
+
+**Retry original**
+
+The baker, who stayed beside Pip, watched the shelter. Pip needed both paws to signal, the baker held the scarf.
+
+**Retry target**
+
+The baker, who stayed beside Pip, watched the shelter. Pip needed both paws to signal, so the baker held the scarf.
+
+**Retry explanation:** Keep the comma opening the extra information. Keep the comma closing the description before the main verb. A comma plus “so” makes the second action a result of the first situation.
 
 ## 22. Chapter 5 · witness-time-shift
 
-**Student brief:** Start a fresh sentence at the later time. Keep all words.
-
-**On-request help:** Keep the WHEN opening attached. Begin a new sentence at the later time, rather than adding AND.
-
-**Teacher goal:** 2 sentence(s); no added joining words.
+**Student brief:** Keep the opening attached. Start a fresh sentence at the later event.
 
 **Original**
 
-When the baker checked her clock, it was almost midnight, ten minutes later, a ferryman heard the same bell farther upstream.
+When Pip first called, the bell rang again, a little later, the distant light copied her signal.
 
 **Target**
 
-When the baker checked her clock, it was almost midnight. Ten minutes later, a ferryman heard the same bell farther upstream.
+When Pip first called, the bell rang again. A little later, the distant light copied her signal.
 
-**Why:** When makes the opening dependent. The later time begins a new event in the account. The brief asks for a new sentence there.
+**Why:** The opening is subordinate and stays attached with a comma. Both clauses are complete. A full stop marks the requested later event.
+
+**Retry brief:** Keep the opening attached. Start a fresh sentence at the later event.
+
+**Retry original**
+
+While the adults cleared the path, Pip held the lamp, afterwards, the search party crossed Alder Arch.
+
+**Retry target**
+
+While the adults cleared the path, Pip held the lamp. Afterwards, the search party crossed Alder Arch.
+
+**Retry explanation:** The opening is subordinate and stays attached with a comma. Both clauses are complete. A full stop marks the requested later event.
 
 ## 23. Chapter 5 · witness-two-transitions
 
-**Student brief:** Keep two sentences and every word. Connect the ideas with punctuation alone.
-
-**On-request help:** Keep two sentences, preserve all words, and link each pair of complete clauses with punctuation alone.
-
-**Teacher goal:** 2 sentence(s); no added joining words.
+**Student brief:** Keep two sentences and every word. Use a semicolon before each transition.
 
 **Original**
 
-The accounts appeared to disagree, however, they described different moments. The second sound came later, therefore, the bell could have moved upstream.
+The shelter looked close, however, the gorge lay between them. The lower bridge was broken, therefore, the rescuers went round by Alder Arch.
 
 **Target**
 
-The accounts appeared to disagree; however, they described different moments. The second sound came later; therefore, the bell could have moved upstream.
+The shelter looked close; however, the gorge lay between them. The lower bridge was broken; therefore, the rescuers went round by Alder Arch.
 
-**Why:** However needs a semicolon before it in this sentence. Therefore also needs a semicolon between these complete clauses.
+**Why:** The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma. The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma.
+
+**Retry brief:** Keep two sentences and every word. Use a semicolon before each transition.
+
+**Retry original**
+
+Pip wanted to join the search party, nevertheless, she stayed at the rock. The distant light copied her pattern, therefore, Mara knew someone could see them.
+
+**Retry target**
+
+Pip wanted to join the search party; nevertheless, she stayed at the rock. The distant light copied her pattern; therefore, Mara knew someone could see them.
+
+**Retry explanation:** The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma. The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma.
 
 ## 24. Chapter 5 · correct-mixed-note
 
-**Student brief:** Edit only what needs changing. Preserve the wording, joining words and existing sentence boundaries.
-
-**On-request help:** This note is already correctly punctuated. Preserve its words, sentence boundaries and joining words.
-
-**Teacher goal:** 3 sentence(s); no added joining words.
+**Student brief:** Edit only what needs changing. Preserve the wording, conjunctions and existing sentence boundaries.
 
 **Original**
 
-Although the fog muffled the sound, both witnesses recognised the bell. Their times differed, but neither account had to be false. Pip recorded the places, times and weather.
+Although Pip wanted to go, she remained beside the rock. The shelter was visible, but the gorge prevented a direct approach. The neighbours brought lamps, poles and canvas.
 
 **Target**
 
-Although the fog muffled the sound, both witnesses recognised the bell. Their times differed, but neither account had to be false. Pip recorded the places, times and weather.
+Although Pip wanted to go, she remained beside the rock. The shelter was visible, but the gorge prevented a direct approach. The neighbours brought lamps, poles and canvas.
 
-**Why:** Although introduces a dependent opening. But already joins the two complete clauses. The last comma belongs inside a list, not between two sentences.
+**Why:** Keep the comma after the subordinate opening. The existing coordinating conjunction already joins the clauses correctly. This comma separates items in a list, not complete clauses.
+
+**Retry brief:** Edit only what needs changing. Preserve the wording, conjunctions and existing sentence boundaries.
+
+**Retry original**
+
+Although the path was steep, the party kept climbing. Mara carried the map, and the ferryman led the way. Pip watched the trees, the bridge and the shelter.
+
+**Retry target**
+
+Although the path was steep, the party kept climbing. Mara carried the map, and the ferryman led the way. Pip watched the trees, the bridge and the shelter.
+
+**Retry explanation:** Keep the comma after the subordinate opening. The existing coordinating conjunction already joins the clauses correctly. This comma separates items in a list, not complete clauses.
 
 ## 25. Chapter 5 · negative-witness-note
 
-**Student brief:** Keep two sentences. Add the second negative without changing its word order; connect the later observations with punctuation alone.
-
-**On-request help:** Use NOR for the second negative. Keep the BECAUSE opening attached; connect its two observations with punctuation alone in one sentence.
-
-**Teacher goal:** 2 sentence(s); add nor.
+**Student brief:** Join these two sentences with a coordinating conjunction adding a second negative. Change the second clause’s word order as needed.
 
 **Original**
 
-The ferryman did not claim to have seen the caretaker, did he claim to know why the bell was moving. Because the wind had dropped, the ringing was clearer upstream, the second witness was nearer the sound.
+Pip could not recognise the voice. She could not see the speaker.
 
 **Target**
 
-The ferryman did not claim to have seen the caretaker, nor did he claim to know why the bell was moving. Because the wind had dropped, the ringing was clearer upstream; the second witness was nearer the sound.
+Pip could not recognise the voice, nor could she see the speaker.
 
-**Why:** Nor introduces a second negative clause, with the auxiliary verb before its subject. Because makes the opening dependent on what follows. The two observations after the because opening are complete clauses. A semicolon joins them.
+**Why:** “Nor” adds a second negative. Move “could” before the subject and remove “not”: the negative is supplied by “nor”.
+
+**Retry brief:** Join these two sentences with a coordinating conjunction adding a second negative. Change the second clause’s word order as needed.
+
+**Retry original**
+
+Mara could not carry the mender alone. She could not shorten the route.
+
+**Retry target**
+
+Mara could not carry the mender alone, nor could she shorten the route.
+
+**Retry explanation:** “Nor” adds a second negative. Move “could” before the subject and remove “not”: the negative is supplied by “nor”.
 
 ## 26. Chapter 6 · passage-scene-and-reason
 
-**Student brief:** Start a fresh sentence when the account moves to the next location. Use a coordinating joining word to introduce the evidence for the final judgement. Keep the remaining boundaries.
-
-**On-request help:** Keep the opening attached. Begin a new sentence at the change from setting out to hearing voices. Use FOR to introduce the evidence for the final judgement.
-
-**Teacher goal:** 4 sentence(s); add for.
+**Student brief:** Start a new sentence when the account moves to the bakery. Add a coordinating conjunction introducing the evidence for the final judgement.
 
 **Original**
 
-After Pip and Mara compared the accounts, they left the village, on the hillside, they heard voices through the trees. The callers were close, their words carried clearly above the rain.
-
-The higher track curved back towards the sheltered porch behind the mill.
+When the rescuers reached the rock, Pip stood up, at the bakery, the mender rested beside the oven. The return had been slow, the carriers had stopped on the steep stretches.
 
 **Target**
 
-After Pip and Mara compared the accounts, they left the village. On the hillside, they heard voices through the trees. The callers were close, for their words carried clearly above the rain.
+When the rescuers reached the rock, Pip stood up. At the bakery, the mender rested beside the oven. The return had been slow, for the carriers had stopped on the steep stretches.
 
-The higher track curved back towards the sheltered porch behind the mill.
+**Why:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces evidence supporting the preceding judgement.
 
-**Why:** After introduces the dependent opening. The hillside scene begins a new sentence. For introduces evidence supporting the judgement in the preceding clause.
+**Retry brief:** Start a new sentence when the account moves to the bakery. Add a coordinating conjunction introducing the evidence for the final judgement.
+
+**Retry original**
+
+After the neighbours brought everyone back, they put down their lamps, inside the bakery, supper was heating. The mender still needed support, she could not put weight on her ankle.
+
+**Retry target**
+
+After the neighbours brought everyone back, they put down their lamps. Inside the bakery, supper was heating. The mender still needed support, for she could not put weight on her ankle.
+
+**Retry explanation:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces evidence supporting the preceding judgement.
 
 ## 27. Chapter 6 · passage-observation-and-result
 
-**Student brief:** Preserve the existing sentence boundaries. Use a coordinating joining word to make the damaged crossing lead explicitly to the safer route.
-
-**On-request help:** Keep the WHO description and the WHILE opening attached. Use SO for the result of the broken bridge. Keep all other sentence boundaries.
-
-**Teacher goal:** 3 sentence(s); add so.
+**Student brief:** Keep the paired commas. Add a coordinating conjunction making the contradiction a reason for further questions. Preserve the existing sentence boundary.
 
 **Original**
 
-The caretaker, who was wrapping a blanket around a traveller, looked up as Pip arrived. The footbridge had lost two planks, he had led the travellers along the higher path.
-
-While the storm passed, they waited beneath the mill’s old porch.
+The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, Mara asked about his work at the bridge.
 
 **Target**
 
-The caretaker, who was wrapping a blanket around a traveller, looked up as Pip arrived. The footbridge had lost two planks, so he had led the travellers along the higher path.
+The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, so Mara asked about his work at the bridge.
 
-While the storm passed, they waited beneath the mill’s old porch.
+**Why:** Keep the opening comma around extra information. Keep the closing comma before the main verb. A comma plus “so” links the discovery to the action it prompts.
 
-**Why:** Open the extra information about the caretaker. Close the description before the main verb. So makes the damaged crossing the cause of choosing a safer route. While introduces a dependent opening.
+**Retry brief:** Keep the paired commas. Add a coordinating conjunction making the contradiction a reason for further questions. Preserve the existing sentence boundary.
+
+**Retry original**
+
+The ferryman, who had repaired the crossing, recognised his blue mark. The timber was a bridge support, he went to check the crossing.
+
+**Retry target**
+
+The ferryman, who had repaired the crossing, recognised his blue mark. The timber was a bridge support, so he went to check the crossing.
+
+**Retry explanation:** Keep the opening comma around extra information. Keep the closing comma before the main verb. A comma plus “so” links the discovery to the action it prompts.
 
 ## 28. Chapter 6 · passage-warning-and-contrast
 
-**Student brief:** Preserve the paragraphs and sentence boundaries. Use a coordinating joining word to make the first contrast explicit; repair the remaining join with punctuation alone.
-
-**On-request help:** Keep the two paragraphs and existing sentence boundaries. Use BUT for the first contrast. Make the join before THEREFORE grammatical without adding words or a sentence.
-
-**Teacher goal:** 3 sentence(s); add but.
+**Student brief:** Preserve the paragraphs and sentence boundaries. Add a conjunction expressing contrast, then use a semicolon before the transition.
 
 **Original**
 
-The travellers could not see the damaged bridge, they could see the lantern in the mill’s upper window.
+Bram had helped the travellers, his help did not explain the missing timber.
 
-The light marked the danger, therefore, the caretaker had left it burning while he carried the bell upstream. The bell warned anyone who had missed the light.
+The shavings alone did not identify their source, therefore, the rabbits needed further evidence.
 
 **Target**
 
-The travellers could not see the damaged bridge, but they could see the lantern in the mill’s upper window.
+Bram had helped the travellers, but his help did not explain the missing timber.
 
-The light marked the danger; therefore, the caretaker had left it burning while he carried the bell upstream. The bell warned anyone who had missed the light.
+The shavings alone did not identify their source; therefore, the rabbits needed further evidence.
 
-**Why:** But contrasts the lack of a view with the visible warning light. Therefore needs a semicolon before it when the clauses stay in one sentence.
+**Why:** A comma plus “but” makes the contrast explicit. A semicolon joins complete clauses before “therefore”; keep the comma after it.
+
+**Retry brief:** Preserve the paragraphs and sentence boundaries. Add a conjunction expressing contrast, then use a semicolon before the transition.
+
+**Retry original**
+
+The storm had battered the bridge, it could not explain the saw marks.
+
+The support had been cut, therefore, the damage could not be blamed entirely on the weather.
+
+**Retry target**
+
+The storm had battered the bridge, but it could not explain the saw marks.
+
+The support had been cut; therefore, the damage could not be blamed entirely on the weather.
+
+**Retry explanation:** A comma plus “but” makes the contrast explicit. A semicolon joins complete clauses before “therefore”; keep the comma after it.
 
 ## 29. Chapter 6 · passage-reassurance-and-choice
 
-**Student brief:** Preserve the paragraphs, wording and sentence boundaries. Use a coordinating joining word to present the travellers’ final options as alternatives.
-
-**On-request help:** Keep the ALTHOUGH opening and the existing YET. Use OR to offer the travellers a choice.
-
-**Teacher goal:** 3 sentence(s); add or.
+**Student brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
 
 **Original**
 
-Although the coat was torn, the caretaker was unhurt. The missing bell and altered map had looked threatening, yet both had helped the travellers reach safety.
+Although the shavings were fresh, their source was uncertain. Pip suspected wrongdoing, but Mara wanted stronger evidence.
 
-They could wait for the rain to stop, they could return with Pip by the hillside route.
+The wood could have come from an authorised repair, someone could have removed it without permission.
 
 **Target**
 
-Although the coat was torn, the caretaker was unhurt. The missing bell and altered map had looked threatening, yet both had helped the travellers reach safety.
+Although the shavings were fresh, their source was uncertain. Pip suspected wrongdoing, but Mara wanted stronger evidence.
 
-They could wait for the rain to stop, or they could return with Pip by the hillside route.
+The wood could have come from an authorised repair, or someone could have removed it without permission.
 
-**Why:** Although introduces a dependent opening. The existing yet already joins the contrasting clauses; keep its comma. Or offers two complete alternatives; and would make them cumulative instead.
+**Why:** Keep the comma after the subordinate opening. The existing “but” already joins the complete clauses. A comma plus “or” presents two possible explanations as alternatives.
+
+**Retry brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
+
+**Retry original**
+
+Although Bram had stayed with the travellers, his earlier claim needed checking. Mara remembered the mender’s words, but she still asked about the timber.
+
+The disagreement could reflect a mistake, it could reveal a deliberate lie.
+
+**Retry target**
+
+Although Bram had stayed with the travellers, his earlier claim needed checking. Mara remembered the mender’s words, but she still asked about the timber.
+
+The disagreement could reflect a mistake, or it could reveal a deliberate lie.
+
+**Retry explanation:** Keep the comma after the subordinate opening. The existing “but” already joins the complete clauses. A comma plus “or” presents two possible explanations as alternatives.
 
 ## 30. Chapter 6 · final-case-report
 
-**Student brief:** Keep the descriptions attached to their main clauses. Link the paired observations with punctuation alone; make the warning lead explicitly to its result with a coordinating joining word. Start a fresh sentence at the final change of scene.
-
-**On-request help:** Edit the whole report. Keep dependent openings and extra-information commas. Keep the paired physical clues in one sentence using punctuation only. Use SO for the rescue’s result. Begin a new sentence at “By dawn”. Add no other words.
-
-**Teacher goal:** 5 sentence(s); add so.
+**Student brief:** Keep the dependent opening and paired commas. Use a semicolon between the physical observations. Add a conjunction showing the result. Start a new sentence at “Later that week”.
 
 **Original**
 
-Although the upper room had been locked for years, its lantern was burning for a reason. The portable bell, which the caretaker had carried upstream, had left a round rim in the mud, his patched coat had shed a thread beside the frame.
+Although Bram blamed the storm, the physical evidence showed deliberate removal. The timber, which bore a blue repair mark, lay inside the mill, the remaining brace had saw marks.
 
-The light and ringing warned the travellers, they avoided the damaged bridge. The altered map showed the safer path, by dawn, everyone was waiting under the mill’s porch.
+The bridge was unsafe, the neighbours closed both approaches. The village examined what had happened, later that week, a new caretaker took over.
 
 **Target**
 
-Although the upper room had been locked for years, its lantern was burning for a reason. The portable bell, which the caretaker had carried upstream, had left a round rim in the mud; his patched coat had shed a thread beside the frame.
+Although Bram blamed the storm, the physical evidence showed deliberate removal. The timber, which bore a blue repair mark, lay inside the mill; the remaining brace had saw marks.
 
-The light and ringing warned the travellers, so they avoided the damaged bridge. The altered map showed the safer path. By dawn, everyone was waiting under the mill’s porch.
+The bridge was unsafe, so the neighbours closed both approaches. The village examined what had happened. Later that week, a new caretaker took over.
 
-**Why:** Although introduces the opening; its comma stays. This comma opens extra information about the bell. This comma closes that information before “had left”. The bell’s mark and the coat’s trace are described in complete, closely related clauses. Use a semicolon. So connects the warning and the successful result. By dawn changes the time and begins the closing scene. Use a full stop.
+**Why:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete observations; the requested semicolon joins them. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
 
+**Retry brief:** Keep the dependent opening and paired commas. Use a semicolon between the physical observations. Add a conjunction showing the result. Start a new sentence at “Later that week”.
+
+**Retry original**
+
+Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning, Bram had denied visiting the crossing.
+
+Their accounts conflicted, Mara asked another question. The villagers investigated the missing timber, later that week, Bram began helping to pay for repairs.
+
+**Retry target**
+
+Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning; Bram had denied visiting the crossing.
+
+Their accounts conflicted, so Mara asked another question. The villagers investigated the missing timber. Later that week, Bram began helping to pay for repairs.
+
+**Retry explanation:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete observations; the requested semicolon joins them. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
+
+### Chapter 5 inference · An answer, but whose?
+
+Pip raised her lamp twice, paused, then raised it once. The distant light copied the pattern. A voice said “three of us”, but Pip could not recognise it.
+
+Part 1: Which conclusion is best supported?
+
+A. Bram was holding the distant lamp.
+
+B. Someone at the shelter could see and deliberately answer Pip.
+
+C. All three people at the shelter could walk safely.
+
+D. The three people were signalling before Pip arrived because they had already seen her.
+
+Part 2: Which pair of details supports it?
+
+A. The bell rang three times and Pip shouted Bram’s name.
+
+B. The shelter was marked on the map and stood above the water.
+
+C. Pip used a distinctive pattern and the distant light repeated it.
+
+D. Pip recognised the bell and the voice reported three people.
+
+**Answer:** Part 1: B. Part 2: C.
+
+**Why:** Repeating Pip’s pattern supports deliberate communication. The unrecognised voice and reported number do not identify the person holding the light or establish that everyone can walk.
+
+### Chapter 6 inference · Testing Bram’s account
+
+Before admitting the timber removal, Bram said he had not visited the crossing since yesterday morning. The mender said he had stopped her at the far approach that afternoon and told her he was working underneath. Marked bridge timber was later found at the mill.
+
+Part 1: Which conclusion is best supported?
+
+A. The timber alone establishes exactly when Bram visited the bridge.
+
+B. If the mender’s account is accurate, Bram’s claim about his last visit cannot be true.
+
+C. The disagreement proves that Bram intended to injure the mender.
+
+D. Helping the travellers establishes that Bram’s earlier account was accurate.
+
+Part 2: Which pair of details supports it?
+
+A. The missing bell and the circular marks beside the reeds.
+
+B. The blue mark on the timber and the fresh shavings.
+
+C. Bram’s claimed last visit and the mender’s account of speaking to him there that afternoon.
+
+D. The three bowls and the covered pot at the cottage.
+
+**Answer:** Part 1: B. Part 2: C.
+
+**Why:** The two accounts place Bram at the crossing at incompatible times. The conditional conclusion stays within this evidence: it identifies the contradiction without using it alone to prove motive or deliberate injury. Physical evidence separately supports deliberate timber removal.
+
+### Updated optional transfer notes
+
+**b1:** Keep one sentence and every word. Connect the observations with punctuation alone.
+
+Beside the signal rock, a lantern lit the map; its line followed the higher route.
+
+**b2:** Keep one sentence and every word. Change punctuation only.
+
+Bram had not taken the bell home; instead, he had carried it towards the flooded crossing.
+
+**b3:** Use a coordinating joining word to present the two actions as additional events. Start a fresh sentence at sunrise; preserve the earlier boundary.
+
+Where the path reached the village, Pip walked beside Mara. The baker opened the door, and the neighbours brought the stretcher inside. At sunrise, the village began to stir.
 

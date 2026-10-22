@@ -32,7 +32,7 @@ export function frogReached(f,s){
  if(s.story>=(f.stage+1)*5)return true;
  if(f.stage>Math.floor(s.story/5))return false;
  if(f.view===0)return true;
- const id='m'+(f.stage*5+f.view+1),reader=s[['chapterOne','chapterTwo','chapterThree','chapterFour'][f.stage]];
+ const id='m'+(f.stage*5+f.view+1),reader=s[['chapterOne','chapterTwo','chapterThree','chapterFour','chapterFive','chapterSix'][f.stage]];
  return s.story>=f.stage*5+f.view||s.activeId===id||s.activeScenery?.key===f.stage+'-'+f.view||reader?.read?.includes(id)||reader?.positions?.[id]!==undefined;
 }
 export function frogArt(f){const index=f.sprite??(FROGS.findIndex(x=>x.id===f.id)%10);return `<span class="frog-sprite" style="--frog-col:${index%5*25}%;--frog-row:${Math.floor(index/5)*100}%;--frog-base:${index<5?.09:.14}" aria-hidden="true"></span>`;}
