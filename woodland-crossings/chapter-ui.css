@@ -190,3 +190,35 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .vn-keyboard #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace:has(#clauseRewrite) :is(.notebook-source,.editing-brief,.piece-tray){display:none}
  .vn-keyboard #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace:has(#clauseRewrite) .sentence{font-size:15px;line-height:1.35;margin:0 0 4px}
 }
+
+/* Keep the closing scene together; recap and extras turn pages as groups. */
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-closing{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;margin:16px 0 24px;text-align:left}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-village{overflow:hidden;border:1px solid #a78a60;border-radius:16px;background:#28252c}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-village .village-viewport{width:100%;max-height:none;overflow:hidden}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-village .village-canvas{width:100%}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-copy h2{font-size:clamp(24px,2.8vw,34px);line-height:1.2;margin:0 0 12px;color:#f3dfbb}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-copy p{font-size:15px;line-height:1.55;margin:0 0 12px;color:#e6d4ba}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-primary{justify-content:flex-start;margin:14px 0 0;gap:8px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-primary button{font-size:13px;padding:12px 16px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-case-notes{max-width:800px;margin:16px auto}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-case-notes h2{font-size:24px;margin:0 0 12px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-timeline{gap:8px;margin:10px 0}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:8px;border-bottom-width:2px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event svg{width:30px;height:30px;flex:0 0 30px;margin:0}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event>span{font-size:12px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-explanation{min-height:86px;padding:14px 18px;font-size:14px;line-height:1.5}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-quote{font-size:18px;margin:14px 0}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-extras{padding-top:12px}
+@media(min-width:600px){
+ .vn-menu #app[data-vn-kind="ending"] h1{font-size:36px;line-height:1.15;letter-spacing:-.5px;margin:8px 0 14px}
+ .vn-menu #app[data-vn-kind="ending"] .ending-closing{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px;align-items:center;text-align:left;margin:8px 0 18px}
+ .vn-menu #app[data-vn-kind="ending"] .ending-village .village-viewport{width:min(100%,calc((100dvh - 350px)*1.5));margin:auto}
+ .vn-menu #app[data-vn-kind="ending"] .ending-primary{justify-content:flex-start}
+ .vn-menu #app[data-vn-kind="ending"] .ending-lead{margin:0 0 12px}
+ .vn-menu #app[data-vn-kind="ending"] .ending-case-notes h2{font-size:23px;margin:4px 0 10px}
+}
+@media(max-width:699px){:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-closing{grid-template-columns:1fr;gap:16px}:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event{flex-direction:column;gap:4px}:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-primary{justify-content:center}}
+
+.vn-menu #app[data-vn-kind="ending"] .vn-menu-page{text-align:center}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-extras .button-row{justify-content:center}
+@media(min-width:600px) and (max-width:699px){.vn-menu #app[data-vn-kind="ending"] .ending-closing{grid-template-columns:1fr;gap:14px}}

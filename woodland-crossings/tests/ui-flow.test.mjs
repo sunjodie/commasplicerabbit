@@ -341,3 +341,13 @@ test('an earned legacy decoration can be previewed or changed without touching l
  assert.deepEqual(saved.decorations,[{chapter:0,id:'acorn-mailbox',name:'Acorn mailbox'}]);
  assert.equal(saved.story,7);assert.equal(saved.seq,9);assert.equal(saved.activeId,'m8');assert.deepEqual(saved.activeChoices,['so']);
 });
+
+test('ending shows the saved village and keeps the final name behind its envelope without teacher instructions',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');
+ const s=fresh();s.story=30;s.decorations=[{chapter:0,id:'porch-swing',name:'Patchwork porch swing'}];
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?ending-saved-village');
+ assert.match(ui.app.innerHTML,/class="ending-closing"/);assert.match(ui.app.innerHTML,/data-touch="porch-swing"/);
+ assert.doesNotMatch(ui.app.innerHTML,/rescue-painting|tell.{0,20}teacher/i);
+ await ui.app.querySelector('#endingEnvelope').onclick();assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/teacher/i);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,30);
+});

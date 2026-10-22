@@ -35,5 +35,5 @@ test('later story and tasks do not revive obsolete explanations or spoil the def
  const text=[...CHAPTER_FIVE,...CHAPTER_SIX].flatMap(s=>s.paragraphs).join(' ');
  assert.match(text,/marked timber in his workroom and the cut support/);assert.match(text,/new caretaker/);assert.match(text,/answered a different one/);assert.match(text,/handhold|something to hold/);
  for(const q of [...STORY,...TRANSFER].filter(q=>q.stage>=4))assert.doesNotMatch(q.parts.join(' '),/fog|locked for years|sleeve had caught on a nail|mill’s old porch|The caretaker/);
- const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');assert.doesNotMatch(app,/No thief|The lantern was a warning|same rescue/);assert.match(app,/assets\/village\/complete.webp/);
+ const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');assert.doesNotMatch(app,/No thief|The lantern was a warning|same rescue/);assert.match(app,/class="ending-village"/);
 });
