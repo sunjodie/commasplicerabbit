@@ -388,3 +388,10 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 ### Final-envelope revision · 22 October 2026
 
 The secret village-name reveal is superseded by the baker’s Night Owl pen-name reveal. A single sentence in Chapter 2 introduces Poppy’s familiarity with the Night Owl’s detective stories, without linking them to the baker. The final envelope contains the baker’s signed note and a handwritten story about the adventure. The main investigation, questions and completion gates are unchanged. No teacher-reporting text is shown. See STORY_NOTES.md for current canon.
+
+
+### Optional clue notebook · 22 October 2026
+
+The earlier notebook deferral is now resolved following the six-chapter review. Poppy’s clue notebook is available from a persistent navigation button. It stores observed story details separately from working ideas and grammar edits. Nine optional pages ask students to select an idea, link two observations for a specific evidence connection, check that link and save their reasoning. Wrong links receive a prompt to reconsider scope or evidence, without an automatic answer reveal. Later evidence appears only once its passage is reached.
+
+Observation collection follows the displayed mobile reading page or desktop/tablet reading part. Full completed scenes and story-task progress support existing saves. The notebook has its own left/right page navigation and does not submit answers through arrow keys. Matching, revision and notes persist in clueNotebook; opening or checking it never changes supplies, grammar hints, rewards, mandatory casework or the final-envelope gate. The baker’s ending identity is not recorded in the notebook.

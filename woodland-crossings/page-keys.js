@@ -10,7 +10,7 @@ export function handlePageArrow(event,doc=globalThis.document){
   if(!visible(nav))continue;const buttons=nav.querySelectorAll('button'),button=right?buttons[buttons.length-1]:buttons[0];
   if(visible(button)){event.preventDefault();button.click();return true;}
  }
- const selectors=right?['#storyNext','#bookNext','#caseworkContinue','[data-page-continue]','#next']:['#storyPrevious','#bookPrevious'];
+ const selectors=right?['#notebookNext','#storyNext','#bookNext','#caseworkContinue','[data-page-continue]','#next']:['#notebookPrevious','#storyPrevious','#bookPrevious'];
  for(const selector of selectors){const b=scope.querySelector(selector);if(visible(b)){event.preventDefault();b.click();return true;}}
  return false;
 }

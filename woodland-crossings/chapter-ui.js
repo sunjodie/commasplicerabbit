@@ -117,7 +117,7 @@ export function presentMenuView(kind){
 
 // Tablet keyboards resize the visible viewport without necessarily resizing the page.
 if(typeof window!=='undefined'&&typeof document!=='undefined'){
- const updateViewport=()=>{if(!document.documentElement?.style)return;const height=window.visualViewport?.height||window.innerHeight;document.documentElement.style.setProperty('--game-height',height+'px');document.body?.classList.toggle('vn-keyboard',height<500&&['caseCorrection','clauseRewrite'].includes(document.activeElement?.id));};
+ const updateViewport=()=>{if(!document.documentElement?.style)return;const height=window.visualViewport?.height||window.innerHeight;document.documentElement.style.setProperty('--game-height',height+'px');document.body?.classList.toggle('vn-keyboard',height<500&&['caseCorrection','clauseRewrite','notebookReason'].includes(document.activeElement?.id));};
  window.visualViewport?.addEventListener('resize',updateViewport);
  document.addEventListener?.('focusin',updateViewport);document.addEventListener?.('focusout',updateViewport);updateViewport();
 }

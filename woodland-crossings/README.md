@@ -1,9 +1,9 @@
 # The Midnight Mill
 
-**20 October 2026 — Chapter 2:** “What Had Left the Mill” now uses the approved revised prose, Chapter 1’s visual-novel reader, five joining notes and five recall variants, plus four notebook checks. The investigation is read before its editing notes so the exercises cannot disclose unread clues. The contrast task accepts both “but” and “yet”. Four new rain paintings, storybook replay and independent reading/check progress are included. Chapter 1’s approved text and 52 corrected frame paintings are preserved; Chapters 3–6 await their separate revision. 112 automated unit/handler checks pass. Exploration dialogs isolate a single atlas painting. Notebook options now stay together on one answer page. This update has not had rendered-browser, Safari or physical-device verification.
+**22 October 2026 — Poppy’s clue notebook:** Open the new Clue notebook navigation button during any chapter. It collects observations from displayed reading passages and completed scenes, offers nine optional working pages, and lets students match two observations to a tentative conclusion. Students can revise an idea, check the specific evidence connection and save a short explanation. Later observations add context without rewriting the student’s earlier choices. Existing reading saves gain observations from scenes already reached. Notebook work never awards supplies, changes grammar assistance status or unlocks the ending. Automated model and real-handler tests cover spoiler boundaries, matching, revision and save/resume. Browser/Safari/physical-device visual checks remain outstanding.
 
 
-A self-guided comma-splice mystery for upper-primary and secondary learners: **The Lantern That Shouldn’t Be Lit**. Poppy and Willow investigate a light in the old mill, a missing warning bell and an altered map. The clues resolve into a rescue.
+A self-guided comma-splice mystery for upper-primary and secondary learners: **The Midnight Mill**. Poppy and Willow investigate a light in the old mill, a missing warning bell and an altered map. Their rescue leads to a further investigation of Bram’s account and the missing bridge timber.
 
 On `woodland-crossings`, the repository root opens the new game. The original runner is preserved as `rabbit-runner.html`; `main` is unchanged. Deploy this branch on Cloudflare. No build step, account, teacher setup, API key, external font or runtime service is required. Serve locally over HTTP rather than opening the HTML file directly.
 
@@ -18,7 +18,7 @@ There are 30 new story tasks in six chapters of five, plus 30 authored recovery 
 5. Edit connected witness notes while protecting correct commas and following the timeline.
 6. Edit two-paragraph accounts and a final report combining several repairs.
 
-FANBOYS means **for, and, nor, but, or, yet, so**. Semicolons are targets in 12 story questions, across all six chapters. Full-stop tasks explicitly require a new sentence at a time or scene change. Conjunction tasks specify the intended relationship and, where alternatives would remain ambiguous, the word to use.
+FANBOYS means **for, and, nor, but, or, yet, so**. Semicolons are targets in four main story questions; full stops and conjunctions provide the other repairs. Full-stop tasks explicitly require a new sentence at a time or scene change. Conjunction tasks specify the intended relationship and, where alternatives would remain ambiguous, the word to use.
 
 ## One target without false grammar penalties
 

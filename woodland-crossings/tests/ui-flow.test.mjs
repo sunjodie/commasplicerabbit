@@ -13,7 +13,7 @@ class Element {
  getBoundingClientRect(){return {width:700,height:260};}
  setAttribute(k,v){this.attrs[k]=v;}focus(){}showModal(){this.open=true;}close(){this.open=false;}
 }
-function setup({autoRead=true,autoCasework=true}={}){const app=new Element(),fixed={};for(const id of ['modal','modalBody','closeModal','announce','villageBtn','journalBtn','guideBtn','soundBtn','saveBtn'])fixed[id]=new Element();globalThis.document={querySelector(sel){return sel==='#app'?app:fixed[sel.slice(1)]||app.querySelector(sel);}};const db=new Map();globalThis.localStorage={getItem:k=>db.get(k)||null,setItem:(k,v)=>db.set(k,v)};globalThis.window={};return{app,fixed,db,click(id){const b=document.querySelector('#'+id);assert.ok(b,`missing ${id}`);assert.equal(typeof b.onclick,'function',`${id} unwired`);b.onclick();if(autoRead||autoCasework){let guard=0;while(guard++<35){const story=app.querySelector('#storyNext');if(story&&autoRead){story.onclick();continue;}const task=CASEWORK.find(t=>app.innerHTML.includes(t.title)&&app.querySelector('.casework-page'));if(task&&autoCasework){const route=app.querySelector('[data-case-route]');if(route){route.onclick();continue;}const next=app.querySelector('#caseworkContinue');if(next){next.onclick();continue;}const choice=app.querySelector(`[data-case-choice="${task.kind==='grammar'?task.word:task.answer}"]`);if(choice)choice.onclick();if(task.evidence)app.querySelector(`[data-case-evidence="${task.evidenceAnswer}"]`).onclick();if(task.kind==='grammar'){const input=app.querySelector('#caseCorrection');input.value=task.answer;input.oninput();}app.querySelector('#caseworkCheck').onclick();continue;}break;}assert.ok(guard<35,'reading/casework flow stalled');}},tool(t){const b=app.querySelector(`[data-tool="${t}"]`);assert.ok(b,`missing tool ${t}`);b.onclick();}};}
+function setup({autoRead=true,autoCasework=true}={}){const app=new Element(),fixed={};for(const id of ['modal','modalBody','closeModal','announce','villageBtn','journalBtn','notebookBtn','guideBtn','soundBtn','saveBtn'])fixed[id]=new Element();globalThis.document={querySelector(sel){return sel==='#app'?app:fixed[sel.slice(1)]||app.querySelector(sel);}};const db=new Map();globalThis.localStorage={getItem:k=>db.get(k)||null,setItem:(k,v)=>db.set(k,v)};globalThis.window={};return{app,fixed,db,click(id){const b=document.querySelector('#'+id);assert.ok(b,`missing ${id}`);assert.equal(typeof b.onclick,'function',`${id} unwired`);b.onclick();if(autoRead||autoCasework){let guard=0;while(guard++<35){const story=app.querySelector('#storyNext');if(story&&autoRead){story.onclick();continue;}const task=CASEWORK.find(t=>app.innerHTML.includes(t.title)&&app.querySelector('.casework-page'));if(task&&autoCasework){const route=app.querySelector('[data-case-route]');if(route){route.onclick();continue;}const next=app.querySelector('#caseworkContinue');if(next){next.onclick();continue;}const choice=app.querySelector(`[data-case-choice="${task.kind==='grammar'?task.word:task.answer}"]`);if(choice)choice.onclick();if(task.evidence)app.querySelector(`[data-case-evidence="${task.evidenceAnswer}"]`).onclick();if(task.kind==='grammar'){const input=app.querySelector('#caseCorrection');input.value=task.answer;input.oninput();}app.querySelector('#caseworkCheck').onclick();continue;}break;}assert.ok(guard<35,'reading/casework flow stalled');}},tool(t){const b=app.querySelector(`[data-tool="${t}"]`);assert.ok(b,`missing tool ${t}`);b.onclick();}};}
 test('visual play handlers: demo, tap repair, retry, supply collection, village, paragraph and drag',async()=>{
  const ui=setup();await import('../app.js');ui.click('play');ui.click('demoStop');ui.click('startTrail');assert.match(ui.app.innerHTML,/reading-chart/);assert.equal(ui.app.querySelectorAll('[data-tool]').length,0);ui.app.querySelector('[data-join="0"]').onclick();assert.doesNotMatch(ui.app.innerHTML,/class="poppy-guide"/);assert.match(ui.app.innerHTML,/draggable="true"/);
  ui.click('check');assert.match(ui.app.innerHTML,/One join needs another look/);ui.tool('stop');assert.match(ui.app.innerHTML.replace(/<[^>]*>/g,''),/The villagers were dismantling the last stalls\. Beyond the gardens, a light appeared in the mill’s upper window\./);ui.click('check');assert.match(ui.app.innerHTML,/Note saved\./);ui.click('next');
@@ -352,4 +352,49 @@ test('ending shows the saved village and keeps the final secret behind its envel
  assert.doesNotMatch(ui.app.innerHTML,/rescue-painting|tell.{0,20}teacher/i);
  await ui.app.querySelector('#endingEnvelope').onclick();assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/teacher/i);
  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,30);
+});
+
+test('the clue notebook matches observations, revises a theory and saves reasoning without changing an active edit',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');
+ const s=fresh();s.story=3;s.seq=4;s.activeId='m4';s.activeChoices=['comma','semi'];s.chapterOne={read:['m4'],positions:{m4:0}};
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?clue-notebook-flow');
+ ui.fixed.notebookBtn.onclick();assert.match(ui.fixed.modalBody.innerHTML,/Poppy’s clue notebook/);
+ assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/The timber and the bridge|The baker is the Night Owl/);
+ ui.fixed.modalBody.querySelector('[data-notebook-thread="cloth"]').onclick();
+ ui.fixed.modalBody.querySelector('[data-notebook-theory="taken"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();
+ ui.fixed.modalBody.querySelector('[data-notebook-clue="cloth"]').onclick();ui.fixed.modalBody.querySelector('[data-notebook-clue="stitches"]').onclick();
+ ui.fixed.modalBody.querySelector('#notebookCheck').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Keep this idea open/);
+ assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/remembered repair link/);
+ ui.fixed.modalBody.querySelector('#notebookRevise').onclick();ui.fixed.modalBody.querySelector('[data-notebook-theory="coat"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();
+ ui.fixed.modalBody.querySelector('#notebookCheck').onclick();assert.match(ui.fixed.modalBody.innerHTML,/A supported link/);
+ const input=ui.fixed.modalBody.querySelector('#notebookReason');input.value='The repair connects this cloth to Bram’s coat.';input.oninput();
+ ui.click('closeModal');let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));
+ assert.equal(saved.story,3);assert.equal(saved.seq,4);assert.equal(saved.activeId,'m4');assert.deepEqual(saved.activeChoices,['comma','semi']);assert.equal(saved.activeHelp,false);assert.deepEqual(saved.decorations,[]);
+ await import('../app.js?clue-notebook-resume');ui.fixed.notebookBtn.onclick();ui.fixed.modalBody.querySelector('[data-notebook-thread="cloth"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();ui.fixed.modalBody.querySelector('#notebookCheck').onclick();
+ assert.equal(ui.fixed.modalBody.querySelector('#notebookReason').attrs.value,'The repair connects this cloth to Bram’s coat.');
+ saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.clueNotebook.links.cloth.checked,true);
+});
+test('the notebook is available from the opening and collects a clue only when its story passage is displayed',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false});await import('../app.js?clue-notebook-reading');
+ ui.fixed.notebookBtn.onclick();assert.match(ui.fixed.modalBody.innerHTML,/Your first page is waiting/);ui.click('closeModal');
+ ui.click('play');ui.click('startTrail');let state=JSON.parse(ui.db.get('woodland-crossings-v1'));
+ assert.deepEqual(state.clueNotebook.seen,[]);
+ for(let i=0;i<20&&!state.clueNotebook.seen.includes('light');i++){ui.click('storyNext');state=JSON.parse(ui.db.get('woodland-crossings-v1'));}
+ assert.ok(state.clueNotebook.seen.includes('light'));assert.equal(state.clueNotebook.seen.includes('figure'),false);
+ const before=ui.db.get('woodland-crossings-v1');ui.fixed.notebookBtn.onclick();assert.match(ui.fixed.modalBody.innerHTML,/An upstairs light/);assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/A moving figure|A marked bridge support/);
+ ui.click('closeModal');assert.equal(ui.db.get('woodland-crossings-v1'),before);
+});
+test('notebook observation pages turn without selecting evidence and escape saved reasoning',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=30;s.clueNotebook={version:1,seen:[],tails:{},links:{cloth:{theory:'coat',clues:['cloth','stitches'],checked:true,note:'<script>bad()</script>'}}};
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?clue-notebook-observations');ui.fixed.notebookBtn.onclick();
+ ui.fixed.modalBody.querySelector('#notebookObservations').onclick();assert.match(ui.fixed.modalBody.innerHTML,/An upstairs light/);ui.fixed.modalBody.querySelector('#notebookNext').onclick();assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/An upstairs light/);
+ ui.fixed.modalBody.querySelector('#notebookIndex').onclick();ui.fixed.modalBody.querySelector('[data-notebook-thread="cloth"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();ui.fixed.modalBody.querySelector('#notebookCheck').onclick();
+ assert.match(ui.fixed.modalBody.innerHTML,/&lt;script&gt;bad\(\)&lt;\/script&gt;/);assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/<script>/);
+ ui.fixed.modalBody.querySelector('#notebookIndex').onclick();ui.fixed.modalBody.querySelector('[data-notebook-thread="upstairs"]').onclick();
+ ui.fixed.modalBody.querySelector('[data-notebook-theory="using-room"]').onclick();
+ const first=ui.fixed.modalBody.querySelector('#notebookReason');first.value='A figure was visible in the lit window.';first.oninput();
+ ui.fixed.modalBody.querySelector('#notebookNext').onclick();ui.fixed.modalBody.querySelector('[data-notebook-clue="light"]').onclick();ui.fixed.modalBody.querySelector('[data-notebook-clue="figure"]').onclick();
+ ui.fixed.modalBody.querySelector('#notebookCheck').onclick();assert.match(ui.fixed.modalBody.innerHTML,/A supported link/);
+ ui.fixed.modalBody.querySelector('#notebookLater').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Bram later explains/);
+ ui.fixed.modalBody.querySelector('#notebookPrevious').onclick();assert.equal(ui.fixed.modalBody.querySelector('#notebookReason').attrs.value,'A figure was visible in the lit window.');
 });

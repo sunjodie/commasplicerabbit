@@ -31,7 +31,7 @@ test('new nor item requires students to produce inversion on both main and retry
 test('legacy later edits migrate without losing progress, rewards or discoveries',()=>{
  for(const id of ['m21','m25','r30']){const s={...fresh(),story:24,seq:29,activeId:id,activeChoices:['comma','semi'],frogFinds:['clock-frog'],decorations:[{chapter:0}]};delete s.chapterFiveSixRevision;const m=hydrate(s);assert.equal(m.activeId,null);assert.equal(m.activeChoices,null);assert.equal(m.story,24);assert.equal(m.seq,29);assert.deepEqual(m.frogFinds,s.frogFinds);assert.deepEqual(m.decorations,s.decorations);}
 });
-test('later story and tasks do not revive obsolete explanations or spoil the deferred notebook',()=>{
+test('later story and tasks do not revive obsolete explanations or require the optional notebook',()=>{
  const text=[...CHAPTER_FIVE,...CHAPTER_SIX].flatMap(s=>s.paragraphs).join(' ');
  assert.match(text,/marked timber in his workroom and the cut support/);assert.match(text,/new caretaker/);assert.match(text,/answered a different one/);assert.match(text,/handhold|something to hold/);
  for(const q of [...STORY,...TRANSFER].filter(q=>q.stage>=4))assert.doesNotMatch(q.parts.join(' '),/fog|locked for years|sleeve had caught on a nail|mill’s old porch|The caretaker/);

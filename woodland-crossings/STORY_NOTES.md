@@ -26,7 +26,7 @@ All six chapters now have manuscript readers. Chapters 5 and 6 replace the earli
 
 Each chapter retains five grammar deliveries. Chapters 5 and 6 each add one two-part inference check without an extra delivery. Chapter 5 includes result, time shift, transitions, a correctly punctuated note and student-produced negative inversion. Chapter 6 combines clause boundaries, cause, contrast, alternatives and paragraph editing. Main and retry wording comes from the revised story. The final report and ending screen no longer assert innocence.
 
-Four collectible frogs remain in each of Chapters 5 and 6; saved frog IDs are retained. Warm music continues in both. The free clue-matching notebook remains deferred until the whole story has been finalised and reviewed.
+Four collectible frogs remain in each of Chapters 5 and 6; saved frog IDs are retained. Warm music continues in both. After the six-chapter consistency review, the optional clue-matching notebook is now implemented. Observations unlock from displayed story passages, and students connect two observations to a working idea without changing grammar progress.
 
 Existing illustration assets are reused for the new readers. They are not a newly commissioned frame-by-frame illustration set for the revised ending. Browser/device artwork and layout review remains a separate validation item.
 
