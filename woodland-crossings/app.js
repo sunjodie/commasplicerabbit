@@ -1,18 +1,18 @@
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,explorationFrameArt,paintFrame} from './frame-art.js?v=20261022-consistency14-1';
-import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261022-consistency14-1';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,explorationFrameArt,paintFrame} from './frame-art.js?v=20261022-simulator-feedback1';
+import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261022-simulator-feedback1';
 import './page-keys.js';
 import {createPageSound,isPageTurn} from './page-sound.js';
 import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261021-chapter3-layout1';
-import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js?v=20261022-consistency14-1';
-import {CHAPTER_THREE_REFLECTION} from './chapter-three.js?v=20261022-consistency14-1';
-import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261022-consistency14-1';
+import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js?v=20261022-simulator-feedback1';
+import {CHAPTER_THREE_REFLECTION} from './chapter-three.js?v=20261022-simulator-feedback1';
+import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261022-simulator-feedback1';
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
-import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261022-consistency14-1';
+import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261022-simulator-feedback1';
 import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './music.js?v=20261021-musicloop1';
-import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261022-consistency14-1';
+import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261022-simulator-feedback1';
 import {villageMarkup,villageProgress,siteProgress,currentBuild,stageLabel,villageSummary} from './village.js';
-import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261022-consistency14-1';
-import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261022-consistency14-1';
+import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261022-simulator-feedback1';
+import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261022-simulator-feedback1';
 const KEY='woodland-crossings-v1';let storageOK=true,state;
 try{state=hydrate(JSON.parse(localStorage.getItem(KEY)||'null'));}catch{state=fresh();storageOK=false;}
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');

@@ -27,7 +27,7 @@ test('earlier judgements preserve uncertainty compatible with the final evidence
 });
 test('retry instructions name their own clauses and preserve the main approved Chapter 1 tasks',()=>{
  assert.match(STORY[0].brief,/after “stalls”/);assert.match(TRANSFER[0].studentBrief,/after “glowing”/);assert.doesNotMatch(TRANSFER[0].studentBrief,/stalls/);
- assert.match(TRANSFER[2].studentBrief,/Pip’s claim with her behaviour/);assert.match(TRANSFER[4].why[0],/“As”/);
+ assert.match(TRANSFER[2].studentBrief,/Pip’s claim with her behaviour/);assert.match(TRANSFER[4].why[0],/“As”/);assert.match(STORY[4].why[0],/“By the time”/);assert.notEqual(STORY[4].why,TRANSFER[4].why);
  assert.match(TRANSFER[18].studentBrief,/Alder Arch/);assert.doesNotMatch(TRANSFER[18].studentBrief,/shelter/);
  assert.match(TRANSFER[16].parts.join(' '),/considered whom Bram might be expecting/);
 });

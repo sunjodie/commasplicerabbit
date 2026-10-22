@@ -84,7 +84,7 @@ Current implemented questions, answers and retries. Each task has one target wit
 
 **Target:** By the time Mara lit her lantern, Pip had called once into the mill; nobody had answered.
 
-**Why:** The opening beginning with “As” is subordinate, so keep its comma. Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task.
+**Why:** The opening beginning “By the time” is dependent, so its comma stays. Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task.
 
 **Retry brief:** Keep this as one sentence without adding or removing words. Use only the repairs listed. Change punctuation only where necessary.
 

@@ -163,7 +163,7 @@ task(5,"final-case-report","Keep the dependent opening and paired commas. Use a 
 for(const q of tasks[23])q.grammar=[['comma'],['comma','stop','semi'],['comma']];
 tasks[0][1].brief='Present the glowing fairground lanterns and the light going out at the mill as two separate sentences. Keep every word. Edit the comma after “glowing”.';
 tasks[2][1].brief='Keep one sentence. Add a coordinating conjunction that contrasts Pip’s claim with her behaviour.';
-tasks[4][1].why[0]='The opening beginning with “As” is subordinate, so keep its comma.';
+tasks[4][1].why=['The opening beginning with “As” is subordinate, so keep its comma.',tasks[4][0].why[1]];
 tasks[18][1].brief='Keep one sentence. Use a coordinating conjunction to contrast the flooded stepping stones with the high crossing at Alder Arch.';
 // Semicolons can separate list items, but are not the requested ordinary-list edit.
 tasks[3].forEach(t=>t.grammar=[['comma','semi'],['comma','semi']]);
