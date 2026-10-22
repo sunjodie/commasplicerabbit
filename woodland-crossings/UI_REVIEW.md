@@ -21,7 +21,7 @@ The game now separates artwork and question content into a vertical artwork → 
 
 ## Larger artwork and quieter guidance
 
-Desktop illustration maximum increased from 540px to 900px. Full 3:2 framing and stacked reading order remain. Pip is outside the artwork in a 54×81px guide slot (44×66px on mobile), preserving the original 320×480 image proportions. Scene close-ups no longer contain an out-of-scale overlay.
+Desktop illustration maximum increased from 540px to 900px. Full 3:2 framing and stacked reading order remain. Poppy is outside the artwork in a 54×81px guide slot (44×66px on mobile), preserving the original 320×480 image proportions. Scene close-ups no longer contain an out-of-scale overlay.
 
 Default briefs describe relationships; explicit conjunction chips are removed. Exact-word hints are opt-in, and repeated failed attempts do not auto-reveal answers. Independent source review checked the goals against stable chapter trays. 43 automated checks pass. This pass has no new Figma/browser capture; responsive rendering remains to be checked in the deployed game.
 
@@ -73,7 +73,7 @@ Story reader, supporting casework and notebook now share an equal-column desktop
 
 ## Keyboard, type and panel refinement — 20 October 2026
 
-Story, parchment notes, dark questions and green Pip feedback now have distinct visual treatments. A shared Georgia/Arial pair replaces inconsistent type roles. Teaching copy is shorter and more conversational; approved narrative and assessment wording are retained. Left/right page navigation respects dialogs, editable fields and unanswered questions.
+Story, parchment notes, dark questions and green Poppy feedback now have distinct visual treatments. A shared Georgia/Arial pair replaces inconsistent type roles. Teaching copy is shorter and more conversational; approved narrative and assessment wording are retained. Left/right page navigation respects dialogs, editable fields and unanswered questions.
 
 Chromium regression: 239 Chapter 1 playthrough state checks across three sizes and 148 layout checks across seven desktop/tablet sizes pass without overflow, off-screen controls or runtime errors. Actual desktop question, parchment-note and portrait story screenshots were visually reviewed. Automated tests cover typing with arrow keys, no accidental submission, supporting-task pagination and answer recovery. Physical tablet/Safari checks remain pending.
 
@@ -100,7 +100,7 @@ The user’s screenshots exposed two inheritance conflicts: the legacy `.builder
 
 52 distinct frame compositions replace repeated scene art during Chapter 1 reading and assessment. Atlases use explicit pixel geometry to isolate cells during landscape and portrait cover crops. Image loading retains a scene fallback and cannot replace a later frame after navigation. The full chapter flow passes at 1366×768, 768×1024 and 1024×600 without page scrolling; each reading turn changes its frame identity. All 52 paintings load in desktop and tablet crops.
 
-## Pip ear anatomy repair
+## Poppy ear anatomy repair
 
 Reviewed all 52 frame compositions after the reported third ear in the upstairs-light notebook scene. Eleven sheets received anatomy edits; originals 02 and 09 were retained after their revisions introduced unrelated changes. Accepted outputs were visually checked for duplicated lobes and stray ear-like crown shapes. The reported notebook composition was also inspected in the desktop crop. All 104 desktop/tablet frame loading checks pass.
 

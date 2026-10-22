@@ -1,18 +1,18 @@
 // Mystery case notes, discoveries and original vector tokens.
 export const CASE_TITLE='The Midnight Mill';
 export const CASES=[
- {title:'After the fair',intro:'Pip and Mara are leaving the lantern fair when a light appears in the old mill. Read what happens, then help Pip keep her notebook clear.',clue:'A familiar torn cuff, an empty bell hook and a knock beyond the porch.',icon:'lantern'},
- {title:'What Had Left the Mill',intro:'A bell sounds beyond the stream. Inside the mill, Pip and Mara find muddy prints and an unfinished note.',clue:'Sheltered circular marks suggest that someone put an object down. Whether it was the bell remains uncertain.',icon:'tracks'},
- {title:'The Wrong Path',intro:'Pip follows the marks towards the lower footbridge. Mara has noticed that Bram crossed the bridge out on the map.',clue:'The bridge is broken and the bank is unstable. Pip and Mara return to the village for help.',icon:'bell'},
- {title:'A Bell in Two Places',intro:'Back at the bakery, Pip and Mara compare two accounts of the bell. The witnesses heard it in different places—and at different times.',clue:'The accounts allow time for the bell to move uphill. The shelter is a place to check; the supper preparations do not prove anyone is there.',icon:'map'},
- {title:'An Answer in the Dark',intro:'The villagers clear the higher path. Across the gorge, a light answers Pip’s signal.',clue:'The signals establish contact. At the shelter, Mara hears two conflicting accounts.',icon:'clock'},
- {title:'Before Morning',intro:'Everyone returns safely, but Mara has a question Bram has not answered.',clue:'Witness testimony and physical evidence expose deliberate timber removal. Rescue does not erase responsibility.',icon:'home'}
+ {title:'After the fair',intro:'Poppy and Willow are leaving the lantern fair when a light appears in the old mill. Read what happens, then help Poppy keep her notebook clear.',clue:'A familiar torn cuff, an empty bell hook and a knock beyond the porch.',icon:'lantern'},
+ {title:'What Had Left the Mill',intro:'A bell sounds beyond the stream. Inside the mill, Poppy and Willow find muddy prints and an unfinished note.',clue:'Sheltered circular marks suggest that someone put an object down. Whether it was the bell remains uncertain.',icon:'tracks'},
+ {title:'The Wrong Path',intro:'Poppy follows the marks towards the lower footbridge. Willow has noticed that Bram crossed the bridge out on the map.',clue:'The bridge is broken and the bank is unstable. Poppy and Willow return to the village for help.',icon:'bell'},
+ {title:'A Bell in Two Places',intro:'Back at the bakery, Poppy and Willow compare two accounts of the bell. The witnesses heard it in different places—and at different times.',clue:'The accounts allow time for the bell to move uphill. The shelter is a place to check; the supper preparations do not prove anyone is there.',icon:'map'},
+ {title:'An Answer in the Dark',intro:'The villagers clear the higher path. Across the gorge, a light answers Poppy’s signal.',clue:'The signals establish contact. At the shelter, Willow hears two conflicting accounts.',icon:'clock'},
+ {title:'Before Morning',intro:'Everyone returns safely, but Willow has a question Bram has not answered.',clue:'Witness testimony and physical evidence expose deliberate timber removal. Rescue does not erase responsibility.',icon:'home'}
 ];
 export const EGGS=[
  {id:'ghost-shroom',name:'The shy mushroom ghost',text:'A mushroom wearing a bedsheet. Very spooky. Very small.',icon:'ghost'},
  {id:'witch-frog',name:'The apprentice frog',text:'One tiny witch hat. Absolutely no spells mastered.',icon:'frog'},
  {id:'semicolon-stars',name:'The semicolon constellation',text:'Two stars have formed a semicolon. Even the sky knows how to join things.',icon:'stars'},
- {id:'owl-detective',name:'The other detective',text:'An owl with a magnifying glass. Pip has competition.',icon:'owl'},
+ {id:'owl-detective',name:'The other detective',text:'An owl with a magnifying glass. Poppy has competition.',icon:'owl'},
  {id:'comma-pumpkin',name:'The punctuation pumpkin',text:'This pumpkin has comma-shaped eyes. Please do not copy its punctuation advice.',icon:'pumpkin'},
  {id:'bell-bat',name:'The bell’s smallest fan',text:'A bat is practising hanging upside down. No bells were stolen by bats.',icon:'bat'}
 ];

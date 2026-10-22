@@ -23,7 +23,7 @@
  .vn-active .vn-hide{position:absolute;right:34px;top:12px;z-index:7;border:1px solid #c5a46c;border-radius:20px;background:#241d29c9;color:#efdfbf;padding:8px 18px;min-height:44px}
  .vn-active #storyArtwork,.vn-active .story-payoff,.vn-active .artwork-link{display:none}
  .vn-active .reading-chart{padding:0;margin:0;background:none;border:0;box-shadow:none;border-radius:0;color:#f4e6ce;min-height:0}
- .vn-active .chart-pin,.vn-active .editing-rules-toggle,.vn-active .dock-heading,.vn-active .sentence-piece svg,.vn-active .feedback-pip{display:none}
+ .vn-active .chart-pin,.vn-active .editing-rules-toggle,.vn-active .dock-heading,.vn-active .sentence-piece svg,.vn-active .feedback-poppy{display:none}
  .vn-active .notebook-source{margin:0 0 4px;color:#e3c186;font-size:11px;letter-spacing:1px}
  .vn-active .notebook-source>.text-button{color:#d7c0a1;min-height:30px;padding:0;font-size:11px}
  .vn-active .editing-brief{padding:0;border:0;background:none;text-align:center;font-size:14px;line-height:1.4;margin:4px 0 10px;color:#f2e1c6}
@@ -115,7 +115,7 @@ h1,h2,h3,.brand,.vn-top-title,.story-prose,.sentence,.casework-context,.casework
  .vn-active .casework-page[data-page-type='note'] .vn-count{color:#745840}
  .vn-active .casework-page[data-page-type='note'] .secondary{background:#eadbbd;color:#574334;border-color:#9f805d}
  .vn-active .casework-page[data-page-type='help'],.vn-active .case-workspace.vn-show-feedback{background:#25332ff7;border-color:#8eab92}
- .vn-active .casework-page[data-page-type='help']:before{background:url('assets/pip-storybook.webp') left center/22px 30px no-repeat;padding-left:30px;min-height:30px;display:flex;align-items:center;color:#cbdabe}
+ .vn-active .casework-page[data-page-type='help']:before{background:url('assets/poppy-storybook.webp') left center/22px 30px no-repeat;padding-left:30px;min-height:30px;display:flex;align-items:center;color:#cbdabe}
  .vn-active .feedback strong{font-family:var(--font-ui);font-size:18px;line-height:1.4;color:#e0e8d2}
  .vn-active .vn-help-heading{color:#cbdabe}
  .vn-active .notebook-source{color:#dcb57d;text-transform:uppercase;font-size:10px;letter-spacing:1.2px}

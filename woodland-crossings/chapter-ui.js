@@ -19,10 +19,10 @@ function headerControls(){const save=document.querySelector('#saveBtn'),nav=docu
 function element(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;}
 function control(label,action,cls='secondary'){const b=element('button',cls,label);b.type='button';b.onclick=action;return b;}
 function continuation(label,action){const b=control(label,action);b.dataset.pageContinue='true';return b;}
-function helpHeading(){const h=element('div','vn-help-heading'),img=element('img');img.src='assets/pip-storybook.webp';img.alt='Pip';img.width=36;img.height=44;h.append(img,element('span','','A word from Pip'));return h;}
+function helpHeading(){const h=element('div','vn-help-heading'),img=element('img');img.src='assets/poppy-storybook.webp';img.alt='Poppy';img.width=36;img.height=44;h.append(img,element('span','','A word from Poppy'));return h;}
 function pageControls(container,pages,{initial=0,changed=()=>{},label='Part'}={}){
  let current=Math.max(0,Math.min(initial,pages.length-1));const nav=element('div','vn-pages'),back=control('← Back',()=>show(current-1)),count=element('span','vn-count'),next=control('Next →',()=>show(current+1));nav.append(back,count,next);container.append(nav);
- function show(n){current=Math.max(0,Math.min(n,pages.length-1));pages.forEach((p,i)=>{p.hidden=i!==current;p.inert=i!==current;});container.dataset.pageType=pages[current].dataset.pageType||'reading';container.dataset.panelLabel=container.dataset.pageType==='note'?'Pip’s notes':container.dataset.pageType==='help'?'A word from Pip':'Your turn';back.disabled=current===0;next.disabled=current===pages.length-1;count.textContent=`${label} ${current+1} / ${pages.length}`;changed(current);}
+ function show(n){current=Math.max(0,Math.min(n,pages.length-1));pages.forEach((p,i)=>{p.hidden=i!==current;p.inert=i!==current;});container.dataset.pageType=pages[current].dataset.pageType||'reading';container.dataset.panelLabel=container.dataset.pageType==='note'?'Poppy’s notes':container.dataset.pageType==='help'?'A word from Poppy':'Your turn';back.disabled=current===0;next.disabled=current===pages.length-1;count.textContent=`${label} ${current+1} / ${pages.length}`;changed(current);}
  show(current);return {show,get current(){return current;},nav};
 }
 function budget(){return window.innerWidth<900?42:window.innerHeight<720?38:48;}
@@ -68,8 +68,8 @@ function questionPanel(){
  const feedback=workspace.querySelector('.feedback');if(!feedback)return;
  const paragraphs=[...feedback.querySelectorAll('p')].filter(p=>!p.closest('details')).map(p=>p.textContent);
  const details=feedback.querySelector('details');const why=details?[...details.querySelectorAll('p')].map(p=>p.textContent):[];
- const title=feedback.querySelector('strong')?.textContent||'Pip’s notebook';
- if(!paragraphs.length){const copy=feedback.cloneNode(true);copy.querySelector('strong')?.remove();copy.querySelector('.feedback-pip')?.remove();paragraphs.push(copy.textContent);}
+ const title=feedback.querySelector('strong')?.textContent||'Poppy’s notebook';
+ if(!paragraphs.length){const copy=feedback.cloneNode(true);copy.querySelector('strong')?.remove();copy.querySelector('.feedback-poppy')?.remove();paragraphs.push(copy.textContent);}
  const standalone=feedback.querySelector('.standalone');if(standalone)paragraphs.unshift([...standalone.children].map(n=>n.textContent).join(' / '));
  const pages=textPages(paragraphs,budget()),cards=pages.map(chunk=>{const p=element('div','vn-step');p.append(element('strong','',title));chunk.forEach(t=>p.append(element('p','',t)));return p;});
  if(why.length)for(const chunk of textPages(why,budget())){const p=element('div','vn-step');p.append(element('strong','','Why this edit works'));chunk.forEach(t=>p.append(element('p','',t)));cards.push(p);}

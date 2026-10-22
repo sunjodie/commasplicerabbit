@@ -7,8 +7,8 @@ export const CHAPTER_FOUR_CASEWORK=[
     "kind": "deduction",
     "title": "Supper and a shelter",
     "label": "Evidence and hypothesis",
-    "context": "Through Bram’s kitchen window, the neighbour saw three clean bowls beside a covered pot, with chairs drawn up at the table. The baker remembered Bram mentioning supper for the mender and her apprentice. Pip pointed to Quarry Shelter on the map.",
-    "prompt": "Part 1: Which judgement best separates the supported conclusion from Pip’s unconfirmed hypothesis?\nPart 2: Which pair of details most strongly supports the conclusion about supper?",
+    "context": "Through Bram’s kitchen window, the neighbour saw three clean bowls beside a covered pot, with chairs drawn up at the table. The baker remembered Bram mentioning supper for the mender and her apprentice. Poppy pointed to Quarry Shelter on the map.",
+    "prompt": "Part 1: Which judgement best separates the supported conclusion from Poppy’s unconfirmed hypothesis?\nPart 2: Which pair of details most strongly supports the conclusion about supper?",
     "options": [
       {
         "id": "location",
@@ -58,6 +58,6 @@ export const CHAPTER_FOUR_CASEWORK=[
     "hint": "Separate evidence of preparations at the cottage from evidence of anyone’s present location.",
     "evidenceHint": "Your judgement stays within the evidence. Now choose the details that support supper preparations, rather than a possible location.",
     "why": "The bowls, chairs and covered pot suggest a meal was prepared for three. The baker’s recollection supports the expectation of the mender and apprentice. None of these details places Bram or his guests at Quarry Shelter. That remains a plausible hypothesis worth checking, not an established fact.",
-    "success": "Pip records the supper preparations as supported and the shelter as a place to check."
+    "success": "Poppy records the supper preparations as supported and the shelter as a place to check."
   }
 ];

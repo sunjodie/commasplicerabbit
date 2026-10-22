@@ -1,4 +1,4 @@
-import {finishingTouchMarkup} from './finishing-touches.js?v=20261022-village-touches1';
+import {finishingTouchMarkup} from './finishing-touches.js?v=20261022-character-names1';
 // A single registered panorama. Progress is derived from existing story saves;
 // recovery and optional recall never add story deliveries or reset a landmark.
 export const VILLAGE_ART=['empty','foundations','framework','roofing','complete'].map(name=>`assets/village/${name}.webp`);

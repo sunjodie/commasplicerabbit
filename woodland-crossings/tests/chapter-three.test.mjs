@@ -11,7 +11,7 @@ test('Chapter 3 reader preserves the revised manuscript and menu title',()=>{
  assert.deepEqual(CHAPTER_THREE.flatMap(s=>s.paragraphs),manuscript);
  assert.equal(CHAPTERS[2].name,'The Wrong Path');
  assert.doesNotMatch(manuscript.join(' '),/farther|river working|beneath her thumb|crossed this path out/);
- assert.match(manuscript.join(' '),/“Pip!” Mara called/);
+ assert.match(manuscript.join(' '),/“Poppy!” Willow called/);
 });
 test('Chapter 3 reads all five scenes before the notebook, saving reading positions separately',()=>{
  const s=fresh();s.story=10;const q=STORY[10];
@@ -21,11 +21,11 @@ test('Chapter 3 reads all five scenes before the notebook, saving reading positi
 });
 test('Chapter 3 targets use the chapter evidence and retain five supply awards',()=>{
  const expected=[
- 'Pip felt sure that Bram had carried the bell along the path, yet she could not identify who had left the prints.',
+ 'Poppy felt sure that Bram had carried the bell along the path, yet she could not identify who had left the prints.',
  'The sound came from the bridge, for the broken rail kept striking its underside.',
  'The bridge could not be crossed, nor could the bank be trusted.',
- 'Pip believed that the prints would lead to Bram. Mara feared that the path was dangerous.',
- 'The bank, which was soft with rain, broke away where Pip had stood. A tuft of grass turned over once in the current.'
+ 'Poppy believed that the prints would lead to Bram. Willow feared that the path was dangerous.',
+ 'The bank, which was soft with rain, broke away where Poppy had stood. A tuft of grass turned over once in the current.'
  ];
  const s=fresh();s.story=10;
  for(const [i,q] of STORY.slice(10,15).entries()){assert.equal(renderSentence(q,q.valid.map(v=>v[0]),q.wordOrder?.answer),expected[i]);assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);assert.equal(nextQuestion(s).id,q.id);record(s,q,false,10);}
@@ -51,6 +51,6 @@ test('old Chapter 3 edits reset safely; current clause rewrites survive reload',
 });
 test('ending reflection has one supported answer and emphasis survives storybook markup',()=>{
  assert.equal(CHAPTER_THREE_REFLECTION.answer,'together');assert.equal(CHAPTER_THREE_REFLECTION.options.filter(o=>o.id===CHAPTER_THREE_REFLECTION.answer).length,1);
- const paragraph=CHAPTER_THREE[0].paragraphs.find(p=>p.startsWith('Mara looked up'));
+ const paragraph=CHAPTER_THREE[0].paragraphs.find(p=>p.startsWith('Willow looked up'));
  assert.match(storyProseHTML(paragraph,x=>x),/<em>them<\/em>/);
 });

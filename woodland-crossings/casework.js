@@ -1,6 +1,6 @@
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
-import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261022-natural-prose1';
-import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261022-natural-prose1';
+import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261022-character-names1';
+import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261022-character-names1';
 // Supporting questions from the approved Chapter 1.
 export const CASEWORK=[
   {
@@ -9,14 +9,14 @@ export const CASEWORK=[
     "kind": "grammar",
     "title": "The fresh timber",
     "label": "Quick grammar edit",
-    "context": "Pip records the fresh scent beside the mill wall.",
+    "context": "Poppy records the fresh scent beside the mill wall.",
     "prompt": "Find and replace one grammatically incorrect word. Preserve meaning and past tense.",
     "text": "The scent of freshly sawn boards were particularly sharp beside the mill wall.",
     "answer": "was",
     "word": 6,
     "hint": "Find the subject of the verb. Does the phrase beginning with “of” change its number?",
     "why": "The singular subject is “scent”. The intervening phrase “of freshly sawn boards” does not make it plural.",
-    "success": "Pip keeps the observation in her notebook."
+    "success": "Poppy keeps the observation in her notebook."
   },
   {
     "question": "m4",
@@ -59,18 +59,18 @@ export const CASEWORK=[
     "kind": "deduction",
     "title": "The familiar stitches",
     "label": "Detective work · Claim + evidence",
-    "context": "A strip of green cloth hung beneath the latch. Along its edge ran crooked yellow stitches. Pip remembered making that uneven repair on the cuff of Bram’s green coat during the summer. Earlier, she had glimpsed a broad figure upstairs wearing what looked like a green coat, but it had moved before she could be certain.",
+    "context": "A strip of green cloth hung beneath the latch. Along its edge ran crooked yellow stitches. Poppy remembered making that uneven repair on the cuff of Bram’s green coat during the summer. Earlier, she had glimpsed a broad figure upstairs wearing what looked like a green coat, but it had moved before she could be certain.",
     "prompt": "Part 1: Which conclusion is most securely supported?\nPart 2: Which pair of details provides the strongest support?",
     "routes": [
       {
         "id": "latch",
         "text": "Examine the latch",
-        "observation": "Pip studies where the cloth caught, taking care not to pull its loose threads."
+        "observation": "Poppy studies where the cloth caught, taking care not to pull its loose threads."
       },
       {
         "id": "repair",
         "text": "Recall the summer repair",
-        "observation": "Pip remembers turning the cuff of Bram’s green coat to hide her worst stitch underneath."
+        "observation": "Poppy remembers turning the cuff of Bram’s green coat to hide her worst stitch underneath."
       }
     ],
     "options": [
@@ -91,7 +91,7 @@ export const CASEWORK=[
       },
       {
         "id": "attack",
-        "text": "Bram left the cloth on the latch so that Pip would recognise it.",
+        "text": "Bram left the cloth on the latch so that Poppy would recognise it.",
         "feedback": "Go back to the clues. Does the passage actually tell you that?"
       }
     ],
@@ -109,7 +109,7 @@ export const CASEWORK=[
       },
       {
         "id": "stitches-memory",
-        "text": "The distinctive stitching and Pip’s memory of making the repair.",
+        "text": "The distinctive stitching and Poppy’s memory of making the repair.",
         "feedback": "Go back to the clues. Does the passage actually tell you that?"
       },
       {
@@ -120,8 +120,8 @@ export const CASEWORK=[
     ],
     "evidenceAnswer": "stitches-memory",
     "hint": "Separate the identity of the cloth from assumptions about when or why it caught.",
-    "why": "The cloth can be identified without establishing when it caught, the direction Bram travelled or his intention. Part 1’s other choices add those unsupported details. For Part 2, colour alone is weak evidence: Mara is also wearing a green coat. The distinctive stitching and Pip’s memory of making it link the cloth specifically to Bram’s coat.",
-    "success": "Mara records the identification. What happened at the doorway remains uncertain."
+    "why": "The cloth can be identified without establishing when it caught, the direction Bram travelled or his intention. Part 1’s other choices add those unsupported details. For Part 2, colour alone is weak evidence: Willow is also wearing a green coat. The distinctive stitching and Poppy’s memory of making it link the cloth specifically to Bram’s coat.",
+    "success": "Willow records the identification. What happened at the doorway remains uncertain."
   }
 ];
 CASEWORK.push(...CHAPTER_TWO_CASEWORK);

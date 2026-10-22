@@ -46,7 +46,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 # Checkpoint 04 — visual adventure
 
-- Replaced the CSS rabbit silhouette with original vector Pip artwork: rounded proportions, pink cheeks, scarf, expressive eyes, blinking and a happy crossing hop.
+- Replaced the CSS rabbit silhouette with original vector Poppy artwork: rounded proportions, pink cheeks, scarf, expressive eyes, blinking and a happy crossing hop.
 - Replaced the workbook-style play card/sidebar with an illustrated crossing world, wooden sentence platforms, draggable/tappable construction pieces, full-sentence readback and a compact supply trail.
 - Complex sentences and passages remain continuous, readable text on an in-world map.
 - Village rewards now use individual building illustrations, with a visual restoration scene and chosen decorations.
@@ -68,7 +68,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 # Checkpoint 06 — Halloween mystery graphics and ending
 
 - Inspected the user’s three mood references. Created original moonlit mill scenery with indigo woods, amber lanterns, pumpkins and fireflies; bundled an optimized WebP. No supplied reference image is bundled.
-- Added Halloween palette and fog throughout the interface; reading panels remain opaque/light. Pip wears a small witch hat.
+- Added Halloween palette and fog throughout the interface; reading panels remain opaque/light. Poppy wears a small witch hat.
 - Added six optional graphic discoveries, a persistent collection, keyboard controls and reached-scene revisits without replaying grammar tasks.
 - Added chapter case notes and an illustrated, replayable ending resolving the lantern, bell and map as one rescue. No score, hint, mastery or secret-collection gate.
 - Preserved existing saves and active review/bonus continuation.
@@ -77,9 +77,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 # Checkpoint 07 — original autumn storybook artwork
 
-- Replaced flat Pip with a softly painted original rabbit in plum cape, rust scarf and satchel, carrying a lantern. Preserved transparent alpha and existing crossing animation.
+- Replaced flat Poppy with a softly painted original rabbit in plum cape, rust scarf and satchel, carrying a lantern. Preserved transparent alpha and existing crossing animation.
 - Added moss-and-amber autumn mill scenery and a painted rescue ending showing the caretaker, travellers, bell, map and lantern. Generated artwork uses the reference for broad mood only; no stock imagery bundled. Full prompts in assets/ARTWORK.md.
-- Enlarged Pip on short desktop screens, moved his speech bubble beside him, and removed the repeated heading above the scouting prompt. Retained existing question controls and saves.
+- Enlarged Poppy on short desktop screens, moved his speech bubble beside him, and removed the repeated heading above the scouting prompt. Retained existing question controls and saves.
 - Gamification reviewer inspected layout rules and markup; applied character visibility and dock-density suggestions.
 - All 31 automated checks pass; syntax and whitespace checks pass. Images visually inspected. Browser/touch/contrast QA and student playtesting remain pending.
 - Focused graphics pass only. Question-bank rewrite remains paused; content.js and engine.js unchanged.
@@ -146,7 +146,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 # Checkpoint 16 — larger artwork and quieter guidance
 
 - Expanded desktop play artwork from a 540px to a 900px maximum, keeping the full 3:2 illustration above the question. Mobile retains its compact fit.
-- Removed the fixed rabbit overlay from question scenes. Pip now sits beside his dialogue at his original 2:3 proportions, independent of background perspective.
+- Removed the fixed rabbit overlay from question scenes. Poppy now sits beside his dialogue at his original 2:3 proportions, independent of background perspective.
 - Added semantic student briefs throughout the story, recovery and bonus bank. Exact conjunction names and answer-revealing chips are hidden until a hint is requested; failed attempts no longer automatically disclose the repair. Successful edits still receive explanations.
 - Kept chapter-wide tool trays with only one contrast synonym per chapter and FOR as the coordinating reason word. All seven FANBOYS remain targets. Question 29 now preserves an existing YET, with a narrow migration for saved edits. Grammatical alternatives remain neutral.
 - Independent gameplay review found no competing target within the trays; its wording corrections are incorporated. 43 automated checks pass, including hint disclosure, neutral feedback, guide placement and saved-edit migration. Actual browser layout/touch/audio QA remains pending.
@@ -161,7 +161,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Reviewed the supplied Android screenshot and built editable reading/action samples in the existing Figma audit: https://www.figma.com/design/euhY5VCNNIoJIHzOUuIqmj?node-id=15-2 . Checked 320px and 390px inventory-note layouts plus a narrow long-passage stress sample. Product fonts verified; final Figma screenshot has no clipped text or controls. The samples omit artwork and browser chrome and are not a browser capture.
 - Reworked sentence markup so each editable punctuation mark stays attached to the preceding word. Removed wide visible button padding while retaining an expanded 44px touch area, selected/error styling, keyboard controls and accessible labels. Paragraphs, word order and full-stop capitalisation are preserved.
 - Moved shared editing rules into a clearly labelled on-demand modal. Reading rules does not mark a task as supported. Added an explicit tap-to-edit instruction and tightened mobile card/action spacing.
-- Moved View artwork into Pip’s dialogue row as a labelled 44px expand control. Stacked art/question/answers and full artwork framing remain.
+- Moved View artwork into Poppy’s dialogue row as a labelled 44px expand control. Stacked art/question/answers and full artwork framing remain.
 - 45 automated checks pass; JS syntax and whitespace checks pass. Tests cover exact rendered report wording and paragraph boundaries, rules-modal state safety and artwork-control placement. Actual mobile browser/touch QA remains pending.
 
 # Checkpoint 19 — smaller mobile reading type
@@ -171,7 +171,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 # Checkpoint 20 — complete narrative draft, paused before adaptation
 
-- Finished STORY.md: a complete six-chapter story of approximately 3,100 words, preserving the approved opening and developing the midnight-bell legend into a fair-play rescue mystery. Pip and Mara have distinct strengths, consequential mistakes and essential rescue roles.
+- Finished STORY.md: a complete six-chapter story of approximately 3,100 words, preserving the approved opening and developing the midnight-bell legend into a fair-play rescue mystery. Poppy and Willow have distinct strengths, consequential mistakes and essential rescue roles.
 - Character-development subagent produced the draft and companion STORY_NOTES.md. Final editorial review clarified the unusual winter light, witness dialogue, bell signalling and the safe rescue route. The notes record chronology, clue payoffs, character direction and a flexible scene outline.
 - User requested task 1 only, then a pause. No question bank, art, gameplay or UI changes were made in this pass. The story is not yet integrated into the deployed game.
 
@@ -226,7 +226,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 # Checkpoint 28 — lighter semicolon load and richer vocabulary
 
-- Chapter 1 now has one semicolon target instead of two. The third main note uses comma + but to express a contrast between Mara’s dismissal of the legend and Pip’s continued unease. Its paired recovery also practises contrast; the four-tool tray stays consistent across the chapter. Later chapters have not been changed in this pass.
+- Chapter 1 now has one semicolon target instead of two. The third main note uses comma + but to express a contrast between Willow’s dismissal of the legend and Poppy’s continued unease. Its paired recovery also practises contrast; the four-tool tray stays consistent across the chapter. Later chapters have not been changed in this pass.
 - Raised vocabulary moderately through natural task wording: dismissed, reassurance, frayed and freshly sawn, plus apprehensive in the recall example. The short vocabulary task now asks students to infer “incongruous” from the contrast between fresh timber and damp, decaying surroundings. All four options concern plausible aspects of the scent; requested help points to the context.
 - Updated teacher bank and casework notes. Existing completion records, choices and village rewards are retained; an older semicolon edit on the contrast note receives neutral brief feedback rather than a grammar penalty.
 - 69 automated checks pass, including the one-semicolon limit, unique targets, full first-expedition progression and separate casework save/help state. Syntax and whitespace checks pass. Browser/mobile rendering QA remains pending.
@@ -266,7 +266,7 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 
 - Left/right arrow keys follow visible reading and notebook pages, including backward paragraph navigation. Right continues after checked answers but never selects or submits one. Text inputs, modifiers, held keys and modal boundaries retain their normal behavior.
 - Added 2.4-second music crossfades. The fireside memory softens the current track rather than changing it twice; revisits resume each track’s position. The incomplete tension cue plays once per game and then stays silent in suspense. Mute and hidden tabs pause immediately. Removed the sound-toggle chime.
-- Story panels remain translucent; supporting notes use ruled parchment, questions dark aubergine and teaching feedback a green inset with Pip. Unified serif reading type and sans-serif interface type. Softened hints and feedback without changing approved story paragraphs, tasks, options or accepted answers. No new artwork.
+- Story panels remain translucent; supporting notes use ruled parchment, questions dark aubergine and teaching feedback a green inset with Poppy. Unified serif reading type and sans-serif interface type. Softened hints and feedback without changing approved story paragraphs, tasks, options or accepted answers. No new artwork.
 - 82 unit/handler tests pass. Native-browser Chapter 1 playthroughs pass 239 state checks across three desktop/tablet sizes; seven-size layout checks pass 148 states. Screenshot review covers story, notes and questions. Music envelopes are tested with a deterministic clock; actual listening and physical Safari/iPad checks remain pending.
 
 
@@ -329,9 +329,9 @@ The woodland-crossings branch now serves the new game from its root index.html, 
 - Approved text, questions and progression are unchanged. Revised generated shots to hide evidence and preserve lighting, location and lantern continuity. Authored frog perches on selected frames.
 - 95 unit/handler tests and 242 native Chapter 1 browser states pass. All 52 frame assets are checked at desktop/tablet sizes. Art provenance and prompt set: assets/chapter-one/frames/ARTWORK.md.
 
-# Checkpoint 43 — Pip ear anatomy repair
+# Checkpoint 43 — Poppy ear anatomy repair
 
-- Reviewed all 52 Chapter 1 frames after the reported duplicated ears. Corrected Pip's ear silhouettes and discarded edits that changed the baker or made a distant silhouette less clear.
+- Reviewed all 52 Chapter 1 frames after the reported duplicated ears. Corrected Poppy's ear silhouettes and discarded edits that changed the baker or made a distant silhouette less clear.
 - Preserved approved story, questions, page mapping and clue concealment. Added an asset cache revision so returning browsers request the corrected paintings.
 - Prompt, provenance and visual review decisions are recorded under assets/chapter-one/frames.
 
@@ -357,16 +357,16 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 
 # Checkpoint 46 — Match Chapter 2 characters to Chapter 1
 
-- Edited all four Chapter 2 paintings against actual Chapter 1 image references, preserving scenery and the four-cell atlas. Restored rounded expressive faces, anthropomorphic proportions, Pip’s dress/cape/scarf/satchel and Mara’s moss-green coat with checked collar. Removed Mara’s invented shoulder bag.
-- Replaced ornate lanterns with the established simple handmade paper lantern. Corrected oil-lamp ownership: Mara inside and upstairs; Pip at the streambank; Mara at the shed. Checked two-ear silhouettes and concealed evidence in all four paintings.
+- Edited all four Chapter 2 paintings against actual Chapter 1 image references, preserving scenery and the four-cell atlas. Restored rounded expressive faces, anthropomorphic proportions, Poppy’s dress/cape/scarf/satchel and Willow’s moss-green coat with checked collar. Removed Willow’s invented shoulder bag.
+- Replaced ornate lanterns with the established simple handmade paper lantern. Corrected oil-lamp ownership: Willow inside and upstairs; Poppy at the streambank; Willow at the shed. Checked two-ear silhouettes and concealed evidence in all four paintings.
 - New asset scenes-v2.webp; prior atlas retained. Saved exact prompt, source identity, references and per-cell review in assets/chapter-two. Updated asset references and entry/module cache revisions. Story, questions, answers and progression are unchanged.
 - 109 automated checks pass. New atlas visually inspected; existing cover-crop geometry applies to its unchanged 1536×1024 dimensions. Rendered-browser, Safari and physical-device checks remain pending.
 
 
-# Checkpoint 47 — Mara’s proportions and face
+# Checkpoint 47 — Willow’s proportions and face
 
-- Re-edited Mara in all four Chapter 2 paintings using Chapter 1’s standing bakery pair as the primary reference. Shortened her elongated body, increased head-to-body ratio, rounded cheeks and muzzle, enlarged expressive eyes, and removed bright cream checked neckwear.
-- The first generated pass shortened the ears too far; a second focused edit restored two long upright rabbit ears before publication. Pip, the lamps, rainy scenery, four-cell boundaries and clue concealment are retained. Final source and both prompts are recorded in assets/chapter-two/mara-review.json and adjacent prompt files.
+- Re-edited Willow in all four Chapter 2 paintings using Chapter 1’s standing bakery pair as the primary reference. Shortened her elongated body, increased head-to-body ratio, rounded cheeks and muzzle, enlarged expressive eyes, and removed bright cream checked neckwear.
+- The first generated pass shortened the ears too far; a second focused edit restored two long upright rabbit ears before publication. Poppy, the lamps, rainy scenery, four-cell boundaries and clue concealment are retained. Final source and both prompts are recorded in assets/chapter-two/willow-review.json and adjacent prompt files.
 - Runtime now uses scenes-v3.webp; earlier assets remain for provenance. Refreshed application and art-module URLs. Story, questions, answers and progression are unchanged.
 - All 109 automated checks pass. Final four-cell atlas compared visually with Chapter 1 references. Rendered-browser, Safari and physical-device checks remain pending.
 
@@ -387,4 +387,4 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 
 ### Final-envelope revision · 22 October 2026
 
-The secret village-name reveal is superseded by the baker’s Night Owl pen-name reveal. A single sentence in Chapter 2 introduces Pip’s familiarity with the Night Owl’s detective stories, without linking them to the baker. The final envelope contains the baker’s signed note and a handwritten story about the adventure. The main investigation, questions and completion gates are unchanged. No teacher-reporting text is shown. See STORY_NOTES.md for current canon.
+The secret village-name reveal is superseded by the baker’s Night Owl pen-name reveal. A single sentence in Chapter 2 introduces Poppy’s familiarity with the Night Owl’s detective stories, without linking them to the baker. The final envelope contains the baker’s signed note and a handwritten story about the adventure. The main investigation, questions and completion gates are unchanged. No teacher-reporting text is shown. See STORY_NOTES.md for current canon.

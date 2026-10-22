@@ -42,19 +42,19 @@ Current implemented questions, answers and retries. Each task has one target wit
 
 ### Q3 · paired-observations
 
-**Student brief:** Keep one sentence. Add a coordinating conjunction that explicitly contrasts Mara’s dismissal with Pip’s continuing unease.
+**Student brief:** Keep one sentence. Add a coordinating conjunction that explicitly contrasts Willow’s dismissal with Poppy’s continuing unease.
 
-**Original:** Mara dismissed the legend as a fireside invention, Pip found little reassurance in the darkened window.
+**Original:** Willow dismissed the legend as a fireside invention, Poppy found little reassurance in the darkened window.
 
-**Target:** Mara dismissed the legend as a fireside invention, but Pip found little reassurance in the darkened window.
+**Target:** Willow dismissed the legend as a fireside invention, but Poppy found little reassurance in the darkened window.
 
 **Why:** Comma + “but” expresses contrast. And only adds information; so would incorrectly express a result. A semicolon is grammatical but does not supply the requested conjunction.
 
-**Retry brief:** Keep one sentence. Add a coordinating conjunction that contrasts Pip’s claim with her behaviour.
+**Retry brief:** Keep one sentence. Add a coordinating conjunction that contrasts Poppy’s claim with her behaviour.
 
-**Retry original:** Pip insisted that she was not apprehensive, she kept glancing over her shoulder.
+**Retry original:** Poppy insisted that she was not apprehensive, she kept glancing over her shoulder.
 
-**Retry target:** Pip insisted that she was not apprehensive, but she kept glancing over her shoulder.
+**Retry target:** Poppy insisted that she was not apprehensive, but she kept glancing over her shoulder.
 
 **Retry explanation:** Comma + “but” expresses contrast. And only adds information; so would incorrectly express a result. A semicolon is grammatical but does not supply the requested conjunction.
 
@@ -62,9 +62,9 @@ Current implemented questions, answers and retries. Each task has one target wit
 
 **Student brief:** Preserve one sentence containing an ordinary list. Keep punctuation that already works. Inspect both list commas.
 
-**Original:** Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
+**Original:** Poppy noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
-**Target:** Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
+**Target:** Poppy noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
 **Why:** These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.
 
@@ -80,23 +80,23 @@ Current implemented questions, answers and retries. Each task has one target wit
 
 **Student brief:** Keep this as one sentence without adding or removing words. Use only the repairs listed. Change punctuation only where necessary.
 
-**Original:** By the time Mara lit her lantern, Pip had called once into the mill, nobody had answered.
+**Original:** By the time Willow lit her lantern, Poppy had called once into the mill, nobody had answered.
 
-**Target:** By the time Mara lit her lantern, Pip had called once into the mill; nobody had answered.
+**Target:** By the time Willow lit her lantern, Poppy had called once into the mill; nobody had answered.
 
 **Why:** The opening beginning “By the time” is dependent, so its comma stays. Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task.
 
 **Retry brief:** Keep this as one sentence without adding or removing words. Use only the repairs listed. Change punctuation only where necessary.
 
-**Retry original:** As Mara raised her lantern, Pip waited beside the doorway, no footsteps came down the stairs.
+**Retry original:** As Willow raised her lantern, Poppy waited beside the doorway, no footsteps came down the stairs.
 
-**Retry target:** As Mara raised her lantern, Pip waited beside the doorway; no footsteps came down the stairs.
+**Retry target:** As Willow raised her lantern, Poppy waited beside the doorway; no footsteps came down the stairs.
 
 **Retry explanation:** The opening beginning with “As” is subordinate, so keep its comma. Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task.
 
 ### The fresh timber
 
-Pip records the fresh scent beside the mill wall.
+Poppy records the fresh scent beside the mill wall.
 
 **Task:** Find and replace one grammatically incorrect word. Preserve meaning and past tense.
 
@@ -126,7 +126,7 @@ D. Easily confused with the smells surrounding it.
 
 ### The familiar stitches
 
-A strip of green cloth hung beneath the latch. Along its edge ran crooked yellow stitches. Pip remembered making that uneven repair on the cuff of Bram’s green coat during the summer. Earlier, she had glimpsed a broad figure upstairs wearing what looked like a green coat, but it had moved before she could be certain.
+A strip of green cloth hung beneath the latch. Along its edge ran crooked yellow stitches. Poppy remembered making that uneven repair on the cuff of Bram’s green coat during the summer. Earlier, she had glimpsed a broad figure upstairs wearing what looked like a green coat, but it had moved before she could be certain.
 
 **Task:** Part 1: Which conclusion is most securely supported?
 Part 2: Which pair of details provides the strongest support?
@@ -139,7 +139,7 @@ B. A piece of cloth from Bram’s coat remained caught beneath the latch.
 
 C. Bram returned to the mill that evening wearing his damaged coat.
 
-D. Bram left the cloth on the latch so that Pip would recognise it.
+D. Bram left the cloth on the latch so that Poppy would recognise it.
 
 **Supporting evidence:**
 
@@ -147,13 +147,13 @@ A. The cloth’s green colour and the figure’s apparently green coat.
 
 B. The cloth’s position beneath the latch and the light burning upstairs.
 
-C. The distinctive stitching and Pip’s memory of making the repair.
+C. The distinctive stitching and Poppy’s memory of making the repair.
 
 D. The figure’s broad shoulders and its disappearance below the window.
 
 **Answer:** B; evidence: C.
 
-**Why:** The cloth can be identified without establishing when it caught, the direction Bram travelled or his intention. Part 1’s other choices add those unsupported details. For Part 2, colour alone is weak evidence: Mara is also wearing a green coat. The distinctive stitching and Pip’s memory of making it link the cloth specifically to Bram’s coat.
+**Why:** The cloth can be identified without establishing when it caught, the direction Bram travelled or his intention. Part 1’s other choices add those unsupported details. For Part 2, colour alone is weak evidence: Willow is also wearing a green coat. The distinctive stitching and Poppy’s memory of making it link the cloth specifically to Bram’s coat.
 
 ## Chapter 2 · What Had Left the Mill
 
@@ -161,17 +161,17 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Student brief:** Join the sentences using a coordinating conjunction that presents the discoveries as additional findings.
 
-**Original:** Pip found a circular mark beside the porch. Mara found a second one beneath the reeds.
+**Original:** Poppy found a circular mark beside the porch. Willow found a second one beneath the reeds.
 
-**Target:** Pip found a circular mark beside the porch, and Mara found a second one beneath the reeds.
+**Target:** Poppy found a circular mark beside the porch, and Willow found a second one beneath the reeds.
 
 **Why:** Both discoveries are complete clauses. A comma followed by “and” adds the second discovery.
 
 **Retry brief:** Join the sentences using a coordinating conjunction that presents the discoveries as additional findings.
 
-**Retry original:** Pip noticed a circular mark beneath the eaves. Mara found another beneath the reeds.
+**Retry original:** Poppy noticed a circular mark beneath the eaves. Willow found another beneath the reeds.
 
-**Retry target:** Pip noticed a circular mark beneath the eaves, and Mara found another beneath the reeds.
+**Retry target:** Poppy noticed a circular mark beneath the eaves, and Willow found another beneath the reeds.
 
 **Retry explanation:** Both discoveries are complete clauses. A comma followed by “and” adds the second discovery.
 
@@ -199,17 +199,17 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Student brief:** Join the sentences using a coordinating conjunction that makes the second action a result of the first discovery.
 
-**Original:** The marks led towards the stream. Mara raised the lamp to search for the next one.
+**Original:** The marks led towards the stream. Willow raised the lamp to search for the next one.
 
-**Target:** The marks led towards the stream, so Mara raised the lamp to search for the next one.
+**Target:** The marks led towards the stream, so Willow raised the lamp to search for the next one.
 
 **Why:** “So” shows that the discovery prompts the action. Place a comma before it.
 
-**Retry brief:** Join the sentences using a coordinating conjunction that makes Pip’s action a result of her difficulty seeing the prints.
+**Retry brief:** Join the sentences using a coordinating conjunction that makes Poppy’s action a result of her difficulty seeing the prints.
 
-**Retry original:** Pip could not see where the bootprints led next. She held the lamp closer to the ground.
+**Retry original:** Poppy could not see where the bootprints led next. She held the lamp closer to the ground.
 
-**Retry target:** Pip could not see where the bootprints led next, so she held the lamp closer to the ground.
+**Retry target:** Poppy could not see where the bootprints led next, so she held the lamp closer to the ground.
 
 **Retry explanation:** “So” shows that the discovery prompts the action. Place a comma before it.
 
@@ -225,9 +225,9 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Retry brief:** Join the sentences using a coordinating conjunction that presents the actions as alternatives.
 
-**Retry original:** Pip could bring the lamp closer to the mark. Mara could examine it in the existing light.
+**Retry original:** Poppy could bring the lamp closer to the mark. Willow could examine it in the existing light.
 
-**Retry target:** Pip could bring the lamp closer to the mark, or Mara could examine it in the existing light.
+**Retry target:** Poppy could bring the lamp closer to the mark, or Willow could examine it in the existing light.
 
 **Retry explanation:** “Or” offers a choice between two courses of action. Place a comma before it.
 
@@ -251,39 +251,39 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 ### An unexpected movement
 
-Pip could see that only the reeds were moving. She still felt uneasy.
+Poppy could see that only the reeds were moving. She still felt uneasy.
 
 **Task:** Use “yet” to join the sentences and emphasise the unexpected contrast. Choose the correctly punctuated sentence.
 
-A. Pip could see that only the reeds were moving, yet she still felt uneasy.
+A. Poppy could see that only the reeds were moving, yet she still felt uneasy.
 
-B. Pip could see that only the reeds were moving yet she still felt uneasy.
+B. Poppy could see that only the reeds were moving yet she still felt uneasy.
 
-C. Pip could see that only the reeds were moving, she still felt uneasy.
+C. Poppy could see that only the reeds were moving, she still felt uneasy.
 
 **Answer:** A.
 
-**Why:** Pip’s recognition of a harmless cause contrasts with her continuing unease. Use a comma before “yet” to join these complete clauses.
+**Why:** Poppy’s recognition of a harmless cause contrasts with her continuing unease. Use a comma before “yet” to join these complete clauses.
 
 ### Evidence for a suspicion
 
-Pip remembered the chip in the bell’s lip. She noticed a matching gap in the circular mark.
+Poppy remembered the chip in the bell’s lip. She noticed a matching gap in the circular mark.
 
-**Task:** Which sentence makes the second clause give evidence for Pip’s suspicion?
+**Task:** Which sentence makes the second clause give evidence for Poppy’s suspicion?
 
-A. Pip suspected that the bell had left the circular mark, so a matching gap interrupted the mark’s edge.
+A. Poppy suspected that the bell had left the circular mark, so a matching gap interrupted the mark’s edge.
 
-B. Pip suspected that the bell had left the circular mark, and a matching gap interrupted the mark’s edge.
+B. Poppy suspected that the bell had left the circular mark, and a matching gap interrupted the mark’s edge.
 
-C. Pip suspected that the bell had left the circular mark, for a matching gap interrupted the mark’s edge.
+C. Poppy suspected that the bell had left the circular mark, for a matching gap interrupted the mark’s edge.
 
 **Answer:** C.
 
-**Why:** The matching gap supports Pip’s suspicion because she remembers the chip in the bell’s lip. “For” introduces that evidence; “and” merely adds it, and “so” reverses the reasoning. The match supports the idea without proving it.
+**Why:** The matching gap supports Poppy’s suspicion because she remembers the chip in the bell’s lip. “For” introduces that evidence; “and” merely adds it, and “so” reverses the reasoning. The match supports the idea without proving it.
 
 ### Spot the comma splice
 
-Pip checks four versions of the same notebook observation.
+Poppy checks four versions of the same notebook observation.
 
 **Task:** Which sentence contains a comma splice?
 
@@ -301,13 +301,13 @@ D. The rain had softened the bootprints; the sheltered circular marks were still
 
 ### Which way does the reasoning run?
 
-Mara thought someone had left the note unfinished, so the words stopped after “Please don’t use the”.
+Willow thought someone had left the note unfinished, so the words stopped after “Please don’t use the”.
 
 **Task:** Why is “so” wrong here?
 
 A. A coordinating conjunction cannot follow a comma.
 
-B. The unfinished words are evidence for Mara’s judgement, rather than a result of it.
+B. The unfinished words are evidence for Willow’s judgement, rather than a result of it.
 
 C. The second clause has no subject.
 
@@ -315,27 +315,27 @@ D. “So” can only introduce a future action.
 
 **Answer:** B.
 
-**Why:** Mara’s judgement did not cause the writer to stop. The incomplete line supports her judgement. “For” would introduce that evidence: Mara thought someone had left the note unfinished, for the words stopped after “Please don’t use the”.
+**Why:** Willow’s judgement did not cause the writer to stop. The incomplete line supports her judgement. “For” would introduce that evidence: Willow thought someone had left the note unfinished, for the words stopped after “Please don’t use the”.
 
 ## Chapter 3 · The Wrong Path
 
 ### Q1 · unexpected-yet
 
-**Student brief:** Keep one sentence. Use a coordinating conjunction to emphasise the gap between Pip’s certainty and the limited evidence.
+**Student brief:** Keep one sentence. Use a coordinating conjunction to emphasise the gap between Poppy’s certainty and the limited evidence.
 
-**Original:** Pip felt sure that Bram had carried the bell along the path, she could not identify who had left the prints.
+**Original:** Poppy felt sure that Bram had carried the bell along the path, she could not identify who had left the prints.
 
-**Target:** Pip felt sure that Bram had carried the bell along the path, yet she could not identify who had left the prints.
+**Target:** Poppy felt sure that Bram had carried the bell along the path, yet she could not identify who had left the prints.
 
-**Why:** Comma + “yet” marks the unexpected contrast: Pip felt sure, although she could not identify who had left the prints. “So” would wrongly present her inability to identify the print-maker as a result of her certainty.
+**Why:** Comma + “yet” marks the unexpected contrast: Poppy felt sure, although she could not identify who had left the prints. “So” would wrongly present her inability to identify the print-maker as a result of her certainty.
 
-**Retry brief:** Keep one sentence. Use a coordinating conjunction to emphasise the gap between Pip’s certainty and the limited evidence.
+**Retry brief:** Keep one sentence. Use a coordinating conjunction to emphasise the gap between Poppy’s certainty and the limited evidence.
 
-**Retry original:** Pip felt sure that the marks would lead to Bram, she did not know who had left them.
+**Retry original:** Poppy felt sure that the marks would lead to Bram, she did not know who had left them.
 
-**Retry target:** Pip felt sure that the marks would lead to Bram, yet she did not know who had left them.
+**Retry target:** Poppy felt sure that the marks would lead to Bram, yet she did not know who had left them.
 
-**Retry explanation:** Comma + “yet” contrasts Pip’s certainty with her uncertainty about who left the marks. “So” would wrongly make that uncertainty a result of her certainty.
+**Retry explanation:** Comma + “yet” contrasts Poppy’s certainty with her uncertainty about who left the marks. “So” would wrongly make that uncertainty a result of her certainty.
 
 ### Q2 · explanatory-for
 
@@ -367,9 +367,9 @@ D. “So” can only introduce a future action.
 
 **Retry brief:** Join the sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
-**Retry original:** Pip could not cross the bridge. She could not trust the bank.
+**Retry original:** Poppy could not cross the bridge. She could not trust the bank.
 
-**Retry target:** Pip could not cross the bridge, nor could she trust the bank.
+**Retry target:** Poppy could not cross the bridge, nor could she trust the bank.
 
 **Retry explanation:** Comma + “nor” adds the second negative. Change “she could not trust the bank” to “could she trust the bank”: put “could” before “she” and remove the repeated “not”.
 
@@ -377,53 +377,53 @@ D. “So” can only introduce a future action.
 
 **Student brief:** Give each character’s view its own sentence. Keep every word.
 
-**Original:** Pip believed that the prints would lead to Bram, Mara feared that the path was dangerous.
+**Original:** Poppy believed that the prints would lead to Bram, Willow feared that the path was dangerous.
 
-**Target:** Pip believed that the prints would lead to Bram. Mara feared that the path was dangerous.
+**Target:** Poppy believed that the prints would lead to Bram. Willow feared that the path was dangerous.
 
-**Why:** “Pip believed” and “Mara feared” head complete main clauses. The clauses beginning with “that” are subordinate within those main clauses. A full stop gives each character’s view its own sentence.
+**Why:** “Poppy believed” and “Willow feared” head complete main clauses. The clauses beginning with “that” are subordinate within those main clauses. A full stop gives each character’s view its own sentence.
 
 **Retry brief:** Give each character’s view its own sentence. Keep every word.
 
-**Retry original:** Pip thought that the marks would lead to Bram, Mara believed that they should return to the village.
+**Retry original:** Poppy thought that the marks would lead to Bram, Willow believed that they should return to the village.
 
-**Retry target:** Pip thought that the marks would lead to Bram. Mara believed that they should return to the village.
+**Retry target:** Poppy thought that the marks would lead to Bram. Willow believed that they should return to the village.
 
-**Retry explanation:** “Pip thought” and “Mara believed” head complete main clauses. Each contains a subordinate that-clause. A full stop separates the characters’ views without changing the subordinate that-clauses.
+**Retry explanation:** “Poppy thought” and “Willow believed” head complete main clauses. Each contains a subordinate that-clause. A full stop separates the characters’ views without changing the subordinate that-clauses.
 
 ### Q5 · relative-subject-main
 
 **Student brief:** Start a new sentence after the bank breaks away. Keep the paired commas around its description and preserve every word.
 
-**Original:** The bank, which was soft with rain, broke away where Pip had stood, a tuft of grass turned over once in the current.
+**Original:** The bank, which was soft with rain, broke away where Poppy had stood, a tuft of grass turned over once in the current.
 
-**Target:** The bank, which was soft with rain, broke away where Pip had stood. A tuft of grass turned over once in the current.
+**Target:** The bank, which was soft with rain, broke away where Poppy had stood. A tuft of grass turned over once in the current.
 
-**Why:** Keep this comma: it opens the extra information “which was soft with rain”. Keep this comma: it closes the extra information about the bank. The first main clause is “The bank broke away where Pip had stood”. The second is “a tuft of grass turned over once in the current”. A full stop gives the movement of the grass its own sentence.
+**Why:** Keep this comma: it opens the extra information “which was soft with rain”. Keep this comma: it closes the extra information about the bank. The first main clause is “The bank broke away where Poppy had stood”. The second is “a tuft of grass turned over once in the current”. A full stop gives the movement of the grass its own sentence.
 
-**Retry brief:** Start a new sentence when the focus shifts from the lamp to Mara’s rescue action. Keep the paired commas and every word.
+**Retry brief:** Start a new sentence when the focus shifts from the lamp to Willow’s rescue action. Keep the paired commas and every word.
 
-**Retry original:** The lamp, which had swung sideways, cast its light across the water, Mara pulled Pip away from the crumbling bank.
+**Retry original:** The lamp, which had swung sideways, cast its light across the water, Willow pulled Poppy away from the crumbling bank.
 
-**Retry target:** The lamp, which had swung sideways, cast its light across the water. Mara pulled Pip away from the crumbling bank.
+**Retry target:** The lamp, which had swung sideways, cast its light across the water. Willow pulled Poppy away from the crumbling bank.
 
-**Retry explanation:** Keep this comma: it opens the extra information “which had swung sideways”. Keep this comma: it closes the extra information about the lamp. “The lamp cast its light across the water” and “Mara pulled Pip away from the crumbling bank” are complete main clauses. A full stop gives Mara’s rescue action its own sentence.
+**Retry explanation:** Keep this comma: it opens the extra information “which had swung sideways”. Keep this comma: it closes the extra information about the lamp. “The lamp cast its light across the water” and “Willow pulled Poppy away from the crumbling bank” are complete main clauses. A full stop gives Willow’s rescue action its own sentence.
 
 ### Waiting at the fingerpost
 
-Pip hurried ahead at the bridge. At the fingerpost, she waited until Mara was ready before they returned together.
+Poppy hurried ahead at the bridge. At the fingerpost, she waited until Willow was ready before they returned together.
 
-**Task:** What does this change most strongly suggest about Pip?
+**Task:** What does this change most strongly suggest about Poppy?
 
 A. She has decided that none of her own observations can be trusted.
 
-B. She is beginning to take Mara’s caution seriously and act together.
+B. She is beginning to take Willow’s caution seriously and act together.
 
-C. She waits only because she is frightened, rather than because she is listening to Mara.
+C. She waits only because she is frightened, rather than because she is listening to Willow.
 
 **Answer:** B.
 
-**Why:** Pip’s behaviour changes from rushing ahead to waiting for Mara. This supports a small shift towards listening and acting together; it does not show that she distrusts every observation or that fear is her only reason for waiting.
+**Why:** Poppy’s behaviour changes from rushing ahead to waiting for Willow. This supports a small shift towards listening and acting together; it does not show that she distrusts every observation or that fear is her only reason for waiting.
 
 This reflection is optional and does not affect supplies.
 
@@ -451,19 +451,19 @@ This reflection is optional and does not affect supplies.
 
 **Student brief:** Keep the “Because” opening attached. Start a new sentence at “Therefore”. Preserve every word.
 
-**Original:** Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved, therefore, she traced the path on the map.
+**Original:** Because the witnesses had heard the bell in different places at different times, Willow suspected that it had moved, therefore, she traced the path on the map.
 
-**Target:** Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved. Therefore, she traced the path on the map.
+**Target:** Because the witnesses had heard the bell in different places at different times, Willow suspected that it had moved. Therefore, she traced the path on the map.
 
-**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Mara suspected that it had moved” and “she traced the path on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Start a new sentence before it and capitalise “Therefore”.
+**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Willow suspected that it had moved” and “she traced the path on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Start a new sentence before it and capitalise “Therefore”.
 
 **Retry brief:** Keep the “Because” opening attached. Start a new sentence at “Therefore”. Preserve every word.
 
-**Retry original:** Because the neighbour had seen three clean bowls beside a covered pot, Pip thought a meal had been prepared, therefore, she wondered who the guests might be.
+**Retry original:** Because the neighbour had seen three clean bowls beside a covered pot, Poppy thought a meal had been prepared, therefore, she wondered who the guests might be.
 
-**Retry target:** Because the neighbour had seen three clean bowls beside a covered pot, Pip thought a meal had been prepared. Therefore, she wondered who the guests might be.
+**Retry target:** Because the neighbour had seen three clean bowls beside a covered pot, Poppy thought a meal had been prepared. Therefore, she wondered who the guests might be.
 
-**Retry explanation:** Keep the comma after the subordinate “Because” opening. “Pip thought a meal had been prepared” and “she wondered who the guests might be” are independent clauses. A full stop before “therefore” repairs the splice and gives Pip’s next thought its own sentence.
+**Retry explanation:** Keep the comma after the subordinate “Because” opening. “Poppy thought a meal had been prepared” and “she wondered who the guests might be” are independent clauses. A full stop before “therefore” repairs the splice and gives Poppy’s next thought its own sentence.
 
 ### Q3 · nevertheless-transition
 
@@ -511,19 +511,19 @@ This reflection is optional and does not affect supplies.
 
 **Why:** “Nobody had answered the door” and “through the kitchen window the neighbour had seen three clean bowls” are independent clauses, so a comma alone cannot join them. A full stop marks the requested shift in viewpoint. “Through the kitchen window” opens the second clause; it belongs with what the neighbour saw.
 
-**Retry brief:** Start a fresh sentence when the viewpoint shifts from the ferryman by the wall to Pip beneath the awning. Keep every word.
+**Retry brief:** Start a fresh sentence when the viewpoint shifts from the ferryman by the wall to Poppy beneath the awning. Keep every word.
 
-**Retry original:** The ferryman left the saw by the wall, beneath the awning Pip spread out the map.
+**Retry original:** The ferryman left the saw by the wall, beneath the awning Poppy spread out the map.
 
-**Retry target:** The ferryman left the saw by the wall. Beneath the awning Pip spread out the map.
+**Retry target:** The ferryman left the saw by the wall. Beneath the awning Poppy spread out the map.
 
-**Retry explanation:** Both clauses have their own subject and verb, so a comma alone splices them. A full stop marks the viewpoint change. “Beneath the awning” opens the second clause and stays with Pip’s action.
+**Retry explanation:** Both clauses have their own subject and verb, so a comma alone splices them. A full stop marks the viewpoint change. “Beneath the awning” opens the second clause and stays with Poppy’s action.
 
 ### Supper and a shelter
 
-Through Bram’s kitchen window, the neighbour saw three clean bowls beside a covered pot, with chairs drawn up at the table. The baker remembered Bram mentioning supper for the mender and her apprentice. Pip pointed to Quarry Shelter on the map.
+Through Bram’s kitchen window, the neighbour saw three clean bowls beside a covered pot, with chairs drawn up at the table. The baker remembered Bram mentioning supper for the mender and her apprentice. Poppy pointed to Quarry Shelter on the map.
 
-**Task:** Part 1: Which judgement best separates the supported conclusion from Pip’s unconfirmed hypothesis?
+**Task:** Part 1: Which judgement best separates the supported conclusion from Poppy’s unconfirmed hypothesis?
 Part 2: Which pair of details most strongly supports the conclusion about supper?
 
 A. Bram was expecting the two guests, and the table establishes that all three are now at Quarry Shelter.
@@ -560,11 +560,11 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 **Why:** Keep the comma opening the extra information. Keep the comma closing the description before the main verb. A comma plus “so” makes the second action a result of the first situation.
 
-**Retry brief:** Keep the existing full stop and paired commas. Add a coordinating conjunction making the baker’s action a result of Pip being cold.
+**Retry brief:** Keep the existing full stop and paired commas. Add a coordinating conjunction making the baker’s action a result of Poppy being cold.
 
-**Retry original:** The baker, who stayed beside Pip, watched the shelter. Pip was cold after standing in the rain, the baker wrapped a dry scarf around her shoulders.
+**Retry original:** The baker, who stayed beside Poppy, watched the shelter. Poppy was cold after standing in the rain, the baker wrapped a dry scarf around her shoulders.
 
-**Retry target:** The baker, who stayed beside Pip, watched the shelter. Pip was cold after standing in the rain, so the baker wrapped a dry scarf around her shoulders.
+**Retry target:** The baker, who stayed beside Poppy, watched the shelter. Poppy was cold after standing in the rain, so the baker wrapped a dry scarf around her shoulders.
 
 **Retry explanation:** Keep the comma opening the extra information. Keep the comma closing the description before the main verb. A comma plus “so” makes the second action a result of the first situation.
 
@@ -572,17 +572,17 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 **Student brief:** Keep the opening attached. Start a fresh sentence at the later event.
 
-**Original:** When Pip first called, the bell rang again, a little later, the distant light copied her signal.
+**Original:** When Poppy first called, the bell rang again, a little later, the distant light copied her signal.
 
-**Target:** When Pip first called, the bell rang again. A little later, the distant light copied her signal.
+**Target:** When Poppy first called, the bell rang again. A little later, the distant light copied her signal.
 
 **Why:** The opening is subordinate and stays attached with a comma. Both clauses are complete. A full stop marks the requested later event.
 
 **Retry brief:** Keep the opening attached. Start a fresh sentence at the later event.
 
-**Retry original:** While the adults cleared the path, Pip held the lamp, afterwards, the search party crossed Alder Arch.
+**Retry original:** While the adults cleared the path, Poppy held the lamp, afterwards, the search party crossed Alder Arch.
 
-**Retry target:** While the adults cleared the path, Pip held the lamp. Afterwards, the search party crossed Alder Arch.
+**Retry target:** While the adults cleared the path, Poppy held the lamp. Afterwards, the search party crossed Alder Arch.
 
 **Retry explanation:** The opening is subordinate and stays attached with a comma. Both clauses are complete. A full stop marks the requested later event.
 
@@ -598,27 +598,27 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 **Retry brief:** Keep two sentences. Add a coordinating conjunction expressing contrast at the first join and one expressing a result at the second.
 
-**Retry original:** Pip wanted to join the search party, she stayed at the rock. The distant light copied her pattern, Mara knew someone could see them.
+**Retry original:** Poppy wanted to join the search party, she stayed at the rock. The distant light copied her pattern, Willow knew someone could see them.
 
-**Retry target:** Pip wanted to join the search party, but she stayed at the rock. The distant light copied her pattern, so Mara knew someone could see them.
+**Retry target:** Poppy wanted to join the search party, but she stayed at the rock. The distant light copied her pattern, so Willow knew someone could see them.
 
-**Retry explanation:** A comma plus “but” contrasts Pip’s wish with her decision to stay. A comma plus “so” makes Mara’s conclusion follow from the answering signal.
+**Retry explanation:** A comma plus “but” contrasts Poppy’s wish with her decision to stay. A comma plus “so” makes Willow’s conclusion follow from the answering signal.
 
 ### Q4 · correct-mixed-note
 
 **Student brief:** Edit only what needs changing. Preserve the wording, conjunctions and existing sentence boundaries.
 
-**Original:** Although Pip wanted to go, she remained beside the rock. The shelter was visible, but the gorge prevented a direct approach. The neighbours brought lamps, poles and canvas.
+**Original:** Although Poppy wanted to go, she remained beside the rock. The shelter was visible, but the gorge prevented a direct approach. The neighbours brought lamps, poles and canvas.
 
-**Target:** Although Pip wanted to go, she remained beside the rock. The shelter was visible, but the gorge prevented a direct approach. The neighbours brought lamps, poles and canvas.
+**Target:** Although Poppy wanted to go, she remained beside the rock. The shelter was visible, but the gorge prevented a direct approach. The neighbours brought lamps, poles and canvas.
 
 **Why:** Keep the comma after the subordinate opening. The existing coordinating conjunction already joins the clauses correctly. This comma separates items in a list, not complete clauses.
 
 **Retry brief:** Edit only what needs changing. Preserve the wording, conjunctions and existing sentence boundaries.
 
-**Retry original:** Although the path was steep, the party kept climbing. Mara carried the map, and the ferryman led the way. Pip watched the trees, the bridge and the shelter.
+**Retry original:** Although the path was steep, the party kept climbing. Willow carried the map, and the ferryman led the way. Poppy watched the trees, the bridge and the shelter.
 
-**Retry target:** Although the path was steep, the party kept climbing. Mara carried the map, and the ferryman led the way. Pip watched the trees, the bridge and the shelter.
+**Retry target:** Although the path was steep, the party kept climbing. Willow carried the map, and the ferryman led the way. Poppy watched the trees, the bridge and the shelter.
 
 **Retry explanation:** Keep the comma after the subordinate opening. The existing coordinating conjunction already joins the clauses correctly. This comma separates items in a list, not complete clauses.
 
@@ -626,48 +626,48 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 **Student brief:** Join these two sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
-**Original:** Pip could not recognise the voice. She could not see the speaker.
+**Original:** Poppy could not recognise the voice. She could not see the speaker.
 
-**Target:** Pip could not recognise the voice, nor could she see the speaker.
+**Target:** Poppy could not recognise the voice, nor could she see the speaker.
 
 **Why:** “Nor” adds a second negative. Move “could” before the subject and remove “not”: the negative is supplied by “nor”.
 
 **Retry brief:** Join these two sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
-**Retry original:** Mara could not carry the mender alone. She could not reach the shelter without crossing the gorge.
+**Retry original:** Willow could not carry the mender alone. She could not reach the shelter without crossing the gorge.
 
-**Retry target:** Mara could not carry the mender alone, nor could she reach the shelter without crossing the gorge.
+**Retry target:** Willow could not carry the mender alone, nor could she reach the shelter without crossing the gorge.
 
 **Retry explanation:** “Nor” adds a second negative. Move “could” before the subject and remove “not”: the negative is supplied by “nor”.
 
 ### An answer, but whose?
 
-Pip raised her lamp twice, paused, then raised it once. The distant light copied the pattern. A voice said “three of us”, but Pip could not recognise it.
+Poppy raised her lamp twice, paused, then raised it once. The distant light copied the pattern. A voice said “three of us”, but Poppy could not recognise it.
 
 **Task:** Part 1: Which conclusion is best supported?
 Part 2: Which pair of details supports it?
 
 A. Bram was holding the distant lamp.
 
-B. Someone at the shelter could see and deliberately answer Pip.
+B. Someone at the shelter could see and deliberately answer Poppy.
 
 C. All three people at the shelter could walk safely.
 
-D. The three people were signalling before Pip arrived because they had already seen her.
+D. The three people were signalling before Poppy arrived because they had already seen her.
 
 **Supporting evidence:**
 
-A. The bell rang three times and Pip shouted Bram’s name.
+A. The bell rang three times and Poppy shouted Bram’s name.
 
 B. The shelter was marked on the map and stood above the water.
 
-C. Pip used a distinctive pattern and the distant light repeated it.
+C. Poppy used a distinctive pattern and the distant light repeated it.
 
-D. Pip recognised the bell and the voice reported three people.
+D. Poppy recognised the bell and the voice reported three people.
 
 **Answer:** B; evidence: C.
 
-**Why:** Repeating Pip’s pattern supports deliberate communication. The unrecognised voice and reported number do not identify the person holding the light or establish that everyone can walk.
+**Why:** Repeating Poppy’s pattern supports deliberate communication. The unrecognised voice and reported number do not identify the person holding the light or establish that everyone can walk.
 
 ## Chapter 6 · Before Morning
 
@@ -675,9 +675,9 @@ D. Pip recognised the bell and the voice reported three people.
 
 **Student brief:** Start a new sentence when the account moves to the bakery. Keep the remaining sentences and add a coordinating conjunction making the final clause explain the preceding statement.
 
-**Original:** When the rescuers reached the rock, Pip stood up, at the bakery, the mender rested beside the oven. The return had been slow, the carriers had stopped on the steep stretches.
+**Original:** When the rescuers reached the rock, Poppy stood up, at the bakery, the mender rested beside the oven. The return had been slow, the carriers had stopped on the steep stretches.
 
-**Target:** When the rescuers reached the rock, Pip stood up. At the bakery, the mender rested beside the oven. The return had been slow, for the carriers had stopped on the steep stretches.
+**Target:** When the rescuers reached the rock, Poppy stood up. At the bakery, the mender rested beside the oven. The return had been slow, for the carriers had stopped on the steep stretches.
 
 **Why:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces the reason for the preceding statement.
 
@@ -693,9 +693,9 @@ D. Pip recognised the bell and the voice reported three people.
 
 **Student brief:** Keep the paired commas and the existing full stop. Add a coordinating conjunction showing the action prompted by the discovery.
 
-**Original:** The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, Mara asked about his work at the bridge.
+**Original:** The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, Willow asked about his work at the bridge.
 
-**Target:** The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, so Mara asked about his work at the bridge.
+**Target:** The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, so Willow asked about his work at the bridge.
 
 **Why:** Keep the opening comma around extra information. Keep the closing comma before the main verb. A comma plus “so” links the discovery to the action it prompts.
 
@@ -737,11 +737,11 @@ The support had been cut, so the damage could not be blamed entirely on the weat
 
 **Student brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
 
-**Original:** Although the shavings were fresh, their source was uncertain. Pip suspected wrongdoing, but Mara wanted stronger evidence.
+**Original:** Although the shavings were fresh, their source was uncertain. Poppy suspected wrongdoing, but Willow wanted stronger evidence.
 
 The wood could have come from an authorised repair, someone could have removed it without permission.
 
-**Target:** Although the shavings were fresh, their source was uncertain. Pip suspected wrongdoing, but Mara wanted stronger evidence.
+**Target:** Although the shavings were fresh, their source was uncertain. Poppy suspected wrongdoing, but Willow wanted stronger evidence.
 
 The wood could have come from an authorised repair, or someone could have removed it without permission.
 
@@ -749,11 +749,11 @@ The wood could have come from an authorised repair, or someone could have remove
 
 **Retry brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
 
-**Retry original:** Although Bram had stayed with the travellers, his earlier claim needed checking. Mara trusted the mender’s account, but she still wanted to check the physical evidence.
+**Retry original:** Although Bram had stayed with the travellers, his earlier claim needed checking. Willow trusted the mender’s account, but she still wanted to check the physical evidence.
 
 The disagreement could reflect a mistake, it could reveal a deliberate lie.
 
-**Retry target:** Although Bram had stayed with the travellers, his earlier claim needed checking. Mara trusted the mender’s account, but she still wanted to check the physical evidence.
+**Retry target:** Although Bram had stayed with the travellers, his earlier claim needed checking. Willow trusted the mender’s account, but she still wanted to check the physical evidence.
 
 The disagreement could reflect a mistake, or it could reveal a deliberate lie.
 
@@ -773,15 +773,15 @@ The bridge was unsafe, so the neighbours closed both approaches. The village exa
 
 **Why:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete clauses. A full stop gives the next observation its own sentence. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
 
-**Retry brief:** Keep the dependent opening and paired commas. Give Bram’s conflicting claim its own sentence. Add a coordinating conjunction making Mara’s next question a result of the conflicting accounts. Start a new sentence at “Later that week”.
+**Retry brief:** Keep the dependent opening and paired commas. Give Bram’s conflicting claim its own sentence. Add a coordinating conjunction making Willow’s next question a result of the conflicting accounts. Start a new sentence at “Later that week”.
 
 **Retry original:** Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning, Bram had denied visiting the crossing.
 
-Their accounts conflicted, Mara asked another question. The villagers investigated the missing timber, later that week, Bram began helping to pay for repairs.
+Their accounts conflicted, Willow asked another question. The villagers investigated the missing timber, later that week, Bram began helping to pay for repairs.
 
 **Retry target:** Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning. Bram had denied visiting the crossing.
 
-Their accounts conflicted, so Mara asked another question. The villagers investigated the missing timber. Later that week, Bram began helping to pay for repairs.
+Their accounts conflicted, so Willow asked another question. The villagers investigated the missing timber. Later that week, Bram began helping to pay for repairs.
 
 **Retry explanation:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete clauses. A full stop gives the next observation its own sentence. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
 
@@ -834,8 +834,8 @@ D. The three bowls and the covered pot at the cottage.
 
 **b3:** Keep the WHERE opening attached. Use AND to add the second action; begin a new sentence at the later time “At sunrise”.
 
-**Original:** Where the path reached the village, Pip walked beside Mara. The baker opened the door, the neighbours brought the stretcher inside, at sunrise, the village began to stir.
+**Original:** Where the path reached the village, Poppy walked beside Willow. The baker opened the door, the neighbours brought the stretcher inside, at sunrise, the village began to stir.
 
-**Target:** Where the path reached the village, Pip walked beside Mara. The baker opened the door, and the neighbours brought the stretcher inside. At sunrise, the village began to stir.
+**Target:** Where the path reached the village, Poppy walked beside Willow. The baker opened the door, and the neighbours brought the stretcher inside. At sunrise, the village began to stir.
 
 **Why:** Where introduces a dependent location clause. And adds the neighbours’ action. At sunrise starts a new point in the timeline.

@@ -32,7 +32,7 @@ test('Chapter 4 reading saves independently and never opens on recovery or befor
 test('Chapter 4 has the approved five targets, matching retries and explicit punctuation instructions',()=>{
  const expected=[
  'The baker heard the bell near the footbridge; however, the ferryman heard it above the bend.',
- 'Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved. Therefore, she traced the path on the map.',
+ 'Because the witnesses had heard the bell in different places at different times, Willow suspected that it had moved. Therefore, she traced the path on the map.',
  'The ferryman, who knew the higher crossing, said the route was above the water; nevertheless, a fallen beech limb blocked the approach.',
  'The lower path was under water, but the old shelter stood above the flood line.',
  'Nobody had answered the door. Through the kitchen window the neighbour had seen three clean bowls.'

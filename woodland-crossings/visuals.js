@@ -1,5 +1,5 @@
 // Local painted assets with vector scenery retained as a fallback. No external art requests.
-export function rabbitArt(happy=false){return `<img class="pip-art ${happy?'pip-celebrating':''}" src="assets/pip-storybook.webp" width="320" height="480" alt="" aria-hidden="true" draggable="false">`;}
+export function rabbitArt(happy=false){return `<img class="poppy-art ${happy?'poppy-celebrating':''}" src="assets/poppy-storybook.webp" width="320" height="480" alt="" aria-hidden="true" draggable="false">`;}
 const themes=[{sky:'#d9ead8',hill:'#a2c398',far:'#c3dab4',water:'#80b8b2',sun:'#fff0b5'},{sky:'#e0edca',hill:'#81b08b',far:'#b0cc9a',water:'#83b8a2',sun:'#fff0bb'},{sky:'#f2e3c6',hill:'#a4b78d',far:'#d3cba3',water:'#83b6ae',sun:'#ffe6a1'},{sky:'#283f54',hill:'#426653',far:'#385566',water:'#5e969f',sun:'#f4e2a8'},{sky:'#c8dfcc',hill:'#7ba680',far:'#a3c6a6',water:'#74aaa2',sun:'#f4e7b6'},{sky:'#eee4cb',hill:'#a3bb87',far:'#c9cda1',water:'#86b9af',sun:'#ffe5a0'}];
 function tree(x,y,s=1){return `<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 0V-105" stroke="#6e7050" stroke-width="9"/><path d="M0-165L-42-93H-22L-51-51H-27L-57-12H57L28-51H49L22-93H42Z" fill="#365e4b"/><path d="M0-165L-8-93L-17-51L-22-12H57L28-51H49L22-93H42Z" fill="#477759"/></g>`;}
 function vectorBuildingArt(i,built=true){const art=[

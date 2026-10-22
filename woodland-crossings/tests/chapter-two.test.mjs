@@ -56,7 +56,7 @@ test('five joining notes start as two complete sentences and accept exactly the 
  }
  assert.equal(s.story,10);assert.equal(s.seq,5);
  assert.deepEqual(STORY[6].valid,[['but','yet']]);assert.deepEqual(TRANSFER[6].valid,STORY[6].valid);
- assert.match(renderSentence(STORY[5],['and']),/porch, and Mara/);
+ assert.match(renderSentence(STORY[5],['and']),/porch, and Willow/);
 });
 test('new saves retain edits and only old Chapter 2 active stems have their choices reset',()=>{
  const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['yet'];s.activeTries=1;
@@ -91,5 +91,5 @@ test('all Chapter 2 views have local rain artwork and safe desktop/tablet atlas 
 test('root and game entry points load the same visual-novel styles and versioned application',()=>{
  const root=readFileSync(new URL('../../index.html',import.meta.url),'utf8'),game=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(root,/<base href="\.\/woodland-crossings\/">/);
- for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261022-ending-layout1"/);assert.match(html,/src="app.js\?v=20261022-night-owl1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
+ for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261022-character-names1"/);assert.match(html,/src="app.js\?v=20261022-character-names1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
 });

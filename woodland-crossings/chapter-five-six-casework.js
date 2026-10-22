@@ -6,7 +6,7 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
     "kind": "deduction",
     "title": "An answer, but whose?",
     "label": "Evidence and inference",
-    "context": "Pip raised her lamp twice, paused, then raised it once. The distant light copied the pattern. A voice said “three of us”, but Pip could not recognise it.",
+    "context": "Poppy raised her lamp twice, paused, then raised it once. The distant light copied the pattern. A voice said “three of us”, but Poppy could not recognise it.",
     "prompt": "Part 1: Which conclusion is best supported?\nPart 2: Which pair of details supports it?",
     "options": [
       {
@@ -16,7 +16,7 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
       },
       {
         "id": "1",
-        "text": "Someone at the shelter could see and deliberately answer Pip.",
+        "text": "Someone at the shelter could see and deliberately answer Poppy.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       },
       {
@@ -26,7 +26,7 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
       },
       {
         "id": "3",
-        "text": "The three people were signalling before Pip arrived because they had already seen her.",
+        "text": "The three people were signalling before Poppy arrived because they had already seen her.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       }
     ],
@@ -34,7 +34,7 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
     "evidence": [
       {
         "id": "0",
-        "text": "The bell rang three times and Pip shouted Bram’s name.",
+        "text": "The bell rang three times and Poppy shouted Bram’s name.",
         "feedback": "Choose details that directly support your conclusion."
       },
       {
@@ -44,20 +44,20 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
       },
       {
         "id": "2",
-        "text": "Pip used a distinctive pattern and the distant light repeated it.",
+        "text": "Poppy used a distinctive pattern and the distant light repeated it.",
         "feedback": "Choose details that directly support your conclusion."
       },
       {
         "id": "3",
-        "text": "Pip recognised the bell and the voice reported three people.",
+        "text": "Poppy recognised the bell and the voice reported three people.",
         "feedback": "Choose details that directly support your conclusion."
       }
     ],
     "evidenceAnswer": "2",
     "hint": "Separate the observed events from explanations that would need more evidence.",
     "evidenceHint": "Now choose the pair of observations that supports this conclusion.",
-    "why": "Repeating Pip’s pattern supports deliberate communication. The unrecognised voice and reported number do not identify the person holding the light or establish that everyone can walk.",
-    "success": "Pip records the conclusion beside its supporting evidence."
+    "why": "Repeating Poppy’s pattern supports deliberate communication. The unrecognised voice and reported number do not identify the person holding the light or establish that everyone can walk.",
+    "success": "Poppy records the conclusion beside its supporting evidence."
   },
   {
     "id": "c6-test-the-account",
@@ -117,6 +117,6 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
     "hint": "Separate the observed events from explanations that would need more evidence.",
     "evidenceHint": "Now choose the pair of observations that supports this conclusion.",
     "why": "The two accounts place Bram at the crossing at incompatible times. The conditional conclusion stays within this evidence: it identifies the contradiction without using it alone to prove motive or deliberate injury. Physical evidence separately supports deliberate timber removal.",
-    "success": "Pip records the conclusion beside its supporting evidence."
+    "success": "Poppy records the conclusion beside its supporting evidence."
   }
 ];
