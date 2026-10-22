@@ -1,7 +1,7 @@
-import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261022-simulator-feedback1';
+import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261022-natural-prose1';
 export const DAY=86400000;
 export const INTERVALS=[DAY,3*DAY,7*DAY];
-export function fresh(){return {version:1,bankVersion:2,chapterTwoRevision:1,chapterThreeRevision:1,chapterFourRevision:1,chapterFiveSixRevision:1,activeWordOrder:'',story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
+export function fresh(){return {version:1,bankVersion:2,naturalProseRevision:1,chapterTwoRevision:1,chapterThreeRevision:1,chapterFourRevision:1,chapterFiveSixRevision:1,activeWordOrder:'',story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
 export function hydrate(raw){
  if(!raw||raw.version!==1||!Number.isInteger(raw.story)||raw.story<0||raw.story>STORY.length)return fresh();
  const s={...fresh(),...raw};
@@ -29,6 +29,12 @@ export function hydrate(raw){
   if(/^([mr])(2[1-9]|30)$/.test(s.activeId||'')){s.activeId=null;s.activeChoices=null;s.activeWordOrder='';s.activeHelp=false;s.activeTries=0;s.activeContract=false;}
   if(/^m(2[1-9]|30)$/.test(s.pendingNotebook||''))s.pendingNotebook=null;
   s.chapterFiveSixRevision=1;
+ }
+ if(raw.naturalProseRevision!==1){
+  if(/^[mr](?:1[4-9]|2[1-9]|30)$/.test(s.activeId||'')||s.activeId==='b1'){
+   s.activeChoices=null;s.activeWordOrder='';s.activeHelp=false;s.activeTries=0;s.activeContract=false;
+  }
+  s.naturalProseRevision=1;
  }
  if(typeof s.activeWordOrder!=='string')s.activeWordOrder='';
  // Preserve older in-progress edits after the contrast word moved into the text.

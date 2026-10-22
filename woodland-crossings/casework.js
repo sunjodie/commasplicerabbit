@@ -1,6 +1,6 @@
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
-import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261022-simulator-feedback1';
-import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261022-simulator-feedback1';
+import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261022-natural-prose1';
+import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261022-natural-prose1';
 // Supporting questions from the approved Chapter 1.
 export const CASEWORK=[
   {

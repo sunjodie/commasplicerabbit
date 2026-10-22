@@ -24,14 +24,14 @@ test('Chapter 3 targets use the chapter evidence and retain five supply awards',
  'Pip felt sure that Bram had carried the bell along the path, yet she could not identify who had left the prints.',
  'The sound came from the bridge, for the broken rail kept striking its underside.',
  'The bridge could not be crossed, nor could the bank be trusted.',
- 'Pip believed that the prints would lead to Bram; Mara feared that the path was dangerous.',
- 'The bank, which was soft with rain, broke away where Pip had stood; a tuft of grass turned over once in the current.'
+ 'Pip believed that the prints would lead to Bram. Mara feared that the path was dangerous.',
+ 'The bank, which was soft with rain, broke away where Pip had stood. A tuft of grass turned over once in the current.'
  ];
  const s=fresh();s.story=10;
  for(const [i,q] of STORY.slice(10,15).entries()){assert.equal(renderSentence(q,q.valid.map(v=>v[0]),q.wordOrder?.answer),expected[i]);assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);assert.equal(nextQuestion(s).id,q.id);record(s,q,false,10);}
  assert.equal(s.story,15);assert.equal(s.seq,5);
  for(const q of [...STORY,...TRANSFER].filter(q=>q.stage===2))assert.doesNotMatch(q.parts.join(' '),/caretaker|nail|thread|mounting/);
- assert.match(STORY[13].studentBrief,/semicolon/);assert.match(STORY[14].studentBrief,/semicolon/);
+ assert.match(STORY[13].studentBrief,/own sentence/);assert.match(STORY[14].studentBrief,/new sentence/);
 });
 test('nor requires the student to produce inversion, on the main and retry tasks',()=>{
  for(const q of [STORY[12],TRANSFER[12]]){

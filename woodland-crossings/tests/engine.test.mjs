@@ -10,9 +10,9 @@ test('authored bank has an approved answer set per join, complete briefs, availa
  assert.equal(new Set(STORY.map(q=>q.structure)).size,30);
  for(const q of STORY){const r=TRANSFER.find(r=>r.structure===q.structure);assert.ok(r);assert.notDeepEqual(r.parts,q.parts);assert.deepEqual(r.valid,q.valid);}
 });
-test('every FANBOYS is a target; semicolons recur in more complex structures and full reports',()=>{
+test('every FANBOYS is a target; semicolons remain focused practice rather than the default repair',()=>{
  for(const t of ['for','and','nor','but','or','yet','so'])assert.ok(STORY.some(q=>q.valid.some(v=>v[0]===t)),t);
- assert.ok(STORY.filter(q=>q.valid.some(v=>v[0]==='semi')).length>=10);
+ assert.equal(STORY.filter(q=>q.valid.some(v=>v[0]==='semi')).length,4);
  assert.ok(STORY.slice(20).every(q=>q.kind==='paragraph'));
  assert.ok(STORY.slice(27).every(q=>q.parts.join('').includes('\n\n')));
  assert.equal(STORY[29].valid.length,6);
@@ -68,7 +68,7 @@ test('persistent support never traps a student in recovery or withholds the endi
 });
 
 test('explicit whole-text goals disambiguate the offered answers, including already-correct notes',()=>{
- assert.equal(STORY[0].goal.sentences,2);assert.equal(STORY[3].goal.sentences,1);assert.equal(STORY[23].goal.sentences,3);assert.equal(STORY[29].goal.sentences,5);assert.deepEqual(STORY[29].goal.conjunctions,['so']);
+ assert.equal(STORY[0].goal.sentences,2);assert.equal(STORY[3].goal.sentences,1);assert.equal(STORY[23].goal.sentences,3);assert.equal(STORY[29].goal.sentences,6);assert.deepEqual(STORY[29].goal.conjunctions,['so']);
  const correct=STORY[23];assert.deepEqual(grammarErrors(correct,['comma','semi','comma']),[]);assert.deepEqual(errors(correct,['comma','semi','comma']),[1]);assert.deepEqual(errors(correct,['comma','comma','comma']),[]);
  for(const q of BANK){assert.ok(q.goal.sentences>=1);const target=q.valid.map(v=>v[0]);assert.equal((renderSentence(q,target).match(/[.!?](?=\s|$)/g)||[]).length,q.goal.sentences);for(let i=0;i<target.length;i++)for(const t of q.options)if(!q.valid[i].includes(t)){const alternative=[...target];alternative[i]=t;assert.ok(errors(q,alternative).length,`${q.id}: second accepted edit at ${i}`);}}
 });
@@ -76,4 +76,19 @@ test('explicit whole-text goals disambiguate the offered answers, including alre
 test('semantic briefs and contrast trays follow the approved chapter rules',()=>{
  for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage===0)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
  for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^but /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
+});
+
+test('prose revision clears obsolete active edits but preserves progress, rewards and current edits',()=>{
+ for(const id of ['m14','r17','m23','r28','m30','b1']){
+  const old={...fresh(),story:22,seq:28,activeId:id,activeChoices:['semi'],activeHelp:true,decorations:[{chapter:0}],frogFinds:['clock-frog']};
+  delete old.naturalProseRevision;
+  const migrated=hydrate(old);
+  assert.equal(migrated.activeChoices,null,id);assert.equal(migrated.activeHelp,false,id);
+  assert.equal(migrated.story,22);assert.equal(migrated.seq,28);
+  assert.deepEqual(migrated.decorations,old.decorations);assert.deepEqual(migrated.frogFinds,old.frogFinds);
+ }
+ const current={...fresh(),story:22,activeId:'m23',activeChoices:['but','so']};
+ assert.deepEqual(hydrate(current).activeChoices,['but','so']);
+ const approved={...fresh(),story:4,activeId:'m5',activeChoices:['comma','semi']};delete approved.naturalProseRevision;
+ assert.deepEqual(hydrate(approved).activeChoices,['comma','semi']);
 });

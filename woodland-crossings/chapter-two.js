@@ -1,5 +1,5 @@
 // Approved Chapter 2. Read the investigation before editing its notebook.
-import {readingPages} from './chapter-one.js?v=20261022-simulator-feedback1';
+import {readingPages} from './chapter-one.js?v=20261022-natural-prose1';
 export const CHAPTER_TWO=[
   {
     "id": "m6",

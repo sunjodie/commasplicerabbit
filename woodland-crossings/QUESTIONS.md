@@ -66,7 +66,7 @@ Current implemented questions, answers and retries. Each task has one target wit
 
 **Target:** Pip noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.
 
-**Why:** These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works. These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.
+**Why:** These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.
 
 **Retry brief:** Preserve one sentence containing an ordinary list. Keep punctuation that already works. Inspect both list commas.
 
@@ -74,7 +74,7 @@ Current implemented questions, answers and retries. Each task has one target wit
 
 **Retry target:** Beside the bakery stood empty crates, folded tables, and a basket of paper lanterns.
 
-**Retry explanation:** These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works. These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.
+**Retry explanation:** These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.
 
 ### Q5 · time-opening-paired-main
 
@@ -183,8 +183,6 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Target:** The rain had softened the bootprints, but the sheltered circular marks were still clear.
 
-**Also accepted:** comma + “yet”.
-
 **Why:** “But” and “yet” both express contrast. “Yet” places greater emphasis on the unexpected difference. Use a comma before either conjunction.
 
 **Retry brief:** Join the sentences using a coordinating conjunction that makes the contrast explicit.
@@ -194,6 +192,8 @@ D. The figure’s broad shoulders and its disappearance below the window.
 **Retry target:** Rain fell across the path, but the circular mark beneath the eaves remained sheltered.
 
 **Retry explanation:** “But” and “yet” both express contrast. “Yet” places greater emphasis on the unexpected difference. Use a comma before either conjunction.
+
+**Also accepted:** Replace “but” with “yet” in either target. Both express the requested contrast.
 
 ### Q3 · cause-result
 
@@ -205,7 +205,7 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Why:** “So” shows that the discovery prompts the action. Place a comma before it.
 
-**Retry brief:** Join the sentences using a coordinating conjunction that makes the second action a result of the first discovery.
+**Retry brief:** Join the sentences using a coordinating conjunction that makes Pip’s action a result of her difficulty seeing the prints.
 
 **Retry original:** Pip could not see where the bootprints led next. She held the lamp closer to the ground.
 
@@ -235,17 +235,17 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Student brief:** Join the sentences using a semicolon. Do not add a conjunction.
 
-**Original:** Someone appeared to have paused beside the reeds. Two deep bootprints stood beside the circular mark.
+**Original:** Someone appeared to have paused beside the reeds. Two deep bootprints lay beside the circular mark.
 
-**Target:** Someone appeared to have paused beside the reeds; two deep bootprints stood beside the circular mark.
+**Target:** Someone appeared to have paused beside the reeds; two deep bootprints lay beside the circular mark.
 
 **Why:** Both clauses are complete. A semicolon links the related observations. “Someone” is the subject of the first clause; “appeared” keeps the interpretation tentative.
 
 **Retry brief:** Join the sentences using a semicolon. Do not add a conjunction.
 
-**Retry original:** Someone appeared to have paused beneath the reeds. A circular mark lay beside two deep bootprints.
+**Retry original:** Someone appeared to have paused beside the reeds. A circular mark lay beside two deep bootprints.
 
-**Retry target:** Someone appeared to have paused beneath the reeds; a circular mark lay beside two deep bootprints.
+**Retry target:** Someone appeared to have paused beside the reeds; a circular mark lay beside two deep bootprints.
 
 **Retry explanation:** Both clauses are complete. “Appeared” keeps the interpretation tentative; the marks suggest a pause without identifying a person or object. A semicolon links the observations.
 
@@ -357,7 +357,7 @@ D. “So” can only introduce a future action.
 
 ### Q3 · negative-inversion
 
-**Student brief:** Join the sentences with a coordinating conjunction that adds a second negative, changing the word order as needed.
+**Student brief:** Join the sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
 **Original:** The bridge could not be crossed. The bank could not be trusted.
 
@@ -365,7 +365,7 @@ D. “So” can only introduce a future action.
 
 **Why:** Comma + “nor” adds the second negative. Rewrite “the bank could not be trusted” as “could the bank be trusted”: move “could” before the subject and remove “not”, because “nor” already supplies the negative.
 
-**Retry brief:** Join the sentences with a coordinating conjunction that adds a second negative, changing the word order as needed.
+**Retry brief:** Join the sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
 **Retry original:** Pip could not cross the bridge. She could not trust the bank.
 
@@ -375,39 +375,39 @@ D. “So” can only introduce a future action.
 
 ### Q4 · embedded-that-clauses
 
-**Student brief:** Use a semicolon to join the two complete main clauses. Keep every word.
+**Student brief:** Give each character’s view its own sentence. Keep every word.
 
 **Original:** Pip believed that the prints would lead to Bram, Mara feared that the path was dangerous.
 
-**Target:** Pip believed that the prints would lead to Bram; Mara feared that the path was dangerous.
+**Target:** Pip believed that the prints would lead to Bram. Mara feared that the path was dangerous.
 
-**Why:** “Pip believed” and “Mara feared” head complete main clauses. The clauses beginning with “that” are subordinate within those main clauses. A semicolon repairs the comma splice.
+**Why:** “Pip believed” and “Mara feared” head complete main clauses. The clauses beginning with “that” are subordinate within those main clauses. A full stop gives each character’s view its own sentence.
 
-**Retry brief:** Use a semicolon to join the two complete main clauses. Keep every word.
+**Retry brief:** Give each character’s view its own sentence. Keep every word.
 
 **Retry original:** Pip thought that the marks would lead to Bram, Mara believed that they should return to the village.
 
-**Retry target:** Pip thought that the marks would lead to Bram; Mara believed that they should return to the village.
+**Retry target:** Pip thought that the marks would lead to Bram. Mara believed that they should return to the village.
 
-**Retry explanation:** “Pip thought” and “Mara believed” head complete main clauses. Each contains a subordinate that-clause. A semicolon repairs the comma splice between the main clauses.
+**Retry explanation:** “Pip thought” and “Mara believed” head complete main clauses. Each contains a subordinate that-clause. A full stop separates the characters’ views without changing the subordinate that-clauses.
 
 ### Q5 · relative-subject-main
 
-**Student brief:** Use a semicolon to repair the comma splice. Keep the paired commas around the description and preserve every word.
+**Student brief:** Start a new sentence after the bank breaks away. Keep the paired commas around its description and preserve every word.
 
 **Original:** The bank, which was soft with rain, broke away where Pip had stood, a tuft of grass turned over once in the current.
 
-**Target:** The bank, which was soft with rain, broke away where Pip had stood; a tuft of grass turned over once in the current.
+**Target:** The bank, which was soft with rain, broke away where Pip had stood. A tuft of grass turned over once in the current.
 
-**Why:** Keep this comma: it opens the extra information “which was soft with rain”. Keep this comma: it closes the extra information about the bank. The first main clause is “The bank broke away where Pip had stood”. The second is “a tuft of grass turned over once in the current”. Use a semicolon between these complete clauses.
+**Why:** Keep this comma: it opens the extra information “which was soft with rain”. Keep this comma: it closes the extra information about the bank. The first main clause is “The bank broke away where Pip had stood”. The second is “a tuft of grass turned over once in the current”. A full stop gives the movement of the grass its own sentence.
 
-**Retry brief:** Use a semicolon to repair the comma splice. Keep the paired commas around the description and preserve every word.
+**Retry brief:** Start a new sentence when the focus shifts from the lamp to Mara’s rescue action. Keep the paired commas and every word.
 
 **Retry original:** The lamp, which had swung sideways, cast its light across the water, Mara pulled Pip away from the crumbling bank.
 
-**Retry target:** The lamp, which had swung sideways, cast its light across the water; Mara pulled Pip away from the crumbling bank.
+**Retry target:** The lamp, which had swung sideways, cast its light across the water. Mara pulled Pip away from the crumbling bank.
 
-**Retry explanation:** Keep this comma: it opens the extra information “which had swung sideways”. Keep this comma: it closes the extra information about the lamp. “The lamp cast its light across the water” and “Mara pulled Pip away from the crumbling bank” are complete main clauses. A semicolon links them.
+**Retry explanation:** Keep this comma: it opens the extra information “which had swung sideways”. Keep this comma: it closes the extra information about the lamp. “The lamp cast its light across the water” and “Mara pulled Pip away from the crumbling bank” are complete main clauses. A full stop gives Mara’s rescue action its own sentence.
 
 ### Waiting at the fingerpost
 
@@ -449,47 +449,47 @@ This reflection is optional and does not affect supplies.
 
 ### Q2 · therefore-transition
 
-**Student brief:** Keep the “Because” opening attached. Repair the comma splice before “therefore” with a semicolon. Preserve every word.
+**Student brief:** Keep the “Because” opening attached. Start a new sentence at “Therefore”. Preserve every word.
 
 **Original:** Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved, therefore, she traced the path on the map.
 
-**Target:** Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved; therefore, she traced the path on the map.
+**Target:** Because the witnesses had heard the bell in different places at different times, Mara suspected that it had moved. Therefore, she traced the path on the map.
 
-**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Mara suspected that it had moved” and “she traced the path on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Use a semicolon before it.
+**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Mara suspected that it had moved” and “she traced the path on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Start a new sentence before it and capitalise “Therefore”.
 
-**Retry brief:** Keep the “Because” opening attached. Repair the comma splice before “therefore” with a semicolon. Preserve every word.
+**Retry brief:** Keep the “Because” opening attached. Start a new sentence at “Therefore”. Preserve every word.
 
-**Retry original:** Because the neighbour had seen three clean bowls beside a covered pot, Pip thought a meal had been prepared, therefore, she considered whom Bram might be expecting.
+**Retry original:** Because the neighbour had seen three clean bowls beside a covered pot, Pip thought a meal had been prepared, therefore, she wondered who the guests might be.
 
-**Retry target:** Because the neighbour had seen three clean bowls beside a covered pot, Pip thought a meal had been prepared; therefore, she considered whom Bram might be expecting.
+**Retry target:** Because the neighbour had seen three clean bowls beside a covered pot, Pip thought a meal had been prepared. Therefore, she wondered who the guests might be.
 
-**Retry explanation:** Keep the comma after the subordinate “Because” opening. “Pip thought a meal had been prepared” and “she considered whom Bram might be expecting” are independent clauses. A semicolon before “therefore” repairs the splice.
+**Retry explanation:** Keep the comma after the subordinate “Because” opening. “Pip thought a meal had been prepared” and “she wondered who the guests might be” are independent clauses. A full stop before “therefore” repairs the splice and gives Pip’s next thought its own sentence.
 
 ### Q3 · nevertheless-transition
 
 **Student brief:** Keep the description inside its paired commas. Use a semicolon to repair the join before “nevertheless”. Preserve every word.
 
-**Original:** The ferryman, who knew the higher crossing, said the route was above the water, nevertheless, a fallen beech blocked the approach.
+**Original:** The ferryman, who knew the higher crossing, said the route was above the water, nevertheless, a fallen beech limb blocked the approach.
 
-**Target:** The ferryman, who knew the higher crossing, said the route was above the water; nevertheless, a fallen beech blocked the approach.
+**Target:** The ferryman, who knew the higher crossing, said the route was above the water; nevertheless, a fallen beech limb blocked the approach.
 
-**Why:** Keep the comma opening the extra information about the ferryman. Keep the comma closing “who knew the higher crossing” before the main verb “said”. “The ferryman said the route was above the water” and “a fallen beech blocked the approach” are independent clauses. Use a semicolon before “nevertheless”; keep its following comma.
+**Why:** Keep the comma opening the extra information about the ferryman. Keep the comma closing “who knew the higher crossing” before the main verb “said”. “The ferryman said the route was above the water” and “a fallen beech limb blocked the approach” are independent clauses. Use a semicolon before “nevertheless”; keep its following comma.
 
 **Retry brief:** Keep the description inside its paired commas. Use a semicolon to repair the join before “nevertheless”. Preserve every word.
 
-**Retry original:** The cottage, which stood beside the mill, looked unoccupied, nevertheless, three places were ready at its table.
+**Retry original:** The cottage, which stood beside the mill, looked unoccupied, nevertheless, the table was set for three.
 
-**Retry target:** The cottage, which stood beside the mill, looked unoccupied; nevertheless, three places were ready at its table.
+**Retry target:** The cottage, which stood beside the mill, looked unoccupied; nevertheless, the table was set for three.
 
-**Retry explanation:** Keep the comma opening the extra information about the cottage. Keep the comma closing “which stood beside the mill” before “looked”. “The cottage looked unoccupied” and “three places were ready at its table” are independent clauses. Use a semicolon before “nevertheless”.
+**Retry explanation:** Keep the comma opening the extra information about the cottage. Keep the comma closing “which stood beside the mill” before “looked”. “The cottage looked unoccupied” and “the table was set for three” are independent clauses. Use a semicolon before “nevertheless”.
 
 ### Q4 · condition-contrast
 
 **Student brief:** Keep one sentence. Use a coordinating conjunction to make the contrast between the lower path and the shelter explicit.
 
-**Original:** The lower path was hidden by water, the old shelter stood above the flood line.
+**Original:** The lower path was under water, the old shelter stood above the flood line.
 
-**Target:** The lower path was hidden by water, but the old shelter stood above the flood line.
+**Target:** The lower path was under water, but the old shelter stood above the flood line.
 
 **Why:** Both clauses are independent. A comma followed by “but” makes the contrast explicit: the lower path is under water, while the shelter is above the flood line.
 
@@ -560,11 +560,11 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 **Why:** Keep the comma opening the extra information. Keep the comma closing the description before the main verb. A comma plus “so” makes the second action a result of the first situation.
 
-**Retry brief:** Keep the existing sentence boundary and paired commas. Add a coordinating conjunction showing the result of the obstruction.
+**Retry brief:** Keep the existing full stop and paired commas. Add a coordinating conjunction making the baker’s action a result of Pip being cold.
 
-**Retry original:** The baker, who stayed beside Pip, watched the shelter. Pip needed both paws to signal, the baker held the scarf.
+**Retry original:** The baker, who stayed beside Pip, watched the shelter. Pip was cold after standing in the rain, the baker wrapped a dry scarf around her shoulders.
 
-**Retry target:** The baker, who stayed beside Pip, watched the shelter. Pip needed both paws to signal, so the baker held the scarf.
+**Retry target:** The baker, who stayed beside Pip, watched the shelter. Pip was cold after standing in the rain, so the baker wrapped a dry scarf around her shoulders.
 
 **Retry explanation:** Keep the comma opening the extra information. Keep the comma closing the description before the main verb. A comma plus “so” makes the second action a result of the first situation.
 
@@ -588,21 +588,21 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 ### Q3 · witness-two-transitions
 
-**Student brief:** Keep two sentences and every word. Use a semicolon before each transition.
+**Student brief:** Keep two sentences. Add a coordinating conjunction expressing contrast at the first join and one expressing a result at the second.
 
-**Original:** The shelter looked close, however, the gorge lay between them. The lower bridge was broken, therefore, the rescuers went round by Alder Arch.
+**Original:** The shelter looked close, the gorge blocked the way. The lower bridge was broken, the rescuers went round by Alder Arch.
 
-**Target:** The shelter looked close; however, the gorge lay between them. The lower bridge was broken; therefore, the rescuers went round by Alder Arch.
+**Target:** The shelter looked close, but the gorge blocked the way. The lower bridge was broken, so the rescuers went round by Alder Arch.
 
-**Why:** The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma. The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma.
+**Why:** A comma plus “but” contrasts the apparent closeness with the obstacle. A comma plus “so” links the problem to the action it prompts.
 
-**Retry brief:** Keep two sentences and every word. Use a semicolon before each transition.
+**Retry brief:** Keep two sentences. Add a coordinating conjunction expressing contrast at the first join and one expressing a result at the second.
 
-**Retry original:** Pip wanted to join the search party, nevertheless, she stayed at the rock. The distant light copied her pattern, therefore, Mara knew someone could see them.
+**Retry original:** Pip wanted to join the search party, she stayed at the rock. The distant light copied her pattern, Mara knew someone could see them.
 
-**Retry target:** Pip wanted to join the search party; nevertheless, she stayed at the rock. The distant light copied her pattern; therefore, Mara knew someone could see them.
+**Retry target:** Pip wanted to join the search party, but she stayed at the rock. The distant light copied her pattern, so Mara knew someone could see them.
 
-**Retry explanation:** The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma. The transition is not a coordinating conjunction. Use a semicolon between the complete clauses and keep the following comma.
+**Retry explanation:** A comma plus “but” contrasts Pip’s wish with her decision to stay. A comma plus “so” makes Mara’s conclusion follow from the answering signal.
 
 ### Q4 · correct-mixed-note
 
@@ -624,7 +624,7 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 ### Q5 · negative-witness-note
 
-**Student brief:** Join these two sentences with a coordinating conjunction adding a second negative. Change the second clause’s word order as needed.
+**Student brief:** Join these two sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
 **Original:** Pip could not recognise the voice. She could not see the speaker.
 
@@ -632,11 +632,11 @@ D. The torn green cloth at the mill and Bram’s spare boots in the shed.
 
 **Why:** “Nor” adds a second negative. Move “could” before the subject and remove “not”: the negative is supplied by “nor”.
 
-**Retry brief:** Join these two sentences with a coordinating conjunction adding a second negative. Change the second clause’s word order as needed.
+**Retry brief:** Join these two sentences using “nor”. Rewrite the second clause with the correct word order and without the repeated “not”.
 
-**Retry original:** Mara could not carry the mender alone. She could not shorten the route.
+**Retry original:** Mara could not carry the mender alone. She could not reach the shelter without crossing the gorge.
 
-**Retry target:** Mara could not carry the mender alone, nor could she shorten the route.
+**Retry target:** Mara could not carry the mender alone, nor could she reach the shelter without crossing the gorge.
 
 **Retry explanation:** “Nor” adds a second negative. Move “could” before the subject and remove “not”: the negative is supplied by “nor”.
 
@@ -673,25 +673,25 @@ D. Pip recognised the bell and the voice reported three people.
 
 ### Q1 · passage-scene-and-reason
 
-**Student brief:** Start a new sentence when the account moves to the bakery. Add a coordinating conjunction introducing the evidence for the final judgement.
+**Student brief:** Start a new sentence when the account moves to the bakery. Keep the remaining sentences and add a coordinating conjunction making the final clause explain the preceding statement.
 
 **Original:** When the rescuers reached the rock, Pip stood up, at the bakery, the mender rested beside the oven. The return had been slow, the carriers had stopped on the steep stretches.
 
 **Target:** When the rescuers reached the rock, Pip stood up. At the bakery, the mender rested beside the oven. The return had been slow, for the carriers had stopped on the steep stretches.
 
-**Why:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces evidence supporting the preceding judgement.
+**Why:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces the reason for the preceding statement.
 
-**Retry brief:** Start a new sentence when the account moves to the bakery. Add a coordinating conjunction introducing the evidence for the final judgement.
+**Retry brief:** Start a new sentence when the account moves to the bakery. Keep the remaining sentences and add a coordinating conjunction making the final clause explain the preceding statement.
 
 **Retry original:** After the neighbours brought everyone back, they put down their lamps, inside the bakery, supper was heating. The mender still needed support, she could not put weight on her ankle.
 
 **Retry target:** After the neighbours brought everyone back, they put down their lamps. Inside the bakery, supper was heating. The mender still needed support, for she could not put weight on her ankle.
 
-**Retry explanation:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces evidence supporting the preceding judgement.
+**Retry explanation:** Keep the comma after the subordinate opening. The new location begins the requested fresh sentence. A comma plus “for” introduces the reason for the preceding statement.
 
 ### Q2 · passage-observation-and-result
 
-**Student brief:** Keep the paired commas. Add a coordinating conjunction making the contradiction a reason for further questions. Preserve the existing sentence boundary.
+**Student brief:** Keep the paired commas and the existing full stop. Add a coordinating conjunction showing the action prompted by the discovery.
 
 **Original:** The mender, who had met Bram that afternoon, remembered his warning. Her account contradicted his claim, Mara asked about his work at the bridge.
 
@@ -699,39 +699,39 @@ D. Pip recognised the bell and the voice reported three people.
 
 **Why:** Keep the opening comma around extra information. Keep the closing comma before the main verb. A comma plus “so” links the discovery to the action it prompts.
 
-**Retry brief:** Keep the paired commas. Add a coordinating conjunction making the contradiction a reason for further questions. Preserve the existing sentence boundary.
+**Retry brief:** Keep the paired commas and the existing full stop. Add a coordinating conjunction showing the action prompted by the discovery.
 
-**Retry original:** The ferryman, who had repaired the crossing, recognised his blue mark. The timber was a bridge support, he went to check the crossing.
+**Retry original:** The ferryman, who had repaired the crossing, recognised his blue mark. The timber had come from the bridge, he went to check the crossing.
 
-**Retry target:** The ferryman, who had repaired the crossing, recognised his blue mark. The timber was a bridge support, so he went to check the crossing.
+**Retry target:** The ferryman, who had repaired the crossing, recognised his blue mark. The timber had come from the bridge, so he went to check the crossing.
 
 **Retry explanation:** Keep the opening comma around extra information. Keep the closing comma before the main verb. A comma plus “so” links the discovery to the action it prompts.
 
 ### Q3 · passage-warning-and-contrast
 
-**Student brief:** Preserve the paragraphs and sentence boundaries. Add a conjunction expressing contrast, then use a semicolon before the transition.
+**Student brief:** Preserve the paragraphs and existing full stops. Add a coordinating conjunction expressing contrast at the first join and one expressing a result at the second.
 
 **Original:** Bram had helped the travellers, his help did not explain the missing timber.
 
-The shavings alone did not identify their source, therefore, the rabbits needed further evidence.
+The shavings alone did not show where the wood had come from, the rabbits needed further evidence.
 
 **Target:** Bram had helped the travellers, but his help did not explain the missing timber.
 
-The shavings alone did not identify their source; therefore, the rabbits needed further evidence.
+The shavings alone did not show where the wood had come from, so the rabbits needed further evidence.
 
-**Why:** A comma plus “but” makes the contrast explicit. A semicolon joins complete clauses before “therefore”; keep the comma after it.
+**Why:** A comma plus “but” makes the contrast explicit. A comma plus “so” makes the second clause a result of the first.
 
-**Retry brief:** Preserve the paragraphs and sentence boundaries. Add a conjunction expressing contrast, then use a semicolon before the transition.
+**Retry brief:** Preserve the paragraphs and existing full stops. Add a coordinating conjunction expressing contrast at the first join and one expressing a result at the second.
 
 **Retry original:** The storm had battered the bridge, it could not explain the saw marks.
 
-The support had been cut, therefore, the damage could not be blamed entirely on the weather.
+The support had been cut, the damage could not be blamed entirely on the weather.
 
 **Retry target:** The storm had battered the bridge, but it could not explain the saw marks.
 
-The support had been cut; therefore, the damage could not be blamed entirely on the weather.
+The support had been cut, so the damage could not be blamed entirely on the weather.
 
-**Retry explanation:** A comma plus “but” makes the contrast explicit. A semicolon joins complete clauses before “therefore”; keep the comma after it.
+**Retry explanation:** A comma plus “but” makes the contrast explicit. A comma plus “so” makes the second clause a result of the first.
 
 ### Q4 · passage-reassurance-and-choice
 
@@ -749,11 +749,11 @@ The wood could have come from an authorised repair, or someone could have remove
 
 **Retry brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
 
-**Retry original:** Although Bram had stayed with the travellers, his earlier claim needed checking. Mara remembered the mender’s words, but she still asked about the timber.
+**Retry original:** Although Bram had stayed with the travellers, his earlier claim needed checking. Mara trusted the mender’s account, but she still wanted to check the physical evidence.
 
 The disagreement could reflect a mistake, it could reveal a deliberate lie.
 
-**Retry target:** Although Bram had stayed with the travellers, his earlier claim needed checking. Mara remembered the mender’s words, but she still asked about the timber.
+**Retry target:** Although Bram had stayed with the travellers, his earlier claim needed checking. Mara trusted the mender’s account, but she still wanted to check the physical evidence.
 
 The disagreement could reflect a mistake, or it could reveal a deliberate lie.
 
@@ -761,29 +761,29 @@ The disagreement could reflect a mistake, or it could reveal a deliberate lie.
 
 ### Q5 · final-case-report
 
-**Student brief:** Keep the dependent opening and paired commas. Use a semicolon between the physical observations. Add a conjunction showing the result. Start a new sentence at “Later that week”.
+**Student brief:** Keep the dependent opening and paired commas. Give the observation about the remaining brace its own sentence. Add a coordinating conjunction making the closure a result of the danger. Start a new sentence at “Later that week”.
 
 **Original:** Although Bram blamed the storm, the physical evidence showed deliberate removal. The timber, which bore a blue repair mark, lay inside the mill, the remaining brace had saw marks.
 
 The bridge was unsafe, the neighbours closed both approaches. The village examined what had happened, later that week, a new caretaker took over.
 
-**Target:** Although Bram blamed the storm, the physical evidence showed deliberate removal. The timber, which bore a blue repair mark, lay inside the mill; the remaining brace had saw marks.
+**Target:** Although Bram blamed the storm, the physical evidence showed deliberate removal. The timber, which bore a blue repair mark, lay inside the mill. The remaining brace had saw marks.
 
 The bridge was unsafe, so the neighbours closed both approaches. The village examined what had happened. Later that week, a new caretaker took over.
 
-**Why:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete observations; the requested semicolon joins them. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
+**Why:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete clauses. A full stop gives the next observation its own sentence. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
 
-**Retry brief:** Keep the dependent opening and paired commas. Use a semicolon between the physical observations. Add a conjunction showing the result. Start a new sentence at “Later that week”.
+**Retry brief:** Keep the dependent opening and paired commas. Give Bram’s conflicting claim its own sentence. Add a coordinating conjunction making Mara’s next question a result of the conflicting accounts. Start a new sentence at “Later that week”.
 
 **Retry original:** Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning, Bram had denied visiting the crossing.
 
 Their accounts conflicted, Mara asked another question. The villagers investigated the missing timber, later that week, Bram began helping to pay for repairs.
 
-**Retry target:** Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning; Bram had denied visiting the crossing.
+**Retry target:** Although the rescue had succeeded, questions remained. The mender, who had spoken to Bram that afternoon, remembered his warning. Bram had denied visiting the crossing.
 
 Their accounts conflicted, so Mara asked another question. The villagers investigated the missing timber. Later that week, Bram began helping to pay for repairs.
 
-**Retry explanation:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete observations; the requested semicolon joins them. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
+**Retry explanation:** Keep the comma after the subordinate opening. Keep the comma opening extra information. Keep the comma closing extra information. These are complete clauses. A full stop gives the next observation its own sentence. A comma plus “so” marks the result. A full stop marks the requested later time; capitalise “Later”.
 
 ### Testing Bram’s account
 
@@ -816,15 +816,26 @@ D. The three bowls and the covered pot at the cottage.
 
 ## Optional transfer notes
 
-**b1:** Keep one sentence and every word. Connect the observations with punctuation alone.
+**b1:** Keep the opening location phrase attached. Start a new sentence about the route marked on the map.
 
-Beside the signal rock, a lantern lit the map; its line followed the higher route.
+**Original:** Beside the signal rock, a lantern lit the map, the marked route led towards Alder Arch.
 
-**b2:** Keep one sentence and every word. Change punctuation only.
+**Target:** Beside the signal rock, a lantern lit the map. The marked route led towards Alder Arch.
 
-Bram had not taken the bell home; instead, he had carried it towards the flooded crossing.
+**Why:** Beside the signal rock is a location phrase, not a complete sentence. Both clauses are complete. A full stop introduces the observation about the route.
 
-**b3:** Use a coordinating joining word to present the two actions as additional events. Start a fresh sentence at sunrise; preserve the earlier boundary.
+**b2:** Keep one sentence and every word. Repair the join before INSTEAD with punctuation only.
 
-Where the path reached the village, Pip walked beside Mara. The baker opened the door, and the neighbours brought the stretcher inside. At sunrise, the village began to stir.
+**Original:** Bram had not taken the bell home, instead, he had carried it towards the flooded crossing.
 
+**Target:** Bram had not taken the bell home; instead, he had carried it towards the flooded crossing.
+
+**Why:** Instead is a transition. It needs a semicolon before it when these complete clauses stay in one sentence.
+
+**b3:** Keep the WHERE opening attached. Use AND to add the second action; begin a new sentence at the later time “At sunrise”.
+
+**Original:** Where the path reached the village, Pip walked beside Mara. The baker opened the door, the neighbours brought the stretcher inside, at sunrise, the village began to stir.
+
+**Target:** Where the path reached the village, Pip walked beside Mara. The baker opened the door, and the neighbours brought the stretcher inside. At sunrise, the village began to stir.
+
+**Why:** Where introduces a dependent location clause. And adds the neighbours’ action. At sunrise starts a new point in the timeline.

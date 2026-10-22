@@ -29,7 +29,7 @@ test('retry instructions name their own clauses and preserve the main approved C
  assert.match(STORY[0].brief,/after “stalls”/);assert.match(TRANSFER[0].studentBrief,/after “glowing”/);assert.doesNotMatch(TRANSFER[0].studentBrief,/stalls/);
  assert.match(TRANSFER[2].studentBrief,/Pip’s claim with her behaviour/);assert.match(TRANSFER[4].why[0],/“As”/);assert.match(STORY[4].why[0],/“By the time”/);assert.notEqual(STORY[4].why,TRANSFER[4].why);
  assert.match(TRANSFER[18].studentBrief,/Alder Arch/);assert.doesNotMatch(TRANSFER[18].studentBrief,/shelter/);
- assert.match(TRANSFER[16].parts.join(' '),/considered whom Bram might be expecting/);
+ assert.match(TRANSFER[16].parts.join(' '),/wondered who the guests might be/);
 });
 test('reasoning and transfer checks use different evidence with one keyed choice per task',()=>{
  const reason=CHAPTER_TWO_CASEWORK.find(t=>t.id==='c2-for'),transfer=CHAPTER_TWO_CASEWORK.find(t=>t.id==='c2-so');
