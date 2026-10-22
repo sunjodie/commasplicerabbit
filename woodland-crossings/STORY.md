@@ -80,7 +80,7 @@ Mara turned up the lamp and lifted it from the stair. A little smoke curled from
 
 “He might have been coming in,” Mara pointed out. “We don’t know yet.”
 
-Pip looked at the cloth and imagined Bram being pulled backwards through the doorway, trying to catch hold of something while his sleeve tore. The picture came so readily that she almost told Mara, but she had only the picture, not a reason.
+Pip looked at the cloth and imagined Bram being pulled backwards through the doorway, trying to catch hold of something while his sleeve tore. Things like that happened in the Night Owl’s detective stories, which she borrowed from the village shelf. The picture came so readily that she almost told Mara, but she had only the picture, not a reason.
 
 They climbed to the upper room, where the air smelled of old grain and the sweet, dusty straw packed between the rafters. Rain tapped against the window above an open storage chest. Its lid rested against the wall, and two clean tracks ran across the dusty boards from the place where the chest usually stood. The chest stood across the narrow space beneath the sloping roof, hiding the floor behind it. Inside, among folded sacks and a few coils of twine, a pale circle showed where Bram kept his long rope.
 

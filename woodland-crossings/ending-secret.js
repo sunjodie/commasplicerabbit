@@ -1,4 +1,4 @@
 // Loaded only when a completed player opens the envelope on the ending screen.
 export function endingSecret(){
- return '<span class="eyebrow">The village’s secret name</span><h2>Amber Hollow</h2><p>Pip unfolds the slip inside the sealed envelope. At last, you know the name.</p><p>All six chapters are complete. A new morning begins in the village.</p>';
+ return '<span class="eyebrow">One last woodland secret</span><h2>The Night Owl</h2><p>Pip unwraps the baker’s parcel. Inside is a handwritten detective story about two rabbits and a missing bell, signed the Night Owl. Between its pages is the envelope. She opens it and reads the note inside.</p><blockquote class="ending-letter"><p>You’ve met the Night Owl many times. Usually, I’ve been wearing an apron.</p><p>Keep my secret.</p><p>—The baker</p></blockquote><p>The baker is the Night Owl. She has been writing the village’s detective stories all along.</p>';
 }

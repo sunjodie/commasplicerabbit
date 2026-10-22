@@ -35,3 +35,10 @@ Existing illustration assets are reused for the new readers. They are not a newl
 The user approved the limited Chapter 1 observation change: Pip had seen no upstairs light since the mill stopped. Main Chapter 1 assessment wording remains unchanged; retry instructions now refer to their own sentences. Chapter 2 introduces the midnight clock and first bell, identifies the loose shutter making the porch knock, establishes the chest’s concealed rear space, and shows oil-lamp handovers. Both lights remain lit until the start of Chapter 3, where Mara extinguishes her paper lantern before stowing it. Chapter 5’s recollection agrees.
 
 Chapter 3 treats the map author and hurried departure as hypotheses. Chapter 4 clarifies the baker’s movement and qualifies the ferryman’s identification of the beech limb. Its retries use explicit contrasts and an evidence-to-inference relationship. Chapter 2’s “for” task now tests the direction of reasoning, while the “so” transfer item uses the unfinished note. Chapter 3 and 4 inference distractors are closer alternatives. The Chapter 2 contrast task intentionally retains the previously approved but/yet exception to the single-target rule.
+
+
+## Final-envelope secret (22 October 2026)
+
+The baker secretly writes the village’s detective stories under the pen name the Night Owl. Chapter 2 mentions Pip borrowing those stories from the village shelf while she imagines a dramatic explanation for Bram’s torn sleeve. This plants the author’s name without revealing the author’s identity. No Chapter 1 prose or question changes are needed.
+
+After all six chapters and the final reward, the baker’s parcel contains a handwritten account of the rabbits’ adventure and a signed note revealing her identity. This replaces the arbitrary village-name reveal. It provides a memorable completion detail: the baker is the Night Owl. The identity appears only in the lazily loaded final-envelope module. There are no teacher-reporting instructions in the game. The envelope remains available when revisiting the ending.

@@ -1,7 +1,7 @@
 import * as five from './chapter-five.js?v=20261022-natural-prose1';
 import * as six from './chapter-six.js';
 import * as one from './chapter-one.js?v=20261022-natural-prose1';
-import * as two from './chapter-two.js?v=20261022-natural-prose1';
+import * as two from './chapter-two.js?v=20261022-night-owl1';
 import * as three from './chapter-three.js?v=20261022-natural-prose1';
 import * as four from './chapter-four.js?v=20261022-natural-prose1';
 export const STORY_SCENES=[...one.CHAPTER_ONE,...two.CHAPTER_TWO,...three.CHAPTER_THREE,...four.CHAPTER_FOUR,...five.CHAPTER_FIVE,...six.CHAPTER_SIX];

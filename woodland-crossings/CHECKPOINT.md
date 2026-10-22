@@ -383,3 +383,8 @@ Authoritative continuation checkout: /workspace/scratch/a18277c1c45c/chapter2-re
 - Fixed the screenshot-reported atlas leak in Look around. Frog-search and chapter-revisit dialogs had bypassed the frame painter and rendered the four-cell atlas using the legacy cover background. They now select the correct individual Chapter 1/2 painting and use the same pixel crop as story/notebook views.
 - Crop geometry is applied immediately, before image loading, so a cached/fallback atlas cannot flash multiple cells. Frame-aware frog anchors apply in exploration too; the reed frog has bank/foliage perches within the isolated streambank painting.
 - All 112 automated checks pass. New checks exercise real revisit/frog-search handlers, initial crop application without Image loaded, source-cell containment at dialog/tablet dimensions and visible frog anchor coordinates. These are DOM/math checks; browser/Safari/device checks remain pending. Supplied artwork pixels and assessment/progress data are unchanged.
+
+
+### Final-envelope revision · 22 October 2026
+
+The secret village-name reveal is superseded by the baker’s Night Owl pen-name reveal. A single sentence in Chapter 2 introduces Pip’s familiarity with the Night Owl’s detective stories, without linking them to the baker. The final envelope contains the baker’s signed note and a handwritten story about the adventure. The main investigation, questions and completion gates are unchanged. No teacher-reporting text is shown. See STORY_NOTES.md for current canon.

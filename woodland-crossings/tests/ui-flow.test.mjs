@@ -150,16 +150,18 @@ test('context vocabulary rejects an unsupported motive without revealing later p
 
 test('the completion secret appears only after opening the final envelope and can be retrieved again',async()=>{
  const {endingSecret}=await import('../ending-secret.js');
- const name=endingSecret().match(/<h2>(.*?)<\/h2>/)[1];
+ const reveal=/The baker is the Night Owl/;assert.match(endingSecret(),reveal);
+ const {CHAPTER_TWO}=await import('../chapter-two.js');const earlier=CHAPTER_TWO.flatMap(s=>s.paragraphs).join(' ');
+ assert.match(earlier,/Night Owl’s detective stories/);assert.doesNotMatch(earlier,reveal);assert.doesNotMatch(JSON.stringify(STORY),reveal);
  const ui=setup();await import('../app.js?sealed-start');
- assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));assert.equal(ui.app.querySelector('#endingEnvelope'),null);
- ui.click('how');assert.doesNotMatch(ui.fixed.modalBody.innerHTML,new RegExp(name));ui.click('closeModal');
+ assert.doesNotMatch(ui.app.innerHTML,reveal);assert.equal(ui.app.querySelector('#endingEnvelope'),null);
+ ui.click('how');assert.doesNotMatch(ui.fixed.modalBody.innerHTML,reveal);ui.click('closeModal');
  const {fresh}=await import('../engine.js');const s=fresh();s.story=30;s.completedAt=1;
  ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?sealed-finish');
- assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));
- await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,new RegExp(name));
- ui.click('closeModal');ui.click('endingVillage');assert.doesNotMatch(ui.app.innerHTML,new RegExp(name));
- ui.click('endingReplay');await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,new RegExp(name));
+ assert.doesNotMatch(ui.app.innerHTML,reveal);
+ await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);
+ ui.click('closeModal');ui.click('endingVillage');assert.doesNotMatch(ui.app.innerHTML,reveal);
+ ui.click('endingReplay');await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);
 });
 
 test('frogs collect once, replay their tidbits and leave language progress intact',async()=>{
@@ -342,7 +344,7 @@ test('an earned legacy decoration can be previewed or changed without touching l
  assert.equal(saved.story,7);assert.equal(saved.seq,9);assert.equal(saved.activeId,'m8');assert.deepEqual(saved.activeChoices,['so']);
 });
 
-test('ending shows the saved village and keeps the final name behind its envelope without teacher instructions',async()=>{
+test('ending shows the saved village and keeps the final secret behind its envelope without teacher instructions',async()=>{
  const ui=setup(),{fresh}=await import('../engine.js');
  const s=fresh();s.story=30;s.decorations=[{chapter:0,id:'porch-swing',name:'Patchwork porch swing'}];
  ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?ending-saved-village');

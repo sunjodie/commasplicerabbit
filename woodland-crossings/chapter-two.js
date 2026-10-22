@@ -12,7 +12,7 @@ export const CHAPTER_TWO=[
       "Mara turned up the lamp and lifted it from the stair. A little smoke curled from the wick before the flame steadied, bringing the mill’s lower room into view. Bram worked here, though he lived in the cottage beside the mill. There was the wooden crate Bram sat on to change his boots, with a bundle of reeds tucked behind it and the dented watering can he had been promising to mend since spring. Everything was familiar except the mud. Deep prints crossed the boards, and at the foot of the stairs one heel had slipped far enough to leave a brown smear against the first riser.",
       "“He went out in a hurry,” Pip said.",
       "“He might have been coming in,” Mara pointed out. “We don’t know yet.”",
-      "Pip looked at the cloth and imagined Bram being pulled backwards through the doorway, trying to catch hold of something while his sleeve tore. The picture came so readily that she almost told Mara, but she had only the picture, not a reason."
+      "Pip looked at the cloth and imagined Bram being pulled backwards through the doorway, trying to catch hold of something while his sleeve tore. Things like that happened in the Night Owl’s detective stories, which she borrowed from the village shelf. The picture came so readily that she almost told Mara, but she had only the picture, not a reason."
     ]
   },
   {
