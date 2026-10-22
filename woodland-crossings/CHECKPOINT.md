@@ -403,3 +403,7 @@ Replaced the generic bell-workshop paintings with twenty narrative paintings acr
 Poppy carries the oil lamp; Willow's extinguished paper lantern stays concealed. Reviewed character anatomy and clothing, unreadable map/sign details, rescue positioning and same-bank return continuity. Corrected the aftermath's seated pose and invented stone bridge, plus the final sheet's ear shape and route background. Four collectible frogs remain; saved progress, the optional clue notebook and all approved prose/questions are preserved.
 
 Assets, exact prompts, source provenance and review notes are under assets/chapter-three/frames/. Entry-point, frame and scenery caches are refreshed. Validation: 166 automated tests pass, including new narrative-anchor coverage and existing desktop/tablet crop isolation checks. Source paintings were visually reviewed. Browser, Safari and physical-device visual checks remain outstanding.
+
+### Cloudflare deployment repair · 23 October 2026
+
+The supplied Workers build failed because automatic setup selected the entire repository as static assets, including a 26.7 MiB Git pack. Added explicit root Wrangler configuration for the existing commaspliceanimals Worker and a root .assetsignore excluding Git history, build/dependency directories, tests and authoring material. Root and woodland-crossings URLs are preserved. The five new Chapter 3 sheets remain deployable. Verified the upload selection, asset size limit and runtime module/art references locally; actual Cloudflare deployment success still requires the next connected build.

@@ -7,6 +7,8 @@ A self-guided comma-splice mystery for upper-primary and secondary learners: **T
 
 On `woodland-crossings`, the repository root opens the new game. The original runner is preserved as `rabbit-runner.html`; `main` is unchanged. Deploy this branch on Cloudflare. No build step, account, teacher setup, API key, external font or runtime service is required. Serve locally over HTTP rather than opening the HTML file directly.
 
+Cloudflare Workers: run `npx wrangler deploy` from the repository root. The checked-in `wrangler.jsonc` names the existing `commaspliceanimals` Worker and serves the root entry point plus the game subdirectory. `.assetsignore` excludes Git history, build/dependency directories, tests and authoring notes from uploads. Leave the Cloudflare build command empty and select the `woodland-crossings` branch. Existing game URLs are preserved.
+
 ## Learning progression
 
 There are 30 new story tasks in six chapters of five, plus 30 authored recovery variants and three optional challenges. `QUESTIONS.md` lists every story question, editing brief and target answer.
