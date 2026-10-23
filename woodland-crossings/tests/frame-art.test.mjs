@@ -49,3 +49,33 @@ test('Chapter 3 crops isolate one painting in desktop, portrait and tablet lands
   for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(textFrameArt(scene.id,part.join(' ')).asset.startsWith('chapter-three/frames/'));
  }
 });
+
+test('Chapter 4 has twenty ordered narrative paintings and matching question, retry, exploration and casework art',async()=>{
+ const {CHAPTER_FOUR}=await import('../chapter-four.js');
+ const {CHAPTER_FOUR_CASEWORK}=await import('../chapter-four-casework.js');
+ const {explorationFrameArt}=await import('../frame-art.js');
+ const {questionScene}=await import('../scenery.js');
+ const unique=new Set();
+ for(const [i,scene] of CHAPTER_FOUR.entries()){
+  const frames=FRAME_ART.filter(f=>f.scene===scene.id&&f.kind==='story');
+  assert.equal(frames.length,4);
+  const prose=scene.paragraphs.join(' ');let previous=-1;
+  for(const frame of frames){
+   unique.add(frame.asset+':'+frame.cell);
+   const at=prose.indexOf(frame.text);assert.ok(at>previous,frame.id);previous=at;
+   assert.equal(textFrameArt(scene.id,frame.text),frame);
+   for(const [w,h] of [[1366,714],[768,970],[1024,546]]){
+    const g=frameGeometry(w,h,frame.cell,frame.focus??.7);
+    const left=g.x+frame.cell%2*g.width/2,top=g.y+Math.floor(frame.cell/2)*g.height/2;
+    assert.ok(left<=0&&top<=0&&left+g.width/2>=w&&top+g.height/2>=h);
+   }
+  }
+  const q=questionFrameArt(scene.id);assert.equal(q.asset,frames[3].asset);assert.equal(q.cell,3);
+  assert.equal(questionFrameArt('r'+(16+i)),q);assert.equal(explorationFrameArt(3,i),q);
+  assert.equal(questionScene({stage:3,id:scene.id},`3-${i}`).asset,q.asset);
+  for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(textFrameArt(scene.id,part.join(' ')).asset.startsWith('chapter-four/frames/'));
+ }
+ assert.equal(unique.size,20);
+ assert.equal(CHAPTER_FOUR.map((s,i)=>explorationFrameArt(3,i)).filter(f=>f.frog).length,4);
+ for(const task of CHAPTER_FOUR_CASEWORK){const f=caseworkFrameArt(task.id);assert.equal(f.asset,questionFrameArt(task.question).asset);assert.equal(f.cell,3);}
+});

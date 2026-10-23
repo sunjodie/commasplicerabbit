@@ -34,6 +34,13 @@ for(const view of QUESTION_SCENES.filter(x=>x.stage===2))Object.assign(view,{
  indoors:false,focus:'100% 100%',scale:'200% 200%'
 });
 SCENES[2]={...QUESTION_SCENES.find(x=>x.stage===2&&x.view===0)};
+// Witnesses compare their accounts beneath the bakery awning throughout Chapter 4.
+for(const view of QUESTION_SCENES.filter(x=>x.stage===3))Object.assign(view,{
+ asset:`chapter-four/frames/sheet-${String(view.view+1).padStart(2,'0')}.webp?v=c4art1`,
+ name:['Back beneath the awning','Two accounts','Time between the sounds','The way round','Supper for three'][view.view],
+ indoors:false,focus:'100% 100%',scale:'200% 200%'
+});
+SCENES[3]={...QUESTION_SCENES.find(x=>x.stage===3&&x.view===0)};
 // Location captions follow the revised Chapters 5–6 manuscripts.
 const laterLocations=[['The old steps','The signal rock','The signal rock','The signal rock','Quarry Shelter'],['The signal rock','The bakery','The mill yard','The mill and crossing','The village square']];
 for(const view of QUESTION_SCENES.filter(x=>x.stage>=4))view.name=laterLocations[view.stage-4][view.view];

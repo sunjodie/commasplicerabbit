@@ -3,7 +3,7 @@ import {CHAPTER_SIX} from './chapter-six.js';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
 import {placeFrogs,frogForScene} from './frogs.js?v=20261022-character-names1';
-import {QUESTION_SCENES} from './scenery.js?v=20261022-chapter-three-art1';
+import {QUESTION_SCENES} from './scenery.js?v=20261023-chapter-four-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -31,12 +31,19 @@ for(const [i,scene] of CHAPTER_THREE.entries()){
  for(const [cell,text] of chapterThreeAnchors[i].entries())FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset,text,...((i===1&&cell===0||i===3&&cell===2)?{focus:.15}:{})});
  FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:3,asset,text:'Chapter 3 language notes'});
 }
+// Chapter 4 stays beneath the bakery awning: four chronological views per scene.
+const chapterFourAnchors=[[0,1,2,3],[0,1,2,5],[0,2,4,6],[0,2,3,5],[0,1,5,8]];
+for(const [i,scene] of CHAPTER_FOUR.entries()){
+ const asset=`chapter-four/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c4art1`;
+ for(const [cell,paragraph] of chapterFourAnchors[i].entries())FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset,text:scene.paragraphs[paragraph],...(i===2&&cell===0?{focus:.3}:{})});
+ FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:3,asset,text:'Chapter 4 language notes'});
+}
 // Each later chapter has five scene visits; keep frogs attached to those visits.
-for(let stage=3;stage<6;stage++)for(let view=0;view<5;view++){
+for(let stage=4;stage<6;stage++)for(let view=0;view<5;view++){
  const setting=QUESTION_SCENES.find(x=>x.stage===stage&&x.view===view),scene='m'+(stage*5+view+1);
  FRAME_ART.push({id:scene+'-question',scene,kind:'question',asset:setting.asset,cell:view?view-1:0,...(!view?{columns:1,rows:1}:{}),text:'Notebook scene'});
 }
-for(const scene of [...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX]){
+for(const scene of [...CHAPTER_FIVE,...CHAPTER_SIX]){
  const art=FRAME_ART.find(f=>f.id===scene.id+'-question');
  FRAME_ART.push({...art,id:scene.id+'-story',kind:'story',text:scene.paragraphs[0]});
 }
