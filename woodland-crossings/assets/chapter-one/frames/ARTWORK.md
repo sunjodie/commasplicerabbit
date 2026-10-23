@@ -19,3 +19,7 @@ All sheets were inspected for mood and evidence spoilers. Unit checks cover mapp
 ## Ear anatomy correction
 
 Re-edited Poppy's ear silhouettes with the built-in image generator after duplicated lobes were reported. The exact surgical edit prompt is saved in `ear-correction-prompt.txt`; retained source filenames are recorded in `source-map.json`. `anatomy-review.json` records accepted sheets and discarded revisions. The approved paintings retain exactly two anatomical ears per rabbit; profile views may obscure an ear. Asset URL revisions refresh browser caches.
+
+## Continuity repair · 23 October 2026
+
+A subsequent sequence review found spatial and lighting errors that the earlier asset/crop checks did not detect. The active mappings now use reviewed sibling edits for sheets 02, 04, 05, 08, 11 and 13 under `continuity/`. The wheel and dark cottage are scenery cutaways; the rabbits stay in the square until the walk begins. The route follows the lane behind the cottage to the porch, then inside. Fountain footing, the cold fireplace, entry order and the final indoor question scene are corrected. The first mill-window sighting remains a scenery-only cutaway, and the original sheet 10 entrance replaces the inconsistent doorway-v3 swap. See `continuity/REVIEW.md`, `prompts.json` and `source-map.json` for this revision's evidence and provenance.

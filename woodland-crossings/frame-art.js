@@ -51,7 +51,6 @@ for(const task of [...CHAPTER_FOUR_CASEWORK,...CHAPTER_FIVE_SIX_CASEWORK]){const
 // Restore selected earlier scenery as quiet cutaways; keep narrative anchors intact.
 const scenerySwaps={
  'm1-4-1':{asset:'mill-views.webp',cell:3},
- 'm5-0-0':{asset:'chapter-one/doorway-v3.webp',cell:0,columns:1,rows:1},
  'm9-story':{asset:'witness-views.webp',cell:3},
  'm11-art-0':{asset:'tracks-views.webp',cell:2},
  'm14-art-2':{asset:'witness-views.webp',cell:3},
@@ -59,6 +58,12 @@ const scenerySwaps={
  'm19-art-2':{asset:'witness-views.webp',cell:3}
 };
 for(const [id,art] of Object.entries(scenerySwaps))Object.assign(FRAME_ART.find(f=>f.id===id),{focus:.5},art);
+// Reviewed Chapter 1 continuity edits retain each frame's prose anchor and frog.
+const chapterOneContinuitySheets=new Set([2,4,5,8,11,13]);
+for(const frame of FRAME_ART){
+ const match=frame.asset.match(/^chapter-one\/frames\/sheet-(\d+)\.webp/);
+ if(match&&chapterOneContinuitySheets.has(Number(match[1])))frame.asset=`chapter-one/frames/continuity/sheet-${match[1]}.webp?v=c1continuity1`;
+}
 for(const frame of FRAME_ART){
  const n=Number(frame.scene.slice(1));if(n<6||!Number.isInteger(n)||frame.frog)continue;
  const stage=Math.floor((n-1)/5),view=(n-1)%5,f=frogForScene(stage,view);
