@@ -48,6 +48,17 @@ for(const scene of [...CHAPTER_FIVE,...CHAPTER_SIX]){
  FRAME_ART.push({...art,id:scene.id+'-story',kind:'story',text:scene.paragraphs[0]});
 }
 for(const task of [...CHAPTER_FOUR_CASEWORK,...CHAPTER_FIVE_SIX_CASEWORK]){const art=FRAME_ART.find(f=>f.id===task.question+'-question');FRAME_ART.push({...art,id:task.id,kind:'casework',text:task.context});}
+// Restore selected earlier scenery as quiet cutaways; keep narrative anchors intact.
+const scenerySwaps={
+ 'm1-4-1':{asset:'mill-views.webp',cell:3},
+ 'm5-0-0':{asset:'chapter-one/doorway-v3.webp',cell:0,columns:1,rows:1},
+ 'm9-story':{asset:'witness-views.webp',cell:3},
+ 'm11-art-0':{asset:'tracks-views.webp',cell:2},
+ 'm14-art-2':{asset:'witness-views.webp',cell:3},
+ 'm17-art-1':{asset:'witness-views.webp',cell:1},
+ 'm19-art-2':{asset:'witness-views.webp',cell:3}
+};
+for(const [id,art] of Object.entries(scenerySwaps))Object.assign(FRAME_ART.find(f=>f.id===id),{focus:.5},art);
 for(const frame of FRAME_ART){
  const n=Number(frame.scene.slice(1));if(n<6||!Number.isInteger(n)||frame.frog)continue;
  const stage=Math.floor((n-1)/5),view=(n-1)%5,f=frogForScene(stage,view);

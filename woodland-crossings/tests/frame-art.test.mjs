@@ -43,10 +43,10 @@ test('Chapter 3 crops isolate one painting in desktop, portrait and tablet lands
  for(const scene of CHAPTER_THREE){
   const frames=FRAME_ART.filter(f=>f.scene===scene.id&&f.kind==='story');
   assert.equal(frames.length,4);assert.equal(new Set(frames.map(f=>f.asset+':'+f.cell)).size,4);
-  for(const f of frames){if(f.focus!==undefined){const g=frameGeometry(768,970,f.cell,f.focus);const subjectX=g.x+(f.cell%2+.23)*g.width/2;assert.ok(subjectX>0&&subjectX<768,'Keep left-side rabbits in portrait crop');}}
+  for(const f of frames){if(f.focus!==undefined&&f.asset.startsWith('chapter-three/frames/')){const g=frameGeometry(768,970,f.cell,f.focus);const subjectX=g.x+(f.cell%2+.23)*g.width/2;assert.ok(subjectX>0&&subjectX<768,'Keep left-side rabbits in portrait crop');}}
   const prose=scene.paragraphs.join(' ');let previous=-1;
   for(const frame of frames){const at=prose.indexOf(frame.text);assert.ok(at>previous,frame.id);previous=at;assert.equal(textFrameArt(scene.id,frame.text),frame);}
-  for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(textFrameArt(scene.id,part.join(' ')).asset.startsWith('chapter-three/frames/'));
+  for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(frames.includes(textFrameArt(scene.id,part.join(' '))));
  }
 });
 
@@ -73,7 +73,7 @@ test('Chapter 4 has twenty ordered narrative paintings and matching question, re
   const q=questionFrameArt(scene.id);assert.equal(q.asset,frames[3].asset);assert.equal(q.cell,3);
   assert.equal(questionFrameArt('r'+(16+i)),q);assert.equal(explorationFrameArt(3,i),q);
   assert.equal(questionScene({stage:3,id:scene.id},`3-${i}`).asset,q.asset);
-  for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(textFrameArt(scene.id,part.join(' ')).asset.startsWith('chapter-four/frames/'));
+  for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(frames.includes(textFrameArt(scene.id,part.join(' '))));
  }
  assert.equal(unique.size,20);
  assert.equal(CHAPTER_FOUR.map((s,i)=>explorationFrameArt(3,i)).filter(f=>f.frog).length,4);
