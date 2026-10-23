@@ -16,11 +16,11 @@ There are 30 new story tasks in six chapters of five, plus 30 authored recovery 
 1. Recognise complete clauses, dependent openings and list commas; distinguish a new scene from paired observations.
 2. Join discoveries with and, contrast with but, show results with so and offer alternatives with or.
 3. Complete FANBOYS with for, nor and yet; handle inversion after nor, embedded clauses and long subjects.
-4. Practise semicolons before transitions, with increasingly complex dependent openings and relative descriptions; split at a scene change.
+4. Punctuate transitions and contrast accounts, while preserving dependent openings and relative descriptions; split at a scene change.
 5. Edit connected witness notes while protecting correct commas and following the timeline.
 6. Edit two-paragraph accounts and a final report combining several repairs.
 
-FANBOYS means **for, and, nor, but, or, yet, so**. Semicolons are targets in four main story questions; full stops and conjunctions provide the other repairs. Full-stop tasks explicitly require a new sentence at a time or scene change. Conjunction tasks specify the intended relationship and, where alternatives would remain ambiguous, the word to use.
+FANBOYS means **for, and, nor, but, or, yet, so**. One main Chapter 1 question and its retry practise a semicolon; full stops, conjunctions and preserved commas provide the other target edits. Semicolons remain available as grammatical alternatives where appropriate. Full-stop tasks explicitly require a new sentence at a time or scene change. Conjunction tasks specify the intended relationship and, where alternatives would remain ambiguous, the word to use.
 
 ## One target without false grammar penalties
 

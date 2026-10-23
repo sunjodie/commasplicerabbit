@@ -194,7 +194,7 @@ test('Chapter 2 retry keeps two-sentence source and distinguishes a splice from 
 });
 
 test('Chapter 2 resumes an unfinished notebook check after reload and awards supplies exactly once',async()=>{
- const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=9;s.step=4;s.seq=9;s.activeId='m10';s.activeChoices=['semi'];s.chapterTwo={read:['m6','m7','m8','m9','m10']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-pending');ui.click('play');ui.click('check');ui.click('next');assert.match(ui.app.innerHTML,/An unexpected movement/);
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=9;s.step=4;s.seq=9;s.activeId='m10';s.activeChoices=['so'];s.chapterTwo={read:['m6','m7','m8','m9','m10']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-pending');ui.click('play');ui.click('check');ui.click('next');assert.match(ui.app.innerHTML,/An unexpected movement/);
  ui.app.querySelector('[data-case-choice="yet"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);
  await import('../app.js?chapter-two-reload');ui.click('play');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,9);
  for(const task of CASEWORK.filter(t=>t.question==='m10'&&t.phase==='after').slice(1)){

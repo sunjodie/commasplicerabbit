@@ -12,7 +12,9 @@ test('authored bank has an approved answer set per join, complete briefs, availa
 });
 test('every FANBOYS is a target; semicolons remain focused practice rather than the default repair',()=>{
  for(const t of ['for','and','nor','but','or','yet','so'])assert.ok(STORY.some(q=>q.valid.some(v=>v[0]===t)),t);
- assert.equal(STORY.filter(q=>q.valid.some(v=>v[0]==='semi')).length,4);
+ assert.deepEqual(STORY.filter(q=>q.valid.some(v=>v[0]==='semi')).map(q=>q.id),['m5']);
+ assert.deepEqual(BANK.filter(q=>q.valid.some(v=>v[0]==='semi')).map(q=>q.id),['m5','r5']);
+ for(const q of BANK)assert.doesNotMatch(q.studentBrief,/use a semicolon|using a semicolon/i);
  assert.ok(STORY.slice(20).every(q=>q.kind==='paragraph'));
  assert.ok(STORY.slice(27).every(q=>q.parts.join('').includes('\n\n')));
  assert.equal(STORY[29].valid.length,6);
@@ -91,4 +93,13 @@ test('prose revision clears obsolete active edits but preserves progress, reward
  assert.deepEqual(hydrate(current).activeChoices,['but','so']);
  const approved={...fresh(),story:4,activeId:'m5',activeChoices:['comma','semi']};delete approved.naturalProseRevision;
  assert.deepEqual(hydrate(approved).activeChoices,['comma','semi']);
+});
+
+test('natural prose version 2 resets only the replaced semicolon edits in existing saves',()=>{
+ for(const id of ['m10','r10','m16','r16','m18','r18','b2']){
+  const old={...fresh(),naturalProseRevision:1,story:17,seq:23,activeId:id,activeChoices:['semi'],activeHelp:true,activeTries:2,decorations:[{chapter:0}],frogFinds:['reed-frog'],clueNotebook:{version:1,seen:['map']}};
+  const saved=hydrate(old);assert.equal(saved.naturalProseRevision,2);assert.equal(saved.activeId,id);assert.equal(saved.activeChoices,null);assert.equal(saved.activeHelp,false);assert.equal(saved.activeTries,0);assert.equal(saved.story,17);assert.equal(saved.seq,23);assert.deepEqual(saved.decorations,old.decorations);assert.deepEqual(saved.frogFinds,old.frogFinds);assert.deepEqual(saved.clueNotebook,old.clueNotebook);
+ }
+ for(const id of ['m5','r5','m17','m23']){const saved=hydrate({...fresh(),naturalProseRevision:1,activeId:id,activeChoices:['semi'],activeHelp:true});assert.deepEqual(saved.activeChoices,['semi']);assert.equal(saved.activeHelp,true);}
+ for(const id of ['m10','m16','m18','m23','b2']){const q=BANK.find(q=>q.id===id),choices=q.valid.map(v=>v[0]);const saved=hydrate({...fresh(),activeId:id,activeChoices:choices,activeHelp:true});assert.deepEqual(saved.activeChoices,choices);assert.equal(saved.activeHelp,true);}
 });

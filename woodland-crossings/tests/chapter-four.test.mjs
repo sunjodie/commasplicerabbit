@@ -31,9 +31,9 @@ test('Chapter 4 reading saves independently and never opens on recovery or befor
 });
 test('Chapter 4 has the approved five targets, matching retries and explicit punctuation instructions',()=>{
  const expected=[
- 'The baker heard the bell near the footbridge; however, the ferryman heard it above the bend.',
+ 'The baker heard the bell near the footbridge. However, the ferryman heard it above the bend.',
  'Because the witnesses had heard the bell in different places at different times, Willow suspected that it had moved. Therefore, she traced the path on the map.',
- 'The ferryman, who knew the higher crossing, said the route was above the water; nevertheless, a fallen beech limb blocked the approach.',
+ 'The ferryman, who knew the higher crossing, said the route was above the water, but a fallen beech limb blocked the approach.',
  'The lower path was under water, but the old shelter stood above the flood line.',
  'Nobody had answered the door. Through the kitchen window the neighbour had seen three clean bowls.'
  ];
@@ -42,7 +42,7 @@ test('Chapter 4 has the approved five targets, matching retries and explicit pun
   const r=TRANSFER[15+i];assert.deepEqual(r.valid,q.valid);assert.ok(r.why.every(Boolean));
   for(const note of [q,r])assert.doesNotMatch(note.parts.join(' '),/upstream bridge|older map|delivery record|register|ledger|gate/);
  }
- for(const q of [STORY[15],STORY[17]])assert.match(q.studentBrief,/semicolon/);
+ assert.match(STORY[15].studentBrief,/own sentence/);assert.match(STORY[17].studentBrief,/contrast/);for(const q of STORY.slice(15,20))assert.doesNotMatch(q.studentBrief,/semicolon/);
  assert.match(STORY[16].studentBrief,/new sentence/);
  assert.match(STORY[19].why[0],/independent clauses/);assert.match(STORY[19].why[0],/Through the kitchen window/);
 });

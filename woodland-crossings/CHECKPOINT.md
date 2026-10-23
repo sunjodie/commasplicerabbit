@@ -407,3 +407,9 @@ Assets, exact prompts, source provenance and review notes are under assets/chapt
 ### Cloudflare deployment repair · 23 October 2026
 
 The supplied Workers build failed because automatic setup selected the entire repository as static assets, including a 26.7 MiB Git pack. Added explicit root Wrangler configuration for the existing commaspliceanimals Worker and a root .assetsignore excluding Git history, build/dependency directories, tests and authoring material. Root and woodland-crossings URLs are preserved. The five new Chapter 3 sheets remain deployable. Verified the upload selection, asset size limit and runtime module/art references locally; actual Cloudflare deployment success still requires the next connected build.
+
+### Natural sentence repairs · 23 October 2026
+
+Semicolon targets now appear only in the approved Chapter 1 Q5 and its retry (two items across the 63-item bank). Chapter 2 Q5 links observations to a tentative conclusion with comma + so. Chapter 4 Q1 separates witness accounts with a full stop before However; Q3 preserves the relative-clause commas and adds comma + but. The second bonus item now starts a fresh sentence at Instead. Their retries, explanations, lesson demonstration and QUESTIONS.md are aligned. No instruction names a semicolon as the required tool. Semicolons remain in reference guidance and receive neutral feedback when grammatically valid but outside a task's writing goal.
+
+Chapter 1 main/retry objects were compared with the previous version and are unchanged. All 167 automated tests pass, covering target uniqueness within offered tools, rendered answers, a full game flow and selective migration of unfinished edits. naturalProseRevision 2 clears outdated edits only for m10/r10, m16/r16, m18/r18 and b2 in existing saves; story progress, rewards, frogs and clue-notebook data persist. Refreshed app/content/engine cache URLs. Live deployment and physical-device checks remain unverified.

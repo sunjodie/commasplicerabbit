@@ -231,23 +231,23 @@ D. The figure’s broad shoulders and its disappearance below the window.
 
 **Retry explanation:** “Or” offers a choice between two courses of action. Place a comma before it.
 
-### Q5 · participial-subject
+### Q5 · observation-tentative-result
 
-**Student brief:** Join the sentences using a semicolon. Do not add a conjunction.
+**Student brief:** Join the sentences using a coordinating conjunction that makes the tentative conclusion follow from the observed marks.
 
-**Original:** Someone appeared to have paused beside the reeds. Two deep bootprints lay beside the circular mark.
+**Original:** Two deep bootprints lay beside the circular mark. Poppy thought someone had paused there.
 
-**Target:** Someone appeared to have paused beside the reeds; two deep bootprints lay beside the circular mark.
+**Target:** Two deep bootprints lay beside the circular mark, so Poppy thought someone had paused there.
 
-**Why:** Both clauses are complete. A semicolon links the related observations. “Someone” is the subject of the first clause; “appeared” keeps the interpretation tentative.
+**Why:** The bootprints beside the circular mark prompt Poppy’s tentative conclusion. A comma followed by “so” expresses that inference; “thought” leaves it open to revision.
 
-**Retry brief:** Join the sentences using a semicolon. Do not add a conjunction.
+**Retry brief:** Join the sentences using a coordinating conjunction that makes the tentative conclusion follow from the observed marks.
 
-**Retry original:** Someone appeared to have paused beside the reeds. A circular mark lay beside two deep bootprints.
+**Retry original:** A circular mark lay beside two deep bootprints. Willow thought something heavy might have been set down there.
 
-**Retry target:** Someone appeared to have paused beside the reeds; a circular mark lay beside two deep bootprints.
+**Retry target:** A circular mark lay beside two deep bootprints, so Willow thought something heavy might have been set down there.
 
-**Retry explanation:** Both clauses are complete. “Appeared” keeps the interpretation tentative; the marks suggest a pause without identifying a person or object. A semicolon links the observations.
+**Retry explanation:** The circular mark beside the bootprints prompts Willow’s tentative conclusion. A comma followed by “so” expresses that inference. “Thought” and “might” avoid claiming that the marks prove what happened.
 
 ### An unexpected movement
 
@@ -431,21 +431,21 @@ This reflection is optional and does not affect supplies.
 
 ### Q1 · however-transition
 
-**Student brief:** Keep every word and use a semicolon to join the complete clauses. Keep the comma after “however”.
+**Student brief:** Give each witness’s account its own sentence. Keep every word, including “however”.
 
 **Original:** The baker heard the bell near the footbridge, however, the ferryman heard it above the bend.
 
-**Target:** The baker heard the bell near the footbridge; however, the ferryman heard it above the bend.
+**Target:** The baker heard the bell near the footbridge. However, the ferryman heard it above the bend.
 
-**Why:** “However” signals contrast but is not a coordinating conjunction. The original comma splices two independent clauses; a semicolon repairs the join. The comma after “however” stays.
+**Why:** Both accounts are complete clauses. A full stop gives each witness’s account its own sentence. Capitalise “However” and keep its following comma: it signals contrast but cannot join the clauses with a comma alone.
 
-**Retry brief:** Keep every word and use a semicolon to join the complete clauses. Keep the comma after “however”.
+**Retry brief:** Give each witness’s account its own sentence. Keep every word, including “however”.
 
 **Retry original:** The baker placed the sound near the footbridge, however, the ferryman placed it above the bend.
 
-**Retry target:** The baker placed the sound near the footbridge; however, the ferryman placed it above the bend.
+**Retry target:** The baker placed the sound near the footbridge. However, the ferryman placed it above the bend.
 
-**Retry explanation:** “However” signals contrast but is not a coordinating conjunction. The original comma splices two independent clauses; a semicolon repairs the join. The comma after “however” stays.
+**Retry explanation:** Both accounts are complete clauses. A full stop gives each witness’s account its own sentence. Capitalise “However” and keep its following comma: it signals contrast but cannot join the clauses with a comma alone.
 
 ### Q2 · therefore-transition
 
@@ -465,23 +465,23 @@ This reflection is optional and does not affect supplies.
 
 **Retry explanation:** Keep the comma after the subordinate “Because” opening. “Poppy thought a meal had been prepared” and “she wondered who the guests might be” are independent clauses. A full stop before “therefore” repairs the splice and gives Poppy’s next thought its own sentence.
 
-### Q3 · nevertheless-transition
+### Q3 · relative-description-contrast
 
-**Student brief:** Keep the description inside its paired commas. Use a semicolon to repair the join before “nevertheless”. Preserve every word.
+**Student brief:** Keep one sentence and the paired commas around the description. Add a coordinating conjunction to contrast the route’s height with the obstruction.
 
-**Original:** The ferryman, who knew the higher crossing, said the route was above the water, nevertheless, a fallen beech limb blocked the approach.
+**Original:** The ferryman, who knew the higher crossing, said the route was above the water, a fallen beech limb blocked the approach.
 
-**Target:** The ferryman, who knew the higher crossing, said the route was above the water; nevertheless, a fallen beech limb blocked the approach.
+**Target:** The ferryman, who knew the higher crossing, said the route was above the water, but a fallen beech limb blocked the approach.
 
-**Why:** Keep the comma opening the extra information about the ferryman. Keep the comma closing “who knew the higher crossing” before the main verb “said”. “The ferryman said the route was above the water” and “a fallen beech limb blocked the approach” are independent clauses. Use a semicolon before “nevertheless”; keep its following comma.
+**Why:** Keep the comma opening the extra information about the ferryman. Keep the comma closing “who knew the higher crossing” before the main verb “said”. The main clauses are complete. A comma followed by “but” contrasts the route being above the water with the fallen limb blocking its approach.
 
-**Retry brief:** Keep the description inside its paired commas. Use a semicolon to repair the join before “nevertheless”. Preserve every word.
+**Retry brief:** Keep one sentence and the paired commas around the description. Add a coordinating conjunction to contrast the cottage’s appearance with the prepared table.
 
-**Retry original:** The cottage, which stood beside the mill, looked unoccupied, nevertheless, the table was set for three.
+**Retry original:** The cottage, which stood beside the mill, looked unoccupied, the table was set for three.
 
-**Retry target:** The cottage, which stood beside the mill, looked unoccupied; nevertheless, the table was set for three.
+**Retry target:** The cottage, which stood beside the mill, looked unoccupied, but the table was set for three.
 
-**Retry explanation:** Keep the comma opening the extra information about the cottage. Keep the comma closing “which stood beside the mill” before “looked”. “The cottage looked unoccupied” and “the table was set for three” are independent clauses. Use a semicolon before “nevertheless”.
+**Retry explanation:** Keep the comma opening the extra information about the cottage. Keep the comma closing “which stood beside the mill” before “looked”. A comma followed by “but” contrasts the cottage looking unoccupied with the table being set for three. Each main clause is complete.
 
 ### Q4 · condition-contrast
 
@@ -824,13 +824,13 @@ D. The three bowls and the covered pot at the cottage.
 
 **Why:** Beside the signal rock is a location phrase, not a complete sentence. Both clauses are complete. A full stop introduces the observation about the route.
 
-**b2:** Keep one sentence and every word. Repair the join before INSTEAD with punctuation only.
+**b2:** Give the bell’s actual destination its own sentence. Keep every word, including “instead”.
 
 **Original:** Bram had not taken the bell home, instead, he had carried it towards the flooded crossing.
 
-**Target:** Bram had not taken the bell home; instead, he had carried it towards the flooded crossing.
+**Target:** Bram had not taken the bell home. Instead, he had carried it towards the flooded crossing.
 
-**Why:** Instead is a transition. It needs a semicolon before it when these complete clauses stay in one sentence.
+**Why:** Both clauses are complete. A full stop gives the actual destination its own sentence. Capitalise “Instead” and keep its following comma: it introduces the alternative destination.
 
 **b3:** Keep the WHERE opening attached. Use AND to add the second action; begin a new sentence at the later time “At sunrise”.
 
