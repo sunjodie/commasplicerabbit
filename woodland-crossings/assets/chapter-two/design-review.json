@@ -1,0 +1,21 @@
+{
+  "asset": "scenes-v2.webp",
+  "previous_asset_retained": "scenes-v1.webp",
+  "source": "exec-4b111504-5471-44ac-a6a5-1bc604ecab30.png",
+  "generator": "built-in image_gen edit",
+  "references": [
+    "../chapter-one/frames/sheet-12.webp",
+    "../chapter-one/frames/sheet-11.webp"
+  ],
+  "visual_review": [
+    "All four cells: larger expressive eyes, shorter muzzles and rounded cheeks matched to Chapter 1 references.",
+    "All four cells: Poppy wears plum cape over dusty-rose dress, rust scarf and brown satchel; no bare haunches.",
+    "All four cells: Willow wears long moss-green coat and checked collar; extra shoulder bag removed.",
+    "All four cells: simple paper lantern with thin frame and arched window cutouts, distinct from glass-chimney oil lamp.",
+    "Ear silhouettes inspected in all four cells: two per rabbit, Poppy with one bent ear; no duplicated lobes.",
+    "Lower mill and loft: Willow holds oil lamp; Poppy paws empty, paper lantern set down nearby.",
+    "Streambank: Poppy holds oil lamp low and Willow holds paper lantern.",
+    "Shed: Willow raises oil lamp; paper lantern rests on workbench; Poppy paws empty.",
+    "Original backgrounds and four equal 3:2 cells preserved; no readable notes or identifiable circular-mark evidence added."
+  ]
+}

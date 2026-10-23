@@ -1,0 +1,125 @@
+{
+  "n": 1,
+  "title": "After the Fair",
+  "text": "By the time Poppy and Willow left the lantern fair, rain had begun to collect in the paper pumpkins hanging above the square. Their candlelight shone through the wet orange folds and trembled in the puddles below, where scraps of ribbon floated among the apple stalks. One pumpkin had sagged beneath the weight of the water, leaving a cheerful mouth beneath a rather unfortunate nose.\n\nPoppy reached up to straighten it, balancing on the edge of the fountain so that her cape brushed the water.\n\n“Leave it,” Willow said. “You’ll pull the whole string down.”\n\n“I’m only trying to straighten it,” Poppy said.\n\n“You were trying to help at the cake stall too,” Willow reminded her.\n\nPoppy folded the icing-stained hem of her cape underneath and stepped down. All around them, the fair was being packed into boxes. The baker shook a shower of crumbs from her tablecloth while two neighbours struggled with a trestle table, and the last of the little painted boats bumped together in the fountain. From the open bakery door came a waft of baked apple and cinnamon that made Poppy wish she had saved some of her money.\n\nWillow had tucked her handmade lantern, still unlit, beneath her moss-green coat, where its corners pressed awkwardly against her ribs. She had spent the afternoon cutting out its little windows, and whenever Poppy came too close she turned sideways to protect it.\n\nThe baker came to the doorway with two folded blankets over her arm. “If you see the mender and her apprentice, tell them their room’s ready,” she called. “They usually come over the low bridge, but I haven’t seen them yet.”\n\nPoppy promised she would, already hoping the visitors might bring one of the little clockwork animals the apprentice sometimes made from scraps.\n\nThey were passing the fountain when a light appeared beyond the gardens, in the mill’s upper window.\n\n“Look,” Poppy said, catching Willow’s sleeve. “Upstairs.”\n\nAlders hid the mill’s lower walls. In summer, water spilled from the wheel in silver threads, and the whole building hummed pleasantly enough to hear from the square. Now the wheel was black and still, its paddles clogged with leaves. It had stopped for winter a week earlier, and Poppy had seen no light upstairs since.\n\n“Bram must still be working,” Willow said, following her gaze.\n\n“But his cottage was dark when we came past,” Poppy said.\n\n“Then he’s still here, isn’t he?” Willow replied, drawing her sleeve free.\n\nAs the village clock began to chime the quarter to twelve, a broad head and shoulders passed between the light and the glass. Poppy thought she recognised the high collar of Bram’s green coat, but before she could be sure the figure bent down and disappeared below the windowsill. Something scraped across the floor with a long, uneven groan that carried between two gusts of rain.\n\n“What’s he doing up there?” Poppy asked.\n\n“We could ask him in the morning,” Willow suggested, looking back towards the bakery.\n\nPoppy knew why Willow wanted to go home. At the last fair, Bram had settled them beside his stove with hot cups between their paws and asked whether they knew the story of the mill bell. The cottage had smelled of drying socks and orange peel, and it had been easy to lean forward while he lowered his voice.\n\nIf the mill bell rang after midnight, he had told them, someone would be missing before morning. The mill bell was the little brass bell he kept above the mill fireplace, with a leather strap so that he could carry it to the bank when the water rose.\n\nWhen Poppy asked who, Bram took his time choosing another log for the stove.\n\n“That depends who’s listening,” he had said.\n\nWillow had refused to use the mill lane for a week afterwards. Poppy had taken it twice that week, although both visits had been in daylight and in the company of somebody considerably larger than herself.\n\n“It was a story,” Willow said now, as though Poppy had mentioned it aloud.\n\n“I know it was,” Poppy replied, keeping her eyes on the window.\n\nThe light moved once more and vanished, leaving them with their own dim reflections in a puddle at their feet. Without it, the mill seemed to have drawn back into the trees. Poppy could hear the stream rushing behind the garden wall, much louder than it had been on their way to the fair.\n\n“He might need a hand,” Poppy said, already picking her way down the mill lane between the puddles.\n\nWillow stayed beneath the dripping pumpkins for a moment before she tucked the lantern farther inside her coat and followed. The lane curled behind Bram’s cottage and continued towards the mill. No light showed beneath the cottage’s steep roof. Along the garden fence, wet rosemary brushed their knees and shed its sharp scent whenever Poppy caught a branch. By the time they reached the mill porch, the warmth of the square had given way to the smell of damp wood and the steady dripping of the eaves.\n\nA narrow trail of pale shavings lay beneath the mill’s side window. Rain had flattened the outer edge into the mud, but the wood tucked against the wall was still dry. Poppy could smell it when the wind turned, a fresh, sharp smell that did not belong to the wet leaves.\n\nThe front door stood ajar. A strip of green cloth was caught beneath the latch, its loose threads stirring whenever the wind found the gap.\n\nPoppy lifted it into the light from the doorway and recognised the crooked yellow stitches along its edge. Bram had let her mend the cuff of his green coat in the summer, sitting patiently with his arm on the kitchen table while she tried to make the two sides meet. She had hoped nobody else would notice how unevenly she had done it.\n\n“Bram?” she called, easing the cloth from the iron catch.\n\nHer voice travelled into the mill and received no answer. Willow pushed the door wider, revealing an oil lamp burning at the foot of the stairs and muddy tracks across the floor. She took the lantern from beneath her coat and stepped inside, keeping its paper sides clear of the lamp as she touched her candle’s wick to the oil flame. Light filled the little windows she had cut so carefully, and she held the lantern clear of the door as Poppy squeezed past. Above the cold fireplace, the iron hook that held the mill bell was empty, with a pale outline on the wall where its leather strap usually hung.\n\nSomething knocked against the wall beyond the porch. Poppy waited with the torn cloth caught between her paws, but no footsteps came down the stairs.",
+  "questions": [
+    {
+      "title": "Beyond the gardens",
+      "kind": "Sentence boundaries",
+      "text": "The villagers were dismantling the last stalls, beyond the gardens, a light appeared in the mill’s upper window.",
+      "prompt": "Present the activity in the square and the discovery at the mill as two separate sentences. Keep every word. Edit the comma after “stalls”.",
+      "answer": "The villagers were dismantling the last stalls. Beyond the gardens, a light appeared in the mill’s upper window.",
+      "why": "Both sides are complete clauses. A full stop gives the two sentences required by the brief. A semicolon would be grammatical but would not meet that goal.",
+      "options": [
+        "Keep comma",
+        "Full stop",
+        "Semicolon"
+      ],
+      "evidence": []
+    },
+    {
+      "title": "The fresh timber",
+      "kind": "Grammar editing",
+      "text": "The scent of freshly sawn boards were particularly sharp beside the mill wall.",
+      "prompt": "Find and replace one grammatically incorrect word. Preserve meaning and past tense.",
+      "answer": "were → was",
+      "why": "The singular subject is “scent”. The intervening phrase “of freshly sawn boards” does not make it plural.",
+      "options": [],
+      "evidence": []
+    },
+    {
+      "title": "The upstairs light",
+      "kind": "Sentence boundaries",
+      "text": "Although the mill’s waterwheel had been idle for a week, a light still burned in the upper room.",
+      "prompt": "Keep one sentence. Change punctuation only where necessary.",
+      "answer": "Keep the comma.",
+      "why": "The although-clause is dependent. Its comma attaches it to the complete main clause. Neither a full stop nor a semicolon can make the opening stand alone.",
+      "options": [
+        "Keep comma",
+        "Full stop",
+        "Semicolon"
+      ],
+      "evidence": []
+    },
+    {
+      "title": "Something out of place",
+      "kind": "Vocabulary",
+      "text": "The mill had been silent since its wheel stopped for winter. Beneath the window, however, lay pale wood shavings. Their sharp, fresh scent seemed incongruous among the wet leaves and damp wood.",
+      "prompt": "Which meaning of “incongruous” best fits this context?",
+      "answer": "B",
+      "why": "“Incongruous” expresses a mismatch with the setting. A confuses incongruity with intensity. C overstates the mystery because the visible shavings suggest a source. D overlooks how the sharp scent of fresh shavings stands out among the wet surroundings.",
+      "options": [
+        "A. Stronger than the other smells around it.",
+        "B. Unexpected in those particular surroundings.",
+        "C. Impossible to explain from the visible evidence.",
+        "D. Easily confused with the smells surrounding it."
+      ],
+      "evidence": []
+    },
+    {
+      "title": "Reassurance",
+      "kind": "Sentence boundaries",
+      "text": "Willow dismissed the legend as a fireside invention, Poppy found little reassurance in the darkened window.",
+      "prompt": "Keep one sentence. Add a coordinating conjunction that explicitly contrasts Willow’s dismissal with Poppy’s continuing unease.",
+      "answer": "Willow dismissed the legend as a fireside invention, but Poppy found little reassurance in the darkened window.",
+      "why": "Comma + but expresses contrast. And only adds information; so would incorrectly express a result. A semicolon is grammatical but does not supply the requested conjunction.",
+      "options": [
+        "Keep comma",
+        "Full stop",
+        "Semicolon",
+        "Comma + and",
+        "Comma + but",
+        "Comma + so"
+      ],
+      "evidence": []
+    },
+    {
+      "title": "The familiar stitches",
+      "kind": "Detective work",
+      "text": "A strip of green cloth hung beneath the latch. Along its edge ran crooked yellow stitches. Poppy remembered making that uneven repair on the cuff of Bram’s green coat during the summer. Earlier, she had glimpsed a broad figure upstairs wearing what looked like a green coat, but it had moved before she could be certain.",
+      "prompt": "Part 1: Which conclusion is most securely supported?\nPart 2: Which pair of details provides the strongest support?",
+      "answer": "Part 1: B. A piece from Bram’s coat remained at the latch.\nPart 2: C. The stitching matches Poppy’s first-hand memory.",
+      "why": "The cloth can be identified without establishing when it caught, the direction Bram travelled or his intention. Part 1’s other choices add those unsupported details. For Part 2, colour alone is weak evidence: Willow is also wearing a green coat. The distinctive stitching and Poppy’s memory of making it link the cloth specifically to Bram’s coat.",
+      "options": [
+        "A. Bram’s coat caught on the latch as he hurried out of the mill.",
+        "B. A piece of cloth from Bram’s coat remained caught beneath the latch.",
+        "C. Bram returned to the mill that evening wearing his damaged coat.",
+        "D. Bram left the cloth on the latch so that Poppy would recognise it."
+      ],
+      "evidence": [
+        "A. The cloth’s green colour and the figure’s apparently green coat.",
+        "B. The cloth’s position beneath the latch and the light burning upstairs.",
+        "C. The distinctive stitching and Poppy’s memory of making the repair.",
+        "D. The figure’s broad shoulders and its disappearance below the window."
+      ]
+    },
+    {
+      "title": "What Poppy noticed",
+      "kind": "Sentence boundaries",
+      "text": "Poppy noticed the frayed green cloth, the crooked yellow stitches, and the loose threads caught beneath the latch.",
+      "prompt": "Preserve one sentence containing an ordinary list. Keep punctuation that already works. Inspect both list commas.",
+      "answer": "Keep both commas.",
+      "why": "These are three noun phrases in a list, not three independent clauses. Both commas are acceptable and may remain. The serial comma before “and” is optional in British English, but this task asks students to keep punctuation that already works.",
+      "options": [
+        "Keep comma",
+        "Full stop",
+        "Semicolon"
+      ],
+      "evidence": []
+    },
+    {
+      "title": "The empty mill",
+      "kind": "Sentence boundaries",
+      "text": "By the time Willow lit her lantern, Poppy had called once into the mill, nobody had answered.",
+      "prompt": "Keep this as one sentence without adding or removing words. Use only the repairs listed. Change punctuation only where necessary.",
+      "answer": "By the time Willow lit her lantern, Poppy had called once into the mill; nobody had answered.",
+      "why": "Keep the comma after the dependent opening. The second comma splices two complete clauses. Of the listed repairs, a semicolon alone joins them in one sentence while preserving every word. A colon or dash can also form a grammatical single sentence here, but neither is offered in this task.",
+      "options": [
+        "Keep comma",
+        "Full stop",
+        "Semicolon"
+      ],
+      "evidence": []
+    }
+  ]
+}

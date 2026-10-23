@@ -1,0 +1,13 @@
+{
+  "asset": "scenes-v4.webp",
+  "source_filename": "image(20261020-153209).png",
+  "library_file_id": "libfile_8a5f32265b4c819191ed8ca09119b62d",
+  "source_sha256": "8ea0ca9f366f0db7ccc27575d1b8e733c445c0302fda5a8a409d6a3c91793177",
+  "selection": "User supplied replacement: use this instead.",
+  "conversion": "Lossless WebP; no image generation, resizing, retouching or cropping.",
+  "pixel_verification": "Decoded RGB pixels identical to supplied PNG.",
+  "dimensions": [
+    1536,
+    1024
+  ]
+}

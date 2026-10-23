@@ -1,0 +1,5 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {EGGS,CASES,discoveryList,unlockedCases,tokenArt,rescueArt} from '../halloween.js';
+test('six optional discoveries have stable unique identities and safe persisted lists',()=>{assert.equal(EGGS.length,6);assert.equal(new Set(EGGS.map(e=>e.id)).size,6);assert.deepEqual(discoveryList(['ghost-shroom','ghost-shroom','invented']),['ghost-shroom']);assert.deepEqual(discoveryList(null),[]);});
+test('evidence reveals only completed chapters and caps at six',()=>{assert.equal(CASES.length,6);assert.equal(unlockedCases(0),0);assert.equal(unlockedCases(4),0);assert.equal(unlockedCases(5),1);assert.equal(unlockedCases(29),5);assert.equal(unlockedCases(30),6);assert.equal(unlockedCases(90),6);});
+test('all mystery and secret illustrations have actual vector content',()=>{for(const kind of [...CASES.map(c=>c.icon),...EGGS.map(e=>e.icon)]){const svg=tokenArt(kind);assert.match(svg,/<svg/);assert.match(svg,/<(?:path|circle|ellipse)/);}assert.match(rescueArt(),/<svg/);});
