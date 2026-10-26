@@ -84,12 +84,17 @@ test('all Chapter 2 views have local rain artwork and safe desktop/tablet atlas 
   const g=frameGeometry(width,height,cell),left=g.x+cell%2*g.width/2,top=g.y+Math.floor(cell/2)*g.height/2;
   assert.ok(left<=0&&top<=0&&left+g.width/2>=width&&top+g.height/2>=height);
  }
- const b=readFileSync(new URL('../assets/chapter-two/scenes-v4.webp',import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');
+ for(let sheet=1;sheet<=3;sheet++){const b=readFileSync(new URL(`../assets/chapter-two/continuity/sheet-0${sheet}.webp`,import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');}
+ const expected=[[1,1],[1,3],[2,1],[2,2],[3,2]];
+ for(const [i,scene] of CHAPTER_TWO.entries()){const frame=questionFrameArt(scene.id);assert.equal(frame.asset,`chapter-two/continuity/sheet-0${expected[i][0]}.webp?v=c2continuity1`);assert.equal(frame.cell,expected[i][1]);}
+ assert.equal(textFrameArt('m8',CHAPTER_TWO[2].paragraphs[0]).cell,0);
+ assert.equal(textFrameArt('m8',CHAPTER_TWO[2].paragraphs[9]).cell,1);
+ assert.equal(textFrameArt('m7',CHAPTER_TWO[1].paragraphs[1]).cell,3);
 });
 
 
 test('root and game entry points load the same visual-novel styles and versioned application',()=>{
  const root=readFileSync(new URL('../../index.html',import.meta.url),'utf8'),game=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(root,/<base href="\.\/woodland-crossings\/">/);
- for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261027-title-layout2"/);assert.match(html,/src="app.js\?v=20261027-title-layout2"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
+ for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261027-c2-continuity1"/);assert.match(html,/src="app.js\?v=20261027-c2-continuity1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
 });

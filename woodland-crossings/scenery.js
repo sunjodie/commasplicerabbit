@@ -21,12 +21,12 @@ export const QUESTION_SCENES=SCENES.flatMap((base,stage)=>[
  {...base,key:`${stage}-0`,stage,view:0,scale:'100% 100%'},
  ...titles[stage].map((name,i)=>({asset:stage===0?['window-v3','fireside-v3','lane-v3','doorway-v3'].map(n=>'chapter-one/'+n+'.webp')[i]:atlases[stage],name,key:`${stage}-${i+1}`,stage,view:i+1,indoors:stage===0?[false,true,false,true][i]:base.indoors,focus:stage===0?'50% 50%':`${i%2*100}% ${Math.floor(i/2)*100}%`,scale:stage===0?'100% 100%':'200% 200%'}))
 ]);
-// New Chapter 2 paintings replace the older fog/gate compositions.
+// Match the current Chapter 2 story locations in fallback/exploration views too.
 for(const view of QUESTION_SCENES.filter(x=>x.stage===1)){
- const cell=view.view===4?3:2;
- Object.assign(view,{asset:'chapter-two/scenes-v4.webp',name:['The rain-wet streambank','Sheltered marks','The lamplit bank','Beside the reeds','The tool shed'][view.view],focus:`${cell%2*100}% ${Math.floor(cell/2)*100}%`,scale:'200% 200%'});
+ const [sheet,cell]=[[1,1],[1,3],[2,1],[2,2],[3,2]][view.view];
+ Object.assign(view,{asset:`chapter-two/continuity/sheet-${String(sheet).padStart(2,'0')}.webp?v=c2continuity1`,name:['The lower mill room','The upper room','Bram’s desk','The streambank','The tool shed'][view.view],indoors:view.view!==3,focus:`${cell%2*100}% ${Math.floor(cell/2)*100}%`,scale:'200% 200%'});
 }
-SCENES[1]={...SCENES[1],asset:'chapter-two/scenes-v4.webp',name:'The rain-wet streambank',focus:'0% 100%',scale:'200% 200%'};
+SCENES[1]={...SCENES[1],...QUESTION_SCENES.find(x=>x.stage===1&&x.view===0)};
 // Chapter 3 now follows the stream, broken bridge and return path.
 for(const view of QUESTION_SCENES.filter(x=>x.stage===2))Object.assign(view,{
  asset:`chapter-three/frames/sheet-${String(view.view+1).padStart(2,'0')}.webp?v=c3art1`,

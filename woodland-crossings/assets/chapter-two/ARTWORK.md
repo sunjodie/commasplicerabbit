@@ -24,3 +24,7 @@ Source: `exec-037b68e2-a23f-45b0-bfcc-bac0f654e830.png`. Both exact prompts and 
 ## User-selected replacement — scenes-v4.webp
 
 Current game asset: `scenes-v4.webp`. Source: the user-supplied `image(20261020-153209).png`, explicitly selected with “use this instead”. No generative editing or visual alteration was applied. Saved as lossless WebP, preserving all decoded RGB pixels; verified pixel-for-pixel against the supplied PNG. It uses the same 1536×1024 four-cell atlas geometry and scene order. Source identity and SHA-256 are recorded in `user-approved-source.json`. Earlier variants remain for provenance.
+
+## Textured fur and story continuity — 27 October 2026
+
+Current runtime assets are `continuity/sheet-01.webp` through `sheet-03.webp`, twelve new paintings replacing the four-cell runtime reuse. User-selected `scenes-v4.webp` remains as the character reference/provenance. See `continuity/REVIEW.md` for passage anchors, review decisions and validation; exact prompts and source identities are alongside it. The old broad-water m9 scenery override is removed.

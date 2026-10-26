@@ -441,3 +441,7 @@ Set the approved uploaded moonlit mill illustration as the fixed landing artwork
 ## Landing layout repair · 27 October 2026
 
 The screenshot showed six chapter cards compressed into the narrow title panel, with clipped final text. Moved the chapter overview into a paginated modal accessible from the landing buttons. Kept the approved painting and main actions, shortened the duplicated introductory copy, and centred a shorter desktop/tablet panel over the artwork. Both entry points use the refreshed app/CSS cache revision. All 168 Node tests pass; actual browser/device visual verification remains outstanding.
+
+## Chapter 2 artwork continuity — 27 October 2026
+
+Replaced smooth-fur four-cell reuse with twelve textured paintings across three atlases. Correct downstairs desk and narrow rainy streambank; distinct loft/window and shed/listening views; scenery/object pauses. Question and fallback backgrounds stay at the current location. Preserved approved prose/questions and four collectible frogs. Removed generated bell, surplus lights and premature/oversized cloth during review. Exact prompts, sources and paragraph mapping in assets/chapter-two/continuity/. Both entry points and app art imports refreshed. All 168 tests passed; live/device visual QA remains outstanding.
