@@ -222,3 +222,11 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
 .vn-menu #app[data-vn-kind="ending"] .vn-menu-page{text-align:center}
 :is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-extras .button-row{justify-content:center}
 @media(min-width:600px) and (max-width:699px){.vn-menu #app[data-vn-kind="ending"] .ending-closing{grid-template-columns:1fr;gap:14px}}
+
+/* The approved title illustration is independent of reached story scenes. */
+.hero .title-art{width:100%;min-width:0}
+.hero .title-art>.scene{height:auto;min-height:0;aspect-ratio:3/2;background-position:center;background-size:cover;border-radius:20px;box-shadow:0 12px 40px #0c102344}
+@media(min-width:600px){
+ .vn-menu>main[data-vn-kind="home"]{background:linear-gradient(90deg,#17142055,transparent 80%),url('assets/title-midnight-mill.webp') center/cover}
+ .vn-menu>main[data-vn-kind="home"]>.vn-menu-frame{right:auto;left:clamp(20px,5vw,90px);width:min(560px,calc(100% - 40px));background:#211b25c9;backdrop-filter:blur(5px)}
+}
