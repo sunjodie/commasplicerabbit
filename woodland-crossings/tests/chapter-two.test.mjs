@@ -91,5 +91,5 @@ test('all Chapter 2 views have local rain artwork and safe desktop/tablet atlas 
 test('root and game entry points load the same visual-novel styles and versioned application',()=>{
  const root=readFileSync(new URL('../../index.html',import.meta.url),'utf8'),game=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(root,/<base href="\.\/woodland-crossings\/">/);
- for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261027-title-art1"/);assert.match(html,/src="app.js\?v=20261027-title-art1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
+ for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261027-title-layout2"/);assert.match(html,/src="app.js\?v=20261027-title-layout2"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
 });

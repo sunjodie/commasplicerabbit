@@ -230,3 +230,12 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .vn-menu>main[data-vn-kind="home"]{background:linear-gradient(90deg,#17142055,transparent 80%),url('assets/title-midnight-mill.webp') center/cover}
  .vn-menu>main[data-vn-kind="home"]>.vn-menu-frame{right:auto;left:clamp(20px,5vw,90px);width:min(560px,calc(100% - 40px));background:#211b25c9;backdrop-filter:blur(5px)}
 }
+
+/* Keep the title screen a book cover, with the chapter overview one click away. */
+.chapter-overview-item{padding:12px 0;border-top:1px solid #b69b7666}
+.chapter-overview-item h3{margin:6px 0;font-size:21px}
+.chapter-overview-item p{margin:0;line-height:1.5}
+@media(min-width:600px){
+ .vn-menu>main[data-vn-kind="home"]>.vn-menu-frame{top:50%;bottom:auto;transform:translateY(-50%);height:min(500px,calc(100% - 36px));padding-bottom:64px}
+ .vn-menu #app[data-vn-kind="home"] h1{font-size:clamp(32px,3.2vw,46px);line-height:1.1}
+}

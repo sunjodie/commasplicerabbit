@@ -437,3 +437,7 @@ Selected sibling assets, exact built-in generation prompts, source filenames and
 ### Approved landing title image · 27 October 2026
 
 Set the approved uploaded moonlit mill illustration as the fixed landing artwork. Desktop/tablet display it behind a translucent left-side title/control panel; mobile displays the full 3:2 composition in the hero. Other chapter menus retain their backgrounds. The image was encoded directly to a 641,920-byte WebP without regeneration or visual edits. Mobile frog/woodland discoveries remain functional. App and interface stylesheet cache URLs refreshed in both entry points. All 168 automated tests pass, including start/restart and collectible handlers. Live deployment and browser/device visual verification remain outstanding.
+
+## Landing layout repair · 27 October 2026
+
+The screenshot showed six chapter cards compressed into the narrow title panel, with clipped final text. Moved the chapter overview into a paginated modal accessible from the landing buttons. Kept the approved painting and main actions, shortened the duplicated introductory copy, and centred a shorter desktop/tablet panel over the artwork. Both entry points use the refreshed app/CSS cache revision. All 168 Node tests pass; actual browser/device visual verification remains outstanding.
