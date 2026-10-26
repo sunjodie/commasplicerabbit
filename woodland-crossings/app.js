@@ -1,7 +1,7 @@
 import {observeNotebookText} from './clue-notebook.js?v=20261022-clue-notebook1';
 import {createClueNotebook} from './clue-notebook-view.js?v=20261022-clue-notebook1';
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,explorationFrameArt,paintFrame} from './frame-art.js?v=20261027-c2-continuity1';
-import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261022-character-names1';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,explorationFrameArt,paintFrame} from './frame-art.js?v=20261027-cartographer1';
+import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261027-cartographer1';
 import './page-keys.js?v=20261022-clue-notebook1';
 import {createPageSound,isPageTurn} from './page-sound.js';
 import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261027-three-lines1';
@@ -77,7 +77,7 @@ function showStory(q){
  document.querySelector('#storyPrevious').onclick=()=>{setStoryPosition(state,story.id,page-1);save();showStory(q);};
  document.querySelector('#storyNext').onclick=()=>{if(last){finishStoryScene(state,story.id);save();if(needsStory(state,q))showStory(q);else openNotebook(q);}else{setStoryPosition(state,story.id,page+1);save();showStory(q);}};
  document.querySelector('#storyArtwork').onclick=()=>{const frame=FRAME_ART.find(f=>f.id===app.querySelector('.story-illustration .painted-scene')?.dataset.frameArt)||textFrameArt(story.id,pages[page].join(' '));const setting=questionScene(storyQ);showModal(`<h2>${e(story.title)}</h2><div class="artwork-preview" role="img" aria-label="${e(story.location)}" style="background-image:url('assets/${setting.asset}');background-size:${setting.scale};background-position:${setting.focus}"></div>`);paintFrame(document.querySelector('#modalBody .artwork-preview'),frame);};
- paintFrame(app.querySelector('.story-illustration .painted-scene'),textFrameArt(story.id,pages[page].join(' ')));presentChapterView({kind:'story',title:story.title,chapter:q.stage+1,onReadingPart:(part,text)=>{observeNotebookText(state,story.id,text.join(' '));save();paintFrame(app.querySelector('.story-illustration .painted-scene'),textFrameArt(story.id,text.join(' ')));}});bindEasterEggs();app.querySelector('.story-heading')?.scrollIntoView?.({block:'start',behavior:'auto'});say(story.title+'. Page '+(page+1)+' of '+pages.length+'.');
+ paintFrame(app.querySelector('.story-illustration .painted-scene'),textFrameArt(story.id,pages[page].join(' ')));presentChapterView({kind:'story',title:story.title,chapter:q.stage+1,onReadingPart:(part,text)=>{observeNotebookText(state,story.id,text.join(' '));save();const frame=textFrameArt(story.id,text.join(' '));paintFrame(app.querySelector('.story-illustration .painted-scene'),frame?.frog?.id==='map-frog'&&(page>0||part>0)?{...frame,frog:null}:frame);}});bindEasterEggs();app.querySelector('.story-heading')?.scrollIntoView?.({block:'start',behavior:'auto'});say(story.title+'. Page '+(page+1)+' of '+pages.length+'.');
 }
 function play(){screen='play';feedback=null;solved=false;selected=-1;const q=nextQuestion(state);if(!q)return home();music.setMood(!state.reviewRun&&!state.bonus?chapterMusicMood(q):'calm');selectQuestionScene(state,q);save();if(needsStory(state,q))return showStory(q);if(state.pendingNotebook===q.id){const after=caseworkFor(state,q,'after');if(after)return showCasework(q,after);if(!errors(q,state.activeChoices).length&&wordOrderCorrect(q,state.activeWordOrder))return advance();state.pendingNotebook=null;}openNotebook(q);}
 

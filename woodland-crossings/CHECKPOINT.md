@@ -449,3 +449,7 @@ Replaced smooth-fur four-cell reuse with twelve textured paintings across three 
 ## Three-line reading panels · 27 October 2026
 
 Story, casework context and explanatory feedback now split using a DOM measurement probe at the available content width and actual font/line-height, with at most three prose lines per reading page. Paragraphs remain separate; text is continued rather than truncated. Question/answer comparisons and controls remain together and can make the overall interface panel taller. Existing desktop/tablet presentation applies; phone stacked layout remains unchanged. New conservation test exercises all six chapters at three fit capacities. 169 tests pass; actual browser/device line counts remain unverified. Frog overlap audit and single-screen placement changes are still pending; Chapter 5 artwork remains planned only, with older scenery allowed for questions.
+
+## Pocket cartographer perch · 27 October 2026
+
+Moved map-frog from generic floating coordinates to the bakery arrival barrel rim (8%,54%), with a table-edge alternative (51%,48%) for cropped tablet views. Restricted it to m16-art-0; subsequent reading parts/pages, question and casework images omit it. Woodland secrets revisits that same arrival painting. Other frog placement changes from the audit remain pending. All 169 tests pass; physical placement still needs browser/device verification.

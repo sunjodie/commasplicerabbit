@@ -2,7 +2,7 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261022-character-names1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261027-cartographer1';
 import {QUESTION_SCENES} from './scenery.js?v=20261023-chapter-four-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
@@ -76,9 +76,11 @@ for(const frame of FRAME_ART){
  const stage=Math.floor((n-1)/5),view=(n-1)%5,f=frogForScene(stage,view);
  if(f)frame.frog={id:f.id,x:f.x,y:f.y,perches:f.perches};
 }
+// The cartographer belongs to the bakery arrival painting only.
+for(const frame of FRAME_ART)if(frame.frog?.id==='map-frog'&&frame.id!=='m16-art-0')delete frame.frog;
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r(?:[6-9]|[12]\d|30)$/.test(id)?id.replace('r','m'):id)+'-question');}
-export function explorationFrameArt(stage,view=0){return questionFrameArt('m'+(stage*5+view+1))||null;}
+export function explorationFrameArt(stage,view=0){return stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE,...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
 export function frameGeometry(width,height,cell,focus=.7,columns=2,rows=2){const scale=Math.max(width/3,height/2),w=scale*3,h=scale*2;return {width:w*columns,height:h*rows,x:(width-w)*focus-(cell%columns)*w,y:(height-h)*.5-Math.floor(cell/columns)*h};}
