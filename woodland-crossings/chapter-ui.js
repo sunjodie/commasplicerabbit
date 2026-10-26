@@ -12,6 +12,28 @@ export function textPages(paragraphs,limit=55){
  }
  if(page.length)pages.push(page);return pages.length?pages:[[]];
 }
+// Split without truncation using the actual font and available panel width.
+export function splitToFit(text,fits){
+ const words=text.trim().split(/\s+/).filter(Boolean),pieces=[];
+ for(let start=0;start<words.length;){
+  let low=1,high=words.length-start,best=1;
+  while(low<=high){const n=Math.floor((low+high)/2);if(fits(words.slice(start,start+n).join(' '))){best=n;low=n+1;}else high=n-1;}
+  pieces.push(words.slice(start,start+best).join(' '));start+=best;
+ }
+ return pieces;
+}
+function threeLinePages(paragraphs,host,paragraphClass=''){
+ if(!window.getComputedStyle||!host?.getBoundingClientRect)return textPages(paragraphs,budget());
+ const hostStyle=window.getComputedStyle(host),rectWidth=host.getBoundingClientRect().width;
+ const width=rectWidth-['paddingLeft','paddingRight','borderLeftWidth','borderRightWidth'].reduce((sum,key)=>sum+(parseFloat(hostStyle[key])||0),0);
+ if(!width)return textPages(paragraphs,budget());
+ const probe=host.cloneNode(false);probe.removeAttribute('id');
+ Object.assign(probe.style,{position:'absolute',visibility:'hidden',pointerEvents:'none',width:width+'px',height:'auto',minHeight:'0',maxHeight:'none',padding:'0',border:'0',inset:'auto',boxSizing:'border-box'});
+ const p=element('p',paragraphClass);Object.assign(p.style,{margin:'0',padding:'0'});probe.append(p);host.parentNode.append(probe);
+ const style=window.getComputedStyle(p),line=parseFloat(style.lineHeight)||parseFloat(style.fontSize)*1.5;
+ const pages=paragraphs.flatMap(text=>splitToFit(text,value=>{p.textContent=value;return p.getBoundingClientRect().height<=line*3+.5;}).map(piece=>[piece]));
+ probe.remove();return pages.length?pages:[[]];
+}
 const wide=()=>typeof window.matchMedia==='function'&&window.matchMedia('(min-width:600px)').matches;
 let active=null,readingBack=false;
 export function clearChapterView(){if(document.body){document.body.classList.remove('vn-active','vn-menu');document.querySelector('.vn-top-title')?.remove();}active=null;}
@@ -28,7 +50,7 @@ function pageControls(container,pages,{initial=0,changed=()=>{},label='Part'}={}
 function budget(){return window.innerWidth<900?42:window.innerHeight<720?38:48;}
 function storyPanel(){
  const prose=document.querySelector('.story-page .story-prose');if(!prose)return;
- const paragraphs=[...prose.children].map(p=>p.textContent),pages=textPages(paragraphs,budget());let part=readingBack?pages.length-1:0;readingBack=false;
+ const paragraphs=[...prose.children].map(p=>p.textContent),pages=threeLinePages(paragraphs,prose);let part=readingBack?pages.length-1:0;readingBack=false;
  const previous=document.querySelector('#storyPrevious'),next=document.querySelector('#storyNext'),count=document.querySelector('.story-page-count');
  const prevAction=previous.onclick,nextAction=next.onclick,originalCount=count.textContent,nextLabel=next.textContent,wasDisabled=previous.disabled;
  function render(){prose.replaceChildren(...pages[part].map(t=>{const p=element('p',t.startsWith('“')?'spoken-line':'narration',t);if(t.includes('sheet headed Please don’t use the')){p.replaceChildren();const [a,b]=t.split('Please don’t use the');p.append(document.createTextNode(a),element('em','','Please don’t use the'),document.createTextNode(b));}if(t.includes('hadn’t wanted them to follow'))p.innerHTML=p.innerHTML.replace('hadn’t wanted them to follow','hadn’t wanted <em>them</em> to follow');if(t.includes('only Arch clear'))p.innerHTML=p.innerHTML.replace('only Arch clear','only <em>Arch</em> clear');return p;}));previous.disabled=part===0&&wasDisabled;next.textContent=part===pages.length-1?nextLabel:'Continue →';active?.onReadingPart?.(part,pages[part]);count.textContent=originalCount+(pages.length>1?` · Reading ${part+1}/${pages.length}`:'');}
@@ -41,12 +63,12 @@ const positions=new Map();
 function caseworkPanel(key,message,completed){
  const panel=document.querySelector('.casework-page');if(!panel)return;
  const original=[...panel.children],steps=[],prose=original.filter(n=>n.matches('blockquote,.lead-observation'));
- for(const chunk of textPages(prose.map(n=>n.textContent),budget())){if(chunk.length){const page=element('div','vn-step');page.dataset.pageType='note';chunk.forEach(t=>page.append(element('p','vn-context',t)));steps.push(page);}}
+ for(const chunk of threeLinePages(prose.map(n=>n.textContent),panel,'vn-context')){if(chunk.length){const page=element('div','vn-step');page.dataset.pageType='note';chunk.forEach(t=>page.append(element('p','vn-context',t)));steps.push(page);}}
  const prompt=panel.querySelector('.casework-prompt'),groups=[...panel.querySelectorAll(':scope > .casework-options')],edit=panel.querySelector('.casework-edit'),actions=panel.querySelector('.casework-actions'),continueButton=panel.querySelector('#caseworkContinue'),feedback=panel.querySelector('.casework-feedback'),explanation=panel.querySelector('details');
  if(!prompt){const page=element('div','vn-step');original.forEach(n=>page.append(n));steps.push(page);}
  else if(completed){
-  steps.length=0;for(const chunk of textPages([feedback?.textContent||'Complete.',...original.filter(n=>n.matches('p:not(.casework-prompt):not(.lead-observation)')).map(n=>n.textContent)],budget())){const page=element('div','vn-step');chunk.forEach(t=>page.append(element('p','',t)));steps.push(page);}
-  if(explanation)for(const chunk of textPages([...explanation.querySelectorAll('p')].map(n=>n.textContent),budget())){const page=element('div','vn-step');page.append(element('span','eyebrow','The reasoning'));chunk.forEach(t=>page.append(element('p','',t)));steps.push(page);}
+  steps.length=0;for(const chunk of threeLinePages([feedback?.textContent||'Complete.',...original.filter(n=>n.matches('p:not(.casework-prompt):not(.lead-observation)')).map(n=>n.textContent)],panel)){const page=element('div','vn-step');chunk.forEach(t=>page.append(element('p','',t)));steps.push(page);}
+  if(explanation)for(const chunk of threeLinePages([...explanation.querySelectorAll('p')].map(n=>n.textContent),panel)){const page=element('div','vn-step');page.append(element('span','eyebrow','The reasoning'));chunk.forEach(t=>page.append(element('p','',t)));steps.push(page);}
   steps.at(-1).append(continueButton);
  }else{
   const answer=element('div','vn-step');answer.dataset.pageType='question';if(prompt)answer.append(prompt);
@@ -71,8 +93,9 @@ function questionPanel(){
  const title=feedback.querySelector('strong')?.textContent||'Poppy’s notebook';
  if(!paragraphs.length){const copy=feedback.cloneNode(true);copy.querySelector('strong')?.remove();copy.querySelector('.feedback-poppy')?.remove();paragraphs.push(copy.textContent);}
  const standalone=feedback.querySelector('.standalone');if(standalone)paragraphs.unshift([...standalone.children].map(n=>n.textContent).join(' / '));
- const pages=textPages(paragraphs,budget()),cards=pages.map(chunk=>{const p=element('div','vn-step');p.append(element('strong','',title));chunk.forEach(t=>p.append(element('p','',t)));return p;});
- if(why.length)for(const chunk of textPages(why,budget())){const p=element('div','vn-step');p.append(element('strong','','Why this edit works'));chunk.forEach(t=>p.append(element('p','',t)));cards.push(p);}
+ workspace.classList.add('vn-show-feedback');
+ const pages=threeLinePages(paragraphs,feedback),cards=pages.map(chunk=>{const p=element('div','vn-step');p.append(element('strong','',title));chunk.forEach(t=>p.append(element('p','',t)));return p;});
+ if(why.length)for(const chunk of threeLinePages(why,feedback)){const p=element('div','vn-step');p.append(element('strong','','Why this edit works'));chunk.forEach(t=>p.append(element('p','',t)));cards.push(p);}
  feedback.replaceChildren(helpHeading(),...cards);workspace.classList.add('vn-show-feedback');
  const pager=pageControls(feedback,cards);if(cards.length===1)pager.nav.hidden=true;
  if(!document.querySelector('#next'))feedback.append(continuation('Return to the question →',()=>{if(active?.onDismiss)active.onDismiss();else{workspace.classList.remove('vn-show-feedback');feedback.hidden=true;}}));

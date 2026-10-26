@@ -445,3 +445,7 @@ The screenshot showed six chapter cards compressed into the narrow title panel, 
 ## Chapter 2 artwork continuity — 27 October 2026
 
 Replaced smooth-fur four-cell reuse with twelve textured paintings across three atlases. Correct downstairs desk and narrow rainy streambank; distinct loft/window and shed/listening views; scenery/object pauses. Question and fallback backgrounds stay at the current location. Preserved approved prose/questions and four collectible frogs. Removed generated bell, surplus lights and premature/oversized cloth during review. Exact prompts, sources and paragraph mapping in assets/chapter-two/continuity/. Both entry points and app art imports refreshed. All 168 tests passed; live/device visual QA remains outstanding.
+
+## Three-line reading panels · 27 October 2026
+
+Story, casework context and explanatory feedback now split using a DOM measurement probe at the available content width and actual font/line-height, with at most three prose lines per reading page. Paragraphs remain separate; text is continued rather than truncated. Question/answer comparisons and controls remain together and can make the overall interface panel taller. Existing desktop/tablet presentation applies; phone stacked layout remains unchanged. New conservation test exercises all six chapters at three fit capacities. 169 tests pass; actual browser/device line counts remain unverified. Frog overlap audit and single-screen placement changes are still pending; Chapter 5 artwork remains planned only, with older scenery allowed for questions.
