@@ -2,7 +2,7 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261027-cartographer1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261027-ipad-fit1';
 import {QUESTION_SCENES} from './scenery.js?v=20261023-chapter-four-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
@@ -85,7 +85,23 @@ export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE,...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
 export function frameGeometry(width,height,cell,focus=.7,columns=2,rows=2){const scale=Math.max(width/3,height/2),w=scale*3,h=scale*2;return {width:w*columns,height:h*rows,x:(width-w)*focus-(cell%columns)*w,y:(height-h)*.5-Math.floor(cell/columns)*h};}
 const images=new Map(),watched=new Set();let observer;
-function geometry(el,frame){const box=el.getBoundingClientRect();const g=frameGeometry(box.width,box.height,frame.cell,frame.focus??.7,frame.columns||2,frame.rows||2);el.style.backgroundSize=`${g.width}px ${g.height}px`;el.style.backgroundPosition=`${g.x}px ${g.y}px`;}
+export function fittedArtGeometry(width,height,cell,columns=2,rows=2){
+ const scale=Math.min(width/3,height/2),w=scale*3,h=scale*2;
+ return {width:w*columns,height:h*rows,x:(width-w)/2-(cell%columns)*w,y:(height-h)/2-Math.floor(cell/columns)*h,art:{x:(width-w)/2,y:(height-h)/2,width:w,height:h}};
+}
+function geometry(el,frame){
+ const box=el.getBoundingClientRect();let g;
+ const ipad=globalThis.document?.body?.classList.contains('ipad-layout');
+ const reader=el.closest?.('.story-reader,.casework-reader,.adventure-board');
+ const panel=reader?.querySelector('.story-page,.casework-page,.case-workspace');
+ if(ipad&&panel&&!panel.hidden){
+  const available=Math.max(100,Math.min(box.height,panel.getBoundingClientRect().top-box.top-10));
+  g=fittedArtGeometry(box.width,available,frame.cell,frame.columns||2,frame.rows||2);
+  el.dataset.artBounds=JSON.stringify(g.art);
+  el.style.clipPath=`inset(${g.art.y}px ${Math.max(0,box.width-g.art.x-g.art.width)}px ${Math.max(0,box.height-g.art.y-g.art.height)}px ${g.art.x}px)`;
+ }else{g=frameGeometry(box.width,box.height,frame.cell,frame.focus??.7,frame.columns||2,frame.rows||2);delete el.dataset.artBounds;el.style.clipPath='';}
+ el.style.backgroundSize=`${g.width}px ${g.height}px`;el.style.backgroundPosition=`${g.x}px ${g.y}px`;
+}
 export function paintFrame(el,frame){
  if(!el||!frame||typeof window==='undefined'||!el.style||!el.getBoundingClientRect)return;
  el.dataset.frameArt=frame.id;el.dataset.frogPerch=frame.frog?JSON.stringify(frame.frog):'none';
@@ -97,5 +113,5 @@ export function paintFrame(el,frame){
  if(img.complete&&img.naturalWidth)show();else img.addEventListener('load',show,{once:true});
  const index=FRAME_ART.indexOf(frame);for(const next of FRAME_ART.slice(index+1,index+4)){if(!images.has(next.asset)){const preview=new Image();images.set(next.asset,preview);preview.src='assets/'+next.asset;}}
  for(const old of watched)if(!old.isConnected){observer?.unobserve(old);watched.delete(old);}
- if(typeof ResizeObserver!=='undefined'){observer??=new ResizeObserver(entries=>{for(const {target}of entries){const f=FRAME_ART.find(f=>f.id===target.dataset.frameArt);if(f)geometry(target,f);}});observer.observe(el);watched.add(el);}
+ if(typeof ResizeObserver!=='undefined'){observer??=new ResizeObserver(entries=>{for(const {target}of entries){const scene=target.dataset.frameArt?target:target.closest?.('.story-reader,.casework-reader,.adventure-board')?.querySelector('.painted-scene');const f=FRAME_ART.find(f=>f.id===scene?.dataset.frameArt);if(f){geometry(scene,f);placeFrogs(scene);}}});observer.observe(el);const panel=el.closest?.('.story-reader,.casework-reader,.adventure-board')?.querySelector('.story-page,.casework-page,.case-workspace');if(panel)observer.observe(panel);watched.add(el);}
 }

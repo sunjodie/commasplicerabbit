@@ -258,3 +258,13 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .ipad-layout.vn-active .story-controls button,.ipad-layout.vn-active .vn-pages button{min-height:44px}
  .ipad-layout dialog{max-height:calc(var(--game-height,100dvh) - 32px)}
 }
+
+@media(min-width:600px){
+ .ipad-layout.vn-active .story-page{padding:10px 22px;border-radius:16px}
+ .ipad-layout.vn-active .story-page>.eyebrow{font-size:10px;margin-bottom:6px}
+ .ipad-layout.vn-active .story-prose{font-size:clamp(18px,1.7vw,22px);line-height:1.4}
+ .ipad-layout.vn-active .story-prose p{margin-bottom:0}
+ .ipad-layout.vn-active .story-controls{margin-top:6px}
+ .ipad-layout.vn-active .story-page-count{bottom:24px}
+ .ipad-layout.vn-active .painted-scene[data-art-bounds]{background-repeat:no-repeat;background-color:#24202b}
+}
