@@ -239,3 +239,22 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .vn-menu>main[data-vn-kind="home"]>.vn-menu-frame{top:50%;bottom:auto;transform:translateY(-50%);height:min(500px,calc(100% - 36px));padding-bottom:64px}
  .vn-menu #app[data-vn-kind="home"] h1{font-size:clamp(32px,3.2vw,46px);line-height:1.1}
 }
+
+/* iPad landscape: keep navigation and panels inside Safari's visible viewport. */
+.ipad-rotate{max-width:460px;width:calc(100% - 48px);padding:28px;text-align:center;border-radius:20px;background:#211b25;color:#f3e4ca;border:1px solid #b99763}
+.ipad-rotate::backdrop{background:#171420ed}
+.ipad-rotate h2{font:28px var(--font-story);margin:18px 0 12px}
+.ipad-rotate p{line-height:1.5}
+.ipad-device{width:100px;height:64px;border:3px solid #d5b67d;border-radius:10px;margin:4px auto;background:linear-gradient(135deg,#665348,#292a43)}
+@media(min-width:600px) and (max-width:1180px){
+ .vn-active .vn-top-title{display:none}
+ .vn-active>header{padding:0 12px;gap:10px}
+ .vn-active nav{min-width:0;margin-left:auto}
+ .vn-active nav .quiet{padding:8px;min-height:44px}
+}
+@media(min-width:600px){
+ .ipad-layout.vn-active>header{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+ .ipad-layout.vn-active .story-page,.ipad-layout.vn-active .casework-page,.ipad-layout.vn-active .case-workspace{left:max(18px,env(safe-area-inset-left));right:max(18px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}
+ .ipad-layout.vn-active .story-controls button,.ipad-layout.vn-active .vn-pages button{min-height:44px}
+ .ipad-layout dialog{max-height:calc(var(--game-height,100dvh) - 32px)}
+}

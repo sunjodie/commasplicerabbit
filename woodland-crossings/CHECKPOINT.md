@@ -453,3 +453,7 @@ Story, casework context and explanatory feedback now split using a DOM measureme
 ## Pocket cartographer perch · 27 October 2026
 
 Moved map-frog from generic floating coordinates to the bakery arrival barrel rim (8%,54%), with a table-edge alternative (51%,48%) for cropped tablet views. Restricted it to m16-art-0; subsequent reading parts/pages, question and casework images omit it. Woodland secrets revisits that same arrival painting. Other frog placement changes from the audit remain pending. All 169 tests pass; physical placement still needs browser/device verification.
+
+## iPad landscape preference · 27 October 2026
+
+Added iPad detection for both mobile and desktop-site user agents. Portrait iPads get a native rotation prompt with an accessible portrait override; it closes on landscape rotation. Native orientation locking is attempted after interaction only if supported, with rejected attempts handled. Safari can require physical device rotation. Header chapter title hidden through 1180px to make space for navigation; touch targets, safe-area panel margins and visible-viewport dialog height retained. 170 automated tests pass, including device/orientation cases for 1024×768, 1133×744, 1180×820, 1194×834 and 1366×1024. These are logic checks, not rendered viewport screenshots. No browser engine is installed in this environment; visual iPad/Safari approval remains outstanding. Existing global frog overlap work remains pending.
