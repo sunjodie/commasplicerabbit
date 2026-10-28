@@ -451,11 +451,11 @@ This reflection is optional and does not affect supplies.
 
 **Student brief:** Keep the “Because” opening attached. Start a new sentence at “Therefore”. Preserve every word.
 
-**Original:** Because the witnesses had heard the bell in different places at different times, Willow suspected that it had moved, therefore, she traced the path on the map.
+**Original:** Because the witnesses’ accounts allowed time for someone to carry the bell uphill, Willow wanted to test that possibility, therefore, she traced a possible route on the map.
 
-**Target:** Because the witnesses had heard the bell in different places at different times, Willow suspected that it had moved. Therefore, she traced the path on the map.
+**Target:** Because the witnesses’ accounts allowed time for someone to carry the bell uphill, Willow wanted to test that possibility. Therefore, she traced a possible route on the map.
 
-**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Willow suspected that it had moved” and “she traced the path on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Start a new sentence before it and capitalise “Therefore”.
+**Why:** The opening beginning with “Because” is subordinate, so keep its comma. “Willow wanted to test that possibility” and “she traced a possible route on the map” are independent clauses. “Therefore” cannot join them with a comma alone. Start a new sentence before it and capitalise “Therefore”.
 
 **Retry brief:** Keep the “Because” opening attached. Start a new sentence at “Therefore”. Preserve every word.
 
@@ -735,29 +735,29 @@ The support had been cut, so the damage could not be blamed entirely on the weat
 
 ### Q4 · passage-reassurance-and-choice
 
-**Student brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
+**Student brief:** Edit this earlier notebook entry, written before the evidence was checked. Keep the opening comma and existing conjunction. Use a coordinating conjunction to present the two possible explanations as alternatives.
 
 **Original:** Although the shavings were fresh, their source was uncertain. Poppy suspected wrongdoing, but Willow wanted stronger evidence.
 
-The wood could have come from an authorised repair, someone could have removed it without permission.
+The marked timber might have been removed during an authorised repair, Bram might have taken it without permission.
 
 **Target:** Although the shavings were fresh, their source was uncertain. Poppy suspected wrongdoing, but Willow wanted stronger evidence.
 
-The wood could have come from an authorised repair, or someone could have removed it without permission.
+The marked timber might have been removed during an authorised repair, or Bram might have taken it without permission.
 
-**Why:** Keep the comma after the subordinate opening. The existing “but” already joins the complete clauses. A comma plus “or” presents two possible explanations as alternatives.
+**Why:** Keep the comma after the subordinate opening. The existing “but” already joins the complete clauses. A comma plus “or” presents competing explanations that were still possible when this earlier entry was written. Joining them does not establish which one is true.
 
-**Retry brief:** Keep the opening comma and existing conjunction. Add a conjunction presenting the explanations as alternatives, not established facts.
+**Retry brief:** Edit this earlier notebook entry, written before the evidence was checked. Keep the opening comma and existing conjunction. Use a coordinating conjunction to present the two possible explanations as alternatives.
 
 **Retry original:** Although Bram had stayed with the travellers, his earlier claim needed checking. Willow trusted the mender’s account, but she still wanted to check the physical evidence.
 
-The disagreement could reflect a mistake, it could reveal a deliberate lie.
+Bram might have misremembered his visit, he might have lied about it deliberately.
 
 **Retry target:** Although Bram had stayed with the travellers, his earlier claim needed checking. Willow trusted the mender’s account, but she still wanted to check the physical evidence.
 
-The disagreement could reflect a mistake, or it could reveal a deliberate lie.
+Bram might have misremembered his visit, or he might have lied about it deliberately.
 
-**Retry explanation:** Keep the comma after the subordinate opening. The existing “but” already joins the complete clauses. A comma plus “or” presents two possible explanations as alternatives.
+**Retry explanation:** Keep the comma after the subordinate opening. The existing “but” already joins the complete clauses. A comma plus “or” presents competing explanations that were still possible when this earlier entry was written. Joining them does not establish which one is true.
 
 ### Q5 · final-case-report
 

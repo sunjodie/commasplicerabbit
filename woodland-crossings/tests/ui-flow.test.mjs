@@ -27,7 +27,7 @@ test('visual play handlers: demo, tap repair, retry, supply collection, village,
 });
 test('editing brief distinguishes grammatical alternatives without charging a mistake',async()=>{
  const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.activeId=STORY[0].id;s.activeChoices=['comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?brief-scout');ui.click('play');
- assert.match(ui.app.innerHTML,/Your task/);assert.equal(document.querySelector('#contract'),null);ui.app.querySelector('[data-join="0"]').onclick();ui.tool('semi');ui.click('check');assert.match(ui.app.innerHTML,/This works, but check what Poppy needs/);let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.activeTries,0);assert.equal(saved.activeHelp,false);assert.equal(document.querySelector('#next'),null);
+ assert.match(ui.app.innerHTML,/Your task/);assert.equal(document.querySelector('#contract'),null);ui.app.querySelector('[data-join="0"]').onclick();ui.tool('semi');ui.click('check');assert.match(ui.app.innerHTML,/Grammatical, but the writing goal is not met/);let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.activeTries,0);assert.equal(saved.activeHelp,false);assert.equal(document.querySelector('#next'),null);
  ui.tool('stop');ui.click('check');ui.click('next');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.beaconStars[0],1);ui.click('check');ui.click('next');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.beaconStars[0],2);assert.deepEqual(saved.recovery,{});
 });
 test('memory trails use a supported structure and do not display conflicting contracts',async()=>{const ui=setup();const {fresh,record,startReview,DAY}=await import('../engine.js');const s=fresh();record(s,STORY[0],true,0);s.story=30;startReview(s,DAY);ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?review-brief');ui.click('play');assert.equal(document.querySelector('#contract'),null);assert.match(ui.app.innerHTML,/compact-supply/);assert.match(ui.app.innerHTML,/Your task/);});
@@ -59,7 +59,7 @@ test('restart is reachable from the ending and from save status during a questio
 });
 
 test('an already-correct note accepts only the unchanged commas under its visible rules',async()=>{
- const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','semi','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/already correctly punctuated|Add only|editing-goals/);ui.click('editingRules');assert.match(document.querySelector('#modalBody').innerHTML,/Keep correct commas/);ui.click('closeModal');ui.click('check');assert.match(ui.app.innerHTML,/check what Poppy needs/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('comma');ui.click('check');assert.ok(document.querySelector('#next'));
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','semi','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/already correctly punctuated|Add only|editing-goals/);ui.click('editingRules');assert.match(document.querySelector('#modalBody').innerHTML,/Keep correct commas/);ui.click('closeModal');ui.click('check');assert.match(ui.app.innerHTML,/the writing goal is not met/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('comma');ui.click('check');assert.ok(document.querySelector('#next'));
 });
 
 test('artwork has a separate panel and an unobstructed view without altering the question',async()=>{
@@ -83,7 +83,7 @@ test('meaning-based briefs keep exact-word hints behind an explicit request',asy
 });
 
 test('grammatical non-target feedback does not reveal the requested conjunction',async()=>{
- const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['semi'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?neutral-hints');ui.click('play');ui.click('check');assert.match(ui.app.innerHTML,/This works, but check what Poppy needs/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Comma \+ but|Add only/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['semi'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?neutral-hints');ui.click('play');ui.click('check');assert.match(ui.app.innerHTML,/Grammatical, but the writing goal is not met/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Comma \+ but|Add only/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
 });
 
 test('compact mobile controls expose rules on demand without altering edits or support',async()=>{
@@ -188,7 +188,7 @@ test('Chapter 2 full story, all nine questions and fern-garden delivery work thr
 
 test('Chapter 2 retry keeps two-sentence source and distinguishes a splice from a grammatical non-target',async()=>{
  const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=7;s.activeId='r6';s.activeChoices=['stop'];s.lastRecoveryAtStory=7;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-retry');ui.click('play');assert.match(ui.app.innerHTML,/mark beneath the/);assert.equal(document.querySelector('#storyNext'),null);
- ui.click('check');assert.match(ui.app.innerHTML,/check what Poppy needs/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
+ ui.click('check');assert.match(ui.app.innerHTML,/the writing goal is not met/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
  ui.app.querySelector('[data-join="0"]').onclick();ui.tool('comma');ui.click('check');assert.match(ui.app.innerHTML,/One join needs another look/);
  ui.tool('and');ui.click('check');assert.ok(document.querySelector('#next'));
 });

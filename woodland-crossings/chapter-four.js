@@ -41,8 +41,8 @@ export const CHAPTER_FOUR=[
       "“What are you thinking?” Poppy asked.",
       "“Were you still helping with the crates when she shut her shutters?” Willow asked the ferryman.",
       "“That's right,” he replied. “She called goodnight from upstairs. We still had the last stack to put away.”",
-      "“So she heard it before you'd finished the crates, and you heard it after,” Willow said. “It could have been in both places. Someone had time to carry it uphill.”",
-      "Poppy heard the words again, this time with a space between the two sounds. There had been time for footsteps in that space, even if nobody had seen who was walking.",
+      "“So she heard it before you'd finished the crates, and you heard it after,” Willow said. “Someone might have had time to carry it uphill. But sound travels strangely in the rain. Those accounts don't prove the bell moved.”",
+      "Poppy heard the words again, this time with a space between the two sounds. There might have been footsteps in that space, even if nobody had seen who was walking.",
       "“It sounded higher up when we were at the shed too,” Willow added. She placed a claw beside the footbridge on the map and traced the path up the far bank until she reached a hatched patch marked Quarry Shelter. Poppy leaned closer, seeing for the first time that the little shape above the lettering was a roof."
     ]
   },

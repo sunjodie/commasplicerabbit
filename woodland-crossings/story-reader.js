@@ -1,9 +1,9 @@
 import * as five from './chapter-five.js?v=20261022-character-names1';
-import * as six from './chapter-six.js';
+import * as six from './chapter-six.js?v=20261028-writing1';
 import * as one from './chapter-one.js?v=20261022-character-names1';
 import * as two from './chapter-two.js?v=20261022-character-names1';
 import * as three from './chapter-three.js?v=20261022-character-names1';
-import * as four from './chapter-four.js?v=20261022-character-names1';
+import * as four from './chapter-four.js?v=20261028-writing1';
 export const STORY_SCENES=[...one.CHAPTER_ONE,...two.CHAPTER_TWO,...three.CHAPTER_THREE,...four.CHAPTER_FOUR,...five.CHAPTER_FIVE,...six.CHAPTER_SIX];
 export const readingPages=one.readingPages;
 export const storyScene=q=>one.chapterOneScene(q)||two.chapterTwoScene(q)||three.chapterThreeScene(q)||four.chapterFourScene(q)||five.chapterFiveScene(q)||six.chapterSixScene(q);

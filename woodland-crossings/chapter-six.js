@@ -22,7 +22,7 @@ export const CHAPTER_SIX=[
     "mood": "calm",
     "paragraphs": [
       "At the bakery, the mender was settled beside the oven with her ankle supported. Someone fetched the pot from Bram's cottage and heated the supper. Steam smelling of leeks and pepper rose from the bowls, and Poppy wrapped her paws around hers.",
-      "The mender explained that Bram had directed them towards Alder Arch that afternoon. They had found the upper approach obstructed and waited in a wayside shed on the far bank, hoping the rain would ease. When it did not, they returned to the lower bridge. Her ankle had turned on the muddy approach before they could cross.",
+      "The mender explained that Bram had directed them towards Alder Arch that afternoon. They had found the upper approach obstructed and waited in a wayside shed on the far bank, hoping the rain would ease. As the night grew colder and the rain worsened, they decided to try the lower crossing again. Bram had said he was working beneath it, but he had said nothing about the missing supports. They hoped he would have finished by then. On the muddy approach, before they reached the bridge, her ankle turned beneath her.",
       "Bram said he had heard their calls from the mill, taken the rope and bell, and crossed while the middle planks were still in place. After they gave way, he had helped the travellers uphill. Those parts of his account agreed with theirs.",
       "“The bridge was sound yesterday,” he added. “The storm must have done the rest.”",
       "Willow set down her spoon. “You said you knew nothing was wrong until tonight. But you sent them away from the bridge this afternoon.”",
@@ -55,13 +55,19 @@ export const CHAPTER_SIX=[
     "mood": "calm",
     "paragraphs": [
       "The ferryman left the rabbits in the mill yard with the neighbour and went to inspect the village end of the crossing from firm ground. When he returned, he described an empty pair of bolt holes and a short section of brace still fixed beneath the deck. Its end was flat, with parallel saw marks. There were no torn fibres where the rest should have been.",
-      "“The water may have brought the planks down,” Willow said. “But it didn't unscrew the bolts and saw through the brace.”",
+      "“The storm may have brought the planks down,” Willow said. “But it doesn't explain the missing bolts and the cut brace. Someone had removed part of the bridge's support.”",
       "Poppy looked towards the upper window. The scraping they had heard did not prove what Bram had been moving. The shavings alone had not proved it either. But the marked timber in his workroom and the cut support at the bridge belonged in the same account.",
-      "Bram sat on the porch step. After a long silence, he said he had been taking timber from the stores and selling it to pay a debt. That afternoon, he had removed braces from the old crossing too. He had thought the remaining timber would hold.",
+      "“It was only old wood,” Bram said.",
+      "“It was a support,” the ferryman replied. “It bears the repair mark I put on the braces last spring. No replacements were authorised, and now a brace has been cut away. How did those lengths get into your workroom?”",
+      "Bram opened his mouth, then looked away. “Bram?” Poppy said.",
+      "He sat on the porch step. After a long silence, he said he had been taking timber from the stores and selling it to pay a debt. That afternoon, he had removed braces from the old crossing too. He had thought the remaining timber would hold.",
       "“When it started to shift, I sent people round by the arch,” he said. “I thought I could replace the braces before anyone looked. Then the rain came.”",
       "He admitted carrying the lengths upstairs and shaving off their repair marks. At quarter to twelve, he had been dragging the chest in front of them when he heard the travellers. He took the rope from the chest, carried the lamp downstairs, crossed out the bridge on his map and began the warning note. Their next call made him leave it unfinished.",
       "“Why didn't you fetch help?” Poppy asked.",
-      "“Because they'd ask what had happened to the bridge,” he said. “I thought I could get them back myself.”"
+      "Bram looked towards the stream. “I should have fetched someone before I crossed. But then I'd have had to explain about the supports. I told myself I could bring them back before anyone found out. The bridge held when I went over. I thought it would hold long enough to get them home.”",
+      "“And then the planks gave way,” Willow said.",
+      "Bram nodded. “After that, I couldn't get her across. I kept hoping the water would fall. The longer I waited, the harder it was to admit why we were still there.”",
+      "Poppy looked at the rope beside his boots. Bram had gone out to help the travellers. His silence had also delayed the help they needed."
     ]
   },
   {
