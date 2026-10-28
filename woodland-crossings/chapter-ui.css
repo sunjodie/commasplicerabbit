@@ -267,3 +267,80 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .ipad-layout.vn-active .story-controls{margin-top:6px}
  .ipad-layout.vn-active .story-page-count{bottom:24px}
 }
+
+
+/* Hidden-menu design pass, October 2026.
+   Parchment is reserved for reading/reference; woodland exploration uses a
+   dark high-contrast surface. All overrides are scoped to the modal dialog. */
+dialog {
+  color-scheme:light;
+  background:#f5e8d0;
+  color:#352b32;
+  border:1px solid #977954;
+  box-shadow:0 22px 80px #080b14b8;
+  width:min(760px,calc(100vw - 36px));
+  max-height:min(86dvh,820px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+dialog #modalBody { overflow:visible; min-width:0; }
+dialog #modalBody :is(p,li,summary,blockquote) {line-height:1.55}
+dialog #modalBody :is(p,li,span,small,summary,blockquote,label) {color:#352b32}
+dialog #modalBody .muted,dialog #modalBody .small-note {color:#655044!important}
+dialog #modalBody .text-button {color:#674029!important}
+dialog #modalBody :is(button,input,textarea,select) {min-height:44px}
+dialog #modalBody :is(input,textarea,select) {
+ background:#fff9eb;color:#30232e;border:1px solid #826b52;border-radius:8px;
+}
+dialog #modalBody :is(input,textarea,select)::placeholder {color:#655044}
+dialog #modalBody :is(.secondary,.casework-option,.storybook-index button) {
+ background:#eadbbd;color:#372b2a;border:1px solid #967852;
+}
+dialog #modalBody :is(.secondary,.casework-option,.storybook-index button):hover {
+ background:#dbc69f;
+}
+dialog :is(button,a,input,textarea,select,summary):focus-visible {
+ outline:3px solid #a95e22;outline-offset:3px;
+}
+dialog #closeModal {min-height:46px;max-width:100%;margin-top:20px}
+dialog #modalBody :is(.secret-item,.evidence-card,.chapter-clue,.reward-tile,.landmark-status) {
+ background:#e9dac0;color:#352b32;border-color:#a28b69;
+}
+dialog #modalBody :is(.secret-item,.evidence-card,.chapter-clue,.reward-tile) :is(p,h3,span,small) {
+ color:#352b32!important;text-shadow:none;
+}
+dialog #modalBody .undiscovered {opacity:1}
+dialog #modalBody .undiscovered :is(p,small) {color:#655044!important}
+dialog #modalBody .storybook-index {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+dialog #modalBody .storybook-index button {min-height:52px;text-align:left;white-space:normal}
+
+/* Exploration screens: dark forest palette with deliberately opaque text areas.
+   Select only menus containing a scene viewer, not reference/storybook text. */
+dialog:has(.journal-scene),
+dialog:has(.artwork-preview):not(:has(.story-prose)),
+dialog:has(.egg-reveal) {
+ color-scheme:dark;
+ background:#211c2b;color:#f8ecd9;border-color:#9b815e;
+}
+dialog:has(.journal-scene) #modalBody :is(h1,h2,h3,p,li,span,small,summary,blockquote,.eyebrow),
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody :is(h1,h2,h3,p,li,span,small,summary,blockquote,.eyebrow),
+dialog:has(.egg-reveal) #modalBody :is(h1,h2,h3,p,li,span,small,summary,blockquote,.eyebrow) {
+ color:#f8ecd9!important;text-shadow:none;
+}
+dialog:has(.journal-scene) #modalBody .small-note,
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .small-note,
+dialog:has(.egg-reveal) #modalBody .small-note {color:#e2ceb0!important}
+dialog:has(.journal-scene) #modalBody .text-button,
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .text-button,
+dialog:has(.egg-reveal) #modalBody .text-button {color:#f6d49c!important}
+dialog:has(.journal-scene) #closeModal,
+dialog:has(.artwork-preview):not(:has(.story-prose)) #closeModal,
+dialog:has(.egg-reveal) #closeModal {background:#dbb981;color:#291e28;border:1px solid #f0d39d}
+dialog:has(.journal-scene) #modalBody :is(.journal-scene,.artwork-preview),
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .artwork-preview {
+ border:1px solid #b5a17f;border-radius:12px;overflow:hidden;
+}
+@media(max-width:599px) {
+ dialog{width:calc(100vw - 24px);padding:18px;max-height:calc(100dvh - 24px)}
+ dialog #modalBody .storybook-index{grid-template-columns:1fr}
+}
