@@ -1,7 +1,7 @@
 import {observeNotebookText} from './clue-notebook.js?v=20261022-clue-notebook1';
 import {createClueNotebook} from './clue-notebook-view.js?v=20261022-clue-notebook1';
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261029-chapter-five-art1';
-import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261029-chapter-five-art1';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261029-chapter-six-art1';
+import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261029-chapter-six-art1';
 import './page-keys.js?v=20261022-clue-notebook1';
 import {createPageSound,isPageTurn} from './page-sound.js';
 import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261028-feedback-spacing1';
@@ -9,7 +9,7 @@ import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casewor
 import {CHAPTER_THREE_REFLECTION} from './chapter-three.js?v=20261022-character-names1';
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261022-character-names1';
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
-import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261029-chapter-five-art1';
+import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261029-chapter-six-art1';
 import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './music.js?v=20261022-character-names1';
 import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261028-writing1';
 import {finishingTouches} from './finishing-touches.js?v=20261022-character-names1';

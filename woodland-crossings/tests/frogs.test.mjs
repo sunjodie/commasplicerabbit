@@ -34,7 +34,7 @@ test('frog perches alternate sides and use a painted fallback when a tablet crop
 test('all added frogs have a visible source frame and valid painted sprite cells',()=>{
  for(const f of FROGS){
   const frame=explorationFrameArt(f.stage,f.view);assert.ok(frame,f.id);assert.equal(frame.frog.id,f.id);
-  const n=f.stage*5+f.view+1;if(f.id==='map-frog'||f.stage===4)assert.equal(questionFrameArt('m'+n).frog,undefined);else assert.equal(questionFrameArt('m'+n).frog.id,f.id);
+  const n=f.stage*5+f.view+1;if(f.id==='map-frog'||f.stage>=4)assert.equal(questionFrameArt('m'+n).frog,undefined);else assert.equal(questionFrameArt('m'+n).frog.id,f.id);
   const art=frogArt(f),row=Number(art.match(/--frog-row:(-?\d+)/)[1]),col=Number(art.match(/--frog-col:(-?\d+)/)[1]);
   assert.ok([0,100].includes(row),f.id);assert.ok([0,25,50,75,100].includes(col),f.id);
   for(const [w,h] of [[1366,714],[768,970],[1024,546],[600,400]]){

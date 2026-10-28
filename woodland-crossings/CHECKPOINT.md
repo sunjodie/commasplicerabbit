@@ -488,3 +488,12 @@ Fixed the desktop/tablet feedback pager's recovery/review fallback. When success
 Integrated twenty reviewed paintings across five 2×2 WebP sheets for m21–m25. Preserved story, questions and progression; question screens reuse existing scenery. Corrected character, lantern and shelter continuity during image review. Four existing frogs now appear on one reading screen each, with matching exploration paintings and panel-overlap protection. Updated asset cache versions. Exact prompts and source selections are in assets/chapter-five/frames/.
 
 Validation: 174/174 automated tests pass; git diff whitespace checks pass. Images visually reviewed; live deployment and manual iPad playthrough remain unverified.
+
+
+## 2026-10-29 — Chapter 6 artwork complete
+
+Added twenty reviewed paintings across five sheets for m26–m30, from the stretcher return to Poppy's notebook ending. Preserved all prose, questions, answers and chapter progression. Question screens retain their existing scenery. Four existing frogs each belong to one opening reading screen, with identical exploration artwork and panel-overlap protection. Updated asset cache versions.
+
+Usage-conscious production: five initial image calls and one targeted stretcher continuity correction; no speculative variants. Prompts and partial artwork checkpointed in batches. Source map, exact prompts, correction and plan are in assets/chapter-six/frames/.
+
+Validation: 176/176 automated tests pass; all five WebP sheets visually reviewed and verified at 1536×1024, individually under 1 MB. git diff --check passes. Manual live iPad playthrough and deployment verification remain outstanding.

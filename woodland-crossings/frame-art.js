@@ -2,8 +2,8 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js?v=20261028-writing1';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261029-chapter-five-art1';
-import {QUESTION_SCENES} from './scenery.js?v=20261029-chapter-five-art1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261029-chapter-six-art1';
+import {QUESTION_SCENES} from './scenery.js?v=20261029-chapter-six-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -51,9 +51,10 @@ for(let stage=4;stage<6;stage++)for(let view=0;view<5;view++){
  const setting=QUESTION_SCENES.find(x=>x.stage===stage&&x.view===view),scene='m'+(stage*5+view+1);
  FRAME_ART.push({id:scene+'-question',scene,kind:'question',asset:setting.asset,cell:stage===4?setting.frameCell:view?view-1:0,...(stage!==4&&!view?{columns:1,rows:1}:{}),text:'Notebook scene'});
 }
-for(const scene of CHAPTER_SIX){
- const art=FRAME_ART.find(f=>f.id===scene.id+'-question');
- FRAME_ART.push({...art,id:scene.id+'-story',kind:'story',text:scene.paragraphs[0]});
+// Chapter 6 follows the rescue through evidence, accountability and the quiet ending.
+const chapterSixAnchors=[[0,1,3,4],[0,1,4,7],[0,4,5,6],[0,2,6,13],[0,1,5,7]];
+for(const [i,scene] of CHAPTER_SIX.entries())for(const [cell,paragraph] of chapterSixAnchors[i].entries()){
+ FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset:`chapter-six/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c6art1`,text:scene.paragraphs[paragraph],focus:.5});
 }
 // Four chronological Chapter 5 paintings per scene; questions keep earlier scenery.
 const chapterFiveAnchors=[
@@ -95,11 +96,18 @@ for(const frame of FRAME_ART)if(Number(frame.scene.slice(1))>=21&&Number(frame.s
  if(f&&frame.id===frame.scene+'-art-0')frame.frog={id:f.id,...chapterFivePerches[frame.scene],singleScreen:true};
  else delete frame.frog;
 }
+// Chapter 6 uses one opening reading screen for each existing collectible.
+const chapterSixPerches={m26:{x:10,y:48,perches:[{x:52,y:84}]},m27:{x:10,y:38,perches:[{x:52,y:84}]},m29:{x:10,y:48,perches:[{x:52,y:84}]},m30:{x:10,y:48,perches:[{x:52,y:84}]}};
+for(const frame of FRAME_ART)if(Number(frame.scene.slice(1))>=26&&Number(frame.scene.slice(1))<=30){
+ const f=frogForScene(5,Number(frame.scene.slice(1))-26);
+ if(f&&frame.id===frame.scene+'-art-0')frame.frog={id:f.id,...chapterSixPerches[frame.scene],singleScreen:true};
+ else delete frame.frog;
+}
 // The cartographer belongs to the bakery arrival painting only.
 for(const frame of FRAME_ART)if(frame.frog?.id==='map-frog'&&frame.id!=='m16-art-0')delete frame.frog;
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r(?:[6-9]|[12]\d|30)$/.test(id)?id.replace('r','m'):id)+'-question');}
-export function explorationFrameArt(stage,view=0){return stage===4?(FRAME_ART.find(f=>f.scene==='m'+(21+view)&&f.frog)||FRAME_ART.find(f=>f.id==='m'+(21+view)+'-art-0')):stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
+export function explorationFrameArt(stage,view=0){return stage>=4?(FRAME_ART.find(f=>f.scene==='m'+(stage*5+view+1)&&f.frog)||FRAME_ART.find(f=>f.id==='m'+(stage*5+view+1)+'-art-0')):stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE,...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
 // A collectible appears on one reading screen even when an illustration spans several pages.
