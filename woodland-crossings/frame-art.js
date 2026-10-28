@@ -2,8 +2,8 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js?v=20261028-writing1';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261028-ipad-cover1';
-import {QUESTION_SCENES} from './scenery.js?v=20261023-chapter-four-art1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261029-chapter-five-art1';
+import {QUESTION_SCENES} from './scenery.js?v=20261029-chapter-five-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -49,11 +49,22 @@ for(const [i,scene] of CHAPTER_FOUR.entries()){
 // Each later chapter has five scene visits; keep frogs attached to those visits.
 for(let stage=4;stage<6;stage++)for(let view=0;view<5;view++){
  const setting=QUESTION_SCENES.find(x=>x.stage===stage&&x.view===view),scene='m'+(stage*5+view+1);
- FRAME_ART.push({id:scene+'-question',scene,kind:'question',asset:setting.asset,cell:view?view-1:0,...(!view?{columns:1,rows:1}:{}),text:'Notebook scene'});
+ FRAME_ART.push({id:scene+'-question',scene,kind:'question',asset:setting.asset,cell:stage===4?setting.frameCell:view?view-1:0,...(stage!==4&&!view?{columns:1,rows:1}:{}),text:'Notebook scene'});
 }
-for(const scene of [...CHAPTER_FIVE,...CHAPTER_SIX]){
+for(const scene of CHAPTER_SIX){
  const art=FRAME_ART.find(f=>f.id===scene.id+'-question');
  FRAME_ART.push({...art,id:scene.id+'-story',kind:'story',text:scene.paragraphs[0]});
+}
+// Four chronological Chapter 5 paintings per scene; questions keep earlier scenery.
+const chapterFiveAnchors=[
+ [CHAPTER_FIVE[0].paragraphs[0], 'At the last turn, the warm square in the bakery window disappeared among the trees.', CHAPTER_FIVE[0].paragraphs[1], CHAPTER_FIVE[0].paragraphs[2]],
+ [0,1,3,6].map(i=>CHAPTER_FIVE[1].paragraphs[i]),
+ [0,1,2,4].map(i=>CHAPTER_FIVE[2].paragraphs[i]),
+ [0,1,2,3].map(i=>CHAPTER_FIVE[3].paragraphs[i]),
+ [0,1,2,5].map(i=>CHAPTER_FIVE[4].paragraphs[i])
+];
+for(const [i,scene] of CHAPTER_FIVE.entries())for(const [cell,text] of chapterFiveAnchors[i].entries()){
+ FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset:`chapter-five/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c5art1`,text,focus:.5});
 }
 for(const task of [...CHAPTER_FOUR_CASEWORK,...CHAPTER_FIVE_SIX_CASEWORK]){const art=FRAME_ART.find(f=>f.id===task.question+'-question');FRAME_ART.push({...art,id:task.id,kind:'casework',text:task.context});}
 // Restore selected earlier scenery as quiet cutaways; keep narrative anchors intact.
@@ -76,13 +87,26 @@ for(const frame of FRAME_ART){
  const stage=Math.floor((n-1)/5),view=(n-1)%5,f=frogForScene(stage,view);
  if(f)frame.frog={id:f.id,x:f.x,y:f.y,perches:f.perches};
 }
+// Chapter 5 collectibles sit on reviewed foliage/stone perches, not character bodies.
+const chapterFivePerches={m21:{x:12,y:50,perches:[{x:52,y:86}]},m22:{x:8,y:33,perches:[{x:52,y:79}]},m24:{x:11,y:30,perches:[{x:52,y:86}]},m25:{x:9,y:54,perches:[{x:52,y:80}]}};
+// Chapter 5 collectibles belong only to each selected opening reading screen.
+for(const frame of FRAME_ART)if(Number(frame.scene.slice(1))>=21&&Number(frame.scene.slice(1))<=25){
+ const f=frogForScene(4,Number(frame.scene.slice(1))-21);
+ if(f&&frame.id===frame.scene+'-art-0')frame.frog={id:f.id,...chapterFivePerches[frame.scene],singleScreen:true};
+ else delete frame.frog;
+}
 // The cartographer belongs to the bakery arrival painting only.
 for(const frame of FRAME_ART)if(frame.frog?.id==='map-frog'&&frame.id!=='m16-art-0')delete frame.frog;
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r(?:[6-9]|[12]\d|30)$/.test(id)?id.replace('r','m'):id)+'-question');}
-export function explorationFrameArt(stage,view=0){return stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
+export function explorationFrameArt(stage,view=0){return stage===4?(FRAME_ART.find(f=>f.scene==='m'+(21+view)&&f.frog)||FRAME_ART.find(f=>f.id==='m'+(21+view)+'-art-0')):stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE,...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
+// A collectible appears on one reading screen even when an illustration spans several pages.
+export function readingScreenFrame(scene,text,page=0,part=0){
+ const frame=textFrameArt(scene,text);
+ return (frame?.frog?.singleScreen||frame?.frog?.id==='map-frog')&&(page>0||part>0)?{...frame,frog:null}:frame;
+}
 export function frameGeometry(width,height,cell,focus=.7,columns=2,rows=2){const scale=Math.max(width/3,height/2),w=scale*3,h=scale*2;return {width:w*columns,height:h*rows,x:(width-w)*focus-(cell%columns)*w,y:(height-h)*.5-Math.floor(cell/columns)*h};}
 const images=new Map(),watched=new Set();let observer;
 // Cover the complete iPad viewport, retaining the top of each composition for ears/faces.
@@ -104,7 +128,7 @@ export function paintFrame(el,frame){
  if(!el||!frame||typeof window==='undefined'||!el.style||!el.getBoundingClientRect)return;
  el.dataset.frameArt=frame.id;el.dataset.frogPerch=frame.frog?JSON.stringify(frame.frog):'none';
  // Crop immediately: the CSS fallback may already display this atlas while Image loads.
- geometry(el,frame);
+ geometry(el,frame);placeFrogs(el);
  const show=()=>{if(!el.isConnected||el.dataset.frameArt!==frame.id)return;el.style.backgroundImage=`url('assets/${frame.asset}')`;geometry(el,frame);placeFrogs(el);};
  if(typeof Image==='undefined')return;
  let img=images.get(frame.asset);if(!img){img=new Image();images.set(frame.asset,img);img.src='assets/'+frame.asset;}

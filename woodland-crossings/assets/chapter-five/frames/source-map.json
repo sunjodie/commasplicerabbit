@@ -1,0 +1,65 @@
+{
+  "generator": "Built-in image_gen",
+  "references": [
+    "chapter-four/frames/sheet-01.webp",
+    "chapter-four/frames/sheet-05.webp",
+    "chapter-one/frames/sheet-07.webp"
+  ],
+  "encoding": {
+    "format": "WebP",
+    "quality": 94,
+    "contentEdits": false
+  },
+  "sheets": [
+    {
+      "sheet": 1,
+      "scene": "m21",
+      "original": "exec-e6f76d27-355a-4156-b4f1-d9bd2f764f48.png",
+      "selected": "exec-9816566b-8367-4052-9d68-aebacf4d88c5.png",
+      "asset": "sheet-01.webp",
+      "width": 1536,
+      "height": 1024,
+      "review": "Selected after continuity correction"
+    },
+    {
+      "sheet": 2,
+      "scene": "m22",
+      "original": "exec-b5419f23-e21c-4263-849d-3ede723bd07f.png",
+      "selected": "exec-39eb79d1-a270-4f9a-8779-4f31307912f9.png",
+      "asset": "sheet-02.webp",
+      "width": 1536,
+      "height": 1024,
+      "review": "Visually reviewed after correcting Poppy\u2019s ears; anonymous distant light and lamp ownership preserved."
+    },
+    {
+      "sheet": 3,
+      "scene": "m23",
+      "original": "exec-72df8006-b74f-4dc9-859c-e31f62fa5630.png",
+      "selected": "exec-79ecf821-29c8-422b-9a70-a4508f256a29.png",
+      "asset": "sheet-03.webp",
+      "width": 1536,
+      "height": 1024,
+      "review": "Vole helper and lantern ownership corrected; Poppy stays at rock while Willow leaves with ferryman."
+    },
+    {
+      "sheet": 4,
+      "scene": "m24",
+      "original": "exec-a2d991bc-597d-44a0-9cd2-91f329b9e973.png",
+      "selected": "exec-9a0ad3cf-17e8-411e-b8c5-81755f9591ed.png",
+      "asset": "sheet-04.webp",
+      "width": 1536,
+      "height": 1024,
+      "review": "Visually reviewed after helper, lantern and ear corrections; signal rock and opposite shelter geography preserved."
+    },
+    {
+      "sheet": 5,
+      "scene": "m25",
+      "original": "exec-687e5208-be1b-41a7-bba1-8243dc261a82.png",
+      "selected": "exec-20e1c45c-638a-41d9-81be-0913118f577c.png",
+      "asset": "sheet-05.webp",
+      "width": 1536,
+      "height": 1024,
+      "review": "Willow\u2019s paper lantern corrected; false opposite shelter removed; rescue and testimony reviewed."
+    }
+  ]
+}

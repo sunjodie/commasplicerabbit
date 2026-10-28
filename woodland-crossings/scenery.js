@@ -41,6 +41,13 @@ for(const view of QUESTION_SCENES.filter(x=>x.stage===3))Object.assign(view,{
  indoors:false,focus:'100% 100%',scale:'200% 200%'
 });
 SCENES[3]={...QUESTION_SCENES.find(x=>x.stage===3&&x.view===0)};
+// Chapter 5 language notes reuse quiet, spoiler-free woodland scenery.
+for(const view of QUESTION_SCENES.filter(x=>x.stage===4))Object.assign(view,{
+ asset:view.view===0?'tracks-views.webp':'witness-views.webp',
+ frameCell:view.view===0?2:3,indoors:false,
+ focus:view.view===0?'0% 100%':'100% 100%',scale:'200% 200%'
+});
+SCENES[4]={...QUESTION_SCENES.find(x=>x.stage===4&&x.view===0)};
 // Location captions follow the revised Chapters 5–6 manuscripts.
 const laterLocations=[['The old steps','The signal rock','The signal rock','The signal rock','Quarry Shelter'],['The signal rock','The bakery','The mill yard','The mill and crossing','The village square']];
 for(const view of QUESTION_SCENES.filter(x=>x.stage>=4))view.name=laterLocations[view.stage-4][view.view];

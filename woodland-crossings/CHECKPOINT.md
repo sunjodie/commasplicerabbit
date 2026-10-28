@@ -481,3 +481,10 @@ Validation: all 171 automated tests pass, including complete UI-flow/progression
 ## Feedback explanation spacing · 28 October 2026
 
 Fixed the desktop/tablet feedback pager's recovery/review fallback. When success feedback had no outer paragraph, it flattened the entire details element with textContent, joining “Why this edit works” and every explanation paragraph with no separators and duplicating the separately paginated explanation. The fallback now removes details before extracting plain feedback and ignores empty text. Explanation paragraphs retain their existing separate pages. Refreshed the chapter UI import and both app entry points. All 171 automated tests pass; git diff --check passes. No manual browser/device verification in this checkpoint.
+
+
+## 2026-10-29 — Chapter 5 artwork
+
+Integrated twenty reviewed paintings across five 2×2 WebP sheets for m21–m25. Preserved story, questions and progression; question screens reuse existing scenery. Corrected character, lantern and shelter continuity during image review. Four existing frogs now appear on one reading screen each, with matching exploration paintings and panel-overlap protection. Updated asset cache versions. Exact prompts and source selections are in assets/chapter-five/frames/.
+
+Validation: 174/174 automated tests pass; git diff whitespace checks pass. Images visually reviewed; live deployment and manual iPad playthrough remain unverified.

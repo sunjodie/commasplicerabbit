@@ -6,11 +6,11 @@ import {STORY,TRANSFER,BONUS} from '../content.js';
 import {fresh,hydrate,nextQuestion,record,startBonus} from '../engine.js';
 import {QUESTION_SCENES,questionScene,selectQuestionScene} from '../scenery.js';
 
-test('every story question has a distinct complete scenic composition',()=>{
+test('every story question has a stable scenic view; Chapter 5 deliberately reuses woodland cutaways',()=>{
  assert.equal(QUESTION_SCENES.length,30);
  const views=STORY.map(q=>questionScene(q));
  assert.equal(new Set(views.map(x=>x.key)).size,30);
- assert.equal(new Set(views.filter(x=>x.stage!==1).map(x=>`${x.asset}:${x.focus}:${x.scale}`)).size,25);
+ assert.equal(new Set(views.filter(x=>x.stage!==1&&x.stage!==4).map(x=>`${x.asset}:${x.focus}:${x.scale}`)).size,20);
  for(const q of STORY){const x=questionScene(q);assert.equal(x.stage,q.stage);assert.ok(x.name);assert.ok(['100% 100%','200% 200%'].includes(x.scale));}
 });
 test('supported routes and optional questions change views on every advance and keep views on reload',()=>{
