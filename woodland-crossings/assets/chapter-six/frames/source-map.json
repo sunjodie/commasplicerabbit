@@ -1,0 +1,16 @@
+{
+  "generator": "Built-in image_gen",
+  "encoding": "WebP quality 94 method 6, no content edits",
+  "sheets": [
+    {
+      "sheet": 1,
+      "source": "exec-ef0d16c4-54ce-4056-bddd-e9ee853267dd.png",
+      "review": "Initial review complete; return sheet needs stretcher continuity correction"
+    },
+    {
+      "sheet": 3,
+      "source": "exec-9a81f307-328e-4392-a632-95439719106b.png",
+      "review": "Reviewed: repair mark and two bolt holes clear"
+    }
+  ]
+}
