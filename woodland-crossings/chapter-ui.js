@@ -91,7 +91,8 @@ function questionPanel(){
  const paragraphs=[...feedback.querySelectorAll('p')].filter(p=>!p.closest('details')).map(p=>p.textContent);
  const details=feedback.querySelector('details');const why=details?[...details.querySelectorAll('p')].map(p=>p.textContent):[];
  const title=feedback.querySelector('strong')?.textContent||'Poppy’s notebook';
- if(!paragraphs.length){const copy=feedback.cloneNode(true);copy.querySelector('strong')?.remove();copy.querySelector('.feedback-poppy')?.remove();paragraphs.push(copy.textContent);}
+ // Details are paged separately below; textContent would glue their heading and paragraphs together.
+ if(!paragraphs.length){const copy=feedback.cloneNode(true);copy.querySelector('strong')?.remove();copy.querySelector('.feedback-poppy')?.remove();copy.querySelector('details')?.remove();const text=copy.textContent.trim();if(text)paragraphs.push(text);}
  const standalone=feedback.querySelector('.standalone');if(standalone)paragraphs.unshift([...standalone.children].map(n=>n.textContent).join(' / '));
  workspace.classList.add('vn-show-feedback');
  const pages=threeLinePages(paragraphs,feedback),cards=pages.map(chunk=>{const p=element('div','vn-step');p.append(element('strong','',title));chunk.forEach(t=>p.append(element('p','',t)));return p;});
