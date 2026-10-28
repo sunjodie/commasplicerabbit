@@ -266,5 +266,4 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
  .ipad-layout.vn-active .story-prose p{margin-bottom:0}
  .ipad-layout.vn-active .story-controls{margin-top:6px}
  .ipad-layout.vn-active .story-page-count{bottom:24px}
- .ipad-layout.vn-active .painted-scene[data-art-bounds]{background-repeat:no-repeat;background-color:#24202b}
 }
