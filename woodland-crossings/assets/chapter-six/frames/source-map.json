@@ -4,13 +4,24 @@
   "sheets": [
     {
       "sheet": 1,
-      "source": "exec-ef0d16c4-54ce-4056-bddd-e9ee853267dd.png",
-      "review": "Initial review complete; return sheet needs stretcher continuity correction"
+      "source": "exec-3aa9498d-bdd2-44ae-99ef-e2cee26580fa.png",
+      "review": "Reviewed after targeted stretcher correction; injured mender remains carried on return.",
+      "original": "exec-ef0d16c4-54ce-4056-bddd-e9ee853267dd.png"
     },
     {
       "sheet": 3,
       "source": "exec-9a81f307-328e-4392-a632-95439719106b.png",
       "review": "Reviewed: repair mark and two bolt holes clear"
+    },
+    {
+      "sheet": 2,
+      "source": "exec-769deac2-b207-4ce8-8603-1a6b622ede6c.png",
+      "review": "Reviewed: supported ankle, soup and questioning stay in bakery."
+    },
+    {
+      "sheet": 4,
+      "source": "exec-c8bc5c9f-4f25-4606-a66b-565ab0113d7e.png",
+      "review": "Reviewed: ferryman inspects from firm bank; confession on porch; rope reflection."
     }
   ]
 }
