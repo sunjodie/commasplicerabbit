@@ -53,12 +53,36 @@ export function frogOverlapsPanel(point,scene,panel){
  const x=scene.left+point.x,y=scene.top+point.y,r=point.size/2;
  return x+r>panel.left&&x-r<panel.right&&y>panel.top&&y-point.size<panel.bottom;
 }
+// Choose a visible natural perch before hiding the collectible. Include its 44px touch target.
+export function chooseFrogPosition(f,bounds,scene,panels=[]){
+ const size=Math.min(32,Math.max(22,bounds.width*.022));
+ const points=[f,...(f.perches||[])].map(a=>({x:bounds.x+bounds.width*a.x/100,y:bounds.y+bounds.height*a.y/100,size}));
+ return points.find(p=>p.x>=22&&p.x<=scene.width-22&&p.y>=44&&p.y<=scene.height&&panels.every(panel=>!frogOverlapsPanel({...p,size:44},scene,panel)))||null;
+}
 let observer;
 export function placeFrogs(root){
  if(typeof window==='undefined'||!window.getComputedStyle)return;
  observer?.disconnect();
  const buttons=[...(globalThis.document.querySelectorAll?.('.woodland-frog')||root.querySelectorAll('.woodland-frog'))];
- function place(){for(const button of buttons){const f=FROGS.find(x=>x.id===button.dataset.frog),scene=button.closest('.painted-scene');if(!f||!scene||!scene.isConnected)continue;const perch=scene.dataset.frogPerch;if(perch==='none'){button.hidden=true;continue;}const override=perch?JSON.parse(perch):null;if(override&&override.id!==f.id){button.hidden=true;continue;}const rect=scene.getBoundingClientRect(),style=window.getComputedStyle(scene),point=frogPosition(override?{...f,...override,perches:override.perches||f.perches||[]}:f,rect.width,rect.height,scene.dataset.frameArt?'cover':style.backgroundSize,scene.dataset.frameArt?'70% 50%':style.backgroundPosition);if(scene.dataset.artBounds){const bounds=JSON.parse(scene.dataset.artBounds),anchor=override||f,options=[anchor,...(anchor.perches||[])];const positions=options.map(a=>({x:bounds.x+bounds.width*a.x/100,y:bounds.y+bounds.height*a.y/100}));const chosen=positions.find(p=>p.x>=22&&p.x<=rect.width-22&&p.y>=44&&p.y<=rect.height)||positions[0];point.x=chosen.x;point.y=chosen.y;point.size=Math.min(32,Math.max(22,bounds.width*.022));}button.style.left=point.x+'px';button.style.top=point.y+'px';button.style.setProperty('--frog-size',point.size+'px');const panelRoot=scene.closest?.('.story-reader,.adventure-board,.casework-reader');const covered=f.stage>=4&&[...(panelRoot?.querySelectorAll('.story-page,.case-workspace,.casework-page')||[])].some(panel=>{if(panel.hidden)return false;const r=panel.getBoundingClientRect();return r.width>0&&r.height>0&&frogOverlapsPanel(point,rect,r);});button.hidden=covered||point.x<22||point.x>rect.width-22||point.y<44||point.y>rect.height;}}
+ function place(){for(const button of buttons){
+  const f=FROGS.find(x=>x.id===button.dataset.frog),scene=button.closest('.painted-scene');
+  if(!f||!scene||!scene.isConnected)continue;
+  const perch=scene.dataset.frogPerch;
+  if(perch==='none'){button.hidden=true;continue;}
+  const override=perch?JSON.parse(perch):null;
+  if(override&&override.id!==f.id){button.hidden=true;continue;}
+  const rect=scene.getBoundingClientRect(),style=window.getComputedStyle(scene),anchor=override?{...f,...override}:f;
+  const panelRoot=scene.closest?.('.story-reader,.adventure-board,.casework-reader');
+  const panels=[...(panelRoot?.querySelectorAll('.story-page,.case-workspace,.casework-page')||[])].filter(p=>!p.hidden).map(p=>p.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);
+  const bounds=scene.dataset.artBounds?JSON.parse(scene.dataset.artBounds):null;
+  const point=bounds?chooseFrogPosition(anchor,bounds,rect,panels):frogPosition(anchor,rect.width,rect.height,style.backgroundSize,style.backgroundPosition);
+  const covered=point&&panels.some(panel=>frogOverlapsPanel({...point,size:44},rect,panel));
+  button.hidden=!point||covered||point.x<22||point.x>rect.width-22||point.y<44||point.y>rect.height;
+  if(point){button.style.left=point.x+'px';button.style.top=point.y+'px';button.style.setProperty('--frog-size',point.size+'px');}
+ }}
  place();window.requestAnimationFrame?.(place);
- if(typeof ResizeObserver!=='undefined'){observer=new ResizeObserver(place);buttons.forEach(b=>{const scene=b.closest('.painted-scene');if(scene)observer.observe(scene);});}
+ if(typeof ResizeObserver!=='undefined'){
+  observer=new ResizeObserver(place);
+  for(const button of buttons){const scene=button.closest('.painted-scene');if(!scene)continue;observer.observe(scene);const panelRoot=scene.closest?.('.story-reader,.adventure-board,.casework-reader');for(const panel of panelRoot?.querySelectorAll('.story-page,.case-workspace,.casework-page')||[])observer.observe(panel);}
+ }
 }

@@ -2,8 +2,8 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js?v=20261028-writing1';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261029-secret-art1';
-import {QUESTION_SCENES,BONUS_SCENES} from './scenery.js?v=20261029-secret-art1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261029-frog-perches1';
+import {QUESTION_SCENES,BONUS_SCENES} from './scenery.js?v=20261029-frog-perches1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -83,33 +83,44 @@ for(const frame of FRAME_ART){
  const match=frame.asset.match(/^chapter-one\/frames\/sheet-(\d+)\.webp/);
  if(match&&chapterOneContinuitySheets.has(Number(match[1])))frame.asset=`chapter-one/frames/continuity/sheet-${match[1]}.webp?v=c1continuity1`;
 }
-for(const frame of FRAME_ART){
- const n=Number(frame.scene.slice(1));if(n<6||!Number.isInteger(n)||frame.frog)continue;
- const stage=Math.floor((n-1)/5),view=(n-1)%5,f=frogForScene(stage,view);
- if(f)frame.frog={id:f.id,x:f.x,y:f.y,perches:f.perches};
+// One reviewed opening painting per collectible; coordinates mark feet on the source cell.
+const frogPerches={
+ m1:{x:17,y:30,perches:[{x:43,y:66}]}, // Fountain upper rim; lower basin rim
+ m2:{x:13,y:22,perches:[{x:52,y:86}]}, // Alder branch; grassy bank
+ m3:{x:10,y:32,perches:[{x:51,y:28}]}, // Left mantel ledge; stove mantel
+ m4:{x:22,y:55,perches:[{x:85,y:60},{x:51,y:84}]}, // Fence-post cap; right stone wall; wet path stone
+ m5:{x:80,y:52,perches:[{x:60,y:49}]}, // Barrel rim; stair tread
+ m6:{x:12,y:58,perches:[{x:38,y:36}]}, // Crate rim; empty stair tread
+ m7:{x:25,y:25,perches:[{x:23,y:57},{x:66,y:59}]}, // Storage-chest top; crate rim; chest rim away from paws
+ m9:{x:76,y:38,perches:[{x:69,y:49}]}, // Stone sill; lower wall ledge
+ m10:{x:19,y:40,perches:[{x:35,y:37}]}, // Shelf edge; inner shelf edge
+ m11:{x:60,y:43,perches:[{x:26,y:63}]}, // Mossy slope rock; path-edge stone
+ m12:{x:38,y:55,perches:[{x:51,y:85}]}, // Leafy near-bank rock; lower rock
+ m14:{x:17,y:15,perches:[{x:37,y:17}]}, // Mossy wall top; wall-top ivy
+ m15:{x:38,y:21,perches:[{x:20,y:55}]}, // Fingerpost arm; leafy wall
+ m16:{x:8,y:54,perches:[{x:51,y:48}]}, // Barrel rim; table edge (existing approved placement)
+ m17:{x:13,y:55,perches:[{x:43,y:64}]}, // Barrel rim beside lamp; table rim
+ m19:{x:17,y:55,perches:[{x:27,y:63},{x:55,y:10}]}, // Window sill; crate rim; awning edge
+ m20:{x:16,y:50,perches:[{x:41,y:69}]}, // Window ledge; table edge
+ m21:{x:12,y:50,perches:[{x:52,y:86}]}, // Existing Chapter 5 perch
+ m22:{x:8,y:33,perches:[{x:52,y:79}]}, // Existing Chapter 5 perch
+ m24:{x:11,y:30,perches:[{x:52,y:86}]}, // Existing Chapter 5 perch
+ m25:{x:9,y:54,perches:[{x:52,y:80}]}, // Existing Chapter 5 perch
+ m26:{x:10,y:48,perches:[{x:52,y:84}]}, // Existing Chapter 6 perch
+ m27:{x:10,y:38,perches:[{x:52,y:84}]}, // Existing Chapter 6 perch
+ m29:{x:10,y:48,perches:[{x:52,y:84}]}, // Existing Chapter 6 perch
+ m30:{x:10,y:48,perches:[{x:52,y:84}]}, // Existing Chapter 6 perch
+};
+for(const frame of FRAME_ART)delete frame.frog;
+for(const [scene,perch] of Object.entries(frogPerches)){
+ const n=Number(scene.slice(1)),frog=frogForScene(Math.floor((n-1)/5),(n-1)%5),frame=FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');
+ if(frog&&frame)frame.frog={id:frog.id,...perch,singleScreen:true};
 }
-// Chapter 5 collectibles sit on reviewed foliage/stone perches, not character bodies.
-const chapterFivePerches={m21:{x:12,y:50,perches:[{x:52,y:86}]},m22:{x:8,y:33,perches:[{x:52,y:79}]},m24:{x:11,y:30,perches:[{x:52,y:86}]},m25:{x:9,y:54,perches:[{x:52,y:80}]}};
-// Chapter 5 collectibles belong only to each selected opening reading screen.
-for(const frame of FRAME_ART)if(Number(frame.scene.slice(1))>=21&&Number(frame.scene.slice(1))<=25){
- const f=frogForScene(4,Number(frame.scene.slice(1))-21);
- if(f&&frame.id===frame.scene+'-art-0')frame.frog={id:f.id,...chapterFivePerches[frame.scene],singleScreen:true};
- else delete frame.frog;
-}
-// Chapter 6 uses one opening reading screen for each existing collectible.
-const chapterSixPerches={m26:{x:10,y:48,perches:[{x:52,y:84}]},m27:{x:10,y:38,perches:[{x:52,y:84}]},m29:{x:10,y:48,perches:[{x:52,y:84}]},m30:{x:10,y:48,perches:[{x:52,y:84}]}};
-for(const frame of FRAME_ART)if(Number(frame.scene.slice(1))>=26&&Number(frame.scene.slice(1))<=30){
- const f=frogForScene(5,Number(frame.scene.slice(1))-26);
- if(f&&frame.id===frame.scene+'-art-0')frame.frog={id:f.id,...chapterSixPerches[frame.scene],singleScreen:true};
- else delete frame.frog;
-}
-// The cartographer belongs to the bakery arrival painting only.
-for(const frame of FRAME_ART)if(frame.frog?.id==='map-frog'&&frame.id!=='m16-art-0')delete frame.frog;
 // Bonus paintings are recollections, without collectible overlays.
 for(const [id,view] of Object.entries(BONUS_SCENES))FRAME_ART.push({id:id+'-question',scene:id,kind:'question',asset:view.asset,cell:view.cell,text:view.name,focus:.5});
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r(?:[6-9]|[12]\d|30)$/.test(id)?id.replace('r','m'):id)+'-question');}
-export function explorationFrameArt(stage,view=0){return stage>=4?(FRAME_ART.find(f=>f.scene==='m'+(stage*5+view+1)&&f.frog)||FRAME_ART.find(f=>f.id==='m'+(stage*5+view+1)+'-art-0')):stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
+export function explorationFrameArt(stage,view=0){const scene='m'+(stage*5+view+1);return FRAME_ART.find(f=>f.scene===scene&&f.frog)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story')||null;}
 export function caseworkFrameArt(id){return FRAME_ART.find(f=>f.id===id);}
 export function textFrameArt(scene,text){const frames=FRAME_ART.filter(f=>f.scene===scene&&f.kind==='story'),source=[...CHAPTER_ONE,...CHAPTER_TWO,...CHAPTER_THREE,...CHAPTER_FOUR,...CHAPTER_FIVE,...CHAPTER_SIX].find(s=>s.id===scene)?.paragraphs.join(' ')||'',at=source.indexOf(String(text).trim().slice(0,70));if(at<0)return frames[0];return frames.filter(f=>{const start=source.indexOf(f.text.slice(0,60));return start>=0&&start<=at;}).at(-1)||frames[0];}
 // A collectible appears on one reading screen even when an illustration spans several pages.
@@ -130,7 +141,8 @@ function geometry(el,frame){
  const ipad=globalThis.document?.body?.classList.contains('ipad-layout');
  const landscape=box.width>box.height;
  const g=ipad&&landscape?ipadCoverGeometry(box.width,box.height,frame.cell,frame.focus??.7,frame.columns||2,frame.rows||2,frame.ipadVerticalFocus??0):frameGeometry(box.width,box.height,frame.cell,frame.focus??.7,frame.columns||2,frame.rows||2);
- if(ipad&&landscape)el.dataset.artBounds=JSON.stringify(g.art);else delete el.dataset.artBounds;
+ // All devices use the exact selected atlas cell's rendered bounds.
+ el.dataset.artBounds=JSON.stringify(g.art||{x:g.x+(frame.cell%(frame.columns||2))*g.width/(frame.columns||2),y:g.y+Math.floor(frame.cell/(frame.columns||2))*g.height/(frame.rows||2),width:g.width/(frame.columns||2),height:g.height/(frame.rows||2)});
  el.style.clipPath='';
  el.style.backgroundSize=`${g.width}px ${g.height}px`;el.style.backgroundPosition=`${g.x}px ${g.y}px`;
 }

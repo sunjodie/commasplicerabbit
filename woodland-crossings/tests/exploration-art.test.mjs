@@ -5,8 +5,8 @@ import {frogPosition} from '../frogs.js';
 
 test('exploration uses the reached Chapter 1 painting or the current Chapter 2 room',()=>{
  for(let view=0;view<5;view++){const f=explorationFrameArt(0,view);assert.equal(f.scene,'m'+(view+1));assert.ok(f.frog);}
- const f=explorationFrameArt(1);assert.equal(f.cell,1);assert.equal(f.frog.id,'reed-frog');assert.equal(f.asset,'chapter-two/continuity/sheet-01.webp?v=c2continuity1');
- assert.equal(explorationFrameArt(2).asset,'chapter-three/frames/sheet-01.webp?v=c3art1');
+ const f=explorationFrameArt(1);assert.equal(f.cell,0);assert.equal(f.frog.id,'reed-frog');assert.equal(f.asset,'chapter-two/continuity/sheet-01.webp?v=c2continuity1');
+ assert.equal(explorationFrameArt(2).asset,'tracks-views.webp');
  for(let stage=3;stage<6;stage++)assert.ok(explorationFrameArt(stage).frog);
 });
 

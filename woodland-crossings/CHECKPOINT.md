@@ -503,3 +503,11 @@ Validation: 176/176 automated tests pass; all five WebP sheets visually reviewed
 Mapped b1–b3 to existing map, chipped-bell and stretcher-return paintings. Both scenery and frame rendering use these fixed mappings, including legacy saves and reloads. Added one new illustrated final-envelope reveal, loaded only when opening the existing gated envelope. Kept prose, grammar answers, rewards and unlock conditions unchanged. One image-generation call, no retries. Prompt/source and mappings saved under assets/secret/.
 
 Validation: 177/177 tests pass, including stable bonus mappings and gated reveal imagery. Source art visually reviewed; live Safari/iPad and deployment verification remain outstanding.
+
+## 2026-10-30 — Frog placement across all chapters
+
+Completed Chapter 1–4 source-perch review and unified all 25 frogs on one opening reading screen each. Removed duplicates from question/casework/bonus/landing screens; later pages and reading parts omit the collectible. Exploration returns to the exact assigned painting. Existing collection IDs, tidbits and saves are preserved.
+
+Fixed crop alignment on desktop and phone by sharing actual rendered atlas-cell bounds with frog positioning. Placement tries reviewed alternatives before hiding obstructed frogs and accounts for the full 44px touch target. Both panel and scene resizing trigger updates. Chapter 5–6 perches retained. No images generated.
+
+Validation: 181/181 tests pass, including all-frog collection/save handlers, lifecycle and revisit mappings, six landscape tablet sizes, portrait crops, obstruction fallback and non-default crop focus. git diff --check passes. Source/perch composites reviewed; live Safari/iPad verification remains outstanding. Placement inventory: assets/frogs/PLACEMENT.md.

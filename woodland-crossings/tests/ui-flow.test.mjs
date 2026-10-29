@@ -165,7 +165,7 @@ test('the completion secret appears only after opening the final envelope and ca
 });
 
 test('frogs collect once, replay their tidbits and leave language progress intact',async()=>{
- const ui=setup();await import('../app.js?frog-collection');
+ const ui=setup({autoRead:false}),{fresh}=await import('../engine.js'),initial=fresh();initial.introduced=[0];ui.db.set('woodland-crossings-v1',JSON.stringify(initial));await import('../app.js?frog-collection');assert.equal(ui.app.querySelector('[data-frog]'),null);ui.click('play');
  assert.equal(ui.fixed.soundBtn.textContent,'Sound on');
  const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();
  let s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);assert.equal(s.story,0);assert.equal(s.seq,0);assert.deepEqual(s.decorations,[]);assert.match(ui.fixed.modalBody.innerHTML,/dismantled/);
@@ -214,9 +214,9 @@ test('frog search and chapter revisit select one atlas painting before binding c
  const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=5;s.introduced=[0,1];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?exploration-crop');
  const journal=document.querySelector('#journalBtn');assert.ok(journal);journal.onclick();
  const root=ui.fixed.modalBody;root.querySelector('[data-frog-search="reed-frog"]').onclick();
- let painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-question');assert.equal(JSON.parse(painting.dataset.frogPerch).id,'reed-frog');
+ let painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-story');assert.equal(JSON.parse(painting.dataset.frogPerch).id,'reed-frog');
  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,5);
- journal.onclick();root.querySelector('[data-revisit="1"]').onclick();painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-question');
+ journal.onclick();root.querySelector('[data-revisit="1"]').onclick();painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-story');
 });
 
 
@@ -265,9 +265,9 @@ test('all 25 frogs can be revisited and collected without changing lesson progre
  }
  const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.frogFinds.length,25);assert.equal(saved.story,30);assert.equal(saved.seq,30);assert.deepEqual(saved.decorations,[]);
 });
-test('later chapter notebook frogs match the cropped frame when a saved alternate view is selected',async()=>{
+test('question screens omit frogs even when a saved alternate view is selected',async()=>{
  const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=16;s.introduced=[0,1,2,3];s.activeScenery={question:'m17',seq:0,key:'3-3'};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
- await import('../app.js?frog-saved-view');ui.click('play');assert.ok(ui.app.querySelector('[data-frog="ink-frog"]'));assert.equal(ui.app.querySelector('[data-frog="bramble-frog"]'),null);
+ await import('../app.js?frog-saved-view');ui.click('play');assert.equal(ui.app.querySelector('[data-frog="ink-frog"]'),null);assert.equal(ui.app.querySelector('[data-frog="bramble-frog"]'),null);
 });
 
 test('Chapter 4 reads all revised scenes, completes five notes and requires both inference answers before one reward',async()=>{

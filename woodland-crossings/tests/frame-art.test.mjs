@@ -71,7 +71,7 @@ test('Chapter 4 has twenty ordered narrative paintings and matching question, re
    }
   }
   const q=questionFrameArt(scene.id);assert.equal(q.asset,frames[3].asset);assert.equal(q.cell,3);
-  assert.equal(questionFrameArt('r'+(16+i)),q);assert.equal(explorationFrameArt(3,i),i===0?FRAME_ART.find(f=>f.id==='m16-art-0'):q);
+  assert.equal(questionFrameArt('r'+(16+i)),q);assert.equal(explorationFrameArt(3,i),frames[0]);
   assert.equal(questionScene({stage:3,id:scene.id},`3-${i}`).asset,q.asset);
   for(const budget of [38,42,48])for(const part of textPages(scene.paragraphs,budget))assert.ok(frames.includes(textFrameArt(scene.id,part.join(' '))));
  }
