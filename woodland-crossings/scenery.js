@@ -51,7 +51,15 @@ SCENES[4]={...QUESTION_SCENES.find(x=>x.stage===4&&x.view===0)};
 // Location captions follow the revised Chapters 5–6 manuscripts.
 const laterLocations=[['The old steps','The signal rock','The signal rock','The signal rock','Quarry Shelter'],['The signal rock','The bakery','The mill yard','The mill and crossing','The village square']];
 for(const view of QUESTION_SCENES.filter(x=>x.stage>=4))view.name=laterLocations[view.stage-4][view.view];
+// Optional trails use fixed, reviewed paintings rather than numeric chapter fallbacks.
+export const BONUS_SCENES={
+ b1:{stage:4,asset:'chapter-five/frames/sheet-03.webp?v=c5art1',cell:2,name:'The map at the signal rock'},
+ b2:{stage:3,asset:'chapter-six/frames/sheet-01.webp?v=c6art1',cell:2,name:'Bram and the chipped bell'},
+ b3:{stage:5,asset:'chapter-six/frames/sheet-01.webp?v=c6art1',cell:3,name:'The return to the bakery'}
+};
+for(const [id,view] of Object.entries(BONUS_SCENES))Object.assign(view,{key:'bonus-'+id,indoors:false,focus:`${view.cell%2*100}% ${Math.floor(view.cell/2)*100}%`,scale:'200% 200%'});
 export function questionScene(q,key=null){
+ if(BONUS_SCENES[q.id])return BONUS_SCENES[q.id];
  const views=QUESTION_SCENES.filter(x=>x.stage===q.stage);
  const saved=views.find(x=>x.key===key);if(saved)return saved;
  const n=Number(q.id.replace(/\D/g,''))||1;
@@ -59,6 +67,8 @@ export function questionScene(q,key=null){
  return views[index];
 }
 export function selectQuestionScene(s,q){
+ const bonus=BONUS_SCENES[q.id];
+ if(bonus){s.activeScenery={question:q.id,seq:s.seq,key:bonus.key};s.lastSceneKey=bonus.key;return bonus;}
  const old=s.activeScenery;
  if(old?.question===q.id&&old.seq===s.seq&&QUESTION_SCENES.some(x=>x.key===old.key&&x.stage===q.stage))return questionScene(q,old.key);
  let next=questionScene(q);

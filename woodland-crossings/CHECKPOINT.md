@@ -497,3 +497,9 @@ Added twenty reviewed paintings across five sheets for m26–m30, from the stret
 Usage-conscious production: five initial image calls and one targeted stretcher continuity correction; no speculative variants. Prompts and partial artwork checkpointed in batches. Source map, exact prompts, correction and plan are in assets/chapter-six/frames/.
 
 Validation: 176/176 automated tests pass; all five WebP sheets visually reviewed and verified at 1536×1024, individually under 1 MB. git diff --check passes. Manual live iPad playthrough and deployment verification remain outstanding.
+
+## 2026-10-29 — Secret Trail and envelope artwork
+
+Mapped b1–b3 to existing map, chipped-bell and stretcher-return paintings. Both scenery and frame rendering use these fixed mappings, including legacy saves and reloads. Added one new illustrated final-envelope reveal, loaded only when opening the existing gated envelope. Kept prose, grammar answers, rewards and unlock conditions unchanged. One image-generation call, no retries. Prompt/source and mappings saved under assets/secret/.
+
+Validation: 177/177 tests pass, including stable bonus mappings and gated reveal imagery. Source art visually reviewed; live Safari/iPad and deployment verification remain outstanding.

@@ -158,8 +158,8 @@ test('the completion secret appears only after opening the final envelope and ca
  ui.click('how');assert.doesNotMatch(ui.fixed.modalBody.innerHTML,reveal);ui.click('closeModal');
  const {fresh}=await import('../engine.js');const s=fresh();s.story=30;s.completedAt=1;
  ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?sealed-finish');
- assert.doesNotMatch(ui.app.innerHTML,reveal);
- await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);
+ assert.doesNotMatch(ui.app.innerHTML,reveal);assert.doesNotMatch(ui.app.innerHTML,/final-envelope.webp/);
+ await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);assert.match(ui.fixed.modalBody.innerHTML,/assets\/secret\/final-envelope.webp/);
  ui.click('closeModal');ui.click('endingVillage');assert.doesNotMatch(ui.app.innerHTML,reveal);
  ui.click('endingReplay');await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);
 });

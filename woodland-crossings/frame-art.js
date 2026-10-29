@@ -2,8 +2,8 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js?v=20261028-writing1';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261029-chapter-six-art1';
-import {QUESTION_SCENES} from './scenery.js?v=20261029-chapter-six-art1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261029-secret-art1';
+import {QUESTION_SCENES,BONUS_SCENES} from './scenery.js?v=20261029-secret-art1';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -105,6 +105,8 @@ for(const frame of FRAME_ART)if(Number(frame.scene.slice(1))>=26&&Number(frame.s
 }
 // The cartographer belongs to the bakery arrival painting only.
 for(const frame of FRAME_ART)if(frame.frog?.id==='map-frog'&&frame.id!=='m16-art-0')delete frame.frog;
+// Bonus paintings are recollections, without collectible overlays.
+for(const [id,view] of Object.entries(BONUS_SCENES))FRAME_ART.push({id:id+'-question',scene:id,kind:'question',asset:view.asset,cell:view.cell,text:view.name,focus:.5});
 export function readingFrameArt(scene,page=0,part=0){return FRAME_ART.find(f=>f.id===`${scene}-${page}-${part}`)||FRAME_ART.find(f=>f.scene===scene&&f.kind==='story');}
 export function questionFrameArt(id){return FRAME_ART.find(f=>f.id===(/^r(?:[6-9]|[12]\d|30)$/.test(id)?id.replace('r','m'):id)+'-question');}
 export function explorationFrameArt(stage,view=0){return stage>=4?(FRAME_ART.find(f=>f.scene==='m'+(stage*5+view+1)&&f.frog)||FRAME_ART.find(f=>f.id==='m'+(stage*5+view+1)+'-art-0')):stage===3&&view===0?FRAME_ART.find(f=>f.id==='m16-art-0'):questionFrameArt('m'+(stage*5+view+1))||null;}
