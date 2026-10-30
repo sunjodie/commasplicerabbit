@@ -643,3 +643,7 @@ Word-budget and measured three-line pagination now break only between complete s
 User clarification: measured reading pagination is capped at its previous word-fitting page count; whole sentences move to the following existing panel and the final panel grows if needed.
 
 Validation: 199/199 tests pass, including all-chapter word conservation and sentence-unit boundary checks at narrow capacities, long-sentence preservation and dialogue attribution. git diff --check passes. Live iPad/zoom rendering remains unverified.
+
+## 2026-10-30 — Single-panel frog reveals at zoom
+
+Disabled automatic modal pagination for frog reveals, keeping the portrait, name and language tidbit together. Frog and woodland collectible reveal dialogs scroll within the viewport when zoomed instead of clipping their content. Fieldbook return callbacks are unchanged. Updated entry/CSS caches. Validation: 199 tests pass; git diff --check passes. Actual iPad zoom gesture remains unverified.

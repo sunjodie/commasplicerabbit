@@ -388,3 +388,6 @@ dialog #modalBody .journal-scene > .exploration-painting{background-image:none!i
 
 /* Storybook pages already have their own navigation. Keep their content visible. */
 dialog:has(.story-prose){max-height:calc(100dvh - 32px);overflow:auto}
+
+/* Collectible reveals are a single panel, including at browser zoom. */
+dialog:has(.frog-portrait),dialog:has(.egg-reveal){max-height:calc(100dvh - 32px);overflow:auto}
