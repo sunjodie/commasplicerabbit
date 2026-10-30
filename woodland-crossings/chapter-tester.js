@@ -1,6 +1,6 @@
-import {fresh} from './engine.js?v=20261030-clarice-options1';
-import {BANK} from './content.js?v=20261030-clarice-options1';
-import {STORY_SCENES,finishStoryScene} from './story-reader.js?v=20261030-clarice-options1';
+import {fresh} from './engine.js?v=20261030-four-options1';
+import {BANK} from './content.js?v=20261030-four-options1';
+import {STORY_SCENES,finishStoryScene} from './story-reader.js?v=20261030-four-options1';
 export const testerEnabled=search=>new URLSearchParams(search).get('test')==='1';
 export function testState(id,{question=false}={}){
  const q=BANK.find(q=>q.id===id&&(q.id.startsWith('m')||q.id.startsWith('b')));

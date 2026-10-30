@@ -5,6 +5,7 @@ export const TOOLS={comma:{label:'Keep comma',mark:',',join:', '},stop:{label:'F
 // Deliberately incorrect transition joins used as answer distractors.
 TOOLS.commaHowever={label:'Comma + however',mark:', however,',join:', however, '};
 TOOLS.commaTherefore={label:'Comma + therefore',mark:', therefore,',join:', therefore, '};
+TOOLS.semicolonBecause={label:'Semicolon + because',mark:'; because',join:'; because '};
 export const CHAPTERS=[
 {name:'After the fair',skill:'boundaries',reward:'A cosy burrow',blurb:'Separate scenes; connect observations.',lesson:'Start with the two sides of a comma. Can each side stand as a sentence, with its own subject and verb? If so, the comma needs some help: a full stop can separate the sentences, a joining word such as “but” can connect them, or a semicolon can link them. Some commas already belong, including those after dependent openings and in lists. Read quietly to yourself, then check how the clauses fit together.',demo:['The mill was dark','a lantern appeared upstairs.'],fix:'stop',explain:'Both clauses stand alone. A full stop works; a semicolon also works when the brief asks for one sentence.'},
 {name:'What Had Left the Mill',skill:'dependent',reward:'A fern garden',blurb:'Make the relationship precise.',lesson:'In this chapter, join two complete clauses into one sentence. Keep every word, changing an initial capital to lower case where necessary. Put a comma before a coordinating conjunction. FANBOYS are “for”, “and”, “nor”, “but”, “or”, “yet” and “so”. A comma plus one of these can join two complete clauses. “And” adds information; “but” and “yet” express contrast; “so” gives a result; “or” offers an alternative. Choose the joining word that expresses the relationship in the writing goal. Preserve useful commas after dependent openings.',demo:['Poppy found a circular mark','Willow found another beneath the reeds.'],fix:'and',explain:'Comma + “and” adds a second discovery. Both sides have their own subject and verb.'},
@@ -197,7 +198,7 @@ for(const pair of [tasks[23],tasks[28]])for(const q of pair){
 export const BANK=[...STORY,...TRANSFER,...BONUS];
 
 for(const q of BANK){
- // Three options, balanced across positions. Distractors test clause boundaries
+ // Four options, balanced across positions. Distractors test clause boundaries
  // and transition punctuation; valid synonyms are not offered at the same join.
  q.joinOptions=q.valid.map(([target],i)=>{
   const list=q.structure==='correct-list'||q.structure==='list'||(['m4','r4'].includes(q.id))||(['m24','r24'].includes(q.id)&&i===2);
@@ -207,6 +208,7 @@ for(const q of BANK){
   else if(target==='semi')choices=['comma','semi','commaHowever'];
   else if(target==='nor')choices=['comma','nor','commaHowever'];
   else choices=['comma',target,['but','yet','or'].includes(target)?'commaHowever':'commaTherefore'];
+  choices.push(target==='comma'&&!list?'nor':target==='stop'&&!choices.includes('nor')?(choices.includes('commaHowever')?'commaTherefore':'commaHowever'):'semicolonBecause');
   const offset=(BANK.indexOf(q)+i)%choices.length;
   return [...choices.slice(offset),...choices.slice(0,offset)];
  });

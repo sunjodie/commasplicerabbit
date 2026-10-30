@@ -1,4 +1,4 @@
-import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261030-clarice-options1';
+import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261030-four-options1';
 export const DAY=86400000;
 export const INTERVALS=[DAY,3*DAY,7*DAY];
 export function fresh(){return {version:1,bankVersion:2,naturalProseRevision:2,chapterTwoRevision:1,chapterThreeRevision:1,chapterFourRevision:1,chapterFiveSixRevision:1,activeWordOrder:'',story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}

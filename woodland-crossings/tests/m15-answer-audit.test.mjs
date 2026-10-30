@@ -12,7 +12,7 @@ test('m14/m15 and recovery have exactly one grammatical offered repair without a
   assert.deepEqual(grammatical,[target],id+' grammatical');assert.deepEqual(accepted,[target],id+' accepted');
   assert.equal((renderSentence(q,target).match(/\./g)||[]).length,2);
   assert.doesNotMatch(q.studentBrief,/Start a new sentence|own sentence/);
-  assert.ok(q.joinOptions.every(options=>options.length===3));
+  assert.ok(q.joinOptions.every(options=>options.length===4));
  }
 });
 test('m15 reflection asks for observed behaviour and does not claim knowledge of motive',()=>{

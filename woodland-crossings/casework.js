@@ -1,6 +1,6 @@
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
-import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261030-clarice-options1';
-import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261030-clarice-options1';
+import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261030-four-options1';
+import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261030-four-options1';
 // Supporting questions from the approved Chapter 1.
 export const CASEWORK=[
   {

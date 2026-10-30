@@ -629,3 +629,9 @@ Validation: 196/196 tests pass, including exhaustive 2,075 offered combinations 
 Changed answer choices only: three options at every join, balanced positions, transition/comma-splice distractors and semicolon-vs-fragment contrasts. Retained easier list/transition items for consolidation. Nor is now present in 15 of 116 menus rather than all menus. Correct positions: 42 first / 38 second / 36 third. Tightened eight supporting deduction distractors without changing stems or keys. Added two deliberately invalid transition tool forms with explicit labels. Updated dependency caches and audit record.
 
 Before/after contract comparison confirms unchanged question text, instructions, correct answers, word-order targets, explanations and supporting prompts/contexts. Validation: 197/197 tests pass, with 2,079 combinations still giving exactly one grammatical/accepted offered solution per question, menu balance and actual UI checks. git diff --check passes. Difficulty calibration is an editorial judgement; live learner/device verification remains outstanding.
+
+## 2026-10-30 — Four answer choices at every join
+
+Expanded all 116 grammar menus to four distinct options. Added semicolon + because as a dependent-fragment distractor where appropriate; complete-clause repairs can offer both comma-spliced however and therefore alternatives. Correct positions remain balanced: 27 / 32 / 26 / 31. Question text, instructions and keyed answers unchanged. Updated shared dependencies/app cache and current answer audit.
+
+Validation: 197/197 tests pass, including all 9,492 offered combinations giving one grammatical/accepted solution per item and actual mixed-task menu handlers. git diff --check passes. Live device verification remains outstanding.
