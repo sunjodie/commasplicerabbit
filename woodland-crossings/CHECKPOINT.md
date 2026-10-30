@@ -555,3 +555,9 @@ Validation: 184/184 tests pass, including full atlas-cell bounds and available f
 Added contextual modal return callbacks: fieldbook frog searches and tidbits return to the fieldbook with its prior page and scroll position. Story-found frogs retain Back to the trail. Every new modal resets the return context and button label. Updated app/UI-module cache versions.
 
 Validation: 185/185 tests pass, including actual search → collect → back, collected-tidbit → back, restored scroll position and story-frog close handlers. git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Village zoom
+
+Replaced the binary zoom toggle with 100–300% zoom controls, zoom out and Fit village. Added pointer-based pinch zoom and drag panning, focal-point retention and Ctrl+wheel/trackpad pinch support. Enlarging preserves viewport height and uses inline canvas sizing to override the desktop/tablet rule that previously disabled zoom. Drag gestures suppress accidental landmark activation. Updated entry and stylesheet caches.
+
+Validation: 186/186 tests pass, including zoom dimensions, focal position, drag, pinch, click suppression, fit reset and existing landmark interactions. git diff --check passes. Live touch/device verification remains outstanding.
