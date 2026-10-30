@@ -583,3 +583,7 @@ Validation: 188/188 tests pass, including existing reading-page resume through v
 ## 2026-10-30 — Distinguish village page navigation
 
 Village pagination now says Previous page / Next page, and hides the disabled Previous page control on the first page. The persistent Back to the trail action remains visible. Refreshed CSS/app caches. Validation: 188/188 tests pass; git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Single village view
+
+Village now bypasses generic desktop/tablet menu pagination and keeps its heading, painting, zoom and action controls in one view. Removed the duplicate review banner and build note from this screen; village summary and Learning & memory trails retain their functions. Persistent Back to the trail remains outside the content. Updated CSS/UI/app caches. Validation: 188/188 tests pass; git diff --check passes. Live layout/device verification remains outstanding.

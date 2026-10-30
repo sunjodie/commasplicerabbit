@@ -124,6 +124,11 @@ export function paginateModal({initial=0}={}){
 export function presentMenuView(kind){
  if(!document.body||!wide())return;clearChapterView();document.body.classList.add('vn-active','vn-menu');headerControls();
  const app=document.querySelector('#app'),root=app.querySelector('.intro-card,.finish-card,.mystery-ending')||app;
+ if(kind==='village'){
+  const frame=element('div','vn-menu-frame'),content=element('div','vn-menu-content village-single-view');
+  for(const node of [...root.children])content.append(node);
+  frame.append(content);app.replaceChildren(frame);app.dataset.vnKind=kind;return;
+ }
  const nodes=[];
  for(const node of [...root.children]){
   if(node.matches('.hero'))nodes.push(...node.firstElementChild.children);

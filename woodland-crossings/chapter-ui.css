@@ -373,3 +373,15 @@ dialog #modalBody .journal-scene > .exploration-painting{background-image:none!i
 }
 
 .vn-menu-frame:has(>.village-return)>.vn-pages button:first-child:disabled{visibility:hidden}
+
+@media(min-width:600px){
+ .village-single-view{display:flex;flex-direction:column;gap:8px}
+ .village-single-view>.section-top h1{font-size:28px;margin:4px 0}
+ .village-single-view .village-world{margin:0;flex:1;min-height:0;display:flex;flex-direction:column}
+ .village-single-view .village-toolbar{padding:6px 12px}
+ .vn-menu #app[data-vn-kind="village"] .village-single-view .village-viewport{width:min(100%,calc((100dvh - 340px)*1.5));max-height:100%;min-height:0;flex:1}
+ .village-single-view>.village-scene-actions{display:flex;flex-wrap:wrap;gap:6px}
+ .village-single-view>.village-scene-actions button{min-height:40px;padding:6px 12px}
+ .village-single-view>.button-row{margin:0}
+ .village-single-view>.button-row:empty{display:none}
+}
