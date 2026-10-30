@@ -511,3 +511,11 @@ Completed Chapter 1–4 source-perch review and unified all 25 frogs on one open
 Fixed crop alignment on desktop and phone by sharing actual rendered atlas-cell bounds with frog positioning. Placement tries reviewed alternatives before hiding obstructed frogs and accounts for the full 44px touch target. Both panel and scene resizing trigger updates. Chapter 5–6 perches retained. No images generated.
 
 Validation: 181/181 tests pass, including all-frog collection/save handlers, lifecycle and revisit mappings, six landscape tablet sizes, portrait crops, obstruction fallback and non-default crop focus. git diff --check passes. Source/perch composites reviewed; live Safari/iPad verification remains outstanding. Placement inventory: assets/frogs/PLACEMENT.md.
+
+## 2026-10-30 — Chapter 4 artwork and shavings dialogue
+
+Restored the existing bakery conversation paintings at m17-art-1 and m19-art-2, replacing calm-water cutaways. Prior visual review of all twenty Chapter 4 paintings found no obvious three-ear rabbit errors; no new imagery required. Corrected the artwork notes to reflect opening-frame exploration.
+
+Revised m28 in both runtime prose and STORY.md: Poppy asks why clearing timber produced fresh shavings and what Bram was making; Willow explicitly separates evidence of woodworking from evidence of bridge provenance. Refreshed affected module and entry-point cache versions.
+
+Validation: 181/181 automated tests pass; git diff --check passes. No manual browser/device playthrough or live deployment verification performed.

@@ -40,8 +40,8 @@ export const CHAPTER_SIX=[
     "paragraphs": [
       "“You helped them,” Poppy said. “But what work were you doing under the bridge?”",
       "Bram pushed his bowl away. “Only clearing old wood. There was nothing worth keeping.”",
-      "Poppy remembered the pale shavings against the mill wall. “Then why was there fresh wood beneath your window?”",
-      "“Shavings don't tell us where wood came from,” Willow said. She turned to the ferryman. “Can we look?”",
+      "“If you were only clearing it away, why were there fresh shavings beneath your window?” Poppy asked. “What were you making?”",
+      "“Someone had been working on wood,” Willow said. “That doesn’t tell us whether it came from the bridge.” She turned to the ferryman. “Can we look?”",
       "By then the sky was beginning to pale. The mender remained with the baker while the ferryman took the rabbits and Bram to the mill. In the upper room, behind the displaced chest, lay three squared lengths of timber. Pale curls covered the boards beneath a small plane. A narrow opening in the side wall looked down on the shavings Poppy had seen outside.",
       "The ferryman turned one length in the lamplight. Beneath a newly shaved strip, a blue triangle remained beside two square bolt holes. “I marked the crossing's braces with these when we repaired it last spring,” he said. “The marks faced underneath. This was a support, not loose scrap.”",
       "Willow asked whether it might have been replaced during a repair. The ferryman shook his head. “No replacements were authorised. We'll check the other end before we decide what happened.”"

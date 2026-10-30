@@ -16,8 +16,12 @@ Poppy: cream rabbit, plum cape, rust scarf, brown satchel, two ears with one ben
 
 The oil lamp is carried on arrival and then rests beside the group. Willow's paper lantern remains concealed. One ordinary handsaw belongs to the ferryman. Rain, wet copper leaves, weathered timber and amber windows maintain the present-day setting.
 
-Four prose anchors per scene select the paintings. Questions, retries, casework and exploration use the final view of their matching scene. Adaptive reading chunks may skip an intermediate painting. This follows Chapter 3's integration without changing prose, question wording or progression.
+Four prose anchors per scene select the paintings. Questions, retries and casework use the final view of their matching scene. Exploration uses the opening story painting, matching the collectible frog placement. Adaptive reading chunks may skip an intermediate painting. This follows Chapter 3's integration without changing prose, question wording or progression.
 
 Exact generation prompts and additional reference instructions are recorded in prompts.json; source-map.json records originals and selected images. Original generated PNGs are retained in the generation workspace. Selected files are encoded to WebP at quality 94 without content editing. Character/prop/source-image review and automated crop checks do not replace physical-device or Safari visual checks.
 
 Review outcome: corrected missing/obscured upright ears on sheet 01, an extra ear in sheet 02's reaction view, and extra ears in three sheet 05 views. All selected atlases were visually reviewed. Sheet 03's opening map-study view uses a leftward crop focus to retain both rabbits in portrait. Validation: 168 automated tests pass; all five final WebP assets pass deployment inclusion and size checks. Live/browser/Safari/device visual verification remains pending.
+
+## 30 October 2026 — Continuity review
+
+Restored the Chapter 4 conversation paintings at m17-art-1 and m19-art-2, removing older calm-river cutaways that conflicted with the bakery setting and worsening flood. Reviewed all twenty Chapter 4 source paintings: no obvious three-ear rabbit errors found. No image generation or image edits required.

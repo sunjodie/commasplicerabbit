@@ -1,5 +1,5 @@
 import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
-import {CHAPTER_SIX} from './chapter-six.js?v=20261028-writing1';
+import {CHAPTER_SIX} from './chapter-six.js?v=20261030-art-story1';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
 import {placeFrogs,frogForScene} from './frogs.js?v=20261029-frog-perches1';
@@ -72,9 +72,7 @@ for(const task of [...CHAPTER_FOUR_CASEWORK,...CHAPTER_FIVE_SIX_CASEWORK]){const
 const scenerySwaps={
  'm1-4-1':{asset:'mill-views.webp',cell:3},
  'm11-art-0':{asset:'tracks-views.webp',cell:2},
- 'm14-art-2':{asset:'witness-views.webp',cell:3},
- 'm17-art-1':{asset:'witness-views.webp',cell:1},
- 'm19-art-2':{asset:'witness-views.webp',cell:3}
+ 'm14-art-2':{asset:'witness-views.webp',cell:3}
 };
 for(const [id,art] of Object.entries(scenerySwaps))Object.assign(FRAME_ART.find(f=>f.id===id),{focus:.5},art);
 // Reviewed Chapter 1 continuity edits retain each frame's prose anchor and frog.
