@@ -371,3 +371,5 @@ dialog #modalBody .journal-scene > .exploration-painting{background-image:none!i
  .vn-menu-frame:has(>.village-return)>.vn-pages{left:230px}
  .vn-menu #app[data-vn-kind="village"] #villageZoom{display:inline-block}
 }
+
+.vn-menu-frame:has(>.village-return)>.vn-pages button:first-child:disabled{visibility:hidden}

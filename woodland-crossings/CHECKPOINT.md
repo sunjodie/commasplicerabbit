@@ -579,3 +579,7 @@ Validation: 188/188 tests pass. New real-handler coverage checks all six chapter
 Renamed the village return action to Back to the trail. On paginated desktop/tablet menus, moved this existing button outside the pages into the fixed menu footer so it remains available on every page; pager controls reserve space alongside it. Mobile keeps the standard return action. Existing resume logic is retained. Also overrode an older desktop rule hiding the village Zoom in button. Refreshed app/CSS caches.
 
 Validation: 188/188 tests pass, including existing reading-page resume through village/back and landmark/zoom handlers. git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Distinguish village page navigation
+
+Village pagination now says Previous page / Next page, and hides the disabled Previous page control on the first page. The persistent Back to the trail action remains visible. Refreshed CSS/app caches. Validation: 188/188 tests pass; git diff --check passes. Live device verification remains outstanding.
