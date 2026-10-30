@@ -587,3 +587,9 @@ Village pagination now says Previous page / Next page, and hides the disabled Pr
 ## 2026-10-30 — Single village view
 
 Village now bypasses generic desktop/tablet menu pagination and keeps its heading, painting, zoom and action controls in one view. Removed the duplicate review banner and build note from this screen; village summary and Learning & memory trails retain their functions. Persistent Back to the trail remains outside the content. Updated CSS/UI/app caches. Validation: 188/188 tests pass; git diff --check passes. Live layout/device verification remains outstanding.
+
+## 2026-10-30 — Chapter 1 storybook painting coverage
+
+Chapter 1 storybook replay now follows each authored story-art anchor rather than selecting a single image per independently repaginated text block. Includes all 44 narrative paintings across its five scenes, including the seventh opening-scene panel. All prose is conserved in order and replay remains read-only. Refreshed app cache.
+
+Validation: 189/189 tests pass, including complete Chapter 1 frame coverage and normalised prose conservation, plus existing storybook save/progression checks. git diff --check passes. Live browser verification remains outstanding.
