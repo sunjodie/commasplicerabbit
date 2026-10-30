@@ -3,7 +3,7 @@ import {CHAPTER_SIX} from './chapter-six.js?v=20261030-art-story1';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
 import {placeFrogs,frogForScene} from './frogs.js?v=20261029-frog-perches1';
-import {QUESTION_SCENES,BONUS_SCENES} from './scenery.js?v=20261029-frog-perches1';
+import {QUESTION_SCENES,BONUS_SCENES} from './scenery.js?v=20261030-ears2';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';
 import {CHAPTER_THREE} from './chapter-three.js?v=20261022-character-names1';
@@ -42,7 +42,7 @@ for(const [i,scene] of CHAPTER_THREE.entries()){
 // Chapter 4 stays beneath the bakery awning: four chronological views per scene.
 const chapterFourAnchors=[[0,1,2,3],[0,1,2,5],[0,2,4,6],[0,2,3,5],[0,1,5,8]];
 for(const [i,scene] of CHAPTER_FOUR.entries()){
- const asset=`chapter-four/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c4art1`;
+ const asset=`chapter-four/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c4ears2`;
  for(const [cell,paragraph] of chapterFourAnchors[i].entries())FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset,text:scene.paragraphs[paragraph],...(i===2&&cell===0?{focus:.3}:{})});
  FRAME_ART.push({id:scene.id+'-question',scene:scene.id,kind:'question',cell:3,asset,text:'Chapter 4 language notes'});
 }
@@ -65,7 +65,7 @@ const chapterFiveAnchors=[
  [0,1,2,5].map(i=>CHAPTER_FIVE[4].paragraphs[i])
 ];
 for(const [i,scene] of CHAPTER_FIVE.entries())for(const [cell,text] of chapterFiveAnchors[i].entries()){
- FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset:`chapter-five/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c5art1`,text,focus:.5});
+ FRAME_ART.push({id:`${scene.id}-art-${cell}`,scene:scene.id,kind:'story',cell,asset:`chapter-five/frames/sheet-${String(i+1).padStart(2,'0')}.webp?v=c5ears2`,text,focus:.5});
 }
 for(const task of [...CHAPTER_FOUR_CASEWORK,...CHAPTER_FIVE_SIX_CASEWORK]){const art=FRAME_ART.find(f=>f.id===task.question+'-question');FRAME_ART.push({...art,id:task.id,kind:'casework',text:task.context});}
 // Restore selected earlier scenery as quiet cutaways; keep narrative anchors intact.

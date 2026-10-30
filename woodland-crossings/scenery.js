@@ -36,7 +36,7 @@ for(const view of QUESTION_SCENES.filter(x=>x.stage===2))Object.assign(view,{
 SCENES[2]={...QUESTION_SCENES.find(x=>x.stage===2&&x.view===0)};
 // Witnesses compare their accounts beneath the bakery awning throughout Chapter 4.
 for(const view of QUESTION_SCENES.filter(x=>x.stage===3))Object.assign(view,{
- asset:`chapter-four/frames/sheet-${String(view.view+1).padStart(2,'0')}.webp?v=c4art1`,
+ asset:`chapter-four/frames/sheet-${String(view.view+1).padStart(2,'0')}.webp?v=c4ears2`,
  name:['Back beneath the awning','Two accounts','Time between the sounds','The way round','Supper for three'][view.view],
  indoors:false,focus:'100% 100%',scale:'200% 200%'
 });
@@ -53,7 +53,7 @@ const laterLocations=[['The old steps','The signal rock','The signal rock','The 
 for(const view of QUESTION_SCENES.filter(x=>x.stage>=4))view.name=laterLocations[view.stage-4][view.view];
 // Optional trails use fixed, reviewed paintings rather than numeric chapter fallbacks.
 export const BONUS_SCENES={
- b1:{stage:4,asset:'chapter-five/frames/sheet-03.webp?v=c5art1',cell:2,name:'The map at the signal rock'},
+ b1:{stage:4,asset:'chapter-five/frames/sheet-03.webp?v=c5ears2',cell:2,name:'The map at the signal rock'},
  b2:{stage:3,asset:'chapter-six/frames/sheet-01.webp?v=c6art1',cell:2,name:'Bram and the chipped bell'},
  b3:{stage:5,asset:'chapter-six/frames/sheet-01.webp?v=c6art1',cell:3,name:'The return to the bakery'}
 };

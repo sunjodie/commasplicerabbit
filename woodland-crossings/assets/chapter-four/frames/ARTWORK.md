@@ -25,3 +25,7 @@ Review outcome: corrected missing/obscured upright ears on sheet 01, an extra ea
 ## 30 October 2026 — Continuity review
 
 Restored the Chapter 4 conversation paintings at m17-art-1 and m19-art-2, removing older calm-river cutaways that conflicted with the bakery setting and worsening flood. Reviewed all twenty Chapter 4 source paintings: no obvious three-ear rabbit errors found. No image generation or image edits required.
+
+## 30 October 2026 — Reported extra-ear correction
+
+Replaced sheet 02 after a user report of three ears. Built-in image editing clarified Poppy’s two-ear silhouette (one upright, one bent) in all four views. Both rabbit designs and scene composition visually reviewed. This supersedes the earlier no-error finding for this sheet. Selected source: exec-a61878ab-6544-4b4e-8b6e-b4a28b6f3415.png.

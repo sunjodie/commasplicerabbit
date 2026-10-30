@@ -17,3 +17,7 @@ Exact built-in image generator prompts are in prompts.json and corrections.json.
 Reading anchors are defined in frame-art.js: m21 uses the opening, bakery-window sentence, and paragraphs 1–2; m22 uses paragraphs 0, 1, 3, 6; m23 uses 0, 1, 2, 4; m24 uses 0–3; m25 uses 0, 1, 2, 5. Clock, landing, echo and hush frogs appear only on their opening reading screen and disappear on subsequent pages or parts. Exploration reuses the same painting. A panel-overlap guard hides obscured frogs.
 
 Validation: all 174 automated tests pass, including scene ordering, asset mappings, frog visibility and panel geometry. All five 1536×1024 sheets were visually inspected. Live deployment and a manual iPad playthrough have not been verified.
+
+## 30 October 2026 — Reported extra-ear correction
+
+Replaced sheet 01 after a user report of three ears. Built-in image editing clarified Poppy’s two-ear silhouette (one upright, one bent) in all four views. Both rabbit designs and scene composition visually reviewed. This supersedes the earlier no-error finding for this sheet. Selected source: exec-30b9f646-46e0-47a3-a289-2124020ab0e6.png.

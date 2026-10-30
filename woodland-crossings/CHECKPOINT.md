@@ -525,3 +525,9 @@ Validation: 181/181 automated tests pass; git diff --check passes. No manual bro
 Added `?test=1` entry and persistent test controls, scene/question jumps across all six chapters, direct secret-stage access and exit to the normal game. Jumps create fresh isolated test progress; normal saves remain untouched. Updated app cache versions and documented usage.
 
 Validation: 182/182 tests pass, including all thirty reading/question entry states, three secret states and real UI/save-isolation handlers. git diff --check passes. Live browser/device verification remains outstanding.
+
+## 2026-10-30 — Two accounts and m21 extra ears
+
+Replaced Chapter 4 sheet 02 and Chapter 5 sheet 01 using two targeted built-in image edits. Corrected Poppy’s ear silhouettes in all four views of each sheet, preserving the atlas layouts and cast. User report supersedes the earlier Chapter 4 no-error finding. Refreshed asset, rendering-module and app cache versions. Generation source/prompt notes sit beside each atlas.
+
+Validation: both generated sheets visually reviewed; 1536×1024 WebP encoding retained. All 182 automated tests pass and git diff --check passes. Live browser/device verification remains outstanding.

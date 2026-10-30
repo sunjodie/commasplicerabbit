@@ -1,0 +1,10 @@
+{
+  "generator": "Built-in image_gen",
+  "target": "sheet-01.webp",
+  "source": "exec-30b9f646-46e0-47a3-a289-2124020ab0e6.png",
+  "prompt": "Correct ear anatomy only: Poppy exactly two ears, one upright and one bent, in every view; Willow exactly two ears. Remove duplicate ear silhouettes while preserving four-panel grid, characters, faces, clothing, props, lighting and composition. For m21 opening, remove left sideways extra ear; keep upright and right bent ear.",
+  "encoding": {
+    "quality": 94,
+    "method": 6
+  }
+}
