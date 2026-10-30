@@ -543,3 +543,9 @@ Validation: all 182 tests pass, including notebook observation collection across
 Audited all 25 frog frame assignments, collection/save handlers, revisit gating, crop coordinates and panel obstruction logic. Fixed premature later-chapter search access: default page-zero entries for every scene no longer count as visited. Completed preceding scenes or actual progress permit revisits; existing collected IDs remain intact. Refreshed module/entry caches.
 
 Validation: 183/183 tests pass, including new regression coverage using the actual reader initialisation for Chapters 2–6, all-frog collection/save handlers, unique reading-screen assignment and tablet/portrait geometry checks. git diff --check passes. Actual touch usability and live browser rendering remain unverified.
+
+## 2026-10-30 — Full-image frog revisits
+
+All journal exploration viewers now retain the painting’s full 3:2 proportions on desktop, tablet and phone, with a viewport-height width cap. Disabled modal pagination for these short scene views so the heading, painting and explanation stay together. Frogs retain source-art coordinates; top-edge touch targets shift inside the viewer while sprite offsets preserve the painted perch. Updated CSS and module cache versions.
+
+Validation: 184/184 tests pass, including full atlas-cell bounds and available frog positions at widths 240–1024px for all 25 frogs, plus existing collection/save and panel-obstruction checks. git diff --check passes. Live browser/device visual verification remains outstanding.

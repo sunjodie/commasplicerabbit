@@ -40,3 +40,15 @@ test('painting publishes the exact cell bounds outside iPad mode, including non-
   assert.equal(el.dataset.frogPerch,'none');
  }finally{globalThis.window=oldWindow;globalThis.document=oldDocument;globalThis.Image=oldImage;}
 });
+
+test('full-ratio revisit viewers show exactly one complete atlas cell at all device widths',()=>{
+ for(const width of [240,280,360,600,768,1024])for(const frame of FRAME_ART.filter(f=>f.frog)){
+  const height=width*2/3;
+  for(const g of [frameGeometry(width,height,frame.cell,frame.focus??.7),ipadCoverGeometry(width,height,frame.cell,frame.focus??.7)]){
+   assert.ok(Math.abs(g.width/2-width)<1e-8);assert.ok(Math.abs(g.height/2-height)<1e-8);
+   assert.ok(Math.abs(g.x+frame.cell%2*width)<1e-8);
+   assert.ok(Math.abs(g.y+Math.floor(frame.cell/2)*height)<1e-8);
+  }
+  assert.ok(chooseFrogPosition(frame.frog,{x:0,y:0,width,height},{left:0,top:0,width,height}),frame.frog.id+' '+width);
+ }
+});

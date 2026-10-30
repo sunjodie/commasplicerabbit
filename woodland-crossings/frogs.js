@@ -57,7 +57,7 @@ export function frogOverlapsPanel(point,scene,panel){
 export function chooseFrogPosition(f,bounds,scene,panels=[]){
  const size=Math.min(32,Math.max(22,bounds.width*.022));
  const points=[f,...(f.perches||[])].map(a=>({x:bounds.x+bounds.width*a.x/100,y:bounds.y+bounds.height*a.y/100,size}));
- return points.find(p=>p.x>=22&&p.x<=scene.width-22&&p.y>=44&&p.y<=scene.height&&panels.every(panel=>!frogOverlapsPanel({...p,size:44},scene,panel)))||null;
+ return points.map(p=>p.y<44?{...p,hitY:44}:p).find(p=>p.x>=22&&p.x<=scene.width-22&&p.y>=p.size&&p.y<=scene.height&&panels.every(panel=>!frogOverlapsPanel({...p,y:p.hitY??p.y,size:44},scene,panel)))||null;
 }
 let observer;
 export function placeFrogs(root){
@@ -76,9 +76,9 @@ export function placeFrogs(root){
   const panels=[...(panelRoot?.querySelectorAll('.story-page,.case-workspace,.casework-page')||[])].filter(p=>!p.hidden).map(p=>p.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);
   const bounds=scene.dataset.artBounds?JSON.parse(scene.dataset.artBounds):null;
   const point=bounds?chooseFrogPosition(anchor,bounds,rect,panels):frogPosition(anchor,rect.width,rect.height,style.backgroundSize,style.backgroundPosition);
-  const covered=point&&panels.some(panel=>frogOverlapsPanel({...point,size:44},rect,panel));
-  button.hidden=!point||covered||point.x<22||point.x>rect.width-22||point.y<44||point.y>rect.height;
-  if(point){button.style.left=point.x+'px';button.style.top=point.y+'px';button.style.setProperty('--frog-size',point.size+'px');}
+  const covered=point&&panels.some(panel=>frogOverlapsPanel({...point,y:point.hitY??point.y,size:44},rect,panel));
+  button.hidden=!point||covered||point.x<22||point.x>rect.width-22||point.y<point.size||point.y>rect.height;
+  if(point){button.style.left=point.x+'px';button.style.top=(point.hitY??point.y)+'px';button.style.setProperty('--frog-hit-offset',((point.hitY??point.y)-point.y)+'px');button.style.setProperty('--frog-size',point.size+'px');}
  }}
  place();window.requestAnimationFrame?.(place);
  if(typeof ResizeObserver!=='undefined'){

@@ -155,7 +155,7 @@ body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
 /* Painted frog atlas: invisible hit areas; feet stay attached to scene surfaces. */
 .frog-sprite{display:block;width:72px;height:72px;background:url('assets/frogs/painted-frogs.webp') var(--frog-col) var(--frog-row)/500% 200% no-repeat}
 .woodland-frog{position:absolute;left:var(--frog-x);top:var(--frog-y);width:44px;height:44px;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;z-index:5;opacity:1;transform:translate(-50%,-100%);cursor:default}
-.woodland-frog .frog-sprite{position:absolute;left:50%;bottom:calc(var(--frog-size,30px)*var(--frog-base,.09)*-1);width:var(--frog-size,30px);height:var(--frog-size,30px);transform:translateX(-50%);filter:brightness(.76) saturate(.66);pointer-events:none}
+.woodland-frog .frog-sprite{position:absolute;left:50%;bottom:calc(var(--frog-size,30px)*var(--frog-base,.09)*-1 + var(--frog-hit-offset,0px));width:var(--frog-size,30px);height:var(--frog-size,30px);transform:translateX(-50%);filter:brightness(.76) saturate(.66);pointer-events:none}
 .woodland-frog:hover{background:none;opacity:1;transform:translate(-50%,-100%)}
 .woodland-frog:focus-visible{outline:2px solid #e4d4aa;outline-offset:2px;border-radius:8px}
 .frog-portrait{width:88px;height:88px;margin:0 auto 8px}.frog-portrait .frog-sprite{width:88px;height:88px}
@@ -343,4 +343,14 @@ dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .artwork-preview
 @media(max-width:599px) {
  dialog{width:calc(100vw - 24px);padding:18px;max-height:calc(100dvh - 24px)}
  dialog #modalBody .storybook-index{grid-template-columns:1fr}
+}
+
+/* Revisit paintings keep their complete 3:2 cell on every device. */
+dialog #modalBody .journal-scene {
+ width:100%;max-width:105dvh;margin-inline:auto;
+}
+dialog #modalBody .journal-scene > .scene.painted-scene {
+ position:relative;inset:auto;width:100%;height:auto!important;
+ min-height:0!important;max-height:none;aspect-ratio:3 / 2;
+ border:0;border-radius:0;
 }
