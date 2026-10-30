@@ -31,7 +31,7 @@ test('Chapter 3 targets use the chapter evidence and retain five supply awards',
  for(const [i,q] of STORY.slice(10,15).entries()){assert.equal(renderSentence(q,q.valid.map(v=>v[0]),q.wordOrder?.answer),expected[i]);assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);assert.equal(nextQuestion(s).id,q.id);record(s,q,false,10);}
  assert.equal(s.story,15);assert.equal(s.seq,5);
  for(const q of [...STORY,...TRANSFER].filter(q=>q.stage===2))assert.doesNotMatch(q.parts.join(' '),/caretaker|nail|thread|mounting/);
- assert.match(STORY[13].studentBrief,/own sentence/);assert.match(STORY[14].studentBrief,/new sentence/);
+ assert.match(STORY[13].studentBrief,/faulty punctuation/);assert.match(STORY[14].studentBrief,/faulty punctuation/);
 });
 test('nor requires the student to produce inversion, on the main and retry tasks',()=>{
  for(const q of [STORY[12],TRANSFER[12]]){

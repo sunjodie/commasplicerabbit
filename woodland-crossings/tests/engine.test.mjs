@@ -20,7 +20,7 @@ test('every FANBOYS is a target; semicolons remain focused practice rather than 
  assert.equal(STORY[29].valid.length,6);
 });
 test('later trays are stable and all targets are grammatical under their explicit briefs',()=>{
- for(let stage=1;stage<6;stage++){const tasks=STORY.filter(q=>q.stage===stage);for(const q of tasks)assert.deepEqual(q.options,tasks[0].options);}
+ for(let stage=1;stage<6;stage++){const tasks=STORY.filter(q=>q.stage===stage);for(const q of tasks)assert.deepEqual(q.options,['m14','m15'].includes(q.id)?['comma','stop','nor']:tasks[0].options);}
  for(const q of BANK)assert.deepEqual(grammarErrors(q,q.valid.map(v=>v[0])),[]);
  const q=STORY[0];assert.deepEqual(grammarErrors(q,['semi']),[]);assert.deepEqual(errors(q,['semi']),[0]);assert.deepEqual(grammarErrors(q,['comma']),[0]);
  assert.equal(renderSentence(q,['stop']),'The villagers were dismantling the last stalls. Beyond the gardens, a light appeared in the mill’s upper window.');

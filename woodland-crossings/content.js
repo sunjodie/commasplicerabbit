@@ -173,6 +173,11 @@ tasks[20][1].brief='Keep the existing full stop and paired commas. Add a coordin
 tasks[22][1].why=['A comma plus “but” contrasts Poppy’s wish with her decision to stay.','A comma plus “so” makes Willow’s conclusion follow from the answering signal.'];
 // Semicolons can separate list items, but are not the requested ordinary-list edit.
 tasks[3].forEach(t=>t.grammar=[['comma','semi'],['comma','semi']]);
+// These repair tasks have one grammatical answer among the offered tools.
+for(const pair of [tasks[13],tasks[14]])for(const q of pair){
+ q.options=['comma','stop','nor'];
+ q.brief='Correct only the faulty punctuation using the available pieces. Keep every original word.';
+}
 export const STORY=tasks.map(x=>x[0]);
 export const TRANSFER=tasks.map(x=>x[1]);
 export const BONUS=[

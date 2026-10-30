@@ -1,4 +1,4 @@
-import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261028-writing1';
+import {BANK,STORY,TRANSFER,BONUS,CHAPTERS,TOOLS} from './content.js?v=20261030-unique-repairs1';
 export const DAY=86400000;
 export const INTERVALS=[DAY,3*DAY,7*DAY];
 export function fresh(){return {version:1,bankVersion:2,naturalProseRevision:2,chapterTwoRevision:1,chapterThreeRevision:1,chapterFourRevision:1,chapterFiveSixRevision:1,activeWordOrder:'',story:0,step:0,seq:0,activeId:null,activeHelp:false,activeTries:0,activeChoices:null,seen:[],skills:{},decorations:[],reviewRun:null,bonus:null,completedAt:null,beaconStars:[0,0,0,0,0,0],activeContract:false,recovery:{},passedStructures:[],lastRecoveryAtStory:null};}
@@ -61,7 +61,7 @@ export function pickReview(s,maxStage=chapter(s),skill=null){
  return need?TRANSFER.find(q=>q.structure===need.structure):null;
 }
 export function nextQuestion(s){
- if(s.activeId){const q=BANK.find(q=>q.id===s.activeId);if(q&&s.activeChoices?.length===q.valid.length&&s.activeChoices.every(t=>TOOLS[t]))return q;s.activeId=null;}
+ if(s.activeId){const q=BANK.find(q=>q.id===s.activeId);if(q&&s.activeChoices?.length===q.valid.length&&s.activeChoices.every(t=>TOOLS[t])&&(!['m14','r14','m15','r15'].includes(q.id)||s.activeChoices.every(t=>q.options.includes(t))))return q;s.activeId=null;}
  let q;
  if(s.reviewRun)q=pickReview(s,5,s.reviewRun.skills[s.reviewRun.index]);
  else if(s.bonus)q=pickReview(s,5,s.bonus.skills[s.bonus.index]);

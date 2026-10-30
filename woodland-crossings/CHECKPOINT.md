@@ -611,3 +611,9 @@ Validation: 191/191 tests pass, including artwork identity/crop preservation and
 Audited m15, r15 and the optional Poppy decision reflection. Each punctuation task has exactly one accepted answer combination: comma/comma/full stop, under its explicit new-sentence goal. Enumerated all 729 offered combinations per task. Other grammatical sentence joins do not satisfy that goal. Revised the reflection to ask for directly observed behavioural change, with the keyed option describing waiting for Willow rather than inferring motivation. Removed feedback relying on an apology absent from the question context. Updated dependent module/app caches.
 
 Validation: 193/193 tests pass, including exhaustive m15/r15 submissions and existing Chapter 3 real-handler completion/reflection checks. git diff --check passes.
+
+## 2026-10-30 — Grammatically unique m14/m15 repairs
+
+Revised m14/m15 and r14/r15 trays to keep comma, full stop and nor. Removed semicolon and other coordinating conjunctions that would create competing grammatical repairs. Generic repair brief replaces sentence-count instructions. Full stop is now the sole grammatical option for the faulty main-clause join; m15’s relative-clause commas remain necessary. Existing saved selections using retired options are reinitialised when those questions reopen. Updated content/engine consumers and app cache.
+
+Validation: 193/193 tests pass. Exhaustive offered-combination audit now requires both grammatical and accepted sets to contain exactly one identical solution for each of the four tasks, without relying on the brief’s sentence count. Chapter 3 real-handler playthrough still passes. git diff --check passes.

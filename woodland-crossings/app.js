@@ -18,8 +18,8 @@ import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './musi
 import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261030-m15unique1';
 import {finishingTouches} from './finishing-touches.js?v=20261022-character-names1';
 import {villageMarkup,villageProgress,siteProgress,currentBuild,stageLabel,villageSummary} from './village.js?v=20261022-character-names1';
-import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261028-writing1';
-import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261028-writing1';
+import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261030-unique-repairs1';
+import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261030-unique-repairs1';
 const NORMAL_KEY='woodland-crossings-v1',testMode=testerEnabled(globalThis.location?.search||''),KEY=testMode?NORMAL_KEY+'-test':NORMAL_KEY;let storageOK=true,state;
 try{state=hydrate(JSON.parse(localStorage.getItem(KEY)||'null'));}catch{state=fresh();storageOK=false;}
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');
