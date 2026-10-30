@@ -519,3 +519,9 @@ Restored the existing bakery conversation paintings at m17-art-1 and m19-art-2, 
 Revised m28 in both runtime prose and STORY.md: Poppy asks why clearing timber produced fresh shavings and what Bram was making; Willow explicitly separates evidence of woodworking from evidence of bridge provenance. Refreshed affected module and entry-point cache versions.
 
 Validation: 181/181 automated tests pass; git diff --check passes. No manual browser/device playthrough or live deployment verification performed.
+
+## 2026-10-30 — Hidden chapter tester
+
+Added `?test=1` entry and persistent test controls, scene/question jumps across all six chapters, direct secret-stage access and exit to the normal game. Jumps create fresh isolated test progress; normal saves remain untouched. Updated app cache versions and documented usage.
+
+Validation: 182/182 tests pass, including all thirty reading/question entry states, three secret states and real UI/save-isolation handlers. git diff --check passes. Live browser/device verification remains outstanding.

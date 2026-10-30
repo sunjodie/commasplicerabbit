@@ -1,3 +1,4 @@
+import {testerEnabled,testState} from './chapter-tester.js?v=20261030-tester1';
 import {observeNotebookText} from './clue-notebook.js?v=20261022-clue-notebook1';
 import {createClueNotebook} from './clue-notebook-view.js?v=20261022-clue-notebook1';
 import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-art-story1';
@@ -16,12 +17,12 @@ import {finishingTouches} from './finishing-touches.js?v=20261022-character-name
 import {villageMarkup,villageProgress,siteProgress,currentBuild,stageLabel,villageSummary} from './village.js?v=20261022-character-names1';
 import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261028-writing1';
 import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261028-writing1';
-const KEY='woodland-crossings-v1';let storageOK=true,state;
+const NORMAL_KEY='woodland-crossings-v1',testMode=testerEnabled(globalThis.location?.search||''),KEY=testMode?NORMAL_KEY+'-test':NORMAL_KEY;let storageOK=true,state;
 try{state=hydrate(JSON.parse(localStorage.getItem(KEY)||'null'));}catch{state=fresh();storageOK=false;}
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');
 let activeCasework=null;
 let screen='home',selected=0,feedback=null,solved=false,sound=true,lastResult=null;
-try{sound=localStorage.getItem(KEY+'-sound')!=='false';}catch{}
+try{sound=localStorage.getItem(NORMAL_KEY+'-sound')!=='false';}catch{}
 const pageSound=createPageSound();pageSound.setEnabled(sound);
 const frogSound=createPageSound({src:'assets/frog-croak.mp3',volume:.24,cooldownMs:400});frogSound.setEnabled(sound);
 let audioUnlocked=false;
@@ -228,9 +229,19 @@ function guide(){showModal(`<span class="eyebrow">Keep this in your pocket</span
 const clueNotebook=createClueNotebook({getState:()=>state,save,showModal,announce:say});
 const notebookButton=document.querySelector('#notebookBtn');if(notebookButton)notebookButton.onclick=()=>clueNotebook.open();
 const journalButton=document.querySelector('#journalBtn');if(journalButton)journalButton.onclick=journal;
-document.querySelector('#villageBtn').onclick=()=>{if(screen==='reward')return;village();};document.querySelector('#guideBtn').onclick=guide;document.querySelector('#soundBtn').textContent=sound?'Sound on':'Sound off';document.querySelector('#soundBtn').setAttribute('aria-pressed',String(sound));document.querySelector('#soundBtn').setAttribute('title','Background music: '+MUSIC.title);document.querySelector('#soundBtn').onclick=async ev=>{sound=!sound;ev.currentTarget.textContent=sound?'Sound on':'Sound off';ev.currentTarget.setAttribute('aria-pressed',String(sound));try{localStorage.setItem(KEY+'-sound',String(sound));}catch{}pageSound.setEnabled(sound);frogSound.setEnabled(sound);await music.setEnabled(sound);};document.querySelector('#closeModal').onclick=()=>{modal.close();music.setMood(['story','play','casework'].includes(screen)&&!state.reviewRun&&!state.bonus?chapterMusicMood(BANK.find(q=>q.id===state.activeId)):'calm');};document.querySelector('#saveBtn').onclick=()=>{showModal(`<h2>Your progress</h2><p>${storageOK?'Your latest progress is saved in this browser. Use the same browser and device to continue. Clearing site data removes this save.':'Browser storage is unavailable. This session will not reliably survive closing the page.'}</p><p>${state.seq} crossings completed · ${state.decorations.length} places restored.</p><div class="button-row">${button('restartFromSave','Restart game','secondary')}</div>`);document.querySelector('#modalBody').querySelector('#restartFromSave').onclick=requestRestart;};
+document.querySelector('#villageBtn').onclick=()=>{if(screen==='reward')return;village();};document.querySelector('#guideBtn').onclick=guide;document.querySelector('#soundBtn').textContent=sound?'Sound on':'Sound off';document.querySelector('#soundBtn').setAttribute('aria-pressed',String(sound));document.querySelector('#soundBtn').setAttribute('title','Background music: '+MUSIC.title);document.querySelector('#soundBtn').onclick=async ev=>{sound=!sound;ev.currentTarget.textContent=sound?'Sound on':'Sound off';ev.currentTarget.setAttribute('aria-pressed',String(sound));try{localStorage.setItem(NORMAL_KEY+'-sound',String(sound));}catch{}pageSound.setEnabled(sound);frogSound.setEnabled(sound);await music.setEnabled(sound);};document.querySelector('#closeModal').onclick=()=>{modal.close();music.setMood(['story','play','casework'].includes(screen)&&!state.reviewRun&&!state.bonus?chapterMusicMood(BANK.find(q=>q.id===state.activeId)):'calm');};document.querySelector('#saveBtn').onclick=()=>{showModal(`<h2>Your progress</h2><p>${storageOK?'Your latest progress is saved in this browser. Use the same browser and device to continue. Clearing site data removes this save.':'Browser storage is unavailable. This session will not reliably survive closing the page.'}</p><p>${state.seq} crossings completed · ${state.decorations.length} places restored.</p><div class="button-row">${button('restartFromSave','Restart game','secondary')}</div>`);document.querySelector('#modalBody').querySelector('#restartFromSave').onclick=requestRestart;};
 // Restoring a solved screen as practice is deliberate: unsubmitted success is never awarded twice.
-function startView(){if(state.pendingReward!=null)reward(state.pendingReward);else if(state.story>=30&&!state.endingSeen&&!state.reviewRun&&!state.bonus&&!state.activeId)ending();else home();}
+function testerMenu(){
+ if(!testMode)return;
+ showModal(`<span class="eyebrow">Test mode · separate progress</span><h2>Chapter tester</h2><p>Each jump starts a fresh test at that point. Your normal game save is preserved. Use the Test controls button to jump again.</p>${CHAPTERS.map((c,i)=>`<details><summary>Chapter ${i+1}</summary>${STORY_SCENES.slice(i*5,i*5+5).map(scene=>`<p>${e(scene.title)}</p><div class="button-row"><button class="secondary" data-test-story="${scene.id}">Read ${scene.id}</button><button class="secondary" data-test-question="${scene.id}">Question ${scene.id}</button></div>`).join('')}</details>`).join('')}<h3>Secret stages</h3><div class="button-row">${[1,2,3].map(n=>`<button class="secondary" data-test-question="b${n}">Secret ${n}</button>`).join('')}</div><p><button id="exitTester" class="secondary">Exit test mode</button></p>`,{paginate:false});
+ const body=document.querySelector('#modalBody');
+ for(const kind of ['story','question'])body.querySelectorAll(`[data-test-${kind}]`).forEach(b=>b.onclick=()=>{state=testState(b.dataset[kind==='story'?'testStory':'testQuestion'],{question:kind==='question'});activeCasework=null;lastResult=null;save();modal.close();play();});
+ body.querySelector('#exitTester').onclick=()=>{const url=new URL(globalThis.location.href);url.searchParams.delete('test');globalThis.location.assign(url.href);};
+}
+if(testMode&&document.createElement){
+ const controls=document.createElement('button');controls.textContent='TEST MODE · Test controls';controls.className='secondary';controls.style.cssText='position:fixed;top:4px;right:4px;z-index:10000;font-size:12px;padding:6px 10px';controls.onclick=testerMenu;document.body.append(controls);
+}
+function startView(){if(testMode){home();testerMenu();return;}if(state.pendingReward!=null)reward(state.pendingReward);else if(state.story>=30&&!state.endingSeen&&!state.reviewRun&&!state.bonus&&!state.activeId)ending();else home();}
 // Measure the first pages with the final font metrics, without a later page reset.
 if(document.fonts?.load)Promise.all([400,600,700].map(weight=>document.fonts.load(weight+' 14px "Nunito Sans"'))).then(startView,startView);else startView();
 

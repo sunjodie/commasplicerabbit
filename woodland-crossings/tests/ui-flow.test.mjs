@@ -398,3 +398,23 @@ test('notebook observation pages turn without selecting evidence and escape save
  ui.fixed.modalBody.querySelector('#notebookLater').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Bram later explains/);
  ui.fixed.modalBody.querySelector('#notebookPrevious').onclick();assert.equal(ui.fixed.modalBody.querySelector('#notebookReason').attrs.value,'A figure was visible in the lit window.');
 });
+
+test('chapter tester jumps to every chapter and secret while preserving the normal save',async()=>{
+ const {testState,testerEnabled}=await import('../chapter-tester.js');
+ const {nextQuestion}=await import('../engine.js');
+ const {needsStory,readingScene}=await import('../story-reader.js');
+ assert.equal(testerEnabled('?test=1'),true);assert.equal(testerEnabled('?test=0'),false);
+ for(let n=1;n<=30;n++){
+  const s=testState('m'+n),q=nextQuestion(s);assert.equal(q.id,'m'+n);assert.ok(needsStory(s,q));assert.equal(readingScene(s,q).id,q.id);
+  const direct=testState(q.id,{question:true});assert.equal(needsStory(direct,nextQuestion(direct)),false);
+ }
+ for(let n=1;n<=3;n++){const s=testState('b'+n);assert.equal(nextQuestion(s).id,'b'+n);assert.equal(s.bonus.index,n-1);}
+ const ui=setup({autoRead:false,autoCasework:false});
+ const original='{"version":1,"story":12}';ui.db.set('woodland-crossings-v1',original);
+ const oldLocation=globalThis.location;let exit='';globalThis.location={search:'?test=1',href:'https://example.com/game/?test=1',assign:url=>{exit=url;}};
+ try{
+  await import('../app.js?tester-isolation');assert.match(ui.fixed.modalBody.innerHTML,/Chapter tester/);
+  ui.fixed.modalBody.querySelector('[data-test-story="m16"]').onclick();assert.match(ui.app.innerHTML,/storyNext/);
+  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1-test')).story,15);assert.equal(ui.db.get('woodland-crossings-v1'),original);
+ }finally{globalThis.location=oldLocation;}
+});

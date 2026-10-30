@@ -123,3 +123,9 @@ Frogs now use a locally bundled painted sprite atlas, with subdued texture and s
 Music now follows chapters rather than scene changes: warm throughout Chapter 1, with the short creepy cue reserved for Chapter 3. Storybook replay keeps the active track. Frog perches alternate sides and heights; an authored alternate perch keeps each visitor on a scene surface when tablet cropping hides its primary position.
 
 Chapter 1 now includes 52 frame illustrations. The generation prompts, frame map, source provenance and review notes are in [frame artwork notes](assets/chapter-one/frames/ARTWORK.md).
+
+## Chapter testing
+
+Add `?test=1` to the game URL (or `&test=1` if it already has a query string). The Chapter tester opens automatically. Expand a chapter and choose a scene to read or a question to edit; secret stages are also available. Every jump starts fresh test progress. The fixed “TEST MODE · Test controls” button reopens the menu; “Exit test mode” reloads the normal game.
+
+Test progress is stored under `woodland-crossings-v1-test`, separately from the normal save. Reading jumps continue the chapter's remaining reading before its questions, following the normal game flow; question jumps skip that chapter's reading. Sound preference is shared. This is a hidden QA convenience, not an access restriction.
