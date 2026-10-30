@@ -28,7 +28,7 @@ export const NOTEBOOK_CLUES=[
  clue('witness','m25','You were on the far approach','The mender’s account','The mender said Bram had spoken to her at the far approach that afternoon.'),
  clue('bell-rest','m26','while I tightened the strap','Where Bram rested the bell','Bram said he had rested the bell by the porch and under the reeds while tightening its strap.'),
  clue('rescue','m27','Those parts of his account agreed with theirs','Help during the rescue','The travellers’ accounts agreed that Bram helped them uphill after the bridge failed.'),
- clue('marked-timber','m28','This was a support, not loose scrap','A marked bridge support','The timber at the mill bore the ferryman’s blue repair mark and two square bolt holes.'),
+ clue('marked-timber','m28','This piece was once part of the bridge','A marked bridge support','The timber at the mill bore the ferryman’s blue repair mark and two square bolt holes.'),
  clue('no-repair','m28','No replacements were authorised','No authorised replacement','The ferryman said no replacement of those supports had been authorised.'),
  clue('cut-brace','m29','There were no torn fibres','The cut at the bridge','The bridge had empty bolt holes and a remaining brace with a flat, saw-marked end rather than torn fibres.'),
  clue('admission','m29','removed braces from the old crossing too','Bram’s admission','Bram admitted removing and selling timber, including bridge braces.'),

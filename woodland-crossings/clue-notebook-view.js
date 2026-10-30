@@ -1,4 +1,4 @@
-import {availableNotebookClues,availableNotebookThreads,notebookLink,updateNotebookLink,assessNotebookLink,checkNotebookLink,notebookFollowUp} from './clue-notebook.js?v=20261022-clue-notebook1';
+import {availableNotebookClues,availableNotebookThreads,notebookLink,updateNotebookLink,assessNotebookLink,checkNotebookLink,notebookFollowUp} from './clue-notebook.js?v=20261030-m28logic2';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const source=c=>`Chapter ${Math.floor((Number(c.scene.slice(1))-1)/5)+1} · Scene ${(Number(c.scene.slice(1))-1)%5+1}`;
 const reasoning=(link,label='My reasoning')=>`<label class="clue-note-label" for="notebookReason">${label} <span>(optional · saved as you type)</span></label><input id="notebookReason" class="clue-reason" type="text" maxlength="400" value="${esc(link.note)}" placeholder="These observations fit together because…">`;

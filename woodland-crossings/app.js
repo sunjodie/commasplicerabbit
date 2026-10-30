@@ -1,7 +1,7 @@
-import {testerEnabled,testState} from './chapter-tester.js?v=20261030-tester1';
-import {observeNotebookText} from './clue-notebook.js?v=20261022-clue-notebook1';
-import {createClueNotebook} from './clue-notebook-view.js?v=20261022-clue-notebook1';
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-ears2';
+import {testerEnabled,testState} from './chapter-tester.js?v=20261030-m28logic2';
+import {observeNotebookText} from './clue-notebook.js?v=20261030-m28logic2';
+import {createClueNotebook} from './clue-notebook-view.js?v=20261030-m28logic2';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-m28logic2';
 import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261029-frog-perches1';
 import './page-keys.js?v=20261022-clue-notebook1';
 import {createPageSound,isPageTurn} from './page-sound.js';
@@ -12,7 +12,7 @@ import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './hall
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
 import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261030-ears2';
 import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './music.js?v=20261022-character-names1';
-import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261030-art-story1';
+import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261030-m28logic2';
 import {finishingTouches} from './finishing-touches.js?v=20261022-character-names1';
 import {villageMarkup,villageProgress,siteProgress,currentBuild,stageLabel,villageSummary} from './village.js?v=20261022-character-names1';
 import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261028-writing1';

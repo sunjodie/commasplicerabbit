@@ -1,5 +1,5 @@
 import * as five from './chapter-five.js?v=20261022-character-names1';
-import * as six from './chapter-six.js?v=20261030-art-story1';
+import * as six from './chapter-six.js?v=20261030-m28logic2';
 import * as one from './chapter-one.js?v=20261022-character-names1';
 import * as two from './chapter-two.js?v=20261022-character-names1';
 import * as three from './chapter-three.js?v=20261022-character-names1';

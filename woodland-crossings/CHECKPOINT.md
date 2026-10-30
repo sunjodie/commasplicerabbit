@@ -531,3 +531,9 @@ Validation: 182/182 tests pass, including all thirty reading/question entry stat
 Replaced Chapter 4 sheet 02 and Chapter 5 sheet 01 using two targeted built-in image edits. Corrected Poppy’s ear silhouettes in all four views of each sheet, preserving the atlas layouts and cast. User report supersedes the earlier Chapter 4 no-error finding. Refreshed asset, rendering-module and app cache versions. Generation source/prompt notes sit beside each atlas.
 
 Validation: both generated sheets visually reviewed; 1536×1024 WebP encoding retained. All 182 automated tests pass and git diff --check passes. Live browser/device verification remains outstanding.
+
+## 2026-10-30 — m28 evidence logic
+
+Poppy now asks whether Bram brought wood from the crossing to the mill, explicitly connecting the two locations without treating fresh shavings as a contradiction. Willow asks Bram to show them. The ferryman identifies former bridge timber and defers the removal conclusion until inspection. Runtime prose and manuscript match. Updated the marked-timber notebook trigger and dependent cache versions.
+
+Validation: all 182 tests pass, including notebook observation collection across reading sizes, manuscript consistency and chapter tester entry states. git diff --check passes. No artwork changes; live device verification remains outstanding.
