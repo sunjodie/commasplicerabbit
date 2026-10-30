@@ -647,3 +647,7 @@ Validation: 199/199 tests pass, including all-chapter word conservation and sent
 ## 2026-10-30 — Single-panel frog reveals at zoom
 
 Disabled automatic modal pagination for frog reveals, keeping the portrait, name and language tidbit together. Frog and woodland collectible reveal dialogs scroll within the viewport when zoomed instead of clipping their content. Fieldbook return callbacks are unchanged. Updated entry/CSS caches. Validation: 199 tests pass; git diff --check passes. Actual iPad zoom gesture remains unverified.
+
+## 2026-10-30 — Explain transition distractors
+
+Incorrect comma + however selections now explain that however is a linking adverb and cannot join complete clauses with a comma alone. Feedback shows full-stop and semicolon repairs and a valid medial-comma example, avoiding a blanket prohibition on commas around however. Added matching explanations for comma + therefore and semicolon + because. Question stems/options/keys unchanged. Updated app cache. Validation: 200/200 tests pass, including real submission handlers for all three error types; git diff --check passes. Live device verification remains outstanding.

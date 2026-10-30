@@ -463,3 +463,11 @@ test('multi-join questions show only the audited options for the selected join',
   ui.click('check');assert.ok(document.querySelector('#next'),id);
  }
 });
+
+test('incorrect transition joins explain their own error and distinguish valid medial however',async()=>{
+ const {BANK}=await import('../content.js');const {testState}=await import('../chapter-tester.js');
+ for(const [tool,pattern] of [['commaHowever',/not a coordinating conjunction/],['commaTherefore',/linking adverb/],['semicolonBecause',/dependent/]]){
+  const ui=setup(),q=BANK.find(q=>!q.remedial&&!q.wordOrder&&q.joinOptions.some(opts=>opts.includes(tool))),s=testState(q.id,{question:true});s.activeChoices=q.valid.map(v=>v[0]);const index=q.joinOptions.findIndex(opts=>opts.includes(tool));s.activeChoices[index]=tool;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?join-feedback-'+tool);ui.click('play');ui.click('check');assert.match(ui.app.innerHTML,pattern);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,1);
+  if(tool==='commaHowever'){assert.match(ui.app.innerHTML,/The path, however, was wet/);assert.match(ui.app.innerHTML,/stopped; however/);}
+ }
+});
