@@ -1,6 +1,6 @@
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
-import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261022-character-names1';
-import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261022-character-names1';
+import {CHAPTER_TWO_CASEWORK} from './chapter-two-casework.js?v=20261030-answer-audit1';
+import {CHAPTER_FOUR_CASEWORK} from './chapter-four-casework.js?v=20261030-answer-audit1';
 // Supporting questions from the approved Chapter 1.
 export const CASEWORK=[
   {
@@ -10,7 +10,7 @@ export const CASEWORK=[
     "title": "The fresh timber",
     "label": "Quick grammar edit",
     "context": "Poppy records the fresh scent beside the mill wall.",
-    "prompt": "Find and replace one grammatically incorrect word. Preserve meaning and past tense.",
+    "prompt": "Find the subject–verb agreement error. Replace one word with the correct simple-past form of the same verb.",
     "text": "The scent of freshly sawn boards were particularly sharp beside the mill wall.",
     "answer": "was",
     "word": 6,

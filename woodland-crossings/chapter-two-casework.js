@@ -3,7 +3,7 @@ export const CHAPTER_TWO_CASEWORK=[
     "id": "c2-yet",
     "title": "An unexpected movement",
     "context": "Poppy could see that only the reeds were moving. She still felt uneasy.",
-    "prompt": "Use “yet” to join the sentences and emphasise the unexpected contrast. Choose the correctly punctuated sentence.",
+    "prompt": "Which sentence correctly joins the two complete clauses and expresses their contrast?",
     "answer": "yet",
     "options": [
       {
@@ -13,7 +13,7 @@ export const CHAPTER_TWO_CASEWORK=[
       },
       {
         "id": "no-comma",
-        "text": "Poppy could see that only the reeds were moving yet she still felt uneasy.",
+        "text": "Poppy could see that only the reeds were moving, yet she still feeling uneasy.",
         "feedback": "Check the clause structure and the relationship between the ideas. Try again."
       },
       {
@@ -39,13 +39,13 @@ export const CHAPTER_TWO_CASEWORK=[
     "options": [
       {
         "id": "splice",
-        "text": "Poppy suspected that the bell had left the circular mark, so a matching gap interrupted the mark’s edge.",
-        "feedback": "This presents the gap as a result of Poppy’s suspicion. Which came first?"
+        "text": "Poppy suspected that the bell had left the circular mark, for a matching gap interrupt the mark’s edge.",
+        "feedback": "The singular subject “a matching gap” needs the past-tense verb “interrupted”."
       },
       {
         "id": "no-comma",
-        "text": "Poppy suspected that the bell had left the circular mark, and a matching gap interrupted the mark’s edge.",
-        "feedback": "This adds an observation but does not explicitly present it as evidence for the suspicion."
+        "text": "Poppy suspected that the bell had left the circular mark, nor a matching gap interrupted the mark’s edge.",
+        "feedback": "“Nor” needs a preceding negative and inversion in the second clause; neither is present here."
       },
       {
         "id": "for",
@@ -54,7 +54,7 @@ export const CHAPTER_TWO_CASEWORK=[
       }
     ],
     "hint": "Which conjunction introduces a reason for believing the first clause?",
-    "why": "The matching gap supports Poppy’s suspicion because she remembers the chip in the bell’s lip. “For” introduces that evidence; “and” merely adds it, and “so” reverses the reasoning. The match supports the idea without proving it.",
+    "why": "The matching gap supports Poppy’s suspicion because she remembers the chip in the bell’s lip. “For” introduces that evidence. One other option has the wrong verb form; the other misuses “nor”. The match supports the idea without proving it.",
     "question": "m10",
     "phase": "after",
     "kind": "reasoning",

@@ -35,7 +35,7 @@ test('Chapter 3 targets use the chapter evidence and retain five supply awards',
 });
 test('nor requires the student to produce inversion, on the main and retry tasks',()=>{
  for(const q of [STORY[12],TRANSFER[12]]){
-  assert.match(renderSentence(q,q.initialChoices),/\. [A-Z]/);
+  assert.match(renderSentence(q,q.initialChoices),/, /);
   assert.equal(wordOrderCorrect(q,''),false);assert.equal(wordOrderCorrect(q,q.parts[1]),false);
   assert.equal(wordOrderCorrect(q,q.wordOrder.answer),true);
   assert.equal(wordOrderCorrect(q,q.wordOrder.answer.replace(/\.$/,'').toUpperCase()),true);

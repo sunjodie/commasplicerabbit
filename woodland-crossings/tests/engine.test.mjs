@@ -5,10 +5,10 @@ import {fresh,hydrate,nextQuestion,record,errors,grammarErrors,renderSentence,ma
 const solve=(s,q,assisted=false,now=0)=>{s.activeChoices=q.valid.map(v=>v[0]);return record(s,q,assisted,now);};
 test('authored bank has an approved answer set per join, complete briefs, available tools and paired recovery examples',()=>{
  assert.equal(STORY.length,30);assert.equal(TRANSFER.length,30);assert.equal(BONUS.length,3);assert.equal(new Set(BANK.map(q=>q.id)).size,BANK.length);
- for(const q of BANK){assert.ok(q.brief);assert.equal(q.parts.length,q.valid.length+1,q.id);assert.equal(q.why.length,q.valid.length,q.id);assert.equal(q.grammar.length,q.valid.length,q.id);for(let i=0;i<q.valid.length;i++){assert.equal(q.valid[i].length,['m7','r7'].includes(q.id)?2:1,q.id);const t=q.valid[i][0];assert.ok(TOOLS[t]);assert.ok(q.options.includes(t),`${q.id} lacks ${t}`);assert.ok(q.grammar[i].includes(t),`${q.id} rejects grammatical target`);}assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);}
+ for(const q of BANK){assert.ok(q.brief);assert.equal(q.parts.length,q.valid.length+1,q.id);assert.equal(q.why.length,q.valid.length,q.id);assert.equal(q.grammar.length,q.valid.length,q.id);for(let i=0;i<q.valid.length;i++){assert.equal(q.valid[i].length,1,q.id);const t=q.valid[i][0];assert.ok(TOOLS[t]);assert.ok(q.options.includes(t),`${q.id} lacks ${t}`);assert.ok(q.grammar[i].includes(t),`${q.id} rejects grammatical target`);}assert.deepEqual(errors(q,q.valid.map(v=>v[0])),[]);}
  for(let stage=0;stage<6;stage++)assert.equal(STORY.filter(q=>q.stage===stage).length,5);
  assert.equal(new Set(STORY.map(q=>q.structure)).size,30);
- for(const q of STORY){const r=TRANSFER.find(r=>r.structure===q.structure);assert.ok(r);assert.notDeepEqual(r.parts,q.parts);assert.deepEqual(r.valid,q.valid);}
+ for(const q of STORY){const r=TRANSFER.find(r=>r.structure===q.structure);assert.ok(r);assert.notDeepEqual(r.parts,q.parts);if(q.id!=='m24')assert.deepEqual(r.valid,q.valid);else assert.deepEqual(r.valid,[['comma'],['and'],['comma']]);}
 });
 test('every FANBOYS is a target; semicolons remain focused practice rather than the default repair',()=>{
  for(const t of ['for','and','nor','but','or','yet','so'])assert.ok(STORY.some(q=>q.valid.some(v=>v[0]===t)),t);
@@ -20,7 +20,7 @@ test('every FANBOYS is a target; semicolons remain focused practice rather than 
  assert.equal(STORY[29].valid.length,6);
 });
 test('later trays are stable and all targets are grammatical under their explicit briefs',()=>{
- for(let stage=1;stage<6;stage++){const tasks=STORY.filter(q=>q.stage===stage);for(const q of tasks)assert.deepEqual(q.options,['m14','m15'].includes(q.id)?['comma','stop','nor']:tasks[0].options);}
+ for(const q of BANK)assert.equal(q.joinOptions.length,q.valid.length);
  for(const q of BANK)assert.deepEqual(grammarErrors(q,q.valid.map(v=>v[0])),[]);
  const q=STORY[0];assert.deepEqual(grammarErrors(q,['semi']),[]);assert.deepEqual(errors(q,['semi']),[0]);assert.deepEqual(grammarErrors(q,['comma']),[0]);
  assert.equal(renderSentence(q,['stop']),'The villagers were dismantling the last stalls. Beyond the gardens, a light appeared in the mill’s upper window.');
@@ -46,8 +46,8 @@ test('supported recall resets spacing without removing rewards or sparks',()=>{
  startReview(s,2*DAY);solve(s,nextQuestion(s),false,2*DAY);assert.equal(s.beaconStars[0],1);assert.equal(s.beaconStars[5],0);
 });
 test('save/resume retains exact task choices, support and pending structure reviews',()=>{
- const s=fresh();nextQuestion(s);s.activeChoices=['semi'];s.activeHelp=true;s.activeTries=2;
- const t=hydrate(JSON.parse(JSON.stringify(s)));assert.equal(nextQuestion(t).id,'m1');assert.deepEqual(t.activeChoices,['semi']);assert.equal(t.activeHelp,true);assert.equal(t.activeTries,2);
+ const s=fresh();nextQuestion(s);s.activeChoices=['stop'];s.activeHelp=true;s.activeTries=2;
+ const t=hydrate(JSON.parse(JSON.stringify(s)));assert.equal(nextQuestion(t).id,'m1');assert.deepEqual(t.activeChoices,['stop']);assert.equal(t.activeHelp,true);assert.equal(t.activeTries,2);
  solve(t,nextQuestion(t),true,0);const u=hydrate(JSON.parse(JSON.stringify(t)));assert.ok(u.recovery[STORY[0].structure]);assert.equal(u.seq,1);
 });
 test('old bank saves keep story, village and secrets while obsolete questions/reviews migrate safely',()=>{
@@ -71,13 +71,13 @@ test('persistent support never traps a student in recovery or withholds the endi
 
 test('explicit whole-text goals disambiguate the offered answers, including already-correct notes',()=>{
  assert.equal(STORY[0].goal.sentences,2);assert.equal(STORY[3].goal.sentences,1);assert.equal(STORY[23].goal.sentences,3);assert.equal(STORY[29].goal.sentences,6);assert.deepEqual(STORY[29].goal.conjunctions,['so']);
- const correct=STORY[23];assert.deepEqual(grammarErrors(correct,['comma','semi','comma']),[]);assert.deepEqual(errors(correct,['comma','semi','comma']),[1]);assert.deepEqual(errors(correct,['comma','comma','comma']),[]);
+ const correct=STORY[23];assert.deepEqual(grammarErrors(correct,['comma','and','comma']),[]);assert.deepEqual(errors(correct,['comma','semi','comma']),[1]);assert.deepEqual(errors(correct,['comma','but','comma']),[]);
  for(const q of BANK){assert.ok(q.goal.sentences>=1);const target=q.valid.map(v=>v[0]);assert.equal((renderSentence(q,target).match(/[.!?](?=\s|$)/g)||[]).length,q.goal.sentences);for(let i=0;i<target.length;i++)for(const t of q.options)if(!q.valid[i].includes(t)){const alternative=[...target];alternative[i]=t;assert.ok(errors(q,alternative).length,`${q.id}: second accepted edit at ${i}`);}}
 });
 
 test('semantic briefs and contrast trays follow the approved chapter rules',()=>{
  for(const q of BANK){assert.ok(q.studentBrief,q.id);if(q.stage===0)assert.doesNotMatch(q.studentBrief,/Use (AND|BUT|OR|NOR|FOR|SO|YET)|already correctly punctuated|semicolon/i);if(q.stage!==1)assert.ok(!(q.options.includes('but')&&q.options.includes('yet')),q.id);assert.ok(!q.options.includes('because'),q.id);}
- for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.match(q.parts[2],/^but /);assert.equal(q.valid[1][0],'comma');const s=hydrate({...fresh(),activeId:id,activeChoices:['comma','yet','or'],activeHelp:true});assert.deepEqual(s.activeChoices,['comma','comma','or']);assert.equal(s.activeHelp,true);}
+ for(const id of ['m29','r29']){const q=BANK.find(q=>q.id===id);assert.doesNotMatch(q.parts[2],/^but /);assert.equal(q.valid[1][0],'but');}
 });
 
 test('prose revision clears obsolete active edits but preserves progress, rewards and current edits',()=>{

@@ -4,7 +4,7 @@ export const EDITING_RULES='Use the pieces provided. Keep correct commas and eve
 export const TOOLS={comma:{label:'Keep comma',mark:',',join:', '},stop:{label:'Full stop',mark:'.',join:'. '},semi:{label:'Semicolon',mark:';',join:'; '},for:{label:'Add for',mark:', for',join:', for '},and:{label:'Add and',mark:', and',join:', and '},nor:{label:'Add nor',mark:', nor',join:', nor '},but:{label:'Add but',mark:', but',join:', but '},or:{label:'Add or',mark:', or',join:', or '},yet:{label:'Add yet',mark:', yet',join:', yet '},so:{label:'Add so',mark:', so',join:', so '},because:{label:'Add because',mark:'because',join:' because '}};
 export const CHAPTERS=[
 {name:'After the fair',skill:'boundaries',reward:'A cosy burrow',blurb:'Separate scenes; connect observations.',lesson:'Start with the two sides of a comma. Can each side stand as a sentence, with its own subject and verb? If so, the comma needs some help: a full stop can separate the sentences, a joining word such as “but” can connect them, or a semicolon can link them. Some commas already belong, including those after dependent openings and in lists. Read quietly to yourself, then check how the clauses fit together.',demo:['The mill was dark','a lantern appeared upstairs.'],fix:'stop',explain:'Both clauses stand alone. A full stop works; a semicolon also works when the brief asks for one sentence.'},
-{name:'What Had Left the Mill',skill:'dependent',reward:'A fern garden',blurb:'Make the relationship precise.',lesson:'In this chapter, join two sentences into one. Keep every word, changing an initial capital to lower case where necessary. Put a comma before a coordinating conjunction. FANBOYS are “for”, “and”, “nor”, “but”, “or”, “yet” and “so”. A comma plus one of these can join two complete clauses. “And” adds information; “but” and “yet” express contrast; “so” gives a result; “or” offers an alternative. Choose the joining word that expresses the relationship in the writing goal. Preserve useful commas after dependent openings.',demo:['Poppy found a circular mark','Willow found another beneath the reeds.'],fix:'and',explain:'Comma + “and” adds a second discovery. Both sides have their own subject and verb.'},
+{name:'What Had Left the Mill',skill:'dependent',reward:'A fern garden',blurb:'Make the relationship precise.',lesson:'In this chapter, join two complete clauses into one sentence. Keep every word, changing an initial capital to lower case where necessary. Put a comma before a coordinating conjunction. FANBOYS are “for”, “and”, “nor”, “but”, “or”, “yet” and “so”. A comma plus one of these can join two complete clauses. “And” adds information; “but” and “yet” express contrast; “so” gives a result; “or” offers an alternative. Choose the joining word that expresses the relationship in the writing goal. Preserve useful commas after dependent openings.',demo:['Poppy found a circular mark','Willow found another beneath the reeds.'],fix:'and',explain:'Comma + “and” adds a second discovery. Both sides have their own subject and verb.'},
 {name:'The Wrong Path',skill:'long',reward:'A woodland workshop',blurb:'Separate assumptions from evidence.',lesson:'“For” gives a reason, “yet” marks contrast, and “nor” adds a second negative. After “nor”, word order often changes: “Poppy had not seen it, nor had Willow heard it.” Long subjects, embedded clauses and extra information do not change the rule for joining complete clauses.',demo:['Poppy had not seen the bell','had Willow heard it.'],fix:'nor',explain:'Comma + “nor” adds the second negative. Notice “had Willow”, rather than “Willow had”.'},
 {name:'A Bell in Two Places',skill:'connectors',reward:'Lanterns for the trail',blurb:'Compare accounts and changes of viewpoint.',lesson:'“However”, “therefore” and “nevertheless” are transitions, not FANBOYS. Between two complete clauses, use a full stop or a semicolon before the transition and retain its following comma. Choose a full stop when the next idea reads more clearly as a separate sentence. A change of time, place or viewpoint can call for a new sentence. Check the instruction for whether to preserve a close link or begin a fresh sentence.',demo:['The ink was fresh','however, the paper was old.'],fix:'stop',explain:'A full stop separates the complete clauses. Capitalise “However” and retain its following comma.'},
 {name:'An Answer in the Dark',skill:'mixed',reward:'A treetop lookout',blurb:'Read signals and edit rescue notes.',lesson:'Read a whole note before editing. Keep list commas, dependent openings and paired commas around extra information. Use the writing goal to decide which complete clauses belong together and where a new sentence should begin.',demo:null,explain:'Check the structure at each comma and the relationship between the ideas.'},
@@ -114,13 +114,13 @@ tasks.at(-1).forEach(t=>t.options=[
 ]);
 
 task(1,"additive-independent","Join the sentences using a coordinating conjunction that presents the discoveries as additional findings.",["and"],["Both discoveries are complete clauses. A comma followed by “and” adds the second discovery."],["Poppy found a circular mark beside the porch", "Willow found a second one beneath the reeds."],["Poppy noticed a circular mark beneath the eaves", "Willow found another beneath the reeds."]);
-task(1,"contrast-independent","Join the sentences using a coordinating conjunction that makes the contrast explicit.",["but"],["“But” and “yet” both express contrast. “Yet” places greater emphasis on the unexpected difference. Use a comma before either conjunction."],["The rain had softened the bootprints", "the sheltered circular marks were still clear."],["Rain fell across the path", "the circular mark beneath the eaves remained sheltered."]);
+task(1,"contrast-independent","Join the sentences using a coordinating conjunction that makes the contrast explicit.",["but"],["“But” joins the two complete clauses and contrasts the rain-softened prints with the sheltered mark. “Yet” could also express contrast in English, but is not offered here."],["The rain had softened the bootprints", "the sheltered circular marks were still clear."],["Rain fell across the path", "the circular mark beneath the eaves remained sheltered."]);
 task(1,"cause-result","Join the sentences using a coordinating conjunction that makes the second action a result of the first discovery.",["so"],["“So” shows that the discovery prompts the action. Place a comma before it."],["The marks led towards the stream", "Willow raised the lamp to search for the next one."],["Poppy could not see where the bootprints led next", "she held the lamp closer to the ground."]);
 task(1,"alternative-consequences","Join the sentences using a coordinating conjunction that presents the actions as alternatives.",["or"],["“Or” offers a choice between two courses of action. Place a comma before it."],["They could follow the marks to the reeds", "they could wait inside the mill for Bram."],["Poppy could bring the lamp closer to the mark", "Willow could examine it in the existing light."]);
 task(1,"observation-tentative-result","Join the sentences using a coordinating conjunction that makes the tentative conclusion follow from the observed marks.",["so"],["The bootprints beside the circular mark prompt Poppy’s tentative conclusion. A comma followed by “so” expresses that inference; “thought” leaves it open to revision."],["Two deep bootprints lay beside the circular mark", "Poppy thought someone had paused there."],["A circular mark lay beside two deep bootprints", "Willow thought something heavy might have been set down there."]);
 // Joining tasks start from two sentences, so the original full stop is visible.
 for(const pair of tasks.slice(5,10))for(const q of pair){q.initialChoices=['stop'];q.joinTask=true;q.studentBrief=q.brief;q.options=['comma','stop','semi','and','but','yet','or','so'];}
-for(const q of tasks[6])q.valid=[['but','yet']];
+for(const q of tasks[6])q.valid=[['but']];
 tasks[9][1].why=['The circular mark beside the bootprints prompts Willow’s tentative conclusion. A comma followed by “so” expresses that inference. “Thought” and “might” avoid claiming that the marks prove what happened.'];
 
 task(2,'unexpected-yet','Keep one sentence. Use a coordinating conjunction to emphasise the gap between Poppy’s certainty and the limited evidence.', ['yet'],['Comma + “yet” marks the unexpected contrast: Poppy felt sure, although she could not identify who had left the prints. “So” would wrongly present her inability to identify the print-maker as a result of her certainty.'],['Poppy felt sure that Bram had carried the bell along the path','she could not identify who had left the prints.'],['Poppy felt sure that the marks would lead to Bram','she did not know who had left them.']);
@@ -173,11 +173,7 @@ tasks[20][1].brief='Keep the existing full stop and paired commas. Add a coordin
 tasks[22][1].why=['A comma plus “but” contrasts Poppy’s wish with her decision to stay.','A comma plus “so” makes Willow’s conclusion follow from the answering signal.'];
 // Semicolons can separate list items, but are not the requested ordinary-list edit.
 tasks[3].forEach(t=>t.grammar=[['comma','semi'],['comma','semi']]);
-// These repair tasks have one grammatical answer among the offered tools.
-for(const pair of [tasks[13],tasks[14]])for(const q of pair){
- q.options=['comma','stop','nor'];
- q.brief='Correct only the faulty punctuation using the available pieces. Keep every original word.';
-}
+for(const pair of [tasks[13],tasks[14]])for(const q of pair)q.brief='Correct only the faulty punctuation using the available pieces. Keep every original word.';
 export const STORY=tasks.map(x=>x[0]);
 export const TRANSFER=tasks.map(x=>x[1]);
 export const BONUS=[
@@ -185,10 +181,28 @@ export const BONUS=[
 {id:'b2',stage:3,skill:'connectors',structure:'bonus-instead-transition',brief:'Give the bell’s actual destination its own sentence. Keep every word, including “instead”.',parts:['Bram had not taken the bell home','instead, he had carried it towards the flooded crossing.'],valid:[['stop']],grammar:[['stop','semi']],why:['Both clauses are complete. A full stop gives the actual destination its own sentence. Capitalise “Instead” and keep its following comma: it introduces the alternative destination.'],options:all,kind:'sentence'},
 {id:'b3',stage:5,skill:'paragraph',structure:'bonus-where-clause',brief:'Keep the WHERE opening attached. Use AND to add the second action; begin a new sentence at the later time “At sunrise”.',parts:['Where the path reached the village','Poppy walked beside Willow. The baker opened the door','the neighbours brought the stretcher inside','at sunrise, the village began to stir.'],valid:[['comma'],['and'],['stop']],grammar:[['comma'],independent,independent],why:['Where introduces a dependent location clause.','And adds the neighbours’ action.','At sunrise starts a new point in the timeline.'],options:all,kind:'paragraph'}
 ];
+// Remove existing conjunctions at editable main-clause joins: otherwise a comma
+// and a full stop before the conjunction would both produce grammatical prose.
+for(const pair of [tasks[23],tasks[28]])for(const q of pair){
+ q.valid=q.valid.map(v=>v.slice());q.grammar=q.grammar.map(v=>v.slice());
+ const conjunction=q.parts[2].startsWith('and ')?'and':'but';
+ q.parts[2]=q.parts[2].slice(conjunction.length+1);
+ q.valid[1]=[conjunction];q.grammar[1]=independent;
+ q.brief='Correct the faulty joins and preserve the original words. Choose the available conjunction that fits the relationship between the ideas; keep necessary opening and list commas.';
+ q.why[1]=conjunction==='and'?'Comma + “and” joins two complete clauses and adds the second action.':'Comma + “but” joins two complete clauses and expresses their contrast.';
+}
 export const BANK=[...STORY,...TRANSFER,...BONUS];
 
 for(const q of BANK){
- if(['m29','r29'].includes(q.id))q.grammar[1]=['comma','stop','semi'];
+ // A join's menu contains its target and structurally invalid alternatives.
+ // No full-stop/semicolon/conjunction synonym competes at the same join.
+ q.joinOptions=q.valid.map(([target])=>target==='nor'?['comma','nor']:target==='comma'||target==='stop'?['comma','stop','nor']:['comma',target,'nor']);
+ q.options=[...new Set(q.joinOptions.flat())];
+ q.initialChoices=q.valid.map(()=> 'comma');q.joinTask=false;
+
+
+
+ q.brief=q.brief.replace('Join the sentences','Join the clauses');
  q.studentBrief=q.brief;
  q.goal={sentences:(q.parts.join(' ').match(/[.!?](?=\s|$)/g)||[]).length+q.valid.filter(v=>v[0]==='stop').length,conjunctions:[...new Set(q.valid.map(v=>v[0]).filter(t=>!['comma','stop','semi'].includes(t)))]};
 }

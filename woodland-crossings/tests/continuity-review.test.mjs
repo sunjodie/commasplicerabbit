@@ -33,7 +33,7 @@ test('retry instructions name their own clauses and preserve the main approved C
 });
 test('reasoning and transfer checks use different evidence with one keyed choice per task',()=>{
  const reason=CHAPTER_TWO_CASEWORK.find(t=>t.id==='c2-for'),transfer=CHAPTER_TWO_CASEWORK.find(t=>t.id==='c2-so');
- assert.doesNotMatch(reason.prompt,/Use “for”/);assert.match(reason.options.map(o=>o.text).join(' '),/, and /);assert.match(reason.options.map(o=>o.text).join(' '),/, so /);assert.match(reason.options.map(o=>o.text).join(' '),/, for /);
+ assert.doesNotMatch(reason.prompt,/Use “for”/);assert.match(reason.options.map(o=>o.text).join(' '),/, nor /);assert.match(reason.options.map(o=>o.text).join(' '),/gap interrupt /);assert.match(reason.options.map(o=>o.text).join(' '),/, for /);
  assert.match(transfer.context,/note unfinished/);assert.doesNotMatch(transfer.context,/notch|circular mark/);
  for(const t of CHAPTER_TWO_CASEWORK)assert.equal(t.options.filter(o=>assessCasework(t,{choice:o.id})).length,1);
  const t=CHAPTER_FOUR_CASEWORK[0];let valid=0;for(const choice of t.options)for(const evidence of t.evidence)if(assessCasework(t,{choice:choice.id,evidence:evidence.id}))valid++;assert.equal(valid,1);

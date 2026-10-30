@@ -45,17 +45,17 @@ test('reader ignores review/recovery and sanitises malformed chapter data',()=>{
  s.story=0;assert.deepEqual(availableChapterTwoScenes(s),[]);
  const before=structuredClone(s);setChapterTwoPosition(s,'bad',0);finishChapterTwoScene(s,'bad');assert.deepEqual(s,before);
 });
-test('five joining notes start as two complete sentences and accept exactly the approved answers',()=>{
+test('five joining notes start with faulty joins and accept exactly one repair each',()=>{
  const s=fresh();s.story=5;
  for(const q of STORY.slice(5,10)){
-  assert.equal(nextQuestion(s).id,q.id);assert.deepEqual(s.activeChoices,['stop']);
-  assert.match(renderSentence(q,s.activeChoices),/\. [A-Z]/);
+  assert.equal(nextQuestion(s).id,q.id);assert.deepEqual(s.activeChoices,['comma']);
+  assert.match(renderSentence(q,s.activeChoices),/, /);
   for(const t of q.options)assert.equal(errors(q,[t]).length===0,q.valid[0].includes(t),q.id+' '+t);
   assert.equal((renderSentence(q,[q.valid[0][0]]).match(/[.!?](?=\s|$)/g)||[]).length,1);
   record(s,q,false,0);
  }
  assert.equal(s.story,10);assert.equal(s.seq,5);
- assert.deepEqual(STORY[6].valid,[['but','yet']]);assert.deepEqual(TRANSFER[6].valid,STORY[6].valid);
+ assert.deepEqual(STORY[6].valid,[['but']]);assert.deepEqual(TRANSFER[6].valid,STORY[6].valid);
  assert.match(renderSentence(STORY[5],['and']),/porch, and Willow/);
 });
 test('new saves retain edits and only old Chapter 2 active stems have their choices reset',()=>{
@@ -96,5 +96,5 @@ test('all Chapter 2 views have local rain artwork and safe desktop/tablet atlas 
 test('root and game entry points load the same visual-novel styles and versioned application',()=>{
  const root=readFileSync(new URL('../../index.html',import.meta.url),'utf8'),game=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(root,/<base href="\.\/woodland-crossings\/">/);
- for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261030-village-single1"/);assert.match(html,/src="app.js\?v=20261030-unique-repairs1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
+ for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261030-village-single1"/);assert.match(html,/src="app.js\?v=20261030-answer-audit1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
 });

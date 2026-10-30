@@ -1,25 +1,25 @@
 import {retainPainting} from './stable-painting.js?v=20261030-steady-art1';
-import {illustratedBookPages} from './storybook-pages.js?v=20261030-m15unique1';
+import {illustratedBookPages} from './storybook-pages.js?v=20261030-answer-audit1';
 import {bindVillageZoom} from './village-zoom.js?v=20261030-villagezoom1';
-import {testerEnabled,testState} from './chapter-tester.js?v=20261030-m15unique1';
+import {testerEnabled,testState} from './chapter-tester.js?v=20261030-answer-audit1';
 import {observeNotebookText} from './clue-notebook.js?v=20261030-m28logic2';
 import {createClueNotebook} from './clue-notebook-view.js?v=20261030-m28logic2';
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-m15unique1';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-answer-audit1';
 import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261030-full-revisit1';
 import './page-keys.js?v=20261022-clue-notebook1';
 import {createPageSound,isPageTurn} from './page-sound.js';
 import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261030-village-single1';
-import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js?v=20261022-character-names1';
-import {CHAPTER_THREE_REFLECTION} from './chapter-three.js?v=20261030-m15unique1';
+import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js?v=20261030-answer-audit1';
+import {CHAPTER_THREE_REFLECTION} from './chapter-three.js?v=20261030-answer-audit1';
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261022-character-names1';
 import {rabbitArt,landscape,buildingArt} from './visuals.js';
 import {SCENES,questionScene,selectQuestionScene} from './scenery.js?v=20261030-ears2';
 import {MUSIC,TENSION_MUSIC,createMusicController,chapterMusicMood} from './music.js?v=20261022-character-names1';
-import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261030-m15unique1';
+import {STORY_SCENES,storyScene,readingScene,readingPages,needsStory,storyPosition,setStoryPosition,finishStoryScene,availableStoryScenes,storyProseHTML} from './story-reader.js?v=20261030-answer-audit1';
 import {finishingTouches} from './finishing-touches.js?v=20261022-character-names1';
 import {villageMarkup,villageProgress,siteProgress,currentBuild,stageLabel,villageSummary} from './village.js?v=20261022-character-names1';
-import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261030-unique-repairs1';
-import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261030-unique-repairs1';
+import {BANK,STORY,TRANSFER,CHAPTERS,TOOLS,EDITING_RULES} from './content.js?v=20261030-answer-audit1';
+import {fresh,hydrate,chapter,skillState,mastered,dueSkills,nextQuestion,renderSentence,sentenceParts,wordOrderCorrect,errors,grammarErrors,record,startReview,startBonus,contractAvailable,contractMet,DAY} from './engine.js?v=20261030-answer-audit1';
 const NORMAL_KEY='woodland-crossings-v1',testMode=testerEnabled(globalThis.location?.search||''),KEY=testMode?NORMAL_KEY+'-test':NORMAL_KEY;let storageOK=true,state;
 try{state=hydrate(JSON.parse(localStorage.getItem(KEY)||'null'));}catch{state=fresh();storageOK=false;}
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');
@@ -125,7 +125,7 @@ function compactBrief(q){return q.studentBrief;}
 function storyPayoff(q){return `<div class="story-payoff ${q.id==='m5'?'bell-payoff':''}" role="status"><span class="eyebrow">In Poppy’s notebook</span><p>${e((CHAPTER_PAYOFFS[q.id]||'Poppy saves the observation.'))}</p></div>`;}
 function bellTone(){if(!sound)return;try{const ac=new(window.AudioContext||window.webkitAudioContext)();[392,784,1054].forEach((hz,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.frequency.value=hz;g.gain.setValueAtTime(.025/(i+1),ac.currentTime);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+1.8);o.start();o.stop(ac.currentTime+1.9);});setTimeout(()=>ac.close(),2100);}catch{}}
 
-function currentTools(q){return q.options;}
+function currentTools(q){return q.joinOptions?.[selected]||q.options;}
 function socket(q,i=0){const t=state.activeChoices[i];return `<button class="join crossing-socket ${selected===i?'selected':''} ${feedback?.bad?.includes(i)?'bad':''}" data-join="${i}" aria-label="Fit a piece at join ${i+1}: ${e(TOOLS[t].label)}" aria-pressed="${selected===i}" ${solved?'disabled':''}><span class="socket-mark">${e(TOOLS[t].join.trim())}</span><span class="socket-caption">${t==='comma'?'inspect join':'piece fitted'}</span></button>`;}
 function crossingWords(q){return `<div class="reading-chart ${q.kind==='paragraph'?'passage-chart':''}"><span class="chart-pin"></span>${q.stage<=5?`<div class="notebook-source"><span>${q.remedial?'An earlier note · Recall practice':'Your turn · '+e(storyScene(q)?.title||'After the fair')}</span><button id="readStory" class="text-button">Story so far</button></div>`:''}<p class="editing-brief"><b>Your task:</b> ${e(compactBrief(q))}</p><button id="editingRules" class="text-button editing-rules-toggle">Editing rules</button><div class="sentence" aria-label="Route to scout">${sentenceMarkup(q)}</div>${q.wordOrder?`<label class="correction-label" for="clauseRewrite">Rewrite the second clause without the conjunction:</label><input id="clauseRewrite" class="case-correction" type="text" value="${e(state.activeWordOrder||'')}" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="120" ${solved?'disabled':''}>`:''}</div>`;}
 function toolArt(t){const split=t==='stop';return `<svg viewBox="0 0 110 37" aria-hidden="true"><path d="M7 30H103" stroke="#9c744a" stroke-width="3" stroke-linecap="round"/><path d="M12 9H${split?'45':'98'}V29H12Z" fill="#e6c48b" stroke="#a67b48" stroke-width="2"/>${split?'<path d="M65 9H98V29H65Z" fill="#e6c48b" stroke="#a67b48" stroke-width="2"/>':''}<path d="M19 12V26M90 12V26" stroke="#f8e1b3" stroke-width="2"/></svg>`;}
