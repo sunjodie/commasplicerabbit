@@ -433,3 +433,16 @@ test('frog search and tidbit back buttons restore the fieldbook and its scroll p
  ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
  ui.click('play');ui.click('startTrail');const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to the trail');ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
 });
+
+test('all woodland discovery reveals return to their secrets menu without changing progress',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const {EGGS}=await import('../halloween.js');const s=fresh();s.story=30;s.endingSeen=true;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?woodland-secrets-back');
+ for(let stage=0;stage<6;stage++){
+  ui.fixed.journalBtn.onclick();ui.fixed.modal.scrollTop=140+stage;
+  ui.fixed.modalBody.querySelector(`[data-revisit="${stage}"]`).onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to Woodland secrets');
+  ui.fixed.modalBody.querySelector(`[data-egg="${EGGS[stage].id}"]`).onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to Woodland secrets');
+  ui.click('closeModal');assert.equal(ui.fixed.modal.open,true);assert.match(ui.fixed.modalBody.innerHTML,/Small secrets, big ears/);assert.equal(ui.fixed.modal.scrollTop,140+stage);
+  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,30);
+  ui.fixed.modalBody.querySelector(`[data-revisit="${stage}"]`).onclick();ui.click('closeModal');assert.match(ui.fixed.modalBody.innerHTML,/Small secrets, big ears/);
+  ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
+ }
+});

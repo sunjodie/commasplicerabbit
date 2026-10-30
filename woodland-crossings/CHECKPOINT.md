@@ -561,3 +561,9 @@ Validation: 185/185 tests pass, including actual search → collect → back, co
 Replaced the binary zoom toggle with 100–300% zoom controls, zoom out and Fit village. Added pointer-based pinch zoom and drag panning, focal-point retention and Ctrl+wheel/trackpad pinch support. Enlarging preserves viewport height and uses inline canvas sizing to override the desktop/tablet rule that previously disabled zoom. Drag gestures suppress accidental landmark activation. Updated entry and stylesheet caches.
 
 Validation: 186/186 tests pass, including zoom dimensions, focal position, drag, pinch, click suppression, fit reset and existing landmark interactions. git diff --check passes. Live touch/device verification remains outstanding.
+
+## 2026-10-30 — Woodland secrets back navigation
+
+All six non-frog discovery reveals now retain their menu return callback. Chapter exploration and its reveals use Back to Woodland secrets and restore the menu’s prior page/scroll position. Frog fieldbook labels and story discovery close behavior are preserved. Refreshed app entry cache.
+
+Validation: 187/187 tests pass, including all six explore → reveal → back and explore → back handlers, restored scroll positions and unchanged grammar progress. git diff --check passes. Live device verification remains outstanding.
