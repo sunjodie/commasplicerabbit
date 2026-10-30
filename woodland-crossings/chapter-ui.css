@@ -360,3 +360,7 @@ dialog #modalBody .journal-scene > .scene.painted-scene {
 .village-world:has(.village-zoom-controls) .village-viewport:active{cursor:grabbing}
 .village-zoom-controls{display:flex;gap:6px;flex-wrap:wrap}
 .village-toolbar{flex-wrap:wrap}
+
+/* Dedicated exploration artwork: one SVG viewport per atlas cell, no legacy actors. */
+dialog #modalBody .journal-scene > .exploration-painting{background-image:none!important}
+.exploration-image{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}

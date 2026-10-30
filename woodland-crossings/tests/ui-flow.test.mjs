@@ -446,3 +446,10 @@ test('all woodland discovery reveals return to their secrets menu without changi
   ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
  }
 });
+
+test('woodland and frog revisits use complete atlas-cell viewports without extra rabbit overlays',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const {FROGS}=await import('../frogs.js');const {explorationFrameArt}=await import('../frame-art.js');const s=fresh();s.story=30;s.endingSeen=true;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?clean-revisit-art');
+ function check(stage,view=0){const html=ui.fixed.modalBody.innerHTML,f=explorationFrameArt(stage,view);assert.match(html,/class="exploration-image"/);assert.ok(html.includes(`viewBox="${f.cell%2*3} ${Math.floor(f.cell/2)*2} 3 2"`));assert.ok(html.includes(`href="assets/${f.asset}"`));assert.doesNotMatch(html,/class="rabbit |moon-mist|forest-sparkles/);}
+ for(let stage=0;stage<6;stage++){ui.fixed.journalBtn.onclick();ui.fixed.modalBody.querySelector(`[data-revisit="${stage}"]`).onclick();check(stage);}
+ for(const f of FROGS){ui.fixed.journalBtn.onclick();ui.fixed.modalBody.querySelector(`[data-frog-search="${f.id}"]`).onclick();check(f.stage,f.view);assert.ok(ui.fixed.modalBody.querySelector(`[data-frog="${f.id}"]`));}
+});

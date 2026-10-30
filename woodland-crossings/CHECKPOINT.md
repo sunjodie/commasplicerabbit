@@ -567,3 +567,9 @@ Validation: 186/186 tests pass, including zoom dimensions, focal position, drag,
 All six non-frog discovery reveals now retain their menu return callback. Chapter exploration and its reveals use Back to Woodland secrets and restore the menu’s prior page/scroll position. Frog fieldbook labels and story discovery close behavior are preserved. Refreshed app entry cache.
 
 Validation: 187/187 tests pass, including all six explore → reveal → back and explore → back handlers, restored scroll positions and unchanged grammar progress. git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Clean exploration artwork
+
+Replaced the legacy scene scaffold in Woodland secrets and frog searches with a dedicated SVG atlas-cell viewport. Each revisit displays its complete 3:2 painting directly, with collectible overlays retained. Removed the obsolete animated rabbit, mist and sparkle layers from these viewers. Background rendering is disabled in the dedicated viewer to prevent an uncropped atlas/fallback appearing during image loading. Existing geometry still aligns frogs with the painting. Refreshed CSS/app caches.
+
+Validation: 188/188 tests pass. New real-handler coverage checks all six chapter revisits and 25 frog searches for exact cell viewports, correct source assets and absence of legacy actors/effects. git diff --check passes. Live device verification remains outstanding.
