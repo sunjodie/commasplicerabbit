@@ -364,3 +364,10 @@ dialog #modalBody .journal-scene > .scene.painted-scene {
 /* Dedicated exploration artwork: one SVG viewport per atlas cell, no legacy actors. */
 dialog #modalBody .journal-scene > .exploration-painting{background-image:none!important}
 .exploration-image{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}
+
+/* Keep the trail exit visible on every village menu page. */
+@media(min-width:600px){
+ .vn-menu-frame>.village-return{position:absolute;bottom:16px;left:28px;z-index:2;min-height:44px}
+ .vn-menu-frame:has(>.village-return)>.vn-pages{left:230px}
+ .vn-menu #app[data-vn-kind="village"] #villageZoom{display:inline-block}
+}

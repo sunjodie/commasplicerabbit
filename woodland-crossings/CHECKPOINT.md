@@ -573,3 +573,9 @@ Validation: 187/187 tests pass, including all six explore → reveal → back an
 Replaced the legacy scene scaffold in Woodland secrets and frog searches with a dedicated SVG atlas-cell viewport. Each revisit displays its complete 3:2 painting directly, with collectible overlays retained. Removed the obsolete animated rabbit, mist and sparkle layers from these viewers. Background rendering is disabled in the dedicated viewer to prevent an uncropped atlas/fallback appearing during image loading. Existing geometry still aligns frogs with the painting. Refreshed CSS/app caches.
 
 Validation: 188/188 tests pass. New real-handler coverage checks all six chapter revisits and 25 frog searches for exact cell viewports, correct source assets and absence of legacy actors/effects. git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Persistent village trail exit
+
+Renamed the village return action to Back to the trail. On paginated desktop/tablet menus, moved this existing button outside the pages into the fixed menu footer so it remains available on every page; pager controls reserve space alongside it. Mobile keeps the standard return action. Existing resume logic is retained. Also overrode an older desktop rule hiding the village Zoom in button. Refreshed app/CSS caches.
+
+Validation: 188/188 tests pass, including existing reading-page resume through village/back and landmark/zoom handlers. git diff --check passes. Live device verification remains outstanding.
