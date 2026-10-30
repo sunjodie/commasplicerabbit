@@ -599,3 +599,9 @@ Validation: 189/189 tests pass, including complete Chapter 1 frame coverage and 
 Removed the next-unread-scene preview from storybook availability across all six chapters. Scenes now require completed question progress, a completed reading record, or an explicit story-open record written when the reading view opens. Default page-zero positions do not count. Existing completed saves retain earlier scenes. Updated shared story-module and app cache versions.
 
 Validation: 190/190 tests pass, including opening/completing every scene across all chapters without exposing the next, plus existing read-only replay/prose coverage and save checks. git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Stable question artwork while editing
+
+Answer and notebook choice redraws now reuse the existing loaded painting element and crop instead of recreating a fallback image. Scene/question changes and question success transitions still replace artwork normally. Question painting geometry is applied after chapter layout preparation. Updated app cache.
+
+Validation: 191/191 tests pass, including artwork identity/crop preservation and scene/success replacement, plus existing answer, casework and progression handlers. git diff --check passes. Live browser/device flicker verification remains outstanding.

@@ -1,3 +1,4 @@
+import {retainPainting} from './stable-painting.js?v=20261030-steady-art1';
 import {illustratedBookPages} from './storybook-pages.js?v=20261030-book-unlock2';
 import {bindVillageZoom} from './village-zoom.js?v=20261030-villagezoom1';
 import {testerEnabled,testState} from './chapter-tester.js?v=20261030-book-unlock2';
@@ -90,7 +91,7 @@ function showStory(q){
 function play(){screen='play';feedback=null;solved=false;selected=-1;const q=nextQuestion(state);if(!q)return home();music.setMood(!state.reviewRun&&!state.bonus?chapterMusicMood(q):'calm');selectQuestionScene(state,q);save();if(needsStory(state,q))return showStory(q);if(state.pendingNotebook===q.id){const after=caseworkFor(state,q,'after');if(after)return showCasework(q,after);if(!errors(q,state.activeChoices).length&&wordOrderCorrect(q,state.activeWordOrder))return advance();state.pendingNotebook=null;}openNotebook(q);}
 
 function openNotebook(q){const task=caseworkFor(state,q);if(task){showCasework(q,task);app.querySelector('.story-heading')?.scrollIntoView?.({block:'start',behavior:'auto'});return;}screen='play';draw();app.querySelector('.game-heading')?.scrollIntoView?.({block:'start',behavior:'auto'});}
-function showCasework(q,task,message=''){activeCasework=task;
+function showCasework(q,task,message=''){const restorePainting=retainPainting(app,'.casework-art .painted-scene','case:'+task.id);activeCasework=task;
  screen='casework';const work=caseworkState(state,task.id),route=task.routes?.find(r=>r.id===work.route),choosing=task.routes&&!route;
  const optionButtons=(items,key)=>items.map(o=>`<button class="casework-option ${work[key]===o.id?'chosen':''}" data-case-${key}="${o.id}" aria-pressed="${work[key]===o.id}" ${work.completed?'disabled':''}>${e(o.text)}</button>`).join('');
  const words=task.kind==='grammar'?task.text.split(' '):[];
@@ -108,7 +109,7 @@ function showCasework(q,task,message=''){activeCasework=task;
   save();showCasework(q,task,text);document.querySelector(caseworkState(state,task.id).completed?'#caseworkContinue':'#caseworkCheck')?.focus();say(text);
  };
  const next=document.querySelector('#caseworkContinue');if(next)next.onclick=()=>{if(caseworkState(state,task.id).completed){if(task.phase==='after')advance();else openNotebook(q);}};
- presentChapterView({kind:'casework',chapter:q.stage+1,title:task.title,key:task.id,message,completed:work.completed});paintFrame(app.querySelector('.casework-art .painted-scene'),caseworkFrameArt(task.id));
+ restorePainting();presentChapterView({kind:'casework',chapter:q.stage+1,title:task.title,key:task.id,message,completed:work.completed});paintFrame(app.querySelector('.casework-art .painted-scene'),caseworkFrameArt(task.id));
  bindEasterEggs();
 }
 
@@ -129,7 +130,7 @@ function socket(q,i=0){const t=state.activeChoices[i];return `<button class="joi
 function crossingWords(q){return `<div class="reading-chart ${q.kind==='paragraph'?'passage-chart':''}"><span class="chart-pin"></span>${q.stage<=5?`<div class="notebook-source"><span>${q.remedial?'An earlier note · Recall practice':'Your turn · '+e(storyScene(q)?.title||'After the fair')}</span><button id="readStory" class="text-button">Story so far</button></div>`:''}<p class="editing-brief"><b>Your task:</b> ${e(compactBrief(q))}</p><button id="editingRules" class="text-button editing-rules-toggle">Editing rules</button><div class="sentence" aria-label="Route to scout">${sentenceMarkup(q)}</div>${q.wordOrder?`<label class="correction-label" for="clauseRewrite">Rewrite the second clause without the conjunction:</label><input id="clauseRewrite" class="case-correction" type="text" value="${e(state.activeWordOrder||'')}" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="120" ${solved?'disabled':''}>`:''}</div>`;}
 function toolArt(t){const split=t==='stop';return `<svg viewBox="0 0 110 37" aria-hidden="true"><path d="M7 30H103" stroke="#9c744a" stroke-width="3" stroke-linecap="round"/><path d="M12 9H${split?'45':'98'}V29H12Z" fill="#e6c48b" stroke="#a67b48" stroke-width="2"/>${split?'<path d="M65 9H98V29H65Z" fill="#e6c48b" stroke="#a67b48" stroke-width="2"/>':''}<path d="M19 12V26M90 12V26" stroke="#f8e1b3" stroke-width="2"/></svg>`;}
 function draw(){
- const q=BANK.find(x=>x.id===state.activeId),assisted=state.activeHelp||state.activeTries>0;
+ const q=BANK.find(x=>x.id===state.activeId),assisted=state.activeHelp||state.activeTries>0,restorePainting=retainPainting(app,'.world-stage .painted-scene',q.id+':'+solved);
  const mode=state.reviewRun?'Memory trail':state.bonus?'Secret trail':q.remedial?'Recovery crossing':CASES[q.stage].title;
  const total=state.reviewRun?.skills.length??state.bonus?.skills.length??5;
  const progress=state.reviewRun?.index??state.bonus?.index??state.step;
@@ -164,9 +165,9 @@ function draw(){
  const h=document.querySelector('#hint');if(h)h.onclick=hint;
  const test=document.querySelector('#check');if(test)test.onclick=check;
  const next=document.querySelector('#next');if(next)next.onclick=advance;
- bindEasterEggs();document.querySelector('#viewArtwork').onclick=()=>{const setting=questionScene(q,state.activeScenery?.key);showModal(`<span class="eyebrow">Chapter ${q.stage+1} · Look around</span><h2>${e(setting.name)}</h2><div class="artwork-preview" role="img" aria-label="${e(setting.name)}" style="background-image:url('assets/${setting.asset}');background-size:${setting.scale};background-position:${setting.focus}"></div><p class="small-note">Take your time. Your question and edits are waiting.</p>`);paintFrame(document.querySelector('#modalBody .artwork-preview'),questionFrameArt(q.id));};const contract=document.querySelector('#contract');if(contract)contract.onclick=()=>{state.activeContract=!state.activeContract;feedback=null;save();draw();document.querySelector('#contract')?.focus();};
- paintFrame(app.querySelector('.world-stage .painted-scene'),questionFrameArt(q.id));
+ restorePainting();bindEasterEggs();document.querySelector('#viewArtwork').onclick=()=>{const setting=questionScene(q,state.activeScenery?.key);showModal(`<span class="eyebrow">Chapter ${q.stage+1} · Look around</span><h2>${e(setting.name)}</h2><div class="artwork-preview" role="img" aria-label="${e(setting.name)}" style="background-image:url('assets/${setting.asset}');background-size:${setting.scale};background-position:${setting.focus}"></div><p class="small-note">Take your time. Your question and edits are waiting.</p>`);paintFrame(document.querySelector('#modalBody .artwork-preview'),questionFrameArt(q.id));};const contract=document.querySelector('#contract');if(contract)contract.onclick=()=>{state.activeContract=!state.activeContract;feedback=null;save();draw();document.querySelector('#contract')?.focus();};
  if(q.stage<=5)presentChapterView({kind:'question',chapter:q.stage+1,title:'Poppy’s language notes',onDismiss:()=>{feedback=null;draw();}});else clearChapterView();
+ paintFrame(app.querySelector('.world-stage .painted-scene'),questionFrameArt(q.id));
 }
 function fitPiece(t){if(solved||selected<0)return;state.activeChoices[selected]=t;feedback=null;save();draw();say(`${TOOLS[t].label} fitted. ${renderSentence(BANK.find(q=>q.id===state.activeId),state.activeChoices,state.activeWordOrder)}`);app.querySelector(`[data-tool="${t}"]`)?.focus();}
 function endingReflection(){
