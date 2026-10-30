@@ -605,3 +605,9 @@ Validation: 190/190 tests pass, including opening/completing every scene across 
 Answer and notebook choice redraws now reuse the existing loaded painting element and crop instead of recreating a fallback image. Scene/question changes and question success transitions still replace artwork normally. Question painting geometry is applied after chapter layout preparation. Updated app cache.
 
 Validation: 191/191 tests pass, including artwork identity/crop preservation and scene/success replacement, plus existing answer, casework and progression handlers. git diff --check passes. Live browser/device flicker verification remains outstanding.
+
+## 2026-10-30 — m15 single-answer audit
+
+Audited m15, r15 and the optional Poppy decision reflection. Each punctuation task has exactly one accepted answer combination: comma/comma/full stop, under its explicit new-sentence goal. Enumerated all 729 offered combinations per task. Other grammatical sentence joins do not satisfy that goal. Revised the reflection to ask for directly observed behavioural change, with the keyed option describing waiting for Willow rather than inferring motivation. Removed feedback relying on an apology absent from the question context. Updated dependent module/app caches.
+
+Validation: 193/193 tests pass, including exhaustive m15/r15 submissions and existing Chapter 3 real-handler completion/reflection checks. git diff --check passes.

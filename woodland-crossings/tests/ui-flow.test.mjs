@@ -229,9 +229,9 @@ test('Chapter 3 reads the revised story and completes all five bridge notes thro
   if(q.wordOrder){const input=document.querySelector('#clauseRewrite');input.value=q.wordOrder.answer;input.oninput();}
   ui.click('check');assert.ok(document.querySelector('#next'));
   if(q.id==='m15'){
-   const before=ui.db.get('woodland-crossings-v1');ui.click('endingReflection');assert.match(ui.fixed.modalBody.innerHTML,/What does this change/);
+   const before=ui.db.get('woodland-crossings-v1');ui.click('endingReflection');assert.match(ui.fixed.modalBody.innerHTML,/directly supported by these events/);
    ui.fixed.modalBody.querySelector('[data-reflection="certain"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/stopped trusting every observation/);
-   ui.fixed.modalBody.querySelector('[data-reflection="together"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/rushing ahead to waiting/);
+   ui.fixed.modalBody.querySelector('[data-reflection="together"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/waited until Willow was ready/);
    assert.equal(ui.db.get('woodland-crossings-v1'),before);ui.click('closeModal');
   }
   ui.click('next');

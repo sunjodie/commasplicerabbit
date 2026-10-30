@@ -72,7 +72,7 @@ export const CHAPTER_THREE_REFLECTION={
   "id": "c3-waiting",
   "title": "Waiting at the fingerpost",
   "context": "Poppy hurried ahead at the bridge. At the fingerpost, she waited until Willow was ready before they returned together.",
-  "prompt": "What does this change most strongly suggest about Poppy?",
+  "prompt": "Which change in Poppy’s behaviour is directly supported by these events?",
   "answer": "together",
   "options": [
     {
@@ -82,16 +82,16 @@ export const CHAPTER_THREE_REFLECTION={
     },
     {
       "id": "together",
-      "text": "She is beginning to take Willow’s caution seriously and act together.",
+      "text": "She waits for Willow before continuing, instead of hurrying ahead alone.",
       "feedback": "At the bridge she hurried ahead; at the fingerpost she waits for Willow."
     },
     {
       "id": "abandon",
       "text": "She waits only because she is frightened, rather than because she is listening to Willow.",
-      "feedback": "Fear may play a part, but “only” dismisses her apology and her decision to wait for Willow."
+      "feedback": "The events show that Poppy waits for Willow. They do not establish fear as her only reason or show that she ignores Willow."
     }
   ],
-  "why": "Poppy’s behaviour changes from rushing ahead to waiting for Willow. This supports a small shift towards listening and acting together; it does not show that she distrusts every observation or that fear is her only reason for waiting."
+  "why": "At the bridge, Poppy hurried ahead. At the fingerpost, she waited until Willow was ready and returned with her. This directly supports a change in how she acts. It does not establish that she distrusts all her observations or that fear is her only reason."
 };
 export function chapterThreeScene(q){return q&&!q.remedial?CHAPTER_THREE.find(x=>x.id===q.id)||null:null;}
 function reader(s){const old=s.chapterThree||{},ids=new Set(CHAPTER_THREE.map(x=>x.id));return {version:1,read:Array.isArray(old.read)?[...new Set(old.read.filter(x=>ids.has(x)))]:[],positions:Object.fromEntries(CHAPTER_THREE.map(scene=>[scene.id,Math.max(0,Math.min(readingPages(scene).length-1,Number.isInteger(old.positions?.[scene.id])?old.positions[scene.id]:0))]))};}
