@@ -385,3 +385,6 @@ dialog #modalBody .journal-scene > .exploration-painting{background-image:none!i
  .village-single-view>.button-row{margin:0}
  .village-single-view>.button-row:empty{display:none}
 }
+
+/* Storybook pages already have their own navigation. Keep their content visible. */
+dialog:has(.story-prose){max-height:calc(100dvh - 32px);overflow:auto}
