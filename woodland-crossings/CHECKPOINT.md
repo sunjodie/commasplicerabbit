@@ -537,3 +537,9 @@ Validation: both generated sheets visually reviewed; 1536×1024 WebP encoding re
 Poppy now asks whether Bram brought wood from the crossing to the mill, explicitly connecting the two locations without treating fresh shavings as a contradiction. Willow asks Bram to show them. The ferryman identifies former bridge timber and defers the removal conclusion until inspection. Runtime prose and manuscript match. Updated the marked-timber notebook trigger and dependent cache versions.
 
 Validation: all 182 tests pass, including notebook observation collection across reading sizes, manuscript consistency and chapter tester entry states. git diff --check passes. No artwork changes; live device verification remains outstanding.
+
+## 2026-10-30 — Frog implementation audit
+
+Audited all 25 frog frame assignments, collection/save handlers, revisit gating, crop coordinates and panel obstruction logic. Fixed premature later-chapter search access: default page-zero entries for every scene no longer count as visited. Completed preceding scenes or actual progress permit revisits; existing collected IDs remain intact. Refreshed module/entry caches.
+
+Validation: 183/183 tests pass, including new regression coverage using the actual reader initialisation for Chapters 2–6, all-frog collection/save handlers, unique reading-screen assignment and tablet/portrait geometry checks. git diff --check passes. Actual touch usability and live browser rendering remain unverified.

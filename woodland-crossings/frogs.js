@@ -33,7 +33,7 @@ export function frogReached(f,s){
  if(f.stage>Math.floor(s.story/5))return false;
  if(f.view===0)return true;
  const id='m'+(f.stage*5+f.view+1),reader=s[['chapterOne','chapterTwo','chapterThree','chapterFour','chapterFive','chapterSix'][f.stage]];
- return s.story>=f.stage*5+f.view||s.activeId===id||s.activeScenery?.key===f.stage+'-'+f.view||reader?.read?.includes(id)||reader?.positions?.[id]!==undefined;
+ return s.story>=f.stage*5+f.view||s.activeId===id||s.activeScenery?.key===f.stage+'-'+f.view||reader?.read?.includes(id)||(f.stage===0?reader?.positions?.[id]!==undefined:Number(reader?.positions?.[id])>0)||Array.from({length:f.view},(_,i)=>'m'+(f.stage*5+i+1)).every(previous=>reader?.read?.includes(previous));
 }
 export function frogArt(f){const index=f.sprite??(FROGS.findIndex(x=>x.id===f.id)%10);return `<span class="frog-sprite" style="--frog-col:${index%5*25}%;--frog-row:${Math.floor(index/5)*100}%;--frog-base:${index<5?.09:.14}" aria-hidden="true"></span>`;}
 // The point marks the frog's feet on the source painting, not on the screen.

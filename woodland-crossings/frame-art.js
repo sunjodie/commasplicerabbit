@@ -2,7 +2,7 @@ import {CHAPTER_FIVE} from './chapter-five.js?v=20261022-character-names1';
 import {CHAPTER_SIX} from './chapter-six.js?v=20261030-m28logic2';
 import {CHAPTER_FIVE_SIX_CASEWORK} from './chapter-five-six-casework.js';
 // Chapter 1 illustration frames. Story words and learning state remain elsewhere.
-import {placeFrogs,frogForScene} from './frogs.js?v=20261029-frog-perches1';
+import {placeFrogs,frogForScene} from './frogs.js?v=20261030-frog-audit1';
 import {QUESTION_SCENES,BONUS_SCENES} from './scenery.js?v=20261030-ears2';
 import {CHAPTER_ONE} from './chapter-one.js?v=20261022-character-names1';
 import {CHAPTER_TWO} from './chapter-two.js?v=20261022-character-names1';

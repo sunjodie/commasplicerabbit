@@ -1,8 +1,8 @@
 import {testerEnabled,testState} from './chapter-tester.js?v=20261030-m28logic2';
 import {observeNotebookText} from './clue-notebook.js?v=20261030-m28logic2';
 import {createClueNotebook} from './clue-notebook-view.js?v=20261030-m28logic2';
-import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-m28logic2';
-import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261029-frog-perches1';
+import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFrame,explorationFrameArt,paintFrame} from './frame-art.js?v=20261030-frog-audit1';
+import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261030-frog-audit1';
 import './page-keys.js?v=20261022-clue-notebook1';
 import {createPageSound,isPageTurn} from './page-sound.js';
 import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261028-feedback-spacing1';

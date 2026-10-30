@@ -50,3 +50,15 @@ test('later-chapter searches unlock on reaching the scene or reading it, and ret
  const s=fresh();s.story=5;s.chapterTwo={read:['m7']};assert.equal(frogReached(frogForScene(1,1),s),true);
  s.frogFinds=['fair-frog','reed-frog','eaves-frog'];assert.deepEqual(frogFinds(hydrate(JSON.parse(JSON.stringify(s))).frogFinds),s.frogFinds);
 });
+
+test('initialised page-zero entries do not unlock future frog searches',async()=>{
+ const {setStoryPosition,finishStoryScene}=await import('../story-reader.js');
+ for(let stage=1;stage<6;stage++){
+  const s=fresh();s.story=stage*5;const first='m'+(s.story+1);
+  setStoryPosition(s,first,0);
+  for(const f of FROGS.filter(f=>f.stage===stage&&f.view>0))assert.equal(frogReached(f,s),false,f.id);
+  finishStoryScene(s,first);
+  assert.equal(frogReached(frogForScene(stage,1),s),true);
+  for(const f of FROGS.filter(f=>f.stage===stage&&f.view>1))assert.equal(frogReached(f,s),false,f.id);
+ }
+});
