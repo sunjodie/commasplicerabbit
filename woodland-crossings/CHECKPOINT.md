@@ -593,3 +593,9 @@ Village now bypasses generic desktop/tablet menu pagination and keeps its headin
 Chapter 1 storybook replay now follows each authored story-art anchor rather than selecting a single image per independently repaginated text block. Includes all 44 narrative paintings across its five scenes, including the seventh opening-scene panel. All prose is conserved in order and replay remains read-only. Refreshed app cache.
 
 Validation: 189/189 tests pass, including complete Chapter 1 frame coverage and normalised prose conservation, plus existing storybook save/progression checks. git diff --check passes. Live browser verification remains outstanding.
+
+## 2026-10-30 — Storybook scene unlock boundary
+
+Removed the next-unread-scene preview from storybook availability across all six chapters. Scenes now require completed question progress, a completed reading record, or an explicit story-open record written when the reading view opens. Default page-zero positions do not count. Existing completed saves retain earlier scenes. Updated shared story-module and app cache versions.
+
+Validation: 190/190 tests pass, including opening/completing every scene across all chapters without exposing the next, plus existing read-only replay/prose coverage and save checks. git diff --check passes. Live device verification remains outstanding.

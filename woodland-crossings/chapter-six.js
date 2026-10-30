@@ -1,4 +1,4 @@
-import {readingPages} from './chapter-one.js?v=20261022-character-names1';
+import {readingPages} from './chapter-one.js?v=20261030-book-unlock2';
 export const CHAPTER_SIX=[
   {
     "id": "m26",
@@ -94,4 +94,4 @@ export function nextChapterSixScene(s,q){if(!chapterSixScene(q)||s.reviewRun||s.
 export function chapterSixPosition(s,id){return reader(s).positions[id]||0;}
 export function setChapterSixPosition(s,id,page){const scene=CHAPTER_SIX.find(x=>x.id===id);if(!scene)return;s.chapterSix=reader(s);s.chapterSix.positions[id]=Math.max(0,Math.min(readingPages(scene).length-1,Math.floor(Number(page)||0)));}
 export function finishChapterSixScene(s,id){if(!CHAPTER_SIX.some(x=>x.id===id))return;s.chapterSix=reader(s);s.chapterSix.read=[...new Set([...s.chapterSix.read,id])];}
-export function availableChapterSixScenes(s){if(s.story<25)return [];const read=reader(s).read;const next=CHAPTER_SIX.findIndex(scene=>!read.includes(scene.id));return CHAPTER_SIX.filter((scene,i)=>s.story>=30||read.includes(scene.id)||i===(next<0?4:next));}
+export function availableChapterSixScenes(s){if(s.story<25)return [];return CHAPTER_SIX.filter(scene=>Number(scene.id.slice(1))<=s.story||s.chapterSix?.read?.includes(scene.id)||s.storyOpened?.includes(scene.id));}

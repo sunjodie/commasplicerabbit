@@ -92,4 +92,4 @@ export function needsChapterOne(s,q){const scene=chapterOneScene(q);return !!sce
 export function storyPosition(s,id){return reader(s).positions[id]||0;}
 export function setStoryPosition(s,id,page){const scene=CHAPTER_ONE.find(x=>x.id===id);if(!scene)return;s.chapterOne=reader(s);s.chapterOne.positions[id]=Math.max(0,Math.min(readingPages(scene).length-1,Math.floor(Number(page)||0)));}
 export function finishStoryScene(s,id){if(!CHAPTER_ONE.some(x=>x.id===id))return;s.chapterOne=reader(s);s.chapterOne.read=[...new Set([...s.chapterOne.read,id])];}
-export function availableStoryScenes(s){return CHAPTER_ONE.filter((_,i)=>i<=Math.min(4,Math.max(0,Number(s.story)||0)));}
+export function availableStoryScenes(s){return CHAPTER_ONE.filter(scene=>Number(scene.id.slice(1))<=s.story||s.chapterOne?.read?.includes(scene.id)||s.storyOpened?.includes(scene.id));}

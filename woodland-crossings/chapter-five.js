@@ -1,4 +1,4 @@
-import {readingPages} from './chapter-one.js?v=20261022-character-names1';
+import {readingPages} from './chapter-one.js?v=20261030-book-unlock2';
 export const CHAPTER_FIVE=[
   {
     "id": "m21",
@@ -78,4 +78,4 @@ export function nextChapterFiveScene(s,q){if(!chapterFiveScene(q)||s.reviewRun||
 export function chapterFivePosition(s,id){return reader(s).positions[id]||0;}
 export function setChapterFivePosition(s,id,page){const scene=CHAPTER_FIVE.find(x=>x.id===id);if(!scene)return;s.chapterFive=reader(s);s.chapterFive.positions[id]=Math.max(0,Math.min(readingPages(scene).length-1,Math.floor(Number(page)||0)));}
 export function finishChapterFiveScene(s,id){if(!CHAPTER_FIVE.some(x=>x.id===id))return;s.chapterFive=reader(s);s.chapterFive.read=[...new Set([...s.chapterFive.read,id])];}
-export function availableChapterFiveScenes(s){if(s.story<20)return [];const read=reader(s).read;const next=CHAPTER_FIVE.findIndex(scene=>!read.includes(scene.id));return CHAPTER_FIVE.filter((scene,i)=>s.story>=25||read.includes(scene.id)||i===(next<0?4:next));}
+export function availableChapterFiveScenes(s){if(s.story<20)return [];return CHAPTER_FIVE.filter(scene=>Number(scene.id.slice(1))<=s.story||s.chapterFive?.read?.includes(scene.id)||s.storyOpened?.includes(scene.id));}

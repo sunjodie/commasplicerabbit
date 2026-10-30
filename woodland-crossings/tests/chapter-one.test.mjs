@@ -22,7 +22,7 @@ test('reader handles legacy and malformed state and never gates recovery, review
  const before=structuredClone(s);setStoryPosition(s,'unknown',5);finishStoryScene(s,'unknown');assert.deepEqual(s,before);
 });
 test('storybook unlocks only reached scenes and reading does not unlock later scenes',()=>{
- const s=fresh();assert.deepEqual(availableStoryScenes(s).map(x=>x.id),['m1']);finishStoryScene(s,'m1');assert.equal(availableStoryScenes(s).length,1);s.story=1;assert.equal(availableStoryScenes(s).length,2);s.story=30;assert.equal(availableStoryScenes(s).length,5);
+ const s=fresh();assert.deepEqual(availableStoryScenes(s).map(x=>x.id),[]);finishStoryScene(s,'m1');assert.equal(availableStoryScenes(s).length,1);s.story=1;assert.equal(availableStoryScenes(s).length,1);s.storyOpened=['m2'];assert.equal(availableStoryScenes(s).length,2);s.story=30;assert.equal(availableStoryScenes(s).length,5);
 });
 
 test('story is the complete approved chapter and ends before the bell',()=>{const approved=JSON.parse(readFileSync(new URL('../chapter-one-approved.json',import.meta.url)));assert.equal(CHAPTER_ONE.flatMap(s=>s.paragraphs).join('\n\n'),approved.text);assert.match(CHAPTER_ONE.at(-1).paragraphs.at(-1),/no footsteps came down the stairs/);assert.deepEqual(CHAPTER_ONE.map(s=>s.mood),['calm','calm','calm','calm','calm']);});

@@ -27,11 +27,11 @@ test('all approved reading words survive desktop and tablet pagination',()=>{
 });
 test('full investigation is read before notebook clues; reading neither delivers supplies nor unlocks future scenes',()=>{
  const s=fresh();s.story=5;const before=structuredClone(s);
- assert.deepEqual(availableChapterTwoScenes(s).map(x=>x.id),['m6']);
+ assert.deepEqual(availableChapterTwoScenes(s).map(x=>x.id),[]);
  for(const [i,scene] of CHAPTER_TWO.entries()){
   assert.equal(nextChapterTwoScene(s,STORY[5]).id,scene.id);
   setChapterTwoPosition(s,scene.id,999);assert.equal(chapterTwoPosition(s,scene.id),readingPages(scene).length-1);
-  finishChapterTwoScene(s,scene.id);assert.equal(availableChapterTwoScenes(s).length,Math.min(5,i+2));
+  finishChapterTwoScene(s,scene.id);assert.equal(availableChapterTwoScenes(s).length,i+1);
  }
  assert.equal(nextChapterTwoScene(s,STORY[5]),null);
  const {chapterTwo,...rest}=s;assert.deepEqual(rest,before);
@@ -96,5 +96,5 @@ test('all Chapter 2 views have local rain artwork and safe desktop/tablet atlas 
 test('root and game entry points load the same visual-novel styles and versioned application',()=>{
  const root=readFileSync(new URL('../../index.html',import.meta.url),'utf8'),game=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(root,/<base href="\.\/woodland-crossings\/">/);
- for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261030-village-single1"/);assert.match(html,/src="app.js\?v=20261030-book-art1"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
+ for(const html of [root,game]){assert.match(html,/href="fonts.css"/);assert.match(html,/href="chapter-ui.css\?v=20261030-village-single1"/);assert.match(html,/src="app.js\?v=20261030-book-unlock2"/);assert.match(html,/<title>The Midnight Mill<\/title>/);}
 });

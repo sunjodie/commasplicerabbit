@@ -1,5 +1,5 @@
 // Chapter 3: the bridge, the unstable bank and a safer decision.
-import {readingPages} from './chapter-one.js?v=20261022-character-names1';
+import {readingPages} from './chapter-one.js?v=20261030-book-unlock2';
 export const CHAPTER_THREE=[
   {
     "id": "m11",
@@ -99,4 +99,4 @@ export function nextChapterThreeScene(s,q){if(!chapterThreeScene(q)||s.reviewRun
 export function chapterThreePosition(s,id){return reader(s).positions[id]||0;}
 export function setChapterThreePosition(s,id,page){const scene=CHAPTER_THREE.find(x=>x.id===id);if(!scene)return;s.chapterThree=reader(s);s.chapterThree.positions[id]=Math.max(0,Math.min(readingPages(scene).length-1,Math.floor(Number(page)||0)));}
 export function finishChapterThreeScene(s,id){if(!CHAPTER_THREE.some(x=>x.id===id))return;s.chapterThree=reader(s);s.chapterThree.read=[...new Set([...s.chapterThree.read,id])];}
-export function availableChapterThreeScenes(s){if(s.story<10)return [];const read=reader(s).read;const next=CHAPTER_THREE.findIndex(scene=>!read.includes(scene.id));return CHAPTER_THREE.filter((scene,i)=>s.story>=15||read.includes(scene.id)||i===(next<0?4:next));}
+export function availableChapterThreeScenes(s){if(s.story<10)return [];return CHAPTER_THREE.filter(scene=>Number(scene.id.slice(1))<=s.story||s.chapterThree?.read?.includes(scene.id)||s.storyOpened?.includes(scene.id));}

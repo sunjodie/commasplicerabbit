@@ -117,7 +117,7 @@ test('story reader resumes its page through reload and village without counting 
 });
 
 test('storybook hides unreached scenes and replay preserves edits, support and deliveries',async()=>{
- const ui=setup();await import('../app.js?book-replay');ui.click('readStory');assert.equal(ui.fixed.modalBody.querySelectorAll('[data-book-scene]').length,1);ui.fixed.modalBody.querySelector('[data-book-scene="m1"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/By the time Poppy and Willow left/);ui.fixed.modalBody.querySelector('#bookNext').onclick();ui.click('closeModal');ui.click('play');ui.click('startTrail');ui.app.querySelector('[data-join="0"]').onclick();ui.tool('semi');
+ const ui=setup();const {fresh}=await import('../engine.js');const initial=fresh();initial.chapterOne={read:['m1']};ui.db.set('woodland-crossings-v1',JSON.stringify(initial));await import('../app.js?book-replay');ui.click('readStory');assert.equal(ui.fixed.modalBody.querySelectorAll('[data-book-scene]').length,1);ui.fixed.modalBody.querySelector('[data-book-scene="m1"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/By the time Poppy and Willow left/);ui.fixed.modalBody.querySelector('#bookNext').onclick();ui.click('closeModal');ui.click('play');ui.click('startTrail');ui.app.querySelector('[data-join="0"]').onclick();ui.tool('semi');
  const before=JSON.parse(ui.db.get('woodland-crossings-v1'));ui.click('readStory');ui.fixed.modalBody.querySelector('[data-book-scene="m1"]').onclick();ui.fixed.modalBody.querySelector('#bookNext').onclick();ui.click('closeModal');assert.deepEqual(JSON.parse(ui.db.get('woodland-crossings-v1')),before);assert.match(ui.app.innerHTML,/reading-chart/);
 });
 

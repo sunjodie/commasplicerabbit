@@ -1,5 +1,5 @@
 // Chapter 4: sequence, a possible route and the limits of the evidence.
-import {readingPages} from './chapter-one.js?v=20261022-character-names1';
+import {readingPages} from './chapter-one.js?v=20261030-book-unlock2';
 export const CHAPTER_FOUR=[
   {
     "id": "m16",
@@ -87,4 +87,4 @@ export function nextChapterFourScene(s,q){if(!chapterFourScene(q)||s.reviewRun||
 export function chapterFourPosition(s,id){return reader(s).positions[id]||0;}
 export function setChapterFourPosition(s,id,page){const scene=CHAPTER_FOUR.find(x=>x.id===id);if(!scene)return;s.chapterFour=reader(s);s.chapterFour.positions[id]=Math.max(0,Math.min(readingPages(scene).length-1,Math.floor(Number(page)||0)));}
 export function finishChapterFourScene(s,id){if(!CHAPTER_FOUR.some(x=>x.id===id))return;s.chapterFour=reader(s);s.chapterFour.read=[...new Set([...s.chapterFour.read,id])];}
-export function availableChapterFourScenes(s){if(s.story<15)return [];const read=reader(s).read;const next=CHAPTER_FOUR.findIndex(scene=>!read.includes(scene.id));return CHAPTER_FOUR.filter((scene,i)=>s.story>=20||read.includes(scene.id)||i===(next<0?4:next));}
+export function availableChapterFourScenes(s){if(s.story<15)return [];return CHAPTER_FOUR.filter(scene=>Number(scene.id.slice(1))<=s.story||s.chapterFour?.read?.includes(scene.id)||s.storyOpened?.includes(scene.id));}

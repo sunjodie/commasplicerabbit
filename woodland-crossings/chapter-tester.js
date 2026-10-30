@@ -1,6 +1,6 @@
 import {fresh} from './engine.js?v=20261028-writing1';
 import {BANK} from './content.js?v=20261028-writing1';
-import {STORY_SCENES,finishStoryScene} from './story-reader.js?v=20261030-m28logic2';
+import {STORY_SCENES,finishStoryScene} from './story-reader.js?v=20261030-book-unlock2';
 export const testerEnabled=search=>new URLSearchParams(search).get('test')==='1';
 export function testState(id,{question=false}={}){
  const q=BANK.find(q=>q.id===id&&(q.id.startsWith('m')||q.id.startsWith('b')));

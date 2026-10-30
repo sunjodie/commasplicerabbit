@@ -1,4 +1,4 @@
-import {FRAME_ART} from './frame-art.js?v=20261030-full-revisit1';
+import {FRAME_ART} from './frame-art.js?v=20261030-book-unlock2';
 // Replay every Chapter 1 painting rather than skipping anchors when text is repaginated.
 export function illustratedBookPages(story){
  const source=story.paragraphs.join('\n\n');

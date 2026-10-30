@@ -1,5 +1,5 @@
 // Approved Chapter 2. Read the investigation before editing its notebook.
-import {readingPages} from './chapter-one.js?v=20261022-character-names1';
+import {readingPages} from './chapter-one.js?v=20261030-book-unlock2';
 export const CHAPTER_TWO=[
   {
     "id": "m6",
@@ -85,4 +85,4 @@ export function nextChapterTwoScene(s,q){if(!chapterTwoScene(q)||s.reviewRun||s.
 export function chapterTwoPosition(s,id){return reader(s).positions[id]||0;}
 export function setChapterTwoPosition(s,id,page){const scene=CHAPTER_TWO.find(x=>x.id===id);if(!scene)return;s.chapterTwo=reader(s);s.chapterTwo.positions[id]=Math.max(0,Math.min(readingPages(scene).length-1,Math.floor(Number(page)||0)));}
 export function finishChapterTwoScene(s,id){if(!CHAPTER_TWO.some(x=>x.id===id))return;s.chapterTwo=reader(s);s.chapterTwo.read=[...new Set([...s.chapterTwo.read,id])];}
-export function availableChapterTwoScenes(s){if(s.story<5)return [];const read=reader(s).read;const next=CHAPTER_TWO.findIndex(scene=>!read.includes(scene.id));return CHAPTER_TWO.filter((scene,i)=>s.story>=10||read.includes(scene.id)||i===(next<0?4:next));}
+export function availableChapterTwoScenes(s){if(s.story<5)return [];return CHAPTER_TWO.filter(scene=>Number(scene.id.slice(1))<=s.story||s.chapterTwo?.read?.includes(scene.id)||s.storyOpened?.includes(scene.id));}
