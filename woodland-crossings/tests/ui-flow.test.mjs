@@ -418,3 +418,18 @@ test('chapter tester jumps to every chapter and secret while preserving the norm
   assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1-test')).story,15);assert.equal(ui.db.get('woodland-crossings-v1'),original);
  }finally{globalThis.location=oldLocation;}
 });
+
+test('frog search and tidbit back buttons restore the fieldbook and its scroll position',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false});await import('../app.js?fieldbook-back');
+ ui.fixed.journalBtn.onclick();ui.fixed.modal.scrollTop=240;
+ ui.fixed.modalBody.querySelector('[data-frog-search="fair-frog"]').onclick();
+ assert.equal(ui.fixed.closeModal.textContent,'Back to fieldbook');
+ ui.fixed.modalBody.querySelector('[data-frog="fair-frog"]').onclick();
+ assert.match(ui.fixed.modalBody.innerHTML,/A frog for your collection/);
+ assert.equal(ui.fixed.closeModal.textContent,'Back to fieldbook');ui.click('closeModal');
+ assert.equal(ui.fixed.modal.open,true);assert.match(ui.fixed.modalBody.innerHTML,/The frog fieldbook/);assert.equal(ui.fixed.modal.scrollTop,240);
+ assert.equal(ui.fixed.closeModal.textContent,'Back to the trail');
+ ui.fixed.modalBody.querySelector('[data-frog="fair-frog"]').onclick();ui.click('closeModal');assert.match(ui.fixed.modalBody.innerHTML,/The frog fieldbook/);
+ ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
+ ui.click('play');ui.click('startTrail');const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to the trail');ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
+});

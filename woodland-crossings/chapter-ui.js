@@ -107,7 +107,7 @@ export function presentChapterView({kind,title,key='',message='',completed=false
  if(kind==='story')storyPanel();else if(kind==='casework')caseworkPanel(key,message,completed);else questionPanel();
 }
 // Auxiliary dialogs also turn pages rather than grow a scrolling box.
-export function paginateModal(){
+export function paginateModal({initial=0}={}){
  if(!document.body||!wide())return;const body=document.querySelector('#modalBody');if(!body)return;
  const nodes=[...body.children].flatMap(node=>{if(!node.matches('.evidence-grid,.secret-grid'))return [node];const groups=[];const items=[...node.children];for(let i=0;i<items.length;i+=3){const group=node.cloneNode(false);items.slice(i,i+3).forEach(n=>group.append(n));groups.push(group);}return groups;});
  body.replaceChildren();const pages=[];let page=element('div','vn-modal-page'),words=0;body.append(page);
@@ -118,7 +118,7 @@ export function paginateModal(){
   words+=n;
  }
  if(page.childNodes.length)pages.push(page);if(pages.length<2)return;
- pageControls(body,pages,{label:'Page'});
+ pageControls(body,pages,{label:'Page',initial});
 }
 
 export function presentMenuView(kind){

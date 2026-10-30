@@ -549,3 +549,9 @@ Validation: 183/183 tests pass, including new regression coverage using the actu
 All journal exploration viewers now retain the painting’s full 3:2 proportions on desktop, tablet and phone, with a viewport-height width cap. Disabled modal pagination for these short scene views so the heading, painting and explanation stay together. Frogs retain source-art coordinates; top-edge touch targets shift inside the viewer while sprite offsets preserve the painted perch. Updated CSS and module cache versions.
 
 Validation: 184/184 tests pass, including full atlas-cell bounds and available frog positions at widths 240–1024px for all 25 frogs, plus existing collection/save and panel-obstruction checks. git diff --check passes. Live browser/device visual verification remains outstanding.
+
+## 2026-10-30 — Fieldbook back navigation
+
+Added contextual modal return callbacks: fieldbook frog searches and tidbits return to the fieldbook with its prior page and scroll position. Story-found frogs retain Back to the trail. Every new modal resets the return context and button label. Updated app/UI-module cache versions.
+
+Validation: 185/185 tests pass, including actual search → collect → back, collected-tidbit → back, restored scroll position and story-frog close handlers. git diff --check passes. Live device verification remains outstanding.
