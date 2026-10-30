@@ -12,12 +12,12 @@ export const CHAPTER_FOUR_CASEWORK=[
     "options": [
       {
         "id": "location",
-        "text": "Bram was expecting the two guests, and the table establishes that all three are now at Quarry Shelter.",
+        "text": "Bram expected the two guests; the unanswered cottage door indicates that they are together at Quarry Shelter.",
         "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       },
       {
         "id": "already-eaten",
-        "text": "Bram had prepared for the two guests, and the table establishes that they had already arrived at the cottage.",
+        "text": "Bram prepared three places because the mender and apprentice had reached the cottage.",
         "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       },
       {
@@ -27,7 +27,7 @@ export const CHAPTER_FOUR_CASEWORK=[
       },
       {
         "id": "alone",
-        "text": "Bram had prepared for the two guests, and the three places establish that they left the cottage together.",
+        "text": "The supper preparations and empty cottage show that Bram left with his two guests.",
         "feedback": "Separate what preparations show from what would establish arrival, departure or present location."
       }
     ],

@@ -21,12 +21,12 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
       },
       {
         "id": "2",
-        "text": "All three people at the shelter could walk safely.",
+        "text": "The repeated signal showed that the three people were ready to walk back.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       },
       {
         "id": "3",
-        "text": "The three people were signalling before Poppy arrived because they had already seen her.",
+        "text": "The distant light was repeating a rescue signal that its holder had begun before Poppy called.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       }
     ],
@@ -71,7 +71,7 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
     "options": [
       {
         "id": "0",
-        "text": "The timber alone establishes exactly when Bram visited the bridge.",
+        "text": "The repair mark dates Bram’s removal of the timber to the afternoon.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       },
       {
@@ -81,12 +81,12 @@ export const CHAPTER_FIVE_SIX_CASEWORK=[
       },
       {
         "id": "2",
-        "text": "The disagreement proves that Bram intended to injure the mender.",
+        "text": "Bram’s warning that afternoon shows that he expected the mender to be injured.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       },
       {
         "id": "3",
-        "text": "Helping the travellers establishes that Bram’s earlier account was accurate.",
+        "text": "Bram’s help during the rescue resolves the disagreement about his afternoon visit.",
         "feedback": "Check what the observations establish, and what remains uncertain."
       }
     ],

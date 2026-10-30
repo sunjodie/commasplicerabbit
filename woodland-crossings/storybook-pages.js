@@ -1,4 +1,4 @@
-import {FRAME_ART} from './frame-art.js?v=20261030-answer-audit1';
+import {FRAME_ART} from './frame-art.js?v=20261030-clarice-options1';
 // Replay every Chapter 1 painting rather than skipping anchors when text is repaginated.
 export function illustratedBookPages(story){
  const source=story.paragraphs.join('\n\n');

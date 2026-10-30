@@ -2,6 +2,9 @@ export const EDITING_RULES='Use the pieces provided. Keep correct commas and eve
 // Authored mystery text only. Each brief has an explicit target; approved contrast synonyms are accepted. Other grammatical
 // repairs receive neutral brief feedback rather than a grammar-error penalty.
 export const TOOLS={comma:{label:'Keep comma',mark:',',join:', '},stop:{label:'Full stop',mark:'.',join:'. '},semi:{label:'Semicolon',mark:';',join:'; '},for:{label:'Add for',mark:', for',join:', for '},and:{label:'Add and',mark:', and',join:', and '},nor:{label:'Add nor',mark:', nor',join:', nor '},but:{label:'Add but',mark:', but',join:', but '},or:{label:'Add or',mark:', or',join:', or '},yet:{label:'Add yet',mark:', yet',join:', yet '},so:{label:'Add so',mark:', so',join:', so '},because:{label:'Add because',mark:'because',join:' because '}};
+// Deliberately incorrect transition joins used as answer distractors.
+TOOLS.commaHowever={label:'Comma + however',mark:', however,',join:', however, '};
+TOOLS.commaTherefore={label:'Comma + therefore',mark:', therefore,',join:', therefore, '};
 export const CHAPTERS=[
 {name:'After the fair',skill:'boundaries',reward:'A cosy burrow',blurb:'Separate scenes; connect observations.',lesson:'Start with the two sides of a comma. Can each side stand as a sentence, with its own subject and verb? If so, the comma needs some help: a full stop can separate the sentences, a joining word such as “but” can connect them, or a semicolon can link them. Some commas already belong, including those after dependent openings and in lists. Read quietly to yourself, then check how the clauses fit together.',demo:['The mill was dark','a lantern appeared upstairs.'],fix:'stop',explain:'Both clauses stand alone. A full stop works; a semicolon also works when the brief asks for one sentence.'},
 {name:'What Had Left the Mill',skill:'dependent',reward:'A fern garden',blurb:'Make the relationship precise.',lesson:'In this chapter, join two complete clauses into one sentence. Keep every word, changing an initial capital to lower case where necessary. Put a comma before a coordinating conjunction. FANBOYS are “for”, “and”, “nor”, “but”, “or”, “yet” and “so”. A comma plus one of these can join two complete clauses. “And” adds information; “but” and “yet” express contrast; “so” gives a result; “or” offers an alternative. Choose the joining word that expresses the relationship in the writing goal. Preserve useful commas after dependent openings.',demo:['Poppy found a circular mark','Willow found another beneath the reeds.'],fix:'and',explain:'Comma + “and” adds a second discovery. Both sides have their own subject and verb.'},
@@ -194,9 +197,19 @@ for(const pair of [tasks[23],tasks[28]])for(const q of pair){
 export const BANK=[...STORY,...TRANSFER,...BONUS];
 
 for(const q of BANK){
- // A join's menu contains its target and structurally invalid alternatives.
- // No full-stop/semicolon/conjunction synonym competes at the same join.
- q.joinOptions=q.valid.map(([target])=>target==='nor'?['comma','nor']:target==='comma'||target==='stop'?['comma','stop','nor']:['comma',target,'nor']);
+ // Three options, balanced across positions. Distractors test clause boundaries
+ // and transition punctuation; valid synonyms are not offered at the same join.
+ q.joinOptions=q.valid.map(([target],i)=>{
+  const list=q.structure==='correct-list'||q.structure==='list'||(['m4','r4'].includes(q.id))||(['m24','r24'].includes(q.id)&&i===2);
+  let choices;
+  if(target==='comma')choices=list?['comma','stop','nor']:['comma','stop','semi'];
+  else if(target==='stop')choices=/^(however|therefore|instead),/i.test(q.parts[i+1])?['comma','stop','nor']:['comma','stop',q.stage%2?'commaTherefore':'commaHowever'];
+  else if(target==='semi')choices=['comma','semi','commaHowever'];
+  else if(target==='nor')choices=['comma','nor','commaHowever'];
+  else choices=['comma',target,['but','yet','or'].includes(target)?'commaHowever':'commaTherefore'];
+  const offset=(BANK.indexOf(q)+i)%choices.length;
+  return [...choices.slice(offset),...choices.slice(0,offset)];
+ });
  q.options=[...new Set(q.joinOptions.flat())];
  q.initialChoices=q.valid.map(()=> 'comma');q.joinTask=false;
 
