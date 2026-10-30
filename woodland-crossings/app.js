@@ -8,7 +8,7 @@ import {FRAME_ART,questionFrameArt,caseworkFrameArt,textFrameArt,readingScreenFr
 import {FROGS,frogFinds,frogForScene,frogReached,frogArt,placeFrogs} from './frogs.js?v=20261030-full-revisit1';
 import './page-keys.js?v=20261022-clue-notebook1';
 import {createPageSound,isPageTurn} from './page-sound.js';
-import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261030-village-single1';
+import {textPages,clearChapterView,presentChapterView,paginateModal,presentMenuView} from './chapter-ui.js?v=20261030-whole-sentences1';
 import {caseworkFor,caseworkState,updateCasework,submitCasework} from './casework.js?v=20261030-four-options1';
 import {CHAPTER_THREE_REFLECTION} from './chapter-three.js?v=20261030-answer-audit1';
 import {CASE_TITLE,CASES,EGGS,discoveryList,unlockedCases,tokenArt} from './halloween.js?v=20261022-character-names1';

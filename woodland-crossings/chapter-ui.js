@@ -1,27 +1,31 @@
 // View-only pagination: learning progress and answer marking remain in app/engine.
+export function sentenceUnits(text){
+ const raw=text.match(/[^.!?]+[.!?]+[”’"']*|[^.!?]+$/g)||[text],units=[];
+ for(const value of raw){const unit=value.trim().replace(/\s+/g,' ');if(!unit)continue;
+  if(units.length&&/[.!?][”"']$/.test(units.at(-1))&&/^(?:Poppy|Willow|Bram|[Tt]he \w+|[Ss]he|[Hh]e|[Tt]hey) (?:said|asked|replied|whispered|called|added|continued|explained|murmured|shouted|answered)\b/.test(unit))units[units.length-1]+=' '+unit;
+  else units.push(unit);
+ }
+ return units;
+}
 export function textPages(paragraphs,limit=55){
  const pages=[];let page=[],count=0;
- for(const paragraph of paragraphs){
-  const sentences=paragraph.match(/[^.!?]+[.!?]+[”’"']*|[^.!?]+$/g)||[paragraph];
-  for(const sentence of sentences){const words=sentence.trim().split(/\s+/);if(!words[0])continue;
-   // Exceptionally long sentences remain accessible in consecutive reading pieces.
-   for(let i=0;i<words.length;i+=limit){const piece=words.slice(i,i+limit).join(' '),n=piece.split(/\s+/).length;
-    if(count+n>limit&&page.length){pages.push(page);page=[];count=0;}page.push(piece);count+=n;
-   }
-  }
+ for(const paragraph of paragraphs)for(const sentence of sentenceUnits(paragraph)){
+  const n=sentence.split(/\s+/).length;
+  if(page.length&&count+n>limit){pages.push(page);page=[];count=0;}page.push(sentence);count+=n;
  }
  if(page.length)pages.push(page);return pages.length?pages:[[]];
 }
-// Split without truncation using the actual font and available panel width.
+// Sentences stay intact even when one exceeds the preferred panel height.
 export function splitToFit(text,fits){
- const words=text.trim().split(/\s+/).filter(Boolean),pieces=[];
- for(let start=0;start<words.length;){
-  let low=1,high=words.length-start,best=1;
-  while(low<=high){const n=Math.floor((low+high)/2);if(fits(words.slice(start,start+n).join(' '))){best=n;low=n+1;}else high=n-1;}
-  pieces.push(words.slice(start,start+best).join(' '));start+=best;
- }
- return pieces;
+ // Use the former word-fitting page count as a ceiling. Moving sentence
+ // boundaries must not add a reading page; the last panel may grow instead.
+ const words=text.trim().split(/\s+/).filter(Boolean);let existingPages=0;
+ for(let start=0;start<words.length;){let low=1,high=words.length-start,best=1;while(low<=high){const n=Math.floor((low+high)/2);if(fits(words.slice(start,start+n).join(' '))){best=n;low=n+1;}else high=n-1;}start+=best;existingPages++;}
+ const pieces=[];let current='';
+ for(const sentence of sentenceUnits(text)){const candidate=current?current+' '+sentence:sentence;if(current&&!fits(candidate)&&pieces.length<existingPages-1){pieces.push(current);current=sentence;}else current=candidate;}
+ if(current)pieces.push(current);return pieces;
 }
+
 function threeLinePages(paragraphs,host,paragraphClass=''){
  if(!window.getComputedStyle||!host?.getBoundingClientRect)return textPages(paragraphs,budget());
  const hostStyle=window.getComputedStyle(host),rectWidth=host.getBoundingClientRect().width;

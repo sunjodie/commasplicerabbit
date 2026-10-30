@@ -635,3 +635,11 @@ Before/after contract comparison confirms unchanged question text, instructions,
 Expanded all 116 grammar menus to four distinct options. Added semicolon + because as a dependent-fragment distractor where appropriate; complete-clause repairs can offer both comma-spliced however and therefore alternatives. Correct positions remain balanced: 27 / 32 / 26 / 31. Question text, instructions and keyed answers unchanged. Updated shared dependencies/app cache and current answer audit.
 
 Validation: 197/197 tests pass, including all 9,492 offered combinations giving one grammatical/accepted solution per item and actual mixed-task menu handlers. git diff --check passes. Live device verification remains outstanding.
+
+## 2026-10-30 — Whole-sentence pagination
+
+Word-budget and measured three-line pagination now break only between complete sentence units. Long sentences stay intact even when they exceed the preferred panel height. Common dialogue reporting tags stay with their quotation. Applies to reading parts, storybook text pagination, notebook context and feedback chunks. Existing Chapter 1 storybook art anchors were checked for sentence boundaries. Updated UI-module/app caches.
+
+User clarification: measured reading pagination is capped at its previous word-fitting page count; whole sentences move to the following existing panel and the final panel grows if needed.
+
+Validation: 199/199 tests pass, including all-chapter word conservation and sentence-unit boundary checks at narrow capacities, long-sentence preservation and dialogue attribution. git diff --check passes. Live iPad/zoom rendering remains unverified.
