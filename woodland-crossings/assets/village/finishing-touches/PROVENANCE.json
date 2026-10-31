@@ -1,0 +1,116 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-22",
+  "reference": "assets/village/complete.webp (all except herb-window-box, which used the written style specification)",
+  "deliveryEncoding": "WebP, transparent alpha, within 384 x 384, quality 85, alpha quality 100, effort 4",
+  "assets": [
+    {
+      "id": "herb-window-box",
+      "file": "herb-window-box.webp",
+      "sourceGeneration": "exec-110761c5-65d5-46a3-a8f5-a6d8ad729222.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent game scenery cutout, NOT an icon. A small round weathered wooden window box, densely planted with rosemary thyme and sage, warm amber light on leaves. Cosy slightly eerie storybook gouache, soft detailed painted textures, mossy wood, copper autumn palette, warm amber lighting against plum blue twilight shadows. Gently elevated three-quarter viewpoint, facing slightly right, visible front and top, matching the supplied woodland village style. Whole object centered with generous transparent margins, no ground plane, no scenery, no characters, no text, no letters, no border, no UI. Actual transparent background. Suitable mounted beneath a round burrow window."
+    },
+    {
+      "id": "porch-swing",
+      "file": "porch-swing.webp",
+      "sourceGeneration": "exec-95b5159b-d851-4e96-9599-949b07ab2488.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A tiny weathered timber porch swing, two rope hangers and an inviting plum-and-rust patchwork seat cushion. No supporting building or frame; ropes end neatly at top. Front and right side visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "acorn-mailbox",
+      "file": "acorn-mailbox.webp",
+      "sourceGeneration": "exec-034c8cd3-3f5a-48aa-b099-9488547eb2f7.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: An acorn-shaped painted wooden mailbox on a short mossy post, hinged little front door, copper acorn cap roof. No lettering. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "birdbath",
+      "file": "birdbath.webp",
+      "sourceGeneration": "exec-eef395ad-2ec2-4e0f-aacf-b4184a4d0382.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A shallow round weathered mossy stone birdbath on a short carved stone pedestal, a little still water catching warm amber reflections. Entire object visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "flower-trellis",
+      "file": "flower-trellis.webp",
+      "sourceGeneration": "exec-de15fd7f-2042-438e-bff8-de6079b4b914.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A small freestanding arched wooden garden trellis with copper and dusty pink climbing flowers and green leaves, open archway. No surrounding garden or ground. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "frog-spout",
+      "file": "frog-spout.webp",
+      "sourceGeneration": "exec-5199d7e5-d3ad-4990-8e55-ca606420836c.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A mossy sculpted stone frog watering spout, its mouth trickling a slender arc of water into a small round stone basin at its feet. Magical but quiet, old weathered garden feature. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "rabbit-vane",
+      "file": "rabbit-vane.webp",
+      "sourceGeneration": "exec-389bdbb6-6cc4-49e0-9675-dd214411c3af.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: An aged copper weather vane on a thin vertical mounting rod, silhouette of a little rabbit with exactly two ears above a simple directional arrow, copper autumn patina, no lettering. Whole rod visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "birdhouse-rack",
+      "file": "birdhouse-rack.webp",
+      "sourceGeneration": "exec-f72386cb-f3e6-4ead-b0d4-d4788d687c8b.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A rustic wooden rack holding three small freshly painted birdhouses: plum, ochre and moss green, all weathered gently and neatly hung from a horizontal beam. Entire freestanding rack on two short posts visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "carved-owl",
+      "file": "carved-owl.webp",
+      "sourceGeneration": "exec-6013aedb-c098-44e2-ac44-dea6b2ec3a94.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A carved wooden owl perched on a low weathered timber stump, simple expressive face, soft warm timber grain, autumn woodland craft. Entire object visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "star-lanterns",
+      "file": "star-lanterns.webp",
+      "sourceGeneration": "exec-93133b61-e248-44b9-9693-28cfbd17ce83.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A gently drooping short string of five folded-paper star lanterns, alternating amber and dusty plum, warmly lit within, suspended from thin twine. No poles or branches. Entire string visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "covered-bench",
+      "file": "covered-bench.webp",
+      "sourceGeneration": "exec-a23c8157-5866-48bb-afc9-03c1ba5dd04a.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A small rustic wooden resting bench under its own low mossy shingled pitched roof, open sides, timber supports, cosy amber lamplight. Entire standalone shelter visible. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "log-tunnel",
+      "file": "log-tunnel.webp",
+      "sourceGeneration": "exec-f369033f-aa19-4f1b-9fb3-1d8d470bc3d5.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A little hollow-log tunnel large enough for rabbits to walk through, old mossy bark, entrance facing three-quarter left, a few tiny warm amber lights inside revealing the tunnel. No rabbits, ground or landscape. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "brass-telescope",
+      "file": "brass-telescope.webp",
+      "sourceGeneration": "exec-2a3fe2df-617e-4b5c-8712-841ae5119b0c.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: An old brass telescope aimed slightly upwards to the right, mounted on a small three-legged weathered wooden tripod, cosy finely painted copper-gold metal. Entire object visible, no platform. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "leaf-chimes",
+      "file": "leaf-chimes.webp",
+      "sourceGeneration": "exec-81287a95-83f8-45f0-ae6c-be2b7e52f191.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A small hanging wind chime of five copper autumn leaves at different heights on fine strings, suspended from a curved weathered twig, softly tarnished warm metal. Entire chime visible without tree or background. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "hanging-chair",
+      "file": "hanging-chair.webp",
+      "sourceGeneration": "exec-bf9866ad-9632-4170-9006-398d441b1f34.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: An inviting woven wicker hanging chair with a plum cushion and curved wooden back, suspended from two short ropes which reach the top of the image. Whole chair visible; no stand, scenery or tree. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "supper-table",
+      "file": "supper-table.webp",
+      "sourceGeneration": "exec-1f3869a2-3cd4-422b-b0e4-961006bd12a6.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A rustic long woodland supper table with three simple chairs, mismatched ceramic crockery and an amber candle, small loaf of bread and jug. Gently elevated three-quarter perspective, table extends left to right, entire furniture group visible, no people. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "curtained-stage",
+      "file": "curtained-stage.webp",
+      "sourceGeneration": "exec-57894a1f-e4ec-496c-b22a-54d4215ece07.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A small low wooden puppet-sized village performance stage, sturdy tiny platform, plum-coloured curtains on a timber crossbar drawn open, ochre curtain ties, no figures. Entire standalone stage visible, no scenery. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    },
+    {
+      "id": "bread-oven",
+      "file": "bread-oven.webp",
+      "sourceGeneration": "exec-14c3205c-b66d-4961-a0de-5206cac3bbc2.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent woodland village game scenery cutout, NOT an icon. PRIMARY SUBJECT: A compact moss-green and ochre tiled outdoor bread oven with rounded arch, copper chimney gently emitting a short wispy plum-blue smoke curl, warm amber firelight and a loaf on its stone ledge. Entire oven visible, no ground or background. STYLE: Match the attached village painting's luminous painterly gouache, soft detailed painted textures, weathered timber, mossy stone, copper autumn foliage, warm amber light against plum-blue twilight shadows. Gently elevated three-quarter viewpoint; object faces slightly to the right unless specified. Attached image is STYLE REFERENCE ONLY, do not copy scenery. Center the whole subject with transparent margins on all sides. Actual transparent background, isolated object, no ground plane, no cast shadow patch, no scenery, no characters, no embedded text, no labels, no frame, no interface, no white backdrop. Keep the complete subject inside the image."
+    }
+  ]
+}

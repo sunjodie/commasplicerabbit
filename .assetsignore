@@ -1,0 +1,17 @@
+# Keep the root entry point and existing game URLs; omit repository/build data.
+.git/
+.github/
+.wrangler/
+node_modules/
+.gitignore
+.assetsignore
+wrangler.jsonc
+
+# Authoring material and automated checks are not runtime assets.
+woodland-crossings/tests/
+**/*.md
+**/*-approved.json
+**/package*.json
+woodland-crossings/assets/**/*.json
+woodland-crossings/assets/**/*.txt
+passage.txt

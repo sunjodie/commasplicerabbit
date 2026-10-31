@@ -1,0 +1,393 @@
+/* Approved desktop/tablet visual-novel frame. Phones retain the existing stack. */
+@media(min-width:600px){
+ body.vn-active{height:100dvh;overflow:hidden;background:#18151b;color:#f5e7ce}
+ body.vn-active>header{position:fixed;inset:0 0 auto;max-width:none;height:54px;padding:0 24px;z-index:20;background:#211922eb;border-bottom:1px solid #ae8d57;gap:16px;align-items:center}
+ .vn-active .brand{color:#ead6af;font-family:Georgia,serif;letter-spacing:2px;font-size:11px;line-height:1.1;flex-shrink:0}.vn-active .brand b{font-size:11px}.vn-active .brand-icon{display:none}
+ .vn-active nav{gap:2px;flex-wrap:nowrap}.vn-active nav .quiet{font-size:12px;padding:9px 10px;min-height:44px;color:#f1dec1;white-space:nowrap}
+ body.vn-active>main{position:fixed;inset:54px 0 0;max-width:none;margin:0;padding:0;overflow:hidden}
+ body.vn-active>footer{display:none}
+ .vn-active .story-heading,.vn-active .game-heading{display:none}
+ .vn-active .story-reader,.vn-active .casework-reader,.vn-active .adventure-board.art-first{position:absolute;inset:0;display:block;margin:0;padding:0;border:0;border-radius:0;background:#201a22;box-shadow:none}
+ .vn-active .story-illustration,.vn-active .casework-art,.vn-active .adventure-board.art-first .world-stage{position:absolute;inset:0;grid-column:auto;grid-row:auto;width:100%;max-width:none;height:100%;margin:0;padding:0}
+ .vn-active .story-illustration>.scene.painted-scene,.vn-active .casework-art>.scene.painted-scene,.vn-active .adventure-board.art-first .world-stage>.scene.painted-scene{position:absolute;inset:0;aspect-ratio:auto;width:100%;height:100%;border:0;border-radius:0;background-size:cover;background-position:50% 40%}
+ .vn-active .story-page,.vn-active .casework-page,.vn-active .adventure-board.art-first .case-workspace{position:absolute;grid-column:auto;grid-row:auto;left:clamp(18px,2.5vw,44px);right:clamp(18px,2.5vw,44px);bottom:20px;margin:0;width:auto;max-width:none;min-width:0;padding:18px 28px;border:1px solid #c6a363;border-radius:22px;background:#211b25f5;box-shadow:0 4px 20px #0007;color:#f4e6ce;z-index:4}
+ .vn-active .story-page{background:#211b25d9;backdrop-filter:blur(8px)}
+ .vn-active .story-page>.eyebrow,.vn-active .casework-page>.eyebrow{display:block;color:#e5c389;font:12px Georgia,serif;letter-spacing:2px;margin-bottom:12px}
+ .vn-active .story-prose{color:#f4e7d1;font:clamp(18px,1.7vw,24px)/1.48 Georgia,serif}
+ .vn-active .story-prose p{margin:0 0 9px}.vn-active .story-prose .spoken-line{border:0;padding:0}
+ .vn-active .story-controls{margin-top:12px;gap:14px}.vn-active .story-page-count{position:absolute;bottom:28px;left:40%;right:40%;margin:0;text-align:center;font-size:11px;color:#d4bb96;pointer-events:none}
+ .vn-active .primary{min-height:44px;padding:10px 24px;background:linear-gradient(#634155,#44293d);border:1px solid #dfbc7a;color:#fff0d5;box-shadow:none;border-radius:24px;font-weight:500}
+ .vn-active .secondary{min-height:44px;padding:8px 18px;background:#2b222c;color:#efdcba;border:1px solid #aa8c5c;border-radius:16px}
+ .vn-active button:focus-visible{outline:3px solid #fff0ba;outline-offset:3px}
+ .vn-active .text-button,.vn-active .hint-button,.vn-active .small-note{color:#dcc6a6}
+ .vn-active .vn-hide{position:absolute;right:34px;top:12px;z-index:7;border:1px solid #c5a46c;border-radius:20px;background:#241d29c9;color:#efdfbf;padding:8px 18px;min-height:44px}
+ .vn-active #storyArtwork,.vn-active .story-payoff,.vn-active .artwork-link{display:none}
+ .vn-active .reading-chart{padding:0;margin:0;background:none;border:0;box-shadow:none;border-radius:0;color:#f4e6ce;min-height:0}
+ .vn-active .chart-pin,.vn-active .editing-rules-toggle,.vn-active .dock-heading,.vn-active .sentence-piece svg,.vn-active .feedback-poppy{display:none}
+ .vn-active .notebook-source{margin:0 0 4px;color:#e3c186;font-size:11px;letter-spacing:1px}
+ .vn-active .notebook-source>.text-button{color:#d7c0a1;min-height:30px;padding:0;font-size:11px}
+ .vn-active .editing-brief{padding:0;border:0;background:none;text-align:center;font-size:14px;line-height:1.4;margin:4px 0 10px;color:#f2e1c6}
+ .vn-active .editing-brief b{display:none}
+ .vn-active .case-workspace .sentence{font:clamp(19px,2.1vw,30px)/1.45 Georgia,serif;color:#f5e4c5;text-align:center;margin:5px 0 12px;white-space:normal}
+ .vn-active .join{background:none;color:#f3ddb4;border:1px solid transparent;border-bottom:1px dotted #e6c790;min-width:25px;min-height:44px;padding:0 4px;font:inherit;line-height:1.1}.vn-active .join.selected{border:1px solid #e6bd75;border-radius:30px;background:#8d684433}
+ .vn-active .builder-dock{margin:0;padding:0;border:0;background:none;box-shadow:none;border-radius:0;color:#eedfc8}
+ .vn-active .piece-tray{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0;margin:0;min-height:44px}
+ .vn-active .sentence-piece{flex:1;min-width:105px;max-width:360px;min-height:44px;padding:7px 12px;display:flex;align-items:center;justify-content:center;gap:15px;background:#2d232c;color:#f6e7cf;border:1px solid #c7a36b;border-radius:14px;box-shadow:none}
+ .vn-active .sentence-piece b{position:static;font:24px Georgia,serif}.vn-active .sentence-piece span{font-size:13px}.vn-active .sentence-piece.chosen{background:#6d4a56;border-color:#f9df9c}
+ .vn-active .scout-prompt{color:#d0baa0;font-size:13px;line-height:1.4;padding:10px}
+ .vn-active .actions{margin-top:12px;padding-top:10px;border-top:1px solid #9f805455;gap:12px;display:flex;justify-content:space-between;align-items:center}.vn-active .hint-button{background:none;border:0;padding:8px 0;min-height:44px;font-size:12px;box-shadow:none}.vn-active .actions .small-note{font-size:11px;margin:0}
+ .vn-active .vn-pages{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.vn-active .vn-count{color:#d7bc8f;font-size:11px}.vn-active [hidden]{display:none!important}
+ .vn-active .casework-page{max-width:1100px;margin:auto;line-height:1.45}
+ .vn-active .vn-context{font:clamp(18px,1.6vw,22px)/1.5 Georgia,serif;color:#f2e2c8;margin:10px 0}
+ .vn-active .casework-page p,.vn-active .casework-prompt{font-size:15px;line-height:1.45;margin:10px 0;color:#f1e0c5}
+ .vn-active .casework-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ .vn-active .casework-option{margin:0;min-height:52px;padding:10px 14px;font-size:14px;line-height:1.4;background:#30262f;color:#f7e7cf;border:1px solid #ac8c5b;border-radius:12px;text-align:left}
+ .vn-active .casework-option.chosen{background:#674451;border-color:#f3d090}
+ .vn-active .casework-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+ .vn-active .casework-edit{font:21px/1.8 Georgia,serif;margin:10px 0;color:#f5e4c5}.vn-active .editable-word{color:#f5e4c5;min-height:44px}.vn-active .editable-word.chosen{background:#79515f}
+ .vn-active .correction-label{color:#e5d2b4}.vn-active .case-correction{background:#362a35;color:#fff0d8;border:1px solid #c2a06b}
+ .vn-active .casework-feedback{background:none;border:0;padding:0;color:#f1dfbc}
+ .vn-active .vn-show-feedback>.reading-chart,.vn-active .vn-show-feedback .piece-tray,.vn-active .vn-show-feedback .route-contract{display:none}
+ .vn-active .feedback{display:block;margin:0;padding:0;background:none;border:0;color:#f5e7cf;box-shadow:none}.vn-active .feedback p{font-size:16px;line-height:1.5;margin:10px 0}.vn-active .feedback strong{font:22px Georgia,serif;color:#f0d6a7}
+ .vn-active .world-easter{bottom:auto;top:45%;width:40px;height:40px;opacity:.45}
+}
+@media(min-width:600px) and (max-width:900px){
+ .vn-active .brand{display:none}.vn-active>header{justify-content:center;padding:0 10px}.vn-active nav .quiet{font-size:11px;padding:8px}
+ .vn-active .story-page,.vn-active .casework-page,.vn-active .adventure-board.art-first .case-workspace{left:16px;right:16px;bottom:16px;padding:16px 20px;border-radius:18px}
+ .vn-active .story-page-count{bottom:29px;font-size:10px;left:34%;right:34%}
+ .vn-active .case-workspace .sentence{font-size:21px}.vn-active .casework-option{font-size:14px}.vn-active .sentence-piece{min-width:130px}
+}
+@media(min-width:600px) and (max-height:650px){
+ .vn-active .story-page,.vn-active .casework-page,.vn-active .adventure-board.art-first .case-workspace{bottom:10px;padding:12px 22px}
+ .vn-active .story-prose{font-size:18px}.vn-active .case-workspace .sentence{font-size:21px;margin:2px 0 8px}
+ .vn-active .notebook-source,.vn-active .editing-brief{font-size:12px;margin:2px 0}.vn-active .actions{margin-top:8px;padding-top:6px}
+ .vn-active .casework-option{font-size:13px;padding:8px 12px;min-height:48px}.vn-active .vn-pages{margin-top:8px}
+}
+@media(min-width:600px){
+ dialog{max-height:calc(100dvh - 32px);overflow:visible}dialog #modalBody{overflow:visible}dialog .artwork-preview{height:min(30dvh,210px);min-height:0}dialog .vn-pages{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}dialog [hidden]{display:none!important}dialog .story-prose{font-size:17px;line-height:1.45}dialog p{line-height:1.5}
+}
+@media(min-width:600px) and (orientation:portrait){
+ .vn-active .story-illustration>.scene.painted-scene,.vn-active .casework-art>.scene.painted-scene,.vn-active .adventure-board.art-first .world-stage>.scene.painted-scene{background-size:100% auto;background-position:center top;background-repeat:no-repeat;background-color:#211a23}
+}
+@media(min-width:600px){
+ .vn-menu>main{background:linear-gradient(#19162099,#191620e8),url('assets/chapter-one/fair-v3.webp') center/cover}
+ .vn-menu-frame{position:absolute;inset:18px max(20px,calc((100vw - 1100px)/2));padding:22px 28px 80px;background:#211b25ed;border:1px solid #b99763;border-radius:20px;color:#f3e4ca}
+ .vn-menu-content{height:100%;min-height:0}.vn-menu-page{min-height:0}.vn-menu-frame>.vn-pages{position:absolute;bottom:16px;left:28px;right:28px}
+ .vn-menu h1{font-size:38px;line-height:1.15;margin:10px 0 16px;letter-spacing:-1px}.vn-menu h2{font-size:28px}.vn-menu p{font-size:15px;line-height:1.5;color:#f0dfc3}
+ .vn-menu .button-row{margin:14px 0;gap:10px}.vn-menu .small-note{font-size:12px}.vn-menu .case-opening{padding:12px;margin:10px 0;background:#3b2d34;border:0}.vn-menu .case-opening p{font-size:15px}.vn-menu .example{font-size:20px;padding:16px;background:#372a36;color:#f5e3c5}
+ .vn-menu .path-map{grid-template-columns:repeat(6,1fr);margin:10px 0}.vn-menu .map-stop{padding:12px 10px}.vn-menu .map-stop svg{max-height:65px}.vn-menu .map-stop strong{font-size:16px}
+ .vn-menu .village-world,.vn-menu .village-reward-art{margin:12px 0}.vn-menu .village-viewport{width:min(100%,calc((100dvh - 350px)*1.5));margin:auto;max-height:none;overflow:hidden}.vn-menu .village-viewport[data-zoom='2']>.village-canvas{width:100%}
+ .vn-menu #villageZoom{display:none}.vn-menu .village-caption{display:none}.vn-menu .decoration{min-height:44px;padding:8px 12px}.vn-menu .chapter-clue{padding:10px;margin:8px 0}.vn-menu .chapter-clue svg{width:40px;height:40px;flex-basis:40px}.vn-menu .chapter-clue p{font-size:14px}
+ .vn-menu .ending-art{height:min(28dvh,240px);margin:10px 0}.vn-menu .rescue-event{min-height:80px;padding:8px}.vn-menu .rescue-event svg{width:40px;height:40px}.vn-menu .rescue-explanation{padding:14px;font-size:14px}
+}
+@media(min-width:600px) and (max-width:900px){.vn-menu .path-map{grid-template-columns:repeat(3,1fr)}.vn-menu-frame{inset:16px;padding:18px 20px 76px}.vn-menu h1{font-size:30px}}
+@media(min-width:600px){
+ .vn-active .adventure-board.art-first .case-workspace .reading-chart{padding:0;margin:0;background:none;border:0;box-shadow:none;min-height:0}
+ .vn-active .art-first.scouting-board .reading-chart .join{background:none;color:#f3ddb4;border:1px solid transparent;border-bottom:1px dotted #e6c790;box-shadow:none;border-radius:2px}
+ .vn-active .art-first.scouting-board .reading-chart .join.selected{border:1px solid #e6bd75;border-radius:30px;background:#8d684433}
+ .vn-active .adventure-board.art-first .artwork-link{display:none!important}
+ .vn-top-title{font:14px Georgia,serif;color:#e6d1ad;text-align:center;flex:1}
+}
+@media(min-width:600px) and (orientation:portrait){
+ .vn-active .story-illustration>.scene.painted-scene,.vn-active .casework-art>.scene.painted-scene,.vn-active .adventure-board.art-first .world-stage>.scene.painted-scene{background-size:cover;background-position:70% center}
+}
+@media(max-width:900px){.vn-top-title{display:none}}
+@media(min-width:600px){dialog:has(.story-prose) .artwork-preview{height:min(20dvh,140px)}dialog .village-viewport{width:min(100%,calc((100dvh - 320px)*1.5));margin:auto;overflow:hidden}dialog .evidence-grid,dialog .secret-grid{grid-template-columns:repeat(3,minmax(0,1fr))}dialog .secret-item svg{max-height:70px}dialog .evidence-card{padding:12px}}
+@media(min-width:600px) and (max-height:650px){dialog:has(.story-prose) .artwork-preview{height:80px}dialog .story-prose{font-size:16px}}
+@media(min-width:600px){body.vn-active{height:var(--game-height,100dvh)}body.vn-active>main{bottom:auto;height:calc(var(--game-height,100dvh) - 54px)}.vn-keyboard .casework-edit{display:none}.vn-keyboard .casework-page .casework-prompt{font-size:13px;margin:4px 0}.vn-keyboard .casework-page{padding:10px 18px;bottom:8px}.vn-keyboard .casework-page>.eyebrow{margin-bottom:4px}.vn-keyboard .casework-actions,.vn-keyboard .vn-pages{margin-top:6px}}
+/* One type system throughout the game, independent of installed display fonts. */
+:root{--font-story:Georgia,'Times New Roman',serif;--font-ui:"Nunito Sans","Trebuchet MS",sans-serif}
+body,button,input,select,textarea{font-family:var(--font-ui)}
+h1,h2,h3,.brand,.vn-top-title,.story-prose,.sentence,.casework-context,.casework-edit,.vn-context,.example,.sentence-piece b{font-family:var(--font-story)!important}
+.eyebrow,.story-page>.eyebrow,.casework-page>.eyebrow,.notebook-source,.vn-count,.story-page-count,.vn-help-heading{font-family:var(--font-ui)!important}
+.vn-help-heading{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:12px;letter-spacing:.7px;color:#e1bc8c}
+.vn-help-heading img{object-fit:contain;flex:none;width:30px;height:36px}
+@media(min-width:600px){
+ .vn-active .story-page{background:#201c27cd;border-color:#a99583}
+ .vn-active .story-page>.eyebrow{color:#ddd1c4;letter-spacing:1px}
+ .vn-active .adventure-board.art-first .case-workspace,.vn-active .casework-page{background:#271b2cf7;border-color:#c5a16c}
+ .vn-active .casework-page:before{content:attr(data-panel-label);display:block;font:600 10px var(--font-ui);letter-spacing:1.5px;text-transform:uppercase;color:#dcbd83;margin-bottom:7px}
+ .vn-active .casework-page>.eyebrow{font-size:12px;letter-spacing:.5px;margin-bottom:10px}
+ .vn-active .casework-page[data-page-type='note']{color:#473b38;border-color:#c2a575;background:repeating-linear-gradient(0deg,transparent,transparent 29px,#a28c6812 29px,#a28c6812 30px),#f2e6cd;box-shadow:0 5px 24px #0005}
+ .vn-active .casework-page[data-page-type='note']:before{color:#815d43}
+ .vn-active .casework-page[data-page-type='note']>.eyebrow{color:#725846}
+ .vn-active .casework-page[data-page-type='note'] .vn-context{color:#443a38;font-style:normal}
+ .vn-active .casework-page[data-page-type='note'] .vn-count{color:#745840}
+ .vn-active .casework-page[data-page-type='note'] .secondary{background:#eadbbd;color:#574334;border-color:#9f805d}
+ .vn-active .casework-page[data-page-type='help'],.vn-active .case-workspace.vn-show-feedback{background:#25332ff7;border-color:#8eab92}
+ .vn-active .casework-page[data-page-type='help']:before{background:url('assets/poppy-storybook.webp') left center/22px 30px no-repeat;padding-left:30px;min-height:30px;display:flex;align-items:center;color:#cbdabe}
+ .vn-active .feedback strong{font-family:var(--font-ui);font-size:18px;line-height:1.4;color:#e0e8d2}
+ .vn-active .vn-help-heading{color:#cbdabe}
+ .vn-active .notebook-source{color:#dcb57d;text-transform:uppercase;font-size:10px;letter-spacing:1.2px}
+ .vn-active .editing-brief{font-family:var(--font-ui);font-size:14px;color:#e9d9c2}
+}
+
+/* Readability pass: explicit surface palettes prevent light ink on parchment. */
+dialog{--ink:#352b32;--muted:#65534c;--white:#f5e8d0;--paper:#eadcc1;--line:#ad9069;background:#f5e8d0;color:#352b32;color-scheme:light;text-shadow:none}
+dialog :is(h1,h2,h3,p,li,b,strong,.eyebrow,.story-prose,.vn-context,.casework-context,.vn-count,.story-page-count,.muted,.small-note,.notebook-source){color:#352b32!important;text-shadow:none}
+dialog :is(a,.text-button,.hint-button){color:#66412b!important;text-decoration:underline;text-underline-offset:3px}
+dialog .example,dialog .standalone>div{background:#e8d7b8;color:#352b32;border-color:#92704b}
+dialog .example em{background:#d3bd8d;color:#352b32}
+dialog .secondary{background:#ebddc3;color:#46352d;border-color:#92704b}
+dialog .primary{background:#583c50;color:#fff7e9;border-color:#795867}
+dialog .primary:hover{background:#704e64}
+dialog button:focus-visible,dialog a:focus-visible{outline:3px solid #70462b;outline-offset:3px}
+dialog button:disabled{opacity:1;color:#786a5d;background:#e0d3bd;border-color:#baaa91}
+body :is(.map-stop strong,.tool b,.building p){font-family:var(--font-story)}
+@media(min-width:600px){
+ .vn-active .story-page{background:rgba(21,18,31,.76);backdrop-filter:none;border-color:#c4b29c}
+ .vn-active .adventure-board.art-first .case-workspace,.vn-active .casework-page{background:rgba(28,19,33,.82);backdrop-filter:none}
+ .vn-active .casework-page[data-page-type='help'],.vn-active .case-workspace.vn-show-feedback{background:rgba(22,37,31,.83)}
+ .vn-active .casework-page[data-page-type='note']{background:rgba(245,232,208,.94);color:#352b32}
+ .vn-active .story-prose,.vn-active .sentence,.vn-active .vn-context,.vn-active .editing-brief,.vn-active .casework-prompt,.vn-active .feedback{color:#fff7e9;text-shadow:0 1px 3px #000}
+ .vn-active :is(.vn-count,.story-page-count,.small-note,.hint-button,.notebook-source,.scout-prompt,.correction-label){color:#f2e2c9}
+ .vn-active .casework-page[data-page-type='note'] :is(p,.vn-context,.eyebrow,.vn-count){color:#46372f;text-shadow:none}
+ .vn-active .story-page>.eyebrow{color:#f3e3d0}
+ .vn-active .casework-page:before,.vn-active .notebook-source{color:#ffe0aa}
+ .vn-active .casework-page[data-page-type='note']:before{color:#6b4933}
+}
+/* The old supply-tile symbol offset must not leak into the flat tool buttons. */
+@media(min-width:600px){
+ .vn-active .piece-tray .sentence-piece{height:auto;min-height:48px;align-items:center;gap:12px;padding:9px 12px}
+ .vn-active .piece-tray .sentence-piece>b{position:static;margin:0;inset:auto;line-height:1.2;flex:0 0 auto;font-size:22px}
+ .vn-active .piece-tray .sentence-piece>span{margin:0;min-width:0;line-height:1.35;white-space:normal}
+}
+/* Painted frog atlas: invisible hit areas; feet stay attached to scene surfaces. */
+.frog-sprite{display:block;width:72px;height:72px;background:url('assets/frogs/painted-frogs.webp') var(--frog-col) var(--frog-row)/500% 200% no-repeat}
+.woodland-frog{position:absolute;left:var(--frog-x);top:var(--frog-y);width:44px;height:44px;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;z-index:5;opacity:1;transform:translate(-50%,-100%);cursor:default}
+.woodland-frog .frog-sprite{position:absolute;left:50%;bottom:calc(var(--frog-size,30px)*var(--frog-base,.09)*-1 + var(--frog-hit-offset,0px));width:var(--frog-size,30px);height:var(--frog-size,30px);transform:translateX(-50%);filter:brightness(.76) saturate(.66);pointer-events:none}
+.woodland-frog:hover{background:none;opacity:1;transform:translate(-50%,-100%)}
+.woodland-frog:focus-visible{outline:2px solid #e4d4aa;outline-offset:2px;border-radius:8px}
+.frog-portrait{width:88px;height:88px;margin:0 auto 8px}.frog-portrait .frog-sprite{width:88px;height:88px}
+.secret-item .text-button{display:block;margin:8px auto;min-height:36px}.secret-item>.frog-sprite{width:65px;height:65px;margin:auto}.secret-item>svg{height:65px;max-width:90px;margin:auto;display:block}
+.woodland-frog[hidden]{display:none!important}
+/* Override the older cream supply-dock feedback, including its .clue variant. */
+@media(min-width:600px){
+ .vn-active .case-workspace .builder-dock .feedback,
+ .vn-active .case-workspace .builder-dock .feedback.clue{background:transparent;border:0;box-shadow:none;color:#fff7e9}
+ .vn-active .case-workspace .builder-dock .feedback p{color:#fff7e9}
+ .vn-active .case-workspace .builder-dock .feedback strong{color:#e0e8d2}
+}
+/* Parchment cards own their ink colour instead of inheriting scene text. */
+.chapter-clue,.chapter-clue p,.reward-tile,.reward-tile p{color:#49382f;text-shadow:none}
+.vn-active.vn-menu .chapter-clue,.vn-active.vn-menu .chapter-clue p{color:#49382f;text-shadow:none}
+.builder-dock .feedback .standalone>div{background:#e9d8b6;color:#49382f;text-shadow:none}
+.builder-dock .feedback :is(.small-note,.muted){color:#655044;text-shadow:none}
+@media(min-width:600px){.vn-active .case-workspace .builder-dock .feedback :is(.small-note,.muted){color:#f2e2c9}}
+@media(min-width:600px){.vn-active .adventure-board.art-first .case-workspace.vn-show-feedback{background:rgba(22,37,31,.88);border-color:#8eab92}}
+
+/* Chapter 3 keeps the same scene panel, with room for the clause rewrite. */
+#clauseRewrite{max-width:none;width:100%;box-sizing:border-box}
+@media(min-width:600px){
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace .piece-tray{gap:8px}
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .piece-tray .sentence-piece{flex:1 1 94px;min-width:94px;max-width:none;gap:8px;padding:8px;min-height:44px}
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .piece-tray .sentence-piece span{font-size:12px}
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace .actions{flex-wrap:wrap}
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace:has(#clauseRewrite) .sentence{font-size:clamp(18px,1.7vw,24px);line-height:1.4}
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .correction-label{font-size:12px;margin:6px 0 4px}
+ .vn-active #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) #clauseRewrite{font-size:16px;margin-bottom:6px}
+ .vn-keyboard #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace:has(#clauseRewrite){padding:10px 18px;bottom:8px}
+ .vn-keyboard #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace:has(#clauseRewrite) :is(.notebook-source,.editing-brief,.piece-tray){display:none}
+ .vn-keyboard #app:is([data-vn-chapter="3"],[data-vn-chapter="4"],[data-vn-chapter="5"],[data-vn-chapter="6"]) .case-workspace:has(#clauseRewrite) .sentence{font-size:15px;line-height:1.35;margin:0 0 4px}
+}
+
+/* Keep the closing scene together; recap and extras turn pages as groups. */
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-closing{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;margin:16px 0 24px;text-align:left}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-village{overflow:hidden;border:1px solid #a78a60;border-radius:16px;background:#28252c}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-village .village-viewport{width:100%;max-height:none;overflow:hidden}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-village .village-canvas{width:100%}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-copy h2{font-size:clamp(24px,2.8vw,34px);line-height:1.2;margin:0 0 12px;color:#f3dfbb}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-copy p{font-size:15px;line-height:1.55;margin:0 0 12px;color:#e6d4ba}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-primary{justify-content:flex-start;margin:14px 0 0;gap:8px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-primary button{font-size:13px;padding:12px 16px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-case-notes{max-width:800px;margin:16px auto}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-case-notes h2{font-size:24px;margin:0 0 12px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-timeline{gap:8px;margin:10px 0}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:8px;border-bottom-width:2px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event svg{width:30px;height:30px;flex:0 0 30px;margin:0}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event>span{font-size:12px}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-explanation{min-height:86px;padding:14px 18px;font-size:14px;line-height:1.5}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-quote{font-size:18px;margin:14px 0}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-extras{padding-top:12px}
+@media(min-width:600px){
+ .vn-menu #app[data-vn-kind="ending"] h1{font-size:36px;line-height:1.15;letter-spacing:-.5px;margin:8px 0 14px}
+ .vn-menu #app[data-vn-kind="ending"] .ending-closing{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px;align-items:center;text-align:left;margin:8px 0 18px}
+ .vn-menu #app[data-vn-kind="ending"] .ending-village .village-viewport{width:min(100%,calc((100dvh - 350px)*1.5));margin:auto}
+ .vn-menu #app[data-vn-kind="ending"] .ending-primary{justify-content:flex-start}
+ .vn-menu #app[data-vn-kind="ending"] .ending-lead{margin:0 0 12px}
+ .vn-menu #app[data-vn-kind="ending"] .ending-case-notes h2{font-size:23px;margin:4px 0 10px}
+}
+@media(max-width:699px){:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-closing{grid-template-columns:1fr;gap:16px}:is(.mystery-ending,#app[data-vn-kind="ending"]) .rescue-event{flex-direction:column;gap:4px}:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-primary{justify-content:center}}
+
+.vn-menu #app[data-vn-kind="ending"] .vn-menu-page{text-align:center}
+:is(.mystery-ending,#app[data-vn-kind="ending"]) .ending-extras .button-row{justify-content:center}
+@media(min-width:600px) and (max-width:699px){.vn-menu #app[data-vn-kind="ending"] .ending-closing{grid-template-columns:1fr;gap:14px}}
+
+/* The approved title illustration is independent of reached story scenes. */
+.hero .title-art{width:100%;min-width:0}
+.hero .title-art>.scene{height:auto;min-height:0;aspect-ratio:3/2;background-position:center;background-size:cover;border-radius:20px;box-shadow:0 12px 40px #0c102344}
+@media(min-width:600px){
+ .vn-menu>main[data-vn-kind="home"]{background:linear-gradient(90deg,#17142055,transparent 80%),url('assets/title-midnight-mill.webp') center/cover}
+ .vn-menu>main[data-vn-kind="home"]>.vn-menu-frame{right:auto;left:clamp(20px,5vw,90px);width:min(560px,calc(100% - 40px));background:#211b25c9;backdrop-filter:blur(5px)}
+}
+
+/* Keep the title screen a book cover, with the chapter overview one click away. */
+.chapter-overview-item{padding:12px 0;border-top:1px solid #b69b7666}
+.chapter-overview-item h3{margin:6px 0;font-size:21px}
+.chapter-overview-item p{margin:0;line-height:1.5}
+@media(min-width:600px){
+ .vn-menu>main[data-vn-kind="home"]>.vn-menu-frame{top:50%;bottom:auto;transform:translateY(-50%);height:min(500px,calc(100% - 36px));padding-bottom:64px}
+ .vn-menu #app[data-vn-kind="home"] h1{font-size:clamp(32px,3.2vw,46px);line-height:1.1}
+}
+
+/* iPad landscape: keep navigation and panels inside Safari's visible viewport. */
+.ipad-rotate{max-width:460px;width:calc(100% - 48px);padding:28px;text-align:center;border-radius:20px;background:#211b25;color:#f3e4ca;border:1px solid #b99763}
+.ipad-rotate::backdrop{background:#171420ed}
+.ipad-rotate h2{font:28px var(--font-story);margin:18px 0 12px}
+.ipad-rotate p{line-height:1.5}
+.ipad-device{width:100px;height:64px;border:3px solid #d5b67d;border-radius:10px;margin:4px auto;background:linear-gradient(135deg,#665348,#292a43)}
+@media(min-width:600px) and (max-width:1180px){
+ .vn-active .vn-top-title{display:none}
+ .vn-active>header{padding:0 12px;gap:10px}
+ .vn-active nav{min-width:0;margin-left:auto}
+ .vn-active nav .quiet{padding:8px;min-height:44px}
+}
+@media(min-width:600px){
+ .ipad-layout.vn-active>header{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+ .ipad-layout.vn-active .story-page,.ipad-layout.vn-active .casework-page,.ipad-layout.vn-active .case-workspace{left:max(18px,env(safe-area-inset-left));right:max(18px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}
+ .ipad-layout.vn-active .story-controls button,.ipad-layout.vn-active .vn-pages button{min-height:44px}
+ .ipad-layout dialog{max-height:calc(var(--game-height,100dvh) - 32px)}
+}
+
+@media(min-width:600px){
+ .ipad-layout.vn-active .story-page{padding:10px 22px;border-radius:16px}
+ .ipad-layout.vn-active .story-page>.eyebrow{font-size:10px;margin-bottom:6px}
+ .ipad-layout.vn-active .story-prose{font-size:clamp(18px,1.7vw,22px);line-height:1.4}
+ .ipad-layout.vn-active .story-prose p{margin-bottom:0}
+ .ipad-layout.vn-active .story-controls{margin-top:6px}
+ .ipad-layout.vn-active .story-page-count{bottom:24px}
+}
+
+
+/* Hidden-menu design pass, October 2026.
+   Parchment is reserved for reading/reference; woodland exploration uses a
+   dark high-contrast surface. All overrides are scoped to the modal dialog. */
+dialog {
+  color-scheme:light;
+  background:#f5e8d0;
+  color:#352b32;
+  border:1px solid #977954;
+  box-shadow:0 22px 80px #080b14b8;
+  width:min(760px,calc(100vw - 36px));
+  max-height:min(86dvh,820px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+dialog #modalBody { overflow:visible; min-width:0; }
+dialog #modalBody :is(p,li,summary,blockquote) {line-height:1.55}
+dialog #modalBody :is(p,li,span,small,summary,blockquote,label) {color:#352b32}
+dialog #modalBody .muted,dialog #modalBody .small-note {color:#655044!important}
+dialog #modalBody .text-button {color:#674029!important}
+dialog #modalBody :is(button,input,textarea,select) {min-height:44px}
+dialog #modalBody :is(input,textarea,select) {
+ background:#fff9eb;color:#30232e;border:1px solid #826b52;border-radius:8px;
+}
+dialog #modalBody :is(input,textarea,select)::placeholder {color:#655044}
+dialog #modalBody :is(.secondary,.casework-option,.storybook-index button) {
+ background:#eadbbd;color:#372b2a;border:1px solid #967852;
+}
+dialog #modalBody :is(.secondary,.casework-option,.storybook-index button):hover {
+ background:#dbc69f;
+}
+dialog :is(button,a,input,textarea,select,summary):focus-visible {
+ outline:3px solid #a95e22;outline-offset:3px;
+}
+dialog #closeModal {min-height:46px;max-width:100%;margin-top:20px}
+dialog #modalBody :is(.secret-item,.evidence-card,.chapter-clue,.reward-tile,.landmark-status) {
+ background:#e9dac0;color:#352b32;border-color:#a28b69;
+}
+dialog #modalBody :is(.secret-item,.evidence-card,.chapter-clue,.reward-tile) :is(p,h3,span,small) {
+ color:#352b32!important;text-shadow:none;
+}
+dialog #modalBody .undiscovered {opacity:1}
+dialog #modalBody .undiscovered :is(p,small) {color:#655044!important}
+dialog #modalBody .storybook-index {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+dialog #modalBody .storybook-index button {min-height:52px;text-align:left;white-space:normal}
+
+/* Exploration screens: dark forest palette with deliberately opaque text areas.
+   Select only menus containing a scene viewer, not reference/storybook text. */
+dialog:has(.journal-scene),
+dialog:has(.artwork-preview):not(:has(.story-prose)),
+dialog:has(.egg-reveal) {
+ color-scheme:dark;
+ background:#211c2b;color:#f8ecd9;border-color:#9b815e;
+}
+dialog:has(.journal-scene) #modalBody :is(h1,h2,h3,p,li,span,small,summary,blockquote,.eyebrow),
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody :is(h1,h2,h3,p,li,span,small,summary,blockquote,.eyebrow),
+dialog:has(.egg-reveal) #modalBody :is(h1,h2,h3,p,li,span,small,summary,blockquote,.eyebrow) {
+ color:#f8ecd9!important;text-shadow:none;
+}
+dialog:has(.journal-scene) #modalBody .small-note,
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .small-note,
+dialog:has(.egg-reveal) #modalBody .small-note {color:#e2ceb0!important}
+dialog:has(.journal-scene) #modalBody .text-button,
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .text-button,
+dialog:has(.egg-reveal) #modalBody .text-button {color:#f6d49c!important}
+dialog:has(.journal-scene) #closeModal,
+dialog:has(.artwork-preview):not(:has(.story-prose)) #closeModal,
+dialog:has(.egg-reveal) #closeModal {background:#dbb981;color:#291e28;border:1px solid #f0d39d}
+dialog:has(.journal-scene) #modalBody :is(.journal-scene,.artwork-preview),
+dialog:has(.artwork-preview):not(:has(.story-prose)) #modalBody .artwork-preview {
+ border:1px solid #b5a17f;border-radius:12px;overflow:hidden;
+}
+@media(max-width:599px) {
+ dialog{width:calc(100vw - 24px);padding:18px;max-height:calc(100dvh - 24px)}
+ dialog #modalBody .storybook-index{grid-template-columns:1fr}
+}
+
+/* Revisit paintings keep their complete 3:2 cell on every device. */
+dialog #modalBody .journal-scene {
+ width:100%;max-width:105dvh;margin-inline:auto;
+}
+dialog #modalBody .journal-scene > .scene.painted-scene {
+ position:relative;inset:auto;width:100%;height:auto!important;
+ min-height:0!important;max-height:none;aspect-ratio:3 / 2;
+ border:0;border-radius:0;
+}
+
+/* Village zoom keeps a stable viewport while the painting grows inside it. */
+.vn-menu #app[data-vn-kind="village"] .village-viewport,.village-world:has(.village-zoom-controls) .village-viewport{overflow:auto;touch-action:none;cursor:grab}
+.village-world:has(.village-zoom-controls) .village-viewport:active{cursor:grabbing}
+.village-zoom-controls{display:flex;gap:6px;flex-wrap:wrap}
+.village-toolbar{flex-wrap:wrap}
+
+/* Dedicated exploration artwork: one SVG viewport per atlas cell, no legacy actors. */
+dialog #modalBody .journal-scene > .exploration-painting{background-image:none!important}
+.exploration-image{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}
+
+/* Keep the trail exit visible on every village menu page. */
+@media(min-width:600px){
+ .vn-menu-frame>.village-return{position:absolute;bottom:16px;left:28px;z-index:2;min-height:44px}
+ .vn-menu-frame:has(>.village-return)>.vn-pages{left:230px}
+ .vn-menu #app[data-vn-kind="village"] #villageZoom{display:inline-block}
+}
+
+.vn-menu-frame:has(>.village-return)>.vn-pages button:first-child:disabled{visibility:hidden}
+
+@media(min-width:600px){
+ .village-single-view{display:flex;flex-direction:column;gap:8px}
+ .village-single-view>.section-top h1{font-size:28px;margin:4px 0}
+ .village-single-view .village-world{margin:0;flex:1;min-height:0;display:flex;flex-direction:column}
+ .village-single-view .village-toolbar{padding:6px 12px}
+ .vn-menu #app[data-vn-kind="village"] .village-single-view .village-viewport{width:min(100%,calc((100dvh - 340px)*1.5));max-height:100%;min-height:0;flex:1}
+ .village-single-view>.village-scene-actions{display:flex;flex-wrap:wrap;gap:6px}
+ .village-single-view>.village-scene-actions button{min-height:40px;padding:6px 12px}
+ .village-single-view>.button-row{margin:0}
+ .village-single-view>.button-row:empty{display:none}
+}
+
+/* Storybook pages already have their own navigation. Keep their content visible. */
+dialog:has(.story-prose){max-height:calc(100dvh - 32px);overflow:auto}
+
+/* Collectible reveals are a single panel, including at browser zoom. */
+dialog:has(.frog-portrait),dialog:has(.egg-reveal){max-height:calc(100dvh - 32px);overflow:auto}

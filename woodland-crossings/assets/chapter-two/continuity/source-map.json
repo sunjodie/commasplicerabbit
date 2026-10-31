@@ -1,0 +1,35 @@
+{
+  "tool": "Built-in image_gen",
+  "selected": [
+    {
+      "asset": "sheet-01.webp",
+      "source": "exec-7aa361d6-4d56-4b18-bdf2-1592eab4a1dd.png",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "asset": "sheet-02.webp",
+      "source": "exec-171e55ce-543e-4719-9e18-65695472328a.png",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "asset": "sheet-03.webp",
+      "source": "exec-58aa6437-4091-4abe-b22a-0d6a8c9fefd6.png",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  ],
+  "earlier_passes": [
+    "exec-cae21cde-9b5c-4663-b865-f5bdd37a2d4c.png",
+    "exec-39ffc3cc-c5b1-4b59-b56b-33711ee06930.png",
+    "exec-09c76895-6fa4-47f0-be54-fb8aec99456a.png",
+    "exec-1cab3b54-7033-4de1-aec4-e812e9d694f4.png"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "issue": "Duplicated ear lobes on Poppy",
+  "review_scope": "All 52 Chapter 1 frames",
+  "revised_sheets": [
+    "01",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "retained_original_sheets": [
+    "02",
+    "09"
+  ],
+  "discarded_revisions": {
+    "02": "Changed hedgehog baker; original anatomy correct.",
+    "09": "New distant ear silhouette was less clear; original retained."
+  },
+  "review": "Accepted images inspected for two ears per rabbit, with occlusion allowed in profile views, and for unrelated changes."
+}

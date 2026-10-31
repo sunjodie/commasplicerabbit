@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-23",
+  "generator": "Built-in image_gen",
+  "plans": [
+    {
+      "sheet": 2,
+      "refs": [
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-02.webp",
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-01.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit the supplied Chapter 1 storybook atlas, preserving its exact 2x2 grid, four equal 3:2 landscape panels, overall 1536x1024, no gutters or borders. Keep the rich luminous painterly detail, soft fur, embroidered plum cloth, mossy stone, copper leaves, amber light and blue-plum rain. No text or UI. Preserve character identities and anatomy: small cream Poppy, plum cape, rust scarf, brown satchel, exactly TWO ears one upright and one bent; taller grey-brown Willow, moss-green coat, exactly TWO upright ears. Change only the specified panels/elements. Image 1 is the edit target; image 2 is the fountain reference only. TOP LEFT: Poppy is reaching up while balancing on the SAME curved dark wet STONE FOUNTAIN RIM shown in image2 bottom-right. Replace ALL wooden crates/wooden rail beneath and beside her with that curved stone fountain basin edge and a little water, so she does not teleport onto crates. Preserve her reach and Willow beside her. Keep exactly two ears. Other THREE panels unchanged."
+    },
+    {
+      "sheet": 4,
+      "refs": [
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-04.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit the supplied Chapter 1 storybook atlas, preserving its exact 2x2 grid, four equal 3:2 landscape panels, overall 1536x1024, no gutters or borders. Keep the rich luminous painterly detail, soft fur, embroidered plum cloth, mossy stone, copper leaves, amber light and blue-plum rain. No text or UI. Preserve character identities and anatomy: small cream Poppy, plum cape, rust scarf, brown satchel, exactly TWO ears one upright and one bent; taller grey-brown Willow, moss-green coat, exactly TWO upright ears. Change only the specified panels/elements. TOP LEFT: replace with a SCENERY-ONLY view from the village square towards a DISTANT mill beyond low gardens and alder trees. Foreground edge of the established fountain and wet cobbles; far in the middle-distance across gardens the stone/timber mill's small warm upper window is visible through alder branches. Mill stands on the SAME LOW stream terrace as the village, NOT on a hill above rooftops; lower mill and wheel mostly concealed by trees. NO rabbits, no figure in window. TOP RIGHT: preserve the existing sunny summer memory unchanged. BOTTOM LEFT: make the present-night wheel image a scenery cutaway by REMOVING BOTH RABBITS. Preserve mill architecture; dark STILL wheel with lodged leaves, no waterfall pouring over paddles, rain droplets only, stream flows BELOW it. Upstairs window now has faint warm light, with NO visible person. BOTTOM RIGHT: replace with scenery-only Bram's cottage, small mossy stone steep-roof cottage behind rosemary garden fence. ALL cottage windows and doorway completely DARK, unoccupied. Cold rainy moonlight; subtle amber spill from distant village offscreen, no lamp attached to cottage. NO rabbits. These cutaways must not imply the rabbits left the square."
+    },
+    {
+      "sheet": 5,
+      "refs": [
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-05.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit the supplied Chapter 1 storybook atlas, preserving its exact 2x2 grid, four equal 3:2 landscape panels, overall 1536x1024, no gutters or borders. Keep the rich luminous painterly detail, soft fur, embroidered plum cloth, mossy stone, copper leaves, amber light and blue-plum rain. No text or UI. Preserve character identities and anatomy: small cream Poppy, plum cape, rust scarf, brown satchel, exactly TWO ears one upright and one bent; taller grey-brown Willow, moss-green coat, exactly TWO upright ears. Change only the specified panels/elements. Keep both rabbits, fountain, bakery, walls, framing and foregrounds unchanged in ALL FOUR PANELS. Correct only the distant mill background in each: it must stand at the SAME LOW streamside ground level beyond the gardens, never uphill above the village roofs. Add dense alder foliage obscuring the lower mill and wheel; the only clear distant part is one small warm UPPER window between branches. No visible suspect silhouette. Do not add a bridge or water wheel near the rabbits. Mill is distant throughout. Keep the unlit paper lantern concealed and both rabbits' paws free of lights. BOTTOM RIGHT clock must be too blurred to read a specific time."
+    },
+    {
+      "sheet": 8,
+      "refs": [
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-08.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit the supplied Chapter 1 storybook atlas, preserving its exact 2x2 grid, four equal 3:2 landscape panels, overall 1536x1024, no gutters or borders. Keep the rich luminous painterly detail, soft fur, embroidered plum cloth, mossy stone, copper leaves, amber light and blue-plum rain. No text or UI. Preserve character identities and anatomy: small cream Poppy, plum cape, rust scarf, brown satchel, exactly TWO ears one upright and one bent; taller grey-brown Willow, moss-green coat, exactly TWO upright ears. Change only the specified panels/elements. Replace ONLY TOP RIGHT with a scenery-only establishing shot of the START of the mill lane: wet winding cobbled lane leaving the warm village, passing BEHIND a completely DARK small steep-roof stone cottage and rosemary garden fence, continuing towards the distant mill largely hidden by alder trees. The mill is not beside the camera: only its distant dark roof and a faint sliver of ground-floor doorway light may be glimpsed at lane's far end. ALL UPPER MILL WINDOWS DARK, since its upstairs light has gone out. NO rabbits in this top-right panel, no wheel close to camera, no new bridge, no readable sign. The lamp/candlelight comes from the village behind viewer; rainy blue night ahead. Other THREE panels unchanged."
+    },
+    {
+      "sheet": 11,
+      "refs": [
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-11.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit the supplied Chapter 1 storybook atlas, preserving its exact 2x2 grid, four equal 3:2 landscape panels, overall 1536x1024, no gutters or borders. Keep the rich luminous painterly detail, soft fur, embroidered plum cloth, mossy stone, copper leaves, amber light and blue-plum rain. No text or UI. Preserve character identities and anatomy: small cream Poppy, plum cape, rust scarf, brown satchel, exactly TWO ears one upright and one bent; taller grey-brown Willow, moss-green coat, exactly TWO upright ears. Change only the specified panels/elements. TOP LEFT: Willow alone has just stepped inside the mill, lighting her handmade paper lantern from the small brass oil lamp at the foot of the stairs. Remove Poppy from this panel entirely (she is still outside and enters in TOP RIGHT). Keep Willow and lantern in the same general place; replace the cluttered cottage-like tabletop cups/flowers with a plain wooden crate near stairs holding the small oil lamp. No third rabbit, no extra hands or ears. TOP RIGHT: preserve Poppy entering through the doorway and Willow holding her lit lantern. BOTTOM LEFT: extinguish and remove ALL flames, glowing embers and firelight from the stone fireplace behind rabbits. It is a COLD BLACK unused hearth, with no bell or hook closeup. Warm light comes ONLY from Willow's paper lantern and oil lamp offscreen. Keep both rabbits and lantern unchanged. BOTTOM RIGHT unchanged. Preserve all panel boundaries."
+    },
+    {
+      "sheet": 13,
+      "refs": [
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-13.webp",
+        "/workspace/scratch/a18277c1c45c/chapter4-release/woodland-crossings/assets/chapter-one/frames/sheet-11.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit the supplied Chapter 1 storybook atlas, preserving its exact 2x2 grid, four equal 3:2 landscape panels, overall 1536x1024, no gutters or borders. Keep the rich luminous painterly detail, soft fur, embroidered plum cloth, mossy stone, copper leaves, amber light and blue-plum rain. No text or UI. Preserve character identities and anatomy: small cream Poppy, plum cape, rust scarf, brown satchel, exactly TWO ears one upright and one bent; taller grey-brown Willow, moss-green coat, exactly TWO upright ears. Change only the specified panels/elements. Image 1 is target; image 2 is interior reference only. TOP LEFT: replace outside-wheel notebook scene with Poppy and Willow STILL INSIDE THE MILL near the foot of timber stairs. They consult Poppy's CLOSED notebook, no readable writing. Their same clothing and faces; two correct ears each. Willow's glowing handmade paper lantern rests safely on a wooden ledge beside them; a small brass oil lamp nearby. Cold stone wall and dark unlit fireplace partly cropped in background, no flames or bell/hook evidence. Cool rain visible through a small part of open doorway. No outside water wheel in this panel, no upstairs light. OTHER THREE PANELS unchanged, except in TOP RIGHT reduce the waterfall over wheel to rain drips: wheel is stationary, stream flows beneath."
+    }
+  ]
+}

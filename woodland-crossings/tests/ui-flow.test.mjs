@@ -1,0 +1,473 @@
+// Executes real UI handlers using a tiny DOM adapter. This checks wiring and
+// state transitions, not browser layout, rendering, drag physics or accessibility.
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {STORY} from '../content.js';
+import {CASEWORK} from '../casework.js';
+class Element {
+ constructor(tag='div',attrs={}){this.tag=tag;this.attrs=attrs;this.dataset={};for(const[k,v]of Object.entries(attrs))if(k.startsWith('data-'))this.dataset[k.slice(5).replace(/-([a-z])/g,(_,c)=>c.toUpperCase())]=v;this.children=[];this.style={};this._html='';this.classList={add(){},remove(){},toggle(){}};this.open=false;}
+ set innerHTML(value){this._html=value;this.children=[];for(const match of value.matchAll(/<(button|div|span|p|dialog|input)\b([^>]*)>/g)){const attrs={};for(const a of match[2].matchAll(/([\w-]+)="([^"]*)"/g))attrs[a[1]]=a[2];this.children.push(new Element(match[1],attrs));}}
+ get innerHTML(){return this._html;}
+ querySelectorAll(sel){if(sel.startsWith('#'))return this.children.filter(e=>e.attrs.id===sel.slice(1));const m=sel.match(/^\[([^=\]]+)(?:="([^"]*)")?\]$/);if(m)return this.children.filter(e=>Object.hasOwn(e.attrs,m[1])&&(m[2]===undefined||e.attrs[m[1]]===m[2]));if(sel.startsWith('.'))return this.children.filter(e=>(e.attrs.class||'').split(' ').includes(sel.slice(1)));return [];}
+ querySelector(sel){return this.querySelectorAll(sel)[0]||null;}
+ getBoundingClientRect(){return {width:700,height:260};}
+ setAttribute(k,v){this.attrs[k]=v;}focus(){}showModal(){this.open=true;}close(){this.open=false;}
+}
+function setup({autoRead=true,autoCasework=true}={}){const app=new Element(),fixed={};for(const id of ['modal','modalBody','closeModal','announce','villageBtn','journalBtn','notebookBtn','guideBtn','soundBtn','saveBtn'])fixed[id]=new Element();globalThis.document={querySelector(sel){return sel==='#app'?app:fixed[sel.slice(1)]||app.querySelector(sel);}};const db=new Map();globalThis.localStorage={getItem:k=>db.get(k)||null,setItem:(k,v)=>db.set(k,v)};globalThis.window={};return{app,fixed,db,click(id){const b=document.querySelector('#'+id);assert.ok(b,`missing ${id}`);assert.equal(typeof b.onclick,'function',`${id} unwired`);b.onclick();if(autoRead||autoCasework){let guard=0;while(guard++<35){const story=app.querySelector('#storyNext');if(story&&autoRead){story.onclick();continue;}const task=CASEWORK.find(t=>app.innerHTML.includes(t.title)&&app.querySelector('.casework-page'));if(task&&autoCasework){const route=app.querySelector('[data-case-route]');if(route){route.onclick();continue;}const next=app.querySelector('#caseworkContinue');if(next){next.onclick();continue;}const choice=app.querySelector(`[data-case-choice="${task.kind==='grammar'?task.word:task.answer}"]`);if(choice)choice.onclick();if(task.evidence)app.querySelector(`[data-case-evidence="${task.evidenceAnswer}"]`).onclick();if(task.kind==='grammar'){const input=app.querySelector('#caseCorrection');input.value=task.answer;input.oninput();}app.querySelector('#caseworkCheck').onclick();continue;}break;}assert.ok(guard<35,'reading/casework flow stalled');}},tool(t){const b=app.querySelector(`[data-tool="${t}"]`);assert.ok(b,`missing tool ${t}`);b.onclick();}};}
+test('visual play handlers: demo, tap repair, retry, supply collection, village, paragraph and drag',async()=>{
+ const ui=setup();await import('../app.js');ui.click('play');ui.click('demoStop');ui.click('startTrail');assert.match(ui.app.innerHTML,/reading-chart/);assert.equal(ui.app.querySelectorAll('[data-tool]').length,0);ui.app.querySelector('[data-join="0"]').onclick();assert.doesNotMatch(ui.app.innerHTML,/class="poppy-guide"/);assert.match(ui.app.innerHTML,/draggable="true"/);
+ ui.click('check');assert.match(ui.app.innerHTML,/One join needs another look/);ui.tool('stop');assert.match(ui.app.innerHTML.replace(/<[^>]*>/g,''),/The villagers were dismantling the last stalls\. Beyond the gardens, a light appeared in the mill’s upper window\./);ui.click('check');assert.match(ui.app.innerHTML,/Note saved\./);ui.click('next');
+ // Drag uses the very same fitting path as tapping, including persisted choice.
+ const join=ui.app.querySelector('[data-join="0"]');join.ondrop({preventDefault(){},dataTransfer:{getData(){return 'stop';}}});let save=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(save.activeChoices[0],'stop');assert.equal(save.activeHelp,false);
+ // Finish the rest of expedition one using authored solutions.
+ while(!document.querySelector('#collect')){save=JSON.parse(ui.db.get('woodland-crossings-v1'));const q=(await import('../content.js')).BANK.find(q=>q.id===save.activeId);for(let i=0;i<q.valid.length;i++){ui.app.querySelector(`[data-join="${i}"]`).onclick();ui.tool(q.valid[i][0]);}ui.click('check');ui.click('next');}
+ assert.match(ui.app.innerHTML,/reward-reveal/);ui.click('collect');ui.fixed.villageBtn.onclick();assert.match(ui.app.innerHTML,/village-landscape/);ui.app.querySelector('[data-village-site="0"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Herb window box/);ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations.length,1);
+ // Reload into a paragraph challenge to exercise joins + continuous sentence UI.
+ save=JSON.parse(ui.db.get('woodland-crossings-v1'));save.story=25;save.step=0;save.activeId=STORY[25].id;save.activeChoices=STORY[25].valid.map(()=> 'comma');save.activeHelp=false;save.activeTries=0;ui.db.set('woodland-crossings-v1',JSON.stringify(save));await import('../app.js?paragraph');ui.click('play');assert.match(ui.app.innerHTML,/passage-chart/);assert.doesNotMatch(ui.app.innerHTML,/clause-islands/);const q=STORY[25];for(let i=0;i<q.valid.length;i++){ui.app.querySelector(`[data-join="${i}"]`).onclick();ui.tool(q.valid[i][0]);}ui.click('check');assert.ok(document.querySelector('#next'));
+});
+test('retired grammatical alternatives are absent and the remaining repair earns supplies',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.activeId=STORY[0].id;s.activeChoices=['comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?brief-scout');ui.click('play');
+ assert.match(ui.app.innerHTML,/Your task/);assert.equal(document.querySelector('#contract'),null);ui.app.querySelector('[data-join="0"]').onclick();assert.equal(ui.app.querySelector('[data-tool="semi"]'),null);let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.activeTries,0);assert.equal(saved.activeHelp,false);assert.equal(document.querySelector('#next'),null);
+ ui.tool('stop');ui.click('check');ui.click('next');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.beaconStars[0],1);ui.click('check');ui.click('next');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.beaconStars[0],2);assert.deepEqual(saved.recovery,{});
+});
+test('memory trails use a supported structure and do not display conflicting contracts',async()=>{const ui=setup();const {fresh,record,startReview,DAY}=await import('../engine.js');const s=fresh();record(s,STORY[0],true,0);s.story=30;startReview(s,DAY);ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?review-brief');ui.click('play');assert.equal(document.querySelector('#contract'),null);assert.match(ui.app.innerHTML,/compact-supply/);assert.match(ui.app.innerHTML,/Your task/);});
+test('chapters without sentence demos enter witness notes and final reports safely',async()=>{for(const story of [20,25]){const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=story;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?lesson-'+story);ui.click('play');assert.equal(document.querySelector('#showDemo'),null);ui.click('startTrail');assert.match(ui.app.innerHTML,/passage-chart/);assert.match(ui.app.innerHTML,/Your task/);}});
+test('woodland discoveries persist once and do not change grammar progress',async()=>{const ui=setup();await import('../app.js?easter-eggs');const egg=ui.app.querySelector('[data-egg="ghost-shroom"]');assert.ok(egg);egg.onclick();let s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.easterEggs,['ghost-shroom']);assert.equal(s.seq,0);assert.equal(s.story,0);assert.deepEqual(s.beaconStars,[0,0,0,0,0,0]);egg.onclick();s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(s.easterEggs.length,1);assert.match(ui.fixed.modalBody.innerHTML,/Optional discoveries never affect your grammar score/);});
+test('mystery ending unlocks without secrets or independent stamps and explains all three clues',async()=>{const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=30;s.completedAt=1;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?ending');assert.match(ui.app.innerHTML,/Case closed/);assert.match(ui.app.innerHTML,/The truth brought to light/);assert.match(ui.app.innerHTML,/0 \/ 6 woodland secrets/);ui.app.querySelector('[data-rescue="1"]').onclick();assert.match(document.querySelector('#rescueExplanation').textContent,/deliberate cutting/);ui.app.querySelector('[data-rescue="2"]').onclick();assert.match(document.querySelector('#rescueExplanation').textContent,/new caretaker/);ui.click('endingVillage');ui.click('caseNotes');assert.match(ui.fixed.modalBody.innerHTML,/6 \/ 6 notes uncovered/);ui.click('closeModal');assert.ok(document.querySelector('#endingReplay'));ui.click('endingReplay');assert.match(ui.app.innerHTML,/Case closed/);});
+test('final supported chapter completion opens the mystery ending after the reward choice',async()=>{const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=30;s.pendingReward=5;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?ending-reward');assert.ok(document.querySelector('#collect'));ui.click('collect');assert.match(ui.app.innerHTML,/Case closed/);const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.endingSeen,true);assert.equal(saved.decorations.length,1);});
+test('completed locations can be revisited for missed secrets without replaying questions',async()=>{const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=30;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?secret-revisit');ui.click('endingSecrets');const revisit=ui.fixed.modalBody.querySelector('[data-revisit="0"]');assert.ok(revisit);revisit.onclick();const egg=ui.fixed.modalBody.querySelector('[data-egg="ghost-shroom"]');assert.ok(egg);egg.onclick();const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,30);assert.equal(saved.seq,0);assert.deepEqual(saved.easterEggs,['ghost-shroom']);});
+
+test('a malformed main-clause join is highlighted in the final report',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh(),q=STORY[29];s.story=29;s.activeId=q.id;s.activeChoices=q.valid.map(v=>v[0]);s.activeChoices[3]='stop';s.activeChoices[4]='comma';ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?mixed-brief-error');ui.click('play');ui.click('check');
+ assert.equal(ui.app.querySelector('[data-join="4"]').attrs['aria-pressed'],'true');assert.equal(ui.app.querySelector('[data-join="3"]').attrs['aria-pressed'],'false');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,1);
+});
+
+test('each chapter loads its own local location in play and saved scene revisits',async()=>{
+ const {fresh}=await import('../engine.js');const {SCENES}=await import('../scenery.js');assert.equal(new Set(SCENES.map(x=>x.asset)).size,6);
+ for(let stage=0;stage<6;stage++){const ui=setup(),s=fresh();s.story=stage*5;s.introduced=[0,1,2,3,4,5];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-scenery-'+stage);ui.click('play');assert.ok(ui.app.innerHTML.includes(`assets/${SCENES[stage].asset}`));assert.ok(ui.app.innerHTML.includes(SCENES[stage].indoors?'indoor-scene':'outdoor-scene'));}
+ const ui=setup(),s=fresh();s.story=30;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?scenery-revisit');ui.click('endingSecrets');ui.fixed.modalBody.querySelector('[data-revisit="3"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/assets\/chapter-four\/frames\/sheet-01.webp/);
+});
+
+test('restart is explicit, cancellable, and clears only after confirmation',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=14;s.seq=18;s.decorations=[{chapter:0,name:'Wildflowers'}];s.easterEggs=['ghost-shroom'];s.beaconStars=[3,2,0,0,0,0];s.activeId=STORY[14].id;s.activeChoices=STORY[14].valid.map(()=> 'comma');ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?restart-home');
+ ui.click('restartGame');assert.match(ui.fixed.modalBody.innerHTML,/clears this browser/);ui.fixed.modalBody.querySelector('#cancelRestart').onclick();assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,14);assert.equal(ui.fixed.modal.open,false);
+ ui.click('restartGame');ui.fixed.modalBody.querySelector('#confirmRestart').onclick();const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,0);assert.equal(saved.seq,0);assert.equal(saved.activeId,null);assert.deepEqual(saved.decorations,[]);assert.deepEqual(saved.easterEggs||[],[]);assert.deepEqual(saved.beaconStars,[0,0,0,0,0,0]);assert.deepEqual(saved.recovery,{});assert.match(ui.app.innerHTML,/Meet Poppy/);ui.click('play');ui.click('startTrail');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeId,STORY[0].id);
+});
+test('restart is reachable from the ending and from save status during a question',async()=>{
+ const {fresh}=await import('../engine.js');let ui=setup(),s=fresh();s.story=30;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?restart-ending');ui.click('endingRestart');assert.ok(ui.fixed.modalBody.querySelector('#confirmRestart'));ui.fixed.modalBody.querySelector('#cancelRestart').onclick();assert.match(ui.app.innerHTML,/Case closed/);
+ ui=setup();await import('../app.js?restart-save');ui.click('play');ui.click('startTrail');ui.fixed.saveBtn.onclick();ui.fixed.modalBody.querySelector('#restartFromSave').onclick();ui.fixed.modalBody.querySelector('#cancelRestart').onclick();assert.ok(ui.app.querySelector('[data-join="0"]'));assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeId,STORY[0].id);
+});
+
+test('mixed note requires the missing contrast conjunction and preserves correct commas',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=23;s.activeId=STORY[23].id;s.activeChoices=['comma','comma','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?one-answer-correct-note');ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/already correctly punctuated|Add only|editing-goals/);ui.click('editingRules');assert.match(document.querySelector('#modalBody').innerHTML,/Keep correct commas/);ui.click('closeModal');ui.click('check');assert.match(ui.app.innerHTML,/One join needs another look/);assert.equal(document.querySelector('#next'),null);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,1);ui.app.querySelector('[data-join="1"]').onclick();ui.tool('but');ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('artwork has a separate panel and an unobstructed view without altering the question',async()=>{
+ const ui=setup();await import('../app.js?art-first');ui.click('play');ui.click('startTrail');const html=ui.app.innerHTML;assert.match(html,/art-first/);const art=html.slice(html.indexOf('<div class="world-stage">'),html.indexOf('<div class="case-workspace">'));assert.doesNotMatch(art,/reading-chart|Your task/);assert.match(html.slice(html.indexOf('<div class="case-workspace">')),/reading-chart/);
+ ui.app.querySelector('[data-join="0"]').onclick();ui.tool('stop');const before=JSON.parse(ui.db.get('woodland-crossings-v1'));ui.click('viewArtwork');assert.match(ui.fixed.modalBody.innerHTML,/artwork-preview/);assert.match(ui.fixed.modalBody.innerHTML,/assets\/chapter-one\/fair-v3.webp/);assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/data-join|reading-chart/);ui.fixed.closeModal.onclick();const after=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(after.activeId,before.activeId);assert.deepEqual(after.activeChoices,before.activeChoices);assert.equal(after.activeHelp,false);ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('play keeps artwork, question and answers in order without the village preview',async()=>{
+ const ui=setup();await import('../app.js?stacked-layout');ui.click('play');ui.click('startTrail');const html=ui.app.innerHTML;assert.ok(html.indexOf('class="world-stage"')<html.indexOf('class="case-workspace"'));assert.ok(html.indexOf('class="case-workspace"')<html.indexOf('class="builder-dock"'));assert.doesNotMatch(html,/peekVillage|trail-destination/);assert.match(html,/compact-supply/);ui.fixed.villageBtn.onclick();assert.match(ui.app.innerHTML,/village-landscape/);
+});
+
+test('advancing changes the scene while editing, hints and reload preserve the current view',async()=>{
+ const ui=setup();await import('../app.js?question-scenes');ui.click('play');ui.click('startTrail');const first=JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key;ui.app.querySelector('[data-join="0"]').onclick();ui.tool('stop');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key,first);ui.click('check');ui.click('next');const second=JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key;assert.notEqual(first,second);assert.match(ui.app.innerHTML,/assets\/chapter-one\/window-v3.webp/);ui.click('viewArtwork');assert.match(ui.fixed.modalBody.innerHTML,/background-size:100% 100%/);ui.fixed.closeModal.onclick();ui.click('hint');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key,second);await import('../app.js?question-scenes-reload');ui.click('play');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeScenery.key,second);
+});
+
+test('meaning-based briefs keep exact-word hints behind an explicit request',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?quiet-hints');ui.click('play');
+ assert.match(ui.app.innerHTML,/makes the contrast explicit/);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Add only|editing-goals/);
+ const scene=ui.app.innerHTML.slice(ui.app.innerHTML.indexOf('class="scene '),ui.app.innerHTML.indexOf('class="case-workspace"'));assert.doesNotMatch(scene,/class="rabbit /);assert.doesNotMatch(ui.app.innerHTML,/class="poppy-guide"|class="poppy-speech"/);
+ ui.click('check');ui.click('check');assert.doesNotMatch(ui.app.innerHTML,/Try “|Comma \+ but|Use BUT/);ui.click('hint');assert.match(ui.app.innerHTML,/What the note needs:|Use BUT/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,true);
+});
+
+test('retired saved alternatives reset without charging a mistake',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=6;s.activeId='m7';s.activeChoices=['semi'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?neutral-hints');ui.click('play');ui.app.querySelector('[data-join="0"]').onclick();assert.equal(ui.app.querySelector('[data-tool="semi"]'),null);assert.deepEqual(JSON.parse(ui.db.get('woodland-crossings-v1')).activeChoices,['comma']);assert.doesNotMatch(ui.app.innerHTML,/Use BUT|Comma \+ but|Add only/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,0);
+});
+
+test('compact mobile controls expose rules on demand without altering edits or support',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=3;s.activeId='m4';s.activeChoices=['comma','comma'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?compact-mobile');ui.click('play');
+ assert.match(ui.app.innerHTML,/class="join-anchor">cloth<button/);assert.match(ui.app.innerHTML,/class="join-anchor">stitches<button/);assert.doesNotMatch(ui.app.innerHTML,/class="editing-rules"/);assert.match(ui.app.innerHTML,/Tap a comma to edit/);
+ const speech=ui.app.innerHTML.slice(ui.app.innerHTML.indexOf('class="world-stage"'),ui.app.innerHTML.indexOf('class="case-workspace"'));assert.match(speech,/id="viewArtwork"/);assert.match(speech,/aria-label="View artwork"/);
+ const before=JSON.parse(ui.db.get('woodland-crossings-v1'));ui.click('editingRules');assert.match(ui.fixed.modalBody.innerHTML,/Keep correct commas/);ui.click('closeModal');const after=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(after.activeChoices,before.activeChoices);assert.equal(after.activeHelp,false);ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('inline joins preserve report wording, paragraph breaks and full-stop capitalisation',async()=>{
+ const ui=setup();const {fresh,renderSentence}=await import('../engine.js');const q=STORY[29],s=fresh();s.story=29;s.activeId=q.id;s.activeChoices=q.valid.map(v=>v[0]);ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?inline-report');ui.click('play');const sentence=ui.app.innerHTML.split('aria-label="Route to scout">')[1].split('</div>')[0];const text=sentence.replace(/<[^>]*>/g,'').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');assert.equal(text,renderSentence(q,s.activeChoices));assert.match(text,/\n\n/);assert.match(text,/\. Later that week/);ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('village is one inspectable panorama with zoom and optional case notes',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.story=7;s.decorations=[{chapter:0,name:'Mushrooms'}];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?village-panorama');ui.fixed.villageBtn.onclick();assert.match(ui.app.innerHTML,/village-canvas village-landscape/);assert.doesNotMatch(ui.app.innerHTML,/class="building |evidence-grid/);assert.match(ui.app.innerHTML,/Timber|Young ferns planted/);ui.click('villageZoom');assert.equal(ui.app.querySelector('.village-viewport').attrs['data-zoom'],'1.5');ui.click('villageFit');assert.equal(ui.app.querySelector('.village-viewport').attrs['data-zoom'],'1');ui.app.querySelector('[data-village-site="0"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Mushrooms/);ui.click('closeModal');ui.click('caseNotes');assert.match(ui.fixed.modalBody.innerHTML,/evidence-grid/);ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,7);
+});
+
+test('construction peek preserves an open repair and reward choices update the scene',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const s=fresh();s.activeId='m1';s.activeChoices=['stop'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?village-peek');ui.click('play');ui.click('buildPeek');assert.match(ui.fixed.modalBody.innerHTML,/village-base/);ui.click('closeModal');assert.deepEqual(JSON.parse(ui.db.get('woodland-crossings-v1')).activeChoices,['stop']);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,false);
+ const ui2=setup(),t=fresh();t.story=5;t.pendingReward=0;ui2.db.set('woodland-crossings-v1',JSON.stringify(t));await import('../app.js?village-reward');assert.match(ui2.app.innerHTML,/village-reward-art/);ui2.app.querySelector('[data-decor="1"]').onclick();assert.match(document.querySelector('#rewardVillage').innerHTML,/data-touch="porch-swing"/);ui2.click('collect');const saved=JSON.parse(ui2.db.get('woodland-crossings-v1'));assert.equal(saved.decorations[0].name,'Patchwork porch swing');assert.equal(saved.pendingReward,null);
+});
+
+test('story reader resumes its page through reload and village without counting a hint or delivery',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false});await import('../app.js?reader-resume');ui.click('play');ui.click('startTrail');assert.match(ui.app.innerHTML,/By the time Poppy and Willow left/);assert.doesNotMatch(ui.app.innerHTML,/reading-chart/);
+ ui.click('storyNext');let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.chapterOne.positions.m1,1);assert.equal(saved.story,0);assert.equal(saved.seq,0);assert.equal(saved.activeHelp,false);
+ ui.fixed.guideBtn.onclick();ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,false);
+ await import('../app.js?reader-reload');ui.click('play');assert.match(ui.app.innerHTML,/Page 2 \/ /);ui.fixed.villageBtn.onclick();ui.click('back');assert.match(ui.app.innerHTML,/Page 2 \/ /);
+ ui.click('storyPrevious');assert.match(ui.app.innerHTML,/By the time Poppy and Willow left/);let guard=0;while(ui.app.querySelector('#storyNext')){assert.ok(guard++<20);ui.click('storyNext');}
+ assert.match(ui.app.innerHTML,/reading-chart/);saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(saved.chapterOne.read,['m1']);assert.equal(saved.story,0);assert.equal(saved.seq,0);
+ ui.app.querySelector('[data-join="0"]').onclick();ui.tool('stop');ui.click('check');ui.click('next');assert.match(ui.app.innerHTML,/Alders hid the mill’s lower walls/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,1);
+});
+
+test('storybook hides unreached scenes and replay preserves edits, support and deliveries',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const initial=fresh();initial.chapterOne={read:['m1']};ui.db.set('woodland-crossings-v1',JSON.stringify(initial));await import('../app.js?book-replay');ui.click('readStory');assert.equal(ui.fixed.modalBody.querySelectorAll('[data-book-scene]').length,1);ui.fixed.modalBody.querySelector('[data-book-scene="m1"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/By the time Poppy and Willow left/);ui.fixed.modalBody.querySelector('#bookNext').onclick();ui.click('closeModal');ui.click('play');ui.click('startTrail');ui.app.querySelector('[data-join="0"]').onclick();ui.tool('stop');
+ const before=JSON.parse(ui.db.get('woodland-crossings-v1'));ui.click('readStory');ui.fixed.modalBody.querySelector('[data-book-scene="m1"]').onclick();ui.fixed.modalBody.querySelector('#bookNext').onclick();ui.click('closeModal');assert.deepEqual(JSON.parse(ui.db.get('woodland-crossings-v1')),before);assert.match(ui.app.innerHTML,/reading-chart/);
+});
+
+test('Chapter 1 repairs reveal story beats without double-awarding progress or replaying them on recovery',async()=>{
+ const {fresh}=await import('../engine.js');
+ for(let i=0;i<5;i++){
+  const ui=setup(),s=fresh(),q=STORY[i];s.story=i;s.activeId=q.id;s.activeChoices=q.valid.map(v=>v[0]);ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?note-payoff-'+i);ui.click('play');
+  assert.doesNotMatch(ui.app.innerHTML,/story-payoff|poppy-speech/);const before=JSON.parse(ui.db.get('woodland-crossings-v1'));ui.click('check');assert.match(ui.app.innerHTML,/class="story-payoff/);assert.match(ui.app.innerHTML,/note-consequence/);assert.match(ui.app.innerHTML,/Why this edit works/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,before.story);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).seq,before.seq);if(i===4){assert.match(ui.app.innerHTML,/bell-payoff/);assert.match(ui.app.innerHTML,/Keep this as one sentence without adding or removing words\./);}
+ }
+ const ui=setup(),s=fresh();s.activeId='r1';s.activeChoices=['stop'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?recovery-no-payoff');ui.click('play');ui.click('check');assert.doesNotMatch(ui.app.innerHTML,/class="story-payoff|note-consequence/);
+});
+
+test('grammar stop saves a selected word and typed correction, resumes, and leaves the punctuation task untouched',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js'),s=fresh();s.story=3;s.activeId='m4';s.activeChoices=['comma','comma'];s.casework={'dark-window':{completed:true},'yellow-stitches':{completed:true}};s.chapterOne={read:['m4'],positions:{}};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?word-edit');ui.click('play');assert.match(ui.app.innerHTML,/Quick grammar edit/);assert.doesNotMatch(ui.app.innerHTML,/reading-chart/);
+ ui.app.querySelector('[data-case-choice="6"]').onclick();let input=ui.app.querySelector('#caseCorrection');input.value='is';input.oninput();ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/Keep the note in the past tense/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,false);
+ input=ui.app.querySelector('#caseCorrection');input.value='was';input.oninput();ui.fixed.guideBtn.onclick();ui.click('closeModal');await import('../app.js?word-edit-resume');ui.click('play');assert.equal(ui.app.querySelector('#caseCorrection').attrs.value,'was');assert.equal(ui.app.querySelector('[data-case-choice="6"]').attrs['aria-pressed'],'true');ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/The note is clear/);ui.click('caseworkContinue');assert.match(ui.app.innerHTML,/reading-chart/);let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(saved.activeChoices,['comma','comma']);assert.equal(saved.story,3);assert.equal(saved.seq,0);assert.equal(saved.activeHelp,false);assert.equal(saved.casework['wood-note'].completed,true);
+});
+
+test('detective leads change the observation, persist on reload, and require a valid claim with evidence',async()=>{
+ for(const route of ['latch','repair']){
+  const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js'),s=fresh();s.story=3;s.activeId='m4';s.activeChoices=['comma','comma'];s.casework={'wood-note':{completed:true},'dark-window':{completed:true}};s.chapterOne={read:['m4'],positions:{}};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?detective-'+route);ui.click('play');assert.match(ui.app.innerHTML,/Where should we look first/);ui.app.querySelector(`[data-case-route="${route}"]`).onclick();assert.match(ui.app.innerHTML,route==='latch'?/loose threads/:/worst stitch/);
+  ui.app.querySelector('[data-case-choice="coat"]').onclick();ui.app.querySelector('[data-case-evidence="green-mud"]').onclick();ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/Now find the two details/);assert.equal(document.querySelector('#caseworkContinue'),null);ui.click('caseworkHint');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeHelp,false);
+  await import('../app.js?detective-resume-'+route);ui.click('play');assert.doesNotMatch(ui.app.innerHTML,/Where should we look first/);ui.app.querySelector('[data-case-evidence="stitches-memory"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');assert.match(ui.app.innerHTML,/reading-chart/);const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.casework['yellow-stitches'].route,route);assert.equal(saved.story,3);assert.equal(saved.seq,0);assert.equal(saved.activeHelp,false);
+ }
+});
+
+test('context vocabulary rejects an unsupported motive without revealing later plot or awarding supplies',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js'),s=fresh();s.story=3;s.activeId='m4';s.activeChoices=['comma','comma'];s.casework={'wood-note':{completed:true},'yellow-stitches':{completed:true}};s.chapterOne={read:['m4'],positions:{}};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?context-vocabulary');ui.click('play');ui.app.querySelector('[data-case-choice="concealed"]').onclick();ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/Does the passage actually tell you that/);assert.doesNotMatch(ui.app.innerHTML,/selling|debt|supporting timber/);ui.app.querySelector('[data-case-choice="distant"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,3);assert.equal(saved.seq,0);assert.equal(saved.activeHelp,false);assert.match(ui.app.innerHTML,/Poppy noticed the frayed green/);
+});
+
+test('the completion secret appears only after opening the final envelope and can be retrieved again',async()=>{
+ const {endingSecret}=await import('../ending-secret.js');
+ const reveal=/The baker is the Night Owl/;assert.match(endingSecret(),reveal);
+ const {CHAPTER_TWO}=await import('../chapter-two.js');const earlier=CHAPTER_TWO.flatMap(s=>s.paragraphs).join(' ');
+ assert.match(earlier,/Night Owl’s detective stories/);assert.doesNotMatch(earlier,reveal);assert.doesNotMatch(JSON.stringify(STORY),reveal);
+ const ui=setup();await import('../app.js?sealed-start');
+ assert.doesNotMatch(ui.app.innerHTML,reveal);assert.equal(ui.app.querySelector('#endingEnvelope'),null);
+ ui.click('how');assert.doesNotMatch(ui.fixed.modalBody.innerHTML,reveal);ui.click('closeModal');
+ const {fresh}=await import('../engine.js');const s=fresh();s.story=30;s.completedAt=1;
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?sealed-finish');
+ assert.doesNotMatch(ui.app.innerHTML,reveal);assert.doesNotMatch(ui.app.innerHTML,/final-envelope.webp/);
+ await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);assert.match(ui.fixed.modalBody.innerHTML,/assets\/secret\/final-envelope.webp/);
+ ui.click('closeModal');ui.click('endingVillage');assert.doesNotMatch(ui.app.innerHTML,reveal);
+ ui.click('endingReplay');await ui.app.querySelector('#endingEnvelope').onclick();assert.match(ui.fixed.modalBody.innerHTML,reveal);
+});
+
+test('frogs collect once, replay their tidbits and leave language progress intact',async()=>{
+ const ui=setup({autoRead:false}),{fresh}=await import('../engine.js'),initial=fresh();initial.introduced=[0];ui.db.set('woodland-crossings-v1',JSON.stringify(initial));await import('../app.js?frog-collection');assert.equal(ui.app.querySelector('[data-frog]'),null);ui.click('play');
+ assert.equal(ui.fixed.soundBtn.textContent,'Sound on');
+ const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();
+ let s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);assert.equal(s.story,0);assert.equal(s.seq,0);assert.deepEqual(s.decorations,[]);assert.match(ui.fixed.modalBody.innerHTML,/dismantled/);
+ frog.onclick();s=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.deepEqual(s.frogFinds,['fair-frog']);
+});
+
+
+test('Chapter 2 full story, all nine questions and fern-garden delivery work through real handlers',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=5;s.step=0;s.seq=5;s.introduced=[0,1];s.decorations=[{chapter:0,name:'Wildflowers'}];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-two-full');ui.click('play');
+ let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.chapterTwo.read.length,5);assert.deepEqual(saved.activeChoices,['comma']);assert.match(ui.app.innerHTML,/circular mark beside the/);
+ for(const q of STORY.slice(5,10)){
+  saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.activeId,q.id);
+  ui.app.querySelector('[data-join="0"]').onclick();ui.tool(q.valid[0][0]);ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');
+ }
+ saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,10);assert.equal(saved.seq,10);assert.equal(saved.pendingReward,1);
+ for(const task of CASEWORK.filter(t=>t.question==='m10'&&t.phase==='after'))assert.equal(saved.casework[task.id].completed,true);
+ assert.ok(document.querySelector('#collect'));ui.click('collect');saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.decorations.length,2);assert.equal(saved.decorations[1].chapter,1);
+});
+
+test('Chapter 2 retry preserves its identity and repairs its initial splice',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=7;s.activeId='r6';s.activeChoices=['comma'];s.lastRecoveryAtStory=7;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-retry');ui.click('play');assert.match(ui.app.innerHTML,/mark beneath the/);assert.equal(document.querySelector('#storyNext'),null);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeId,'r6');
+ ui.app.querySelector('[data-join="0"]').onclick();ui.tool('comma');ui.click('check');assert.match(ui.app.innerHTML,/One join needs another look/);
+ ui.tool('and');ui.click('check');assert.ok(document.querySelector('#next'));
+});
+
+test('Chapter 2 resumes an unfinished notebook check after reload and awards supplies exactly once',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=9;s.step=4;s.seq=9;s.activeId='m10';s.activeChoices=['so'];s.chapterTwo={read:['m6','m7','m8','m9','m10']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-pending');ui.click('play');ui.click('check');ui.click('next');assert.match(ui.app.innerHTML,/An unexpected movement/);
+ ui.app.querySelector('[data-case-choice="yet"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);
+ await import('../app.js?chapter-two-reload');ui.click('play');assert.match(ui.app.innerHTML,/Evidence for a suspicion/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,9);
+ for(const task of CASEWORK.filter(t=>t.question==='m10'&&t.phase==='after').slice(1)){
+  const wrong=task.options.find(o=>o.id!==task.answer);ui.app.querySelector('[data-case-choice="'+wrong.id+'"]').onclick();ui.click('caseworkCheck');assert.equal(document.querySelector('#collect'),null);
+  ui.app.querySelector('[data-case-choice="'+task.answer+'"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,10);assert.equal(saved.seq,10);assert.equal(saved.pendingReward,1);
+ await import('../app.js?chapter-two-reward-reload');assert.ok(document.querySelector('#collect'));assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).seq,10);
+});
+
+test('Chapter 2 storybook replay uses chapter numbering and preserves supplies and question choices',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=5;s.introduced=[0,1];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?chapter-two-book');ui.click('play');const before=ui.db.get('woodland-crossings-v1');ui.click('readStory');ui.fixed.modalBody.querySelector('[data-book-scene="m8"]').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Chapter 2 · Scene 3 of 5/);assert.equal(ui.db.get('woodland-crossings-v1'),before);
+});
+
+
+test('frog search and chapter revisit select one atlas painting before binding collectible frogs',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=5;s.introduced=[0,1];ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?exploration-crop');
+ const journal=document.querySelector('#journalBtn');assert.ok(journal);journal.onclick();
+ const root=ui.fixed.modalBody;root.querySelector('[data-frog-search="reed-frog"]').onclick();
+ let painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-story');assert.equal(JSON.parse(painting.dataset.frogPerch).id,'reed-frog');
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,5);
+ journal.onclick();root.querySelector('[data-revisit="1"]').onclick();painting=root.querySelector('.painted-scene');assert.equal(painting.dataset.frameArt,'m6-story');
+});
+
+
+test('Chapter 3 reads the revised story and completes all five bridge notes through real handlers',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=10;s.seq=10;s.introduced=[0,1,2];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-three-full');ui.click('play');
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).chapterThree.read.length,5);
+ for(const q of STORY.slice(10,15)){
+  for(let i=0;i<q.valid.length;i++){ui.app.querySelector('[data-join="'+i+'"]').onclick();ui.tool(q.valid[i][0]);}
+  if(q.wordOrder){const input=document.querySelector('#clauseRewrite');input.value=q.wordOrder.answer;input.oninput();}
+  ui.click('check');assert.ok(document.querySelector('#next'));
+  if(q.id==='m15'){
+   const before=ui.db.get('woodland-crossings-v1');ui.click('endingReflection');assert.match(ui.fixed.modalBody.innerHTML,/directly supported by these events/);
+   ui.fixed.modalBody.querySelector('[data-reflection="certain"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/stopped trusting every observation/);
+   ui.fixed.modalBody.querySelector('[data-reflection="together"]').onclick();assert.match(ui.fixed.modalBody.querySelector('#reflectionFeedback').textContent,/waited until Willow was ready/);
+   assert.equal(ui.db.get('woodland-crossings-v1'),before);ui.click('closeModal');
+  }
+  ui.click('next');
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,15);assert.equal(saved.seq,15);assert.ok(document.querySelector('#collect'));
+});
+test('Chapter 3 nor needs an explicit inverted clause and retains the typed answer on reload',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=12;s.activeId='m13';s.activeChoices=['nor'];s.introduced=[0,1,2];s.chapterThree={read:['m11','m12','m13','m14','m15']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-three-inversion');ui.click('play');ui.click('check');assert.equal(document.querySelector('#next'),null);
+ let input=document.querySelector('#clauseRewrite');input.value='the bank could not be trusted';input.oninput();ui.click('check');assert.equal(document.querySelector('#next'),null);
+ input=document.querySelector('#clauseRewrite');input.value='could the bank be trusted';input.oninput();
+ assert.match(document.querySelector('.sentence').innerHTML,/, nor/);assert.match(document.querySelector('.sentence').innerHTML,/could the bank be trusted\./);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeWordOrder,'could the bank be trusted');
+ await import('../app.js?chapter-three-inversion-resume');ui.click('play');assert.equal(document.querySelector('#clauseRewrite').attrs.value,'could the bank be trusted');
+ ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,13);
+});
+test('Chapter 3 retry requires its own inverted subject and stays outside the story reader',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=13;s.activeId='r13';s.activeChoices=['stop'];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-three-retry');ui.click('play');assert.equal(document.querySelector('#storyNext'),null);
+ ui.app.querySelector('[data-join="0"]').onclick();ui.tool('nor');const input=document.querySelector('#clauseRewrite');input.value='could she trust the bank';input.oninput();ui.click('check');assert.ok(document.querySelector('#next'));
+ ui.click('next');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,13);
+});
+
+test('all 25 frogs can be revisited and collected without changing lesson progress',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js'),{FROGS}=await import('../frogs.js');const s=fresh();s.story=30;s.endingSeen=true;s.seq=30;ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?all-frog-searches');
+ for(const f of FROGS){
+  document.querySelector('#journalBtn').onclick();const root=ui.fixed.modalBody,search=root.querySelector('[data-frog-search="'+f.id+'"]');assert.ok(search,f.id);search.onclick();
+  const painting=root.querySelector('.painted-scene');assert.equal(JSON.parse(painting.dataset.frogPerch).id,f.id);
+  const frog=root.querySelector('[data-frog="'+f.id+'"]');assert.ok(frog,f.id);frog.onclick();
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.frogFinds.length,25);assert.equal(saved.story,30);assert.equal(saved.seq,30);assert.deepEqual(saved.decorations,[]);
+});
+test('question screens omit frogs even when a saved alternate view is selected',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=16;s.introduced=[0,1,2,3];s.activeScenery={question:'m17',seq:0,key:'3-3'};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?frog-saved-view');ui.click('play');assert.equal(ui.app.querySelector('[data-frog="ink-frog"]'),null);assert.equal(ui.app.querySelector('[data-frog="bramble-frog"]'),null);
+});
+
+test('Chapter 4 reads all revised scenes, completes five notes and requires both inference answers before one reward',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=15;s.seq=15;s.introduced=[0,1,2,3];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-four-full');ui.click('play');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).chapterFour.read.length,5);
+ for(const q of STORY.slice(15,20)){for(let i=0;i<q.valid.length;i++){ui.app.querySelector('[data-join="'+i+'"]').onclick();ui.tool(q.valid[i][0]);}ui.click('check');assert.ok(document.querySelector('#next'));ui.click('next');}
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,20);assert.equal(saved.seq,20);assert.equal(saved.pendingReward,3);assert.equal(saved.casework['c4-supper-evidence'].completed,true);assert.ok(document.querySelector('#collect'));
+ ui.click('collect');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations.at(-1).chapter,3);
+});
+test('Chapter 4 inference resumes with its own evidence feedback and withholds the fifth delivery until complete',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');const s=fresh();s.story=19;s.seq=19;s.activeId='m20';s.activeChoices=['stop'];s.introduced=[0,1,2,3];s.chapterFour={read:['m16','m17','m18','m19','m20']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?chapter-four-pending');ui.click('play');ui.click('check');ui.click('next');
+ ui.app.querySelector('[data-case-choice="prepared"]').onclick();ui.app.querySelector('[data-case-evidence="map-bell"]').onclick();ui.click('caseworkCheck');assert.match(ui.app.innerHTML,/supper preparations/);assert.doesNotMatch(ui.app.innerHTML,/identify this particular coat/);assert.equal(document.querySelector('#collect'),null);
+ await import('../app.js?chapter-four-reload');ui.click('play');assert.match(ui.app.innerHTML,/Supper and a shelter/);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,19);
+ ui.app.querySelector('[data-case-evidence="table-memory"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,20);assert.equal(saved.seq,20);assert.equal(saved.pendingNotebook,null);assert.equal(saved.pendingReward,3);
+});
+
+for(const stage of [4,5])test(`Chapter ${stage+1} completes reading, edits, inference and exactly five deliveries`,async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js'),s=fresh();s.story=stage*5;s.seq=stage*5;s.introduced=[0,1,2,3,4,5];ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?later-chapter-full-'+stage);ui.click('play');
+ const key=stage===4?'chapterFive':'chapterSix';assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1'))[key].read.length,5);
+ for(const q of STORY.slice(stage*5,stage*5+5)){
+  for(let i=0;i<q.valid.length;i++){ui.app.querySelector('[data-join="'+i+'"]').onclick();ui.tool(q.valid[i][0]);}
+  if(q.wordOrder){const input=ui.app.querySelector('#clauseRewrite');input.value=q.wordOrder.answer;input.oninput();}
+  ui.click('check');assert.ok(document.querySelector('#next'),q.id);ui.click('next');
+ }
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.story,(stage+1)*5);assert.equal(saved.seq,(stage+1)*5);assert.equal(saved.pendingReward,stage);assert.equal(saved.casework[stage===4?'c5-answering-signal':'c6-test-the-account'].completed,true);assert.ok(document.querySelector('#collect'));
+ ui.click('collect');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations.at(-1).chapter,stage);
+ if(stage===5){assert.match(ui.app.innerHTML,/The truth brought to light/);assert.doesNotMatch(ui.app.innerHTML,/No thief/);}
+});
+
+test('final inference preserves a wrong evidence choice over reload and delays completion',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js'),s=fresh(),q=STORY[29];s.story=29;s.seq=29;s.activeId=q.id;s.activeChoices=q.valid.map(v=>v[0]);s.introduced=[0,1,2,3,4,5];s.chapterSix={read:['m26','m27','m28','m29','m30']};ui.db.set('woodland-crossings-v1',JSON.stringify(s));
+ await import('../app.js?final-inference-start');ui.click('play');ui.click('check');ui.click('next');
+ ui.app.querySelector('[data-case-choice="1"]').onclick();ui.app.querySelector('[data-case-evidence="0"]').onclick();ui.click('caseworkCheck');assert.equal(document.querySelector('#collect'),null);
+ await import('../app.js?final-inference-resume');ui.click('play');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,29);assert.equal(ui.app.querySelector('[data-case-evidence="0"]').attrs['aria-pressed'],'true');
+ ui.app.querySelector('[data-case-evidence="2"]').onclick();ui.click('caseworkCheck');ui.click('caseworkContinue');const done=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(done.story,30);assert.equal(done.seq,30);assert.equal(done.pendingReward,5);
+});
+
+
+test('all landmark finishing touches preview, save and reload without extra supplies',async()=>{
+ const {fresh,hydrate}=await import('../engine.js');
+ const {FINISHING_TOUCHES}=await import('../finishing-touches.js');
+ const {villageMarkup}=await import('../village.js');
+ for(const [chapter,choices] of FINISHING_TOUCHES.entries())for(const [index,d] of choices.entries()){
+  const ui=setup(),s=fresh();s.story=(chapter+1)*5;s.seq=s.story;s.pendingReward=chapter;
+  ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?touch='+d.id);
+  assert.equal(ui.app.querySelectorAll('[data-decor]').length,3);
+  assert.match(ui.app.innerHTML,new RegExp(choices[0].image.replaceAll('.','\\.')));
+  ui.app.querySelector(`[data-decor="${index}"]`).onclick();
+  assert.ok(document.querySelector('#rewardVillage').innerHTML.includes(`data-touch="${d.id}"`));
+  assert.equal(document.querySelector('#finishingDescription').innerHTML,d.description);
+  ui.click('collect');const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));
+  assert.deepEqual(saved.decorations,[{chapter,id:d.id,name:d.name}]);
+  assert.equal(saved.story,s.story);assert.equal(saved.seq,s.seq);assert.equal(saved.pendingReward,null);
+  const resumed=hydrate(saved);assert.ok(villageMarkup(resumed).includes(`data-touch="${d.id}"`));
+ }
+});
+
+test('an earned legacy decoration can be previewed or changed without touching lesson progress',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');
+ const s=fresh();s.story=7;s.seq=9;s.decorations=[{chapter:0,name:'Mushrooms'}];s.activeId='m8';s.activeChoices=['so'];
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?change-old-touch');
+ ui.fixed.villageBtn.onclick();ui.app.querySelector('[data-village-site="0"]').onclick();
+ ui.fixed.modalBody.querySelector('#changeTouch').onclick();
+ ui.fixed.modalBody.querySelector('[data-touch-select="2"]').onclick();
+ assert.match(ui.fixed.modalBody.querySelector('#touchPreview').innerHTML,/data-touch="acorn-mailbox"/);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations[0].name,'Mushrooms');
+ ui.click('closeModal');assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).decorations[0].name,'Mushrooms');
+ ui.app.querySelector('[data-village-site="0"]').onclick();ui.fixed.modalBody.querySelector('#changeTouch').onclick();
+ ui.fixed.modalBody.querySelector('[data-touch-select="2"]').onclick();ui.fixed.modalBody.querySelector('#saveTouch').onclick();
+ const saved=JSON.parse(ui.db.get('woodland-crossings-v1'));
+ assert.deepEqual(saved.decorations,[{chapter:0,id:'acorn-mailbox',name:'Acorn mailbox'}]);
+ assert.equal(saved.story,7);assert.equal(saved.seq,9);assert.equal(saved.activeId,'m8');assert.deepEqual(saved.activeChoices,['so']);
+});
+
+test('ending shows the saved village and keeps the final secret behind its envelope without teacher instructions',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');
+ const s=fresh();s.story=30;s.decorations=[{chapter:0,id:'porch-swing',name:'Patchwork porch swing'}];
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?ending-saved-village');
+ assert.match(ui.app.innerHTML,/class="ending-closing"/);assert.match(ui.app.innerHTML,/data-touch="porch-swing"/);
+ assert.doesNotMatch(ui.app.innerHTML,/rescue-painting|tell.{0,20}teacher/i);
+ await ui.app.querySelector('#endingEnvelope').onclick();assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/teacher/i);
+ assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,30);
+});
+
+test('the clue notebook matches observations, revises a theory and saves reasoning without changing an active edit',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false}),{fresh}=await import('../engine.js');
+ const s=fresh();s.story=3;s.seq=4;s.activeId='m4';s.activeChoices=['comma','semi'];s.chapterOne={read:['m4'],positions:{m4:0}};
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?clue-notebook-flow');
+ ui.fixed.notebookBtn.onclick();assert.match(ui.fixed.modalBody.innerHTML,/Poppy’s clue notebook/);
+ assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/The timber and the bridge|The baker is the Night Owl/);
+ ui.fixed.modalBody.querySelector('[data-notebook-thread="cloth"]').onclick();
+ ui.fixed.modalBody.querySelector('[data-notebook-theory="taken"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();
+ ui.fixed.modalBody.querySelector('[data-notebook-clue="cloth"]').onclick();ui.fixed.modalBody.querySelector('[data-notebook-clue="stitches"]').onclick();
+ ui.fixed.modalBody.querySelector('#notebookCheck').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Keep this idea open/);
+ assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/remembered repair link/);
+ ui.fixed.modalBody.querySelector('#notebookRevise').onclick();ui.fixed.modalBody.querySelector('[data-notebook-theory="coat"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();
+ ui.fixed.modalBody.querySelector('#notebookCheck').onclick();assert.match(ui.fixed.modalBody.innerHTML,/A supported link/);
+ const input=ui.fixed.modalBody.querySelector('#notebookReason');input.value='The repair connects this cloth to Bram’s coat.';input.oninput();
+ ui.click('closeModal');let saved=JSON.parse(ui.db.get('woodland-crossings-v1'));
+ assert.equal(saved.story,3);assert.equal(saved.seq,4);assert.equal(saved.activeId,'m4');assert.deepEqual(saved.activeChoices,['comma','semi']);assert.equal(saved.activeHelp,false);assert.deepEqual(saved.decorations,[]);
+ await import('../app.js?clue-notebook-resume');ui.fixed.notebookBtn.onclick();ui.fixed.modalBody.querySelector('[data-notebook-thread="cloth"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();ui.fixed.modalBody.querySelector('#notebookCheck').onclick();
+ assert.equal(ui.fixed.modalBody.querySelector('#notebookReason').attrs.value,'The repair connects this cloth to Bram’s coat.');
+ saved=JSON.parse(ui.db.get('woodland-crossings-v1'));assert.equal(saved.clueNotebook.links.cloth.checked,true);
+});
+test('the notebook is available from the opening and collects a clue only when its story passage is displayed',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false});await import('../app.js?clue-notebook-reading');
+ ui.fixed.notebookBtn.onclick();assert.match(ui.fixed.modalBody.innerHTML,/Your first page is waiting/);ui.click('closeModal');
+ ui.click('play');ui.click('startTrail');let state=JSON.parse(ui.db.get('woodland-crossings-v1'));
+ assert.deepEqual(state.clueNotebook.seen,[]);
+ for(let i=0;i<20&&!state.clueNotebook.seen.includes('light');i++){ui.click('storyNext');state=JSON.parse(ui.db.get('woodland-crossings-v1'));}
+ assert.ok(state.clueNotebook.seen.includes('light'));assert.equal(state.clueNotebook.seen.includes('figure'),false);
+ const before=ui.db.get('woodland-crossings-v1');ui.fixed.notebookBtn.onclick();assert.match(ui.fixed.modalBody.innerHTML,/An upstairs light/);assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/A moving figure|A marked bridge support/);
+ ui.click('closeModal');assert.equal(ui.db.get('woodland-crossings-v1'),before);
+});
+test('notebook observation pages turn without selecting evidence and escape saved reasoning',async()=>{
+ const ui=setup(),{fresh}=await import('../engine.js');const s=fresh();s.story=30;s.clueNotebook={version:1,seen:[],tails:{},links:{cloth:{theory:'coat',clues:['cloth','stitches'],checked:true,note:'<script>bad()</script>'}}};
+ ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?clue-notebook-observations');ui.fixed.notebookBtn.onclick();
+ ui.fixed.modalBody.querySelector('#notebookObservations').onclick();assert.match(ui.fixed.modalBody.innerHTML,/An upstairs light/);ui.fixed.modalBody.querySelector('#notebookNext').onclick();assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/An upstairs light/);
+ ui.fixed.modalBody.querySelector('#notebookIndex').onclick();ui.fixed.modalBody.querySelector('[data-notebook-thread="cloth"]').onclick();ui.fixed.modalBody.querySelector('#notebookNext').onclick();ui.fixed.modalBody.querySelector('#notebookCheck').onclick();
+ assert.match(ui.fixed.modalBody.innerHTML,/&lt;script&gt;bad\(\)&lt;\/script&gt;/);assert.doesNotMatch(ui.fixed.modalBody.innerHTML,/<script>/);
+ ui.fixed.modalBody.querySelector('#notebookIndex').onclick();ui.fixed.modalBody.querySelector('[data-notebook-thread="upstairs"]').onclick();
+ ui.fixed.modalBody.querySelector('[data-notebook-theory="using-room"]').onclick();
+ const first=ui.fixed.modalBody.querySelector('#notebookReason');first.value='A figure was visible in the lit window.';first.oninput();
+ ui.fixed.modalBody.querySelector('#notebookNext').onclick();ui.fixed.modalBody.querySelector('[data-notebook-clue="light"]').onclick();ui.fixed.modalBody.querySelector('[data-notebook-clue="figure"]').onclick();
+ ui.fixed.modalBody.querySelector('#notebookCheck').onclick();assert.match(ui.fixed.modalBody.innerHTML,/A supported link/);
+ ui.fixed.modalBody.querySelector('#notebookLater').onclick();assert.match(ui.fixed.modalBody.innerHTML,/Bram later explains/);
+ ui.fixed.modalBody.querySelector('#notebookPrevious').onclick();assert.equal(ui.fixed.modalBody.querySelector('#notebookReason').attrs.value,'A figure was visible in the lit window.');
+});
+
+test('chapter tester jumps to every chapter and secret while preserving the normal save',async()=>{
+ const {testState,testerEnabled}=await import('../chapter-tester.js');
+ const {nextQuestion}=await import('../engine.js');
+ const {needsStory,readingScene}=await import('../story-reader.js');
+ assert.equal(testerEnabled('?test=1'),true);assert.equal(testerEnabled('?test=0'),false);
+ for(let n=1;n<=30;n++){
+  const s=testState('m'+n),q=nextQuestion(s);assert.equal(q.id,'m'+n);assert.ok(needsStory(s,q));assert.equal(readingScene(s,q).id,q.id);
+  const direct=testState(q.id,{question:true});assert.equal(needsStory(direct,nextQuestion(direct)),false);
+ }
+ for(let n=1;n<=3;n++){const s=testState('b'+n);assert.equal(nextQuestion(s).id,'b'+n);assert.equal(s.bonus.index,n-1);}
+ const ui=setup({autoRead:false,autoCasework:false});
+ const original='{"version":1,"story":12}';ui.db.set('woodland-crossings-v1',original);
+ const oldLocation=globalThis.location;let exit='';globalThis.location={search:'?test=1',href:'https://example.com/game/?test=1',assign:url=>{exit=url;}};
+ try{
+  await import('../app.js?tester-isolation');assert.match(ui.fixed.modalBody.innerHTML,/Chapter tester/);
+  ui.fixed.modalBody.querySelector('[data-test-story="m16"]').onclick();assert.match(ui.app.innerHTML,/storyNext/);
+  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1-test')).story,15);assert.equal(ui.db.get('woodland-crossings-v1'),original);
+ }finally{globalThis.location=oldLocation;}
+});
+
+test('frog search and tidbit back buttons restore the fieldbook and its scroll position',async()=>{
+ const ui=setup({autoRead:false,autoCasework:false});await import('../app.js?fieldbook-back');
+ ui.fixed.journalBtn.onclick();ui.fixed.modal.scrollTop=240;
+ ui.fixed.modalBody.querySelector('[data-frog-search="fair-frog"]').onclick();
+ assert.equal(ui.fixed.closeModal.textContent,'Back to fieldbook');
+ ui.fixed.modalBody.querySelector('[data-frog="fair-frog"]').onclick();
+ assert.match(ui.fixed.modalBody.innerHTML,/A frog for your collection/);
+ assert.equal(ui.fixed.closeModal.textContent,'Back to fieldbook');ui.click('closeModal');
+ assert.equal(ui.fixed.modal.open,true);assert.match(ui.fixed.modalBody.innerHTML,/The frog fieldbook/);assert.equal(ui.fixed.modal.scrollTop,240);
+ assert.equal(ui.fixed.closeModal.textContent,'Back to the trail');
+ ui.fixed.modalBody.querySelector('[data-frog="fair-frog"]').onclick();ui.click('closeModal');assert.match(ui.fixed.modalBody.innerHTML,/The frog fieldbook/);
+ ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
+ ui.click('play');ui.click('startTrail');const frog=ui.app.querySelector('[data-frog="fair-frog"]');assert.ok(frog);frog.onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to the trail');ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
+});
+
+test('all woodland discovery reveals return to their secrets menu without changing progress',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const {EGGS}=await import('../halloween.js');const s=fresh();s.story=30;s.endingSeen=true;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?woodland-secrets-back');
+ for(let stage=0;stage<6;stage++){
+  ui.fixed.journalBtn.onclick();ui.fixed.modal.scrollTop=140+stage;
+  ui.fixed.modalBody.querySelector(`[data-revisit="${stage}"]`).onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to Woodland secrets');
+  ui.fixed.modalBody.querySelector(`[data-egg="${EGGS[stage].id}"]`).onclick();assert.equal(ui.fixed.closeModal.textContent,'Back to Woodland secrets');
+  ui.click('closeModal');assert.equal(ui.fixed.modal.open,true);assert.match(ui.fixed.modalBody.innerHTML,/Small secrets, big ears/);assert.equal(ui.fixed.modal.scrollTop,140+stage);
+  assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).story,30);
+  ui.fixed.modalBody.querySelector(`[data-revisit="${stage}"]`).onclick();ui.click('closeModal');assert.match(ui.fixed.modalBody.innerHTML,/Small secrets, big ears/);
+  ui.click('closeModal');assert.equal(ui.fixed.modal.open,false);
+ }
+});
+
+test('woodland and frog revisits use complete atlas-cell viewports without extra rabbit overlays',async()=>{
+ const ui=setup();const {fresh}=await import('../engine.js');const {FROGS}=await import('../frogs.js');const {explorationFrameArt}=await import('../frame-art.js');const s=fresh();s.story=30;s.endingSeen=true;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?clean-revisit-art');
+ function check(stage,view=0){const html=ui.fixed.modalBody.innerHTML,f=explorationFrameArt(stage,view);assert.match(html,/class="exploration-image"/);assert.ok(html.includes(`viewBox="${f.cell%2*3} ${Math.floor(f.cell/2)*2} 3 2"`));assert.ok(html.includes(`href="assets/${f.asset}"`));assert.doesNotMatch(html,/class="rabbit |moon-mist|forest-sparkles/);}
+ for(let stage=0;stage<6;stage++){ui.fixed.journalBtn.onclick();ui.fixed.modalBody.querySelector(`[data-revisit="${stage}"]`).onclick();check(stage);}
+ for(const f of FROGS){ui.fixed.journalBtn.onclick();ui.fixed.modalBody.querySelector(`[data-frog-search="${f.id}"]`).onclick();check(f.stage,f.view);assert.ok(ui.fixed.modalBody.querySelector(`[data-frog="${f.id}"]`));}
+});
+
+test('multi-join questions show only the audited options for the selected join',async()=>{
+ const {BANK}=await import('../content.js');const {testState}=await import('../chapter-tester.js');
+ for(const id of ['m5','m23','m24','r24','m29','m30','b3']){
+  const ui=setup(),q=BANK.find(q=>q.id===id),s=testState(id.startsWith('r')?id.replace('r','m'):id,{question:true});
+  s.activeId=id;s.activeChoices=q.initialChoices.slice();ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?join-menu-'+id);ui.click('play');
+  for(let i=0;i<q.valid.length;i++){ui.app.querySelector(`[data-join="${i}"]`).onclick();assert.deepEqual(ui.app.querySelectorAll('[data-tool]').map(b=>b.dataset.tool),q.joinOptions[i],id+' '+i);ui.tool(q.valid[i][0]);}
+  ui.click('check');assert.ok(document.querySelector('#next'),id);
+ }
+});
+
+test('incorrect transition joins explain their own error and distinguish valid medial however',async()=>{
+ const {BANK}=await import('../content.js');const {testState}=await import('../chapter-tester.js');
+ for(const [tool,pattern] of [['commaHowever',/not a coordinating conjunction/],['commaTherefore',/linking adverb/],['semicolonBecause',/dependent/]]){
+  const ui=setup(),q=BANK.find(q=>!q.remedial&&!q.wordOrder&&q.joinOptions.some(opts=>opts.includes(tool))),s=testState(q.id,{question:true});s.activeChoices=q.valid.map(v=>v[0]);const index=q.joinOptions.findIndex(opts=>opts.includes(tool));s.activeChoices[index]=tool;ui.db.set('woodland-crossings-v1',JSON.stringify(s));await import('../app.js?join-feedback-'+tool);ui.click('play');ui.click('check');assert.match(ui.app.innerHTML,pattern);assert.equal(JSON.parse(ui.db.get('woodland-crossings-v1')).activeTries,1);
+  if(tool==='commaHowever'){assert.match(ui.app.innerHTML,/The path, however, was wet/);assert.match(ui.app.innerHTML,/stopped; however/);}
+ }
+});

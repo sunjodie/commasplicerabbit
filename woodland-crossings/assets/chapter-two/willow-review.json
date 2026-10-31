@@ -1,0 +1,20 @@
+{
+  "asset": "scenes-v3.webp",
+  "source": "exec-037b68e2-a23f-45b0-bfcc-bac0f654e830.png",
+  "generator": "built-in image_gen edits",
+  "primary_reference": "../chapter-one/frames/sheet-05.webp: standing pair beside bakery, bottom right; face closeup, bottom left",
+  "secondary_reference": "../chapter-one/frames/sheet-12.webp",
+  "intermediate_not_shipped": {
+    "source": "exec-6ed4eec3-cf41-408c-81c5-020c34a607a0.png",
+    "reason": "Face and body improved, but ears shortened too far. Follow-up edit restored long upright ears before deployment."
+  },
+  "visual_review": [
+    "All four cells: Willow body shorter and more compact relative to Poppy; no elongated adult-guardian silhouette.",
+    "All four cells: larger head relative to body, broader cheeks, shorter rounded muzzle and larger expressive eyes.",
+    "All four cells: exactly two long upright rabbit ears, fuller and less elongated than scenes-v2; no extra lobes.",
+    "All four cells: bright cream checkerboard neckwear removed; subdued coat collar lining retained.",
+    "Poppy remains in plum cape, rust scarf, rose dress and brown satchel; her bent-ear silhouette retained.",
+    "Lower mill and loft: Willow holds oil lamp. Streambank: Poppy holds oil lamp, Willow paper lantern. Shed: Willow holds oil lamp and paper lantern rests on bench.",
+    "Four-cell boundaries, scenery, rainy amber/plum palette and hidden clue details retained."
+  ]
+}
